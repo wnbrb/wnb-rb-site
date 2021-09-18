@@ -1,0 +1,10 @@
+.button {
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border-radius: 0.2rem;
+  display: flex;
+}
+
+.button.primary {
+  background-color: #F37D7B;
+  color: white;
+}

@@ -1,5 +1,5 @@
 .header {
-  padding: 25px;
+  padding: 3rem;
   display: flex;
   justify-content: space-between;
 }
@@ -14,4 +14,15 @@
 .header a {
   text-decoration: none;
   color: inherit;
+}
+
+.header .join-wnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 7.3rem;
+}
+
+.header .add-user-icon {
+  fill: white;
 }

@@ -4,6 +4,6 @@
   height: 100%;
 }
 
-.body {
+.layout .body {
   flex: 1;
 }
