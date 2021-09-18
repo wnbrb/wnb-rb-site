@@ -1,0 +1,17 @@
+.header {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .left-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
