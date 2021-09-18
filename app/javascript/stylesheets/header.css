@@ -11,6 +11,10 @@
   width: 400px;
 }
 
+.header .wnb-logo {
+  height: 2.5rem;
+}
+
 .header a {
   text-decoration: none;
   color: inherit;
@@ -25,4 +29,5 @@
 
 .header .add-user-icon {
   fill: white;
+  height: 1rem;
 }

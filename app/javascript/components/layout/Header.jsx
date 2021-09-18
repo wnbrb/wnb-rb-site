@@ -9,7 +9,7 @@ const Header = () => (
   <div className='header'>
     <div className='left-header'>
       <a href="/">
-        <Logo size={40} />
+        <Logo className={'wnb-logo'} />
       </a>
 
       <a href="#">
@@ -29,7 +29,7 @@ const Header = () => (
       <a href="https://tinyurl.com/join-wnb-rb" target="_blank" rel="noreferrer noopener">
         <Button type='primary'>
           <div className='join-wnb'>
-            <AddUser size={16} className='add-user-icon'/>
+            <AddUser className='add-user-icon'/>
             Join WNB.rb
           </div>
         </Button>
