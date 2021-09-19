@@ -45,7 +45,7 @@
             "prettier --write"
         ],
         "*.rb": [
-            "rubocop"
+            "rubocop --force-exclusion"
         ]
     }
 }

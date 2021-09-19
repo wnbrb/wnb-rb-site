@@ -1,7 +1,8 @@
 AllCops:
   NewCops: enable
   Exclude:
-  - 'bin/bundle'
+    - bin/bundle
+    - db/schema.rb
 
 Style/Documentation:
   Enabled: false
