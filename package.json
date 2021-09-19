@@ -1,22 +1,47 @@
 {
-  "name": "wnb-rb-site",
-  "private": true,
-  "dependencies": {
-    "@babel/preset-react": "^7.14.5",
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.3",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "turbolinks": "^5.2.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
-  },
-  "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^3"
-  }
+    "name": "wnb-rb-site",
+    "private": true,
+    "dependencies": {
+        "@babel/preset-react": "^7.14.5",
+        "@rails/actioncable": "^6.0.0",
+        "@rails/activestorage": "^6.0.0",
+        "@rails/ujs": "^6.0.0",
+        "@rails/webpacker": "5.4.3",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "turbolinks": "^5.2.0",
+        "webpack": "^4.46.0",
+        "webpack-cli": "^3.3.12"
+    },
+    "version": "0.1.0",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.31.1",
+        "@typescript-eslint/parser": "^4.31.1",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.25.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "prettier": "^2.4.1",
+        "typescript": "^4.4.3",
+        "webpack-dev-server": "^3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --quiet --fix"
+        ],
+        "*.{js,jsx,json,md,html}": [
+            "prettier --write"
+        ]
+    }
 }
