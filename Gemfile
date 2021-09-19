@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
@@ -31,6 +30,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  # Necessary for tests to pass: https://github.com/rails/rails/issues/41502
+  gem 'rexml', '~> 3.2.5'
 end
 
 group :development do
