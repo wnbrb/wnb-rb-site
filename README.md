@@ -10,28 +10,27 @@
 
 WNB.rb is a virtual community for women and non-binary Rubyists. This is the repo for WNB.rb's website, built by and for our community.
 
-## Code of Conduct
+## Code of Conduct ❤️
 
 All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Slack.
 
-## Getting Started
+## Getting Started 🏁
 
 Before you try to set up this app, make sure you have the following installed on your machine:
 - Ruby (3.0.2)
-- Node (16.3.0)
+- Node (16.3.0) + Yarn
 - Postgres (13.3)
-- Yarn
 
-### 1. Fork and Clone this repository
-If you're unfamiliar with this process, use the [GitHub docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to get started!
+You must also fork and clone this repository.
+
+For help getting set up, refer to the [Contributor Resources](#contributor-resources-) section of this document.
 
 ### 2. Install dependencies
 - To install Ruby dependencies, run: `bundle install`
 - To install JavaScript dependencies, run: `yarn install`
 
 ### 3. Set up the database
-- First, make sure Postgres is running on your machine
-- Then, run the following: `rails db:setup`
+- `rails db:setup`
 
 ### 4. Run the tests
 - To run the backend tests: `rspec`
@@ -44,6 +43,8 @@ To start both the frontend and backend servers at the same time, run:
 foreman start
 ```
 
+In your browser, navigate to `localhost:5000` to see the app in action!
+
 Alternatively, you may run the frontend and backend servers separately with these two commands:
 
 ```
@@ -53,27 +54,37 @@ bin/webpack-dev-server
 
 This may be helpful for debugging, but generally should not be necessary.
 
-## Contributing
-To contribute code to this repository, do the following:
+## Contributing 🤝
 
-### 1. Perform all steps in the [Getting Started](#getting-started) section of this document
+### 1. Assign yourself an issue from our [Issues](https://github.com/wnbrb/wnb-rb-site/issues/new) tab
+- Check out the [`good first issue`](https://github.com/wnbrb/wnb-rb-site/labels/good%20first%20issue) tag if you're just getting started!
+- If you want to work on something that isn't listed in our Issues, please [create a new issue](https://github.com/wnbrb/wnb-rb-site/issues/new/choose).
 
-### 2. Assign yourself an issue in our [Issues](https://github.com/wnbrb/wnb-rb-site/issues/new) tab
-Check out the `good first issue` tag if you're just getting started! Feel free to comment on an issue that interests you, and one of our maintainers can help you get started.
+### 2. Write your code and create a pull request
+- Note that your pull request may require one or more tests. Tests are required for almost all backend changes, and all frontend logic-related changes. Style or copy changes do not require you to write a test.
+- For a style or copy change, please provide side-by-side screenshots showing how the app looks before and after your changes.
 
-### 3. Create a new branch for your changes: `git branch -b your-branch-name-here`
+## Contributor Resources 📚
 
-### 4. Write a failing test (optional)
-This step is not always necessary. Tests are required for almost all backend changes and all frontend logic changes. Visual changes, such as modifying styles or copy, do not require you to write a test.
+Need some help contributing to our app? Check out the resources below for more information about installing and using various third-party tools.
 
-### 5. Write code to make your test pass
-Make sure to commit your code periodically! Read [GitHub's commit guide](https://github.com/git-guides/git-commit) if you're not familiar with this process.
+### PostgreSQL
+- Installing PostgreSQL: [Mac](https://www.onlinetutorialspoint.com/mac/how-to-install-postgresql-on-mac.html) • [Windows](https://www.postgresqltutorial.com/install-postgresql/) • [Linux](https://www.postgresqltutorial.com/install-postgresql-linux/)
 
-### 6. Create a pull request
-If you are unfamiliar with creating a pull request from a fork, check out the [GitHub docs](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+### Ruby
+- [Installing Ruby](https://github.com/rbenv/rbenv)
 
-A maintainer will review your pull request and help you get it merged into the app!
+### Node
+- [Installing Node](https://github.com/nvm-sh/nvm#installing-and-updating) 
+- [Installing Yarn](https://classic.yarnpkg.com/en/docs/install/)
 
-## Reporting Issues
+### GitHub
+- [Forking and cloning a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+- [Working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks)
+- [Creating and deleting branches](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
+- [Commit guide](https://github.com/git-guides/git-commit)
+- [Creating a pull request from a fork](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
+
+## Reporting Issues 🐞
 
 To report a bug or request a new feature, please [open an issue](https://github.com/wnbrb/wnb-rb-site/issues/new).
