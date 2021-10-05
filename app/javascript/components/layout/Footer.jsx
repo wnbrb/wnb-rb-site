@@ -9,7 +9,7 @@ import 'stylesheets/footer';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Footer = () => (
-    <div className="footer">
+    <footer className="footer">
         <div className="footer-left">
             <div className="footer-col">
                 <p className="footer-col-item footer-col-title">WNB.rb Meetup</p>
@@ -84,7 +84,7 @@ const Footer = () => (
                 by WNB.rb community members.
             </p>
         </div>
-    </div>
+    </footer>
 );
 
 export default Footer;

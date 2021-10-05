@@ -9,7 +9,7 @@ import 'stylesheets/header';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Header = () => (
-    <div className="header">
+    <header className="header">
         <div className="left-header">
             <a href="/">
                 <Logo className={'wnb-logo'} />
@@ -32,7 +32,7 @@ const Header = () => (
                 </Button>
             </a>
         </div>
-    </div>
+    </header>
 );
 
 export default Header;

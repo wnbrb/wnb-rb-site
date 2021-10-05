@@ -8,7 +8,7 @@ import 'stylesheets/layout';
 const SharedLayout = ({ children }) => (
     <div className="layout">
         <Header />
-        <div className="body">{children}</div>
+        <main className="body">{children}</main>
         <Footer />
     </div>
 );
