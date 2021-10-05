@@ -4,7 +4,7 @@ import Home from 'components/pages/Home';
 
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.createElement('div');
-    body.style = 'height: 100%';
+    body.style = 'min-height: 100vh';
 
     ReactDOM.render(<Home />, document.body.appendChild(body));
 });

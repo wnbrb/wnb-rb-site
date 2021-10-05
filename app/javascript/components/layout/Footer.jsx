@@ -3,7 +3,7 @@ import Email from 'components/icons/Email';
 import LinkedIn from 'components/icons/LinkedIn';
 import Twitter from 'components/icons/Twitter';
 
-import 'stylesheets/footer';
+import 'stylesheets/footer.scss';
 
 /* TODO: re-enable this rule after all links are in place */
 /* eslint-disable jsx-a11y/anchor-is-valid */

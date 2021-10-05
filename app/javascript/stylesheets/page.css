@@ -6,4 +6,7 @@ body {
   font-family: Rubik;
   color: #4a4a4a;
   font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
