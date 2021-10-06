@@ -1,0 +1,47 @@
+.footer {
+    @apply container mx-auto max-w-6xl flex justify-between text-sm px-12 xl:px-0 py-8 md:py-20 flex-col md:flex-row border-t border-gray-100 md:border-t-0;
+    color: #676767;
+}
+
+.footer a {
+    @apply no-underline mb-4 md:mb-0;
+    color: inherit;
+}
+
+.footer a:hover {
+    @apply underline text-gray-700;
+}
+
+.footer .footer-left {
+    @apply flex flex-col md:flex-row justify-between;
+}
+
+.footer .footer-right {
+    @apply flex flex-col items-center md:items-end;
+}
+
+.footer .footer-col {
+    @apply flex flex-col mr-12 mb-5 md:mb-0;
+}
+
+.footer p.footer-col-title {
+    @apply font-semibold mb-4 md:mb-5;
+}
+
+.footer .footer-col-item {
+    @apply mb-4;
+}
+
+.footer .social-links {
+    @apply flex flex-row;
+}
+
+.footer .social-links .social-icon {
+    @apply h-5 ml-3;
+    fill: #676767;
+    max-height: 19px;
+}
+
+.footer p.made-with-love {
+    @apply m-0 mt-2;
+}

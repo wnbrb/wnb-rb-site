@@ -3,13 +3,13 @@ import Email from 'components/icons/Email';
 import LinkedIn from 'components/icons/LinkedIn';
 import Twitter from 'components/icons/Twitter';
 
-import 'stylesheets/footer';
+import 'stylesheets/footer.scss';
 
 /* TODO: re-enable this rule after all links are in place */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Footer = () => (
-    <div className="footer">
+    <footer className="footer">
         <div className="footer-left">
             <div className="footer-col">
                 <p className="footer-col-item footer-col-title">WNB.rb Meetup</p>
@@ -84,7 +84,7 @@ const Footer = () => (
                 by WNB.rb community members.
             </p>
         </div>
-    </div>
+    </footer>
 );
 
 export default Footer;
