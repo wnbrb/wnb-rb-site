@@ -2,9 +2,16 @@
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   border-radius: 0.2rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button.primary {
   background-color: #f37d7b;
+  color: white;
+}
+
+.button.secondary {
+  background-color: #4a4a4a;
   color: white;
 }
