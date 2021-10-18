@@ -19,7 +19,7 @@ const Header = () => (
 
             <a href="#">Archive</a>
 
-            <a href="#">Sponsor Us</a>
+            <a href="/sponsor-us">Sponsor Us</a>
         </div>
 
         <div className="right-header">
