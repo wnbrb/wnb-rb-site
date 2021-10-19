@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Rubies = ({ className }) => (
+const Ruby = ({ className }) => (
     <svg
         className={className}
         width="106"
@@ -121,8 +121,8 @@ const Rubies = ({ className }) => (
     </svg>
 );
 
-Rubies.propTypes = {
+Ruby.propTypes = {
     className: PropTypes.string,
 };
 
-export default Rubies;
+export default Ruby;
