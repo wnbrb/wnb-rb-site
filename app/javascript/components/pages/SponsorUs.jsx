@@ -83,5 +83,4 @@ const SponsorUs = () => {
         </SharedLayout>
     );
 };
-
 export default SponsorUs;
