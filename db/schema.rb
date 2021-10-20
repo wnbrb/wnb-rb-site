@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_10_17_192225) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
+
+  create_table "event_speakers", force: :cascade do |t|
+    t.string "talk_title"
+    t.text "talk_description"
+    t.text "talk_video_link"
+    t.bigint "speaker_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_speakers_on_event_id"
+    t.index ["speaker_id"], name: "index_event_speakers_on_speaker_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "location", default: "virtual"
+    t.text "description"
+    t.datetime "date"
+    t.string "type", null: false
+    t.text "panel_video_link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "speakers", force: :cascade do |t|
+    t.string "name"
+    t.text "bio"
+    t.string "tagline"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "event_speakers", "events"
+  add_foreign_key "event_speakers", "speakers"
 end
