@@ -1,5 +1,9 @@
 html,
 body {
+  @apply antialiased text-base;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'pnum';
+  font-variant-numeric: proportional-nums;
   padding: 0;
   margin: 0;
   height: 100%;
