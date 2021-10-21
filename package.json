@@ -4,6 +4,8 @@
     "dependencies": {
         "@babel/preset-react": "^7.14.5",
         "@fullhuman/postcss-purgecss": "^4.0.3",
+        "@headlessui/react": "^1.4.1",
+        "@heroicons/react": "^1.0.4",
         "@rails/actioncable": "^6.0.0",
         "@rails/activestorage": "^6.0.0",
         "@rails/ujs": "^6.0.0",
