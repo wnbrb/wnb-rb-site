@@ -5,6 +5,18 @@
 }
 
 .button.primary {
+  @apply transition-all text-white border border-transparent;
   background-color: #f37d7b;
-  color: white;
+}
+
+.button.primary:hover {
+  background-color: rgba(243, 125, 123, 0.1);
+  border-color: #f37d7d;
+  color: #f37d7b;
+}
+
+.button.primary:active,
+.button.primary:hover {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
 }
