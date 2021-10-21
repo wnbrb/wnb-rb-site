@@ -1,33 +1,102 @@
 .header {
-  padding: 3rem;
-  display: flex;
-  justify-content: space-between;
+  @apply relative
+    bg-white;
 }
 
-.header .left-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 400px;
+.header .header-container {
+  @apply flex
+    justify-between
+    items-center
+    px-4
+    py-6
+    sm:px-6
+    md:justify-start
+    md:space-x-10
 }
 
 .header .wnb-logo {
-  height: 2.5rem;
+  @apply h-10
 }
 
 .header a {
-  text-decoration: none;
-  color: inherit;
+  @apply block
+    no-underline
+    text-base
+    hover:text-gray-900
 }
 
 .header .join-wnb {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 7.3rem;
+  @apply flex
+    justify-between
+    items-center
+    w-28
+    my-0
+    mx-auto
 }
 
 .header .add-user-icon {
-  fill: white;
-  height: 1rem;
+  @apply h-4
+    fill-current
+    text-white
+}
+
+.header .header-menu-icon {
+  @apply bg-white
+    rounded-md
+    p-2
+    inline-flex
+    items-center
+    justify-center
+    text-gray-400
+    hover:text-gray-500
+    hover:bg-gray-100
+    focus:outline-none
+    focus:ring-2
+    focus:ring-inset
+    focus:ring-pink-100
+}
+
+.header .header-x-icon {
+  @apply rounded-md
+    p-2
+    inline-flex
+    items-center
+    justify-center
+    text-gray-400
+    hover:text-gray-500
+    hover:bg-gray-100
+    focus:outline-none
+    focus:ring-2
+    focus:ring-inset
+    focus:ring-pink-100
+}
+
+.header .header-nav {
+  @apply hidden
+    md:flex-1
+    md:flex
+    md:items-center
+    md:justify-between
+}
+
+.header .popover {
+  @apply absolute
+    top-0
+    inset-x-0
+    p-2
+    transition
+    transform
+    origin-top-right
+    md:hidden
+}
+
+.header .popover-container {
+  @apply rounded-lg
+    shadow-lg
+    ring-1
+    ring-black
+    ring-opacity-5
+    bg-white
+    divide-y-2
+    divide-gray-50
 }
