@@ -2,6 +2,8 @@
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   border-radius: 0.2rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button.primary {
@@ -19,4 +21,9 @@
 .button.primary:hover {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
+}
+
+.button.secondary {
+  background-color: #4a4a4a;
+  color: white;
 }
