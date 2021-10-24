@@ -3,6 +3,10 @@ AllCops:
   Exclude:
     - bin/bundle
     - db/schema.rb
+    - node_modules/**/*
 
 Style/Documentation:
   Enabled: false
+
+inherit_gem:
+  prettier: rubocop.yml
