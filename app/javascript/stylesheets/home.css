@@ -59,3 +59,15 @@
 .splash-background {
   @apply sm:w-full;
 }
+
+.listen {
+  @apply bg-wnbrb-pink
+    my-48;
+}
+
+.listen-background {
+  @apply w-4/5
+    my-0
+    mx-auto
+    py-12;
+}

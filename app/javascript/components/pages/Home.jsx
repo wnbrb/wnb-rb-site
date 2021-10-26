@@ -1,6 +1,7 @@
 import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
+import ListenBackground from 'components/icons/ListenBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import 'stylesheets/page';
@@ -18,7 +19,10 @@ const Home = () => (
             <div className="hero-right">
                 <SplashBackground className="splash-background" />
             </div>
-        </div>
+        </section>
+        <section className="listen">
+            <ListenBackground className="listen-background" />
+        </section>
     </SharedLayout>
 );
 
