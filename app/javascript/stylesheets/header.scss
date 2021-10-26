@@ -1,5 +1,5 @@
 header {
-    @apply w-full top-0 pt-4 pb-2 md:px-12 xl:px-0 bg-white border-b border-gray-100;
+    @apply w-full top-0 pt-4 pb-2 md:px-12 xl:px-0 bg-white border-b border-gray-100 z-10;
 
     .header {
         @apply bg-white container py-1 px-2 md:p-0  mx-auto max-w-6xl relative;
