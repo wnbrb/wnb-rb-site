@@ -1,17 +1,18 @@
 import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
+import PageTitle from 'components/PageTitle';
 import SponsorUsInfoCard from '../sponsor_us/SponsorUsInfoCard';
-import CTA from '../sponsor_us/CTA';
+import SponsorCTA from '../sponsor_us/SponsorCTA';
 import { sponsorCardData, infoCardData } from '../sponsor_us/sponsorUsData';
 import 'stylesheets/page';
+import 'stylesheets/home';
 import 'stylesheets/sponsor-us';
-
-console.log(sponsorCardData);
 
 const SponsorUs = () => {
     return (
         <SharedLayout>
+            <PageTitle text="Sponsor Us" />
             <div className="card-container flex flex-wrap justify-center">
                 {sponsorCardData.map((card) => {
                     return (
@@ -39,8 +40,7 @@ const SponsorUs = () => {
                     );
                 })}
             </div>
-
-            <CTA />
+            <SponsorCTA />
         </SharedLayout>
     );
 };
