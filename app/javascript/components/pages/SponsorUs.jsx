@@ -2,6 +2,7 @@ import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
 import SponsorUsInfoCard from '../sponsor_us/SponsorUsInfoCard';
+import CTA from '../sponsor_us/CTA';
 import { sponsorCardData, infoCardData } from '../sponsor_us/sponsorUsData';
 import 'stylesheets/page';
 import 'stylesheets/sponsor-us';
@@ -38,6 +39,8 @@ const SponsorUs = () => {
                     );
                 })}
             </div>
+
+            <CTA />
         </SharedLayout>
     );
 };
