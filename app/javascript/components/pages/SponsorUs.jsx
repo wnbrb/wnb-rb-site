@@ -12,7 +12,7 @@ console.log(sponsorCardData);
 const SponsorUs = () => {
     return (
         <SharedLayout>
-            <div className="flex flex-wrap justify-center">
+            <div className="card-container flex flex-wrap justify-center">
                 {sponsorCardData.map((card) => {
                     return (
                         <SponsorCard

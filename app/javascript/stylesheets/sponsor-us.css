@@ -1,11 +1,34 @@
 .ruby-color {
-    color: #993232;
+  color: #993232;
 }
 
 .emerald-color {
-    color: #45823f;
+  color: #45823f;
 }
 
 .saphire-color {
-    color: #485496;
+  color: #485496;
+}
+
+.contact-btn {
+  background-color: #4a4a4a;
+  color: white;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 52%;
+  left: 0;
+  top: 22%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff3f3;
+  z-index: -1;
 }

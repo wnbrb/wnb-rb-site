@@ -6,7 +6,7 @@ const SponsorCard = ({ type, text, amount, children }) => {
     return (
         <div
             className="container max-w-xs mx-3 p-4 my-3 border-gray-200 border rounded-md shadow-lg flex flex-col justify-between"
-            style={{ minHeight: '26rem' }}
+            style={{ minHeight: '26rem', backgroundColor: '#FFFFFF' }}
         >
             <div>
                 {children}
