@@ -8,7 +8,7 @@ const AboutUsSection = () => {
                 founded in 2021 by Jemma Issroff and Emily Giurleo with the goal of supporting a
                 more diverse group of people in making meaningful contributions to the Ruby world.
             </p>
-            <p className="m-2">
+            <p className="m-2 pt-4">
                 WNB.rb initiatives include a monthly meetup featuring two technical speakers, a
                 thriving Slack discussion space, a job interview preparation group, regular panels
                 on rotating topics, a conference proposal working group, and more!

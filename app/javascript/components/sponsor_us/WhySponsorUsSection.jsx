@@ -9,7 +9,7 @@ const WhySponsorUsSection = () => {
                 <li>Post open positions in the #jobs channel on WNB.rb’s Slack.</li>
                 <li>Your company’s name and logo featured on the WNB.rb website.</li>
             </ul>
-            <p className="m-2">
+            <p className="m-2 pt-4">
                 Have something else in mind? Please get in touch, and we’d be happy to discuss!,
             </p>
         </>
