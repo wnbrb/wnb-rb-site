@@ -1,0 +1,140 @@
+header {
+    @apply w-full top-0 pt-4 pb-2 md:px-12 xl:px-0 bg-white border-b border-gray-100;
+
+    .header {
+        @apply bg-white container py-1 px-2 md:p-0  mx-auto max-w-6xl relative;
+        min-height: 3.5rem;
+
+        .inner {
+            @apply flex flex-col md:flex-row;
+
+            .logo {
+                @apply overflow-hidden py-3 transition-all w-12 md:mr-12;
+
+                svg.wnb-logo {
+                    @apply cursor-pointer transition-all h-10;
+                }
+            }
+
+            nav.nav {
+                @apply hidden md:w-full md:flex;
+
+                @screen md {
+                    width: calc(100% - 2.5rem);
+                }
+
+                .menu {
+                    @apply items-start w-full md:flex md:content-center;
+
+                    @screen md {
+                        width: calc(100% - 3rem);
+                    }
+
+                    ul {
+                        @apply list-none m-0 p-0;
+
+                        li {
+                            @apply md:inline-block mr-12;
+                            a {
+                                @apply text-gray-600 block text-base font-normal leading-5 px-8 md:px-0 py-5 no-underline transition-all cursor-pointer hover:underline md:hover:no-underline;
+
+                                @screen md {
+                                    &::after {
+                                        @apply bg-white h-0.5 rounded-sm block relative top-0.5 transition-all;
+                                        content: '';
+                                    }
+
+                                    &:hover::after {
+                                        background-color: #f56960;
+                                    }
+                                }
+                            }
+
+                            &.is-active {
+                                a {
+                                    @apply text-gray-500 font-bold md:font-normal;
+
+                                    &::after {
+                                        background-color: #f56960;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                @apply mr-0;
+                            }
+                        }
+                    }
+                }
+                .user {
+                    @apply flex items-start content-between py-3 w-40;
+
+                    .join-us .join-wnb {
+                        @apply flex justify-between items-center transition-all w-28;
+
+                        .add-user-icon {
+                            @apply h-4 text-white fill-current;
+                        }
+                    }
+
+                    .button.primary {
+                        &:hover {
+                            .add-user-icon {
+                                color: #f56960;
+                            }
+                        }
+                    }
+                }
+
+                &.is-mobile-menu-open {
+                    @apply flex flex-col-reverse md:flex-row transition-all pb-5 md:pb-0 pt-3 sm:pt-0;
+
+                    .user {
+                        @apply w-full justify-center pt-0 md:items-start md:content-between md:py-3 md:w-40;
+
+                        .join-us .join-wnb {
+                            @apply w-60 justify-center flex-nowrap md:justify-center md:items-center md:w-28;
+
+                            .add-user-icon {
+                                @apply mr-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        button.hamburger {
+            @apply bg-none p-2 border-0 right-4 top-4 md:right-0 rounded-md cursor-pointer inline-block md:hidden absolute w-10 transition duration-500 ease-in-out hover:bg-gray-100;
+            min-height: 2.5rem;
+            span.bar {
+                @apply bg-gray-500 rounded-sm block transition-all;
+                height: 3px;
+                margin-bottom: 5px;
+            }
+
+            &.is-mobile-menu-open {
+                .bar {
+                    @apply first:m-0 even:opacity-0 last:m-0;
+                    &:first-child {
+                        -webkit-transform: rotate(45deg) translate3d(4px, 4px, 0);
+                        transform: rotate(45deg) translate3d(4px, 4px, 0);
+                    }
+
+                    &:nth-child(3) {
+                        -webkit-transform: rotate(-45deg) translate3d(4px, -4px, 0);
+                        transform: rotate(-45deg) translate3d(4px, -4px, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-mobile-menu-open {
+        @apply md:px-12 xl:px-0 shadow-md md:shadow-none;
+    }
+
+    &.is-fixed {
+        @apply bg-white fixed shadow-md;
+    }
+}
