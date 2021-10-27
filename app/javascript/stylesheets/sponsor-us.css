@@ -10,11 +10,6 @@
   color: #485496;
 }
 
-.contact-btn {
-  background-color: #4a4a4a;
-  color: white;
-}
-
 .card-container {
   position: relative;
 }
@@ -33,6 +28,51 @@
   z-index: -1;
 }
 
-.cta a {
+.sponsor-card {
+  @apply container
+    max-w-xs
+    mx-3
+    p-4 
+    my-3 
+    border-gray-200 
+    border 
+    rounded-md 
+    shadow-lg 
+    flex 
+    flex-col
+    justify-between;
+
+  min-height: 26rem;
+  background-color: #ffffff;
+}
+
+.sponsor-cta {
+  @apply flex justify-center;
+  background-color: #fff3f3;
+}
+
+.sponsor-cta .item-wrapper {
+  @apply container 
+    max-w-3xl 
+    rounded-lg 
+    shadow-lg
+    border-gray-200
+    border 
+    flex
+    flex-wrap
+    flex-col 
+    sm:flex-row
+    justify-between
+    items-center
+    px-2
+    sm:px-10 
+    py-4 
+    mx-3
+    my-7;
+
+  background-color: #ffffff;
+}
+
+.sponsor-cta a {
   width: 9rem;
 }
