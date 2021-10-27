@@ -42,3 +42,12 @@
   background-color: #485496;
   color: white;
 }
+
+.button.ruby:hover,
+.button.ruby:active,
+.button.emerald:hover,
+.button.emerald:active,
+.button.saphire:hover,
+.button.saphire:active {
+  opacity: 0.9;
+}
