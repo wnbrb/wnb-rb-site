@@ -62,12 +62,24 @@
 
 .listen {
   @apply bg-wnbrb-pink
-    my-48;
+    my-28
+    sm:my-48
+    relative;
 }
 
 .listen-background {
-  @apply w-4/5
+  @apply sm:w-4/5
     my-0
     mx-auto
     py-12;
 }
+
+.listen .podcast-tile {
+  top: 15%;
+  left: 5%;
+
+  @apply absolute
+    sm:top-1/3
+    sm:left-1/4;
+}
+
