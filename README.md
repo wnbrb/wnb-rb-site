@@ -20,6 +20,7 @@ Before you try to set up this app, make sure you have the following installed on
 - Ruby (3.0.2)
 - Node (16.3.0) + Yarn
 - Postgres (13.3)
+- [Foreman](https://github.com/ddollar/foreman) for managing multiple servers
 
 You must also fork and clone this repository.
 
@@ -75,7 +76,7 @@ Need some help contributing to our app? Check out the resources below for more i
 - [Installing Ruby](https://github.com/rbenv/rbenv)
 
 ### Node
-- [Installing Node](https://github.com/nvm-sh/nvm#installing-and-updating) 
+- [Installing Node](https://github.com/nvm-sh/nvm#installing-and-updating)
 - [Installing Yarn](https://classic.yarnpkg.com/en/docs/install/)
 
 ### GitHub
