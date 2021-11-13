@@ -9,7 +9,7 @@ RSpec.describe "Admin login system", type: :system do
   context "admin not logged in" do
 
     it "enables me to login to WNB.rb admin" do
-      visit "/admins/sessions/new"
+      visit "/admin"
 
       fill_in "Email", with: "admin@wnb.rb"
       fill_in "Password", with: "password"
@@ -19,17 +19,12 @@ RSpec.describe "Admin login system", type: :system do
     end
 
     it "enables me to register to WNB.rb as admin" do
-      visit "/admins/registrations/new"
+      visit "/admin/sign_up"
 
       fill_in "Email", with: "admin@wnb.rb"
       fill_in "Password", with: "password"
       fill_in "Confirm Password", with: "password"
       click_button "Register"
-
-      admin = Admin.find_by(email: "admin@wnb.rb")
-      token = admin.confirmation_token
-
-      visit "/admins/confirmation?confirmation_token=#{token}"
 
       expect(page).to have_text("successfully registered")
     end
@@ -39,9 +34,7 @@ RSpec.describe "Admin login system", type: :system do
   context "admin is logged in" do
 
     it "enables me to logout from WNB.rb admin" do
-      visit "/admins"
-
-      click_link "Log Out"
+      visit "/admin/sign_out"
 
       expect(page).to have_text("successfully logged out")
     end
@@ -49,7 +42,7 @@ RSpec.describe "Admin login system", type: :system do
   end
 
   it "enables me to reset WNB.rb admin password" do
-    visit "/admins/passwords/new"
+    visit "/admin/password/new"
 
     fill_in "Current Password", with: "password"
     fill_in "New Password", with: "password1"
