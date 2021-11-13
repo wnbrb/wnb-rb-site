@@ -1,0 +1,9 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<br/>
+
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>

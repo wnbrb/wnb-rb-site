@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations"}
-  as :user do
-    get '/' => 'devise/registrations#new'
+  devise_for :users, path: 'admin', path_names: { sign_in: '/', sign_up: 'new', registration: 'register' }
+  namespace :admin do
+    get 'dashboard', to: 'dashboard#show'
   end
-  namespace :api do
-    get 'admins/passwords'
-  end
+
   root 'site#home'
   namespace :api do
     resources :events, only: [:none] do

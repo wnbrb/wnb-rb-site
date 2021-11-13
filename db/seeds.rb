@@ -149,3 +149,12 @@ panel = Panel.create(
 
 panel.speakers = [kerstin, gabi, sylvia]
 panel.save
+
+p "Create an admin"
+
+User.create!(
+  name: "Admin",
+  email: "admin@wnb.rb",
+  password: "password",
+  password_confirmation: "password"
+)
