@@ -27,6 +27,7 @@
     },
     "version": "0.1.0",
     "devDependencies": {
+        "@prettier/plugin-ruby": "^2.0.0-rc4",
         "@typescript-eslint/eslint-plugin": "^4.31.1",
         "@typescript-eslint/parser": "^4.31.1",
         "eslint": "^7.32.0",

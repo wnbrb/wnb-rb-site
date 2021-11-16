@@ -20,23 +20,24 @@ Before you try to set up this app, make sure you have the following installed on
 - Ruby (3.0.2)
 - Node (16.3.0) + Yarn
 - Postgres (13.3)
+- [Foreman](https://github.com/ddollar/foreman) for managing multiple servers
 
 You must also fork and clone this repository.
 
 For help getting set up, refer to the [Contributor Resources](#contributor-resources-) section of this document.
 
-### 2. Install dependencies
-- To install Ruby dependencies, run: `bundle install`
-- To install JavaScript dependencies, run: `yarn install`
+### 2. Setup the repo
+To install dependencies and setup the database, run:
 
-### 3. Set up the database
-- `rails db:setup`
+```
+make setup
+```
 
-### 4. Run the tests
+### 3. Run the tests
 - To run the backend tests: `rspec`
 - To run the frontend tests: `yarn jest app/javascript`
 
-### 5. Start the server
+### 4. Start the server
 To start both the frontend and backend servers at the same time, run:
 
 ```
@@ -75,7 +76,7 @@ Need some help contributing to our app? Check out the resources below for more i
 - [Installing Ruby](https://github.com/rbenv/rbenv)
 
 ### Node
-- [Installing Node](https://github.com/nvm-sh/nvm#installing-and-updating) 
+- [Installing Node](https://github.com/nvm-sh/nvm#installing-and-updating)
 - [Installing Yarn](https://classic.yarnpkg.com/en/docs/install/)
 
 ### GitHub

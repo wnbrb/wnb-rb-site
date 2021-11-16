@@ -144,7 +144,7 @@ panel = Panel.create(
                Kerstin Puschke, Sylvia Fronczak, and Gabi Stefanini
                will answer YOUR questions about everything from CFPs,
                to making slides, to delivering technical talks!",
-  date: DateTime.new(2021, 8, 31, 16).utc
+  date: DateTime.new(2021, 7, 31, 16).utc
 )
 
 panel.speakers = [kerstin, gabi, sylvia]
