@@ -31,14 +31,14 @@ RSpec.describe Api::EventsController, type: :controller do #rubocop:disable Metr
       Meetup.create(title: 'August event', location: 'virtual', date: DateTime.new(2021, 8, 1))
     end
     
-    it 'correctly renders events for a given month' do
+    it 'returns one event for a given month' do
       get :past_by_month, params: {year: '2021', month: '8'}
       expect(response).to have_http_status(200)
       body = JSON.parse(response.body)
-      expect(body['data'].map{ |item| item['title'] }).to eq(['August event'])
+      expect(body['data']['title']).to eq('August event')
     end
 
-    it 'returns a 404 when no events exist for that month' do
+    it 'returns a 404 when no event exists for that month' do
       get :past_by_month, params: {year: '2021', month: '11'}
       expect(response).to have_http_status(404)
     end

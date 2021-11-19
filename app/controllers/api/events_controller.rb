@@ -9,11 +9,11 @@ module Api
 
     def past_by_month
       event_date = DateTime.new(params[:year].to_i, params[:month].to_i)
-      events = Event.where(date: event_date..event_date.end_of_month)
-      if events.empty?
-        render status: 404, json: {data: 'No events found'}
+      event = Event.where(date: event_date..event_date.end_of_month).first
+      if event.present?
+        render status: 200, json: {data: event.as_json}
       else
-        render status: 200, json: {data: events.as_json}
+        render status: 404, json: {data: 'No events found'}
       end
     end
   end
