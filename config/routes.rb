@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :events, only: [:none] do
       collection do
         get 'past'
+        get '/:year/:month', to: 'events#past_by_month'
       end
     end
   end
