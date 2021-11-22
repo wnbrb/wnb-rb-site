@@ -1,0 +1,78 @@
+.ruby-color {
+  color: #993232;
+}
+
+.emerald-color {
+  color: #45823f;
+}
+
+.saphire-color {
+  color: #485496;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 52%;
+  left: 0;
+  top: 22%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff3f3;
+  z-index: -1;
+}
+
+.sponsor-card {
+  @apply container
+    max-w-xs
+    mx-3
+    p-4 
+    my-3 
+    border-gray-200 
+    border 
+    rounded-md 
+    shadow-lg 
+    flex 
+    flex-col
+    justify-between;
+
+  min-height: 26rem;
+  background-color: #ffffff;
+}
+
+.sponsor-cta {
+  @apply flex justify-center;
+  background-color: #fff3f3;
+}
+
+.sponsor-cta .item-wrapper {
+  @apply container 
+    max-w-3xl 
+    rounded-lg 
+    shadow-lg
+    border-gray-200
+    border 
+    flex
+    flex-wrap
+    flex-col 
+    sm:flex-row
+    justify-between
+    items-center
+    px-2
+    sm:px-10 
+    py-4 
+    mx-3
+    my-7;
+
+  background-color: #ffffff;
+}
+
+.sponsor-cta a {
+  width: 9rem;
+}
