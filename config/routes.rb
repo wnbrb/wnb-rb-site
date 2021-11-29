@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   get '/sponsor-us', to: 'site#sponsor_us'
+  get '/meetups', to: 'site#meetups'
 
   root 'site#home'
   namespace :api do
