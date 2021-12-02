@@ -1,0 +1,8 @@
+/* .timeline:first-of-type {
+  background-color: red;
+} */
+
+ul.card-list > li:first-of-type .timeline {
+  margin-top: 20px;
+  /* background-color: red; */
+}
