@@ -1,7 +1,8 @@
+import { yearFromUTC } from '../utils/time';
+
 export const meetupsByYear = (meetups = []) =>
     meetups.reduce((acc, meetup) => {
-        const date = new Date(meetup.date);
-        const year = date.getFullYear();
+        const year = yearFromUTC(meetup);
         if (acc[year]) {
             acc[year].push(meetup);
         } else {

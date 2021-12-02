@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPastMeetups } from '../../datasources';
+import { monthFromUTC } from '../../utils/time';
 import { meetupsByYear } from '../../models/meetup';
 import SharedLayout from 'components/layout/SharedLayout';
 import PageTitle from 'components/PageTitle';
@@ -22,7 +23,7 @@ YearSection.propTypes = {
 const MeetupDetails = ({ meetup }) => (
     <>
         <h3 className="py-1 px-2 w-min border-2 border-red-400 rounded uppercase text-md text-red-400">
-            August
+            {monthFromUTC(meetup)}
         </h3>
         <div className="flex-1 rounded shadow-lg w-full md:max-w-prose">
             <div className="p-12">
@@ -67,7 +68,7 @@ const Meetups = () => {
                                   {meetups.map((meetup) => {
                                       return (
                                           <li
-                                              key={meetup.id} // month
+                                              key={monthFromUTC(meetup)} // month
                                               className="flex flex-col items-start md:flex-row"
                                           >
                                               <MeetupDetails meetup={meetup} />
