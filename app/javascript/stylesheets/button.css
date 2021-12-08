@@ -27,3 +27,27 @@
   background-color: #4a4a4a;
   color: white;
 }
+
+.button.ruby {
+  background-color: #993232;
+  color: white;
+}
+
+.button.emerald {
+  background-color: #45823f;
+  color: white;
+}
+
+.button.saphire {
+  background-color: #485496;
+  color: white;
+}
+
+.button.ruby:hover,
+.button.ruby:active,
+.button.emerald:hover,
+.button.emerald:active,
+.button.saphire:hover,
+.button.saphire:active {
+  opacity: 0.9;
+}

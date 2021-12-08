@@ -1,31 +1,20 @@
 import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
-import RubyOutline from 'components/icons/RubyOutline';
 import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
-
+import PageTitle from 'components/PageTitle';
 import 'stylesheets/page';
 import 'stylesheets/home';
 
 const Home = () => (
     <SharedLayout>
         <div className="hero">
-            <div className="hero-left">
-                <RubyOutline className="ruby-outline" />
-
-                <div className="hero-cta">
-                    <h1>WNB.rb</h1>
-                    <p>A virtual community for women and non-binary Rubyists.</p>
-                    <a
-                        href="https://tinyurl.com/join-wnb-rb"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                    >
-                        <Button type="secondary">Join WNB.rb</Button>
-                    </a>
-                </div>
-            </div>
-
+            <PageTitle text="WNB.rb">
+                <p>A virtual community for women and non-binary Rubyists.</p>
+                <a href="https://tinyurl.com/join-wnb-rb" target="_blank" rel="noreferrer noopener">
+                    <Button type="secondary">Join WNB.rb</Button>
+                </a>
+            </PageTitle>
             <div className="hero-right">
                 <SplashBackground className="splash-background" />
             </div>
