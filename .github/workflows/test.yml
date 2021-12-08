@@ -25,10 +25,8 @@ jobs:
           bundler-cache: true
       - name: Install Bundler
         run: gem install bundler:2.1.4
-      - name: Install Rubocop
-        run: gem install rubocop
-      - name: Install Prettier
-        run: gem install prettier
+      - name: Install gems
+        run: gem install rubocop rubocop-discourse prettier
       - name: Install Node
         uses: actions/setup-node@v1
         with:
