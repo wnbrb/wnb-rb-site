@@ -27,6 +27,8 @@ jobs:
         run: gem install bundler:2.1.4
       - name: Install Rubocop
         run: gem install rubocop
+      - name: Install Prettier
+        run: gem install prettier
       - name: Install Node
         uses: actions/setup-node@v1
         with:
