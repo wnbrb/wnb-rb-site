@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Ruby
-        uses: actions/setup-ruby@v1
+        uses: actions/setup-ruby
         with:
           ruby-version: 3.0.2
       - name: Install Bundler
