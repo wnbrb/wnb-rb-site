@@ -30,7 +30,7 @@ const Home = () => (
                 <SplashBackground className="splash-background" />
             </div>
         </div>
-        <section className="podcast relative">
+        <section className="podcast">
             <PodcastTile podcast={podcast} />
         </section>
     </SharedLayout>
