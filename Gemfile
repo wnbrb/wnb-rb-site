@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
+gem 'devise'
 
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
@@ -18,6 +19,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
   # Necessary for tests to pass: https://github.com/rails/rails/issues/41502
+  gem 'pry-rails'
   gem 'rexml', '~> 3.2.5'
 end
 
@@ -32,6 +34,7 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

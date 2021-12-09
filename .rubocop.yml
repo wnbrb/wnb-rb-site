@@ -8,6 +8,10 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
 
 inherit_gem:
   prettier: rubocop.yml

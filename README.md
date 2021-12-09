@@ -17,6 +17,7 @@ All contributors to this repository must follow the [WNB.rb code of conduct](htt
 ## Getting Started 🏁
 
 Before you try to set up this app, make sure you have the following installed on your machine:
+
 - Ruby (3.0.2)
 - Node (16.3.0) + Yarn
 - Postgres (13.3)
@@ -27,6 +28,7 @@ You must also fork and clone this repository.
 For help getting set up, refer to the [Contributor Resources](#contributor-resources-) section of this document.
 
 ### 2. Setup the repo
+
 To install dependencies and setup the database, run:
 
 ```
@@ -34,10 +36,12 @@ make setup
 ```
 
 ### 3. Run the tests
+
 - To run the backend tests: `rspec`
 - To run the frontend tests: `yarn jest app/javascript`
 
 ### 4. Start the server
+
 To start both the frontend and backend servers at the same time, run:
 
 ```
@@ -58,10 +62,12 @@ This may be helpful for debugging, but generally should not be necessary.
 ## Contributing 🤝
 
 ### 1. Assign yourself an issue from our [Issues](https://github.com/wnbrb/wnb-rb-site/issues/new) tab
+
 - Check out the [`good first issue`](https://github.com/wnbrb/wnb-rb-site/labels/good%20first%20issue) tag if you're just getting started!
 - If you want to work on something that isn't listed in our Issues, please [create a new issue](https://github.com/wnbrb/wnb-rb-site/issues/new/choose).
 
 ### 2. Write your code and create a pull request
+
 - Note that your pull request may require one or more tests. Tests are required for almost all backend changes, and all frontend logic-related changes. Style or copy changes do not require you to write a test.
 - For a style or copy change, please provide side-by-side screenshots showing how the app looks before and after your changes.
 
@@ -70,16 +76,20 @@ This may be helpful for debugging, but generally should not be necessary.
 Need some help contributing to our app? Check out the resources below for more information about installing and using various third-party tools.
 
 ### PostgreSQL
+
 - Installing PostgreSQL: [Mac](https://www.onlinetutorialspoint.com/mac/how-to-install-postgresql-on-mac.html) • [Windows](https://www.postgresqltutorial.com/install-postgresql/) • [Linux](https://www.postgresqltutorial.com/install-postgresql-linux/)
 
 ### Ruby
+
 - [Installing Ruby](https://github.com/rbenv/rbenv)
 
 ### Node
+
 - [Installing Node](https://github.com/nvm-sh/nvm#installing-and-updating)
 - [Installing Yarn](https://classic.yarnpkg.com/en/docs/install/)
 
 ### GitHub
+
 - [Forking and cloning a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 - [Working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks)
 - [Creating and deleting branches](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)

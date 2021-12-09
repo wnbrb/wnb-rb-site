@@ -2,7 +2,7 @@
 
 require './spec/rails_helper'
 
-RSpec.describe Api::EventsController, type: :controller do #rubocop:disable Metrics/BlockLength
+RSpec.describe Api::EventsController, type: :controller do
   before do
     Meetup.destroy_all
   end
