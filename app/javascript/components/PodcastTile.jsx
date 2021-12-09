@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import 'stylesheets/podcast_tile';
+import 'stylesheets/podcast-tile';
 
 const PodcastTile = ({ podcast }) => (
     <div className="podcast-tile">

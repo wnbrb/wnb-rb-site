@@ -60,21 +60,21 @@
   @apply sm:w-full;
 }
 
-.listen {
+.podcast {
   @apply bg-wnbrb-pink
     my-28
     sm:my-48
     relative;
 }
 
-.listen-background {
+.podcast-background {
   @apply sm:w-4/5
     my-0
     mx-auto
-    py-12;
+    py-20;
 }
 
-.listen .podcast-tile {
+.podcast .podcast-tile {
   top: 15%;
   left: 5%;
 

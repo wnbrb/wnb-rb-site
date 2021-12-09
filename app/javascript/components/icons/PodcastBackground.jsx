@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListenBackground = ({ className }) => (
+const PodcastBackground = ({ className }) => (
     <svg
         className={className}
         viewBox="0 0 1282 200"
@@ -383,8 +383,8 @@ const ListenBackground = ({ className }) => (
     </svg>
 );
 
-ListenBackground.propTypes = {
+PodcastBackground.propTypes = {
     className: PropTypes.string,
 };
 
-export default ListenBackground;
+export default PodcastBackground;

@@ -1,7 +1,7 @@
 import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
-import ListenBackground from 'components/icons/ListenBackground';
+import PodcastBackground from 'components/icons/PodcastBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
@@ -30,9 +30,9 @@ const Home = () => (
             <div className="hero-right">
                 <SplashBackground className="splash-background" />
             </div>
-        </section>
-        <section className="listen">
-            <ListenBackground className="listen-background" />
+        </div>
+        <section className="podcast">
+            <PodcastBackground className="podcast-background" />
             <PodcastTile podcast={podcast} />
         </section>
     </SharedLayout>
