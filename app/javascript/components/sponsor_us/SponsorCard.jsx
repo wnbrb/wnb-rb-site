@@ -20,9 +20,12 @@ const SponsorCard = ({ type, amount, returns, children }) => {
                 </ul>
             </div>
             <div className="flex flex-col">
-                <p className={`mx-2 my-3 text-3xl font-medium ${type.toLowerCase()}-color`}>
-                    ${amount}
-                </p>
+                <div className="flex flex-row items-end my-3">
+                    <p className={`mx-2 text-3xl font-medium ${type.toLowerCase()}-color`}>
+                        ${amount}
+                    </p>
+                    <p className={`font-small`}>/ 6 months</p>
+                </div>
                 <a className="place-self-start m-2" href="mailto: womennonbinary.rb@gmail.com">
                     <Button type={`${type.toLowerCase()} justify-center`}>
                         Become {type === 'Emerald' ? 'an' : 'a'} {type} sponsor
