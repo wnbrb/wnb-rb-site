@@ -1,10 +1,22 @@
 import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
+import PodcastBackground from 'components/icons/PodcastBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
+import PodcastTile from 'components/PodcastTile';
+
 import 'stylesheets/page';
 import 'stylesheets/home';
+
+import PodcastImage from 'images/podcast-cover.png';
+
+let podcast = {
+    tile_image: PodcastImage,
+    tile_image_alt: 'Ruby on Rails Podcast',
+    title: 'Ruby on Rails Podcast',
+    url: '/',
+};
 
 const Home = () => (
     <SharedLayout>
@@ -19,6 +31,10 @@ const Home = () => (
                 <SplashBackground className="splash-background" />
             </div>
         </div>
+        <section className="podcast">
+            <PodcastBackground className="podcast-background" />
+            <PodcastTile podcast={podcast} />
+        </section>
     </SharedLayout>
 );
 

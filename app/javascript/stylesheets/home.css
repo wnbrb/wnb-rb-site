@@ -59,3 +59,27 @@
 .splash-background {
   @apply sm:w-full;
 }
+
+.podcast {
+  @apply bg-wnbrb-pink
+    my-28
+    sm:my-48
+    relative;
+}
+
+.podcast-background {
+  @apply sm:w-4/5
+    my-0
+    mx-auto
+    py-20;
+}
+
+.podcast .podcast-tile {
+  top: 15%;
+  left: 5%;
+
+  @apply absolute
+    sm:top-1/3
+    sm:left-1/4;
+}
+
