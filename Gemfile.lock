@@ -271,8 +271,8 @@ DEPENDENCIES
   factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  prettier (~> 2.0)
   pg
+  prettier (~> 2.0)
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
