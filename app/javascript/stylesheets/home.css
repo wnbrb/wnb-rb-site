@@ -5,18 +5,18 @@
     mx-auto
     sm:pt-10
     sm:flex
-    sm:max-w-6xl
+    sm:max-w-6xl;
 }
 
 .hero-left {
   @apply relative
     pb-32
     sm:pt-10
-    sm:flex-1
+    sm:flex-1;
 }
 
 .ruby-outline {
-  @apply w-48
+  @apply w-48;
 }
 
 .hero-cta {
@@ -26,7 +26,7 @@
     left-20
     w-min
     sm:top-24
-    sm:left-24
+    sm:left-24;
 }
 
 .hero-cta h1 {
@@ -43,19 +43,19 @@
   @apply tracking-wider
     w-60
     sm:w-80
-    sm:text-base
+    sm:text-base;
 }
 
 .hero-cta a {
   @apply block
     text-lg
-    w-56
+    w-56;
 }
 
 .hero-right {
-  @apply sm:w-1/2
+  @apply sm:w-1/2;
 }
 
 .splash-background {
-  @apply sm:w-full
+  @apply sm:w-full;
 }

@@ -19,11 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.2
+          bundler-cache: true
       - name: Install Bundler
         run: gem install bundler:2.1.4
+      - name: Install gems
+        run: gem install rubocop rubocop-discourse prettier
       - name: Install Node
         uses: actions/setup-node@v1
         with:
@@ -42,3 +45,7 @@ jobs:
         run: bundle exec rspec
       - name: Run JavaScript unit tests
         run: yarn jest app/javascript
+      - name: Run Rubocop
+        run: rubocop --force-exclusion
+      - name: Run ESLint
+        run: yarn run eslint app/javascript --ext .js,.jsx

@@ -62,6 +62,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.1)
@@ -119,7 +120,11 @@ GEM
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parallel (1.21.0)
+    parser (3.0.2.0)
+      ast (~> 2.4.1)
     pg (1.2.3)
+    prettier (2.0.0)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -162,6 +167,7 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
+    rainbow (3.0.0)
     rake (13.0.6)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
@@ -187,7 +193,19 @@ GEM
       rspec-expectations (~> 3.10)
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
-    rspec-support (3.10.3)
+    rspec-support (3.10.2)
+    rubocop (1.22.3)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.12.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.13.0)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -214,11 +232,9 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -243,6 +259,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
+  x86_64-darwin-19
   x86_64-darwin-20
   x86_64-linux
 
@@ -254,6 +271,7 @@ DEPENDENCIES
   factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  prettier (~> 2.0)
   pg
   pry-rails
   puma (~> 5.0)
@@ -261,10 +279,10 @@ DEPENDENCIES
   rails (~> 6.1.4)
   rexml (~> 3.2.5)
   rspec-rails
+  rubocop (~> 1.22)
   sass-rails (>= 6)
   selenium-webdriver
   spring
-  turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers

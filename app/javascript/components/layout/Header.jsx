@@ -64,7 +64,7 @@ const Header = () => {
                                     <a href="/">Archive</a>
                                 </li>
                                 <li>
-                                    <a>Sponsor Us</a>
+                                    <a href="/sponsor-us"> Sponsor Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -99,5 +99,4 @@ const Header = () => {
         </header>
     );
 };
-
 export default Header;
