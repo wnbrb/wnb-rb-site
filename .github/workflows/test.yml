@@ -40,7 +40,7 @@ jobs:
           cp config/database.github.yml config/database.yml
           bundle exec rails db:create
           bundle exec rails db:migrate
-          yarn
+          yarn --frozen-lockfile
       - name: Run Ruby unit tests
         run: bundle exec rspec
       - name: Run JavaScript unit tests
