@@ -19,8 +19,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
   # Necessary for tests to pass: https://github.com/rails/rails/issues/41502
-  gem 'rexml', '~> 3.2.5'
   gem 'pry-rails'
+  gem 'rexml', '~> 3.2.5'
 end
 
 group :development do
@@ -34,9 +34,9 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'factory_bot_rails'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

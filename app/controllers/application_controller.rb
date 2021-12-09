@@ -8,15 +8,17 @@ class ApplicationController < ActionController::Base
 
     protected
 
-    def after_sign_in_path_for(users)
+    def after_sign_in_path_for(_users)
       admin_dashboard_path
     end
 
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :remember_me) }
+      devise_parameter_sanitizer.permit(:sign_up) do |u|
+ u.permit(:name, :email, :password, :password_confirmation, :remember_me) end
       devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:email, :password, :remember_me) }
-      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit( :name, :email, :password, :password_confirmation, :current_password) }
+      devise_parameter_sanitizer.permit(:account_update) do |u|
+ u.permit( :name, :email, :password, :password_confirmation, :current_password) end
     end
 
   end

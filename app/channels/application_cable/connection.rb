@@ -11,12 +11,15 @@ module ApplicationCable
 
     protected
 
-    def find_verified_user # this checks whether a user is authenticated with devise
+    # this checks whether a user is authenticated with devise
+    # rubocop:disable Lint/AssignmentInCondition
+    def find_verified_user
       if verified_user = env['warden'].user
         verified_user
       else
         reject_unauthorized_connection
       end
     end
+    # rubocop:enable Lint/AssignmentInCondition
   end
 end
