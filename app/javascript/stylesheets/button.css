@@ -38,8 +38,13 @@
   color: white;
 }
 
-.button.saphire {
+.button.sapphire {
   background-color: #485496;
+  color: white;
+}
+
+.button.opal {
+  background-color: #909090;
   color: white;
 }
 
@@ -47,7 +52,7 @@
 .button.ruby:active,
 .button.emerald:hover,
 .button.emerald:active,
-.button.saphire:hover,
-.button.saphire:active {
+.button.sapphire:hover,
+.button.sapphire:active {
   opacity: 0.9;
 }
