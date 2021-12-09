@@ -15,7 +15,7 @@ let podcast = {
     tile_image: PodcastImage,
     tile_image_alt: 'Ruby on Rails Podcast',
     title: 'Ruby on Rails Podcast',
-    url: '/',
+    url: 'https://www.therubyonrailspodcast.com/373',
 };
 
 const Home = () => (
