@@ -1,13 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
-  devise_for :users, path: 'admin', path_names: { sign_in: '/', sign_up: 'new', registration: 'register' }
+  devise_for :users,
+             path: 'admin',
+             path_names: {
+               sign_in: '/',
+               sign_up: 'new',
+               registration: 'register',
+             }
   namespace :admin do
     get 'dashboard', to: 'dashboard#show'
   end
   get '/sponsor-us', to: 'site#sponsor_us'
-
 
   root 'site#home'
   namespace :api do
@@ -18,6 +22,11 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :admin do
+    resources :events, only: [:index]
+  end
+
   mount ActionCable.server => '/cable'
   resources :grid
 end
