@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 const MONTH_NAMES = [
     'January',
     'February',
@@ -15,6 +13,4 @@ const MONTH_NAMES = [
     'December',
 ];
 
-export const yearFromUTC = ({ date = '' }) => (date ? dayjs(date).year() : '');
-
-export const monthFromUTC = ({ date = '' }) => (date ? MONTH_NAMES[dayjs(date).month()] : '');
+export const monthNameFromNumber = (number) => MONTH_NAMES[number - 1];
