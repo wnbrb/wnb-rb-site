@@ -4,7 +4,11 @@ module Api
   class EventsController < ApplicationController
     def past
       events = Event.where('date < ?', DateTime.current).order(date: :desc)
-      render status: 200, json:  { data: events.as_json }
+      events_by_date = events.group_by { |event| event.date.year }.transform_values do |events_by_year|
+        events_by_year.group_by { |event| event.date.month }
+      end
+
+      render status: 200, json:  { data: events_by_date.as_json }
     end
 
     def past_by_month
