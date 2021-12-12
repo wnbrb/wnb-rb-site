@@ -1,8 +1,26 @@
-/* .timeline:first-of-type {
-  background-color: red;
-} */
+.meetups__month:first-of-type > .meetups__card--border {
+  margin-top: 30px;
+}
 
-ul.card-list > li:first-of-type .timeline {
-  margin-top: 20px;
-  /* background-color: red; */
+.meetups__month:last-of-type > .meetups__card--border {
+  align-self: flex-start;
+  line-height: 0;
+}
+
+.meetups__card--border::before {
+  display: block;
+  position: relative;
+  left: -10px;
+  top: 5px;
+  font-size: 50px;
+  color: #d1d5db;
+  content: '•';
+}
+
+.meetups__month:first-of-type > .meetups__card--border::before {
+  top: -28px;
+}
+
+.meetups__month:last-of-type > .meetups__card--border::before {
+  top: 14px;
 }
