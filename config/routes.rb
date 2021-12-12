@@ -21,6 +21,8 @@ Rails.application.routes.draw do
         get '/:year/:month', to: 'events#past_by_month'
       end
     end
+
+    resources :jobs, only: [:index]
   end
 
   namespace :admin do
