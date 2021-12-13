@@ -24,6 +24,11 @@ Rails.application.routes.draw do
 
     resources :jobs, only: [:index]
   end
+
+  namespace :admin do
+    resources :events, only: [:index]
+  end
+
   mount ActionCable.server => '/cable'
   resources :grid
 end
