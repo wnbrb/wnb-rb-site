@@ -29,9 +29,9 @@ const MonthSection = ({ children, month }) => (
         <div className="meetups__card--border hidden w-px self-stretch mx-6 border-l border-gray-200 md:block" />
         <div className="meetups__card flex flex-col pb-12 w-full md:w-9/12 md:pb-24">
             <div className="w-full rounded shadow-lg border-t border-gray-100 overflow-hidden">
-                <ul className="p-4 md:p-12">{children}</ul>
+                <ul className="p-4 flex flex-col gap-y-10 md:p-12 md:gap-y-14">{children}</ul>
                 <div className="bg-gray-200 text-right">
-                    <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-md md:text-2xl">
+                    <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-2xl">
                         View
                     </button>
                 </div>
@@ -43,6 +43,28 @@ const MonthSection = ({ children, month }) => (
 MonthSection.propTypes = {
     month: PropTypes.string,
     children: PropTypes.node,
+};
+
+const Meetup = ({ speakers, title = '', description = '' }) => (
+    <li>
+        <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">{title}</h4>
+        {speakers.map(({ id, name, tagline }) => (
+            <div key={id} className="flex align-start mb-4 text-lg">
+                <div className="mr-4 w-16 h-16 flex-none rounded-full bg-gray-400"></div>
+                <div>
+                    <p className="font-bold text-gray md:text-lg">{name}</p>
+                    <p className="text-sm text-gray md:text-lg">{tagline}</p>
+                </div>
+            </div>
+        ))}
+        <p className="text-lg">{description}</p>
+    </li>
+);
+
+Meetup.propTypes = {
+    speakers: PropTypes.array,
+    title: PropTypes.string,
+    description: PropTypes.string,
 };
 
 const Meetups = () => {
@@ -71,15 +93,18 @@ const Meetups = () => {
                                               key={month_number}
                                               month={monthNameFromNumber(month_number)}
                                           >
-                                              {meetups.map((meetup) => {
-                                                  return (
-                                                      <li key={meetup.id}>
-                                                          <h4 className="text-xl font-bold">
-                                                              {meetup.title}
-                                                          </h4>
-                                                      </li>
-                                                  );
-                                              })}
+                                              {meetups.map(
+                                                  ({ id, speakers, title, description }) => {
+                                                      return (
+                                                          <Meetup
+                                                              key={id}
+                                                              speakers={speakers}
+                                                              title={title}
+                                                              description={description}
+                                                          />
+                                                      );
+                                                  },
+                                              )}
                                           </MonthSection>
                                       );
                                   })}
