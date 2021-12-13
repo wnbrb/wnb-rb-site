@@ -48,15 +48,17 @@ MonthSection.propTypes = {
 const Meetup = ({ speakers, title = '', description = '' }) => (
     <li>
         <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">{title}</h4>
-        {speakers.map(({ id, name, tagline }) => (
-            <div key={id} className="flex align-start mb-4 text-lg">
-                <div className="mr-4 w-16 h-16 flex-none rounded-full bg-gray-400"></div>
-                <div>
-                    <p className="font-bold text-gray md:text-lg">{name}</p>
-                    <p className="text-sm text-gray md:text-lg">{tagline}</p>
-                </div>
-            </div>
-        ))}
+        {speakers.length > 0
+            ? speakers.map(({ id, name, tagline }) => (
+                  <div key={id} className="flex align-start mb-4 text-lg">
+                      <div className="mr-4 w-16 h-16 flex-none rounded-full bg-gray-400"></div>
+                      <div>
+                          <p className="font-bold text-gray md:text-lg">{name}</p>
+                          <p className="text-sm text-gray md:text-lg">{tagline}</p>
+                      </div>
+                  </div>
+              ))
+            : null}
         <p className="text-lg">{description}</p>
     </li>
 );
@@ -68,12 +70,12 @@ Meetup.propTypes = {
 };
 
 const Meetups = () => {
-    const [meetups, setMeetups] = useState({});
+    const [meetupsByYear, setMeetupsByYear] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPastMeetups();
-            setMeetups(data);
+            setMeetupsByYear(Object.entries(data));
         };
 
         fetchData();
@@ -83,11 +85,11 @@ const Meetups = () => {
         <SharedLayout>
             <PageTitle text="Past Meetups" />
             <div className="container mx-auto max-w-6xl px-6 md:px-44 lg:mx-0">
-                {Object.entries(meetups).length > 0
-                    ? Object.entries(meetups).map(([year, meetups]) => {
+                {meetupsByYear.length > 0
+                    ? meetupsByYear.map(([year, meetupsByMonth]) => {
                           return (
                               <YearSection key={year} year={year}>
-                                  {Object.entries(meetups).map(([month_number, meetups]) => {
+                                  {Object.entries(meetupsByMonth).map(([month_number, meetups]) => {
                                       return (
                                           <MonthSection
                                               key={month_number}
