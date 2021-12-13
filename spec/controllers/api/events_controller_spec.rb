@@ -7,11 +7,16 @@ RSpec.describe Api::EventsController, type: :controller do #rubocop:disable Metr
     Meetup.destroy_all
   end
 
+  #rubocop:disable Metrics/BlockLength
   describe 'GET #past' do
     before do
-      Meetup.create(title: 'July Meetup', location: 'virtual', date: DateTime.new(2021, 7, 31, 16).utc)
+      july_meetup = Meetup.create(title: 'July Meetup', location: 'virtual', date: DateTime.new(2021, 7, 31, 16).utc)
       Meetup.create(title: 'August Meetup', location: 'virtual', date: DateTime.new(2021, 8, 31, 16).utc)
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now + 1.week)
+
+      speaker = Speaker.create(name: 'Speaker Name', tagline: 'Software Developer', bio: 'Lorem Ipsum')
+      EventSpeaker.create( event: july_meetup, speaker: speaker, talk_title: 'Some talk title',
+talk_description: 'Lorem Ipsum')
     end
 
     it 'correctly gets past events' do
@@ -22,17 +27,25 @@ RSpec.describe Api::EventsController, type: :controller do #rubocop:disable Metr
       expect(body['data']['2021'].count).to eq(2)
     end
 
-    it 'renders events in the correct format' do
+    it 'renders events by year and month' do
       get :past
       body = JSON.parse(response.body)
-
       july_meetup = body['data']['2021']['7'].first
       expect(july_meetup['title']).to eq('July Meetup')
 
       august_meetup = body['data']['2021']['8'].first
       expect(august_meetup['title']).to eq('August Meetup')
     end
+
+    it 'includes speaker data' do
+      get :past
+      body = JSON.parse(response.body)
+
+      july_meetup = body['data']['2021']['7'].first
+      expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
+    end
   end
+  #rubocop:enable Metrics/BlockLength
 
   describe 'GET #past_by_month' do
     before do

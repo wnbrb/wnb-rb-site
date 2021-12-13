@@ -8,7 +8,7 @@ module Api
         events_by_year.group_by { |event| event.date.month }
       end
 
-      render status: 200, json:  { data: events_by_date.as_json }
+      render status: 200, json:  { data: events_by_date.as_json(include: :speakers) }
     end
 
     def past_by_month
