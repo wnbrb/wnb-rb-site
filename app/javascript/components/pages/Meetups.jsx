@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPastMeetups } from '../../datasources';
-import { monthNameFromNumber } from '../../utils/time';
 import SharedLayout from 'components/layout/SharedLayout';
 import PageTitle from 'components/PageTitle';
 import 'stylesheets/page';
@@ -86,12 +85,9 @@ const Meetups = () => {
                     ? meetupsByYear.map(([year, meetupsByMonth]) => {
                           return (
                               <YearSection key={year} year={year}>
-                                  {Object.entries(meetupsByMonth).map(([month_number, meetups]) => {
+                                  {Object.entries(meetupsByMonth).map(([month, meetups]) => {
                                       return (
-                                          <MonthSection
-                                              key={month_number}
-                                              month={monthNameFromNumber(month_number)}
-                                          >
+                                          <MonthSection key={month} month={month}>
                                               {meetups.map(({ id, speakers, title }) => {
                                                   return (
                                                       <Meetup

@@ -5,7 +5,7 @@ module Api
     def past
       events = Event.where('date < ?', DateTime.current).order(date: :desc)
       events_by_date = events.group_by { |event| event.date.year }.transform_values do |events_by_year|
-        events_by_year.group_by { |event| event.date.month }
+        events_by_year.group_by { |event| event.date.strftime('%B') }  # group by month name
       end
 
       render status: 200, json:  { data: events_by_date.as_json(include: :speakers) }

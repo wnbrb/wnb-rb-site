@@ -30,10 +30,10 @@ talk_description: 'Lorem Ipsum')
     it 'renders events by year and month' do
       get :past
       body = JSON.parse(response.body)
-      july_meetup = body['data']['2021']['7'].first
+      july_meetup = body['data']['2021']['July'].first
       expect(july_meetup['title']).to eq('July Meetup')
 
-      august_meetup = body['data']['2021']['8'].first
+      august_meetup = body['data']['2021']['August'].first
       expect(august_meetup['title']).to eq('August Meetup')
     end
 
@@ -41,7 +41,7 @@ talk_description: 'Lorem Ipsum')
       get :past
       body = JSON.parse(response.body)
 
-      july_meetup = body['data']['2021']['7'].first
+      july_meetup = body['data']['2021']['July'].first
       expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
     end
   end

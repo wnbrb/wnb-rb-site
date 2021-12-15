@@ -4,10 +4,12 @@
 
 .meetups__month:last-of-type > .meetups__card--border {
   align-self: flex-start;
+  padding-top: 50px;
   line-height: 0;
 }
 
-.meetups__month:first-of-type > .meetups__month--name {
+.meetups__month:first-of-type > .meetups__month--name,
+.meetups__month:last-of-type > .meetups__month--name {
   margin-top: 50px;
 }
 
