@@ -7,7 +7,6 @@ RSpec.describe Api::EventsController, type: :controller do
     Meetup.destroy_all
   end
 
-  #rubocop:disable Metrics/BlockLength
   describe 'GET #past' do
     before do
       july_meetup = Meetup.create(title: 'July Meetup', location: 'virtual', date: DateTime.new(2021, 7, 31, 16).utc)
@@ -45,7 +44,6 @@ talk_description: 'Lorem Ipsum')
       expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
     end
   end
-  #rubocop:enable Metrics/BlockLength
 
   describe 'GET #past_by_month' do
     before do
