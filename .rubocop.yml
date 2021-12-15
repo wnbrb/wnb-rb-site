@@ -4,8 +4,13 @@ AllCops:
     - bin/bundle
     - db/schema.rb
     - node_modules/**/*
+    - vendor/**/*
 
 Style/Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/MethodLength:
   Enabled: false
 
 inherit_gem:
