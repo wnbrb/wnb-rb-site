@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <a href="https://twitter.com/wnb-rb">Follow us on Twitter</a> •
+  <a href="https://twitter.com/wnb_rb">Follow us on Twitter</a> •
   <a href="https://tinyurl.com/join-wnb-rb">Join Our Community</a>
 </p>
 
