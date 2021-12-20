@@ -4,9 +4,9 @@
     "dependencies": {
         "@babel/preset-react": "^7.14.5",
         "@fullhuman/postcss-purgecss": "^4.0.3",
-        "@rails/actioncable": "^6.0.0",
-        "@rails/activestorage": "^6.0.0",
-        "@rails/ujs": "^6.0.0",
+        "@rails/actioncable": "^7.0.0",
+        "@rails/activestorage": "^7.0.0",
+        "@rails/ujs": "^7.0.0",
         "@rails/webpacker": "5.4.0",
         "@tailwindcss/aspect-ratio": "^0.2.2",
         "@tailwindcss/forms": "^0.3.4",
