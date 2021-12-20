@@ -17,7 +17,7 @@ const Footer = () => (
                     Upcoming Meetup
                 </a>
                 <a className="footer-col-item" href="/meetups">
-                    Archive
+                    Past Meetups
                 </a>
                 <a className="footer-col-item" href="#">
                     Give a Talk

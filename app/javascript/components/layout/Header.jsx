@@ -61,7 +61,7 @@ const Header = () => {
                                     <a href="/">Upcoming Meetup</a>
                                 </li>
                                 <li>
-                                    <a href="/meetups">Archive</a>
+                                    <a href="/meetups">Past Meetups</a>
                                 </li>
                                 <li>
                                     <a href="/sponsor-us"> Sponsor Us</a>
