@@ -1,0 +1,31 @@
+.meetups__month:first-of-type > .meetups__card--border {
+  margin-top: 80px;
+}
+
+.meetups__month:last-of-type > .meetups__card--border {
+  align-self: flex-start;
+  padding-top: 50px;
+  line-height: 0;
+}
+
+.meetups__month:first-of-type > .meetups__month--name,
+.meetups__month:last-of-type > .meetups__month--name {
+  margin-top: 50px;
+}
+
+.meetups__card--border::before {
+  display: block;
+  position: relative;
+  left: -10px;
+  font-size: 50px;
+  color: #d1d5db;
+  content: '•';
+}
+
+.meetups__month:first-of-type > .meetups__card--border::before {
+  top: -28px;
+}
+
+.meetups__month:last-of-type > .meetups__card--border::before {
+  top: 14px;
+}
