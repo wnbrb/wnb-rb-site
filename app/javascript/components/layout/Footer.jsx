@@ -16,7 +16,7 @@ const Footer = () => (
                 <a className="footer-col-item" href="#">
                     Upcoming Meetup
                 </a>
-                <a className="footer-col-item" href="#">
+                <a className="footer-col-item" href="/meetups">
                     Archive
                 </a>
                 <a className="footer-col-item" href="#">
