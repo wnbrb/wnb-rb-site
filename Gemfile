@@ -30,7 +30,6 @@ group :development do
   gem 'prettier', '~> 2.0'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', '~> 1.22'
-  gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end
 
