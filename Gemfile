@@ -10,7 +10,7 @@ gem 'devise'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'puma', '~> 5.0'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.4.0'
 
@@ -30,7 +30,6 @@ group :development do
   gem 'prettier', '~> 2.0'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', '~> 1.22'
-  gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end
 
