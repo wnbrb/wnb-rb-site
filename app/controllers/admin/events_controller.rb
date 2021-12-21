@@ -11,11 +11,11 @@ module Admin
     end
 
     def edit
-      @event = Event.find_by(id:params[:id])
       @admin = current_user
-      p @event, @admin
       redirect_to new_user_session_path unless @admin
-      redirect_to('/404') unless @event
+      @event = Event.find_by(id:params[:id])
+      redirect_to '/404' unless @event
     end
+
   end
 end
