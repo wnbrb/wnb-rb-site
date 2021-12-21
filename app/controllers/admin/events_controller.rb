@@ -19,6 +19,7 @@ module Admin
     end
 
     def update
+      p params
       @admin = current_user
       redirect_to new_user_session_path unless @admin
       @event = Event.find_by(id:params[:id])
@@ -34,23 +35,19 @@ module Admin
     private
 
     def required_params
-      if params[:meetup].present?
-        meetup_params
-      elsif params[:panel].present?
-        panel_params
-      else
-        event_params
-      end
+      params[:meetup].present? ? meetup_params : panel_params
     end
 
     def meetup_params
-      params.require(:meetup).permit(:title, :location, :description, :datetime, :type, :panel_video_link)
+      params.require(:meetup).permit(:title, :location, :description, 
+                                    'date(1i)', 'date(2i)', 'date(3i)', 
+                                    'date(4i)', 'date(5i)', :type, :panel_video_link)
     end
+
     def panel_params
-      params.require(:panel).permit(:title, :location, :description, :datetime, :type, :panel_video_link)
-    end
-    def event_params
-      params.require(:event).permit(:title, :location, :description, :datetime, :type, :panel_video_link)
+      params.require(:panel).permit(:title, :location, :description,
+                                    'date(1i)', 'date(2i)', 'date(3i)',
+                                    'date(4i)', 'date(5i)', :type, :panel_video_link)
     end
 
   end

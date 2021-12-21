@@ -29,13 +29,13 @@
   </div>
   <div class="field">
     <%= f.label :type%><br />
-    <%= f.text_field :type%>
+    <%= f.select :type, ['Meetup', 'Panel']%>
   </div>
   <div class="field">
     <%= f.label :panel_video_link, "Video link"%><br />
     <%= f.text_field :panel_video_link%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save" %>
   </div>
 <% end %>
