@@ -14,16 +14,15 @@ module Admin
       @admin = current_user
       redirect_to new_user_session_path unless @admin
       @event = Event.find_by(id:params[:id])
-      redirect_to '/404' unless @event
-      # render :file => "#{Rails.root}/public/404.html",  :status => 404
+      # redirect_to('/404', status: 404) unless @event
+      render(file: "#{Rails.root}/public/404.html", status: 404) unless @event
     end
 
     def update
-      p params
       @admin = current_user
       redirect_to new_user_session_path unless @admin
-      @event = Event.find_by(id:params[:id])
-      redirect_to '/404' unless @event
+      @event = Event.find_by(id: params[:id])
+      render(file: "#{Rails.root}/public/404.html", status: 404) unless @event
 
       if @event.update(required_params)
         redirect_to admin_dashboard_path
