@@ -25,7 +25,7 @@ module Admin
       if @event.update(required_params)
         redirect_to admin_dashboard_path
       else
-        render 'edit'
+        render :edit
       end
     end
 
