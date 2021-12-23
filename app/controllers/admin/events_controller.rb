@@ -31,42 +31,23 @@ module Admin
 
     private
 
+    def required_type
+      params[:meetup].present? ? params.require(:meetup) : params.require(:panel)
+    end
+
     def required_params
-      params[:meetup].present? ? meetup_params : panel_params
-    end
-
-    def meetup_params
-      params
-        .require(:meetup)
-        .permit(
-          :title,
-          :location,
-          :description,
-          'date(1i)',
-          'date(2i)',
-          'date(3i)',
-          'date(4i)',
-          'date(5i)',
-          :type,
-          :panel_video_link,
-        )
-    end
-
-    def panel_params
-      params
-        .require(:panel)
-        .permit(
-          :title,
-          :location,
-          :description,
-          'date(1i)',
-          'date(2i)',
-          'date(3i)',
-          'date(4i)',
-          'date(5i)',
-          :type,
-          :panel_video_link,
-        )
+      required_type.permit(
+        :title,
+        :location,
+        :description,
+        'date(1i)',
+        'date(2i)',
+        'date(3i)',
+        'date(4i)',
+        'date(5i)',
+        :type,
+        :panel_video_link,
+      )
     end
   end
 end
