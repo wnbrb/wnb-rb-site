@@ -11,21 +11,30 @@ export const sponsorCardData = [
     {
         icon: Ruby,
         type: 'Ruby',
-        text: 'Provide books for all members of WNB.rb’s book club who would not otherwise be able to afford them.',
-        amount: '2,000',
+        text: 'Everything in Emerald Sponsorship and also sponsored events and tweets',
+        amount: '6,000',
     },
     {
         icon: Emerald,
         type: 'Emerald',
-        text: 'Compensate 6 months of women and non-binary speakers who give talks at our meetups.',
-        amount: '1,200',
+        text: 'Everything in Sapphire Sponsorship and also announcements at our events',
+        amount: '2,000',
     },
     {
         icon: Saphire,
         type: 'Saphire',
-        text: 'Pay for one year of Zoom pro, allowing WNB.rb members to host their own interview prep sessions, conference proposal workshops, and more!',
-        amount: '180',
+        text: 'Post on our jobs board, logo featured on our site',
+        amount: '1,000',
     },
+    /*
+     * TODO: Add Opal icon to add this section properly
+    {
+        icon: Opal,
+        type: 'Opal',
+        text: 'Pay for one year of Zoom pro, allowing WNB.rb members to host their own interview prep sessions, conference proposal workshops, and more!',
+        amount: '500',
+    },
+    */
 ];
 
 export const infoCardData = [
