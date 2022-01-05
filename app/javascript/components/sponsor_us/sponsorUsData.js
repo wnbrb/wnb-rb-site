@@ -1,7 +1,8 @@
 import React from 'react';
 import Ruby from 'components/icons/Ruby';
 import Emerald from 'components/icons/Emerald';
-import Saphire from 'components/icons/Saphire';
+import Sapphire from 'components/icons/Sapphire';
+import Opal from 'components/icons/Opal';
 import InformationMark from 'components/icons/InformationMark';
 import QuestionMark from 'components/icons/QuestionMark';
 import AboutUsSection from './AboutUsSection';
@@ -9,22 +10,38 @@ import WhySponsorUsSection from './WhySponsorUsSection';
 
 export const sponsorCardData = [
     {
-        icon: Ruby,
-        type: 'Ruby',
-        text: 'Provide books for all members of WNB.rb’s book club who would not otherwise be able to afford them.',
-        amount: '2,000',
+        icon: Opal,
+        type: 'Opal',
+        returns: ['Post on our jobs board'],
+        amount: '500',
+    },
+    {
+        icon: Sapphire,
+        type: 'Sapphire',
+        returns: ['Post on our jobs board', 'Logo featured on our site'],
+        amount: '1,000',
     },
     {
         icon: Emerald,
         type: 'Emerald',
-        text: 'Compensate 6 months of women and non-binary speakers who give talks at our meetups.',
-        amount: '1,200',
+        returns: [
+            'Post on our jobs board',
+            'Logo featured on our site',
+            'Announcements at our events',
+        ],
+        amount: '2,000',
     },
     {
-        icon: Saphire,
-        type: 'Saphire',
-        text: 'Pay for one year of Zoom pro, allowing WNB.rb members to host their own interview prep sessions, conference proposal workshops, and more!',
-        amount: '180',
+        icon: Ruby,
+        type: 'Ruby',
+        returns: [
+            'Post on our jobs board',
+            'Logo featured on our site',
+            'Announcements at our events',
+            'Sponsored events',
+            'Two sponsored tweets per month',
+        ],
+        amount: '6,000',
     },
 ];
 

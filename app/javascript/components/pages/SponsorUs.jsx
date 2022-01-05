@@ -19,10 +19,10 @@ const SponsorUs = () => {
                         <SponsorCard
                             key={card.type}
                             type={card.type}
-                            text={card.text}
+                            returns={card.returns}
                             amount={card.amount}
                         >
-                            <card.icon className="mx-auto p-2 h-24" />
+                            <card.icon className="mx-auto p-2 h-20" />
                         </SponsorCard>
                     );
                 })}
