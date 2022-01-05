@@ -26,7 +26,7 @@ const SponsorCard = ({ type, amount, returns, children }) => {
                     </p>
                     <p className={`font-small`}>/ 6 months</p>
                 </div>
-                <a className="place-self-start m-2" href="mailto: womennonbinary.rb@gmail.com">
+                <a className="place-self-start m-2" href="mailto: organizers@wnb-rb.dev">
                     <Button type={`${type.toLowerCase()} justify-center`}>
                         Become {type === 'Emerald' ? 'an' : 'a'} {type} sponsor
                     </Button>
