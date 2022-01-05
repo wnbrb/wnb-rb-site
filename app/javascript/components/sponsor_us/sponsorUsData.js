@@ -39,6 +39,7 @@ export const sponsorCardData = [
             'Logo featured on our site',
             'Announcements at our events',
             'Sponsored events',
+            'Two sponsored tweets per month',
         ],
         amount: '6,000',
     },
