@@ -6,8 +6,8 @@ module Admin
     def index
       authorize Event
 
-      # TODO: implement this method
-      render status: 200, json: {}
+      @events = Event.includes(:speakers)
+                     .order(date: :desc)
     end
   end
 end
