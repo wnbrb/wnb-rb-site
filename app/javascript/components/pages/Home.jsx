@@ -4,11 +4,12 @@ import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
+import PodcastImage from 'images/podcast-cover.png';
+import InfoCard from '../home/InfoCard';
+import { infoCardData } from '../home/homeData';
 
 import 'stylesheets/page';
 import 'stylesheets/home';
-
-import PodcastImage from 'images/podcast-cover.png';
 
 let podcast = {
     tile_image: PodcastImage,
@@ -33,6 +34,18 @@ const Home = () => (
         <section className="podcast">
             <PodcastTile podcast={podcast} />
         </section>
+        <div className="mx-auto max-w-3xl flex-col">
+            {infoCardData.map((card) => {
+                return (
+                    <InfoCard
+                        key={card.title}
+                        section={card.section}
+                        title={card.title}
+                        icon={card.icon}
+                    ></InfoCard>
+                );
+            })}
+        </div>
     </SharedLayout>
 );
 
