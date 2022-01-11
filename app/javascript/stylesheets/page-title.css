@@ -24,7 +24,7 @@
 }
 
 .title-text {
-  @apply text-wnbrb-pink
+  @apply text-wnbrb-pink-default
     text-5xl
     sm:text-6xl
     font-black;
