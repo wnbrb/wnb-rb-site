@@ -74,3 +74,9 @@ const productionDonationAmounts = [
     { value: 500, link: 'https://buy.stripe.com/4gw3cSexj38u44o7sA' },
     { value: 1000, link: 'https://buy.stripe.com/8wMeVAbl710mdEY009' },
 ];
+
+export const getPastMeetup = async () => {
+    const result = await fetch(`${API_ROOT}/events/2021/07`);
+    const json = await result.json();
+    return json.data;
+};
