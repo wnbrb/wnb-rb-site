@@ -11,14 +11,15 @@ module Admin
     end
 
     def edit
-      redirect_to new_user_session_path unless current_user
-      @event = Event.find_by(id: params[:id])
+      authorize Event
 
+      @event = Event.find_by(id: params[:id])
       render_not_found unless @event
     end
 
     def update
-      redirect_to new_user_session_path unless current_user
+      authorize Event
+
       @event = Event.find_by(id: params[:id])
       render_not_found unless @event
 
