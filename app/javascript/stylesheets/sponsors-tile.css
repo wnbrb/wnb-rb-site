@@ -1,0 +1,11 @@
+.sponsors-tile {
+  width: 90%;
+
+  @apply sm:flex
+    bg-white
+    shadow-lg
+    rounded-lg
+    items-center
+    sm:w-1/2
+    p-4;
+}

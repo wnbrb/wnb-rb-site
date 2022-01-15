@@ -10,6 +10,9 @@ import 'stylesheets/page';
 import 'stylesheets/home';
 
 import PodcastImage from 'images/podcast-cover.png';
+import SponsorImage1 from 'images/sponsor1.png';
+import SponsorImage2 from 'images/sponsor2.png';
+import SponsorImage3 from 'images/sponsor3.png';
 
 let podcast = {
     tile_image: PodcastImage,
@@ -17,6 +20,21 @@ let podcast = {
     title: 'Ruby on Rails Podcast',
     url: 'https://www.therubyonrailspodcast.com/373',
 };
+
+let sponsors = [
+    {
+        tile_image: SponsorImage1,
+        tile_image_alt: 'Sponsor 1',
+    },
+    {
+        tile_image: SponsorImage2,
+        tile_image_alt: 'Sponsor 2',
+    },
+    {
+        tile_image: SponsorImage3,
+        tile_image_alt: 'Sponsor 3',
+    },
+];
 
 const Home = () => (
     <SharedLayout>
@@ -35,7 +53,7 @@ const Home = () => (
             <PodcastTile podcast={podcast} />
         </section>
         <section className="sponsors">
-            <SponsorsTile />
+            <SponsorsTile sponsors={sponsors}/>
         </section>
     </SharedLayout>
 );
