@@ -24,7 +24,7 @@ module Admin
       render_not_found unless @event
 
       if @event.update(required_params)
-        redirect_to admin_dashboard_path
+        redirect_to admin_events_path
       else
         render :edit
       end
