@@ -1,11 +1,10 @@
 .sponsors-tile {
   width: 90%;
 
-  @apply sm:flex
-    bg-white
+  @apply bg-white
     shadow-lg
     rounded-lg
-    items-center
-    sm:w-1/2
-    p-4;
+    sm:w-9/12
+    py-6
+    px-8;
 }
