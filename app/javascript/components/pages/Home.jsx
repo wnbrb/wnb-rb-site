@@ -23,14 +23,17 @@ let podcast = {
 
 let sponsors = [
     {
+        id: 1,
         tile_image: SponsorImage1,
         tile_image_alt: 'Sponsor 1',
     },
     {
+        id: 2,
         tile_image: SponsorImage2,
         tile_image_alt: 'Sponsor 2',
     },
     {
+        id: 3,
         tile_image: SponsorImage3,
         tile_image_alt: 'Sponsor 3',
     },
@@ -53,7 +56,7 @@ const Home = () => (
             <PodcastTile podcast={podcast} />
         </section>
         <section className="sponsors">
-            <SponsorsTile sponsors={sponsors}/>
+            <SponsorsTile sponsors={sponsors} />
         </section>
     </SharedLayout>
 );
