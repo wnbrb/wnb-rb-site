@@ -5,3 +5,9 @@ export const getPastMeetups = async () => {
     const json = await result.json();
     return json.data;
 };
+
+export const getJobs = async () => {
+    const result = await fetch(`${API_ROOT}/jobs`);
+    const json = await result.json();
+    return json.data;
+};
