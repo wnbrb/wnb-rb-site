@@ -85,7 +85,7 @@
   background: url('../../assets/images/rubybubbles.svg');
   background-repeat: repeat-x;
   background-position: center;
-  background-size: contain;
+  background-size: auto;
 
   @apply bg-wnbrb-pink-light
     py-20
