@@ -208,6 +208,7 @@ Job.create!(
   company: 'WNB.rb',
   title: 'Organizer',
   location: 'Remote',
+  link: 'https://google.com',
   description:
     'Help organize WNB.rb, a community for women and non-binary Rubyists!
     Responsibilities include organizing and supporting underrepresented developers.',
@@ -218,8 +219,9 @@ Job.create!(
   company: 'The Empire',
   title: 'Sith Lord',
   location: 'A Planet Far, Far Away',
+  link: 'https://google.com',
   description:
-    'Would your direct repports describe you as "terrifying"? Do you excel at telepathic
+    'Would your direct reports describe you as "terrifying"? Do you excel at telepathic
     strangulation? If so, this is the oppportunity for you. You\'ll receive great benefits while
     having a direct imapct on eradicating those pesky Jedi knights!',
   image_url:
@@ -230,6 +232,7 @@ Job.create!(
   company: 'The Prancing Pony',
   title: 'Barmaid',
   location: 'The Shire',
+  link: 'https://google.com',
   description:
     'Working at the Prancing Pony is never boring. We seek employees who are passionate about
     pouring beer and don\'t mind the occasional wraith stopping by.',
@@ -238,9 +241,10 @@ Job.create!(
 )
 
 Job.create!(
-  company: 'Pokemon Trainer',
-  title: 'Barmaid',
+  company: 'Pokemon Gym',
+  title: 'Pokemon Trainer',
   location: 'Vermillion City',
+  link: 'https://google.com',
   description:
     'You want to be the very best, like no one ever was. To catch them is your real test, to
     train them is your cause. You will travel across the land, searching far and wide. For
