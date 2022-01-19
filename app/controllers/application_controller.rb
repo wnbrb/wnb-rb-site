@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     render status: 401, json: {}
   end
 
+  def render_not_found
+    render(file: "#{Rails.root}/public/404.html", status: :not_found)
+  end
+
   protected
 
   def after_sign_in_path_for(_users)

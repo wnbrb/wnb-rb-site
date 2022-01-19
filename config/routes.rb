@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :events, only: [:index]
+    resources :events, only: [:index, :edit, :update]
   end
 
   mount ActionCable.server => '/cable'

@@ -26,8 +26,7 @@
           <td class="p-3"><%= event.location %></td>
           <td class="p-3"><%= event.description %></td>
           <td class="p-3">
-            <!-- TODO: Issue 24 Add Edit Page -->
-            <%= link_to 'Edit', '#' %>
+            <%= link_to 'Edit', edit_admin_event_path(event) %>
             <!-- TODO: Issue 25 Add Delete Functionality -->
             <%= link_to 'Delete', '#' %>
           </td>
