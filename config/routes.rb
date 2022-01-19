@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
 
     resources :jobs, only: [:index] do
-      collection { get 'authenticate' }
+      collection { post 'authenticate' }
     end
   end
 

@@ -8,14 +8,14 @@ module Api
     end
 
     def authenticate
-      # Check provided password against correct value
-      # If it's correct, generate a token and return it in the header
+      if params[:password] == ENV['JOB_BOARD_PASSWORD']
+        token = JWT.encode({ expires: Time.now + 7.days }, ENV['JWT_HMAC_SECRET'], 'HS256')
 
-      cookies[:token] = { value: 'Hello world!', expires: 7.days }
-
-      # hmac_secret = 'my$ecretK3y'
-      # token = JWT.encode payload, hmac_secret, 'HS256'
-      render status: 200, json: { data: 'Hello world!' }
+        cookies[:token] = { value: token, expires: 7.days }
+        render status: 201, json: {}
+      else
+        render status: 401, json: {}
+      end
     end
   end
 end

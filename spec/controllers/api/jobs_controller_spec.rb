@@ -24,4 +24,32 @@ RSpec.describe Api::JobsController, type: :controller do
       )
     end
   end
+
+  describe 'POST #authenticate' do
+    before do
+      ENV['JOB_BOARD_PASSWORD'] = 'wnb.rbRULEZ!'
+      ENV['JWT_HMAC_SECRET'] = '1234567'
+    end
+
+    after do
+      ENV['JOB_BOARD_PASSWORD'] = nil
+      ENV['JWT_HMAC_SECRET'] = nil
+    end
+
+    context 'when password is valid' do
+      it 'returns 201 response and sets JWT in cookie' do
+        post :authenticate, params: { password: 'wnb.rbRULEZ!' }
+        expect(response).to have_http_status(201)
+        expect(cookies[:token]).not_to be_nil
+      end
+    end
+
+    context 'when password is not valid' do
+      it 'returns 401 response and does not set cookies' do
+        post :authenticate, params: { password: 'invalidpassword' }
+        expect(response).to have_http_status(401)
+        expect(cookies[:token]).to be_nil
+      end
+    end
+  end
 end
