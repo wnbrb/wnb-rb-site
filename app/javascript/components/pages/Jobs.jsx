@@ -23,19 +23,21 @@ const Jobs = () => {
     return (
         <SharedLayout>
             <PageTitle text="Jobs" />
-            <div className="jobs md:px-44 px-6">
-                {jobs.map((job) => (
-                    <Job
-                        key={`${job.title} at ${job.company}`}
-                        company={job.company}
-                        title={job.title}
-                        description={job.description}
-                        imageUrl={job.image_url}
-                        link={job.link}
-                        location={job.location}
-                        createdAt={job.created_at}
-                    />
-                ))}
+            <div className="w-full flex flex-row justify-around">
+                <div className="jobs md:px-44 px-6 flex flex-row flex-wrap max-w-[100rem] justify-between">
+                    {jobs.map((job) => (
+                        <Job
+                            key={`${job.title} at ${job.company}`}
+                            company={job.company}
+                            title={job.title}
+                            description={job.description}
+                            imageUrl={job.image_url}
+                            link={job.link}
+                            location={job.location}
+                            createdAt={job.created_at}
+                        />
+                    ))}
+                </div>
             </div>
         </SharedLayout>
     );
@@ -53,15 +55,23 @@ const Job = ({ title, description, imageUrl, company, link, location, createdAt 
 
         if (diff <= 1) {
             postedDescription = 'today';
+        } else if (diff < 7) {
+            postedDescription = `${Math.floor(diff)} days ago`;
         } else if (diff < 30) {
-            postedDescription = `${diff} days ago`;
+            const weekDiff = Math.floor(diff / 7);
+
+            if (weekDiff === 1) {
+                postedDescription = '1 week ago';
+            } else {
+                postedDescription = `${weekDiff} weeks ago`;
+            }
         } else {
             const monthDiff = Math.floor(diff / 30);
 
             if (monthDiff === 1) {
                 postedDescription = '1 month ago';
             } else {
-                postedDescription = `${diff} months ago`;
+                postedDescription = `${monthDiff} months ago`;
             }
         }
 
@@ -78,14 +88,14 @@ const Job = ({ title, description, imageUrl, company, link, location, createdAt 
                     <div className="font-light">{location}</div>
                 </div>
             </div>
-            <div className="my-4">{description}</div>
-            <div className="flex flex-row justify-between align-center space-x-5">
+            <div className="my-5 h-40">{description}</div>
+            <div className="flex flex-row justify-between items-center space-x-5">
                 <Button type="white" className="w-20">
                     <a href={link} target="_blank" rel="noopener noreferrer">
                         Apply
                     </a>
                 </Button>
-                <div className="">{postedAt}</div>
+                <div>{postedAt}</div>
             </div>
         </div>
     );
