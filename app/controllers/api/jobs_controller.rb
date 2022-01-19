@@ -6,5 +6,7 @@ module Api
       jobs = Job.all
       render status: 200, json: { data: jobs.as_json }
     end
+
+    def authenticate; end
   end
 end
