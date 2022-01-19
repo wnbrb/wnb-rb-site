@@ -20,10 +20,6 @@ RSpec.describe Admin::EventsController, type: :controller do
         get :index
         expect(response).to have_http_status(401)
       end
-      it 'returns 401' do
-        get :index
-        expect(response).to have_http_status(401)
-      end
     end
 
     context 'when user is admin' do
