@@ -11,3 +11,19 @@ export const getJobs = async () => {
     const json = await result.json();
     return json.data;
 };
+
+export const postJobsAuthenticate = async (password) => {
+    const result = await fetch(`${API_ROOT}/jobs/authenticate`, {
+        method: 'post',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            password,
+        }),
+    });
+
+    const json = await result.json();
+    return json;
+};
