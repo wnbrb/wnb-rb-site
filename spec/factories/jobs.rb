@@ -6,6 +6,6 @@ FactoryBot.define do
     description { 'Organize WNB.rb' }
     link { 'link-to-job.com' }
     location { 'Remote' }
-    image_url { 'aws.amazon.com/link-to-image.png' }
+    image_url { 'https://picsum.photos/200' }
   end
 end

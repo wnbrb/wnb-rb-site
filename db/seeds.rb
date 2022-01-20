@@ -4,6 +4,7 @@ unless Rails.env.prod?
   Speaker.destroy_all
   EventSpeaker.destroy_all
   Event.destroy_all
+  Job.destroy_all
 end
 
 p 'Create a meetup with two speakers'
@@ -212,8 +213,7 @@ Job.create!(
   description:
     'Help organize WNB.rb, a community for women and non-binary Rubyists!
     Responsibilities include organizing and supporting underrepresented developers.',
-  image_url:
-    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fconfused-woman-working-laptop-cartoon-icon-illustration-people-technology-icon-concept_138676-2125.jpg&f=1&nofb=1',
+  image_url: 'https://picsum.photos/200',
 )
 
 Job.create!(
@@ -225,8 +225,7 @@ Job.create!(
     'Would your direct reports describe you as "terrifying"? Do you excel at telepathic
     strangulation? If so, this is the oppportunity for you. You\'ll receive great benefits while
     having a direct imapct on eradicating those pesky Jedi knights!',
-  image_url:
-    'https://cdn.dribbble.com/users/917729/screenshots/5734135/media/c3f3be5b5f20ed110f3c8cf58a219bbe.jpg?compress=1&resize=1600x1200&vertical=top',
+  image_url: 'https://picsum.photos/200',
   created_at: Time.now - 2.weeks,
 )
 
@@ -238,8 +237,7 @@ Job.create!(
   description:
     'Working at the Prancing Pony is never boring. We seek employees who are passionate about
     pouring beer and don\'t mind the occasional wraith stopping by.',
-  image_url:
-    'https://res.cloudinary.com/teepublic/image/private/s--wjZ33yki--/t_Preview/b_rgb:484849,c_limit,f_auto,h_630,q_90,w_630/v1446223594/production/designs/188502_1.jpg',
+  image_url: 'https://picsum.photos/200',
   created_at: Time.now - 1.month,
 )
 
@@ -252,7 +250,6 @@ Job.create!(
     'You want to be the very best, like no one ever was. To catch them is your real test, to
     train them is your cause. You will travel across the land, searching far and wide. For
     Pokemon, to understand the power that\'s inside.',
-  image_url:
-    'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c1278f2-6f53-4727-b803-1a4c297c191f/dapbbed-30642074-7c2d-43c2-ad05-be7bc0f0089a.png/v1/fill/w_1600,h_1600,strp/original_pokeball_vector_by_greenmachine987_dapbbed-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYwMCIsInBhdGgiOiJcL2ZcLzhjMTI3OGYyLTZmNTMtNDcyNy1iODAzLTFhNGMyOTdjMTkxZlwvZGFwYmJlZC0zMDY0MjA3NC03YzJkLTQzYzItYWQwNS1iZTdiYzBmMDA4OWEucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.cisWXCiz7JCdLjr-HzGGsjoQUsGf6StVLVGStptev20',
+  image_url: 'https://picsum.photos/200',
   created_at: Time.now - 3.months,
 )
