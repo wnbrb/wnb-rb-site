@@ -6,4 +6,6 @@ class SiteController < ApplicationController
   def sponsor_us; end
 
   def meetups; end
+
+  def jobs; end
 end

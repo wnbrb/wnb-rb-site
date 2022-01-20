@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   get '/sponsor-us', to: 'site#sponsor_us'
   get '/meetups', to: 'site#meetups'
+  get '/jobs', to: 'site#jobs'
 
   root 'site#home'
   namespace :api do
