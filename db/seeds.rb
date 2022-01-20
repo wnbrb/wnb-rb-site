@@ -212,7 +212,8 @@ Job.create!(
   description:
     'Help organize WNB.rb, a community for women and non-binary Rubyists!
     Responsibilities include organizing and supporting underrepresented developers.',
-  image_url: 'todo: link-to-logo-here',
+  image_url:
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-vector%2Fconfused-woman-working-laptop-cartoon-icon-illustration-people-technology-icon-concept_138676-2125.jpg&f=1&nofb=1',
 )
 
 Job.create!(

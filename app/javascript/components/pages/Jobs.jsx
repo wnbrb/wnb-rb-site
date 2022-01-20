@@ -4,6 +4,7 @@ import SharedLayout from 'components/layout/SharedLayout';
 import PageTitle from 'components/PageTitle';
 import Button from 'components/Button';
 import { getJobs } from '../../datasources';
+import { postedAtString } from '../../utils';
 
 import 'stylesheets/page';
 import 'stylesheets/jobs';
@@ -20,66 +21,70 @@ const Jobs = () => {
         fetchData();
     }, []);
 
+    const [firstSixJobs, restOfJobs] = useMemo(() => {
+        if (jobs === []) {
+            return [[], []];
+        }
+
+        const firstSix = jobs.slice(0, 6);
+        const rest = jobs.slice(6, jobs.length);
+
+        return [firstSix, rest];
+    }, [jobs]);
+
     return (
         <SharedLayout>
             <PageTitle text="Jobs" />
-            <div className="w-full flex flex-row justify-around">
-                <div className="jobs md:px-44 px-6 flex flex-row flex-wrap max-w-[100rem] justify-between">
-                    {jobs.map((job) => (
-                        <Job
-                            key={`${job.title} at ${job.company}`}
-                            company={job.company}
-                            title={job.title}
-                            description={job.description}
-                            imageUrl={job.image_url}
-                            link={job.link}
-                            location={job.location}
-                            createdAt={job.created_at}
-                        />
-                    ))}
-                </div>
-            </div>
+            <JobGroup jobs={firstSixJobs} />
+            <SponsorUsBanner />
+            <JobGroup jobs={restOfJobs} />
         </SharedLayout>
     );
 };
 
-const Job = ({ title, description, imageUrl, company, link, location, createdAt }) => {
-    const postedAt = useMemo(() => {
-        const today = new Date();
-        const postedDate = new Date(createdAt);
-        const msInDay = 24 * 60 * 60 * 1000;
-
-        const diff = (+today - +postedDate) / msInDay;
-
-        let postedDescription;
-
-        if (diff <= 1) {
-            postedDescription = 'today';
-        } else if (diff < 7) {
-            postedDescription = `${Math.floor(diff)} days ago`;
-        } else if (diff < 30) {
-            const weekDiff = Math.floor(diff / 7);
-
-            if (weekDiff === 1) {
-                postedDescription = '1 week ago';
-            } else {
-                postedDescription = `${weekDiff} weeks ago`;
-            }
-        } else {
-            const monthDiff = Math.floor(diff / 30);
-
-            if (monthDiff === 1) {
-                postedDescription = '1 month ago';
-            } else {
-                postedDescription = `${monthDiff} months ago`;
-            }
-        }
-
-        return `Posted ${postedDescription}`;
-    }, [createdAt]);
-
+const JobGroup = ({ jobs }) => {
     return (
-        <div className="bg-white shadow-lg rounded-lg my-5 p-10 max-w-sm">
+        <div className="w-full flex flex-row justify-center px-40">
+            <div className="jobs flex flex-row flex-wrap ">
+                {jobs.map((job) => (
+                    <Job
+                        key={`${job.title} at ${job.company}`}
+                        company={job.company}
+                        title={job.title}
+                        description={job.description}
+                        imageUrl={job.image_url}
+                        link={job.link}
+                        location={job.location}
+                        createdAt={job.created_at}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
+JobGroup.propTypes = {
+    jobs: propTypes.array,
+};
+
+const SponsorUsBanner = () => {
+    return (
+        <div className="sponsor-us-banner w-full flex flex-row justify-center my-20 py-5">
+            <div className="bg-white shadow-lg rounded-lg my-5 py-5 px-10 flex flex-row justify-between items-center text-lg">
+                Want to see your company&apos;s job on our board?
+                <Button type="white" className="ml-5">
+                    <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
+                        Sponsor Us
+                    </a>
+                </Button>
+            </div>
+        </div>
+    );
+};
+
+const Job = ({ title, description, imageUrl, company, link, location, createdAt }) => {
+    return (
+        <div className="bg-white shadow-lg rounded-lg my-5 mr-8 p-10 max-w-[22rem]">
             <div className="flex flex-row">
                 <img className="w-14 h-14 rounded-full mr-6" src={imageUrl} alt="" />
                 <div className="flex flex-col">
@@ -88,14 +93,14 @@ const Job = ({ title, description, imageUrl, company, link, location, createdAt 
                     <div className="font-light">{location}</div>
                 </div>
             </div>
-            <div className="my-5 h-40">{description}</div>
+            <div className="my-5 h-44">{description}</div>
             <div className="flex flex-row justify-between items-center space-x-5">
                 <Button type="white" className="w-20">
                     <a href={link} target="_blank" rel="noopener noreferrer">
                         Apply
                     </a>
                 </Button>
-                <div>{postedAt}</div>
+                <div>{`Posted ${postedAtString(createdAt)}`}</div>
             </div>
         </div>
     );
