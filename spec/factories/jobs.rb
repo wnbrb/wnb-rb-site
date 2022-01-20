@@ -7,6 +7,5 @@ FactoryBot.define do
     link { 'link-to-job.com' }
     location { 'Remote' }
     image_url { 'https://picsum.photos/200' }
-    image_url { 'aws.amazon.com/link-to-image.png' }
   end
 end
