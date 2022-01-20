@@ -4,6 +4,7 @@ unless Rails.env.prod?
   Speaker.destroy_all
   EventSpeaker.destroy_all
   Event.destroy_all
+  User.destroy_all
 end
 
 p 'Create a meetup with two speakers'
@@ -22,7 +23,8 @@ jemma = Speaker.create(
   release of Letraset sheets containing Lorem Ipsum
   passages, and more recently with desktop publishing
   software like Aldus PageMaker including versions of Lorem
-  Ipsum."
+  Ipsum.",
+  image_url: 'https://picsum.photos/200/300'
 )
 
 stefanni = Speaker.create(
@@ -39,7 +41,8 @@ stefanni = Speaker.create(
         release of Letraset sheets containing Lorem Ipsum
         passages, and more recently with desktop publishing
         software like Aldus PageMaker including versions of Lorem
-        Ipsum."
+        Ipsum.",
+  image_url: 'https://picsum.photos/200'
 )
 
 meetup = Meetup.create(
@@ -126,7 +129,8 @@ kerstin = Speaker.create(
   release of Letraset sheets containing Lorem Ipsum
   passages, and more recently with desktop publishing
   software like Aldus PageMaker including versions of Lorem
-  Ipsum."
+  Ipsum.",
+  image_url: 'https://picsum.photos/300/200'
 )
 
 gabi = Speaker.create(
@@ -143,7 +147,8 @@ gabi = Speaker.create(
         release of Letraset sheets containing Lorem Ipsum
         passages, and more recently with desktop publishing
         software like Aldus PageMaker including versions of Lorem
-        Ipsum."
+        Ipsum.",
+  image_url: 'https://picsum.photos/300/200'
 )
 
 sylvia = Speaker.create(
@@ -160,7 +165,8 @@ sylvia = Speaker.create(
         release of Letraset sheets containing Lorem Ipsum
         passages, and more recently with desktop publishing
         software like Aldus PageMaker including versions of Lorem
-        Ipsum."
+        Ipsum.",
+  image_url: 'https://picsum.photos/300/200'
 )
 
 panel = Panel.create(

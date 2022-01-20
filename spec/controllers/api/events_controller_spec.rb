@@ -13,7 +13,7 @@ RSpec.describe Api::EventsController, type: :controller do
       Meetup.create(title: 'August Meetup', location: 'virtual', date: DateTime.new(2021, 8, 31, 16).utc)
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now + 1.week)
 
-      speaker = Speaker.create(name: 'Speaker Name', tagline: 'Software Developer', bio: 'Lorem Ipsum')
+      speaker = Speaker.create(name: 'Speaker Name', tagline: 'Software Developer', bio: 'Lorem Ipsum', image_url: 'https://picsum.photos/200')
       EventSpeaker.create( event: july_meetup, speaker: speaker, talk_title: 'Some talk title',
 talk_description: 'Lorem Ipsum')
     end
