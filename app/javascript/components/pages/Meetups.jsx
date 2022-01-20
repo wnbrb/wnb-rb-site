@@ -41,8 +41,13 @@ const Meetup = ({ speakers, title = '' }) => (
             <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
                 <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">{title}</h4>
                 {speakers.length > 0
-                    ? speakers.map(({ id, name, tagline }) => (
-                          <div key={id} className="flex align-start mb-4 text-lg">
+                    ? speakers.map(({ id, name, tagline, image_url }) => (
+                          <div key={id} className="flex content-center mb-8 text-lg">
+                              <img
+                                  className="object-cover w-14 h-14 mr-4 rounded-full"
+                                  src={image_url}
+                                  alt=""
+                              />
                               <div>
                                   <p className="font-bold text-gray md:text-lg">{name}</p>
                                   <p className="text-sm text-gray md:text-lg">{tagline}</p>
