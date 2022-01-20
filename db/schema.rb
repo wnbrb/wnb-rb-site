@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_180256) do
     t.string "title"
     t.string "location", default: "virtual"
     t.text "description"
-    t.datetime "date"
+    t.datetime "date", precision: 6
     t.string "type", null: false
     t.text "panel_video_link"
     t.datetime "created_at", precision: 6, null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_180256) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
   end
 
   create_table "speakers", force: :cascade do |t|
@@ -62,11 +63,11 @@ ActiveRecord::Schema.define(version: 2022_01_20_180256) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at", precision: 6
+    t.datetime "remember_created_at", precision: 6
     t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
+    t.datetime "current_sign_in_at", precision: 6
+    t.datetime "last_sign_in_at", precision: 6
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
