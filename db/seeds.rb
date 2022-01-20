@@ -5,6 +5,7 @@ unless Rails.env.prod?
   EventSpeaker.destroy_all
   Event.destroy_all
   Job.destroy_all
+  User.destroy_all
 end
 
 p 'Create a meetup with two speakers'
@@ -26,6 +27,7 @@ jemma =
   passages, and more recently with desktop publishing
   software like Aldus PageMaker including versions of Lorem
   Ipsum.",
+    image_url: 'https://picsum.photos/200/300',
   )
 
 stefanni =
@@ -45,6 +47,7 @@ stefanni =
         passages, and more recently with desktop publishing
         software like Aldus PageMaker including versions of Lorem
         Ipsum.",
+    image_url: 'https://picsum.photos/200/300',
   )
 
 meetup =
@@ -139,6 +142,7 @@ kerstin =
   passages, and more recently with desktop publishing
   software like Aldus PageMaker including versions of Lorem
   Ipsum.",
+    image_url: 'https://picsum.photos/300/200',
   )
 
 gabi =
@@ -158,6 +162,7 @@ gabi =
         passages, and more recently with desktop publishing
         software like Aldus PageMaker including versions of Lorem
         Ipsum.",
+    image_url: 'https://picsum.photos/300/200',
   )
 
 sylvia =
@@ -177,6 +182,7 @@ sylvia =
         passages, and more recently with desktop publishing
         software like Aldus PageMaker including versions of Lorem
         Ipsum.",
+    image_url: 'https://picsum.photos/300/200',
   )
 
 panel =
