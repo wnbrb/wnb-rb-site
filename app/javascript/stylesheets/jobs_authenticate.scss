@@ -1,0 +1,11 @@
+.jobs-authenticate-container {
+    @apply bg-[#FFE2E2] w-full h-full px-20 py-24 flex flex-col justify-center items-center text-lg;
+}
+
+.jobs-authenticate-login {
+    @apply bg-white shadow-lg rounded-lg p-10 flex flex-col max-w-[30rem] mt-5;
+}
+
+.jobs-authenticate-sponsor-us {
+    @apply bg-white shadow-lg rounded-lg p-10 flex flex-row w-full max-w-[30rem] mt-5 items-center justify-between text-lg;
+}
