@@ -1,0 +1,32 @@
+.sponsors-tile {
+  width: 90%;
+
+  @apply bg-white
+    shadow-lg
+    rounded-lg
+    sm:w-9/12
+    py-6
+    px-8;
+}
+
+.sponsors-tile-title {
+  @apply text-center
+    text-lg;
+}
+
+.sponsors-tile-img-container {
+  @apply flex
+    flex-col
+    sm:flex-row
+    justify-center
+    items-center
+    sm:h-36
+    pb-8;
+}
+
+.sponsors-tile-img-container img {
+  @apply w-1/2
+    my-0
+    mx-auto
+    sm:w-auto;
+}

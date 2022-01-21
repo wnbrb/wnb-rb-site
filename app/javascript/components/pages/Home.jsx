@@ -4,11 +4,15 @@ import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
+import SponsorsTile from 'components/SponsorsTile';
 
 import 'stylesheets/page';
 import 'stylesheets/home';
 
 import PodcastImage from 'images/podcast-cover.png';
+import SponsorImage1 from 'images/sponsor1.png';
+import SponsorImage2 from 'images/sponsor2.png';
+import SponsorImage3 from 'images/sponsor3.png';
 
 let podcast = {
     tile_image: PodcastImage,
@@ -17,9 +21,27 @@ let podcast = {
     url: 'https://www.therubyonrailspodcast.com/373',
 };
 
+let sponsors = [
+    {
+        id: 1,
+        tile_image: SponsorImage1,
+        tile_image_alt: 'Sponsor 1',
+    },
+    {
+        id: 2,
+        tile_image: SponsorImage2,
+        tile_image_alt: 'Sponsor 2',
+    },
+    {
+        id: 3,
+        tile_image: SponsorImage3,
+        tile_image_alt: 'Sponsor 3',
+    },
+];
+
 const Home = () => (
     <SharedLayout>
-        <div className="hero">
+        <section className="hero">
             <PageTitle text="WNB.rb">
                 <p>A virtual community for women and non-binary Rubyists.</p>
                 <a href="https://tinyurl.com/join-wnb-rb" target="_blank" rel="noreferrer noopener">
@@ -29,9 +51,12 @@ const Home = () => (
             <div className="hero-right">
                 <SplashBackground className="splash-background" />
             </div>
-        </div>
+        </section>
         <section className="podcast">
             <PodcastTile podcast={podcast} />
+        </section>
+        <section className="sponsors">
+            <SponsorsTile sponsors={sponsors} />
         </section>
     </SharedLayout>
 );
