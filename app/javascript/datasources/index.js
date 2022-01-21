@@ -24,6 +24,9 @@ export const postJobsAuthenticate = async (password) => {
         }),
     });
 
-    const json = await result.json();
-    return json;
+    if (result.status !== 201) {
+        throw new Error('Incorrect password');
+    }
+
+    return await result.json();
 };

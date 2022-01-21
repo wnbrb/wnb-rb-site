@@ -9,3 +9,7 @@
 .jobs-authenticate-sponsor-us {
     @apply bg-white shadow-lg rounded-lg p-10 flex flex-row w-full max-w-[30rem] mt-5 items-center justify-between text-lg;
 }
+
+.incorrect-password {
+    @apply bg-[#F59E98] rounded-lg p-4 text-sm mt-5;
+}
