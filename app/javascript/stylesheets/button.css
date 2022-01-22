@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .button.primary {
   @apply transition-all text-white border border-transparent;
   background-color: #f37d7b;

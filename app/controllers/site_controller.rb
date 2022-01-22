@@ -8,4 +8,6 @@ class SiteController < ApplicationController
   def meetups; end
 
   def jobs; end
+
+  def jobs_authenticate; end
 end

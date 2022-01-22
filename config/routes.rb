@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/sponsor-us', to: 'site#sponsor_us'
   get '/meetups', to: 'site#meetups'
   get '/jobs', to: 'site#jobs'
+  get '/jobs/authenticate', to: 'site#jobs_authenticate'
 
   root 'site#home'
   namespace :api do
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :events, only: [:index, :edit, :update]
+    resources :events, only: %i[index edit update]
   end
 
   mount ActionCable.server => '/cable'
