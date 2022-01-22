@@ -23,12 +23,12 @@ const JobsAuthenticate = () => {
                     ></input>
                     <Button
                         type="secondary"
-                        className="w-20 mt-3"
+                        className="text-base w-40 mt-3"
                         onClick={() => console.log(`Password is ${password}`)}
                     >
                         {/*TODO: implement actual password submission logic*/}
                         <button onClick={() => console.log(`Password is ${password}`)}>
-                            Log In
+                            View Job Board
                         </button>
                     </Button>
                     <p className="text-sm mt-5">
