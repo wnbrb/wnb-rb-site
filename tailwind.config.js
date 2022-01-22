@@ -31,7 +31,10 @@ module.exports = {
             purple: colors.violet,
             pink: colors.pink,
             wnbrb: {
-                pink: '#DF7270',
+                pink: {
+                    default: '#DF7270',
+                    light: '#FFF3F3',
+                },
             },
         },
         spacing: {
