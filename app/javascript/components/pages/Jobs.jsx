@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import propTypes from 'prop-types';
+import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
 import PageTitle from 'components/PageTitle';
 import Button from 'components/Button';
@@ -11,15 +12,20 @@ import 'stylesheets/jobs';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
+    const [cookies] = useCookies('token');
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getJobs();
-            setJobs(data);
+            try {
+                const data = await getJobs(cookies['token']);
+                setJobs(data);
+            } catch (error) {
+                window.location.href = '/jobs/authenticate';
+            }
         };
 
         fetchData();
-    }, []);
+    }, [cookies]);
 
     const [firstSixJobs, restOfJobs] = useMemo(() => {
         if (jobs === []) {
