@@ -11,14 +11,17 @@ import 'stylesheets/jobs_authenticate';
 const JobsAuthenticate = () => {
     const [password, setPassword] = useState('');
     const [hasError, setHasError] = useState(false);
-    const [setCookie] = useCookies(['token']);
+    // eslint-disable-next-line no-unused-vars
+    const [_, setCookie] = useCookies(['token']);
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
             const data = await postJobsAuthenticate(password);
+            setHasError(false);
             setCookie('token', data.token);
+            window.location.href = '/jobs';
         } catch (error) {
             setHasError(true);
             setPassword('');
