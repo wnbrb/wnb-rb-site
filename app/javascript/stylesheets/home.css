@@ -1,9 +1,16 @@
+.hero-icon {
+  height: 175px;
+}
+
+.info-card:nth-child(2) {
+  @apply flex-row-reverse;
+}
+
 .hero {
   @apply px-4
-    pt-4
     max-w-md
     mx-auto
-    sm:pt-10
+    my-40
     sm:flex
     sm:max-w-6xl;
 }
@@ -68,11 +75,10 @@
 
   @apply bg-wnbrb-pink-default
     py-20
-    my-28
     flex
     items-center
     justify-center
-    sm:my-48
+    my-32
     relative;
 }
 

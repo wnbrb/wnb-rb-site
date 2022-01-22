@@ -32,7 +32,7 @@ module.exports = {
             pink: colors.pink,
             wnbrb: {
                 pink: {
-                  default: '#DF7270',
+                    default: '#DF7270',
                     light: '#FFF3F3',
                 },
             },

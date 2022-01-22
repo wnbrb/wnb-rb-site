@@ -4,6 +4,8 @@ import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
+import InfoCard from '../home/InfoCard';
+import { infoCardData } from '../home/homeData';
 import SponsorsTile from 'components/SponsorsTile';
 
 import 'stylesheets/page';
@@ -55,6 +57,18 @@ const Home = () => (
         <section className="podcast">
             <PodcastTile podcast={podcast} />
         </section>
+        <div className="mx-auto max-w-3xl flex-col">
+            {infoCardData.map((card) => {
+                return (
+                    <InfoCard
+                        key={card.title}
+                        section={card.section}
+                        title={card.title}
+                        icon={card.icon}
+                    ></InfoCard>
+                );
+            })}
+        </div>
         <section className="sponsors">
             <SponsorsTile sponsors={sponsors} />
         </section>

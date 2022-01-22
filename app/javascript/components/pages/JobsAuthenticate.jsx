@@ -40,12 +40,8 @@ const JobsAuthenticate = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     ></input>
-                    <Button
-                        type="secondary"
-                        className="w-20 mt-3"
-                        onClick={() => console.log(`Password is ${password}`)}
-                    >
-                        <input type="submit" value="Log In" className="bg-transparent" />
+                    <Button type="secondary" className="w-40 mt-3">
+                        <input type="submit" value="View Job Board" className="bg-transparent" />
                     </Button>
                     {hasError && <div className="incorrect-password">Password is incorrect.</div>}
                     <p className="text-sm mt-5">
