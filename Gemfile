@@ -15,8 +15,8 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.4.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'pundit'
 gem 'jwt'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
