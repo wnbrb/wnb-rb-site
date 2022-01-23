@@ -7,6 +7,7 @@ import { postJobsAuthenticate } from '../../datasources';
 
 import 'stylesheets/page';
 import 'stylesheets/jobs_authenticate';
+import { UnauthorizedError } from '../../errors';
 
 const JobsAuthenticate = () => {
     const [password, setPassword] = useState('');
@@ -23,8 +24,13 @@ const JobsAuthenticate = () => {
             setCookie('wnb_job_board_token', data.token);
             window.location.href = '/jobs';
         } catch (error) {
-            setHasError(true);
-            setPassword('');
+            if (error instanceof UnauthorizedError) {
+                setHasError(true);
+                setPassword('');
+            } else {
+                // TODO: add error boundaries
+                console.log(error.message);
+            }
         }
     };
 
