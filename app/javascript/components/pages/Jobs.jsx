@@ -6,6 +6,7 @@ import PageTitle from 'components/PageTitle';
 import Button from 'components/Button';
 import { getJobs } from '../../datasources';
 import { postedAtString } from '../../utils';
+import { UnauthorizedError } from '../../errors';
 
 import 'stylesheets/page';
 import 'stylesheets/jobs';
@@ -20,7 +21,12 @@ const Jobs = () => {
                 const data = await getJobs(cookies['token']);
                 setJobs(data);
             } catch (error) {
-                window.location.href = '/jobs/authenticate';
+                if (error instanceof UnauthorizedError) {
+                    window.location.href = '/jobs/authenticate';
+                } else {
+                    // TODO: add error boundaries
+                    console.log(error.message);
+                }
             }
         };
 

@@ -1,3 +1,5 @@
+import { UnauthorizedError } from '../errors';
+
 const API_ROOT = '/api';
 
 export const getPastMeetups = async () => {
@@ -12,8 +14,10 @@ export const getJobs = async (token) => {
 
     const result = await fetch(`${API_ROOT}/jobs`, { headers });
 
-    if (result.status !== 200) {
-        throw new Error('Unauthorized');
+    if (result.status === 401) {
+        throw new UnauthorizedError('Unauthorized to view jobs');
+    } else if (result.status != 200) {
+        throw new Error('There was an error fetching the jobs.');
     }
 
     const json = await result.json();
@@ -32,8 +36,10 @@ export const postJobsAuthenticate = async (password) => {
         }),
     });
 
-    if (result.status !== 201) {
-        throw new Error('Incorrect password');
+    if (result.status === 401) {
+        throw new UnauthorizedError('The password was incorrect');
+    } else if (result.status != 201) {
+        throw new Error('There was an error verifying the password');
     }
 
     return await result.json();
