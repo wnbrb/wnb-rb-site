@@ -12,7 +12,7 @@ const JobsAuthenticate = () => {
     const [password, setPassword] = useState('');
     const [hasError, setHasError] = useState(false);
     // eslint-disable-next-line no-unused-vars
-    const [_, setCookie] = useCookies(['token']);
+    const [_, setCookie] = useCookies();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -20,7 +20,7 @@ const JobsAuthenticate = () => {
         try {
             const data = await postJobsAuthenticate(password);
             setHasError(false);
-            setCookie('token', data.token);
+            setCookie('wnb_job_board_token', data.token);
             window.location.href = '/jobs';
         } catch (error) {
             setHasError(true);

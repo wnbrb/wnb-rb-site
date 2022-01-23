@@ -13,12 +13,12 @@ import 'stylesheets/jobs';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
-    const [cookies] = useCookies('token');
+    const [cookies] = useCookies();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getJobs(cookies['token']);
+                const data = await getJobs(cookies['wnb_job_board_token']);
                 setJobs(data);
             } catch (error) {
                 if (error instanceof UnauthorizedError) {
