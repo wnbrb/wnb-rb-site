@@ -9,6 +9,10 @@ export const getPastMeetups = async () => {
 };
 
 export const getJobs = async (token) => {
+    if (token === null || token === undefined) {
+        throw new UnauthorizedError('Unauthorized to view jobs');
+    }
+
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${token}`);
 
