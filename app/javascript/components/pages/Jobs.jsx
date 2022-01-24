@@ -57,7 +57,7 @@ const Jobs = () => {
 
 const JobGroup = ({ jobs }) => {
     return (
-        <div className="full flex flex-row flex-wrap justify-center md:justify-between md:max-w-[50rem] lg:max-w-[73rem] mx-auto">
+        <div className="job-group">
             {jobs.map((job) => (
                 <Job
                     key={`${job.title} at ${job.company}`}
@@ -80,8 +80,8 @@ JobGroup.propTypes = {
 
 const SponsorUsBanner = () => {
     return (
-        <div className="sponsor-us-banner w-full flex flex-row justify-center my-20 py-5 px-5">
-            <Card className="my-5 py-5 flex flex-row flex-wrap justify-center md:justify-between text-center md:text-left items-center text-lg">
+        <div className="sponsor-us-banner">
+            <Card className="sponsor-us-card">
                 Want to see your company&apos;s job on our board?
                 <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
                     <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
