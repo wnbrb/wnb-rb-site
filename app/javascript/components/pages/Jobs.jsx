@@ -47,7 +47,9 @@ const Jobs = () => {
 
     return (
         <SharedLayout>
-            <PageTitle text="Jobs" />
+            <div className="px-40 my-20">
+                <PageTitle text="Jobs" />
+            </div>
             <JobGroup jobs={firstSixJobs} />
             <SponsorUsBanner />
             <JobGroup jobs={restOfJobs} />

@@ -1,6 +1,7 @@
 .page-title {
     @apply relative
-    max-w-[300rem];
+    min-h-[12rem]
+    overflow-auto;
 }
 
 .ruby-outline {
