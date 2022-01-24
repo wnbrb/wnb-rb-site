@@ -5,7 +5,6 @@ import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
 import InfoCard from '../home/InfoCard';
-import { infoCardData } from '../home/homeData';
 import SponsorsTile from 'components/SponsorsTile';
 
 import 'stylesheets/page';
@@ -16,14 +15,21 @@ import SponsorImage1 from 'images/sponsor1.png';
 import SponsorImage2 from 'images/sponsor2.png';
 import SponsorImage3 from 'images/sponsor3.png';
 
-let podcast = {
+import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunitySection';
+import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
+import GiveSupportSection from '../home/GiveSupportSection';
+import JoinCommunityIcon from 'components/icons/JoinCommunity';
+import ExceedGoalsIcon from 'components/icons/ExceedGoals';
+import GiveSupportIcon from 'components/icons/GiveSupport';
+
+const podcast = {
     tile_image: PodcastImage,
     tile_image_alt: 'Ruby on Rails Podcast',
     title: 'Ruby on Rails Podcast',
     url: 'https://www.therubyonrailspodcast.com/373',
 };
 
-let sponsors = [
+const sponsors = [
     {
         id: 1,
         tile_image: SponsorImage1,
@@ -38,6 +44,24 @@ let sponsors = [
         id: 3,
         tile_image: SponsorImage3,
         tile_image_alt: 'Sponsor 3',
+    },
+];
+
+const infoCardData = [
+    {
+        title: 'Join our welcoming community',
+        section: <JoinOurWelcomingCommunitySection />,
+        icon: JoinCommunityIcon,
+    },
+    {
+        title: 'Exceed your professional goals',
+        section: <ExceedYourProfessionalGoalsSection />,
+        icon: ExceedGoalsIcon,
+    },
+    {
+        title: 'Give support, and get it in return',
+        section: <GiveSupportSection />,
+        icon: GiveSupportIcon,
     },
 ];
 
@@ -67,7 +91,7 @@ const Home = () => (
             <PodcastTile podcast={podcast} />
         </section>
 
-        <div className="mx-auto max-w-3xl flex-col">
+        <div className="info-card-section">
             {infoCardData.map((card) => {
                 return (
                     <InfoCard
