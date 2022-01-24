@@ -39,7 +39,7 @@ const JobsAuthenticate = () => {
         <SharedLayout>
             <div className="jobs-authenticate-container">
                 <Logo className="h-28" />
-                <Card className="max-w-[30rem] mt-5">
+                <Card className="w-full max-w-[30rem] mt-5">
                     <form className="flex flex-col" onSubmit={(e) => handleLogin(e)}>
                         Password
                         <input
@@ -75,7 +75,7 @@ const JobsAuthenticate = () => {
                 <Card className="w-full max-w-[30rem] mt-5">
                     <div className="flex flex-row items-center justify-between text-lg">
                         Want to post a job?
-                        <Button type="white">
+                        <Button type="white" className="text-center md:text-left">
                             <a href="/sponsor-us" target="_blank" rel="noopener noreferrer">
                                 Sponsor Us
                             </a>

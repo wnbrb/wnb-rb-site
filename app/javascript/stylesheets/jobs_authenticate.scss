@@ -1,5 +1,5 @@
 .jobs-authenticate-container {
-    @apply bg-[#FFE2E2] w-full h-full px-20 py-24 flex flex-col justify-center items-center text-lg;
+    @apply bg-[#FFE2E2] w-full h-full px-10 md:px-20 py-24 flex flex-col justify-center items-center text-lg;
 }
 
 .incorrect-password {
