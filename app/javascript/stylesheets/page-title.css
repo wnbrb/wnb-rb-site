@@ -5,11 +5,11 @@
 }
 
 .ruby-outline {
-    @apply absolute w-48 z-[-1];
+    @apply absolute w-48 z-[-1] sm:w-40;
 }
 
 .title-container {
-    @apply z-10 mt-14 ml-24 w-min;
+    @apply z-10 mt-10 md:mt-14 ml-20 md:ml-24 w-min;
 }
 
 .title-text {
