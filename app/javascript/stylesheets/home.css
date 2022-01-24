@@ -14,7 +14,7 @@
 }
 
 .splash-background {
-    @apply w-[30rem] mt-20 md:mt-0 md:w-[40rem];
+    @apply max-w-[37rem] mt-20 md:mt-0 md:w-[40rem];
 }
 
 .podcast {

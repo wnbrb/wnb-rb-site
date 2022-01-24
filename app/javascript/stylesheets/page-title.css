@@ -9,7 +9,7 @@
 }
 
 .title-container {
-    @apply z-10 mt-10 md:mt-14 ml-20 md:ml-24 w-min;
+    @apply z-10 mt-10 ml-20  w-min;
 }
 
 .title-text {
