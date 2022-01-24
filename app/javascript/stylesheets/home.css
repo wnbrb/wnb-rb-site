@@ -1,5 +1,5 @@
 .hero-container {
-    @apply pt-28 px-10 flex flex-row justify-center md:pt-40;
+    @apply mt-28 px-10 flex flex-row justify-center md:mt-40;
 }
 
 .hero {
@@ -14,7 +14,28 @@
 }
 
 .splash-background {
-    @apply w-[30rem] mt-20 md:w-[40rem];
+    @apply w-[30rem] mt-20 md:mt-0 md:w-[40rem];
+}
+
+.podcast {
+    background: url('../../assets/images/waveform.svg');
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: auto 85%;
+
+    @apply bg-wnbrb-pink-default
+    py-20
+    flex
+    items-center
+    justify-center
+    my-28
+    md:my-40
+    relative;
+}
+
+.podcast .podcast-tile {
+    @apply sm:top-1/3
+    sm:left-1/4;
 }
 
 .hero-icon {
@@ -60,26 +81,6 @@
     @apply block
     text-lg
     w-56;
-}
-
-.podcast {
-    background: url('../../assets/images/waveform.svg');
-    background-repeat: repeat-x;
-    background-position: center;
-    background-size: auto 85%;
-
-    @apply bg-wnbrb-pink-default
-    py-20
-    flex
-    items-center
-    justify-center
-    my-32
-    relative;
-}
-
-.podcast .podcast-tile {
-    @apply sm:top-1/3
-    sm:left-1/4;
 }
 
 .sponsors {
