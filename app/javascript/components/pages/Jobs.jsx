@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
 import PageTitle from 'components/PageTitle';
 import Button from 'components/Button';
+import Card from 'components/Card';
 import { getJobs } from '../../datasources';
 import { postedAtString } from '../../utils';
 import { UnauthorizedError } from '../../errors';
@@ -82,21 +83,21 @@ JobGroup.propTypes = {
 const SponsorUsBanner = () => {
     return (
         <div className="sponsor-us-banner w-full flex flex-row justify-center my-20 py-5">
-            <div className="bg-white shadow-lg rounded-lg my-5 py-5 px-10 flex flex-row justify-between items-center text-lg">
+            <Card className="my-5 py-5 flex flex-row justify-between items-center text-lg">
                 Want to see your company&apos;s job on our board?
                 <Button type="white" className="ml-5">
                     <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
                         Sponsor Us
                     </a>
                 </Button>
-            </div>
+            </Card>
         </div>
     );
 };
 
 const Job = ({ title, description, imageUrl, company, link, location, createdAt }) => {
     return (
-        <div className="bg-white shadow-lg rounded-lg my-5 mr-8 p-10 max-w-[22rem]">
+        <Card className="my-5 mr-8 max-w-[22rem]">
             <div className="flex flex-row">
                 <img className="w-14 h-14 rounded-full mr-6" src={imageUrl} alt="" />
                 <div className="flex flex-col">
@@ -114,7 +115,7 @@ const Job = ({ title, description, imageUrl, company, link, location, createdAt 
                 </Button>
                 <div>{`Posted ${postedAtString(createdAt)}`}</div>
             </div>
-        </div>
+        </Card>
     );
 };
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from './Card';
 
 import 'stylesheets/sponsors-tile';
 
 const SponsorsTile = ({ sponsors }) => (
-    <div className="sponsors-tile">
+    <Card className="sponsors-tile">
         <div className="sponsors-tile-title">Sponsored by</div>
         <div className="sponsors-tile-img-container">
             {sponsors.map((sponsor) => (
@@ -13,7 +14,7 @@ const SponsorsTile = ({ sponsors }) => (
                 </div>
             ))}
         </div>
-    </div>
+    </Card>
 );
 
 SponsorsTile.propTypes = {

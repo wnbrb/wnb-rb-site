@@ -1,28 +1,25 @@
 .podcast-tile {
-  width: 90%;
+    width: 90%;
 
-  @apply sm:flex
-    bg-white
-    shadow-lg
-    rounded-lg
+    @apply sm:flex
     items-center
     sm:w-1/2
     p-4;
 }
 
 .podcast-tile img {
-  @apply w-14;
+    @apply w-14;
 }
 
 .podcast-tile-title {
-  @apply font-bold
+    @apply font-bold
     text-xl
     flex-1
     px-4;
 }
 
 .podcast-tile-button {
-  @apply border
+    @apply border
     text-lg
     px-8
     py-2

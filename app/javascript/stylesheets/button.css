@@ -31,10 +31,6 @@
     @apply bg-wnbrb-gray-default text-white;
 }
 
-.button.secondary:hover {
-    @apply text-wnbrb-gray-default border-wnbrb-gray-default bg-wnbrb-gray-light;
-}
-
 .button.secondary:active,
 .button.secondary:hover {
     box-shadow: 0 0 0 0.25rem rgba(74, 74, 74, 0.5);
@@ -46,7 +42,7 @@
 
 .button.white:active,
 .button.white:hover {
-    box-shadow: 0 0 0 0.25rem rgba(74, 74, 74, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(74, 74, 74, 0.25);
 }
 
 .button.ruby {
