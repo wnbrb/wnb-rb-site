@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import propTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
-import PageTitle from 'components/PageTitle';
+import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import Button from 'components/Button';
 import Card from 'components/Card';
 import { getJobs } from '../../datasources';
@@ -47,9 +47,7 @@ const Jobs = () => {
 
     return (
         <SharedLayout>
-            <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
-                <PageTitle text="Jobs" />
-            </div>
+            <PageTitleWithContainer text="Jobs" />
             <JobGroup jobs={firstSixJobs} />
             <SponsorUsBanner />
             <JobGroup jobs={restOfJobs} />
