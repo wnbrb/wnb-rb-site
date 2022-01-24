@@ -15,13 +15,14 @@
     sm:flex-row
     justify-center
     items-center
-    sm:h-36
-    pb-8;
+    sm:h-36;
 }
 
 .sponsors-tile-img-container img {
-    @apply w-1/2
-    my-0
+    @apply h-10
+    mt-10
+    md:mt-0
+    py-0
     mx-auto
     sm:w-auto;
 }

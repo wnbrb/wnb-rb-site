@@ -11,9 +11,9 @@ import 'stylesheets/page';
 import 'stylesheets/home';
 
 import PodcastImage from 'images/podcast-cover.png';
-import SponsorImage1 from 'images/sponsor1.png';
-import SponsorImage2 from 'images/sponsor2.png';
-import SponsorImage3 from 'images/sponsor3.png';
+import Stripe from 'images/sponsors/stripe.svg';
+import Shopify from 'images/sponsors/shopify.svg';
+import Contentful from 'images/sponsors/contentful.svg';
 
 import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunitySection';
 import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
@@ -32,18 +32,18 @@ const podcast = {
 const sponsors = [
     {
         id: 1,
-        tile_image: SponsorImage1,
-        tile_image_alt: 'Sponsor 1',
+        tile_image: Stripe,
+        tile_image_alt: 'Stripe',
     },
     {
         id: 2,
-        tile_image: SponsorImage2,
-        tile_image_alt: 'Sponsor 2',
+        tile_image: Shopify,
+        tile_image_alt: 'Shopify',
     },
     {
         id: 3,
-        tile_image: SponsorImage3,
-        tile_image_alt: 'Sponsor 3',
+        tile_image: Contentful,
+        tile_image_alt: 'Contentful',
     },
 ];
 
@@ -91,7 +91,7 @@ const Home = () => (
             <PodcastTile podcast={podcast} />
         </section>
 
-        <div className="info-card-section">
+        <section className="info-card-section">
             {infoCardData.map((card) => {
                 return (
                     <InfoCard
@@ -102,7 +102,8 @@ const Home = () => (
                     ></InfoCard>
                 );
             })}
-        </div>
+        </section>
+
         <section className="sponsors">
             <SponsorsTile sponsors={sponsors} />
         </section>
