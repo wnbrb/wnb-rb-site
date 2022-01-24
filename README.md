@@ -27,7 +27,7 @@ You must also fork and clone this repository.
 
 For help getting set up, refer to the [Contributor Resources](#contributor-resources-) section of this document.
 
-### 2. Setup the repo
+### 2. Set up the repo
 
 To install dependencies and setup the database, run:
 
@@ -35,12 +35,25 @@ To install dependencies and setup the database, run:
 make setup
 ```
 
-### 3. Run the tests
+### 3. Set environment variables
+
+Running the job board locally requires two environment variables. To set up your environment variables, run the following command:
+
+```
+cp .env.template .env
+```
+
+Then, edit `.env` and set the following environment variables:
+
+- `JOB_BOARD_PASSWORD`: this determines the password for the job board
+- `JWT_HMAC_SECRET`: this sets the secret key used to encode the token for job board authentication
+
+### 4. Run the tests
 
 - To run the backend tests: `rspec`
 - To run the frontend tests: `yarn jest app/javascript`
 
-### 4. Start the server
+### 5. Start the server
 
 To start both the frontend and backend servers at the same time, run:
 

@@ -42,3 +42,4 @@ package-lock.json
 
 # Rubymine
 .idea
+.env

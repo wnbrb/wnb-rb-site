@@ -1,25 +1,37 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import propTypes from 'prop-types';
+import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
 import PageTitle from 'components/PageTitle';
 import Button from 'components/Button';
 import { getJobs } from '../../datasources';
 import { postedAtString } from '../../utils';
+import { UnauthorizedError } from '../../errors';
 
 import 'stylesheets/page';
 import 'stylesheets/jobs';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
+    const [cookies] = useCookies();
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getJobs();
-            setJobs(data);
+            try {
+                const data = await getJobs(cookies['wnb_job_board_token']);
+                setJobs(data);
+            } catch (error) {
+                if (error instanceof UnauthorizedError) {
+                    window.location.href = '/jobs/authenticate';
+                } else {
+                    // TODO: add error boundaries
+                    console.log(error.message);
+                }
+            }
         };
 
         fetchData();
-    }, []);
+    }, [cookies]);
 
     const [firstSixJobs, restOfJobs] = useMemo(() => {
         if (jobs === []) {

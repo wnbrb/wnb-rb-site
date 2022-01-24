@@ -25,7 +25,9 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :jobs, only: [:index]
+    resources :jobs, only: [:index] do
+      collection { post 'authenticate' }
+    end
   end
 
   namespace :admin do

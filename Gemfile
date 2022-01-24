@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.4.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'jwt'
 gem 'pundit'
 
 group :development, :test do

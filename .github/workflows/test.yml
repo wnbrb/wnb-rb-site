@@ -46,6 +46,6 @@ jobs:
       - name: Run JavaScript unit tests
         run: yarn jest app/javascript
       - name: Run Rubocop
-        run: rubocop --force-exclusion
+        run: rubocop --force-exclusion --cache false
       - name: Run ESLint
         run: yarn run eslint app/javascript --ext .js,.jsx

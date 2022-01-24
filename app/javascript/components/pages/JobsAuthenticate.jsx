@@ -1,19 +1,44 @@
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
 import Logo from 'components/icons/Logo';
 import Button from 'components/Button';
+import { postJobsAuthenticate } from '../../datasources';
 
 import 'stylesheets/page';
 import 'stylesheets/jobs_authenticate';
+import { UnauthorizedError } from '../../errors';
 
 const JobsAuthenticate = () => {
     const [password, setPassword] = useState('');
+    const [hasError, setHasError] = useState(false);
+    // eslint-disable-next-line no-unused-vars
+    const [_, setCookie] = useCookies();
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try {
+            const data = await postJobsAuthenticate(password);
+            setHasError(false);
+            setCookie('wnb_job_board_token', data.token);
+            window.location.href = '/jobs';
+        } catch (error) {
+            if (error instanceof UnauthorizedError) {
+                setHasError(true);
+                setPassword('');
+            } else {
+                // TODO: add error boundaries
+                console.log(error.message);
+            }
+        }
+    };
 
     return (
         <SharedLayout>
             <div className="jobs-authenticate-container">
                 <Logo className="h-28" />
-                <div className="jobs-authenticate-login">
+                <form className="jobs-authenticate-login" onSubmit={(e) => handleLogin(e)}>
                     Password
                     <input
                         type="password"
@@ -21,16 +46,10 @@ const JobsAuthenticate = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     ></input>
-                    <Button
-                        type="secondary"
-                        className="text-base w-40 mt-3"
-                        onClick={() => console.log(`Password is ${password}`)}
-                    >
-                        {/*TODO: implement actual password submission logic*/}
-                        <button onClick={() => console.log(`Password is ${password}`)}>
-                            View Job Board
-                        </button>
+                    <Button type="secondary" className="w-40 mt-3">
+                        <input type="submit" value="View Job Board" className="bg-transparent" />
                     </Button>
+                    {hasError && <div className="incorrect-password">Password is incorrect.</div>}
                     <p className="text-sm mt-5">
                         The WNB.rb job board is password protected. You can find the password in the
                         WNB.rb Slack workspace. To join WNB.rb on Slack,{' '}
@@ -43,7 +62,7 @@ const JobsAuthenticate = () => {
                             fill out this form.
                         </a>
                     </p>
-                </div>
+                </form>
                 <div className="jobs-authenticate-sponsor-us">
                     Want to post a job?
                     <Button type="white">
