@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import Header from 'components/layout/Header';
 import Footer from 'components/layout/Footer';
 
-import 'stylesheets/layout';
-
 const SharedLayout = ({ children }) => (
-    <div className="layout">
+    <div className="flex flex-col h-full">
         <Header />
-        <main className="body">{children}</main>
+        <main className="w-full h-full">{children}</main>
         <Footer />
     </div>
 );
