@@ -43,20 +43,30 @@ let sponsors = [
 
 const Home = () => (
     <SharedLayout>
-        <section className="hero">
-            <PageTitle text="WNB.rb">
-                <p>A virtual community for women and non-binary Rubyists.</p>
-                <a href="https://tinyurl.com/join-wnb-rb" target="_blank" rel="noreferrer noopener">
-                    <Button type="secondary">Join WNB.rb</Button>
-                </a>
-            </PageTitle>
-            <div className="hero-right">
-                <SplashBackground className="splash-background" />
+        <section className="hero-container">
+            <div className="hero">
+                <PageTitle text="WNB.rb">
+                    <p className="mt-3">A virtual community for women and non-binary Rubyists.</p>
+                    <a
+                        href="https://tinyurl.com/join-wnb-rb"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        <Button type="secondary" className="mt-3">
+                            Join WNB.rb
+                        </Button>
+                    </a>
+                </PageTitle>
+                <div className="splash-background">
+                    <SplashBackground className="w-full" />
+                </div>
             </div>
         </section>
+
         <section className="podcast">
             <PodcastTile podcast={podcast} />
         </section>
+
         <div className="mx-auto max-w-3xl flex-col">
             {infoCardData.map((card) => {
                 return (

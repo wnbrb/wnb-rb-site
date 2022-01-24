@@ -1,35 +1,23 @@
 .page-title {
-  @apply relative
-    py-4
-    sm:pb-28
-    sm:pt-10
-    mx-2 
-    my-3 
-    sm:mx-20 
-    sm:my-4
-    sm:flex-1;
+    @apply relative
+    max-w-[300rem];
 }
 
 .ruby-outline {
-  @apply w-48;
+    @apply absolute w-48 z-[-1];
 }
 
 .title-container {
-  @apply space-y-6
-    absolute
-    top-12
-    left-14
-    sm:top-24
-    sm:left-24;
+    @apply z-10 mt-14 ml-24 w-min;
 }
 
 .title-text {
-  @apply text-wnbrb-pink-default
+    @apply text-wnbrb-pink-default
     text-5xl
     sm:text-6xl
     font-black;
 
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: white;
-  text-shadow: 0px 2px 6px rgb(0 0 0 / 15%);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 0px 2px 6px rgb(0 0 0 / 15%);
 }
