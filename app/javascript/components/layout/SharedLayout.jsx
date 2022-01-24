@@ -6,7 +6,7 @@ import Footer from 'components/layout/Footer';
 const SharedLayout = ({ children }) => (
     <div className="flex flex-col h-full">
         <Header />
-        <main className="w-full h-full">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
     </div>
 );
