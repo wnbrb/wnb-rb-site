@@ -1,7 +1,7 @@
 import React from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
-import PageTitle from 'components/PageTitle';
+import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import SponsorUsInfoCard from '../sponsor_us/SponsorUsInfoCard';
 import SponsorCTA from '../sponsor_us/SponsorCTA';
 import { sponsorCardData, infoCardData } from '../sponsor_us/sponsorUsData';
@@ -12,7 +12,7 @@ import 'stylesheets/sponsor-us';
 const SponsorUs = () => {
     return (
         <SharedLayout>
-            <PageTitle text="Sponsor Us" />
+            <PageTitleWithContainer text="Sponsor Us" />
             <div className="card-container flex flex-wrap justify-center">
                 {sponsorCardData.map((card) => {
                     return (

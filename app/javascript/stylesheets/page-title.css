@@ -16,7 +16,8 @@
     @apply text-wnbrb-pink-default
     text-5xl
     sm:text-6xl
-    font-black;
+    font-black
+    md:whitespace-nowrap;
 
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
