@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
+import Button from './Button';
 
 import 'stylesheets/podcast-tile';
 
@@ -12,9 +13,11 @@ const PodcastTile = ({ podcast }) => (
                 {podcast.title}
             </a>
         </div>
-        <a className="podcast-tile-button" href={podcast.url}>
-            Listen
-        </a>
+        <Button type="white" className="min-w-[10rem]">
+            <a href={podcast.url} target="_blank" rel="noopener noreferrer">
+                Listen
+            </a>
+        </Button>
     </Card>
 );
 

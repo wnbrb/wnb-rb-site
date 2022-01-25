@@ -1,7 +1,7 @@
 .page-title {
     @apply relative
-    min-h-[12rem]
-    overflow-auto;
+    min-h-[12rem];
+    /* overflow-auto; */
 }
 
 .ruby-outline {
@@ -9,7 +9,7 @@
 }
 
 .title-container {
-    @apply z-10 mt-10 ml-20  w-min;
+    @apply pt-10 pl-20;
 }
 
 .title-text {

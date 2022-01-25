@@ -70,7 +70,9 @@ const Home = () => (
         <section className="hero-container">
             <div className="hero">
                 <PageTitle text="WNB.rb">
-                    <p className="mt-3">A virtual community for women and non-binary Rubyists.</p>
+                    <p className="mt-3 max-w-[14rem]">
+                        A virtual community for women and non-binary Rubyists.
+                    </p>
                     <a
                         href="https://tinyurl.com/join-wnb-rb"
                         target="_blank"
