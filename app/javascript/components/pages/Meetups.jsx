@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
-import PageTitle from 'components/PageTitle';
+import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import 'stylesheets/page';
 import 'stylesheets/meetup';
 
@@ -84,8 +84,8 @@ const Meetups = () => {
 
     return (
         <SharedLayout>
-            <PageTitle text="Past Meetups" />
-            <div className="container flex mx-auto px-6 md:px-44 lg:mx-0">
+            <PageTitleWithContainer text="Past Meetups" />
+            <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
                 {meetupsByYear.length > 0
                     ? meetupsByYear.map(([year, meetupsByMonth]) => {
                           return (

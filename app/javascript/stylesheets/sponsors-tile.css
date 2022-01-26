@@ -1,32 +1,28 @@
 .sponsors-tile {
-  width: 90%;
+    width: 90%;
 
-  @apply bg-white
-    shadow-lg
-    rounded-lg
-    sm:w-9/12
-    py-6
-    px-8;
+    @apply sm:w-9/12;
 }
 
 .sponsors-tile-title {
-  @apply text-center
+    @apply text-center
     text-lg;
 }
 
 .sponsors-tile-img-container {
-  @apply flex
+    @apply flex
     flex-col
     sm:flex-row
     justify-center
     items-center
-    sm:h-36
-    pb-8;
+    sm:h-36;
 }
 
 .sponsors-tile-img-container img {
-  @apply w-1/2
-    my-0
+    @apply h-10
+    mt-10
+    md:mt-0
+    py-0
     mx-auto
     sm:w-auto;
 }

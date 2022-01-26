@@ -4,11 +4,10 @@ import RubyOutline from 'components/icons/RubyOutline';
 import 'stylesheets/page-title';
 
 const PageTitle = ({ text, children }) => {
-    const classNames = 'title-container w-min';
     return (
         <div className="page-title">
             <RubyOutline className="ruby-outline" />
-            <div className={children ? classNames : `${classNames}sm:w-max`}>
+            <div className="title-container">
                 <h1 className="title-text">{text}</h1>
                 {children}
             </div>

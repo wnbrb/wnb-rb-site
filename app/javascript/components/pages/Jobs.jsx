@@ -2,8 +2,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import propTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
-import PageTitle from 'components/PageTitle';
+import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import Button from 'components/Button';
+import Card from 'components/Card';
 import { getJobs } from '../../datasources';
 import { postedAtString } from '../../utils';
 import { UnauthorizedError } from '../../errors';
@@ -46,7 +47,7 @@ const Jobs = () => {
 
     return (
         <SharedLayout>
-            <PageTitle text="Jobs" />
+            <PageTitleWithContainer text="Jobs" />
             <JobGroup jobs={firstSixJobs} />
             <SponsorUsBanner />
             <JobGroup jobs={restOfJobs} />
@@ -56,21 +57,19 @@ const Jobs = () => {
 
 const JobGroup = ({ jobs }) => {
     return (
-        <div className="w-full flex flex-row justify-center px-40">
-            <div className="jobs flex flex-row flex-wrap ">
-                {jobs.map((job) => (
-                    <Job
-                        key={`${job.title} at ${job.company}`}
-                        company={job.company}
-                        title={job.title}
-                        description={job.description}
-                        imageUrl={job.image_url}
-                        link={job.link}
-                        location={job.location}
-                        createdAt={job.created_at}
-                    />
-                ))}
-            </div>
+        <div className="job-group">
+            {jobs.map((job) => (
+                <Job
+                    key={`${job.title} at ${job.company}`}
+                    company={job.company}
+                    title={job.title}
+                    description={job.description}
+                    imageUrl={job.image_url}
+                    link={job.link}
+                    location={job.location}
+                    createdAt={job.created_at}
+                />
+            ))}
         </div>
     );
 };
@@ -81,22 +80,22 @@ JobGroup.propTypes = {
 
 const SponsorUsBanner = () => {
     return (
-        <div className="sponsor-us-banner w-full flex flex-row justify-center my-20 py-5">
-            <div className="bg-white shadow-lg rounded-lg my-5 py-5 px-10 flex flex-row justify-between items-center text-lg">
+        <div className="sponsor-us-banner">
+            <Card className="sponsor-us-card">
                 Want to see your company&apos;s job on our board?
-                <Button type="white" className="ml-5">
+                <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
                     <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
                         Sponsor Us
                     </a>
                 </Button>
-            </div>
+            </Card>
         </div>
     );
 };
 
 const Job = ({ title, description, imageUrl, company, link, location, createdAt }) => {
     return (
-        <div className="bg-white shadow-lg rounded-lg my-5 mr-8 p-10 max-w-[22rem]">
+        <Card className="mx-0 my-5 md:mr-8 max-w-[22rem]">
             <div className="flex flex-row">
                 <img className="w-14 h-14 rounded-full mr-6" src={imageUrl} alt="" />
                 <div className="flex flex-col">
@@ -114,7 +113,7 @@ const Job = ({ title, description, imageUrl, company, link, location, createdAt 
                 </Button>
                 <div>{`Posted ${postedAtString(createdAt)}`}</div>
             </div>
-        </div>
+        </Card>
     );
 };
 
