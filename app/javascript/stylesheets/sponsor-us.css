@@ -1,101 +1,83 @@
 .ruby-color {
-  color: #993232;
+    color: #993232;
 }
 
 .emerald-color {
-  color: #45823f;
+    color: #45823f;
 }
 
 .sapphire-color {
-  color: #485496;
+    color: #485496;
 }
 
 .opal-color {
-  color: #909090;
+    color: #909090;
 }
 
 .card-container {
-  position: relative;
+    position: relative;
 }
 
 .checkmark.Ruby circle {
-  fill: #fbe6e6;
+    fill: #fbe6e6;
 }
 
 .checkmark.Ruby path {
-  fill: #993232;
+    fill: #993232;
 }
 
 .checkmark.Emerald circle {
-  fill: #dcedd6;
+    fill: #dcedd6;
 }
 
 .checkmark.Emerald path {
-  fill: #45823f;
+    fill: #45823f;
 }
 
 .checkmark.Sapphire circle {
-  fill: #dae9f6;
+    fill: #dae9f6;
 }
 
 .checkmark.Sapphire path {
-  fill: #485496;
+    fill: #485496;
 }
 
 .checkmark.Opal circle {
-  fill: #eaeaea;
+    fill: #eaeaea;
 }
 
 .checkmark.Opal path {
-  fill: #909090;
+    fill: #909090;
 }
 
 .card-container::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 60%;
-  left: 0;
-  top: 20%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #fff3f3;
-  z-index: -1;
-}
-
-.sponsor-card {
-  @apply container
-    max-w-xs
-    mx-3
-    p-6
-    my-3
-    border-gray-200
-    border
-    rounded-md
-    shadow-lg
-    flex
-    flex-col
-    justify-between;
-
-  min-height: 26rem;
-  background-color: #ffffff;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    left: 0;
+    top: 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff3f3;
+    z-index: -1;
 }
 
 .sponsor-card .checkmark {
-  height: 13px;
-  width: 13px;
-  margin-top: 0.3rem;
-  margin-right: 0.7rem;
+    height: 13px;
+    width: 13px;
+    margin-top: 0.3rem;
+    margin-right: 0.7rem;
 }
 
 .sponsor-cta {
-  @apply flex justify-center;
-  background-color: #fff3f3;
+    @apply flex justify-center;
+    background-color: #fff3f3;
 }
 
 .sponsor-cta .item-wrapper {
-  @apply container
+    @apply container
     max-w-3xl
     rounded-lg
     shadow-lg
@@ -113,9 +95,55 @@
     mx-3
     my-7;
 
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .sponsor-cta a {
-  width: 9rem;
+    width: 9rem;
+}
+
+.sponsorship-option {
+    @apply p-7
+    w-80
+    border-2
+    border-white
+    hover:border-2
+    hover:border-wnbrb-orange-default;
+}
+
+.sponsorship-option.selected {
+    @apply border-wnbrb-orange-default;
+}
+
+.sponsorship-option-radio {
+    @apply border-2
+      border-wnbrb-gray-medium
+      checked:border-wnbrb-orange-default
+      checked:bg-wnbrb-orange-default
+      transition-all;
+}
+
+.something-else-banner {
+    @apply w-full flex flex-row justify-center mt-32 py-5 px-5;
+
+    background: url('../../assets/images/repeated_dots.svg');
+    background-color: #fff3f3;
+}
+
+.something-else-banner .something-else-card {
+    @apply my-5
+    py-5
+    flex
+    flex-row
+    flex-wrap
+    justify-center
+    md:justify-between
+    text-center
+    md:text-left
+    items-center
+    text-lg;
+}
+
+.sponsor-info-card:nth-child(2) {
+    @apply ml-10;
 }

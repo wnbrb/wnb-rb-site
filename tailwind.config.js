@@ -42,7 +42,7 @@ module.exports = {
                 },
                 gray: {
                     default: '#4A4A4A',
-                    medium: '#575757',
+                    medium: '#757575',
                     light: '#EFEFEF',
                 },
                 ruby: {
