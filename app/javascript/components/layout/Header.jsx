@@ -58,10 +58,7 @@ const Header = () => {
                         <div className="menu">
                             <ul>
                                 <li>
-                                    <a href="/">Upcoming Meetup</a>
-                                </li>
-                                <li>
-                                    <a href="/meetups">Past Meetups</a>
+                                    <a href="/jobs">Job Board</a>
                                 </li>
                                 <li>
                                     <a href="/sponsor-us"> Sponsor Us</a>
