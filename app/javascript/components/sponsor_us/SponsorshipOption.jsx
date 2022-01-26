@@ -6,15 +6,9 @@ const SponsorshipOption = ({ title, amount, selected }) => {
     return (
         <Card className={`sponsorship-option ${selected ? 'selected' : null}`}>
             <div className="flex flex-row justify-between">
-                <div className="flex flex-row items-center">
-                    <input
-                        className="sponsorship-option-radio"
-                        type="radio"
-                        value={title}
-                        checked={selected}
-                        readOnly
-                    />
-                    <p className="ml-3">{title} Sponsor</p>
+                <div className="sponsorship-option-radio flex flex-row items-center">
+                    <input type="radio" value={title} checked={selected} readOnly />
+                    <label htmlFor={title}>{title} Sponsor</label>
                 </div>
                 <p className={`${title.toLowerCase()}-color`}>${amount}</p>
             </div>
