@@ -12,6 +12,7 @@ const SponsorshipOption = ({ title, amount, selected }) => {
                         type="radio"
                         value={title}
                         checked={selected}
+                        readOnly
                     />
                     <p className="ml-3">{title} Sponsor</p>
                 </div>

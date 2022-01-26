@@ -104,11 +104,15 @@
 
 .sponsorship-option {
     @apply p-7
-    w-80
+    flex-1
+    w-[22rem]
+    sm:w-80
     border-2
     border-white
     hover:border-2
-    hover:border-wnbrb-orange-default;
+    hover:border-wnbrb-orange-default
+    mt-3
+    sm:mt-0;
 }
 
 .sponsorship-option.selected {
@@ -145,5 +149,5 @@
 }
 
 .sponsor-info-card:nth-child(2) {
-    @apply ml-10;
+    @apply mt-10 md:mt-0 md:ml-10 ml-0;
 }
