@@ -1,21 +1,17 @@
 .ruby-color {
-    color: #993232;
+    @apply text-wnbrb-ruby-default;
 }
 
 .emerald-color {
-    color: #45823f;
+    @apply text-wnbrb-emerald-default;
 }
 
 .sapphire-color {
-    color: #485496;
+    @apply text-wnbrb-sapphire-default;
 }
 
 .opal-color {
-    color: #909090;
-}
-
-.card-container {
-    position: relative;
+    @apply text-wnbrb-opal-default;
 }
 
 .checkmark.Ruby circle {
@@ -50,56 +46,11 @@
     fill: #909090;
 }
 
-.card-container::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 60%;
-    left: 0;
-    top: 20%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff3f3;
-    z-index: -1;
-}
-
 .sponsor-card .checkmark {
     height: 13px;
     width: 13px;
     margin-top: 0.3rem;
     margin-right: 0.7rem;
-}
-
-.sponsor-cta {
-    @apply flex justify-center;
-    background-color: #fff3f3;
-}
-
-.sponsor-cta .item-wrapper {
-    @apply container
-    max-w-3xl
-    rounded-lg
-    shadow-lg
-    border-gray-200
-    border
-    flex
-    flex-wrap
-    flex-col
-    sm:flex-row
-    justify-between
-    items-center
-    px-2
-    sm:px-10
-    py-4
-    mx-3
-    my-7;
-
-    background-color: #ffffff;
-}
-
-.sponsor-cta a {
-    width: 9rem;
 }
 
 .sponsorship-option {
