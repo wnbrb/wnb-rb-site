@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Job < ApplicationRecord
-  SPONSORSHIP_LEVELS = { RUBY: 0, EMERALD: 1, SAPPHIRE: 2, OPAL: 3 }.freeze
+  SPONSORSHIP_LEVELS = { RUBY: 3, EMERALD: 2, SAPPHIRE: 1, OPAL: 0 }.freeze
 
   validates :company,
             :title,
