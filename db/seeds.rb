@@ -220,6 +220,7 @@ Job.create!(
     'Help organize WNB.rb, a community for women and non-binary Rubyists!
     Responsibilities include organizing and supporting underrepresented developers.',
   image_url: 'https://picsum.photos/200',
+  sponsorship_level: 0,
 )
 
 Job.create!(
@@ -233,6 +234,7 @@ Job.create!(
     having a direct imapct on eradicating those pesky Jedi knights!',
   image_url: 'https://picsum.photos/200',
   created_at: Time.now - 2.weeks,
+  sponsorship_level: 3,
 )
 
 Job.create!(
@@ -245,6 +247,7 @@ Job.create!(
     pouring beer and don\'t mind the occasional wraith stopping by.',
   image_url: 'https://picsum.photos/200',
   created_at: Time.now - 1.month,
+  sponsorship_level: 2,
 )
 
 Job.create!(
@@ -258,4 +261,5 @@ Job.create!(
     Pokemon, to understand the power that\'s inside.',
   image_url: 'https://picsum.photos/200',
   created_at: Time.now - 3.months,
+  sponsorship_level: 1,
 )
