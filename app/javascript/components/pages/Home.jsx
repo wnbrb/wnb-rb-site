@@ -11,9 +11,6 @@ import 'stylesheets/page';
 import 'stylesheets/home';
 
 import PodcastImage from 'images/podcast-cover.png';
-import Stripe from 'images/sponsors/stripe.svg';
-import Shopify from 'images/sponsors/shopify.svg';
-import Contentful from 'images/sponsors/contentful.svg';
 
 import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunitySection';
 import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
@@ -28,24 +25,6 @@ const podcast = {
     title: 'Ruby on Rails Podcast',
     url: 'https://www.therubyonrailspodcast.com/373',
 };
-
-const sponsors = [
-    {
-        id: 1,
-        tile_image: Stripe,
-        tile_image_alt: 'Stripe',
-    },
-    {
-        id: 2,
-        tile_image: Shopify,
-        tile_image_alt: 'Shopify',
-    },
-    {
-        id: 3,
-        tile_image: Contentful,
-        tile_image_alt: 'Contentful',
-    },
-];
 
 const infoCardData = [
     {
@@ -107,7 +86,7 @@ const Home = () => (
         </section>
 
         <section className="sponsors">
-            <SponsorsTile sponsors={sponsors} />
+            <SponsorsTile />
         </section>
     </SharedLayout>
 );

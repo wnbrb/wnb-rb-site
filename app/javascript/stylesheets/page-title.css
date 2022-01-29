@@ -1,6 +1,6 @@
 .page-title {
     @apply relative
-    min-h-[12rem];
+    min-h-[10rem];
     /* overflow-auto; */
 }
 

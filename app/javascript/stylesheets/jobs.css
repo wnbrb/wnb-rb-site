@@ -8,24 +8,3 @@
       lg:max-w-[73rem]
       mx-auto;
 }
-
-.sponsor-us-banner {
-    @apply w-full flex flex-row justify-center my-20 py-5 px-5;
-
-    background: url('../../assets/images/repeated_dots.svg');
-    background-color: #fff3f3;
-}
-
-.sponsor-us-banner .sponsor-us-card {
-    @apply my-5
-      py-5
-      flex
-      flex-row
-      flex-wrap
-      justify-center
-      md:justify-between
-      text-center
-      md:text-left
-      items-center
-      text-lg;
-}

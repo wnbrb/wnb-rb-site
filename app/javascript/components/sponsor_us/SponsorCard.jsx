@@ -2,13 +2,21 @@ import React from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 import Checkmark from '../icons/Checkmark';
+import Card from 'components/Card';
 
-const SponsorCard = ({ type, amount, returns, children }) => {
+const SponsorCard = ({ type, amount, returns, icon }) => {
+    const Icon = icon;
+
     return (
-        <div className="sponsor-card">
-            <div>
-                {children}
-                <h3 className="text-2xl font-bold my-5">{type} Sponsor</h3>
+        <Card className="sponsor-card w-[22rem]">
+            <div className="flex flex-row items-start">
+                <Icon className="h-14" />
+                <div className="flex flex-col flex-1 ml-5">
+                    <h3 className="text-xl font-bold">{type} Sponsor</h3>
+                    <p className={`text-lg ${type.toLowerCase()}-color`}>${amount}</p>
+                </div>
+            </div>
+            <div className="my-6 h-44">
                 <ul className="h-30">
                     {returns.map((item) => {
                         return (
@@ -19,20 +27,12 @@ const SponsorCard = ({ type, amount, returns, children }) => {
                     })}
                 </ul>
             </div>
-            <div className="flex flex-col">
-                <div className="flex flex-row items-end my-3">
-                    <p className={`mx-2 text-3xl font-medium ${type.toLowerCase()}-color`}>
-                        ${amount}
-                    </p>
-                    <p className={`font-small`}>/ 6 months</p>
-                </div>
-                <a className="place-self-start m-2" href="mailto: organizers@wnb-rb.dev">
-                    <Button type={`${type.toLowerCase()} justify-center`}>
-                        Become {type === 'Emerald' ? 'an' : 'a'} {type} sponsor
-                    </Button>
+            <Button type={`${type.toLowerCase()} justify-center`}>
+                <a className="place-self-start" href="mailto: organizers@wnb-rb.dev">
+                    Become {type === 'Emerald' ? 'an' : 'a'} {type} sponsor
                 </a>
-            </div>
-        </div>
+            </Button>
+        </Card>
     );
 };
 
@@ -41,7 +41,7 @@ SponsorCard.propTypes = {
     text: PropTypes.string,
     amount: PropTypes.string,
     returns: PropTypes.arrayOf(PropTypes.string),
-    children: PropTypes.object,
+    icon: PropTypes.func,
 };
 
 export default SponsorCard;
