@@ -5,6 +5,7 @@ import SharedLayout from 'components/layout/SharedLayout';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import Button from 'components/Button';
 import Card from 'components/Card';
+import Banner from 'components/Banner';
 import { getJobs } from '../../datasources';
 import { postedAtString } from '../../utils';
 import { UnauthorizedError } from '../../errors';
@@ -80,16 +81,14 @@ JobGroup.propTypes = {
 
 const SponsorUsBanner = () => {
     return (
-        <div className="sponsor-us-banner">
-            <Card className="sponsor-us-card">
-                Want to see your company&apos;s job on our board?
-                <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
-                    <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
-                        Sponsor Us
-                    </a>
-                </Button>
-            </Card>
-        </div>
+        <Banner>
+            Want to see your company&apos;s job on our board?
+            <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
+                <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
+                    Sponsor Us
+                </a>
+            </Button>
+        </Banner>
     );
 };
 

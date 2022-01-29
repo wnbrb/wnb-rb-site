@@ -98,27 +98,6 @@
     box-shadow: inset 0px 0px 0px 3px #f37d7b;
 }
 
-.something-else-banner {
-    @apply w-full flex flex-row justify-center mt-32 py-5 px-5;
-
-    background: url('../../assets/images/repeated_dots.svg');
-    background-color: #fff3f3;
-}
-
-.something-else-banner .something-else-card {
-    @apply my-5
-    py-5
-    flex
-    flex-row
-    flex-wrap
-    justify-center
-    md:justify-between
-    text-center
-    md:text-left
-    items-center
-    text-lg;
-}
-
 .sponsor-info-card:nth-child(2) {
     @apply mt-10 md:mt-0 md:ml-10 ml-0;
 }

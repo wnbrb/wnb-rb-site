@@ -3,7 +3,7 @@ import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import Button from 'components/Button';
-import Card from 'components/Card';
+import Banner from 'components/Banner';
 import SponsorsTile from 'components/SponsorsTile';
 import SponsorUsInfoCard from '../sponsor_us/SponsorUsInfoCard';
 import SponsorshipOption from '../sponsor_us/SponsorshipOption';
@@ -17,7 +17,20 @@ const SponsorUs = () => {
         <SharedLayout>
             <PageTitleWithContainer text="Sponsor Us" />
             <SponsorUsWidget />
-            <SomethingElseBanner />
+
+            <Banner>
+                Have something else in mind? Let&apos;s talk!
+                <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
+                    <a
+                        href={'mailto:organizers@wnb-rb.dev'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Contact Us
+                    </a>
+                </Button>
+            </Banner>
+
             <div className="w-full flex flex-row flex-wrap justify-center mt-32">
                 {infoCardData.map((card) => {
                     return (
@@ -29,6 +42,7 @@ const SponsorUs = () => {
                     );
                 })}
             </div>
+
             <SponsorsTile />
         </SharedLayout>
     );
@@ -69,19 +83,6 @@ const SponsorUsWidget = () => {
                     );
                 })}
             </div>
-        </div>
-    );
-};
-
-const SomethingElseBanner = () => {
-    return (
-        <div className="something-else-banner">
-            <Card className="something-else-card">
-                Have something else in mind? Let&apos;s talk!
-                <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
-                    <a href={'mailto:organizers@wnb-rb.dev'}>Contact Us</a>
-                </Button>
-            </Card>
         </div>
     );
 };
