@@ -1,0 +1,14 @@
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    @apply w-20 h-20 border-[10px] border-wnbrb-orange-light rounded-full mx-auto;
+    border-top-color: #f37d7b;
+    animation: spinner 1.5s linear infinite;
+}

@@ -6,6 +6,7 @@ import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import Button from 'components/Button';
 import Card from 'components/Card';
 import Banner from 'components/Banner';
+import LoadingSpinner from 'components/LoadingSpinner';
 import { getJobs } from '../../datasources';
 import { postedAtString } from '../../utils';
 import { UnauthorizedError } from '../../errors';
@@ -14,6 +15,8 @@ import 'stylesheets/page';
 import 'stylesheets/jobs';
 
 const Jobs = () => {
+    // eslint-disable-next-line no-unused-vars
+    const [loading, setLoading] = useState(true);
     const [jobs, setJobs] = useState([]);
     const [cookies] = useCookies();
 
@@ -22,6 +25,7 @@ const Jobs = () => {
             try {
                 const data = await getJobs(cookies['wnb_job_board_token']);
                 setJobs(data);
+                // setLoading(false);
             } catch (error) {
                 if (error instanceof UnauthorizedError) {
                     window.location.href = '/jobs/authenticate';
@@ -49,9 +53,15 @@ const Jobs = () => {
     return (
         <SharedLayout>
             <PageTitleWithContainer text="Jobs" />
-            <JobGroup jobs={firstSixJobs} />
-            <SponsorUsBanner />
-            <JobGroup jobs={restOfJobs} />
+            {loading ? (
+                <LoadingSpinner />
+            ) : (
+                <>
+                    <JobGroup jobs={firstSixJobs} />
+                    <SponsorUsBanner />
+                    <JobGroup jobs={restOfJobs} />
+                </>
+            )}
         </SharedLayout>
     );
 };
