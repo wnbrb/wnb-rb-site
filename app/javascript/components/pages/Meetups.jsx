@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
+import LoadingSpinner from 'components/LoadingSpinner';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import 'stylesheets/page';
 import 'stylesheets/meetup';
@@ -71,12 +72,14 @@ Meetup.propTypes = {
 };
 
 const Meetups = () => {
+    const [loading, setLoading] = useState(true);
     const [meetupsByYear, setMeetupsByYear] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPastMeetups();
             setMeetupsByYear(Object.entries(data));
+            setLoading(false);
         };
 
         fetchData();
@@ -85,31 +88,35 @@ const Meetups = () => {
     return (
         <SharedLayout>
             <PageTitleWithContainer text="Past Meetups" />
-            <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
-                {meetupsByYear.length > 0
-                    ? meetupsByYear.map(([year, meetupsByMonth]) => {
-                          return (
-                              <YearSection key={year} year={year}>
-                                  {Object.entries(meetupsByMonth).map(([month, meetups]) => {
-                                      return (
-                                          <MonthSection key={month} month={month}>
-                                              {meetups.map(({ id, speakers, title }) => {
-                                                  return (
-                                                      <Meetup
-                                                          key={id}
-                                                          speakers={speakers}
-                                                          title={title}
-                                                      />
-                                                  );
-                                              })}
-                                          </MonthSection>
-                                      );
-                                  })}
-                              </YearSection>
-                          );
-                      })
-                    : null}
-            </div>
+            {loading ? (
+                <LoadingSpinner />
+            ) : (
+                <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
+                    {meetupsByYear.length > 0
+                        ? meetupsByYear.map(([year, meetupsByMonth]) => {
+                              return (
+                                  <YearSection key={year} year={year}>
+                                      {Object.entries(meetupsByMonth).map(([month, meetups]) => {
+                                          return (
+                                              <MonthSection key={month} month={month}>
+                                                  {meetups.map(({ id, speakers, title }) => {
+                                                      return (
+                                                          <Meetup
+                                                              key={id}
+                                                              speakers={speakers}
+                                                              title={title}
+                                                          />
+                                                      );
+                                                  })}
+                                              </MonthSection>
+                                          );
+                                      })}
+                                  </YearSection>
+                              );
+                          })
+                        : null}
+                </div>
+            )}
         </SharedLayout>
     );
 };
