@@ -61,6 +61,7 @@ RSpec.describe Api::JobsController, type: :controller do
             location: 'Remote',
           }.stringify_keys,
         )
+        expect(body['data'].first).not_to have_key('sponsorship_level')
       end
     end
   end

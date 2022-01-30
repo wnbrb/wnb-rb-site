@@ -8,7 +8,7 @@ module Api
       JWT.decode bearer_token, hmac_secret, true, { algorithm: 'HS256' }
 
       jobs = Job.all
-      render status: 200, json: { data: jobs.as_json }
+      render status: 200, json: { data: jobs.order(sponsorship_level: :desc).as_json }
     rescue JWT::ExpiredSignature, JWT::DecodeError
       render status: 401, json: {}
     end
