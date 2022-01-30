@@ -15,7 +15,6 @@ import 'stylesheets/page';
 import 'stylesheets/jobs';
 
 const Jobs = () => {
-    // eslint-disable-next-line no-unused-vars
     const [loading, setLoading] = useState(true);
     const [jobs, setJobs] = useState([]);
     const [cookies] = useCookies();
