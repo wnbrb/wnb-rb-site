@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Job < ApplicationRecord
-  SPONSORSHIP_LEVELS = { RUBY: 3, EMERALD: 2, SAPPHIRE: 1, OPAL: 0 }.freeze
+  enum sponsorship_level: %i[opal sapphire emerald ruby], _suffix: true
 
   validates :company,
             :title,
@@ -11,8 +11,6 @@ class Job < ApplicationRecord
             :image_url,
             :sponsorship_level,
             presence: true
-
-  validates :sponsorship_level, inclusion: { in: SPONSORSHIP_LEVELS.values }
 
   def as_json
     {
