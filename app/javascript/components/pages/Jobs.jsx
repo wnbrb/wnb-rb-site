@@ -25,7 +25,7 @@ const Jobs = () => {
             try {
                 const data = await getJobs(cookies['wnb_job_board_token']);
                 setJobs(data);
-                // setLoading(false);
+                setLoading(false);
             } catch (error) {
                 if (error instanceof UnauthorizedError) {
                     window.location.href = '/jobs/authenticate';

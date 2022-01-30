@@ -1,14 +1,30 @@
-@keyframes spinner {
+@keyframes drop {
     0% {
-        transform: rotate(0deg);
+        margin-top: 0;
     }
-    100% {
-        transform: rotate(360deg);
+
+    25% {
+        margin-top: 20px;
+    }
+
+    75% {
+        margin-top: 20px;
     }
 }
 
 .loading-spinner {
-    @apply w-20 h-20 border-[10px] border-wnbrb-orange-light rounded-full mx-auto;
-    border-top-color: #f37d7b;
-    animation: spinner 1.5s linear infinite;
+    @apply flex flex-row w-24 justify-between items-start mx-auto h-[40px];
+}
+
+.loading-dot {
+    @apply w-4 h-4 rounded-full bg-wnbrb-orange-default;
+    animation: drop 1.5s linear infinite;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: 250ms;
+}
+
+.loading-dot:nth-child(3) {
+    animation-delay: 500ms;
 }
