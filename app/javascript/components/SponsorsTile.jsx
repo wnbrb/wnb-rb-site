@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 
-import Stripe from 'images/sponsors/stripe.svg';
+// import Stripe from 'images/sponsors/stripe.svg';
 import Shopify from 'images/sponsors/shopify.svg';
 import Contentful from 'images/sponsors/contentful.svg';
 
 import 'stylesheets/sponsors-tile';
 
 const sponsors = [
-    {
-        id: 1,
-        tile_image: Stripe,
-        tile_image_alt: 'Stripe',
-    },
+    /* {
+	id: 1,
+	tile_image: Stripe,
+	tile_image_alt: 'Stripe',
+    }, */
     {
         id: 2,
         tile_image: Shopify,
