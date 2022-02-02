@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/meetups', to: 'site#meetups'
   get '/jobs', to: 'site#jobs'
   get '/jobs/authenticate', to: 'site#jobs_authenticate'
+  get '/donate', to: 'site#donate'
 
   root 'site#home'
   namespace :api do

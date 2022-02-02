@@ -1,0 +1,37 @@
+.donation-container {
+    @apply mx-auto
+      flex
+      flex-col
+      items-center;
+}
+
+.donation-amounts {
+    @apply mb-10 text-wnbrb-gray-default;
+
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.donate-button {
+    grid-column: 1/-1;
+}
+
+.donation-amount {
+    @apply h-20
+      w-20
+      p-5
+      shadow-md
+      flex
+      items-center
+      justify-center
+      rounded-sm
+      border-2
+      border-white
+      hover:border-wnbrb-orange-default;
+}
+
+.donation-amount.selected {
+    @apply border-2 border-wnbrb-orange-default;
+}
