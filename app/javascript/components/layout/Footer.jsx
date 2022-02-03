@@ -1,31 +1,15 @@
 import React from 'react';
 import Email from 'components/icons/Email';
-import LinkedIn from 'components/icons/LinkedIn';
+import Github from 'components/icons/Github';
 import Twitter from 'components/icons/Twitter';
 
 import 'stylesheets/footer.scss';
-
-/* TODO: re-enable this rule after all links are in place */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Footer = () => (
     <footer className="footer">
         <div className="footer-left">
             <div className="footer-col">
-                <p className="footer-col-item footer-col-title">WNB.rb Meetup</p>
-                <a className="footer-col-item" href="#">
-                    Upcoming Meetup
-                </a>
-                <a className="footer-col-item" href="#">
-                    Archive
-                </a>
-                <a className="footer-col-item" href="#">
-                    Give a Talk
-                </a>
-            </div>
-
-            <div className="footer-col">
-                <p className="footer-col-item footer-col-title">For Members</p>
+                <p className="footer-col-item footer-col-title">Get Involved</p>
                 <a
                     className="footer-col-item"
                     href="https://tinyurl.com/join-wnb-rb"
@@ -34,6 +18,12 @@ const Footer = () => (
                 >
                     Join WNB.rb
                 </a>
+                <a className="footer-col-item" href="/sponsor-us">
+                    Sponsor Us
+                </a>
+            </div>
+            <div className="footer-col">
+                <p className="footer-col-item footer-col-title">Community Guidelines</p>
                 <a
                     className="footer-col-item"
                     href="https://tinyurl.com/wnb-rb-coc"
@@ -51,29 +41,24 @@ const Footer = () => (
                     Slack Guidelines
                 </a>
             </div>
-
             <div className="footer-col">
-                <p className="footer-col-item footer-col-title">For Sponsors</p>
-                <a className="footer-col-item" href="#">
-                    Sponsor Us
+                <p className="footer-col-item footer-col-title">Resources</p>
+                <a className="footer-col-item" href="/jobs">
+                    Job Board
                 </a>
             </div>
         </div>
 
         <div className="footer-right">
             <div className="social-links">
-                <a href="#">
+                <a href="mailto:organizers@wnb-rb.dev" target="_blank" rel="noopener noreferrer">
                     <Email className="social-icon" />
                 </a>
                 <a href="https://twitter.com/wnb_rb" target="_blank" rel="noopener noreferrer">
                     <Twitter className="social-icon" />
                 </a>
-                <a
-                    href="https://www.linkedin.com/company/wnb-rb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <LinkedIn className="social-icon" />
+                <a href="https://github.com/wnbrb" target="_blank" rel="noopener noreferrer">
+                    <Github className="social-icon" />
                 </a>
             </div>
             <p className="made-with-love">

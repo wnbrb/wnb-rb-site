@@ -1,0 +1,37 @@
+<div class="mt-3 ml-3">
+  <!-- TODO: Issue 22 - Add Create Event Page -->
+  <%= link_to 'Create new Event', '#' %>
+</div>
+
+<div class="m-3">
+  <table class="text-center">
+    <thead class="border-2">
+     <tr>
+        <th scope="col" class="p-3">Title</th>
+        <th scope="col" class="p-3">Type</th>
+        <th scope="col" class="p-3">Speakers</th>
+        <th scope="col" class="p-3">Date</th>
+        <th scope="col" class="p-3">Location</th>
+        <th scope="col" class="p-3">Description</th>
+        <th scope="col" class="p-3">Actions</th>
+     </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr class="border-2">
+          <td class="p-3"><%= event.title %></td>
+          <td class="p-3"><%= event.type %></td>
+          <td class="p-3"><%= event.speakers.map(&:name).join(", ") %></td>
+          <td class="p-3"><%= event.date.strftime('%B %d, %Y %I:%M%p %:z') %></td>
+          <td class="p-3"><%= event.location %></td>
+          <td class="p-3"><%= event.description %></td>
+          <td class="p-3">
+            <%= link_to 'Edit', edit_admin_event_path(event) %>
+            <!-- TODO: Issue 25 Add Delete Functionality -->
+            <%= link_to 'Delete', '#' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -7,7 +7,7 @@ module.exports = {
     arrowParens: 'always',
     overrides: [
         {
-            files: '*.{js,jsx,tsx,ts,scss,json,html}',
+            files: '*.{js,jsx,tsx,ts,css,scss,json,html}',
             options: {
                 tabWidth: 4,
             },

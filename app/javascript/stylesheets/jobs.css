@@ -1,0 +1,10 @@
+.job-group {
+    @apply flex
+      flex-row
+      flex-wrap
+      justify-center
+      md:justify-between
+      md:max-w-[50rem]
+      lg:max-w-[73rem]
+      mx-auto;
+}

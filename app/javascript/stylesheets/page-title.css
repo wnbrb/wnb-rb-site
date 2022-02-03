@@ -1,0 +1,25 @@
+.page-title {
+    @apply relative
+    min-h-[10rem];
+    /* overflow-auto; */
+}
+
+.ruby-outline {
+    @apply absolute w-48 z-[-1] sm:w-40;
+}
+
+.title-container {
+    @apply pt-10 pl-20;
+}
+
+.title-text {
+    @apply text-wnbrb-pink-default
+    text-5xl
+    sm:text-6xl
+    font-black
+    md:whitespace-nowrap;
+
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 0px 2px 6px rgb(0 0 0 / 15%);
+}

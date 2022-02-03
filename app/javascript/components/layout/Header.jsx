@@ -58,13 +58,10 @@ const Header = () => {
                         <div className="menu">
                             <ul>
                                 <li>
-                                    <a href="/">Upcoming Meetup</a>
+                                    <a href="/jobs">Job Board</a>
                                 </li>
                                 <li>
-                                    <a href="/">Archive</a>
-                                </li>
-                                <li>
-                                    <a>Sponsor Us</a>
+                                    <a href="/sponsor-us"> Sponsor Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -99,5 +96,4 @@ const Header = () => {
         </header>
     );
 };
-
 export default Header;

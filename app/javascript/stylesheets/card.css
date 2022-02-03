@@ -1,0 +1,3 @@
+.card {
+    @apply shadow-lg rounded-lg bg-white;
+}

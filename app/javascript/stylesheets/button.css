@@ -1,29 +1,98 @@
 .button {
-  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    @apply py-[0.5rem]
+        px-[0.75rem]
+        rounded-sm
+        flex
+        items-center
+        justify-center
+        text-base
+        transition-all
+        hover:cursor-pointer
+        hover:outline-none
+        active:outline-none;
 }
 
 .button.primary {
-  @apply transition-all text-white border border-transparent;
-  background-color: #f37d7b;
-}
-
-.button.primary:hover {
-  background-color: rgba(243, 125, 123, 0.1);
-  border-color: #f37d7d;
-  color: #f37d7b;
+    @apply text-white
+        border
+        border-transparent
+        bg-wnbrb-orange-default
+        hover:text-wnbrb-orange-default
+        hover:border-wnbrb-orange-default
+        hover:bg-wnbrb-orange-light;
 }
 
 .button.primary:active,
 .button.primary:hover {
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
+    box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
 }
 
 .button.secondary {
-  background-color: #4a4a4a;
-  color: white;
+    @apply bg-wnbrb-gray-default text-white;
+}
+
+.button.secondary:active,
+.button.secondary:hover {
+    box-shadow: 0 0 0 0.25rem rgba(74, 74, 74, 0.5);
+}
+
+.button.white {
+    @apply bg-white text-wnbrb-gray-default border border-wnbrb-gray-default;
+}
+
+.button.white:active,
+.button.white:hover {
+    box-shadow: 0 0 0 0.25rem rgba(74, 74, 74, 0.25);
+}
+
+.button.ruby {
+    @apply bg-wnbrb-ruby-default
+        text-white
+        hover:text-wnbrb-ruby-default
+        hover:border-wnbrb-ruby-default
+        hover:bg-wnbrb-ruby-light;
+}
+
+.button.ruby:active,
+.button.ruby:hover {
+    box-shadow: 0 0 0 0.25rem rgba(153, 50, 50, 0.5);
+}
+
+.button.emerald {
+    @apply bg-wnbrb-emerald-default
+        text-white
+        hover:text-wnbrb-emerald-default
+        hover:border-wnbrb-emerald-default
+        hover:bg-wnbrb-emerald-light;
+}
+
+.button.emerald:active,
+.button.emerald:hover {
+    box-shadow: 0 0 0 0.25rem rgb(69, 130, 63, 0.5);
+}
+
+.button.sapphire {
+    @apply bg-wnbrb-sapphire-default
+        text-white
+        hover:text-wnbrb-sapphire-default
+        hover:border-wnbrb-sapphire-default
+        hover:bg-wnbrb-sapphire-light;
+}
+
+.button.sapphire:active,
+.button.sapphire:hover {
+    box-shadow: 0 0 0 0.25rem rgba(72, 84, 150, 0.5);
+}
+
+.button.opal {
+    @apply bg-wnbrb-opal-default
+        text-white
+        hover:text-wnbrb-opal-default
+        hover:border-wnbrb-opal-default
+        hover:bg-wnbrb-opal-light;
+}
+
+.button.opal:active,
+.button.opal:hover {
+    box-shadow: 0 0 0 0.25rem rgba(144, 144, 144, 0.5);
 }

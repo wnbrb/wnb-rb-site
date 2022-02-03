@@ -40,3 +40,9 @@ yarn-debug.log*
 .yarn-integrity
 
 .DS_Store
+
+package-lock.json
+
+# Rubymine
+.idea
+.env

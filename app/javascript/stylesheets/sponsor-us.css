@@ -1,0 +1,103 @@
+.ruby-color {
+    @apply text-wnbrb-ruby-default;
+}
+
+.emerald-color {
+    @apply text-wnbrb-emerald-default;
+}
+
+.sapphire-color {
+    @apply text-wnbrb-sapphire-default;
+}
+
+.opal-color {
+    @apply text-wnbrb-opal-default;
+}
+
+.checkmark.Ruby circle {
+    fill: #fbe6e6;
+}
+
+.checkmark.Ruby path {
+    fill: #993232;
+}
+
+.checkmark.Emerald circle {
+    fill: #dcedd6;
+}
+
+.checkmark.Emerald path {
+    fill: #45823f;
+}
+
+.checkmark.Sapphire circle {
+    fill: #dae9f6;
+}
+
+.checkmark.Sapphire path {
+    fill: #485496;
+}
+
+.checkmark.Opal circle {
+    fill: #eaeaea;
+}
+
+.checkmark.Opal path {
+    fill: #909090;
+}
+
+.sponsor-card .checkmark {
+    height: 13px;
+    width: 13px;
+    margin-top: 0.3rem;
+    margin-right: 0.7rem;
+}
+
+.sponsorship-option {
+    @apply p-7
+    flex-1
+    w-[22rem]
+    sm:w-80
+    border-2
+    border-white
+    hover:border-2
+    hover:border-wnbrb-orange-default
+    mt-3
+    sm:mt-0;
+}
+
+.sponsorship-option.selected {
+    @apply border-wnbrb-orange-default;
+}
+
+.sponsorship-option-radio input[type='radio'] {
+    display: none;
+}
+
+.sponsorship-option-radio label {
+    @apply hover:cursor-pointer;
+}
+
+.sponsorship-option-radio input[type='radio'] + label:before {
+    @apply w-4
+      h-4
+      top-[3px]
+      mr-3
+      relative
+      inline-block
+      border-2
+      rounded-full
+      border-wnbrb-gray-medium
+      transition-all;
+
+    content: ' ';
+}
+
+.sponsorship-option-radio input[type='radio']:checked + label:before {
+    @apply border-wnbrb-orange-default;
+    box-shadow: inset 0px 0px 0px 3px #f37d7b;
+}
+
+.sponsor-info-card:nth-child(2) {
+    @apply mt-10 md:mt-0 md:ml-10 ml-0;
+}
