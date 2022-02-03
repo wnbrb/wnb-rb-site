@@ -1,21 +1,9 @@
-.donation-container {
-    @apply mx-auto
-      flex
-      flex-col
-      items-center;
-}
-
 .donation-amounts {
-    @apply mb-10 text-wnbrb-gray-default;
-
-    display: grid;
-    grid-row-gap: 1rem;
-    grid-column-gap: 1rem;
-    grid-template-columns: repeat(4, 1fr);
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
 }
 
 .donate-button {
-    grid-column: 1/-1;
+    @apply col-span-full;
 }
 
 .donation-amount {
@@ -28,7 +16,8 @@
       justify-center
       rounded-sm
       border-2
-      border-white
+      transition-all
+      border-wnbrb-gray-light
       hover:border-wnbrb-orange-default;
 }
 

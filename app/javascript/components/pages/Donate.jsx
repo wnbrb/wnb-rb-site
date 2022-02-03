@@ -5,6 +5,7 @@ import Banner from 'components/Banner';
 import Button from 'components/Button';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
 
+import 'stylesheets/page';
 import 'stylesheets/donate';
 
 const PRICES = [
@@ -26,19 +27,31 @@ const Donate = () => {
     return (
         <SharedLayout>
             <PageTitleWithContainer text="Donate" />
-            <DonationAmounts selectedPrice={selectedPrice} setSelectedPrice={setSelectedPrice} />
-            <Banner>
-                Want to donate another amount?
-                <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
-                    <a
-                        href={'mailto:organizers@wnb-rb.dev'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Contact Us
-                    </a>
-                </Button>
-            </Banner>
+            <div className="flex flex-row p-12 justify-center flex-wrap">
+                <div className="flex flex-col mb-20 md:mb-0 md:mr-20">
+                    <h2 className="text-2xl font-medium mb-8">Choose a donation amount</h2>
+                    <DonationAmounts
+                        selectedPrice={selectedPrice}
+                        setSelectedPrice={setSelectedPrice}
+                    />
+                </div>
+                <div className="max-w-[25rem]">
+                    <h2 className="text-2xl font-medium mb-8">Why give to WNB.rb?</h2>
+                    <p className="mb-5">
+                        Donating to WNB.rb enables us to invest more resources in supporting women
+                        and non-binary people in the Ruby community.
+                    </p>
+                    <p>
+                        Here are some of the initiatives we plan to launch in 2022 with your help:
+                    </p>
+                    <ul className="list-disc ml-10">
+                        <li>Community fund for educational materials</li>
+                        <li>Full scholarships to RubyConf and RailsConf</li>
+                        <li>Open source development stipends</li>
+                    </ul>
+                </div>
+            </div>
+            <OtherAmountBanner />
         </SharedLayout>
     );
 };
@@ -51,34 +64,41 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
     }, [selectedPrice]);
 
     return (
-        <div className="donation-container">
-            <div className="flex justify-center">
-                <div className="donation-amounts">
-                    {PRICES.map((price) => {
-                        return (
-                            <button
-                                key={price.value}
-                                className={`donation-amount ${
-                                    selectedPrice === price.value ? 'selected' : null
-                                }`}
-                                onClick={() => setSelectedPrice(price.value)}
-                            >
-                                {price.value}
-                            </button>
-                        );
-                    })}
-                    <Button type="secondary" className="donate-button">
-                        <a
-                            href={selectedPriceObject.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+        <div className="flex justify-center">
+            <div className="donation-amounts">
+                {PRICES.map((price) => {
+                    return (
+                        <button
+                            key={price.value}
+                            className={`donation-amount ${
+                                selectedPrice === price.value ? 'selected' : null
+                            }`}
+                            onClick={() => setSelectedPrice(price.value)}
                         >
-                            Donate ${selectedPriceObject.value}
-                        </a>
-                    </Button>
-                </div>
+                            ${price.value.toLocaleString()}
+                        </button>
+                    );
+                })}
+                <Button type="secondary" className="donate-button">
+                    <a href={selectedPriceObject.link} target="_blank" rel="noopener noreferrer">
+                        Donate ${selectedPriceObject.value.toLocaleString()}
+                    </a>
+                </Button>
             </div>
         </div>
+    );
+};
+
+const OtherAmountBanner = () => {
+    return (
+        <Banner>
+            Interested in donating another amount?
+            <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
+                <a href={'mailto:organizers@wnb-rb.dev'} target="_blank" rel="noopener noreferrer">
+                    Contact Us
+                </a>
+            </Button>
+        </Banner>
     );
 };
 
