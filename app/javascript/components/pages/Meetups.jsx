@@ -36,7 +36,7 @@ MonthSection.propTypes = {
     children: PropTypes.node,
 };
 
-const Meetup = ({ speakers, title = '', event_speakers }) => {
+const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
     const eventWithSpeaker = event_speakers.map((talk) => {
         const speaker = speakers.find((speak) => speak.id === talk.speaker_id);
         return { ...talk, speaker };
@@ -71,9 +71,11 @@ const Meetup = ({ speakers, title = '', event_speakers }) => {
                         ))}
                 </div>
                 <div className="bg-gray-200 text-right">
-                    <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
-                        View
-                    </button>
+                    <a href={`/meetups/${year}/${month}`}>
+                        <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
+                            View
+                        </button>
+                    </a>
                 </div>
             </div>
         </li>
@@ -84,6 +86,8 @@ Meetup.propTypes = {
     speakers: PropTypes.array,
     title: PropTypes.string,
     event_speakers: PropTypes.array,
+    year: PropTypes.string,
+    month: PropTypes.string,
 };
 
 const Meetups = () => {
@@ -114,13 +118,25 @@ const Meetups = () => {
                                           return (
                                               <MonthSection key={month} month={month}>
                                                   {meetups.map(
-                                                      ({ id, speakers, title, event_speakers }) => {
+                                                      ({
+                                                          id,
+                                                          speakers,
+                                                          title,
+                                                          date,
+                                                          event_speakers,
+                                                      }) => {
                                                           return (
                                                               <Meetup
                                                                   key={id}
                                                                   speakers={speakers}
                                                                   title={title}
                                                                   event_speakers={event_speakers}
+                                                                  year={new Date(date)
+                                                                      .getFullYear()
+                                                                      .toString()}
+                                                                  month={month
+                                                                      .toString()
+                                                                      .padStart(2, '0')}
                                                               />
                                                           );
                                                       },

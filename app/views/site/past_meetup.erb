@@ -1,2 +1,6 @@
 <%= javascript_pack_tag 'past_meetup' %>
 <%= stylesheet_pack_tag "past_meetup" %>
+<%= javascript_tag do %>
+  var year = <%= raw(params[:year]) %>
+  var month = <%= raw(params[:month]) %>
+<% end %>

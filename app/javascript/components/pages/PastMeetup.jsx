@@ -4,38 +4,38 @@ import { getPastMeetup } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
 import PageTitleWithContainer from 'components/PageTitle';
 import SpeakersList from '../SpeakersList';
+import Microphone from '../icons/Microphone';
 import 'stylesheets/page';
 import 'stylesheets/meetup';
 
-const VideoBlock = ({ videoUrl }) => {
+const VideoBlock = ({ videoUrl, title }) => {
     if (!videoUrl) {
-        return <p className="m-2 pt-4">No video yet</p>;
+        return null;
     }
     return (
-        <div className="card-container flex flex-wrap justify-center">
-            <iframe
-                width="560"
-                height="315"
-                src={videoUrl}
-                title="YouTube video player"
-                frameBorder="0"
-            ></iframe>
+        <div className="card-container flex flex-wrap justify-center aspect-w-16 aspect-h-9">
+            <iframe src={videoUrl} title={title} frameBorder="0"></iframe>;
         </div>
     );
 };
 
 VideoBlock.propTypes = {
     videoUrl: PropTypes.string,
+    title: PropTypes.string,
 };
 
-// TODO: How to get the microphone icon in?
 const SpeakerBiosBlock = ({ speakers }) => {
     return (
-        <div className="bg-gray-200 card-container flex flex-wrap justify-center p-10">
-            <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
-            {speakers?.map(({ id, bio }) => (
-                <div key={id}>{bio}</div>
-            ))}
+        <div className="container max-w-2xl my-8 mx-3 p-4 flex flex-col">
+            <div className="inline-flex items-center gap-2 align-center">
+                <Microphone />
+                <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
+            </div>
+            <div className="flex items-center gap-20">
+                {speakers?.map(({ id, bio }) => (
+                    <div key={id}>{bio}</div>
+                ))}
+            </div>
         </div>
     );
 };
@@ -45,35 +45,42 @@ SpeakerBiosBlock.propTypes = {
 };
 
 const PastMeetup = () => {
+    const year = window.year;
+    const month = window.month;
+    const eventDate = new Date(Date.UTC(year, Number(month) - 1));
+    const monthName = eventDate.toLocaleDateString('en-US', { month: 'long' });
     const [meetup, setMeetup] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPastMeetup();
+            const data = await getPastMeetup(year, month);
             setMeetup(data);
         };
 
         fetchData();
-    }, []);
+    }, [year, month]);
 
-    console.log('data', meetup);
     const { title, description, speakers, panel_video_link: videoUrl } = meetup;
     return (
         <SharedLayout>
-            <PageTitleWithContainer text="July 2021 meetup" />
-            {meetup == 'No events found' ? (
-                <p className="m-2 pt-4">No events found for this month</p>
-            ) : (
-                <>
-                    <VideoBlock videoUrl={videoUrl} />
-                    <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
-                        <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
-                        <SpeakersList speakers={speakers} />
-                        <p className="m-2 pt-4">{description}</p>
-                    </div>
-                    <SpeakerBiosBlock speakers={speakers} />
-                </>
-            )}
+            <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
+                <PageTitleWithContainer text={`${monthName} ${year} meetup`} />
+                {meetup == 'No events found' ? (
+                    <h3 className="text-2xl font-bold mx-2 my-2">No events found for this month</h3>
+                ) : (
+                    <>
+                        <VideoBlock videoUrl={videoUrl} title={title} />
+                        <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
+                            <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
+                            <SpeakersList speakers={speakers} />
+                            <p className="m-2 pt-4">{description}</p>
+                        </div>
+                        <div className="flex flex-col items-center bg-gray-100">
+                            <SpeakerBiosBlock speakers={speakers} />
+                        </div>
+                    </>
+                )}
+            </div>
         </SharedLayout>
     );
 };
