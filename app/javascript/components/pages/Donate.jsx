@@ -46,7 +46,7 @@ const Donate = () => {
 
 const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
     const prices = useMemo(() => {
-        return process.env.RAILS_ENV === 'development'
+        return process.env.NODE_ENV === 'development'
             ? testDonationAmounts
             : productionDonationAmounts;
     }, []);
