@@ -5,9 +5,6 @@ import Button from 'components/Button';
 
 import 'stylesheets/header.scss';
 
-/* TODO: re-enable this rule after all links are in place */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
 const Header = () => {
     /* TODO: implement logic to incorporate is-active class in navbar links. */
     const [headerState, setHeaderState] = useState({
@@ -66,6 +63,11 @@ const Header = () => {
                             </ul>
                         </div>
                         <div className="user">
+                            <div className="donate">
+                                <a href="/donate">
+                                    <Button type="white-and-orange">Donate</Button>
+                                </a>
+                            </div>
                             <div className="join-us">
                                 <a
                                     href="https://tinyurl.com/join-wnb-rb"
