@@ -1,4 +1,6 @@
 const { environment } = require('@rails/webpacker');
+const Dotenv = require('dotenv-webpack');
+environment.plugins.prepend('Dotenv', new Dotenv());
 
 // Get the actual sass-loader config
 const sassLoader = environment.loaders.get('sass');

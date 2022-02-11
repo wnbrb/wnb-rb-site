@@ -8,9 +8,7 @@ import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import 'stylesheets/page';
 import 'stylesheets/donate';
 
-const PRICES = [
-    // TEST VALUES
-
+const TEST_PRICES = [
     { value: 10, link: 'https://buy.stripe.com/test_fZe3cr0hWfIN0i4289' },
     { value: 25, link: 'https://buy.stripe.com/test_14k3crfcQaot7Kw6oq' },
     { value: 50, link: 'https://buy.stripe.com/test_6oEaET9Sw1RXfcY8wz' },
@@ -19,6 +17,17 @@ const PRICES = [
     { value: 200, link: 'https://buy.stripe.com/test_fZe8wL8Os0NT9SEeUY' },
     { value: 500, link: 'https://buy.stripe.com/test_bIYfZdggU1RX9SE5kp' },
     { value: 1000, link: 'https://buy.stripe.com/test_9AQfZd0hWdAF1m8cMS' },
+];
+
+const PROD_PRICES = [
+    { value: 10, link: 'https://buy.stripe.com/14k14KcpbcJ4bwQbIK' },
+    { value: 25, link: 'https://buy.stripe.com/dR600G74RbF0fN6003' },
+    { value: 50, link: 'https://buy.stripe.com/7sI00G60N9wSeJ2bIM' },
+    { value: 75, link: 'https://buy.stripe.com/6oEeVA60NbF06cwcMR' },
+    { value: 100, link: 'https://buy.stripe.com/7sI14K74RcJ40Sc6ou' },
+    { value: 200, link: 'https://buy.stripe.com/00gaFk1Kx9wSfN6dQX' },
+    { value: 500, link: 'https://buy.stripe.com/4gw3cSexj38u44o7sA' },
+    { value: 1000, link: 'https://buy.stripe.com/8wMeVAbl710mdEY009' },
 ];
 
 const Donate = () => {
@@ -57,16 +66,20 @@ const Donate = () => {
 };
 
 const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
+    const prices = useMemo(() => {
+        return process.env.RAILS_ENV === 'development' ? TEST_PRICES : PROD_PRICES;
+    }, []);
+
     const selectedPriceObject = useMemo(() => {
-        return PRICES.filter((price) => {
+        return prices.filter((price) => {
             return price.value === selectedPrice;
         })[0];
-    }, [selectedPrice]);
+    }, [prices, selectedPrice]);
 
     return (
         <div className="flex justify-center">
             <div className="donation-amounts">
-                {PRICES.map((price) => {
+                {prices.map((price) => {
                     return (
                         <button
                             key={price.value}
