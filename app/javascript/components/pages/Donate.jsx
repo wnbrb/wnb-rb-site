@@ -4,13 +4,14 @@ import SharedLayout from 'components/layout/SharedLayout';
 import Banner from 'components/Banner';
 import Button from 'components/Button';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
-import { testDonationAmounts, productionDonationAmounts } from 'datasources';
+import { donationAmounts } from 'datasources';
 
 import 'stylesheets/page';
 import 'stylesheets/donate';
 
 const Donate = () => {
-    const [selectedPrice, setSelectedPrice] = useState(100);
+    const startingPrice = 200;
+    const [selectedPrice, setSelectedPrice] = useState(startingPrice);
 
     return (
         <SharedLayout>
@@ -34,8 +35,11 @@ const Donate = () => {
                     </p>
                     <ul className="list-disc ml-10">
                         <li>Community fund for educational materials</li>
-                        <li>Full scholarships to RubyConf and RailsConf</li>
-                        <li>Open source development stipends</li>
+                        <li>Travel and housing scholarships for RubyConf and RailsConf</li>
+                        <li>
+                            Workshops for community members on topics such as salary negotiation,
+                            resume writing, and more!
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -45,11 +49,7 @@ const Donate = () => {
 };
 
 const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
-    const prices = useMemo(() => {
-        return process.env.NODE_ENV === 'development'
-            ? testDonationAmounts
-            : productionDonationAmounts;
-    }, []);
+    const prices = useMemo(() => donationAmounts(process.env.NODE_ENV), []);
 
     const selectedPriceObject = useMemo(() => {
         return prices.filter((price) => {
@@ -86,7 +86,7 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
 const OtherAmountBanner = () => {
     return (
         <Banner>
-            Interested in donating another amount?
+            Interested in donating a different amount?
             <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
                 <a href={'mailto:organizers@wnb-rb.dev'} target="_blank" rel="noopener noreferrer">
                     Contact Us

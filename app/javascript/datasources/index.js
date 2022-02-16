@@ -49,7 +49,11 @@ export const postJobsAuthenticate = async (password) => {
     return await result.json();
 };
 
-export const testDonationAmounts = [
+export const donationAmounts = (environment) => {
+    return environment === 'development' ? testDonationAmounts : productionDonationAmounts;
+};
+
+const testDonationAmounts = [
     { value: 10, link: 'https://buy.stripe.com/test_fZe3cr0hWfIN0i4289' },
     { value: 25, link: 'https://buy.stripe.com/test_14k3crfcQaot7Kw6oq' },
     { value: 50, link: 'https://buy.stripe.com/test_6oEaET9Sw1RXfcY8wz' },
@@ -60,7 +64,7 @@ export const testDonationAmounts = [
     { value: 1000, link: 'https://buy.stripe.com/test_9AQfZd0hWdAF1m8cMS' },
 ];
 
-export const productionDonationAmounts = [
+const productionDonationAmounts = [
     { value: 10, link: 'https://buy.stripe.com/14k14KcpbcJ4bwQbIK' },
     { value: 25, link: 'https://buy.stripe.com/dR600G74RbF0fN6003' },
     { value: 50, link: 'https://buy.stripe.com/7sI00G60N9wSeJ2bIM' },
