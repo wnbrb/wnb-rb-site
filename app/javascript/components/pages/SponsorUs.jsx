@@ -70,16 +70,13 @@ const SponsorUsWidget = () => {
             <div className="flex flex-col justify-between h-max mt-5 md:mt-0 md:w-auto md:ml-7">
                 {sponsorCardData.map((card) => {
                     return (
-                        <button
-                            key={`${card.type}-options`}
+                        <SponsorshipOption
+                            key={card.type}
+                            title={card.type}
+                            amount={card.amount}
                             onClick={() => setSelectedLevel(card.type)}
-                        >
-                            <SponsorshipOption
-                                title={card.type}
-                                amount={card.amount}
-                                selected={card.type === selectedLevel}
-                            />
-                        </button>
+                            selected={card.type === selectedLevel}
+                        />
                     );
                 })}
             </div>
