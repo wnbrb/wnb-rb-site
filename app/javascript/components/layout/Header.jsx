@@ -58,6 +58,9 @@ const Header = () => {
                                     <a href="/jobs">Job Board</a>
                                 </li>
                                 <li>
+                                    <a href="/meetups">Past Meetups</a>
+                                </li>
+                                <li>
                                     <a href="/sponsor-us"> Sponsor Us</a>
                                 </li>
                             </ul>

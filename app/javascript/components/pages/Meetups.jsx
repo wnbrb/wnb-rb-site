@@ -125,6 +125,8 @@ const Meetups = () => {
                                                           date,
                                                           event_speakers,
                                                       }) => {
+                                                          const numericMonth =
+                                                              new Date(date).getMonth() + 1;
                                                           return (
                                                               <Meetup
                                                                   key={id}
@@ -134,7 +136,7 @@ const Meetups = () => {
                                                                   year={new Date(date)
                                                                       .getFullYear()
                                                                       .toString()}
-                                                                  month={month
+                                                                  month={numericMonth
                                                                       .toString()
                                                                       .padStart(2, '0')}
                                                               />

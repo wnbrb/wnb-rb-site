@@ -5,6 +5,7 @@ import SharedLayout from 'components/layout/SharedLayout';
 import PageTitleWithContainer from 'components/PageTitle';
 import SpeakersList from '../SpeakersList';
 import Microphone from '../icons/Microphone';
+import LoadingSpinner from 'components/LoadingSpinner';
 import 'stylesheets/page';
 import 'stylesheets/meetup';
 
@@ -27,11 +28,11 @@ VideoBlock.propTypes = {
 const SpeakerBiosBlock = ({ speakers }) => {
     return (
         <div className="container max-w-2xl my-8 mx-3 p-4 flex flex-col">
-            <div className="inline-flex items-center gap-2 align-center">
+            <div className="inline-flex items-center gap-2 align-center mb-5">
                 <Microphone />
                 <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
             </div>
-            <div className="flex items-center gap-20">
+            <div className="flex flex-wrap items-center gap-5">
                 {speakers?.map(({ id, bio }) => (
                     <div key={id}>{bio}</div>
                 ))}
@@ -49,12 +50,14 @@ const PastMeetup = () => {
     const month = window.month;
     const eventDate = new Date(Date.UTC(year, Number(month) - 1));
     const monthName = eventDate.toLocaleDateString('en-US', { month: 'long' });
+    const [loading, setLoading] = useState(true);
     const [meetup, setMeetup] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPastMeetup(year, month);
             setMeetup(data);
+            setLoading(false);
         };
 
         fetchData();
@@ -65,10 +68,12 @@ const PastMeetup = () => {
         <SharedLayout>
             <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
                 <PageTitleWithContainer text={`${monthName} ${year} meetup`} />
-                {meetup == 'No events found' ? (
-                    <h3 className="text-2xl font-bold mx-2 my-2">No events found for this month</h3>
+            </div>
+            <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
+                {loading ? (
+                    <LoadingSpinner />
                 ) : (
-                    <>
+                    <div className="container mx-20">
                         <VideoBlock videoUrl={videoUrl} title={title} />
                         <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
                             <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
@@ -78,7 +83,7 @@ const PastMeetup = () => {
                         <div className="flex flex-col items-center bg-gray-100">
                             <SpeakerBiosBlock speakers={speakers} />
                         </div>
-                    </>
+                    </div>
                 )}
             </div>
         </SharedLayout>
