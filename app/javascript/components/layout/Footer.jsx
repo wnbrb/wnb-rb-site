@@ -21,6 +21,9 @@ const Footer = () => (
                 <a className="footer-col-item" href="/sponsor-us">
                     Sponsor Us
                 </a>
+                <a className="footer-col-item" href="/donate">
+                    Donate
+                </a>
             </div>
             <div className="footer-col">
                 <p className="footer-col-item footer-col-title">Community Guidelines</p>

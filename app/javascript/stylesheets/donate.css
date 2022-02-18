@@ -1,0 +1,26 @@
+.donation-amounts {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+.donate-button {
+    @apply col-span-full;
+}
+
+.donation-amount {
+    @apply h-20
+      w-20
+      p-5
+      shadow-md
+      flex
+      items-center
+      justify-center
+      rounded-sm
+      border-2
+      transition-all
+      border-wnbrb-gray-light
+      hover:border-wnbrb-orange-default;
+}
+
+.donation-amount.selected {
+    @apply border-2 border-wnbrb-orange-default;
+}

@@ -69,6 +69,10 @@ header {
                 .user {
                     @apply flex items-start content-between py-3 w-40;
 
+                    .donate {
+                        @apply mr-3;
+                    }
+
                     .join-us .join-wnb {
                         @apply flex justify-between items-center transition-all w-28;
 

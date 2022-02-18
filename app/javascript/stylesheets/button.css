@@ -45,6 +45,15 @@
     box-shadow: 0 0 0 0.25rem rgba(74, 74, 74, 0.25);
 }
 
+.button.white-and-orange {
+    @apply bg-white text-wnbrb-orange-default border border-wnbrb-orange-default;
+}
+
+.button.white-and-orange:active,
+.button.white-and-orange:hover {
+    box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
+}
+
 .button.ruby {
     @apply bg-wnbrb-ruby-default
         text-white
