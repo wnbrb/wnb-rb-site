@@ -28,6 +28,15 @@ module.exports = {
         radix: 'error',
         'space-before-blocks': 'error',
         'import/prefer-default-export': 'off',
+        'jsx-a11y/label-has-associated-control': [
+            2,
+            {
+                // labelComponents: ['CustomInputLabel'],
+                // labelAttributes: ['label'],
+                // controlComponents: ['CustomInput'],
+                depth: 4,
+            },
+        ],
     },
     overrides: [
         {

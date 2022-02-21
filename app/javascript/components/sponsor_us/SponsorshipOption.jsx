@@ -4,7 +4,6 @@ import Card from 'components/Card';
 
 const SponsorshipOption = ({ title, amount, selected, onClick }) => {
     return (
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label className="sponsorship-option-label">
             <Card className={`sponsorship-option ${selected ? 'selected' : null}`}>
                 <div className="flex flex-row justify-between">
