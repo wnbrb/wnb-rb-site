@@ -4,6 +4,7 @@ import Card from 'components/Card';
 
 const SponsorshipOption = ({ title, amount, selected, onClick }) => {
     return (
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label className="sponsorship-option-label">
             <Card className={`sponsorship-option ${selected ? 'selected' : null}`}>
                 <div className="flex flex-row justify-between">
@@ -14,7 +15,6 @@ const SponsorshipOption = ({ title, amount, selected, onClick }) => {
                             checked={selected}
                             onChange={() => onClick()}
                         />
-                        {/* <label htmlFor={title}>{title} Sponsor</label> */}
                         <span className="sponsorship-option-title">{title} Sponsor</span>
                     </div>
                     <p className={`${title.toLowerCase()}-color`}>${amount}</p>
