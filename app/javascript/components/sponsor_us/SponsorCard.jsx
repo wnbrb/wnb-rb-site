@@ -10,10 +10,13 @@ const SponsorCard = ({ type, amount, returns, icon }) => {
     return (
         <Card className="sponsor-card w-[22rem]">
             <div className="flex flex-row items-start">
-                <Icon className="h-14" />
+                <Icon className={type === 'Ruby' ? 'h-[58px] mt-[-5px]' : 'h-14'} />
                 <div className="flex flex-col flex-1 ml-5">
                     <h3 className="text-xl font-bold">{type} Sponsor</h3>
-                    <p className={`text-lg ${type.toLowerCase()}-color`}>${amount}</p>
+                    <div className="flex flex-row items-center">
+                        <p className={`text-lg ${type.toLowerCase()}-color`}>${amount}</p>
+                        <p className="text-sm ml-2 text-wnbrb-gray-medium">/6 months</p>
+                    </div>
                 </div>
             </div>
             <div className="my-6 h-44">
