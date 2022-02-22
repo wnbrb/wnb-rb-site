@@ -15,16 +15,21 @@
     sm:flex-row
     justify-center
     items-center
+    max-w-sm
+    mx-auto
     sm:h-36;
 }
 
-.sponsors-tile-img-container img {
-    @apply h-10
+.sponsors-tile-img-container a {
+    @apply mx-auto
     mt-10
+    sm:w-auto
     md:mt-0
-    py-0
-    mx-auto
-    sm:w-auto;
+    py-0;
+}
+
+.sponsors-tile-img-container img {
+    @apply h-14;
 }
 
 .our-sponsors {
