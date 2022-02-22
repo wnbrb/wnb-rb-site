@@ -9,7 +9,7 @@ const JoinOurWelcomingCommunitySection = () => {
             <a href="https://tinyurl.com/wnb-rb-coc" target="_blank" rel="noopener noreferrer">
                 code of conduct
             </a>{' '}
-            to to prevent gatekeeping and other unsavory behavior.
+            to prevent gatekeeping and other unsavory behavior.
         </p>
     );
 };
