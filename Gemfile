@@ -9,7 +9,7 @@ gem 'devise'
 
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.6'
 gem 'rails', '~> 7.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.4.0'
