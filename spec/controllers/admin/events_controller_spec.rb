@@ -23,7 +23,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
-      let(:user) { FactoryBot.create(:user, role: User::ADMIN) }
+      let(:user) { FactoryBot.create(:user, :admin) }
       before { sign_in user }
 
       it 'returns 200' do
@@ -56,7 +56,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
-      let(:user) { FactoryBot.create(:user, role: User::ADMIN) }
+      let(:user) { FactoryBot.create(:user, :admin) }
       before { sign_in user }
       let(:event) { FactoryBot.create(:event) }
 
@@ -98,6 +98,50 @@ RSpec.describe Admin::EventsController, type: :controller do
         post :update, params: {id: event.id, meetup: {description: 'Great event'}}
         expect(response).to redirect_to(admin_events_path)
         event.reload
+      end
+    end
+  end
+
+  describe '#delete' do
+    context 'when user is admin' do
+      let(:user) { create(:user, :admin) }
+      let(:event) { create(:event) }
+
+      before(:each) do
+        sign_in user
+      end
+
+      it 'returns 200 when event exists' do
+        delete :delete, params: {id: event.id}
+        expect(response).to have_http_status(200)
+      end
+
+      it 'returns 404 when the event does not exist' do
+        delete :delete, params: {id: 'fakefake'}
+        expect(response).to have_http_status(404)
+      end
+    end
+
+    context 'when user is not admin' do
+      let(:user) { create(:user) }
+      let(:event) { create(:event) }
+
+      before(:each) do
+        sign_in user
+      end
+
+      it 'returns 403' do
+        delete :delete, params: {id: event.id}
+        expect(response).to have_http_status(401)
+      end
+    end
+
+    context 'when no logged-in user' do
+      let(:event) { create(:event) }
+
+      it 'returns 401' do
+        delete :delete, params: {id: event.id}
+        expect(response).to have_http_status(401)
       end
     end
   end
