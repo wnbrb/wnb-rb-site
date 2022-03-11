@@ -2,12 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 
-import Stripe from 'images/sponsors/stripe.svg';
 import Cleo from 'images/sponsors/cleo.svg';
+import Podia from 'images/sponsors/podia.svg';
+import Stripe from 'images/sponsors/stripe.svg';
 
 import 'stylesheets/sponsors-tile';
 
 const sponsors = [
+    {
+        tile_image: Podia,
+        tile_image_alt: 'Podia',
+        link: 'https://podia.com',
+    },
     {
         tile_image: Stripe,
         tile_image_alt: 'Stripe',

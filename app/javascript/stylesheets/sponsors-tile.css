@@ -15,7 +15,7 @@
     sm:flex-row
     justify-center
     items-center
-    max-w-sm
+    max-w-lg
     mx-auto
     sm:h-36;
 }
@@ -29,7 +29,7 @@
 }
 
 .sponsors-tile-img-container img {
-    @apply h-14;
+    @apply w-28;
 }
 
 .our-sponsors {
