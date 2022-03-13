@@ -112,12 +112,12 @@ RSpec.describe Admin::EventsController, type: :controller do
       end
 
       it 'returns 200 when event exists' do
-        delete :delete, params: {id: event.id}
+        delete :destroy, params: {id: event.id}
         expect(response).to have_http_status(200)
       end
 
       it 'returns 404 when the event does not exist' do
-        delete :delete, params: {id: 'fakefake'}
+        delete :destroy, params: {id: 'fakefake'}
         expect(response).to have_http_status(404)
       end
     end
@@ -131,7 +131,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       end
 
       it 'returns 403' do
-        delete :delete, params: {id: event.id}
+       delete :destroy, params: {id: event.id}
         expect(response).to have_http_status(401)
       end
     end
@@ -140,7 +140,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { create(:event) }
 
       it 'returns 401' do
-        delete :delete, params: {id: event.id}
+        delete :destroy, params: {id: event.id}
         expect(response).to have_http_status(401)
       end
     end
