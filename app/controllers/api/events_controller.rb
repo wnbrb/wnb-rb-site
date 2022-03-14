@@ -24,7 +24,7 @@ module Api
       end
     end
 
-    def upcoming_event
+    def upcoming
       events = Event.where('date > ?', DateTime.current).order(date: :asc)
       events_by_date =
         events

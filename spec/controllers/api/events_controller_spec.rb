@@ -80,7 +80,7 @@ RSpec.describe Api::EventsController, type: :controller do
     end
   end
 
-  describe 'GET #upcoming_event' do
+  describe 'GET #upcoming' do
     before do
       august_meetup =
         Meetup.create(
@@ -111,7 +111,7 @@ RSpec.describe Api::EventsController, type: :controller do
     end
 
     it 'correctly gets upcoming events' do
-      get :upcoming_event
+      get :upcoming
       expect(response).to have_http_status(200)
 
       body = JSON.parse(response.body)
@@ -119,7 +119,7 @@ RSpec.describe Api::EventsController, type: :controller do
     end
 
     it 'renders events by year and month' do
-      get :upcoming_event
+      get :upcoming
       body = JSON.parse(response.body)
       august_meetup = body['data']['2022']['August'].first
       expect(august_meetup['title']).to eq('August Meetup')
@@ -129,7 +129,7 @@ RSpec.describe Api::EventsController, type: :controller do
     end
 
     it 'includes speaker data' do
-      get :upcoming_event
+      get :upcoming
       body = JSON.parse(response.body)
 
       august_meetup = body['data']['2022']['August'].first
