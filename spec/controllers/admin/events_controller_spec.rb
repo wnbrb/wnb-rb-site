@@ -111,9 +111,10 @@ RSpec.describe Admin::EventsController, type: :controller do
         sign_in user
       end
 
-      it 'returns 200 when event exists' do
+      it 'redirects to index page when event exists' do
         delete :destroy, params: {id: event.id}
-        expect(response).to have_http_status(200)
+        expect(response).to redirect_to(admin_events_path)
+        expect(Event.exists?(event.id)).to be(false)
       end
 
       it 'returns 404 when the event does not exist' do
@@ -130,18 +131,20 @@ RSpec.describe Admin::EventsController, type: :controller do
         sign_in user
       end
 
-      it 'returns 403' do
-       delete :destroy, params: {id: event.id}
+      it 'returns 401' do
+        delete :destroy, params: {id: event.id}
         expect(response).to have_http_status(401)
+        expect(Event.exists?(event.id)).to be(true)
       end
     end
 
     context 'when no logged-in user' do
       let(:event) { create(:event) }
 
-      it 'returns 401' do
+      it 'redirects to login' do
         delete :destroy, params: {id: event.id}
-        expect(response).to have_http_status(401)
+        expect(response).to redirect_to(new_user_session_path)
+        expect(Event.exists?(event.id)).to be(true)
       end
     end
   end
