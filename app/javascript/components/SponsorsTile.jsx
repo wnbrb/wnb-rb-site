@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 import Cleo from 'images/sponsors/cleo.svg';
+import Hoist from 'images/sponsors/hoist.svg';
 import Podia from 'images/sponsors/podia.svg';
 import Stripe from 'images/sponsors/stripe.svg';
+import RailsDevs from 'images/sponsors/railsdevs.svg';
 
 import 'stylesheets/sponsors-tile';
 
@@ -15,6 +17,11 @@ const sponsors = [
         link: 'https://podia.com',
     },
     {
+        tile_image: Hoist,
+        tile_iamge_alt: 'Hoist',
+        link: 'https://hoistup.com',
+    },
+    {
         tile_image: Stripe,
         tile_image_alt: 'Stripe',
         link: 'https://stripe.com',
@@ -23,6 +30,11 @@ const sponsors = [
         tile_image: Cleo,
         tile_image_alt: 'Cleo',
         link: 'https://web.meetcleo.com',
+    },
+    {
+        tile_image: RailsDevs,
+        tile_image_alt: 'railsdevs',
+        link: 'https://railsdevs.com',
     },
 ];
 
