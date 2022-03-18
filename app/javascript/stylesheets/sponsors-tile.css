@@ -16,6 +16,7 @@
     flex-wrap
     justify-center
     items-center;
+}
 
 .sponsors-tile-img-container a {
     @apply mx-auto
