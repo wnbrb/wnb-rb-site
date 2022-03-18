@@ -72,6 +72,14 @@ bin/webpack-dev-server
 
 This may be helpful for debugging, but generally should not be necessary.
 
+### Running rake tasks
+
+To execute rake tasks, run:
+
+```
+foreman run rake [NAMESPACE]:[TASK_NAME]
+```
+
 ## Contributing 🤝
 
 ### 1. Assign yourself an issue from our [Issues](https://github.com/wnbrb/wnb-rb-site/issues/new) tab

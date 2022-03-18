@@ -12,6 +12,7 @@ gem 'pg'
 gem 'puma', '~> 5.6'
 gem 'rails', '~> 7.0'
 gem 'sass-rails', '>= 6'
+gem 'slack-ruby-client'
 gem 'webpacker', '~> 5.4.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
