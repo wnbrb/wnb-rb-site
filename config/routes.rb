@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       collection do
         get 'past'
         get '/:year/:month', to: 'events#past_by_month'
+        get 'upcoming'
       end
     end
 
