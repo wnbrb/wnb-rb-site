@@ -103,7 +103,7 @@ const Job = ({ title, description, imageUrl, company, link, location }) => {
     return (
         <Card className="mx-0 my-5 md:mr-8 max-w-[22rem]">
             <div className="flex flex-row">
-                <img className="w-14 h-14 rounded-full mr-6" src={imageUrl} alt="" />
+                <img className="w-14 h-14 shadow-sm rounded-full mr-6" src={imageUrl} alt="" />
                 <div className="flex flex-col">
                     <h2 className="font-bold text-lg text-[#4a4a4a]">{title}</h2>
                     <div className="mt-1">{company}</div>
