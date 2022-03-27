@@ -67,7 +67,7 @@ const PastMeetup = () => {
     return (
         <SharedLayout>
             <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
-                <PageTitleWithContainer text={`${monthName} ${year} meetup`} />
+                <PageTitleWithContainer text={`${monthName} ${year} Meetup`} />
             </div>
             <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
                 {loading ? (
@@ -75,7 +75,7 @@ const PastMeetup = () => {
                 ) : (
                     <div className="container mx-20">
                         <VideoBlock videoUrl={videoUrl} title={title} />
-                        <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
+                        <div className="w-full rounded border-t p-10 border-gray-100 overflow-hidden">
                             <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
                             <SpeakersList speakers={speakers} />
                             <p className="m-2 pt-4">{description}</p>
