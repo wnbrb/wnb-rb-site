@@ -5,4 +5,8 @@ FactoryBot.define do
     sequence(:name) { |n| "Person #{n}" }
     password { 'somepassword' }
   end
+
+  trait :admin do
+    role { User::ADMIN }
+  end
 end

@@ -4,6 +4,11 @@
 </div>
 
 <div class="m-3">
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
   <table class="text-center">
     <thead class="border-2">
      <tr>
@@ -27,8 +32,7 @@
           <td class="p-3"><%= event.description %></td>
           <td class="p-3">
             <%= link_to 'Edit', edit_admin_event_path(event) %>
-            <!-- TODO: Issue 25 Add Delete Functionality -->
-            <%= link_to 'Delete', '#' %>
+            <%= link_to 'Delete', admin_event_path(event), method: :delete %>
           </td>
         </tr>
       <% end %>

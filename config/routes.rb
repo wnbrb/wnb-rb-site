@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :events, only: %i[index edit update]
+    resources :events, only: %i[index edit update destroy]
   end
 
   mount ActionCable.server => '/cable'

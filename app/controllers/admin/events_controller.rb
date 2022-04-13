@@ -30,6 +30,19 @@ module Admin
       end
     end
 
+    def destroy
+      authorize Event
+      @event = Event.find_by(id: params[:id])
+
+      if @event
+        @event.destroy
+        redirect_to admin_events_path
+        flash[:success] = 'Event successfully deleted'
+      else 
+        render_not_found
+      end
+    end 
+
     private
 
     def required_type
