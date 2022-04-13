@@ -5,36 +5,55 @@ import Card from './Card';
 import Cleo from 'images/sponsors/cleo.svg';
 import Hoist from 'images/sponsors/hoist.svg';
 import Podia from 'images/sponsors/podia.svg';
-import Stripe from 'images/sponsors/stripe.svg';
 import RailsDevs from 'images/sponsors/railsdevs.svg';
+import Shopify from 'images/sponsors/shopify.svg';
+import Stripe from 'images/sponsors/stripe.svg';
+import TestDouble from 'images/sponsors/testdouble.svg';
 
 import 'stylesheets/sponsors-tile';
 
 const sponsors = [
     {
+        tile_image: TestDouble,
+        tile_image_alt: 'Test Double',
+        link: 'https://link.testdouble.com/wnbrb-sponsor',
+        customStyles: 'w-36',
+    },
+    {
+        tile_image: Shopify,
+        tile_image_alt: 'Shopify',
+        link: 'https://shopify.com',
+        customStyles: 'w-40',
+    },
+    {
         tile_image: Podia,
         tile_image_alt: 'Podia',
         link: 'https://podia.com',
+        customStyles: '',
     },
     {
         tile_image: Hoist,
         tile_iamge_alt: 'Hoist',
         link: 'https://hoistup.com',
+        customStyles: '',
     },
     {
         tile_image: Stripe,
         tile_image_alt: 'Stripe',
         link: 'https://stripe.com',
+        customStyles: '',
     },
     {
         tile_image: Cleo,
         tile_image_alt: 'Cleo',
         link: 'https://web.meetcleo.com',
+        customStyles: '',
     },
     {
         tile_image: RailsDevs,
         tile_image_alt: 'railsdevs',
         link: 'https://railsdevs.com',
+        customStyles: '',
     },
 ];
 
@@ -50,7 +69,11 @@ const SponsorsTile = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img src={sponsor.tile_image} alt={sponsor.tile_image_alt} />
+                        <img
+                            className={sponsor.customStyles ? sponsor.customStyles : 'w-28'}
+                            src={sponsor.tile_image}
+                            alt={sponsor.tile_image_alt}
+                        />
                     </a>
                 ))}
             </div>

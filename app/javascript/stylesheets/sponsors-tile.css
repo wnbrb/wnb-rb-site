@@ -26,10 +26,6 @@
     py-0;
 }
 
-.sponsors-tile-img-container img {
-    @apply w-28;
-}
-
 .our-sponsors {
     background: url('../../assets/images/rubybubbles.svg');
     background-repeat: repeat-x;
