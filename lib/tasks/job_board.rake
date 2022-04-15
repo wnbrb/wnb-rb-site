@@ -6,7 +6,7 @@ namespace :job_board do
     # The free Heroku scheduler cannot be set to run on a specific day of the week.
     # If we only want jobs to be posted to Slack on Mondays, we need to specify
     # that here.
-    next unless is_monday?
+    next unless Date.today.monday?
 
     slack_client = SlackClient.new
     jobs_channel_id = ENV['SLACK_JOBS_CHANNEL']
@@ -17,11 +17,5 @@ namespace :job_board do
     HEREDOC
 
     slack_client.message_channel(recipient_id: jobs_channel_id, text: text)
-  end
-
-  private
-
-  def is_monday?
-    DateTime.now.strftime('%A') == 'Monday'
   end
 end
