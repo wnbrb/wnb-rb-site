@@ -60,6 +60,14 @@ RSpec.describe Api::EventsController, type: :controller do
       july_meetup = body['data']['2021']['July'].first
       expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
     end
+
+    it 'includes talk titles' do
+      get :past
+      body = JSON.parse(response.body)
+
+      july_meetup = body['data']['2021']['July'].first
+      expect(july_meetup['event_speakers'].first['talk_title']).to eq('Some talk title')
+    end
   end
 
   describe 'GET #past_by_month' do
