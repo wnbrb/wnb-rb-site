@@ -49,9 +49,9 @@ const Meetup = ({ speakers, title = '', event_speakers }) => {
                     {eventWithSpeaker.length > 0 &&
                         eventWithSpeaker.map(({ id, talk_title, speaker }) => (
                             <div key={id}>
-                                <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">
+                                <h5 className="mb-4 text-xl font-bold text-gray md:text-xl">
                                     {talk_title}
-                                </h4>
+                                </h5>
                                 <div className="flex content-center mb-8 text-lg">
                                     <img
                                         className="object-cover w-14 h-14 mr-4 rounded-full"
