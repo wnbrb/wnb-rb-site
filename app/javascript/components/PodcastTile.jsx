@@ -5,24 +5,26 @@ import Button from './Button';
 
 import 'stylesheets/podcast-tile';
 
-const PodcastTile = ({ podcast }) => (
+const PodcastTile = ({ podcasts }) => (
     <Card className="podcast-tile">
-        <div className="flex items-center flex-1">
-            <img src={podcast.tile_image} alt={podcast.tile_image_alt} />
-            <a className="podcast-tile-title" href={podcast.url}>
-                {podcast.title}
-            </a>
-        </div>
-        <Button type="white" className="min-w-[10rem]">
-            <a href={podcast.url} target="_blank" rel="noopener noreferrer">
-                Listen
-            </a>
-        </Button>
+        {podcasts.map((podcast) => (
+            <div className="podcast-listing" key="podcast-title">
+                <img src={podcast.tile_image} alt={podcast.tile_image_alt} />
+                <a className="podcast-tile-title" href={podcast.url}>
+                    {podcast.title}
+                </a>
+                <Button type="white" className="min-w-[10rem]">
+                    <a href={podcast.url} target="_blank" rel="noopener noreferrer">
+                        Listen
+                    </a>
+                </Button>
+            </div>
+        ))}
     </Card>
 );
 
 PodcastTile.propTypes = {
-    podcast: PropTypes.object,
+    podcasts: PropTypes.object,
 };
 
 export default PodcastTile;
