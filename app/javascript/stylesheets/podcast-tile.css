@@ -1,10 +1,12 @@
 .podcast-tile {
     width: 90%;
+}
 
+.podcast-listing {
     @apply sm:flex
     items-center
-    sm:w-1/2
-    p-4;
+    flex-1
+    py-2;
 }
 
 .podcast-tile img {
