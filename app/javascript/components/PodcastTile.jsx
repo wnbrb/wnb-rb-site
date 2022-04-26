@@ -10,7 +10,7 @@ const PodcastTile = ({ podcasts }) => (
         {podcasts.map((podcast) => (
             <div className="podcast-listing" key="podcast-title">
                 <img src={podcast.tile_image} alt={podcast.tile_image_alt} />
-                <a className="podcast-tile-title" href={podcast.url}>
+                <a className="podcast-title" href={podcast.url}>
                     {podcast.title}
                 </a>
                 <Button type="white" className="min-w-[10rem]">

@@ -3,21 +3,24 @@
 }
 
 .podcast-listing {
-    @apply sm:flex
+    @apply flex
+    flex-col
+    lg:flex-row
     items-center
-    flex-1
-    py-2;
+    py-4;
 }
 
 .podcast-tile img {
-    @apply w-14;
+    @apply w-14
+    rounded-md;
 }
 
-.podcast-tile-title {
+.podcast-title {
     @apply font-bold
     text-xl
     flex-1
-    px-4;
+    my-4
+    lg:px-4;
 }
 
 .podcast-tile-button {
