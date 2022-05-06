@@ -9,10 +9,10 @@ namespace :job_board do
     next unless Date.today.monday?
 
     slack_client = SlackClient.new
-    jobs_channel_id = ENV['SLACK_JOBS_CHANNEL']
+    jobs_channel_id = ENV.fetch('SLACK_JOBS_CHANNEL', nil)
     jobs = Job.last(10)
     text = <<~HEREDOC
-      Check out the most recent jobs listed on our <https://www.wnb-rb.dev/jobs|job board>! Password: #{ENV['JOB_BOARD_PASSWORD']}
+      Check out the most recent jobs listed on our <https://www.wnb-rb.dev/jobs|job board>! Password: #{ENV.fetch('JOB_BOARD_PASSWORD', nil)}
       #{jobs.map { |job| "\n - #{job.title} at #{job.company}" }.join}
     HEREDOC
 

@@ -18,7 +18,7 @@ RSpec.describe Api::JobsController, type: :controller do
 
     context 'when expired bearer token is provided' do
       let(:token) do
-        JWT.encode({ data: '', exp: (Time.now - 1.day).to_i }, ENV['JWT_HMAC_SECRET'], 'HS256')
+        JWT.encode({ data: '', exp: (Time.now - 1.day).to_i }, ENV.fetch('JWT_HMAC_SECRET', nil), 'HS256')
       end
 
       it 'returns 401 response' do
@@ -40,7 +40,7 @@ RSpec.describe Api::JobsController, type: :controller do
 
     context 'when valid bearer token is provided' do
       let(:token) do
-        JWT.encode({ data: '', exp: (Time.now + 1.day).to_i }, ENV['JWT_HMAC_SECRET'], 'HS256')
+        JWT.encode({ data: '', exp: (Time.now + 1.day).to_i }, ENV.fetch('JWT_HMAC_SECRET', nil), 'HS256')
       end
 
       before { 3.times { FactoryBot.create(:job) } }

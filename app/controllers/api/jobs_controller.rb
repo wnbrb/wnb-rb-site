@@ -31,11 +31,11 @@ module Api
     end
 
     def hmac_secret
-      ENV['JWT_HMAC_SECRET']
+      ENV.fetch('JWT_HMAC_SECRET', nil)
     end
 
     def job_board_password
-      ENV['JOB_BOARD_PASSWORD']
+      ENV.fetch('JOB_BOARD_PASSWORD', nil)
     end
   end
 end
