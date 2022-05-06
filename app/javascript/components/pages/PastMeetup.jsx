@@ -48,7 +48,7 @@ SpeakerBiosBlock.propTypes = {
 const PastMeetup = () => {
     const year = window.year;
     const month = window.month;
-    const eventDate = new Date(Date.UTC(year, Number(month) - 1));
+    const eventDate = new Date(year, Number(month - 1));
     const monthName = eventDate.toLocaleDateString('en-US', { month: 'long' });
     const [loading, setLoading] = useState(true);
     const [meetup, setMeetup] = useState({});
