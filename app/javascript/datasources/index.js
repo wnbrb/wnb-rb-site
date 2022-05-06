@@ -74,3 +74,9 @@ const productionDonationAmounts = [
     { value: 500, link: 'https://buy.stripe.com/4gw3cSexj38u44o7sA' },
     { value: 1000, link: 'https://buy.stripe.com/8wMeVAbl710mdEY009' },
 ];
+
+export const getPastMeetup = async (year, month) => {
+    const result = await fetch(`${API_ROOT}/events/${year}/${month}`);
+    const json = await result.json();
+    return json.data;
+};

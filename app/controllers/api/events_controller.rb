@@ -18,7 +18,7 @@ module Api
       event_date = DateTime.new(params[:year].to_i, params[:month].to_i)
       event = Event.where(date: event_date..event_date.end_of_month).first
       if event.present?
-        render status: 200, json: { data: event.as_json }
+        render status: 200, json: { data: event.as_json(include: :speakers) }
       else
         render status: 404, json: { data: 'No events found' }
       end

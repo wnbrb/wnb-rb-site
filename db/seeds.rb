@@ -55,6 +55,7 @@ meetup =
     title: 'August 2021 Meetup',
     description: 'Our meetup in August',
     date: DateTime.new(2021, 8, 31, 16).utc,
+    panel_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   )
 
 EventSpeaker.create(
@@ -102,6 +103,7 @@ meetup2 =
     title: 'July 2021 Meetup',
     description: 'Our meetup in July',
     date: DateTime.new(2021, 7, 31, 16).utc,
+    panel_video_link: 'https://www.youtube.com/embed/GlpZPv1bp4g',
   )
 
 EventSpeaker.create(
