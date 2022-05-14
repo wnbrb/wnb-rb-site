@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 import Cleo from 'images/sponsors/cleo.svg';
+import Flagrant from 'images/sponsors/flagrant.svg';
 import Hoist from 'images/sponsors/hoist.svg';
 import Podia from 'images/sponsors/podia.svg';
 import RailsDevs from 'images/sponsors/railsdevs.svg';
@@ -26,15 +27,21 @@ const sponsors = [
         customStyles: 'w-40',
     },
     {
-        tile_image: Podia,
-        tile_image_alt: 'Podia',
-        link: 'https://podia.com',
+        tile_image: Hoist,
+        tile_image_alt: 'Hoist',
+        link: 'https://hoistup.com',
         customStyles: '',
     },
     {
-        tile_image: Hoist,
-        tile_iamge_alt: 'Hoist',
-        link: 'https://hoistup.com',
+        tile_image: Flagrant,
+        tile_image_alt: 'Flagrant',
+        link: 'https://beflagrant.com',
+        customStyles: '',
+    },
+    {
+        tile_image: Podia,
+        tile_image_alt: 'Podia',
+        link: 'https://podia.com',
         customStyles: '',
     },
     {
