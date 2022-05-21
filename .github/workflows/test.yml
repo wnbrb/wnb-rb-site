@@ -25,8 +25,6 @@ jobs:
           bundler-cache: true
       - name: Install Bundler
         run: gem install bundler:2.1.4
-      - name: Install gems
-        run: gem install rubocop rubocop-discourse prettier
       - name: Install Node
         uses: actions/setup-node@v1
         with:
@@ -46,6 +44,6 @@ jobs:
       - name: Run JavaScript unit tests
         run: yarn jest app/javascript
       - name: Run Rubocop
-        run: rubocop --force-exclusion --cache false
+        run: bundle exec rubocop --force-exclusion --cache false
       - name: Run ESLint
         run: yarn run eslint app/javascript --ext .js,.jsx
