@@ -58,7 +58,7 @@ Then, edit `.env` and set the following environment variables:
 To start both the frontend and backend servers at the same time, run:
 
 ```
-foreman start
+foreman start -f Procfile.dev
 ```
 
 In your browser, navigate to `localhost:5000` to see the app in action!
