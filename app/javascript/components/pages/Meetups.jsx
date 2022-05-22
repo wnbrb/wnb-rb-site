@@ -113,7 +113,7 @@ const Meetups = () => {
             ) : (
                 <div className="container flex flex-col mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
                     {meetupsByYear.length > 0
-                        ? meetupsByYear.map(([year, meetupsByMonth]) => {
+                        ? meetupsByYear.reverse().map(([year, meetupsByMonth]) => {
                               return (
                                   <YearSection key={year} year={year}>
                                       {Object.entries(meetupsByMonth).map(([month, meetups]) => {
