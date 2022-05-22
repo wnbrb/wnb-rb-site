@@ -8,7 +8,7 @@ import 'stylesheets/page';
 import 'stylesheets/meetup';
 
 const YearSection = ({ children, year }) => (
-    <section key={year}>
+    <section key={year} className="p-10">
         <h2 className="mb-8 text-4xl font-bold">{year}</h2>
         <ul className="flex flex-col">{children}</ul>
     </section>
@@ -27,7 +27,9 @@ const MonthSection = ({ children, month }) => (
             </h3>
         </div>
         <div className="meetups__card--border hidden w-px self-stretch mx-6 border-l border-gray-200 md:block" />
-        <ul className="p-4 flex flex-col gap-y-10 md:pt-2 md:p-12 md:gap-y-14">{children}</ul>
+        <ul className="p-4 flex flex-col gap-y-10 md:pt-2 md:p-12 md:gap-y-14 w-full">
+            {children}
+        </ul>
     </li>
 );
 
@@ -42,8 +44,8 @@ const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
         return { ...talk, speaker };
     });
     return (
-        <li>
-            <div className="meetups__card flex flex-col pb-12 w-[600px]">
+        <li className="w-full">
+            <div className="meetups__card flex flex-col pb-12 max-w-[40rem]">
                 <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
                     <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">{title}</h4>
                     {eventWithSpeaker.length > 0 &&
@@ -70,7 +72,7 @@ const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
                             </div>
                         ))}
                 </div>
-                <div className="bg-gray-200 text-right">
+                <div className="bg-gray-200 shadow-lg text-right">
                     <a href={`/meetups/${year}/${month}`}>
                         <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
                             View
