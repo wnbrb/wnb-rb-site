@@ -109,7 +109,7 @@ const Meetups = () => {
             {loading ? (
                 <LoadingSpinner />
             ) : (
-                <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
+                <div className="container flex flex-col mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
                     {meetupsByYear.length > 0
                         ? meetupsByYear.map(([year, meetupsByMonth]) => {
                               return (

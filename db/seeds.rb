@@ -55,13 +55,13 @@ meetup =
     title: 'August 2021 Meetup',
     description: 'Our meetup in August',
     date: DateTime.new(2021, 8, 31, 16).utc,
-    panel_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   )
 
 EventSpeaker.create(
   event: meetup,
   speaker: jemma,
   talk_title: 'Intro to Ruby Memoization',
+  talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   talk_description:
     'Cras elementum, tortor id faucibus iaculis, augue metus
                      pretium massa, luctus auctor odio ligula vel justo. Sed
@@ -81,6 +81,7 @@ EventSpeaker.create(
   event: meetup,
   speaker: stefanni,
   talk_title: 'How to get started with contributing to Ruby on Rails',
+  talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   talk_description:
     'Cras elementum, tortor id faucibus iaculis, augue metus
                      pretium massa, luctus auctor odio ligula vel justo. Sed
@@ -110,6 +111,7 @@ EventSpeaker.create(
   event: meetup2,
   speaker: jemma,
   talk_title: 'Another Talk Title',
+  talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   talk_description:
     'Cras elementum, tortor id faucibus iaculis, augue metus
                      pretium massa, luctus auctor odio ligula vel justo. Sed
