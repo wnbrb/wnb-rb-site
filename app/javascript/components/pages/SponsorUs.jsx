@@ -13,12 +13,12 @@ const SponsorUs = () => {
         <SharedLayout>
             <PageTitleWithContainer text="Sponsor Us" />
 
-            <div className="text-xl leading-8 max-w-[500px] mx-auto mb-24 text-center">
+            <div className="text-xl leading-8 max-w-[550px] mx-auto mb-24 text-center">
                 <p>Thank you for your interest in sponsoring WNB.rb!</p>
                 <p className="mt-10">
-                    We are in the process of revamping our sponsorship levels and are not accepting
-                    new sponsors at this time. If you would like to be notified when we begin
-                    seeking sponsors again, please fill out{' '}
+                    We are currently revamping our sponsorship process for all new sponsors. If you
+                    would like to be notified when our new sponsorship process is ready, please fill
+                    out{' '}
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSeMRuBCYfDsh8KsnKfgFiaKOs327syoSbtj63j8kG_HSn4AMw/viewform"
                         rel="noopener noreferrer"
@@ -27,6 +27,19 @@ const SponsorUs = () => {
                         this form
                     </a>
                     .
+                </p>
+                <p className="mt-10">
+                    In the meantime, we encourage you to invite any women or non-binary developers
+                    on your team to{' '}
+                    <a
+                        href="https://tinyurl.com/join-wnb-rb"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        join our community
+                    </a>
+                    . Getting to know the engineers who work for our sponsors helps our sponsorships
+                    succeed!
                 </p>
             </div>
         </SharedLayout>
