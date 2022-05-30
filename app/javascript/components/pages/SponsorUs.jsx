@@ -2,12 +2,8 @@ import React, { useState } from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
-import Button from 'components/Button';
-import Banner from 'components/Banner';
-import SponsorsTile from 'components/SponsorsTile';
-import SponsorUsInfoCard from '../sponsor_us/SponsorUsInfoCard';
 import SponsorshipOption from '../sponsor_us/SponsorshipOption';
-import { sponsorCardData, infoCardData } from '../sponsor_us/sponsorUsData';
+import { sponsorCardData } from '../sponsor_us/sponsorUsData';
 
 import 'stylesheets/page';
 import 'stylesheets/sponsor-us';
@@ -16,38 +12,41 @@ const SponsorUs = () => {
     return (
         <SharedLayout>
             <PageTitleWithContainer text="Sponsor Us" />
-            <SponsorUsWidget />
 
-            <Banner>
-                Have something else in mind? Let&apos;s talk!
-                <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
+            <div className="text-xl leading-8 max-w-[550px] mx-auto mb-24 text-center">
+                <p>Thank you for your interest in sponsoring WNB.rb!</p>
+                <p className="mt-10">
+                    We are currently revamping our sponsorship process for all new sponsors. If you
+                    would like to be notified when our new sponsorship process is ready, please fill
+                    out{' '}
                     <a
-                        href={'mailto:organizers@wnb-rb.dev'}
-                        target="_blank"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeMRuBCYfDsh8KsnKfgFiaKOs327syoSbtj63j8kG_HSn4AMw/viewform"
                         rel="noopener noreferrer"
+                        target="_blank"
                     >
-                        Contact Us
+                        this form
                     </a>
-                </Button>
-            </Banner>
-
-            <div className="w-full flex flex-row flex-wrap justify-center mt-32">
-                {infoCardData.map((card) => {
-                    return (
-                        <SponsorUsInfoCard
-                            key={card.title}
-                            section={card.section}
-                            title={card.title}
-                        />
-                    );
-                })}
+                    .
+                </p>
+                <p className="mt-10">
+                    In the meantime, we encourage you to invite any women or non-binary developers
+                    on your team to{' '}
+                    <a
+                        href="https://tinyurl.com/join-wnb-rb"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        join our community
+                    </a>
+                    . Getting to know the engineers who work for our sponsors helps our sponsorships
+                    succeed!
+                </p>
             </div>
-
-            <SponsorsTile />
         </SharedLayout>
     );
 };
 
+/* eslint-disable no-unused-vars */
 const SponsorUsWidget = () => {
     const [selectedLevel, setSelectedLevel] = useState(sponsorCardData[0].type);
 
@@ -83,5 +82,6 @@ const SponsorUsWidget = () => {
         </div>
     );
 };
+/* eslint-enable no-unused-vars */
 
 export default SponsorUs;
