@@ -8,7 +8,7 @@ RSpec.describe 'job_board:digest' do
   after(:each) { Rake::Task['job_board:digest'].reenable }
 
   context 'when it is Monday' do
-    before { Timecop.travel(Date.today.last_week(:monday)) }
+    before { Timecop.travel(Time.now.last_week(:monday)) }
     after { Timecop.return }
 
     it 'posts job listings to Slack' do
@@ -23,7 +23,7 @@ RSpec.describe 'job_board:digest' do
   end
 
   context 'when it is not Monday' do
-    before { Timecop.travel(Date.today.last_week(:tuesday)) }
+    before { Timecop.travel(Time.now.last_week(:tuesday)) }
     after { Timecop.return }
 
     it 'does not post job listings to Slack' do
