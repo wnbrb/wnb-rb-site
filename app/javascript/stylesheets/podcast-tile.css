@@ -1,21 +1,26 @@
 .podcast-tile {
     width: 90%;
+}
 
-    @apply sm:flex
+.podcast-listing {
+    @apply flex
+    flex-col
+    lg:flex-row
     items-center
-    sm:w-1/2
-    p-4;
+    py-4;
 }
 
 .podcast-tile img {
-    @apply w-14;
+    @apply w-14
+    rounded-md;
 }
 
-.podcast-tile-title {
+.podcast-title {
     @apply font-bold
     text-xl
     flex-1
-    px-4;
+    my-4
+    lg:px-4;
 }
 
 .podcast-tile-button {

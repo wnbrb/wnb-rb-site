@@ -10,7 +10,8 @@ import SponsorsTile from 'components/SponsorsTile';
 import 'stylesheets/page';
 import 'stylesheets/home';
 
-import PodcastImage from 'images/podcast-cover.png';
+import PodcastImageRubyonRails from 'images/podcast-ruby-on-rails.png';
+import PodcastImageRemoteRuby from 'images/podcast-remote-ruby.png';
 
 import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunitySection';
 import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
@@ -19,12 +20,20 @@ import JoinCommunityIcon from 'components/icons/JoinCommunity';
 import ExceedGoalsIcon from 'components/icons/ExceedGoals';
 import GiveSupportIcon from 'components/icons/GiveSupport';
 
-const podcast = {
-    tile_image: PodcastImage,
-    tile_image_alt: 'Ruby on Rails Podcast',
-    title: 'Ruby on Rails Podcast',
-    url: 'https://www.therubyonrailspodcast.com/373',
-};
+const podcasts = [
+    {
+        tile_image: PodcastImageRubyonRails,
+        tile_image_alt: 'Ruby on Rails Podcast',
+        title: 'Ruby on Rails Podcast',
+        url: 'https://www.therubyonrailspodcast.com/373',
+    },
+    {
+        tile_image: PodcastImageRemoteRuby,
+        tile_image_alt: 'Remote Ruby Podcast',
+        title: 'Remote Ruby',
+        url: 'https://remoteruby.com/162',
+    },
+];
 
 const infoCardData = [
     {
@@ -69,7 +78,7 @@ const Home = () => (
         </section>
 
         <section className="podcast">
-            <PodcastTile podcast={podcast} />
+            <PodcastTile podcasts={podcasts} />
         </section>
 
         <section className="info-card-section">
