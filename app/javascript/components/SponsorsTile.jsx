@@ -10,6 +10,7 @@ import RailsDevs from 'images/sponsors/railsdevs.svg';
 import Shopify from 'images/sponsors/shopify.svg';
 import Stripe from 'images/sponsors/stripe.svg';
 import TestDouble from 'images/sponsors/testdouble.svg';
+import Weedmaps from 'images/sponsors/weedmaps.svg';
 
 import 'stylesheets/sponsors-tile';
 
@@ -25,6 +26,12 @@ const sponsors = [
         tile_image_alt: 'Shopify',
         link: 'https://shopify.com',
         customStyles: 'w-40',
+    },
+    {
+        tile_image: Weedmaps,
+        tile_image_alt: 'Weedmaps',
+        link: 'https://weedmaps.com',
+        customStyles: '',
     },
     {
         tile_image: Hoist,
