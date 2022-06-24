@@ -1,15 +1,16 @@
 header {
-    @apply w-full top-0 pt-4 pb-2 md:px-12 xl:px-0 bg-white border-b border-gray-100 z-10;
+    @apply w-full top-0 pt-4 pb-2 md:px-12 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
 
     .header {
-        @apply bg-white container py-1 px-2 md:p-0  mx-auto max-w-6xl relative;
+        @apply bg-white container py-1 px-8 md:p-0  mx-auto max-w-6xl relative;
         min-height: 3.5rem;
+        transition: box-shadow 0.3s ease-in-out;
 
         .inner {
             @apply flex flex-col md:flex-row;
 
             .logo {
-                @apply overflow-hidden py-3 transition-all w-12 md:mr-12;
+                @apply overflow-hidden py-3 w-[3.2rem] md:mr-10 lg:mr-12;
 
                 svg.wnb-logo {
                     @apply cursor-pointer transition-all h-10;
@@ -19,19 +20,11 @@ header {
             nav.nav {
                 @apply hidden md:w-full md:flex;
 
-                @screen md {
-                    width: calc(100% - 2.5rem);
-                }
-
                 .menu {
                     @apply items-start w-full md:flex md:content-center;
 
-                    @screen md {
-                        width: calc(100% - 3rem);
-                    }
-
                     ul {
-                        @apply list-none m-0 p-0;
+                        @apply list-none m-0 p-0 flex flex-col md:flex-row;
 
                         li {
                             @apply md:inline-block mr-12;
@@ -67,7 +60,7 @@ header {
                     }
                 }
                 .user {
-                    @apply flex items-start content-between py-3 w-40;
+                    @apply flex items-start content-between py-3;
 
                     .donate {
                         @apply mr-3;
@@ -109,7 +102,7 @@ header {
         }
 
         button.hamburger {
-            @apply bg-none p-2 border-0 right-4 top-4 md:right-0 rounded-md cursor-pointer inline-block md:hidden absolute w-10 transition duration-500 ease-in-out hover:bg-gray-100;
+            @apply bg-none p-2 border-0 right-4 top-4 sm:right-6 md:right-0 rounded-md cursor-pointer inline-block md:hidden absolute w-10 transition duration-500 ease-in-out hover:bg-gray-100;
             min-height: 2.5rem;
             span.bar {
                 @apply bg-gray-500 rounded-sm block transition-all;
@@ -139,6 +132,6 @@ header {
     }
 
     &.is-fixed {
-        @apply bg-white fixed shadow-md;
+        @apply bg-white shadow-md border-none;
     }
 }
