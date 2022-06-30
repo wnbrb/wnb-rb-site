@@ -30,7 +30,7 @@ const sponsors = [
     {
         tile_image: Weedmaps,
         tile_image_alt: 'Weedmaps',
-        link: 'https://weedmaps.com',
+        link: 'https://weedmaps.com/careers',
         customStyles: '',
     },
     {
