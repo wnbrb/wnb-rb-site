@@ -20,6 +20,8 @@
     text-xl
     flex-1
     my-4
+    text-center
+    md:text-left
     lg:px-4;
 }
 
