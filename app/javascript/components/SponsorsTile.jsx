@@ -10,6 +10,7 @@ import RailsDevs from 'images/sponsors/railsdevs.svg';
 import Shopify from 'images/sponsors/shopify.svg';
 import Stripe from 'images/sponsors/stripe.svg';
 import TestDouble from 'images/sponsors/testdouble.svg';
+import UniteUs from 'images/sponsors/uniteus.svg';
 import Weedmaps from 'images/sponsors/weedmaps.svg';
 
 import 'stylesheets/sponsors-tile';
@@ -28,9 +29,9 @@ const sponsors = [
         customStyles: 'w-40',
     },
     {
-        tile_image: Weedmaps,
-        tile_image_alt: 'Weedmaps',
-        link: 'https://weedmaps.com/careers',
+        tile_image: Flagrant,
+        tile_image_alt: 'Flagrant',
+        link: 'https://beflagrant.com',
         customStyles: '',
     },
     {
@@ -40,15 +41,21 @@ const sponsors = [
         customStyles: '',
     },
     {
-        tile_image: Flagrant,
-        tile_image_alt: 'Flagrant',
-        link: 'https://beflagrant.com',
-        customStyles: '',
-    },
-    {
         tile_image: Podia,
         tile_image_alt: 'Podia',
         link: 'https://podia.com',
+        customStyles: '',
+    },
+    {
+        tile_image: UniteUs,
+        tile_image_alt: 'Unite Us',
+        link: 'https://uniteus.com',
+        customStyles: '',
+    },
+    {
+        tile_image: Weedmaps,
+        tile_image_alt: 'Weedmaps',
+        link: 'https://weedmaps.com/careers',
         customStyles: '',
     },
     {
