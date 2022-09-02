@@ -3,7 +3,13 @@
 require './spec/rails_helper'
 
 RSpec.describe Api::EventsController, type: :controller do
-  before { Meetup.destroy_all }
+  before do
+    Meetup.destroy_all
+
+    # Some of these tests may be time-dependent
+    # so we mock the time the tests are run
+    Timecop.freeze(DateTime.new(2022, 3, 30))
+  end
 
   describe 'GET #past' do
     before do
