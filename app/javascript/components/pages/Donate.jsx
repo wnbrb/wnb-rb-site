@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet';
 import propTypes from 'prop-types';
 import SharedLayout from 'components/layout/SharedLayout';
 import Banner from 'components/Banner';
@@ -14,37 +15,44 @@ const Donate = () => {
     const [selectedPrice, setSelectedPrice] = useState(startingPrice);
 
     return (
-        <SharedLayout>
-            <PageTitleWithContainer text="Donate" />
-            <div className="flex flex-row p-12 justify-center flex-wrap">
-                <div className="flex flex-col mb-20 md:mb-0 md:mr-20">
-                    <h2 className="text-2xl font-medium mb-8">Choose a donation amount</h2>
-                    <DonationAmounts
-                        selectedPrice={selectedPrice}
-                        setSelectedPrice={setSelectedPrice}
-                    />
+        <>
+            <Helmet>
+                <title>Donate | WNB.rb</title>
+            </Helmet>
+
+            <SharedLayout>
+                <PageTitleWithContainer text="Donate" />
+                <div className="flex flex-row p-12 justify-center flex-wrap">
+                    <div className="flex flex-col mb-20 md:mb-0 md:mr-20">
+                        <h2 className="text-2xl font-medium mb-8">Choose a donation amount</h2>
+                        <DonationAmounts
+                            selectedPrice={selectedPrice}
+                            setSelectedPrice={setSelectedPrice}
+                        />
+                    </div>
+                    <div className="max-w-[25rem]">
+                        <h2 className="text-2xl font-medium mb-8">Why give to WNB.rb?</h2>
+                        <p className="mb-5">
+                            Donating to WNB.rb enables us to invest more resources in supporting
+                            women and non-binary people in the Ruby community.
+                        </p>
+                        <p>
+                            Here are some of the initiatives we plan to launch in 2022 with your
+                            help:
+                        </p>
+                        <ul className="list-disc ml-10">
+                            <li>Community fund for educational materials</li>
+                            <li>Travel and housing scholarships for RubyConf and RailsConf</li>
+                            <li>
+                                Workshops for community members on topics such as salary
+                                negotiation, resume writing, and more!
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div className="max-w-[25rem]">
-                    <h2 className="text-2xl font-medium mb-8">Why give to WNB.rb?</h2>
-                    <p className="mb-5">
-                        Donating to WNB.rb enables us to invest more resources in supporting women
-                        and non-binary people in the Ruby community.
-                    </p>
-                    <p>
-                        Here are some of the initiatives we plan to launch in 2022 with your help:
-                    </p>
-                    <ul className="list-disc ml-10">
-                        <li>Community fund for educational materials</li>
-                        <li>Travel and housing scholarships for RubyConf and RailsConf</li>
-                        <li>
-                            Workshops for community members on topics such as salary negotiation,
-                            resume writing, and more!
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <OtherAmountBanner />
-        </SharedLayout>
+                <OtherAmountBanner />
+            </SharedLayout>
+        </>
     );
 };
 

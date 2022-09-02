@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
@@ -54,50 +55,56 @@ const infoCardData = [
 ];
 
 const Home = () => (
-    <SharedLayout>
-        <section className="hero-container">
-            <div className="hero">
-                <PageTitle text="WNB.rb">
-                    <p className="mt-3 max-w-[14rem]">
-                        A virtual community for women and non-binary Rubyists.
-                    </p>
-                    <a
-                        href="https://tinyurl.com/join-wnb-rb"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                    >
-                        <Button type="secondary" className="mt-3">
-                            Join WNB.rb
-                        </Button>
-                    </a>
-                </PageTitle>
-                <div className="splash-background">
-                    <SplashBackground className="w-full" />
+    <>
+        <Helmet>
+            <title>WNB.rb</title>
+        </Helmet>
+
+        <SharedLayout>
+            <section className="hero-container">
+                <div className="hero">
+                    <PageTitle text="WNB.rb">
+                        <p className="mt-3 max-w-[14rem]">
+                            A virtual community for women and non-binary Rubyists.
+                        </p>
+                        <a
+                            href="https://tinyurl.com/join-wnb-rb"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            <Button type="secondary" className="mt-3">
+                                Join WNB.rb
+                            </Button>
+                        </a>
+                    </PageTitle>
+                    <div className="splash-background">
+                        <SplashBackground className="w-full" />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section className="podcast">
-            <PodcastTile podcasts={podcasts} />
-        </section>
+            <section className="podcast">
+                <PodcastTile podcasts={podcasts} />
+            </section>
 
-        <section className="info-card-section">
-            {infoCardData.map((card) => {
-                return (
-                    <InfoCard
-                        key={card.title}
-                        section={card.section}
-                        title={card.title}
-                        icon={card.icon}
-                    ></InfoCard>
-                );
-            })}
-        </section>
+            <section className="info-card-section">
+                {infoCardData.map((card) => {
+                    return (
+                        <InfoCard
+                            key={card.title}
+                            section={card.section}
+                            title={card.title}
+                            icon={card.icon}
+                        ></InfoCard>
+                    );
+                })}
+            </section>
 
-        <section className="sponsors">
-            <SponsorsTile />
-        </section>
-    </SharedLayout>
+            <section className="sponsors">
+                <SponsorsTile />
+            </section>
+        </SharedLayout>
+    </>
 );
 
 export default Home;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
@@ -10,39 +11,44 @@ import 'stylesheets/sponsor-us';
 
 const SponsorUs = () => {
     return (
-        <SharedLayout>
-            <PageTitleWithContainer text="Sponsor Us" />
+        <>
+            <Helmet>
+                <title>Sponsor Us | WNB.rb</title>
+            </Helmet>
+            <SharedLayout>
+                <PageTitleWithContainer text="Sponsor Us" />
 
-            <div className="text-xl leading-8 max-w-[550px] mx-auto mb-24 text-center">
-                <p>Thank you for your interest in sponsoring WNB.rb!</p>
-                <p className="mt-10">
-                    We are currently revamping our sponsorship process for all new sponsors. If you
-                    would like to be notified when our new sponsorship process is ready, please fill
-                    out{' '}
-                    <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSeMRuBCYfDsh8KsnKfgFiaKOs327syoSbtj63j8kG_HSn4AMw/viewform"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        this form
-                    </a>
-                    .
-                </p>
-                <p className="mt-10">
-                    In the meantime, we encourage you to invite any women or non-binary developers
-                    on your team to{' '}
-                    <a
-                        href="https://tinyurl.com/join-wnb-rb"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        join our community
-                    </a>
-                    . Getting to know the engineers who work for our sponsors helps our sponsorships
-                    succeed!
-                </p>
-            </div>
-        </SharedLayout>
+                <div className="text-xl leading-8 max-w-[550px] mx-auto mb-24 text-center">
+                    <p>Thank you for your interest in sponsoring WNB.rb!</p>
+                    <p className="mt-10">
+                        We are currently revamping our sponsorship process for all new sponsors. If
+                        you would like to be notified when our new sponsorship process is ready,
+                        please fill out{' '}
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSeMRuBCYfDsh8KsnKfgFiaKOs327syoSbtj63j8kG_HSn4AMw/viewform"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            this form
+                        </a>
+                        .
+                    </p>
+                    <p className="mt-10">
+                        In the meantime, we encourage you to invite any women or non-binary
+                        developers on your team to{' '}
+                        <a
+                            href="https://tinyurl.com/join-wnb-rb"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            join our community
+                        </a>
+                        . Getting to know the engineers who work for our sponsors helps our
+                        sponsorships succeed!
+                    </p>
+                </div>
+            </SharedLayout>
+        </>
     );
 };
 
