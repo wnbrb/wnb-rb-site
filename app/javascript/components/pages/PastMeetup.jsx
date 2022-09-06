@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { getPastMeetup } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
@@ -98,47 +99,52 @@ const PastMeetup = () => {
         panel_video_link: panelVideoUrl,
     } = meetup;
     return (
-        <SharedLayout>
-            <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
-                <PageTitleWithContainer text={`${monthName} ${year} Meetup`} />
-            </div>
-            <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
-                {loading ? (
-                    <LoadingSpinner />
-                ) : (
-                    <div className="container mx-20">
-                        {panelVideoUrl ? (
-                            <>
-                                <VideoBlock videoUrl={panelVideoUrl} title={title} />
-                                <div className="w-full rounded border-t p-10 border-gray-100 overflow-hidden">
-                                    <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
-                                    <SpeakersList speakers={speakers} />
-                                    <p className="m-2 pt-4">{description}</p>
-                                </div>
-                            </>
-                        ) : (
-                            <>
-                                {speakers.map((speaker) => {
-                                    const eventSpeaker = eventSpeakers.filter(
-                                        (es) => es.speaker_id === speaker.id,
-                                    )[0];
-                                    return (
-                                        <SpeakerVideoBlock
-                                            key={speaker.id}
-                                            speaker={speaker}
-                                            eventSpeaker={eventSpeaker}
-                                        />
-                                    );
-                                })}
-                            </>
-                        )}
-                        <div className="flex flex-col items-center bg-gray-100">
-                            <SpeakerBiosBlock speakers={speakers} />
+        <>
+            <Helmet>
+                <title>{`${title} | WNB.rb`}</title>
+            </Helmet>
+            <SharedLayout>
+                <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
+                    <PageTitleWithContainer text={`${monthName} ${year} Meetup`} />
+                </div>
+                <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
+                    {loading ? (
+                        <LoadingSpinner />
+                    ) : (
+                        <div className="container mx-20">
+                            {panelVideoUrl ? (
+                                <>
+                                    <VideoBlock videoUrl={panelVideoUrl} title={title} />
+                                    <div className="w-full rounded border-t p-10 border-gray-100 overflow-hidden">
+                                        <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
+                                        <SpeakersList speakers={speakers} />
+                                        <p className="m-2 pt-4">{description}</p>
+                                    </div>
+                                </>
+                            ) : (
+                                <>
+                                    {speakers.map((speaker) => {
+                                        const eventSpeaker = eventSpeakers.filter(
+                                            (es) => es.speaker_id === speaker.id,
+                                        )[0];
+                                        return (
+                                            <SpeakerVideoBlock
+                                                key={speaker.id}
+                                                speaker={speaker}
+                                                eventSpeaker={eventSpeaker}
+                                            />
+                                        );
+                                    })}
+                                </>
+                            )}
+                            <div className="flex flex-col items-center bg-gray-100">
+                                <SpeakerBiosBlock speakers={speakers} />
+                            </div>
                         </div>
-                    </div>
-                )}
-            </div>
-        </SharedLayout>
+                    )}
+                </div>
+            </SharedLayout>
+        </>
     );
 };
 

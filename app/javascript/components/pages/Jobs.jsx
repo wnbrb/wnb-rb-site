@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import propTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';
@@ -49,18 +50,23 @@ const Jobs = () => {
     }, [jobs]);
 
     return (
-        <SharedLayout>
-            <PageTitleWithContainer text="Jobs" />
-            {loading ? (
-                <LoadingSpinner />
-            ) : (
-                <>
-                    <JobGroup jobs={firstSixJobs} />
-                    <SponsorUsBanner />
-                    <JobGroup jobs={restOfJobs} />
-                </>
-            )}
-        </SharedLayout>
+        <>
+            <Helmet>
+                <title>Jobs | WNB.rb</title>
+            </Helmet>
+            <SharedLayout>
+                <PageTitleWithContainer text="Jobs" />
+                {loading ? (
+                    <LoadingSpinner />
+                ) : (
+                    <>
+                        <JobGroup jobs={firstSixJobs} />
+                        <SponsorUsBanner />
+                        <JobGroup jobs={restOfJobs} />
+                    </>
+                )}
+            </SharedLayout>
+        </>
     );
 };
 

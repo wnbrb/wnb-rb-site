@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
@@ -106,55 +107,64 @@ const Meetups = () => {
     }, []);
 
     return (
-        <SharedLayout>
-            <PageTitleWithContainer text="Past Meetups" />
-            {loading ? (
-                <LoadingSpinner />
-            ) : (
-                <div className="container flex flex-col mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
-                    {meetupsByYear.length > 0
-                        ? meetupsByYear.reverse().map(([year, meetupsByMonth]) => {
-                              return (
-                                  <YearSection key={year} year={year}>
-                                      {Object.entries(meetupsByMonth).map(([month, meetups]) => {
-                                          return (
-                                              <MonthSection key={month} month={month}>
-                                                  {meetups.map(
-                                                      ({
-                                                          id,
-                                                          speakers,
-                                                          title,
-                                                          date,
-                                                          event_speakers,
-                                                      }) => {
-                                                          const numericMonth =
-                                                              new Date(date).getMonth() + 1;
-                                                          return (
-                                                              <Meetup
-                                                                  key={id}
-                                                                  speakers={speakers}
-                                                                  title={title}
-                                                                  event_speakers={event_speakers}
-                                                                  year={new Date(date)
-                                                                      .getFullYear()
-                                                                      .toString()}
-                                                                  month={numericMonth
-                                                                      .toString()
-                                                                      .padStart(2, '0')}
-                                                              />
-                                                          );
-                                                      },
-                                                  )}
-                                              </MonthSection>
-                                          );
-                                      })}
-                                  </YearSection>
-                              );
-                          })
-                        : null}
-                </div>
-            )}
-        </SharedLayout>
+        <>
+            <Helmet>
+                <title>Past Meetups | WNB.rb</title>
+            </Helmet>
+            <SharedLayout>
+                <PageTitleWithContainer text="Past Meetups" />
+                {loading ? (
+                    <LoadingSpinner />
+                ) : (
+                    <div className="container flex flex-col mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
+                        {meetupsByYear.length > 0
+                            ? meetupsByYear.reverse().map(([year, meetupsByMonth]) => {
+                                  return (
+                                      <YearSection key={year} year={year}>
+                                          {Object.entries(meetupsByMonth).map(
+                                              ([month, meetups]) => {
+                                                  return (
+                                                      <MonthSection key={month} month={month}>
+                                                          {meetups.map(
+                                                              ({
+                                                                  id,
+                                                                  speakers,
+                                                                  title,
+                                                                  date,
+                                                                  event_speakers,
+                                                              }) => {
+                                                                  const numericMonth =
+                                                                      new Date(date).getMonth() + 1;
+                                                                  return (
+                                                                      <Meetup
+                                                                          key={id}
+                                                                          speakers={speakers}
+                                                                          title={title}
+                                                                          event_speakers={
+                                                                              event_speakers
+                                                                          }
+                                                                          year={new Date(date)
+                                                                              .getFullYear()
+                                                                              .toString()}
+                                                                          month={numericMonth
+                                                                              .toString()
+                                                                              .padStart(2, '0')}
+                                                                      />
+                                                                  );
+                                                              },
+                                                          )}
+                                                      </MonthSection>
+                                                  );
+                                              },
+                                          )}
+                                      </YearSection>
+                                  );
+                              })
+                            : null}
+                    </div>
+                )}
+            </SharedLayout>
+        </>
     );
 };
 
