@@ -24,7 +24,15 @@ const PodcastTile = ({ podcasts }) => (
 );
 
 PodcastTile.propTypes = {
-    podcasts: PropTypes.arrayOf(PropTypes.object),
+    podcasts: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            tile_image: PropTypes.string,
+            tile_image_alt: PropTypes.string,
+            title: PropTypes.string,
+            url: PropTypes.string,
+        }),
+    ),
 };
 
 export default PodcastTile;
