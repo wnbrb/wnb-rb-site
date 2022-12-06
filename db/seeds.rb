@@ -127,6 +127,36 @@ EventSpeaker.create(
                      lectus a sapien vulputate auctor sit amet sit amet augue.',
 )
 
+p 'Create a third meetup'
+
+meetup3 =
+  Meetup.create(
+    title: 'September 2021 Meetup',
+    description: 'Our meetup in September ',
+    date: DateTime.new(2021, 9, 28, 16).utc,
+    panel_video_link: 'https://www.youtube.com/embed/GlpZPv1bp4g',
+  )
+
+EventSpeaker.create(
+  event: meetup3,
+  speaker: jemma,
+  talk_title: 'A talk given at the September meetup',
+  talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
+  talk_description:
+    'Cras elementum, tortor id faucibus iaculis, augue metus
+                     pretium massa, luctus auctor odio ligula vel justo. Sed
+                     lacinia hendrerit felis, et dictum ante porttitor in.
+                     Suspendisse ut sem dolor. In hac habitasse platea dictumst.
+                     Maecenas dapibus ex nisi, quis pretium odio ultrices ac.
+                     Nunc ligula nunc, gravida porttitor felis dignissim, euismod
+                     posuere ante. Curabitur congue tellus purus, id posuere sem
+                     maximus fermentum. Aenean vehicula ipsum nec condimentum
+                     vehicula. Nunc sit amet imperdiet elit. Proin lacinia sed
+                     dui pharetra sollicitudin. Maecenas vel enim a ante suscipit
+                     aliquam. Cras placerat elit eu ultricies pulvinar. Cras et
+                     lectus a sapien vulputate auctor sit amet sit amet augue.',
+)
+
 p 'Create a panel with three panelists'
 
 kerstin =
