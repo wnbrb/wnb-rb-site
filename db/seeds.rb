@@ -15,7 +15,7 @@ jemma =
     name: 'Jemma Issroff',
     tagline: 'Creator and Maintainer of MemoWise',
     bio:
-      "Lorem Ipsum is simply dummy text of the printing
+    "Lorem Ipsum is simply dummy text of the printing
   and typesetting industry. Lorem Ipsum has been the
   industry's standard dummy text ever since the 1500s,
   when an unknown printer took a galley of type and
@@ -27,8 +27,12 @@ jemma =
   passages, and more recently with desktop publishing
   software like Aldus PageMaker including versions of Lorem
   Ipsum.",
-    image_url: 'https://picsum.photos/200/300',
-  )
+  image_url: 'https://picsum.photos/200/300',
+  links: {
+    twitter: 'http://example.com/jemmas-twitter',
+    personal_website: 'http://example.com/jemmas-personal-website',
+  }
+)
 
 stefanni =
   Speaker.create(
