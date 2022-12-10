@@ -32,6 +32,11 @@ RSpec.describe Api::EventsController, type: :controller do
           tagline: 'Software Developer',
           bio: 'Lorem Ipsum',
           image_url: 'https://picsum.photos/200',
+          links: {
+            twitter: 'http://example.com/twitter-link',
+            mastodon: 'http://example.com/mastodon-link',
+            personal_website: 'http://example.com/personal-website-link',
+          }
         )
       EventSpeaker.create(
         event: july_meetup,
@@ -64,7 +69,13 @@ RSpec.describe Api::EventsController, type: :controller do
       body = JSON.parse(response.body)
 
       july_meetup = body['data']['2021']['July'].first
+
       expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
+      expect(july_meetup['speakers'].first['links']).to eq({
+        'twitter' => 'http://example.com/twitter-link',
+        'mastodon' => 'http://example.com/mastodon-link',
+        'personal_website' => 'http://example.com/personal-website-link',
+      })
     end
 
     it 'includes talk titles' do
@@ -148,6 +159,7 @@ RSpec.describe Api::EventsController, type: :controller do
 
       august_meetup = body['data']['2022']['August'].first
       expect(august_meetup['speakers'].first['name']).to eq('Speaker Name')
+      expect(august_meetup['speakers'].first['links']).to eq({})
     end
   end
 end
