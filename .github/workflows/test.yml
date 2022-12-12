@@ -28,7 +28,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v1
         with:
-          node-version: 16.3.0
+          node-version: 19.2.0
       - name: Setup the Rails application
         env:
           RAILS_ENV: test
