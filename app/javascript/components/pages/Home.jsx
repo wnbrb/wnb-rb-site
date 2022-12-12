@@ -23,12 +23,14 @@ import GiveSupportIcon from 'components/icons/GiveSupport';
 
 const podcasts = [
     {
+        id: 1,
         tile_image: PodcastImageRubyonRails,
         tile_image_alt: 'Ruby on Rails Podcast',
         title: 'Ruby on Rails Podcast',
         url: 'https://www.therubyonrailspodcast.com/373',
     },
     {
+        id: 2,
         tile_image: PodcastImageRemoteRuby,
         tile_image_alt: 'Remote Ruby Podcast',
         title: 'Remote Ruby',
