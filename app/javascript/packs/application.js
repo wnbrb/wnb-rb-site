@@ -9,5 +9,8 @@ import 'channels';
 
 import '../stylesheets/application.scss';
 
-Rails.start();
+document.addEventListener('turbolinks:load', function () {
+    Rails.start();
+});
+
 ActiveStorage.start();
