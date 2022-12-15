@@ -18,33 +18,6 @@ const customConfig = {
             '.jpg',
         ],
     },
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                plugins: [
-                                    [
-                                        'postcss-preset-env',
-                                        {
-                                            // Options
-                                        },
-                                    ],
-                                ],
-                            },
-                        },
-                    },
-                ],
-            },
-        ],
-    },
 };
 
 module.exports = merge(webpackConfig, customConfig);
