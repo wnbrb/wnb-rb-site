@@ -3,11 +3,8 @@ import { createRoot } from 'react-dom/client';
 import SponsorUs from 'components/pages/SponsorUs';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const body = document.createElement('div');
-    body.style = 'min-height: 100vh';
-    document.body.appendChild(body);
-
-    const root = createRoot(body);
+    const container = document.getElementById('root');
+    const root = createRoot(container);
 
     root.render(<SponsorUs />);
 });
