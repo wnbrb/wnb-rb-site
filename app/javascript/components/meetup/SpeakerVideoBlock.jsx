@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import VideoBlock from 'components/past_meetups/VideoBlock';
+import VideoBlock from 'components/meetup/VideoBlock';
 
 export default function SpeakerVideoBlock({ speaker, eventSpeaker }) {
     const { id, image_url: imageUrl, name, tagline } = speaker;

@@ -87,20 +87,20 @@ RSpec.describe Api::EventsController, type: :controller do
     end
   end
 
-  describe 'GET #past_by_month_day' do
+  describe 'GET #by_month' do
     before do
       Meetup.create(title: 'August event', location: 'virtual', date: DateTime.new(2021, 8, 1))
     end
 
     it 'returns one event for a given month' do
-      get :past_by_month_day, params: { year: '2021', month: '8', day: 1 }
+      get :by_month, params: { year: '2021', month: '8' }
       expect(response).to have_http_status(200)
       body = JSON.parse(response.body)
-      expect(body['data']['title']).to eq('August event')
+      expect(body['data'][0]['title']).to eq('August event')
     end
 
     it 'returns a 404 when no event exists for that month' do
-      get :past_by_month_day, params: { year: '2021', month: '11', day: 1 }
+      get :by_month, params: { year: '2021', month: '11' }
       expect(response).to have_http_status(404)
     end
   end

@@ -1,7 +1,6 @@
 .page-title {
     @apply relative
     min-h-[10rem];
-    /* overflow-auto; */
 }
 
 .ruby-outline {
@@ -9,15 +8,14 @@
 }
 
 .title-container {
-    @apply pt-10 pl-20;
+    @apply pt-10 pl-10 md:pl-20;
 }
 
 .title-text {
     @apply text-wnbrb-pink-default
     text-5xl
     sm:text-6xl
-    font-black
-    md:whitespace-nowrap;
+    font-black;
 
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;

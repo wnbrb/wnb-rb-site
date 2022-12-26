@@ -43,6 +43,12 @@ header {
                                 }
                             }
 
+                            &.highlight {
+                                a {
+                                    color:  #f56960
+                                }
+                            }
+
                             &.is-active {
                                 a {
                                     @apply text-gray-500 font-bold md:font-normal;

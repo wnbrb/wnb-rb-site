@@ -1,35 +1,39 @@
 .meetups__month--name {
-  width: 128px;
+    width: 128px;
 }
 
 .meetups__month:first-of-type > .meetups__card--border {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 .meetups__month:last-of-type > .meetups__card--border {
-  align-self: flex-start;
-  padding-top: 50px;
-  line-height: 0;
+    align-self: flex-start;
+    padding-top: 50px;
+    line-height: 0;
 }
 
 .meetups__month:first-of-type > .meetups__month--name,
 .meetups__month:last-of-type > .meetups__month--name {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .meetups__card--border::before {
-  display: block;
-  position: relative;
-  left: -10px;
-  font-size: 50px;
-  color: #d1d5db;
-  content: '•';
+    display: block;
+    position: relative;
+    left: -10px;
+    font-size: 50px;
+    color: #d1d5db;
+    content: '•';
+}
+
+.meetup__item li div:first-of-type {
+    max-width: 100%;
 }
 
 .meetups__month:first-of-type > .meetups__card--border::before {
-  top: -28px;
+    top: -28px;
 }
 
 .meetups__month:last-of-type > .meetups__card--border::before {
-  top: 14px;
+    top: 14px;
 }

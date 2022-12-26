@@ -8,23 +8,26 @@ Rails.application.routes.draw do
                sign_up: 'new',
                registration: 'register',
              }
-  namespace :admin, constraints: { format: 'html' } do
+
+  namespace :admin do
     get 'dashboard', to: 'dashboard#show'
   end
 
   get '/sponsor-us', to: 'site#sponsor_us'
   get '/meetups', to: 'site#meetups'
+  get '/meetups/:id', to: 'site#meetup'
+
   get '/jobs', to: 'site#jobs'
   get '/jobs/authenticate', to: 'site#jobs_authenticate'
   get '/donate', to: 'site#donate'
-  get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 
   root 'site#home'
-  namespace :api, constraints: { format: 'json' } do
-    resources :events, only: [:none] do
+
+  namespace :api do
+    resources :events, only: [:show] do
       collection do
         get 'past'
-        get ':year/:month/:day', to: 'events#past_by_month_day'
+        get '/:year/:month', to: 'events#by_month'
         get 'upcoming'
       end
     end

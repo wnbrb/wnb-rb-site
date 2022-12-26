@@ -57,11 +57,12 @@ const Header = () => {
                                 <li>
                                     <a href="/jobs">Job Board</a>
                                 </li>
-                                <li>
-                                    <a href="/meetups">Past Meetups</a>
-                                </li>
+
                                 <li>
                                     <a href="/sponsor-us"> Sponsor Us</a>
+                                </li>
+                                <li className="highlight">
+                                    <a href="/meetups">Meetups</a>
                                 </li>
                             </ul>
                         </div>
