@@ -134,12 +134,10 @@ const Meetups = () => {
                                                                   date,
                                                                   event_speakers,
                                                               }) => {
-                                                                  const dateObj = new Date(date);
-                                                                  const year =
-                                                                      dateObj.getFullYear();
-                                                                  const month =
-                                                                      dateObj.getMonth() + 1;
-                                                                  const day = dateObj.getDate();
+                                                                  const dateString =
+                                                                      date.split('T')[0];
+                                                                  let [year, month, day] =
+                                                                      dateString.split('-');
                                                                   return (
                                                                       <Meetup
                                                                           key={id}
@@ -148,11 +146,12 @@ const Meetups = () => {
                                                                           event_speakers={
                                                                               event_speakers
                                                                           }
-                                                                          year={year.toString()}
-                                                                          month={month
-                                                                              .toString()
-                                                                              .padStart(2, '0')}
-                                                                          day={day.toString()}
+                                                                          year={year}
+                                                                          month={month.padStart(
+                                                                              2,
+                                                                              '0',
+                                                                          )}
+                                                                          day={day}
                                                                       />
                                                                   );
                                                               },
