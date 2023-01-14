@@ -39,7 +39,7 @@ MonthSection.propTypes = {
     children: PropTypes.node,
 };
 
-const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
+const Meetup = ({ speakers, title = '', event_speakers, year, month, day }) => {
     const eventWithSpeaker = event_speakers.map((talk) => {
         const speaker = speakers.find((speak) => speak.id === talk.speaker_id);
         return { ...talk, speaker };
@@ -74,7 +74,7 @@ const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
                         ))}
                 </div>
                 <div className="bg-gray-200 shadow-lg text-right">
-                    <a href={`/meetups/${year}/${month}`}>
+                    <a href={`/meetups/${year}/${month}/${day}`}>
                         <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
                             View
                         </button>
@@ -91,6 +91,7 @@ Meetup.propTypes = {
     event_speakers: PropTypes.array,
     year: PropTypes.string,
     month: PropTypes.string,
+    day: PropTypes.string,
 };
 
 const Meetups = () => {
@@ -133,8 +134,12 @@ const Meetups = () => {
                                                                   date,
                                                                   event_speakers,
                                                               }) => {
-                                                                  const numericMonth =
-                                                                      new Date(date).getMonth() + 1;
+                                                                  const dateObj = new Date(date);
+                                                                  const year =
+                                                                      dateObj.getFullYear();
+                                                                  const month =
+                                                                      dateObj.getMonth() + 1;
+                                                                  const day = dateObj.getDate();
                                                                   return (
                                                                       <Meetup
                                                                           key={id}
@@ -143,12 +148,11 @@ const Meetups = () => {
                                                                           event_speakers={
                                                                               event_speakers
                                                                           }
-                                                                          year={new Date(date)
-                                                                              .getFullYear()
-                                                                              .toString()}
-                                                                          month={numericMonth
+                                                                          year={year.toString()}
+                                                                          month={month
                                                                               .toString()
                                                                               .padStart(2, '0')}
+                                                                          day={day.toString()}
                                                                       />
                                                                   );
                                                               },

@@ -15,8 +15,8 @@ module Api
     end
 
     def past_by_month
-      event_date = DateTime.new(params[:year].to_i, params[:month].to_i)
-      event = Event.where(date: event_date..event_date.end_of_month).first
+      event_date = DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
+      event = Event.where(date: event_date..event_date.end_of_day).first
       if event.present?
         render status: 200, json: { data: event.as_json(include: [:event_speakers, :speakers]) }
       else

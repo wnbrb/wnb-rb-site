@@ -16,14 +16,14 @@ Rails.application.routes.draw do
   get '/jobs', to: 'site#jobs'
   get '/jobs/authenticate', to: 'site#jobs_authenticate'
   get '/donate', to: 'site#donate'
-  get '/meetups/:year/:month', to: 'site#past_meetup'
+  get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 
   root 'site#home'
   namespace :api do
     resources :events, only: [:none] do
       collection do
         get 'past'
-        get '/:year/:month', to: 'events#past_by_month'
+        get '/:year/:month/:day', to: 'events#past_by_month'
         get 'upcoming'
       end
     end
