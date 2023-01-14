@@ -232,7 +232,8 @@ panel =
                Kerstin Puschke, Sylvia Fronczak, and Gabi Stefanini
                will answer YOUR questions about everything from CFPs,
                to making slides, to delivering technical talks!",
-    date: DateTime.new(2021, 7, 31, 16).utc,
+    panel_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
+    date: DateTime.new(2021, 7, 29, 16).utc,
   )
 
 panel.speakers = [kerstin, gabi, sylvia]
