@@ -116,7 +116,7 @@ const Job = ({ title, description, imageUrl, company, link, location }) => {
                     <div className="font-light">{location}</div>
                 </div>
             </div>
-            <div className="my-5 h-44">{description}</div>
+            <div className="my-5 h-48">{description}</div>
             <div className="flex flex-row justify-between items-center space-x-5">
                 <Button type="white" className="w-20">
                     <a href={link} target="_blank" rel="noopener noreferrer">
