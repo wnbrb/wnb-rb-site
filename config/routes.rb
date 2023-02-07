@@ -8,9 +8,10 @@ Rails.application.routes.draw do
                sign_up: 'new',
                registration: 'register',
              }
-  namespace :admin do
+  namespace :admin, constraints: { format: 'html' } do
     get 'dashboard', to: 'dashboard#show'
   end
+
   get '/sponsor-us', to: 'site#sponsor_us'
   get '/meetups', to: 'site#meetups'
   get '/jobs', to: 'site#jobs'
@@ -19,11 +20,11 @@ Rails.application.routes.draw do
   get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 
   root 'site#home'
-  namespace :api do
+  namespace :api, constraints: { format: 'json' } do
     resources :events, only: [:none] do
       collection do
         get 'past'
-        get '/:year/:month/:day', to: 'events#past_by_month'
+        get ':year/:month/:day', to: 'events#past_by_month_day'
         get 'upcoming'
       end
     end

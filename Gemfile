@@ -28,18 +28,18 @@ group :development, :test do
 end
 
 group :development do
+  gem 'debug', '~> 1.7.1'
   gem 'listen', '~> 3.3'
   gem 'prettier', '~> 2.0'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rubocop', '~> 1.22'
   gem 'web-console', '>= 4.1.0'
-  gem 'debug', '~> 1.7.1'
 end
 
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'factory_bot_rails', '~> 6.2.0'
-  gem 'selenium-webdriver', "~> 4.0"
+  gem 'selenium-webdriver', '~> 4.0'
   gem 'timecop', '~> 0.9.6'
   gem 'webdrivers', '~>5.2.0'
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  include Pundit
+  include Pundit::Authorization
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
