@@ -105,7 +105,7 @@ const SponsorUsBanner = () => {
     );
 };
 
-const Job = ({ title, description, imageUrl, company, location, link }) => {
+const Job = ({ title, description, imageUrl, company, link, location }) => {
     return (
         <Card className="mx-0 my-5 md:mr-8 max-w-[22rem]">
             <div className="flex flex-row">
