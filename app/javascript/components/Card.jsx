@@ -10,7 +10,6 @@ const Card = ({ children, className }) => (
 Card.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    link: PropTypes.boolean,
 };
 
 export default Card;
