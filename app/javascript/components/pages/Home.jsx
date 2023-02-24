@@ -6,7 +6,6 @@ import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
 import InfoCard from '../home/InfoCard';
-import SponsorsTile from 'components/SponsorsTile';
 
 import 'stylesheets/page';
 import 'stylesheets/home';
@@ -89,7 +88,7 @@ const Home = () => (
                 <PodcastTile podcasts={podcasts} />
             </section>
 
-            <section className="info-card-section">
+            <section className="info-card-section mb-12">
                 {infoCardData.map((card) => {
                     return (
                         <InfoCard
@@ -100,10 +99,6 @@ const Home = () => (
                         ></InfoCard>
                     );
                 })}
-            </section>
-
-            <section className="sponsors">
-                <SponsorsTile />
             </section>
         </SharedLayout>
     </>
