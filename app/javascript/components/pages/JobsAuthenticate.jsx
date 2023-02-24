@@ -81,8 +81,12 @@ const JobsAuthenticate = () => {
                         <div className="flex flex-row flex-wrap items-center justify-center md:justify-between text-lg">
                             Want to post a job?
                             <Button type="white" className="mt-3 md:mt-0">
-                                <a href="/sponsor-us" target="_blank" rel="noopener noreferrer">
-                                    Sponsor Us
+                                <a
+                                    href="/partner-with-us"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Partner with Us
                                 </a>
                             </Button>
                         </div>

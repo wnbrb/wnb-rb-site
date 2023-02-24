@@ -18,8 +18,8 @@ const Footer = () => (
                 >
                     Join WNB.rb
                 </a>
-                <a className="footer-col-item" href="/sponsor-us">
-                    Sponsor Us
+                <a className="footer-col-item" href="/partner-with-us">
+                    Partner with Us
                 </a>
                 <a className="footer-col-item" href="/donate">
                     Donate

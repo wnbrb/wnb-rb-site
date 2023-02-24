@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'dashboard#show'
   end
 
-  get '/sponsor-us', to: 'site#sponsor_us'
+  get '/sponsor-us', to: redirect('/partner-with-us')
+
+  get '/partner-with-us', to: 'site#sponsor_us'
   get '/meetups', to: 'site#meetups'
   get '/jobs', to: 'site#jobs'
   get '/jobs/authenticate', to: 'site#jobs_authenticate'
