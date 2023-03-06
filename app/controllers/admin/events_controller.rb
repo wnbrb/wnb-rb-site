@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 module Admin
-  class EventsController < ApplicationController
+  class EventsController < AdminController
     before_action :authenticate_user!
 
     def index
@@ -38,10 +38,10 @@ module Admin
         @event.destroy
         redirect_to admin_events_path
         flash[:success] = 'Event successfully deleted'
-      else 
+      else
         render_not_found
       end
-    end 
+    end
 
     private
 
