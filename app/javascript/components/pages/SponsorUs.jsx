@@ -18,7 +18,7 @@ const SponsorUs = () => {
             <SharedLayout>
                 <PageTitleWithContainer text="Partner with us" />
 
-                <div className="text-xl leading-8 max-w-[550px] mx-auto mb-24 text-center">
+                <div className="text-xl leading-8 max-w-[550px] mx-auto px-10 md:px-8 xxl:px-0 mb-24 text-center">
                     <p>
                         <b>WNB.rb is looking for companies to partner with us for 2023!</b>
                     </p>
