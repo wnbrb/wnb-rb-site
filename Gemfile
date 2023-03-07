@@ -19,6 +19,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jwt', '>= 2.6.0'
 gem 'pundit', '>= 2.3.0'
 
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem 'stimulus-rails', '~> 1.2.1'
+
+gem 'cssbundling-rails', '~> 1.1'
+gem 'jsbundling-rails', '~> 1.1'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 6.0.1'
