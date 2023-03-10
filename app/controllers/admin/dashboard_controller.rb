@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 module Admin
-  class DashboardController < ApplicationController
+  class DashboardController < AdminController
   before_action :authenticate_user!
-
   def show; end
   end
 end

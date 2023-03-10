@@ -25,10 +25,11 @@ jobs:
           bundler-cache: true
       - name: Install Bundler
         run: gem install bundler:2.1.4
-      - name: Install Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 19.2.0
+      - name: Run yarn commands
+        run: |
+          yarn install
+          yarn build
+          yarn build:css
       - name: Setup the Rails application
         env:
           RAILS_ENV: test

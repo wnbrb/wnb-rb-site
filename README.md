@@ -91,6 +91,7 @@ foreman run rake [NAMESPACE]:[TASK_NAME]
 
 - Note that your pull request may require one or more tests. Tests are required for almost all backend changes, and all frontend logic-related changes. Style or copy changes do not require you to write a test.
 - For a style or copy change, please provide side-by-side screenshots showing how the app looks before and after your changes.
+- When working on the admin area, controllers for the admin area should inherit from `AdminController` so the layout is properly applied.
 
 ## Contributor Resources 📚
 
