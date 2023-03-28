@@ -8,6 +8,8 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+Style/HashSyntax:
+  EnforcedShorthandSyntax: "never"
 Metrics/AbcSize:
   Enabled: false
 Metrics/BlockLength:

@@ -21,10 +21,10 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.3
+          ruby-version: 3.2.1
           bundler-cache: true
       - name: Install Bundler
-        run: gem install bundler:2.1.4
+        run: gem install bundler:2.4.5
       - name: Run yarn commands
         run: |
           yarn install
