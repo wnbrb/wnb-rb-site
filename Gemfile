@@ -55,4 +55,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Explicitly depend on and compile nokogiri
 # so we can run CI on Ruby head
-gem 'nokogiri', force_ruby_platform: true
+gem 'nokogiri', '~> 1.14', force_ruby_platform: true

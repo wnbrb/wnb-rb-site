@@ -338,7 +338,7 @@ DEPENDENCIES
   jsbundling-rails (~> 1.1)
   jwt (>= 2.6.0)
   listen (~> 3.3)
-  nokogiri
+  nokogiri (~> 1.14)
   pg (~> 1.4.5)
   prettier (~> 2.0)
   pry-rails (~> 0.3.9)
