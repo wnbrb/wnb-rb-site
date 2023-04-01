@@ -2,6 +2,9 @@ name: Tests
 on: [pull_request]
 jobs:
   test:
+    strategy:
+      matrix:
+        ruby: ['3.2.1', head]
     runs-on: ubuntu-20.04
     services:
       postgres:
@@ -21,7 +24,7 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.1
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - name: Install Bundler
         run: gem install bundler:2.4.5
