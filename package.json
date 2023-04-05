@@ -88,7 +88,7 @@
     },
     "scripts": {
         "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --minify",
-        "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+        "build:css": "sass ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
         "build:postcss": "postcss ./app/assets/builds/admin.css -o ./app/assets/builds/admin.css --use autoprefixer"
     }
 }
