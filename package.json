@@ -88,6 +88,7 @@
     },
     "scripts": {
         "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-        "build:css": "sass ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules"
+        "build:css": "sass ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
+        "build:purgecss": "purgecss --config ./purgecss.config.js"
     }
 }

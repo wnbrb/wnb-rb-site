@@ -33,6 +33,7 @@ jobs:
           yarn install
           yarn build
           yarn build:css
+          yarn build:purgecss
       - name: Setup the Rails application
         env:
           RAILS_ENV: test
