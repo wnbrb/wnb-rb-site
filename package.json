@@ -6,7 +6,7 @@
         "@babel/preset-react": "^7.14.5",
         "@fullhuman/postcss-purgecss": "^5.0.0",
         "@hotwired/stimulus": "^3.2.1",
-        "@popperjs/core": "^2.11.6",
+        "@popperjs/core": "^2.11.7",
         "@rails/actioncable": "^7.0.4-2",
         "@rails/activestorage": "^7.0.4-2",
         "@rails/ujs": "^7.0.4-2",
@@ -21,13 +21,15 @@
         "babel-plugin-macros": "^3.1.0",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "bootstrap": "^5.2.3",
-        "bootstrap-icons": "^1.10.3",
+        "bootstrap-icons": "^1.10.4",
         "css-loader": "^6.7.2",
         "dayjs": "^1.10.7",
         "esbuild": "^0.17.11",
         "mini-css-extract-plugin": "^2.7.2",
-        "postcss": "^8.2.10",
+        "postcss": "^8.4.21",
+        "postcss-cli": "^10.1.0",
         "postcss-flexbugs-fixes": "^5.0.2",
+        "postcss-import": "^15.1.0",
         "postcss-loader": "^7.0.2",
         "postcss-preset-env": "^7.8.3",
         "prop-types": "^15.7.2",
@@ -35,10 +37,10 @@
         "react-cookie": "^4.1.1",
         "react-dom": "^18.2.0",
         "react-helmet": "^6.1.0",
-        "sass": "^1.58.3",
+        "sass": "^1.60.0",
         "sass-loader": "^13.2.0",
         "style-loader": "^3.3.1",
-        "tailwindcss": "^3.2.4",
+        "tailwindcss": "^3.3.1",
         "terser-webpack-plugin": "^5.3.6"
     },
     "version": "0.1.0",
@@ -85,7 +87,8 @@
         ]
     },
     "scripts": {
-        "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-        "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+        "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --minify",
+        "build:css": "sass ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
+        "build:postcss": "postcss ./app/assets/builds/admin.css -o ./app/assets/builds/admin.css --use autoprefixer"
     }
 }
