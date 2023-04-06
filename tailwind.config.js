@@ -6,6 +6,7 @@ module.exports = {
         './app/views/**/*.{erb,html}',
         './public/*.html',
         './app/javascript/**/*.{css,scss,js,jsx}',
+        './app/javascript/**/**/*.{css,scss,js,jsx}',
     ],
     theme: {
         extend: {
