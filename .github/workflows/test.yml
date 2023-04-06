@@ -33,7 +33,6 @@ jobs:
           yarn install
           yarn build
           yarn build:css
-          yarn build:postcss
       - name: Setup the Rails application
         env:
           RAILS_ENV: test
