@@ -26,6 +26,7 @@
         "cssnano": "^6.0.0",
         "dayjs": "^1.10.7",
         "esbuild": "^0.17.11",
+        "formik": "^2.2.9",
         "mini-css-extract-plugin": "^2.7.2",
         "postcss": "^8.4.21",
         "postcss-cli": "^10.1.0",
@@ -42,7 +43,8 @@
         "sass-loader": "^13.2.0",
         "style-loader": "^3.3.1",
         "tailwindcss": "^3.3.1",
-        "terser-webpack-plugin": "^5.3.6"
+        "terser-webpack-plugin": "^5.3.6",
+        "yup": "^1.0.2"
     },
     "version": "0.1.0",
     "babel": {

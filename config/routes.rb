@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/meetups', to: 'site#meetups'
   get '/jobs', to: 'site#jobs'
   get '/jobs/authenticate', to: 'site#jobs_authenticate'
+  get '/join-us', to: 'site#join_us'
   get '/donate', to: 'site#donate'
   get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 

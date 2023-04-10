@@ -1,7 +1,7 @@
 .jobs-authenticate-container {
-    @apply bg-[#FFE2E2] w-full h-full px-10 md:px-20 py-24 flex flex-col justify-center items-center text-lg;
+    @apply bg-wnbrb-pink-medium w-full h-full px-10 md:px-20 py-24 flex flex-col justify-center items-center text-lg;
 }
 
 .incorrect-password {
-    @apply bg-[#F59E98] rounded-lg p-4 text-sm mt-5;
+    @apply bg-wnbrb-pink-dark rounded-lg p-4 text-sm mt-5;
 }

@@ -1,0 +1,51 @@
+.join-us-form-container {
+  @apply bg-wnbrb-pink-medium w-full h-full px-10 md:px-20 py-24 flex flex-col justify-center items-center;
+
+  h1 {
+    @apply text-2xl md:text-4xl  font-bold mb-8 text-center;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mb-8 text-center;
+  }
+
+  .form-group,
+  fieldset {
+    @apply mb-8;
+
+    label,
+    legend {
+      @apply text-wnbrb-gray-default text-lg mb-3 block font-medium;
+
+      &.label-radiobutton,
+      &.label-checkbox {
+        @apply text-base font-normal;
+
+        input {
+          @apply md:ml-4 mr-3;
+        }
+
+        &:last-of-type {
+          @apply mb-0;
+        }
+      }
+    }
+
+    input[type="text"] {
+      @apply w-full md:ml-4 md:w-8/12 shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded py-2 px-3 text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      @apply appearance-none checked:bg-wnbrb-pink-default outline-none focus:ring-2 focus:ring-offset-1 focus:ring-wnbrb-pink-default focus:ring-opacity-40 indeterminate:shadow indeterminate:border-gray-400 scale-125;
+    }
+
+    p.input-description {
+      @apply mb-3 -mt-2;
+    }
+
+    .error-message {
+      @apply text-red-500 text-sm italic mt-3;
+    }
+  }
+}

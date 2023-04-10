@@ -26,7 +26,9 @@ module.exports = {
             pink: colors.pink,
             wnbrb: {
                 pink: {
+                    dark: '#F59E98',
                     default: '#DF7270',
+                    medium: '#FFE2E2',
                     light: '#FFF3F3',
                 },
                 orange: {
