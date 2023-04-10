@@ -8,6 +8,7 @@ import * as ActiveStorage from '@rails/activestorage';
 import 'channels';
 
 import '../stylesheets/application.scss';
+import '../stylesheets/page.scss';
 
 // Rails.start();
 

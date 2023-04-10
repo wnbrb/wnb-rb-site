@@ -7,7 +7,6 @@ import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
 import InfoCard from '../home/InfoCard';
 
-import 'stylesheets/page';
 import 'stylesheets/home';
 
 import PodcastImageRubyonRails from 'images/podcast-ruby-on-rails.png';

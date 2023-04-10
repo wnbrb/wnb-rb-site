@@ -11,7 +11,6 @@ import LoadingSpinner from 'components/LoadingSpinner';
 import { getJobs } from '../../datasources';
 import { UnauthorizedError } from '../../errors';
 
-import 'stylesheets/page';
 import 'stylesheets/jobs';
 
 const Jobs = () => {

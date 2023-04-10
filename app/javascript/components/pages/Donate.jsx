@@ -7,7 +7,6 @@ import Button from 'components/Button';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import { donationAmounts } from 'datasources';
 
-import 'stylesheets/page';
 import 'stylesheets/donate';
 
 const Donate = () => {

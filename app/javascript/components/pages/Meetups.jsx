@@ -5,7 +5,7 @@ import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
 import LoadingSpinner from 'components/LoadingSpinner';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
-import 'stylesheets/page';
+
 import 'stylesheets/meetup';
 
 const YearSection = ({ children, year }) => (
