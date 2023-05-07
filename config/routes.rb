@@ -35,6 +35,8 @@ Rails.application.routes.draw do
     resources :jobs, only: [:index] do
       collection { post 'authenticate' }
     end
+
+    post 'register-user', to: 'registrations#register_user'
   end
 
   namespace :admin do

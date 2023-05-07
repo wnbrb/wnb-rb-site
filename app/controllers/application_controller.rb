@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
+  RECAPTCHA_MINIMUM_SCORE= 0.5
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -18,6 +20,17 @@ class ApplicationController < ActionController::Base
 
   def render_not_found
     render(file: "#{Rails.root}/public/404.html", status: :not_found)
+  end
+
+  def validate_recaptcha(token_recaptcha)
+    return false unless ENV.fetch('RECAPTCHA_ENABLED', false)
+      recap_uri = URI.parse('https://www.google.com/recaptcha/api/siteverify')
+      recap_params = { secret: ENV.fetch('RECAPTCHA_SECRET_KEY', nil), response: token_recaptcha }
+      response = Net::HTTP.post_form(recap_uri, recap_params)
+      logger.info "Recaptcha result: #{response.code} / #{response.body}"
+      response_json = JSON.parse(response.body) if response.code == '200'
+
+      response.code == '200' && response_json['success'] && response_json['score'] >= RECAPTCHA_MINIMUM_SCORE
   end
 
   protected
