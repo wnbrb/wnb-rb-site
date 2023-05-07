@@ -14,7 +14,7 @@ WNB.rb is a virtual community for women and non-binary Rubyists. This is the rep
 
 All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Slack.
 
-## Getting Started 🏁
+## 1. Getting Started 🏁
 
 Before you try to set up this app, make sure you have the following installed on your machine:
 
@@ -72,13 +72,66 @@ bin/webpack-dev-server
 
 This may be helpful for debugging, but generally should not be necessary.
 
-### Running rake tasks
+### 6. Running rake tasks
 
 To execute rake tasks, run:
 
 ```
 foreman run rake [NAMESPACE]:[TASK_NAME]
 ```
+
+## Extras
+
+### Setting up Google Sheets Integration
+
+If you want to implement Google Sheets and interact with the form for joining new users, follow the instructions below to enable reCAPTCHA v3 and set up the Google Sheets API and Google Drive API.
+
+</br>
+
+#### <b>Enable Recaptcha v3</b>
+
+reCAPTCHA helps protect your sites from fraudulent activities, spam, and abuse. To start using reCAPTCHA, follow these steps:
+
+1. Sign up for an API key pair for your site by visiting the [reCAPTCHA admin page](http://www.google.com/recaptcha/admin). Generate your `SITE KEY` and `SECRET KEY`.
+
+2. Set the environment variables by editing the `.env` file. Replace the values with the following:
+
+- `RECAPTCHA_ENABLED`: Enable or disable Recaptcha (`'true'` or `'false'`).
+- `RECAPTCHA_SITE_KEY`: Use this key in your JSX files.
+- `RECAPTCHA_SECRET_KEY`: Use this key to verify the user's response.
+
+</br>
+
+#### <b>Set up Google Sheets API & Google Drive API</b>
+
+To interact with Google Sheets, you need to set up the Google Sheets API and Google Drive API. Follow these steps:
+
+1. Go to the [Google Cloud API Console](https://console.cloud.google.com/apis/) and create a new project.
+
+2. Enable the Google Drive API by clicking on "Enable API" and searching for the Google Drive API.
+
+3. Create credentials for a Web Server to access Application Data.
+
+4. Name the service account and grant it a Project Role of Editor.
+
+5. Download the JSON file that contains your credentials.
+
+6. Move the downloaded JSON file to the location where `googleconfig.json.template` is located in this project. Rename the file to `googleconfig.json`.
+
+7. In the Google Cloud API Console, also enable the Google Sheets API (this step is important).
+
+8. Create a Google Spreadsheet file in your Google Drive. Copy the title or key of the spreadsheet and paste it in `lead_registration_service.rb`.
+
+9. Share the document with the email address found inside the `google-credentials.json` file (the `client_email` value), inside the document (Google Sheets).
+
+</br>
+
+For better understanding, you can refer to the following guides:
+
+- https://www.twilio.com/blog/google-spreadsheets-ruby-html
+- https://github.com/wnbrb/google-drive-ruby/blob/master/doc/authorization.md#service-account
+
+</br>
 
 ## Contributing 🤝
 
