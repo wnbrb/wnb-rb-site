@@ -12,6 +12,6 @@ class SiteController < ApplicationController
   def jobs_authenticate; end
 
   def donate; end
-  
-  def past_meetup; end
+
+  def meetup; end
 end
