@@ -49,4 +49,4 @@ package-lock.json
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
-googleconfig.json
+google-credentials.json

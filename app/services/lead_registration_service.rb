@@ -38,7 +38,7 @@ class LeadRegistrationService
   private
   def authenticate_session
     # Authenticate a session with your Service Account
-    path = Rails.root.join('googleconfig.json')
+    path = Rails.root.join('google-credentials.json')
     GoogleDrive::Session.from_service_account_key(path)
   end
 end

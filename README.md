@@ -116,13 +116,13 @@ To interact with Google Sheets, you need to set up the Google Sheets API and Goo
 
 5. Download the JSON file that contains your credentials.
 
-6. Move the downloaded JSON file to the location where `googleconfig.json.template` is located in this project. Rename the file to `googleconfig.json`.
+6. Move the downloaded JSON file to the location where `google-credentials.json.template` is located in this project. Rename the file to `google-credentials.json`.
 
 7. In the Google Cloud API Console, also enable the Google Sheets API (this step is important).
 
 8. Create a Google Spreadsheet file in your Google Drive. Copy the title or key of the spreadsheet and paste it in `lead_registration_service.rb`.
 
-9. Share the document with the email address found inside the `googleconfig.json` file (the `client_email` value).
+9. Share the document with the email address found inside the `google-credentials.json` file (the `client_email` value).
 
 </br>
 
