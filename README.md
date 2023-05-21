@@ -116,7 +116,7 @@ To interact with Google Sheets, you need to set up the Google Sheets API and Goo
 
 5. Download the JSON file that contains your credentials.
 
-6. Move the downloaded JSON file to the location where `googleconfig.json.template` is located in this project. Rename the file to `googleconfig.json`.
+6. Move the downloaded JSON file to the location where `google-credentials.json.template` is located in this project. Rename the file to `google-credentials.json`.
 
 7. In the Google Cloud API Console, also enable the Google Sheets API (this step is important).
 
