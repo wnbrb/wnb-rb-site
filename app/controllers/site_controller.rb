@@ -3,6 +3,8 @@
 class SiteController < ApplicationController
   def home; end
 
+  def join_us; end
+
   def sponsor_us; end
 
   def meetups; end
@@ -12,6 +14,6 @@ class SiteController < ApplicationController
   def jobs_authenticate; end
 
   def donate; end
-  
+
   def past_meetup; end
 end

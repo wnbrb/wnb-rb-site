@@ -49,6 +49,29 @@ export const postJobsAuthenticate = async (password) => {
     return await result.json();
 };
 
+export const submitLeadForm = async (info) => {
+    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute('content');
+    return fetch(`${API_ROOT}/register-user`, {
+        method: 'post',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrf,
+        },
+        body: JSON.stringify(info),
+    })
+        .then(async (resp) => {
+            const responseStatus = resp.status;
+            const json = await resp.json();
+
+            return {
+                status: responseStatus,
+                json: json,
+            };
+        })
+        .catch((err) => err);
+};
+
 export const donationAmounts = (environment) => {
     return environment === 'development' ? testDonationAmounts : productionDonationAmounts;
 };

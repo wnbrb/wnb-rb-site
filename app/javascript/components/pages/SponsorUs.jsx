@@ -6,7 +6,6 @@ import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import SponsorshipOption from '../sponsor_us/SponsorshipOption';
 import { sponsorCardData } from '../sponsor_us/sponsorUsData';
 
-import 'stylesheets/page';
 import 'stylesheets/sponsor-us';
 
 const SponsorUs = () => {

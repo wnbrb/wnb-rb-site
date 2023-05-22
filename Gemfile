@@ -28,6 +28,9 @@ gem 'stimulus-rails', '~> 1.2.1'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'jsbundling-rails', '~> 1.1'
 
+# read/write files/spreadsheets in Google Drive/Docs
+gem 'google_drive', git: 'https://github.com/wnbrb/google-drive-ruby.git', branch: 'master'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails', '~> 0.3.9'

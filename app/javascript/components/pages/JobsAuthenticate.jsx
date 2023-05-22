@@ -7,7 +7,6 @@ import Button from 'components/Button';
 import Card from 'components/Card';
 import { postJobsAuthenticate } from '../../datasources';
 
-import 'stylesheets/page';
 import 'stylesheets/jobs_authenticate';
 import { UnauthorizedError } from '../../errors';
 

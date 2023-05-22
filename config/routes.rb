@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/meetups', to: 'site#meetups'
   get '/jobs', to: 'site#jobs'
   get '/jobs/authenticate', to: 'site#jobs_authenticate'
+  get '/join-us', to: 'site#join_us'
   get '/donate', to: 'site#donate'
   get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 
@@ -34,6 +35,8 @@ Rails.application.routes.draw do
     resources :jobs, only: [:index] do
       collection { post 'authenticate' }
     end
+
+    post 'register-user', to: 'registrations#register_user'
   end
 
   namespace :admin do

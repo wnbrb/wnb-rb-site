@@ -7,7 +7,7 @@ import PageTitleWithContainer from 'components/PageTitle';
 import SpeakersList from '../SpeakersList';
 import Microphone from '../icons/Microphone';
 import LoadingSpinner from 'components/LoadingSpinner';
-import 'stylesheets/page';
+
 import 'stylesheets/meetup';
 
 const VideoBlock = ({ videoUrl, title }) => {
