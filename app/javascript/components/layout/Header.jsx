@@ -47,7 +47,7 @@ const Header = () => {
             <div className="header">
                 <div className="inner">
                     <div className="logo">
-                        <a href="/">
+                        <a href="/" alt="WNB-RB">
                             <Logo className="wnb-logo" />
                         </a>
                     </div>

@@ -57,13 +57,28 @@ const Footer = () => (
 
         <div className="footer-right">
             <div className="social-links">
-                <a href="mailto:organizers@wnb-rb.dev" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="mailto:organizers@wnb-rb.dev"
+                    alt="Email"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Email className="social-icon" />
                 </a>
-                <a href="https://twitter.com/wnb_rb" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://twitter.com/wnb_rb"
+                    alt="Twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Twitter className="social-icon" />
                 </a>
-                <a href="https://github.com/wnbrb" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://github.com/wnbrb"
+                    alt="Github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Github className="social-icon" />
                 </a>
             </div>
