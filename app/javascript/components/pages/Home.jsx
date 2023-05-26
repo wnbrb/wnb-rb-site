@@ -63,7 +63,7 @@ const Home = () => (
         <SharedLayout>
             <section className="hero-container">
                 <div className="hero">
-                    <PageTitle text="WNB.rb">
+                    <PageTitle text="WNB.rb" altText="Women and Non-Binary Rubyists">
                         <p className="mt-3 max-w-[14rem]">
                             A virtual community for women and non-binary Rubyists.
                         </p>
