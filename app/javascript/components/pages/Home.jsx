@@ -67,11 +67,7 @@ const Home = () => (
                         <p className="mt-3 max-w-[14rem]">
                             A virtual community for women and non-binary Rubyists.
                         </p>
-                        <a
-                            href="https://tinyurl.com/join-wnb-rb"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
+                        <a href="/join-us">
                             <Button type="secondary" className="mt-3">
                                 Join WNB.rb
                             </Button>

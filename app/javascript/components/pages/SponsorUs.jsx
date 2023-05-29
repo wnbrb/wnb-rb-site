@@ -48,10 +48,8 @@ const SponsorUs = () => {
                         In the meantime, we encourage you to invite any women or non-binary
                         developers on your team to{' '}
                         <a
-                            href="https://tinyurl.com/join-wnb-rb"
+                            href="/join-us"
                             className="whitespace-nowrap font-medium hover:text-red-400"
-                            rel="noopener noreferrer"
-                            target="_blank"
                         >
                             join our community
                         </a>

@@ -72,11 +72,7 @@ const Header = () => {
                                 </a>
                             </div>
                             <div className="join-us">
-                                <a
-                                    href="https://tinyurl.com/join-wnb-rb"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >
+                                <a href="/join-us">
                                     <Button type="primary">
                                         <div className="join-wnb">
                                             <AddUser className="add-user-icon" />

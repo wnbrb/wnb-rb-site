@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://twitter.com/wnb_rb">Follow us on Twitter</a> •
-  <a href="https://tinyurl.com/join-wnb-rb">Join Our Community</a>
+  <a href="https://wnb-rb.dev/join-us">Join Our Community</a>
 </p>
 
 WNB.rb is a virtual community for women and non-binary Rubyists. This is the repo for WNB.rb's website, built by and for our community.

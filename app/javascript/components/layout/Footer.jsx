@@ -10,12 +10,7 @@ const Footer = () => (
         <div className="footer-left">
             <div className="footer-col">
                 <p className="footer-col-item footer-col-title">Get Involved</p>
-                <a
-                    className="footer-col-item"
-                    href="https://tinyurl.com/join-wnb-rb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a className="footer-col-item" href="/join-us">
                     Join WNB.rb
                 </a>
                 <a className="footer-col-item" href="/partner-with-us">
