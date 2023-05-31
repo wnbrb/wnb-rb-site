@@ -381,7 +381,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   cssbundling-rails (~> 1.1)
   debug (~> 1.7.1)
-  devise
+  devise (~> 4.9.2)
   factory_bot_rails (~> 6.2.0)
   google_drive!
   jbuilder (~> 2.7)
