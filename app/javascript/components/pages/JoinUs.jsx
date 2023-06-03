@@ -172,7 +172,7 @@ const JoinUs = () => {
                                         <label htmlFor="name" className="mb-3">
                                             What is your name?
                                         </label>
-                                        <Field name="name" type="text" />
+                                        <Field name="name" type="text" id="name" />
                                         <ErrorMessage
                                             name="name"
                                             component="p"
@@ -181,7 +181,7 @@ const JoinUs = () => {
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="email">What is your email?</label>
-                                        <Field name="email" type="text" />
+                                        <Field name="email" type="text" id="email" />
                                         <ErrorMessage
                                             name="email"
                                             component="p"
@@ -344,14 +344,18 @@ const JoinUs = () => {
                                             If you‘re self-employed, unemployed, or a student,
                                             please let us know as well!
                                         </p>
-                                        <Field name="currentJob" type="text" />
+                                        <Field name="currentJob" type="text" id="currentJob" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="lookingForJob">
                                             Are you currently looking for a job, or do you
                                             anticipate looking for a job in the next 6 months?
                                         </label>
-                                        <Field name="lookingForJob" type="text" />
+                                        <Field
+                                            name="lookingForJob"
+                                            type="text"
+                                            id="lookingForJob"
+                                        />
                                     </div>
                                     <hr className="my-12" />
                                     <Button

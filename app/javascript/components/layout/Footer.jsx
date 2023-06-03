@@ -54,7 +54,7 @@ const Footer = () => (
             <div className="social-links">
                 <a
                     href="mailto:organizers@wnb-rb.dev"
-                    alt="Email"
+                    aria-label="Email"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -62,7 +62,7 @@ const Footer = () => (
                 </a>
                 <a
                     href="https://twitter.com/wnb_rb"
-                    alt="Twitter"
+                    aria-label="Twitter"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -70,7 +70,7 @@ const Footer = () => (
                 </a>
                 <a
                     href="https://github.com/wnbrb"
-                    alt="Github"
+                    aria-label="Github"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

@@ -47,7 +47,7 @@ const Header = () => {
             <div className="header">
                 <div className="inner">
                     <div className="logo">
-                        <a href="/" alt="WNB-RB">
+                        <a href="/" alt="WNB-RB" aria-label="return to home page">
                             <Logo className="wnb-logo" />
                         </a>
                     </div>
@@ -86,6 +86,7 @@ const Header = () => {
                 </div>
                 <button
                     className={`hamburger${menuState.className}`}
+                    aria-label="Menu"
                     type="button"
                     onClick={() => setMenuState({ ...menuState, isOpen: !menuState.isOpen })}
                 >
