@@ -130,21 +130,6 @@ const JoinUs = () => {
                     <Card className="w-full max-w-[50rem] mt-5">
                         <h1>Join WNB.rb!</h1>
                         <p className="mb-4">
-                            WNB.rb is an online community for women and non-binary Rubyists.
-                        </p>
-                        <p className="mb-4">
-                            We have a Slack group where we coordinate many community driven
-                            initiatives (interview prep group, a CFP working group, a book club,
-                            etc), ask each other for advice, share interesting Ruby resources and so
-                            much more!
-                        </p>
-                        <p className="mb-4">
-                            We also have a monthy meetup which features two technical talks, and
-                            breakout groups for community building. To register for our monthly
-                            meetup, you must first join our Google Group. Once added, you will
-                            receive an email with a calendar event for each of our future meetups.
-                        </p>
-                        <p className="mb-4">
                             By filling out this form, you give the organizers of WNB.rb permission
                             to add you to our Slack workspace and/or Google Group.
                         </p>
@@ -154,16 +139,27 @@ const JoinUs = () => {
                             remain hidden from everyone except the WNB.rb organizers.
                         </p>
                         <p className="mb-4">
-                            See our code of conduct{' '}
+                            Learn more{' '}
                             <a
                                 href="https://tinyurl.com/wnb-rb-coc"
                                 className="whitespace-nowrap font-medium hover:text-red-400"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
-                                here
+                                about us
                             </a>
+                            . See our{' '}
+                            <a
+                                href="https://tinyurl.com/wnb-rb-coc"
+                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                code of conduct
+                            </a>
+                            .
                         </p>
+
                         <hr className="my-8" />
                         <Formik {...{ initialValues, validationSchema, onSubmit }}>
                             {({ isSubmitting, isValid }) => (
