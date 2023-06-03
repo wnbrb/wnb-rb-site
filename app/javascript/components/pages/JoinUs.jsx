@@ -136,19 +136,7 @@ const JoinUs = () => {
                         <p className="mb-4">
                             WNB.rb will not share your email with other community members or
                             third-party organizations. Your membership in the Google Group will
-                            remain hidden from everyone except the WNB.rb organizers.
-                        </p>
-                        <p className="mb-4">
-                            Learn more{' '}
-                            <a
-                                href="https://tinyurl.com/wnb-rb-coc"
-                                className="whitespace-nowrap font-medium hover:text-red-400"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                about us
-                            </a>
-                            . See our{' '}
+                            remain hidden from everyone except the WNB.rb organizers. See our{' '}
                             <a
                                 href="https://tinyurl.com/wnb-rb-coc"
                                 className="whitespace-nowrap font-medium hover:text-red-400"
@@ -156,6 +144,16 @@ const JoinUs = () => {
                                 target="_blank"
                             >
                                 code of conduct
+                            </a>
+                            .
+                        </p>
+                        <p className="mb-4">
+                            Learn more{' '}
+                            <a
+                                href="/"
+                                className="whitespace-nowrap font-medium hover:text-red-400"
+                            >
+                                about us
                             </a>
                             .
                         </p>
