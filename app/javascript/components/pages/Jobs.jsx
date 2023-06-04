@@ -1,3 +1,4 @@
+import * as ReactDOM from 'react-dom';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import propTypes from 'prop-types';
@@ -11,17 +12,19 @@ import LoadingSpinner from 'components/LoadingSpinner';
 import { getJobs } from '../../datasources';
 import { UnauthorizedError } from '../../errors';
 
+import 'stylesheets/page';
 import 'stylesheets/jobs';
 
 const Jobs = () => {
     const [loading, setLoading] = useState(true);
     const [jobs, setJobs] = useState([]);
+    const [query, setQuery] = useState('');
     const [cookies] = useCookies();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await getJobs(cookies['wnb_job_board_token']);
+                const data = await getJobs(cookies['wnb_job_board_token'], query);
                 setJobs(data);
                 setLoading(false);
             } catch (error) {
@@ -69,20 +72,74 @@ const Jobs = () => {
     );
 };
 
+const JobFetchData = (cookies, jobs, query, setSearchResults, setLoading) => {
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getJobs(cookies['wnb_job_board_token'], query);
+                setSearchResults(data);
+                setLoading(false);
+            } catch (error) {
+                if (error instanceof UnauthorizedError) {
+                    window.location.href = '/jobs/authenticate';
+                } else {
+                    console.log(error.message);
+                }
+            }
+        };
+
+        if (query === '') {
+            setSearchResults(jobs);
+        } else {
+            fetchData();
+        }
+    }, [cookies, jobs, query, setSearchResults, setLoading]);
+};
+
 const JobGroup = ({ jobs }) => {
+    const [query, setQuery] = useState('');
+    const [searchResults, setSearchResults] = useState(jobs);
+    const [loading, setLoading] = useState(true);
+    const [cookies] = useCookies();
+
+    JobFetchData(cookies, jobs, query, setSearchResults, setLoading);
+
+    const handleSearch = async (e) => {
+        setQuery(e.target.value);
+    };
+
     return (
-        <div className="job-group">
-            {jobs.map((job) => (
-                <Job
-                    key={`${job.title} at ${job.company}`}
-                    company={job.company}
-                    title={job.title}
-                    description={job.description}
-                    imageUrl={job.image_url}
-                    link={job.link}
-                    location={job.location}
+        <div>
+            <div className="job-group">
+                <input
+                    type="text"
+                    onChange={handleSearch}
+                    style={{
+                        width: '100%',
+                        border: 'none',
+                        outline: 'none',
+                        padding: '10px',
+                        borderRadius: '5px',
+                        boxShadow: '#e0e0e0 0px 0px 5px',
+                        marginLeft: '2rem',
+                        marginRight: '2rem',
+                    }}
+                    placeholder="Search Job"
                 />
-            ))}
+            </div>
+            <div className="job-group">
+                {searchResults.map((job) => (
+                    <Job
+                        key={`${job.title} at ${job.company}`}
+                        company={job.company}
+                        title={job.title}
+                        description={job.description}
+                        imageUrl={job.image_url}
+                        link={job.link}
+                        location={job.location}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

@@ -8,7 +8,9 @@ export const getPastMeetups = async () => {
     return json.data;
 };
 
-export const getJobs = async (token) => {
+export const getJobs = async (token, query) => {
+    let result;
+
     if (token === null || token === undefined) {
         throw new UnauthorizedError('Unauthorized to view jobs');
     }
@@ -16,14 +18,17 @@ export const getJobs = async (token) => {
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${token}`);
 
-    const result = await fetch(`${API_ROOT}/jobs`, { headers });
+    if (query === '') {
+        result = await fetch(`${API_ROOT}/jobs`, { headers });
+    } else {
+        result = await fetch(`${API_ROOT}/jobs?q=${query}`, { headers });
+    }
 
     if (result.status === 401) {
         throw new UnauthorizedError('Unauthorized to view jobs');
     } else if (result.status != 200) {
         throw new Error('There was an error fetching the jobs.');
     }
-
     const json = await result.json();
     return json.data;
 };

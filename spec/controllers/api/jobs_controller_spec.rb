@@ -64,6 +64,33 @@ RSpec.describe Api::JobsController, type: :controller do
         expect(body['data'].first).not_to have_key('sponsorship_level')
       end
     end
+
+    context 'when valid bearer token is provided and user search for job' do
+      let(:token) do
+        JWT.encode({ data: '', exp: (Time.now + 1.day).to_i }, ENV.fetch('JWT_HMAC_SECRET', nil), 'HS256')
+      end
+
+      before { 2.times { FactoryBot.create(:job) } }
+
+      it 'show jobs based on user query' do
+        query = 'organizer'
+        get :index, params: { q: query }
+
+        expect(response).to have_http_status(200)
+        body = JSON.parse(response.body)
+        expect(body['data'].length).to eq(2)
+      end
+
+      it 'didnt found job based user query' do
+        query = 'company'
+        get :index, params: { q: query }
+
+        expect(response).to have_http_status(200)
+        body = JSON.parse(response.body)
+        expect(body['data'].length).to eq(0)
+      end
+
+    end
   end
 
   describe 'POST #authenticate' do

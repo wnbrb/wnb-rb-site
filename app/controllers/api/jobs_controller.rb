@@ -7,8 +7,14 @@ module Api
     def index
       JWT.decode bearer_token, hmac_secret, true, { algorithm: 'HS256' }
 
-      jobs = Job.all
+      if params[:q]
+        query = params[:q].downcase
+        jobs = Job.where('LOWER(company) LIKE ? OR LOWER(location) LIKE ? OR LOWER(title) LIKE ? OR LOWER(description) LIKE ? ', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
+      else
+        jobs = Job.all
+      end
       render status: 200, json: { data: jobs.order(sponsorship_level: :desc).as_json }
+
     rescue JWT::ExpiredSignature, JWT::DecodeError
       render status: 401, json: {}
     end
