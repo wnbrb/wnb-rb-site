@@ -9,7 +9,12 @@ module Api
 
       if params[:q]
         query = params[:q].downcase
-        jobs = Job.where('LOWER(company) LIKE ? OR LOWER(location) LIKE ? OR LOWER(title) LIKE ? OR LOWER(description) LIKE ? ', "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%")
+        jobs = Job.where('LOWER(company) LIKE ?
+                          OR LOWER(location) LIKE ?
+                          OR LOWER(title) LIKE ?
+                          OR LOWER(description) LIKE ?
+                          ', "%#{query}%", "%#{query}%",
+                          "%#{query}%", "%#{query}%")
       else
         jobs = Job.all
       end
