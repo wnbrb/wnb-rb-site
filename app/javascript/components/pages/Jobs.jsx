@@ -1,4 +1,3 @@
-import * as ReactDOM from 'react-dom';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import propTypes from 'prop-types';
@@ -18,7 +17,7 @@ import 'stylesheets/jobs';
 const Jobs = () => {
     const [loading, setLoading] = useState(true);
     const [jobs, setJobs] = useState([]);
-    const [query, setQuery] = useState('');
+    const [query] = useState('');
     const [cookies] = useCookies();
 
     useEffect(() => {
@@ -38,7 +37,7 @@ const Jobs = () => {
         };
 
         fetchData();
-    }, [cookies]);
+    }, [cookies, query]);
 
     const [firstSixJobs, restOfJobs] = useMemo(() => {
         if (jobs === []) {
@@ -99,7 +98,7 @@ const JobFetchData = (cookies, jobs, query, setSearchResults, setLoading) => {
 const JobGroup = ({ jobs }) => {
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState(jobs);
-    const [loading, setLoading] = useState(true);
+    const [setLoading] = useState(true);
     const [cookies] = useCookies();
 
     JobFetchData(cookies, jobs, query, setSearchResults, setLoading);

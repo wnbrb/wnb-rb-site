@@ -16,7 +16,7 @@ class LeadRegistrationService
 
   def update_google_sheet
     session = authenticate_session
-    spreadsheet = define_spreedsheet_by_title(session, "Join WNB.rb! (Responses)")
+    spreadsheet = define_spreedsheet_by_title(session, 'Join WNB.rb! (Responses)')
     # spreadsheet = define_spreedsheet_by_key(session, '1OcDwEc6Z4DkKvPbAwQlu9ABb5ZW4und0HTOwDIl44b4')
 
     # Get the first worksheet
