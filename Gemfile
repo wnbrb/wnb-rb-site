@@ -28,6 +28,9 @@ gem 'stimulus-rails', '~> 1.2.1'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'jsbundling-rails', '~> 1.1'
 
+# PGsearch for full text search
+gem 'pg_search'
+
 # read/write files/spreadsheets in Google Drive/Docs
 gem 'google_drive', git: 'https://github.com/wnbrb/google-drive-ruby.git', branch: 'master'
 

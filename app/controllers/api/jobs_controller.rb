@@ -6,15 +6,9 @@ module Api
 
     def index
       JWT.decode bearer_token, hmac_secret, true, { algorithm: 'HS256' }
-
       if params[:q]
         query = params[:q].downcase
-        jobs = Job.where('LOWER(company) LIKE ?
-                          OR LOWER(location) LIKE ?
-                          OR LOWER(title) LIKE ?
-                          OR LOWER(description) LIKE ?
-                          ', "%#{query}%", "%#{query}%",
-                          "%#{query}%", "%#{query}%")
+        jobs = Job.job_search(query)
       else
         jobs = Job.all
       end
