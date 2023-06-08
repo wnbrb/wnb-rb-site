@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_080716) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_095124) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "event_speakers", force: :cascade do |t|
     t.string "talk_title"
@@ -30,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_080716) do
     t.string "title"
     t.string "location", default: "virtual"
     t.text "description"
-    t.datetime "date", precision: nil
+    t.datetime "date"
     t.string "type", null: false
     t.text "panel_video_link"
     t.datetime "created_at", null: false
@@ -49,6 +50,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_080716) do
     t.integer "sponsorship_level"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+
   create_table "speakers", force: :cascade do |t|
     t.string "name"
     t.text "bio"
@@ -64,11 +74,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_080716) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at", precision: nil
-    t.datetime "last_sign_in_at", precision: nil
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
