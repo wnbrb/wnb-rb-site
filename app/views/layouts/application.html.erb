@@ -26,8 +26,8 @@
     <%= javascript_pack_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
-
-  <body>
+  <%- body_class = 'admin' if controller_name == 'sessions' %>
+  <body class=<%= body_class %>>
     <%= yield %>
     <div id="root" class="min-w-full">
   </body>
