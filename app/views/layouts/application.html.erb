@@ -11,14 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV['GA_ID'] %>"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', "<%= ENV['GA_ID'] %>");
-    </script>
+    <%- if ENV['GA_ID'] != "YOUR-GOOGLE-ANALYTICS-ID-HERE" %>
+      <%= render partial: 'layouts/google_analytics' %>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
