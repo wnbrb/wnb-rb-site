@@ -1,32 +1,52 @@
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
+<% if flash.any? %>
+  <ul class="flash msg p-2 mb-4 md:p-4 bg-green-50 w-full">
+    <% flash.each do |type, msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
 <% end %>
 
-<h2>Log in</h2>
+<div class= "flex flex-col justify-center items-center px-4">
+<%= image_tag "logo.svg", class: "w-16 h-16 md:w-32 md:h-32 mx-auto", alt: "WNB.rb" %>
+<h1 class="text-2xl md:text-4xl  font-bold mb-8 text-center mt-2">Welcome</h1>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class:"mb-12" }) do |f| %>
+    <div class="field mb-4">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-2 w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded  text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40" %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field mb-4">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "mt-2 w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded  text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <% if devise_mapping.rememberable? %>
+      <div class="field mb-4">
+        <%= f.check_box :remember_me, class: "appearance-none focus:checked:bg-wnbrb-pink-default checked:bg-wnbrb-pink-default outline-none focus:ring-2 focus:ring-offset-1 focus:ring-wnbrb-pink-default focus:ring-opacity-40 indeterminate:shadow indeterminate:border-gray-400 scale-125" %>
+        <%= f.label :remember_me, class: "ml-3" %>
+      </div>
+    <% end %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="actions">
+      <%= f.submit "Log in",
+        class: "mx-auto py-2 px-10
+        rounded-sm flex items-center
+        justify-center
+        text-base
+        transition-all
+        hover:cursor-pointer
+        hover:outline-none
+        active:outline-none
+        text-white
+        border
+        border-transparent
+        bg-wnbrb-orange-default
+        hover:text-wnbrb-orange-default
+        hover:border-wnbrb-orange-default
+        hover:bg-wnbrb-orange-light" %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="text-center">
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

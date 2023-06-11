@@ -52,7 +52,6 @@ RSpec.describe 'Admin login system', type: :system do
 
         expect(page).to have_current_path(root_path)
       end
-
     end
 
     it 'enables me to reset WNB.rb admin password' do
