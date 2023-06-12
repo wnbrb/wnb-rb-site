@@ -115,11 +115,6 @@ const JobGroup = ({ jobs }) => {
                     onChange={handleSearch}
                     style={{
                         width: '100%',
-                        border: 'none',
-                        outline: 'none',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        boxShadow: '#e0e0e0 0px 0px 5px',
                         marginLeft: '2rem',
                         marginRight: '2rem',
                     }}
