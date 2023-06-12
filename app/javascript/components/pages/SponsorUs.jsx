@@ -24,7 +24,7 @@ const SponsorUs = () => {
                     <p className="mt-10">
                         We are currently designing our new partnership process and are eager to
                         learn more about your company. If you are interested in partnering with
-                        WNB.rb, please fill out this{' '}
+                        WNB.rb, please fill out{' '}
                         <a
                             href="https://forms.gle/fgiaChfHtZWdNPLZ9"
                             className="whitespace-nowrap font-medium hover:text-red-400"
