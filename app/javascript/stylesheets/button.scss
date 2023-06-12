@@ -19,7 +19,9 @@
         bg-wnbrb-orange-default
         hover:text-wnbrb-orange-default
         hover:border-wnbrb-orange-default
-        hover:bg-wnbrb-orange-light;
+        hover:bg-wnbrb-orange-light
+        font-semibold;
+
 }
 
 .button.primary:active,
@@ -46,7 +48,7 @@
 }
 
 .button.white-and-orange {
-    @apply bg-white text-wnbrb-orange-default border border-wnbrb-orange-default;
+    @apply bg-white text-wnbrb-orange-default border border-wnbrb-orange-default font-semibold;
 }
 
 .button.white-and-orange:active,

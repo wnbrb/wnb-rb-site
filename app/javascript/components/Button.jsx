@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import 'stylesheets/button';
 
-const Button = ({ children, type, className, disabled = false }) => {
+const Button = ({ children, type = '', className = '', disabled = false }) => {
     const [buttonDisabled, setDisabled] = React.useState(false);
     React.useEffect(() => {
         setDisabled(disabled);
