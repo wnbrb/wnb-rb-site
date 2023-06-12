@@ -1,5 +1,5 @@
 header {
-    @apply w-full top-0 pt-4 pb-2 md:px-12 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
+    @apply w-full top-0 md:px-12 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
 
     .header {
         @apply bg-white container py-1 px-8 md:p-0  mx-auto max-w-6xl relative;
@@ -7,10 +7,10 @@ header {
         transition: box-shadow 0.3s ease-in-out;
 
         .inner {
-            @apply flex flex-col md:flex-row;
+            @apply flex flex-col md:flex-row md:items-center;
 
             .logo {
-                @apply overflow-hidden py-3 w-[3.2rem] md:mr-10 lg:mr-12;
+                @apply py-3 w-[3.2rem];
 
                 svg.wnb-logo {
                     @apply cursor-pointer transition-all h-10;
@@ -18,18 +18,20 @@ header {
             }
 
             nav.nav {
-                @apply hidden md:w-full md:flex;
+                @apply hidden md:w-full md:flex md:justify-between;
 
                 .menu {
-                    @apply items-start w-full md:flex md:content-center;
+                    @apply md:w-full md:self-center;
 
                     ul {
-                        @apply list-none m-0 p-0 flex flex-col md:flex-row;
+                        @apply flex flex-row justify-around lg:justify-start;
 
                         li {
-                            @apply md:inline-block mr-12;
+                            @apply lg:px-10;
                             a {
-                                @apply text-gray-600 block text-base font-normal leading-5 px-8 md:px-0 py-5 no-underline transition-all cursor-pointer hover:underline md:hover:no-underline;
+                                @apply text-gray-600 text-base font-normal leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline;
+
+
 
                                 @screen md {
                                     &::after {
@@ -45,55 +47,61 @@ header {
 
                             &.is-active {
                                 a {
-                                    @apply text-gray-500 font-bold md:font-normal;
-
+                                    @apply text-gray-700;
                                     &::after {
-                                        background-color: #f56960;
+                                        background-color: #F56960;
                                     }
                                 }
-                            }
-
-                            &:last-child {
-                                @apply mr-0;
                             }
                         }
                     }
                 }
                 .user {
-                    @apply flex items-start content-between py-3;
+                    @apply flex flex-row md:flex-shrink-0 justify-center;
 
-                    .donate {
-                        @apply mr-3;
+                    .join-us {
+                        @apply ml-3 whitespace-nowrap;
                     }
 
                     .join-us .join-wnb {
-                        @apply flex justify-between items-center transition-all w-28;
-
                         .add-user-icon {
-                            @apply h-4 text-white fill-current;
+                            @apply text-white;
                         }
                     }
 
                     .button.primary {
                         &:hover {
                             .add-user-icon {
-                                color: #f56960;
+                                color: #F56960;
                             }
                         }
                     }
                 }
 
                 &.is-mobile-menu-open {
-                    @apply flex flex-col-reverse md:flex-row transition-all pb-5 md:pb-0 pt-3 sm:pt-0;
+                    @apply flex flex-col-reverse md:flex-row md:px-0 pt-3 md:pt-0;
 
                     .user {
-                        @apply w-full justify-center pt-0 md:items-start md:content-between md:py-3 md:w-40;
+                        .join-us {
+                            @apply w-full md:w-auto max-w-[18rem];
+                        }
+                    }
 
-                        .join-us .join-wnb {
-                            @apply w-60 justify-center flex-nowrap md:justify-center md:items-center md:w-28;
+                    .menu {
+                        ul {
+                            @apply flex-col md:flex-row text-center mt-3 md:mt-0;
 
-                            .add-user-icon {
-                                @apply mr-2;
+                            li {
+                                @apply py-3 md:py-0;
+
+                                &.is-active a {
+                                    @apply underline md:no-underline;
+                                    -webkit-text-stroke: 0.5px currentColor;
+
+                                    @screen md {
+                                        -webkit-text-stroke: none;
+                                    }
+                                }
                             }
                         }
                     }
@@ -108,6 +116,9 @@ header {
                 @apply bg-gray-500 rounded-sm block transition-all;
                 height: 3px;
                 margin-bottom: 5px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
             }
 
             &.is-mobile-menu-open {

@@ -6,7 +6,12 @@ import Button from 'components/Button';
 import 'stylesheets/header.scss';
 
 const Header = () => {
-    /* TODO: implement logic to incorporate is-active class in navbar links. */
+    const links = [
+        { id: 1, text: 'Job Board', href: '/jobs' },
+        { id: 2, text: 'Past Meetups', href: '/meetups' },
+        { id: 3, text: 'Partner with Us', href: '/partner-with-us' },
+    ];
+
     const [headerState, setHeaderState] = useState({
         className: '',
         isFixed: false,
@@ -54,15 +59,18 @@ const Header = () => {
                     <nav className={`nav${menuState.className}`}>
                         <div className="menu">
                             <ul>
-                                <li>
-                                    <a href="/jobs">Job Board</a>
-                                </li>
-                                <li>
-                                    <a href="/meetups">Past Meetups</a>
-                                </li>
-                                <li>
-                                    <a href="/partner-with-us"> Partner with Us</a>
-                                </li>
+                                {links.map((val) => (
+                                    <li
+                                        key={`link-${val.id}`}
+                                        className={
+                                            location.pathname + location.search === val.href
+                                                ? 'is-active'
+                                                : undefined
+                                        }
+                                    >
+                                        <a href={val.href}>{val.text}</a>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                         <div className="user">
@@ -74,8 +82,8 @@ const Header = () => {
                             <div className="join-us">
                                 <a href="/join-us">
                                     <Button type="primary">
-                                        <div className="join-wnb">
-                                            <AddUser className="add-user-icon" />
+                                        <div className="join-wnb flex items-center">
+                                            <AddUser className="add-user-icon h-4 w-4 mr-3 fill-current" />
                                             Join WNB.rb
                                         </div>
                                     </Button>
