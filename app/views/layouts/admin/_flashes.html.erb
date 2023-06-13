@@ -1,0 +1,9 @@
+<% if flash.any? %>
+  <div class="container">
+    <ul class="fash msg list-unstyled mb-3 flash p-md-3 w-100">
+      <% flash.each do |type, msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

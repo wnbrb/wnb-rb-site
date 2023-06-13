@@ -1,2 +1,10 @@
+
+@import 'admin/components/colors.scss';
+@import 'admin/components/buttons.scss';
+
+// import bootstrap
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+// Custom
+@import 'admin/header.scss';
