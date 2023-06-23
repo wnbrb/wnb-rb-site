@@ -1,7 +1,7 @@
 <%= javascript_pack_tag 'join_us' %>
 <%= stylesheet_pack_tag 'join_us' %>
-<%- if ENV.fetch('RECAPTCHA_ENABLED', nil) == 'true' %>;
-  <%= javascript_tag do -%>
-    var gtoken= '<%=raw(ENV.fetch('RECAPTCHA_SITE_KEY', nil))%>';
+<%- if ENV.fetch('RECAPTCHA_ENABLED', nil) == 'true' %>
+  <%= javascript_tag do %>
+    var gtoken= '<%=raw(ENV.fetch('RECAPTCHA_SITE_KEY', nil))%>'
   <% end -%>
 <% end -%>
