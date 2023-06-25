@@ -1,0 +1,19 @@
+<header class="fixed-top">
+    <nav class="navbar navbar-expand bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/admin/dashboard">
+          <%= image_tag "logo.svg", width: 48, height: 48, alt: "WNB.rb", class: "mx-auto" %>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-0">
+            <li class="nav-item">
+              <%= link_to "Events", admin_events_path, class: "nav-link text-end #{"active text-decoration-underline" if controller_name == "events"}" %>
+            </li>
+          </ul>
+        <%= button_to "Sign out", destroy_user_session_path, form_class: "text-end",class: "btn btn-sm btn-secondary mb-0", method: :delete %>
+      </div>
+    </nav>
+</header>

@@ -35,8 +35,8 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(_users)
-    admin_dashboard_path
+  def after_sign_in_path_for(user)
+    user.admin? ? admin_events_path : admin_dashboard_path
   end
 
   def configure_permitted_parameters

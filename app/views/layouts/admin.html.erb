@@ -18,8 +18,11 @@
     <%= stylesheet_link_tag "admin" %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
-  <body class="admin d-flex flex-column min-vh-100" data-controller="hello">
-    <%= yield %>
+  <body class="admin d-flex flex-column min-vh-100 pt-5" data-controller="hello">
+    <%= render "layouts/admin/header" %>
+    <%= render "layouts/admin/flashes" %>
+    <main class="container-md flex-grow-1 pt-5">
+      <%= yield %>
+    </main>
   </body>
 </html>
-

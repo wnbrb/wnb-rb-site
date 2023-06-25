@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 module Admin
   class EventsController < AdminController
-    before_action :authenticate_user!
-
     def index
       authorize Event
 
