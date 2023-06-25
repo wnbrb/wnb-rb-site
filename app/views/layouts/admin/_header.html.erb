@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-0">
             <li class="nav-item">
-              <%= link_to "Events", admin_events_path, class: "nav-link text-end" %>
+              <%= link_to "Events", admin_events_path, class: "nav-link text-end #{"active text-decoration-underline" if controller_name == "events"}" %>
             </li>
           </ul>
         <%= button_to "Sign out", destroy_user_session_path, form_class: "text-end",class: "btn btn-sm btn-secondary mb-0", method: :delete %>
