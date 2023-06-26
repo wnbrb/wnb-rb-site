@@ -53,9 +53,9 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'selenium-webdriver', '~> 4.8.1'
+  gem 'shoulda-matchers', '~>5.3.0'
   gem 'timecop', '~> 0.9.6'
   gem 'webdrivers', '~>5.2.0'
-  gem 'shoulda-matchers', '~>5.3.0'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

@@ -1,27 +1,36 @@
 # frozen_string_literal: true
 module Admin
   class EventsController < AdminController
-    def index
-      authorize Event
+    before_action :authorize_event
+    before_action :set_event, only: %w[edit update destroy]
 
+    def index
       @events = Event.includes(:speakers)
                      .order(date: :desc)
     end
 
-    def edit
-      authorize Event
+    def new
+      @event = Event.new
+    end
 
-      @event = Event.find_by(id: params[:id])
+    def create
+      @event = Event.create(event_params)
+
+      if @event.save
+        redirect_to admin_events_path, notice: 'Event has been created successfully'
+      else
+        render :new, alert: 'Please review'
+      end
+    end
+
+    def edit
       render_not_found unless @event
     end
 
     def update
-      authorize Event
-
-      @event = Event.find_by(id: params[:id])
       render_not_found unless @event
 
-      if @event.update(required_params)
+      if @event.update(event_params)
         redirect_to admin_events_path
       else
         render :edit
@@ -29,9 +38,6 @@ module Admin
     end
 
     def destroy
-      authorize Event
-      @event = Event.find_by(id: params[:id])
-
       if @event
         @event.destroy
         redirect_to admin_events_path
@@ -43,23 +49,16 @@ module Admin
 
     private
 
-    def required_type
-      params[:meetup].present? ? params.require(:meetup) : params.require(:panel)
+    def authorize_event
+      authorize Event
     end
 
-    def required_params
-      required_type.permit(
-        :title,
-        :location,
-        :description,
-        'date(1i)',
-        'date(2i)',
-        'date(3i)',
-        'date(4i)',
-        'date(5i)',
-        :type,
-        :panel_video_link,
-      )
+    def set_event
+      @event = Event.find_by(id: params[:id])
+    end
+
+    def event_params
+      params.require(:event).permit(:title, :location, :description, :date, :type, :panel_video_link)
     end
   end
 end

@@ -38,7 +38,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 302' do
-        get :edit, params: {id: event.id}
+        get :edit, params: { id: event.id }
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(new_user_session_path)
       end
@@ -72,7 +72,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 302' do
-        post :update, params: {id: event.id}
+        post :update, params: { id: event.id }
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(new_user_session_path)
       end
@@ -84,7 +84,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 401' do
-        post :update, params: {id: event.id}
+        post :update, params: { id: event.id }
         expect(response).to have_http_status(401)
       end
     end
@@ -95,9 +95,48 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 302' do
-        post :update, params: {id: event.id, meetup: {description: 'Great event'}}
+        post :update, params: { id: event.id, event: { description: 'Great event' } }
         expect(response).to redirect_to(admin_events_path)
         event.reload
+      end
+    end
+  end
+
+  describe 'GET #new' do
+    it 'assigns a new event to @event' do
+      get :new
+      expect(response).to have_http_status(302)
+    end
+  end
+
+  describe '#create' do
+    context 'when user is not authenticated' do
+      it 'returns 302' do
+        post :create
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
+    context 'when user is not admin' do
+      let(:user) { FactoryBot.create(:user) }
+      before { sign_in user }
+
+      it 'returns 401' do
+        post :create
+        expect(response).to have_http_status(401)
+      end
+    end
+
+    context 'when user is admin' do
+      let(:user) { FactoryBot.create(:user, :admin) }
+      before { sign_in user }
+
+      it 'returns 302' do
+        post :create,
+        params: { event: { title: 'My event', description: 'Great event', date: 1.month.from_now, type: 'Meetup' } }
+
+        expect(response).to redirect_to(admin_events_path)
       end
     end
   end

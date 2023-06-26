@@ -1,0 +1,31 @@
+  <%= form_for [:admin, @event.becomes(Event)] do |f| %>
+    <%= render 'layouts/admin/form_errors', object: f.object %>
+    <div class="field form-floating mb-4">
+      <%= f.text_field :title, class: "form-control" %>
+      <%= f.label :title %>
+    </div>
+    <div class="field form-floating mb-4">
+      <%= f.text_field :location, class: "form-control" %>
+      <%= f.label :location %>
+    </div>
+    <div class="field form-floating mb-4">
+      <%= f.text_area :description, rows: 40, class: "form-control", style: "height: 100px" %>
+      <%= f.label :description %>
+    </div>
+    <div class="field form-field mb-4">
+      <%= f.label :date, class: "d-block form-label" %>
+      <%= f.datetime_select :date, {}, { class: "form-select d-inline-block w-auto" } %>
+    </div>
+    <div class="field form-floating mb-4">
+      <%= f.select :type, ['Meetup', 'Panel'], {}, { class: "form-select" } %>
+      <%= f.label :type, "Type" %>
+    </div>
+    <div class="field form-floating mb-4">
+      <%= f.text_field :panel_video_link, class: "form-control" %>
+      <%= f.label :panel_video_link, "Video link" %>
+    </div>
+    <div class="actions text-center mb-4">
+      <%= f.submit "Save", class: "btn btn-primary btn-lg" %>
+      <%=link_to "Cancel", admin_events_path, class: "btn btn-outline-primary btn-lg" %>
+    </div>
+  <% end %>

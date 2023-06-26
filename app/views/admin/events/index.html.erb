@@ -1,7 +1,7 @@
-<!-- TODO: Issue 22 - Add Create Event Page -->
+<h1 class="mb-4">Event List</h1>
 <div class="row">
   <div class="col">
-    <%= link_to '#', class: "btn btn-primary mb-3" do %>
+    <%= link_to new_admin_event_path, class: "btn btn-primary btn-lg mb-3" do %>
       Create new Event
       <i class="bi bi-plus fw-semibold"></i>
     <% end %>
@@ -29,7 +29,7 @@
             <td class="p-3"><%= event.speakers.map(&:name).join(", ") %></td>
             <td class="p-3"><%= event.date.strftime('%B %d, %Y %I:%M%p %:z') %></td>
             <td class="p-3"><%= event.location %></td>
-            <td class="p-3"><%= event.description %></td>
+            <td class="p-3"><%= truncate_html(event.description) %></td>
             <td class="p-3">
               <%= link_to 'Edit', edit_admin_event_path(event) %>
               <%= link_to 'Delete', admin_event_path(event), method: :delete %>
