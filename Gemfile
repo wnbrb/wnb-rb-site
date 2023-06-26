@@ -52,6 +52,7 @@ group :test do
   gem 'selenium-webdriver', '~> 4.8.1'
   gem 'timecop', '~> 0.9.6'
   gem 'webdrivers', '~>5.2.0'
+  gem 'shoulda-matchers', '~>5.3.0'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
