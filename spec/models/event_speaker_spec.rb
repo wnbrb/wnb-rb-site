@@ -3,5 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe EventSpeaker, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { is_expected.to belong_to(:speaker) }
+    it { is_expected.to belong_to(:event) }
+  end
 end
