@@ -10,6 +10,7 @@ Rails.application.routes.draw do
              }
   namespace :admin, constraints: { format: 'html' } do
     get 'dashboard', to: 'dashboard#show'
+    resources :events, only: %i[index new create edit update destroy]
   end
 
   get '/sponsor-us', to: redirect('/partner-with-us')
@@ -37,10 +38,6 @@ Rails.application.routes.draw do
     end
 
     post 'register-user', to: 'registrations#register_user'
-  end
-
-  namespace :admin do
-    resources :events, only: %i[index edit update destroy]
   end
 
   mount ActionCable.server => '/cable'
