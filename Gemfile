@@ -36,6 +36,7 @@ gem 'truncate_html', '~> 0.9.3'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker', '~> 2.18.0'
   gem 'pry-rails', '~> 0.3.9'
   gem 'rspec-rails', '~> 6.0.1'
 end

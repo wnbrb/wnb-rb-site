@@ -118,6 +118,8 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     faraday (2.7.4)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -376,6 +378,7 @@ PLATFORMS
   x86_64-darwin-19
   x86_64-darwin-20
   x86_64-darwin-21
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -386,6 +389,7 @@ DEPENDENCIES
   debug (~> 1.7.1)
   devise (~> 4.9.2)
   factory_bot_rails (~> 6.2.0)
+  faker (~> 2.18.0)
   google_drive!
   jbuilder (~> 2.7)
   jsbundling-rails (~> 1.1)
