@@ -1,7 +1,7 @@
-<%- if object.errors.any?%>
-  <div class="alert alert-info mt-5 position-fixed start-0 end-0 alert-dismissible fade show mx-1 mx-md-3" role="alert">
-    <p class="font-normal"><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</p>
-    <ul class="list-unstyled mb-0">
+<%- if object.errors.any? %>
+  <div class="alert alert-danger z-3 alert-dismissible fade show" role="alert">
+    <p class="font-normal"><%= pluralize(object.errors.count, "error") %> prohibited this event from being saved:</p>
+    <ul class="mb-0">
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>

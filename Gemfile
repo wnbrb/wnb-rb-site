@@ -34,6 +34,9 @@ gem 'google_drive', git: 'https://github.com/wnbrb/google-drive-ruby.git', branc
 # cuts off a string of HTML
 gem 'truncate_html', '~> 0.9.3'
 
+# quickly call web links
+gem 'httpparty', '~> 0.2'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 2.18.0'

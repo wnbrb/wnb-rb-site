@@ -1,0 +1,51 @@
+<h1 class="mb-4">Speaker List</h1>
+<div class="row">
+  <div class="col">
+    <%= link_to new_admin_speaker_path, class: "btn btn-primary btn-md mb-4" do %>
+      Create new Speaker
+      <i class="bi bi-plus fw-semibold"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="row" id="speakers">
+  <div class="col">
+    <div class="table-responsive">
+      <table class="table table-sm text-center table-hover">
+        <thead class="border-2">
+        <tr class="table-info">
+            <th scope="col" class="p-3">Id</th>
+            <th scope="col" class="p-3">Name</th>
+            <th scope="col" class="p-3">Bio</th>
+            <th scope="col" class="p-3">Tagline</th>
+            <th scope="col" class="p-3">Image</th>
+            <th scope="col" class="p-3">Links</th>
+            <th scope="col" class="p-3">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+          <% @speakers.each do |speaker| %>
+            <tr class="border-2">
+              <td class="p-3 align-middle"><%= speaker.id %></td>
+              <td class="p-3 align-middle"><%= speaker.name %></td>
+              <td class="p-3 align-middle text-start"><%= truncate_html(speaker.bio, length: 70) %></td>
+              <td class="p-3 align-middle"><%= speaker.tagline %></td>
+              <td class="p-3 align-middle">
+                <div class="imagen-container">
+                  <%=image_tag speaker.image_url, class:"rounded-circle object-fit-cover", height: 53, width: 53, alt:"Profile photo for #{speaker.name}" %>
+                </div>
+              </td>
+              <td class="p-3 align-middle">
+                <%= render "admin/speakers/index/speaker_links", speaker: speaker%>
+              </td>
+              <td class="p-3 align-middle">
+              <%= link_to "Edit", edit_admin_speaker_path(speaker) %>
+            </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

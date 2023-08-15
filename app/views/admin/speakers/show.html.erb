@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @speaker %>
+
+<div>
+  <%= link_to "Edit this speaker", edit_admin_speaker_path(@speaker) %> |
+  <%= link_to "Back to speakers", admin_speakers_path %>
+
+  <%= button_to "Destroy this speaker", @speaker, method: :delete %>
+</div>
