@@ -13,30 +13,19 @@ RSpec.describe Api::EventsController, type: :controller do
 
   describe 'GET #past' do
     before do
-      july_meetup =
-        Meetup.create(
-          title: 'July Meetup',
-          location: 'virtual',
-          date: DateTime.new(2021, 7, 31, 16).utc,
-        )
-      Meetup.create(
-        title: 'August Meetup',
-        location: 'virtual',
-        date: DateTime.new(2021, 8, 31, 16).utc,
-      )
+      july_meetup = create(:event, title: 'July Meetup', date: DateTime.new(2021, 7, 31, 16).utc)
+      create(:event, title: 'August Meetup', date: DateTime.new(2021, 8, 31, 16).utc)
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now + 1.week)
 
       speaker =
-        Speaker.create(
+        create(
+          :speaker,
           name: 'Speaker Name',
-          tagline: 'Software Developer',
-          bio: 'Lorem Ipsum',
-          image_url: 'https://picsum.photos/200',
           links: {
             twitter: 'http://example.com/twitter-link',
             mastodon: 'http://example.com/mastodon-link',
-            personal_website: 'http://example.com/personal-website-link',
-          }
+            website: 'http://example.com/personal-website-link',
+          },
         )
       EventSpeaker.create(
         event: july_meetup,
@@ -71,11 +60,13 @@ RSpec.describe Api::EventsController, type: :controller do
       july_meetup = body['data']['2021']['July'].first
 
       expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
-      expect(july_meetup['speakers'].first['links']).to eq({
-        'twitter' => 'http://example.com/twitter-link',
-        'mastodon' => 'http://example.com/mastodon-link',
-        'personal_website' => 'http://example.com/personal-website-link',
-      })
+      expect(july_meetup['speakers'].first['links']).to eq(
+        {
+          'twitter' => 'http://example.com/twitter-link',
+          'mastodon' => 'http://example.com/mastodon-link',
+          'website' => 'http://example.com/personal-website-link',
+        },
+      )
     end
 
     it 'includes talk titles' do
@@ -108,25 +99,11 @@ RSpec.describe Api::EventsController, type: :controller do
   describe 'GET #upcoming' do
     before do
       august_meetup =
-        Meetup.create(
-          title: 'August Meetup',
-          location: 'virtual',
-          date: DateTime.new(2022, 8, 31, 16).utc,
-        )
-      Meetup.create(
-        title: 'September Meetup',
-        location: 'virtual',
-        date: DateTime.new(2022, 9, 25, 16).utc,
-      )
+        create(:event, title: 'August Meetup', date: DateTime.new(2022, 8, 31, 16).utc)
+      create(:event, title: 'September Meetup', date: DateTime.new(2022, 9, 25, 16).utc)
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now - 1.week)
 
-      speaker =
-        Speaker.create(
-          name: 'Speaker Name',
-          tagline: 'Software Developer',
-          bio: 'Lorem Ipsum',
-          image_url: 'https://picsum.photos/200',
-        )
+      speaker = create(:speaker, name: 'Speaker Name')
       EventSpeaker.create(
         event: august_meetup,
         speaker: speaker,
