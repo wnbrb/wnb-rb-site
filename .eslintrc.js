@@ -35,6 +35,11 @@ module.exports = {
             },
         ],
     },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     overrides: [
         {
             files: [

@@ -1,0 +1,46 @@
+<%= form_for [:admin, speaker] do |f| %>
+  <%= render "layouts/admin/form_errors", object: f.object %>
+  <div class="field form-floating mb-4">
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :name %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.text_area :bio, rows: 40, class: "form-control", style: "height: 200px" %>
+    <%= f.label :bio %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.text_field :tagline, class: "form-control" %>
+    <%= f.label :tagline %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.url_field :image_url, class: "form-control" %>
+    <%= f.label :image_url, "Image link" %>
+  </div>
+
+  <div class="accordion mb-4">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingLinks">
+        <% accordion_button_class = speaker.links.compact_blank.present? ? "accordion-button" : "accordion-button collapsed" %>
+        <%= button_tag "Social media links", type: "button", class: accordion_button_class, data: { bs_toggle: "collapse", bs_target: "#collapseBody"} %>
+      </h2>
+      <% accordion_collapse_class = speaker.links.compact_blank.present? ? "accordion-collapse collapse show" : "accordion-collapse collapse" %>
+      <div id="collapseBody" class="<%= accordion_collapse_class %>" >
+        <div class="accordion-body">
+          <% Speaker::SOCIAL_MEDIA_LINKS.each do |link| %>
+            <div class="mb-3">
+              <div class="input-group">
+                <%= f.label link.to_sym, class: "input-group-text" %>
+                <%= f.text_field link.to_sym, class: "form-control", placeholder: "https://socialmedia.url", aria: { label: link.capitalize, describedby: link  } %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions text-center mb-4">
+    <%= f.submit "Save", class: "btn btn-primary btn-lg" %>
+    <%=link_to "Cancel", admin_speakers_path, class: "btn btn-outline-primary btn-lg" %>
+  </div>
+<% end %>

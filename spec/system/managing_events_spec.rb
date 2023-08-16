@@ -36,7 +36,7 @@ RSpec.describe 'Managing events', type: :system do
     describe 'with invalid data' do
       it 'shows errors' do
         click_on 'Save'
-        # byebug
+
         expect(page).to have_current_path(admin_events_path)
         expect(page).to have_text("Title can't be blank")
       end

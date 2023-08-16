@@ -8,8 +8,10 @@ Rails.application.routes.draw do
                sign_up: 'new',
                registration: 'register',
              }
+
   namespace :admin, constraints: { format: 'html' } do
     get 'dashboard', to: 'dashboard#show'
+    resources :speakers, only: %i[index new create edit update]
     resources :events, only: %i[index new create edit update destroy]
   end
 

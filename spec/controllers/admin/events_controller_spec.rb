@@ -3,7 +3,7 @@
 require './spec/rails_helper'
 
 RSpec.describe Admin::EventsController, type: :controller do
-  describe '#index' do
+  describe 'GET #index' do
     context 'when user is not authenticated' do
       it 'returns 302' do
         get :index
@@ -33,7 +33,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
   end
 
-  describe '#edit' do
+  describe 'GET #edit' do
     context 'when user is not authenticated' do
       let(:event) { FactoryBot.create(:event) }
 
@@ -50,7 +50,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 401' do
-        get :edit, params: {id: event.id}
+        get :edit, params: { id: event.id }
         expect(response).to have_http_status(401)
       end
     end
@@ -61,18 +61,18 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 200' do
-        get :edit, params: {id: event.id}
+        get :edit, params: { id: event.id }
         expect(response).to have_http_status(200)
       end
     end
   end
 
-  describe '#update' do
+  describe 'PUT #update' do
     context 'when user is not authenticated' do
       let(:event) { FactoryBot.create(:event) }
 
       it 'returns 302' do
-        post :update, params: { id: event.id }
+        put :update, params: { id: event.id }
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(new_user_session_path)
       end
@@ -109,7 +109,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
   end
 
-  describe '#create' do
+  describe 'POST #create' do
     context 'when user is not authenticated' do
       it 'returns 302' do
         post :create
@@ -134,7 +134,14 @@ RSpec.describe Admin::EventsController, type: :controller do
 
       it 'returns 302' do
         post :create,
-        params: { event: { title: 'My event', description: 'Great event', date: 1.month.from_now, type: 'Meetup' } }
+             params: {
+               event: {
+                 title: 'My event',
+                 description: 'Great event',
+                 date: 1.month.from_now,
+                 type: 'Meetup',
+               },
+             }
 
         expect(response).to redirect_to(admin_events_path)
       end
@@ -146,18 +153,16 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:user) { create(:user, :admin) }
       let(:event) { create(:event) }
 
-      before(:each) do
-        sign_in user
-      end
+      before(:each) { sign_in user }
 
       it 'redirects to index page when event exists' do
-        delete :destroy, params: {id: event.id}
+        delete :destroy, params: { id: event.id }
         expect(response).to redirect_to(admin_events_path)
         expect(Event.exists?(event.id)).to be(false)
       end
 
       it 'returns 404 when the event does not exist' do
-        delete :destroy, params: {id: 'fakefake'}
+        delete :destroy, params: { id: 'fakefake' }
         expect(response).to have_http_status(404)
       end
     end
@@ -166,12 +171,10 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:user) { create(:user) }
       let(:event) { create(:event) }
 
-      before(:each) do
-        sign_in user
-      end
+      before(:each) { sign_in user }
 
       it 'returns 401' do
-        delete :destroy, params: {id: event.id}
+        delete :destroy, params: { id: event.id }
         expect(response).to have_http_status(401)
         expect(Event.exists?(event.id)).to be(true)
       end
@@ -181,7 +184,7 @@ RSpec.describe Admin::EventsController, type: :controller do
       let(:event) { create(:event) }
 
       it 'redirects to login' do
-        delete :destroy, params: {id: event.id}
+        delete :destroy, params: { id: event.id }
         expect(response).to redirect_to(new_user_session_path)
         expect(Event.exists?(event.id)).to be(true)
       end

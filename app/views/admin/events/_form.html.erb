@@ -1,4 +1,4 @@
-  <%= form_for [:admin, @event.becomes(Event)] do |f| %>
+  <%= form_for [:admin, event.becomes(Event)] do |f| %>
     <%= render 'layouts/admin/form_errors', object: f.object %>
     <div class="field form-floating mb-4">
       <%= f.text_field :title, class: "form-control" %>
