@@ -94,7 +94,7 @@ const PastMeetup = () => {
         title,
         description,
         speakers,
-        event_speakers: eventSpeakers,
+        talks: eventSpeakers,
         panel_video_link: panelVideoUrl,
     } = meetup;
     return (

@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: event_speakers
+# Table name: talks
 #
 #  id               :bigint           not null, primary key
 #  talk_description :text
@@ -15,17 +15,16 @@
 #
 # Indexes
 #
-#  index_event_speakers_on_event_id    (event_id)
-#  index_event_speakers_on_speaker_id  (speaker_id)
+#  index_talks_on_event_id    (event_id)
+#  index_talks_on_speaker_id  (speaker_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (event_id => events.id)
 #  fk_rails_...  (speaker_id => speakers.id)
-#
 require 'rails_helper'
 
-RSpec.describe EventSpeaker, type: :model do
+RSpec.describe Talk, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:speaker) }
     it { is_expected.to belong_to(:event) }

@@ -27,7 +27,7 @@ RSpec.describe Api::EventsController, type: :controller do
             website: 'http://example.com/personal-website-link',
           },
         )
-      EventSpeaker.create(
+      Talk.create(
         event: july_meetup,
         speaker: speaker,
         talk_title: 'Some talk title',
@@ -74,7 +74,7 @@ RSpec.describe Api::EventsController, type: :controller do
       body = JSON.parse(response.body)
 
       july_meetup = body['data']['2021']['July'].first
-      expect(july_meetup['event_speakers'].first['talk_title']).to eq('Some talk title')
+      expect(july_meetup['talks'].first['talk_title']).to eq('Some talk title')
     end
   end
 
@@ -104,7 +104,7 @@ RSpec.describe Api::EventsController, type: :controller do
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now - 1.week)
 
       speaker = create(:speaker, name: 'Speaker Name')
-      EventSpeaker.create(
+      Talk.create(
         event: august_meetup,
         speaker: speaker,
         talk_title: 'Some talk title',

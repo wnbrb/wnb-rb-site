@@ -17,8 +17,8 @@ class Speaker < ApplicationRecord
   include HTTParty
   SOCIAL_MEDIA_LINKS = %w[github linkedin mastodon twitter website other].freeze
 
-  has_many :event_speakers, dependent: :destroy
-  has_many :events, through: :event_speakers
+  has_many :talks, dependent: :destroy
+  has_many :events, through: :talks
 
   validates :name, :bio, :image_url, presence: true
   validate :links, :validate_social_media_brand

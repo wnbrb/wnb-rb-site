@@ -18,8 +18,8 @@ require 'rails_helper'
 
 RSpec.describe Event, type: :model do
   describe 'associations' do
-    it { is_expected.to have_many(:event_speakers).dependent(:destroy) }
-    it { is_expected.to have_many(:speakers).through(:event_speakers) }
+    it { is_expected.to have_many(:talks).dependent(:destroy) }
+    it { is_expected.to have_many(:speakers).through(:talks) }
   end
 
   describe 'validations' do

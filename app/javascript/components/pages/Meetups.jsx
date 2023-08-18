@@ -39,8 +39,8 @@ MonthSection.propTypes = {
     children: PropTypes.node,
 };
 
-const Meetup = ({ speakers, title = '', event_speakers, year, month, day }) => {
-    const eventWithSpeaker = event_speakers.map((talk) => {
+const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
+    const eventWithSpeaker = talks.map((talk) => {
         const speaker = speakers.find((speak) => speak.id === talk.speaker_id);
         return { ...talk, speaker };
     });
@@ -88,7 +88,7 @@ const Meetup = ({ speakers, title = '', event_speakers, year, month, day }) => {
 Meetup.propTypes = {
     speakers: PropTypes.array,
     title: PropTypes.string,
-    event_speakers: PropTypes.array,
+    talks: PropTypes.array,
     year: PropTypes.string,
     month: PropTypes.string,
     day: PropTypes.string,
@@ -132,7 +132,7 @@ const Meetups = () => {
                                                                   speakers,
                                                                   title,
                                                                   date,
-                                                                  event_speakers,
+                                                                  talks,
                                                               }) => {
                                                                   const dateString =
                                                                       date.split('T')[0];
@@ -143,9 +143,7 @@ const Meetups = () => {
                                                                           key={id}
                                                                           speakers={speakers}
                                                                           title={title}
-                                                                          event_speakers={
-                                                                              event_speakers
-                                                                          }
+                                                                          talks={talks}
                                                                           year={year}
                                                                           month={month.padStart(
                                                                               2,

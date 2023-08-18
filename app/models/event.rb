@@ -15,8 +15,8 @@
 #  updated_at       :datetime         not null
 #
 class Event < ApplicationRecord
-  has_many :event_speakers, dependent: :destroy
-  has_many :speakers, through: :event_speakers
+  has_many :talks, dependent: :destroy
+  has_many :speakers, through: :talks
 
   validates :title, :location, :date, presence: true
 end
