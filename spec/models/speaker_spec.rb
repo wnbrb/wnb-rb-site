@@ -1,5 +1,18 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: speakers
+#
+#  id         :bigint           not null, primary key
+#  bio        :text
+#  image_url  :string
+#  links      :jsonb
+#  name       :string
+#  tagline    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Speaker, type: :model do

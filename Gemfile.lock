@@ -79,6 +79,9 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     bcrypt (3.1.19)
     bindex (0.8.1)
@@ -393,6 +396,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotate (~> 3.2.0)
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)

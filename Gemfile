@@ -38,9 +38,20 @@ gem 'truncate_html', '~> 0.9.3'
 gem 'httpparty', '~> 0.2'
 
 group :development, :test do
+  # Annotate models, routes, fixtures, and others based on the database schema
+  gem 'annotate', '~> 3.2.0'
+
+  # Call 'byebug' anywhere in the code to stop execution and get a
+  # debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
+  # Generates fake data
   gem 'faker', '~> 2.18.0'
+
+  # Runtime developer console
   gem 'pry-rails', '~> 0.3.9'
+
+  # Run tests
   gem 'rspec-rails', '~> 6.0.1'
 end
 
