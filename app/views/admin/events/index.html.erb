@@ -13,6 +13,7 @@
       <table class="table table-sm text-center table-hover">
         <thead class="border-2">
         <tr class="table-primary">
+            <th scope="col" class="p-3">ID</th>
             <th scope="col" class="p-3">Title</th>
             <th scope="col" class="p-3">Type</th>
             <th scope="col" class="p-3">Speakers</th>
@@ -26,6 +27,7 @@
           <% @events.each do |event| %>
 
             <tr class="border-2">
+              <td class="p-3"><%= event.id %></td>
               <td class="p-3"><%= event.title %></td>
               <td class="p-3"><%= event.type %></td>
               <td class="p-3"><%= event.speakers.map(&:name).join(", ") %></td>
