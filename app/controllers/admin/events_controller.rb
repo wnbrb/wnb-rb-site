@@ -5,8 +5,7 @@ module Admin
     before_action :set_event, only: %w[edit update destroy]
 
     def index
-      @events = Event.includes(:speakers)
-                     .order(date: :desc)
+      @events = Event.includes(:speakers).order(date: :desc)
     end
 
     def new
@@ -54,11 +53,18 @@ module Admin
     end
 
     def set_event
-      @event = Event.find_by(id: params[:id])
+      @event = Event.includes(:talks).find_by(id: params[:id])
     end
 
     def event_params
-      params.require(:event).permit(:title, :location, :description, :date, :type, :panel_video_link)
+      params.require(:event).permit(
+        :title,
+        :location,
+        :description,
+        :date,
+        :type,
+        :panel_video_link,
+      )
     end
   end
 end

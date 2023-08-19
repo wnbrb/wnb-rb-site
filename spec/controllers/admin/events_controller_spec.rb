@@ -105,6 +105,7 @@ RSpec.describe Admin::EventsController, type: :controller do
   describe 'GET #new' do
     it 'assigns a new event to @event' do
       get :new
+
       expect(response).to have_http_status(302)
     end
   end
@@ -113,6 +114,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     context 'when user is not authenticated' do
       it 'returns 302' do
         post :create
+
         expect(response).to have_http_status(302)
         expect(response).to redirect_to(new_user_session_path)
       end
@@ -124,6 +126,7 @@ RSpec.describe Admin::EventsController, type: :controller do
 
       it 'returns 401' do
         post :create
+
         expect(response).to have_http_status(401)
       end
     end
@@ -157,12 +160,14 @@ RSpec.describe Admin::EventsController, type: :controller do
 
       it 'redirects to index page when event exists' do
         delete :destroy, params: { id: event.id }
+
         expect(response).to redirect_to(admin_events_path)
         expect(Event.exists?(event.id)).to be(false)
       end
 
       it 'returns 404 when the event does not exist' do
         delete :destroy, params: { id: 'fakefake' }
+
         expect(response).to have_http_status(404)
       end
     end
@@ -185,6 +190,7 @@ RSpec.describe Admin::EventsController, type: :controller do
 
       it 'redirects to login' do
         delete :destroy, params: { id: event.id }
+
         expect(response).to redirect_to(new_user_session_path)
         expect(Event.exists?(event.id)).to be(true)
       end
