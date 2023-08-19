@@ -58,4 +58,8 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  # Sets the returned relation to strict_loading mode.
+  # This will raise an error if the record tries to lazily load an association.
+  config.active_record.strict_loading_by_default = true
 end

@@ -3,7 +3,8 @@
 module Api
   class EventsController < ApplicationController
     def past
-      events = Event.where('date < ?', DateTime.current).order(date: :desc)
+      events =
+        Event.includes(:talks, :speakers).where('date < ?', DateTime.current).order(date: :desc)
       events_by_date =
         events
           .group_by { |event| event.date.year }
@@ -16,7 +17,7 @@ module Api
 
     def past_by_month_day
       event_date = DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
-      event = Event.where(date: event_date..event_date.end_of_day).first
+      event = Event.includes(:talks, :speakers).where(date: event_date..event_date.end_of_day).first
       if event.present?
         render status: 200, json: { data: event.as_json(include: %i[talks speakers]) }
       else
@@ -25,7 +26,8 @@ module Api
     end
 
     def upcoming
-      events = Event.where('date > ?', DateTime.current).order(date: :asc)
+      events =
+        Event.includes(:talks, :speakers).where('date > ?', DateTime.current).order(date: :asc)
       events_by_date =
         events
           .group_by { |event| event.date.year }
