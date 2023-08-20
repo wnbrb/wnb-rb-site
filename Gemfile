@@ -28,6 +28,8 @@ gem 'stimulus-rails', '~> 1.2.1'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'jsbundling-rails', '~> 1.1'
 
+gem 'turbo-rails', '~> 1.4.0'
+
 # read/write files/spreadsheets in Google Drive/Docs
 gem 'google_drive', git: 'https://github.com/wnbrb/google-drive-ruby.git', branch: 'master'
 
@@ -78,3 +80,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Explicitly depend on and compile nokogiri
 # so we can run CI on Ruby head
 gem 'nokogiri', '~> 1.14', force_ruby_platform: true
+

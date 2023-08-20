@@ -357,6 +357,10 @@ GEM
     timeout (0.4.0)
     trailblazer-option (0.1.2)
     truncate_html (0.9.3)
+    turbo-rails (1.4.0)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
@@ -428,6 +432,7 @@ DEPENDENCIES
   stimulus-rails (~> 1.2.1)
   timecop (~> 0.9.6)
   truncate_html (~> 0.9.3)
+  turbo-rails (~> 1.4.0)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers (~> 5.2.0)
