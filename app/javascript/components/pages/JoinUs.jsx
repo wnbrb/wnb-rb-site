@@ -84,7 +84,7 @@ const JoinUs = () => {
                                 resetForm();
                                 setShowBanner({
                                     type: 'success',
-                                    message: `${values.name}, thank you for joining WNB.rb! You will receive an email soon.`,
+                                    message: `${values.name}, thank you for joining WNB.rb! You will receive an email within the next week.`,
                                 });
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                             }
