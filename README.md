@@ -167,7 +167,7 @@ Need some help contributing to our app? Check out the resources below for more i
 
 - [Forking and cloning a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 - [Working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks)
-- [Creating and deleting branches](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
+- [Creating and deleting branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
 - [Commit guide](https://github.com/git-guides/git-commit)
 - [Creating a pull request from a fork](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
