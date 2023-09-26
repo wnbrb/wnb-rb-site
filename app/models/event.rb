@@ -18,5 +18,7 @@ class Event < ApplicationRecord
   has_many :talks, dependent: :destroy
   has_many :speakers, through: :talks
 
+  accepts_nested_attributes_for :talks, allow_destroy: true
+
   validates :title, :location, :date, presence: true
 end

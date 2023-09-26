@@ -28,7 +28,7 @@ class Speaker < ApplicationRecord
 
   before_validation :format_links
 
-  scope :ordered_by_name, -> { order(:name) }
+  default_scope { order(name: :asc) }
 
   def validate_social_media_brand
     return if links.blank? || links.keys.all? { |key| SOCIAL_MEDIA_LINKS.include?(key) }

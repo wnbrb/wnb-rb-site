@@ -1,6 +1,6 @@
 <%- if object.errors.any? %>
   <div class="alert alert-danger z-3 alert-dismissible fade show" role="alert">
-    <p class="font-normal"><%= pluralize(object.errors.count, "error") %> prohibited this event from being saved:</p>
+    <p class="font-normal"> Could not be saved because of <%= pluralize(object.errors.count, "error") %>: </p>
     <ul class="mb-0">
       <% object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

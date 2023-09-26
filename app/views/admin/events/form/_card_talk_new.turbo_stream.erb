@@ -1,0 +1,8 @@
+<turbo-stream action="update_children_or_append" target="event_talks">
+  <template>
+    <%= render "admin/events/form/card_talk", talk: talk, talk_id: talk_id %>
+    <% if talk.persisted? %>
+      <input autocomplete="off" type="hidden" value="<%=talk_id%>" name="event[talks_attributes][<%=talk_id%>][id]" id="event_talks_attributes_<%=talk_id%>_id">
+    <% end %>
+  </template>
+</turbo-stream>

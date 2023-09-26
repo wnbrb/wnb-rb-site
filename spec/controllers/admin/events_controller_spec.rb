@@ -146,7 +146,7 @@ RSpec.describe Admin::EventsController, type: :controller do
                },
              }
 
-        expect(response).to redirect_to(admin_events_path)
+        expect(response).to redirect_to edit_admin_event_path(Event.last)
       end
     end
   end

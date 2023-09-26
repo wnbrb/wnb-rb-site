@@ -1,0 +1,36 @@
+.ss-content {
+    padding-right: 0.75rem;
+    background-image: none;
+
+    .ss-list {
+        height: 150px;
+
+        .ss-option {
+            color: var(--bs-body-color);
+
+            &:not(.ss-disabled) {
+                &.ss-selected {
+                    background-color: $primary;
+                }
+
+                &:first-child {
+                    color: var(--bs-secondary-color);
+                }
+            }
+
+            &:hover {
+                color: var(--bs-body-color);
+                background-color: $primary;
+            }
+            &:first-child {
+                &.ss-selected {
+                    background-color: $primary-bg-subtle;
+                }
+            }
+        }
+    }
+
+    .ss-search input:focus {
+        box-shadow: $box-shadow-sm;
+    }
+}

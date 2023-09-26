@@ -23,4 +23,12 @@ class EventPolicy < ApplicationPolicy
   def destroy?
     user.admin?
   end
+
+  def set_talk?
+    create?
+  end
+
+  def generate_talk?
+    create?
+  end
 end

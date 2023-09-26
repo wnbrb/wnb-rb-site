@@ -1,31 +1,51 @@
-  <%= form_for [:admin, event.becomes(Event)] do |f| %>
-    <%= render 'layouts/admin/form_errors', object: f.object %>
-    <div class="field form-floating mb-4">
-      <%= f.text_field :title, class: "form-control" %>
-      <%= f.label :title %>
+<%= form_with model: [:admin, event.becomes(Event)] do |f| %>
+  <%= render 'layouts/admin/form_errors', object: f.object %>
+  <div class="field form-floating mb-4">
+    <%= f.text_field :title, class: "form-control shadow-sm" %>
+    <%= f.label :title %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.text_field :location, class: "form-control shadow-sm" %>
+    <%= f.label :location %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.text_area :description, rows: 40, class: "form-control shadow-sm", style: "height: 100px" %>
+    <%= f.label :description %>
+  </div>
+  <div class="field form-field mb-4">
+    <%= f.label :date, class: "d-block form-label" %>
+    <%= f.datetime_select :date, {}, { class: "form-select shadow-sm d-inline-block w-auto" } %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.select :type, ["Meetup", "Panel"], {}, { class: "form-select shadow-sm" } %>
+    <%= f.label :type, "Type" %>
+  </div>
+  <div class="field form-floating mb-4">
+    <%= f.text_field :panel_video_link, class: "form-control shadow-sm" %>
+    <%= f.label :panel_video_link, "Video link" %>
+  </div>
+  <fieldset class="mb-3">
+    <legend>Talks</legend>
+    <div class="row g-3" id="event_talks" data-controller="event-form-remove-talk">
+      <div class="mx-auto col-8 order-last">
+        <div class="card h-100 border-0 shadow-sm">
+          <%=button_tag type: "button", class: "btn btn-outline-primary fw-semibold h-100 p-3", data: { controller: "turbo", href: set_talk_admin_events_path(talk_id: "new_talk") } do %>
+            <span class="rounded-2 h1 border border-1 border-primary mx-auto pb-0">
+              <i class="bi bi-plus-lg"></i>
+            </span>
+            <span class="d-block mt-2">Add talk</span>
+          <% end %>
+        </div>
+      </div>
+      <% if f.object.talks.any? %>
+        <% event.talks.each do |talk| %>
+          <%= render "admin/events/form/card_talk", talk: talk, talk_id: talk.id %>
+        <% end %>
+      <% end %>
     </div>
-    <div class="field form-floating mb-4">
-      <%= f.text_field :location, class: "form-control" %>
-      <%= f.label :location %>
-    </div>
-    <div class="field form-floating mb-4">
-      <%= f.text_area :description, rows: 40, class: "form-control", style: "height: 100px" %>
-      <%= f.label :description %>
-    </div>
-    <div class="field form-field mb-4">
-      <%= f.label :date, class: "d-block form-label" %>
-      <%= f.datetime_select :date, {}, { class: "form-select d-inline-block w-auto" } %>
-    </div>
-    <div class="field form-floating mb-4">
-      <%= f.select :type, ['Meetup', 'Panel'], {}, { class: "form-select" } %>
-      <%= f.label :type, "Type" %>
-    </div>
-    <div class="field form-floating mb-4">
-      <%= f.text_field :panel_video_link, class: "form-control" %>
-      <%= f.label :panel_video_link, "Video link" %>
-    </div>
-    <div class="actions text-center mb-4">
-      <%= f.submit "Save", class: "btn btn-primary btn-lg" %>
-      <%=link_to "Cancel", admin_events_path, class: "btn btn-outline-primary btn-lg" %>
-    </div>
-  <% end %>
+  </fieldset>
+  <div class="actions text-center mb-4">
+    <%=f.submit "Save", class: "btn btn-primary btn-lg shadow-sm" %>
+    <%=link_to "Cancel", admin_events_path, class: "btn btn-outline-primary btn-lg shadow-sm" %>
+  </div>
+<% end %>
