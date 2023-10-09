@@ -5,7 +5,7 @@ import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
 import LoadingSpinner from 'components/LoadingSpinner';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
-import 'stylesheets/page';
+
 import 'stylesheets/meetup';
 
 const YearSection = ({ children, year }) => (
@@ -39,8 +39,8 @@ MonthSection.propTypes = {
     children: PropTypes.node,
 };
 
-const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
-    const eventWithSpeaker = event_speakers.map((talk) => {
+const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
+    const eventWithSpeaker = talks.map((talk) => {
         const speaker = speakers.find((speak) => speak.id === talk.speaker_id);
         return { ...talk, speaker };
     });
@@ -74,7 +74,7 @@ const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
                         ))}
                 </div>
                 <div className="bg-gray-200 shadow-lg text-right">
-                    <a href={`/meetups/${year}/${month}`}>
+                    <a href={`/meetups/${year}/${month}/${day}`}>
                         <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
                             View
                         </button>
@@ -88,9 +88,10 @@ const Meetup = ({ speakers, title = '', event_speakers, year, month }) => {
 Meetup.propTypes = {
     speakers: PropTypes.array,
     title: PropTypes.string,
-    event_speakers: PropTypes.array,
+    talks: PropTypes.array,
     year: PropTypes.string,
     month: PropTypes.string,
+    day: PropTypes.string,
 };
 
 const Meetups = () => {
@@ -131,24 +132,24 @@ const Meetups = () => {
                                                                   speakers,
                                                                   title,
                                                                   date,
-                                                                  event_speakers,
+                                                                  talks,
                                                               }) => {
-                                                                  const numericMonth =
-                                                                      new Date(date).getMonth() + 1;
+                                                                  const dateString =
+                                                                      date.split('T')[0];
+                                                                  let [year, month, day] =
+                                                                      dateString.split('-');
                                                                   return (
                                                                       <Meetup
                                                                           key={id}
                                                                           speakers={speakers}
                                                                           title={title}
-                                                                          event_speakers={
-                                                                              event_speakers
-                                                                          }
-                                                                          year={new Date(date)
-                                                                              .getFullYear()
-                                                                              .toString()}
-                                                                          month={numericMonth
-                                                                              .toString()
-                                                                              .padStart(2, '0')}
+                                                                          talks={talks}
+                                                                          year={year}
+                                                                          month={month.padStart(
+                                                                              2,
+                                                                              '0',
+                                                                          )}
+                                                                          day={day}
                                                                       />
                                                                   );
                                                               },

@@ -2,7 +2,7 @@
 
 unless Rails.env.prod?
   Speaker.destroy_all
-  EventSpeaker.destroy_all
+  Talk.destroy_all
   Event.destroy_all
   Job.destroy_all
   User.destroy_all
@@ -15,24 +15,24 @@ jemma =
     name: 'Jemma Issroff',
     tagline: 'Creator and Maintainer of MemoWise',
     bio:
-    "Lorem Ipsum is simply dummy text of the printing
-  and typesetting industry. Lorem Ipsum has been the
-  industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and
-  scrambled it to make a type specimen book. It has
-  survived not only five centuries, but also the leap
-  into electronic typesetting, remaining essentially
-  unchanged. It was popularised in the 1960s with the
-  release of Letraset sheets containing Lorem Ipsum
-  passages, and more recently with desktop publishing
-  software like Aldus PageMaker including versions of Lorem
-  Ipsum.",
-  image_url: 'https://picsum.photos/200/300',
-  links: {
-    twitter: 'http://example.com/jemmas-twitter',
-    personal_website: 'http://example.com/jemmas-personal-website',
-  }
-)
+      "Lorem Ipsum is simply dummy text of the printing
+    and typesetting industry. Lorem Ipsum has been the
+    industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and
+    scrambled it to make a type specimen book. It has
+    survived not only five centuries, but also the leap
+    into electronic typesetting, remaining essentially
+    unchanged. It was popularised in the 1960s with the
+    release of Letraset sheets containing Lorem Ipsum
+    passages, and more recently with desktop publishing
+    software like Aldus PageMaker including versions of Lorem
+    Ipsum.",
+    image_url: 'https://picsum.photos/200/300',
+    links: {
+      twitter: 'http://example.com/jemmas-twitter',
+      personal_website: 'http://example.com/jemmas-personal-website',
+    },
+  )
 
 stefanni =
   Speaker.create(
@@ -61,7 +61,7 @@ meetup =
     date: DateTime.new(2021, 8, 31, 16).utc,
   )
 
-EventSpeaker.create(
+Talk.create(
   event: meetup,
   speaker: jemma,
   talk_title: 'Intro to Ruby Memoization',
@@ -81,7 +81,7 @@ EventSpeaker.create(
                      lectus a sapien vulputate auctor sit amet sit amet augue.',
 )
 
-EventSpeaker.create(
+Talk.create(
   event: meetup,
   speaker: stefanni,
   talk_title: 'How to get started with contributing to Ruby on Rails',
@@ -111,7 +111,7 @@ meetup2 =
     panel_video_link: 'https://www.youtube.com/embed/GlpZPv1bp4g',
   )
 
-EventSpeaker.create(
+Talk.create(
   event: meetup2,
   speaker: jemma,
   talk_title: 'Another Talk Title',
@@ -141,7 +141,7 @@ meetup3 =
     panel_video_link: 'https://www.youtube.com/embed/GlpZPv1bp4g',
   )
 
-EventSpeaker.create(
+Talk.create(
   event: meetup3,
   speaker: jemma,
   talk_title: 'A talk given at the September meetup',
@@ -232,7 +232,8 @@ panel =
                Kerstin Puschke, Sylvia Fronczak, and Gabi Stefanini
                will answer YOUR questions about everything from CFPs,
                to making slides, to delivering technical talks!",
-    date: DateTime.new(2021, 7, 31, 16).utc,
+    panel_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
+    date: DateTime.new(2021, 7, 29, 16).utc,
   )
 
 panel.speakers = [kerstin, gabi, sylvia]

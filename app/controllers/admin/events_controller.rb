@@ -1,29 +1,35 @@
 # frozen_string_literal: true
 module Admin
-  class EventsController < ApplicationController
-    before_action :authenticate_user!
+  class EventsController < AdminController
+    before_action :authorize_event
+    before_action :set_event, only: %w[edit update destroy]
 
     def index
-      authorize Event
+      @events = Event.includes(:speakers).order(date: :desc)
+    end
 
-      @events = Event.includes(:speakers)
-                     .order(date: :desc)
+    def new
+      @event = Event.new
+    end
+
+    def create
+      @event = Event.create(event_params)
+
+      if @event.save
+        redirect_to admin_events_path, notice: 'Event has been created successfully'
+      else
+        render :new, alert: 'Please review'
+      end
     end
 
     def edit
-      authorize Event
-
-      @event = Event.find_by(id: params[:id])
       render_not_found unless @event
     end
 
     def update
-      authorize Event
-
-      @event = Event.find_by(id: params[:id])
       render_not_found unless @event
 
-      if @event.update(required_params)
+      if @event.update(event_params)
         redirect_to admin_events_path
       else
         render :edit
@@ -31,34 +37,31 @@ module Admin
     end
 
     def destroy
-      authorize Event
-      @event = Event.find_by(id: params[:id])
-
       if @event
         @event.destroy
         redirect_to admin_events_path
         flash[:success] = 'Event successfully deleted'
-      else 
+      else
         render_not_found
       end
-    end 
+    end
 
     private
 
-    def required_type
-      params[:meetup].present? ? params.require(:meetup) : params.require(:panel)
+    def authorize_event
+      authorize Event
     end
 
-    def required_params
-      required_type.permit(
+    def set_event
+      @event = Event.includes(:talks).find_by(id: params[:id])
+    end
+
+    def event_params
+      params.require(:event).permit(
         :title,
         :location,
         :description,
-        'date(1i)',
-        'date(2i)',
-        'date(3i)',
-        'date(4i)',
-        'date(5i)',
+        :date,
         :type,
         :panel_video_link,
       )

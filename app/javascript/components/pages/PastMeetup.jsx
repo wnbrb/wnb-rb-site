@@ -7,7 +7,7 @@ import PageTitleWithContainer from 'components/PageTitle';
 import SpeakersList from '../SpeakersList';
 import Microphone from '../icons/Microphone';
 import LoadingSpinner from 'components/LoadingSpinner';
-import 'stylesheets/page';
+
 import 'stylesheets/meetup';
 
 const VideoBlock = ({ videoUrl, title }) => {
@@ -76,26 +76,25 @@ SpeakerVideoBlock.propTypes = {
 const PastMeetup = () => {
     const year = window.year;
     const month = window.month;
-    const eventDate = new Date(year, Number(month - 1));
-    const monthName = eventDate.toLocaleDateString('en-US', { month: 'long' });
+    const day = window.day;
     const [loading, setLoading] = useState(true);
     const [meetup, setMeetup] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPastMeetup(year, month);
+            const data = await getPastMeetup(year, month, day);
             setMeetup(data);
             setLoading(false);
         };
 
         fetchData();
-    }, [year, month]);
+    }, [year, month, day]);
 
     const {
         title,
         description,
         speakers,
-        event_speakers: eventSpeakers,
+        talks: eventSpeakers,
         panel_video_link: panelVideoUrl,
     } = meetup;
     return (
@@ -105,7 +104,7 @@ const PastMeetup = () => {
             </Helmet>
             <SharedLayout>
                 <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
-                    <PageTitleWithContainer text={`${monthName} ${year} Meetup`} />
+                    <PageTitleWithContainer text={title} />
                 </div>
                 <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
                     {loading ? (

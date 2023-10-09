@@ -11,7 +11,6 @@ import LoadingSpinner from 'components/LoadingSpinner';
 import { getJobs } from '../../datasources';
 import { UnauthorizedError } from '../../errors';
 
-import 'stylesheets/page';
 import 'stylesheets/jobs';
 
 const Jobs = () => {
@@ -97,8 +96,8 @@ const SponsorUsBanner = () => {
         <Banner>
             Want to see your company&apos;s job on our board?
             <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
-                <a href={'/sponsor-us'} target="_blank" rel="noopener noreferrer">
-                    Sponsor Us
+                <a href={'/partner-with-us'} target="_blank" rel="noopener noreferrer">
+                    Partner with Us
                 </a>
             </Button>
         </Banner>

@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://twitter.com/wnb_rb">Follow us on Twitter</a> •
-  <a href="https://tinyurl.com/join-wnb-rb">Join Our Community</a>
+  <a href="https://wnb-rb.dev/join-us">Join Our Community</a>
 </p>
 
 WNB.rb is a virtual community for women and non-binary Rubyists. This is the repo for WNB.rb's website, built by and for our community.
@@ -14,11 +14,11 @@ WNB.rb is a virtual community for women and non-binary Rubyists. This is the rep
 
 All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Slack.
 
-## Getting Started 🏁
+## 1. Getting Started 🏁
 
 Before you try to set up this app, make sure you have the following installed on your machine:
 
-- Ruby (3.0.3)
+- Ruby (3.2.1)
 - Node (16.3.0) + Yarn
 - Postgres (13.3)
 - [Foreman](https://github.com/ddollar/foreman) for managing multiple servers
@@ -72,13 +72,66 @@ bin/webpack-dev-server
 
 This may be helpful for debugging, but generally should not be necessary.
 
-### Running rake tasks
+### 6. Running rake tasks
 
 To execute rake tasks, run:
 
 ```
 foreman run rake [NAMESPACE]:[TASK_NAME]
 ```
+
+## Extras
+
+### Setting up Google Sheets Integration
+
+If you want to implement Google Sheets and interact with the form for joining new users, follow the instructions below to enable reCAPTCHA v3 and set up the Google Sheets API and Google Drive API.
+
+</br>
+
+#### <b>Enable Recaptcha v3</b>
+
+reCAPTCHA helps protect your sites from fraudulent activities, spam, and abuse. To start using reCAPTCHA, follow these steps:
+
+1. Sign up for an API key pair for your site by visiting the [reCAPTCHA admin page](http://www.google.com/recaptcha/admin). Generate your `SITE KEY` and `SECRET KEY`.
+
+2. Set the environment variables by editing the `.env` file. Replace the values with the following:
+
+- `RECAPTCHA_ENABLED`: Enable or disable Recaptcha (`'true'` or `'false'`).
+- `RECAPTCHA_SITE_KEY`: Use this key in your JSX files.
+- `RECAPTCHA_SECRET_KEY`: Use this key to verify the user's response.
+
+</br>
+
+#### <b>Set up Google Sheets API & Google Drive API</b>
+
+To interact with Google Sheets, you need to set up the Google Sheets API and Google Drive API. Follow these steps:
+
+1. Go to the [Google Cloud API Console](https://console.cloud.google.com/apis/) and create a new project.
+
+2. Enable the Google Drive API by clicking on "Enable API" and searching for the Google Drive API.
+
+3. Create credentials for a Web Server to access Application Data.
+
+4. Name the service account and grant it a Project Role of Editor.
+
+5. Download the JSON file that contains your credentials.
+
+6. Move the downloaded JSON file to the location where `google-credentials.json.template` is located in this project. Rename the file to `google-credentials.json`.
+
+7. In the Google Cloud API Console, also enable the Google Sheets API (this step is important).
+
+8. Create a Google Spreadsheet file in your Google Drive. Copy the title or key of the spreadsheet and paste it in `lead_registration_service.rb`.
+
+9. Share the document with the email address found inside the `google-credentials.json` file (the `client_email` value).
+
+</br>
+
+For better understanding, you can refer to the following guides:
+
+- https://www.twilio.com/blog/google-spreadsheets-ruby-html
+- https://github.com/wnbrb/google-drive-ruby/blob/master/doc/authorization.md#service-account
+
+</br>
 
 ## Contributing 🤝
 
@@ -91,6 +144,7 @@ foreman run rake [NAMESPACE]:[TASK_NAME]
 
 - Note that your pull request may require one or more tests. Tests are required for almost all backend changes, and all frontend logic-related changes. Style or copy changes do not require you to write a test.
 - For a style or copy change, please provide side-by-side screenshots showing how the app looks before and after your changes.
+- When working on the admin area, controllers for the admin area should inherit from `AdminController` so the layout is properly applied.
 
 ## Contributor Resources 📚
 
@@ -113,7 +167,7 @@ Need some help contributing to our app? Check out the resources below for more i
 
 - [Forking and cloning a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 - [Working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks)
-- [Creating and deleting branches](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
+- [Creating and deleting branches](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
 - [Commit guide](https://github.com/git-guides/git-commit)
 - [Creating a pull request from a fork](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 

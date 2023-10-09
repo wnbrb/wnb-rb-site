@@ -1,0 +1,11 @@
+<%- if object.errors.any? %>
+  <div class="alert alert-danger z-3 alert-dismissible fade show" role="alert">
+    <p class="font-normal"><%= pluralize(object.errors.count, "error") %> prohibited this event from being saved:</p>
+    <ul class="mb-0">
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>

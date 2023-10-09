@@ -11,7 +11,7 @@ const InfoCard = ({ title, section, icon, children }) => {
         <div className="info-card">
             <div className="max-w-md">
                 {children}
-                <h3 className="text-2xl font-bold my-2">{title}</h3>
+                <h2 className="text-2xl font-bold my-2">{title}</h2>
                 {section}
             </div>
             {iconSection}

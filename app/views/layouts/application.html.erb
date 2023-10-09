@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WNB.rb</title>
+    <meta charset="UTF-8"/>
+    <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:200,300,400,500,600,700,800,900">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV['GA_ID'] %>"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', "<%= ENV['GA_ID'] %>");
-    </script>
+    <meta name="ahrefs-site-verification" content="278d483f145fb715ab32bcaee341408d07e8705b743354e9dac0e2ec8da33e29">
+    <meta name="description" content="<%= meta_description %>"/>
+    <link href="<%= canonical_url %>" hreflang="en-us" rel="alternate"/>
+    <link href="<%= canonical_url %>" rel="canonical"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <%- if ENV['GA_ID'] != "YOUR-GOOGLE-ANALYTICS-ID-HERE" %>
+      <%= render partial: 'layouts/google_analytics' %>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,8 +21,8 @@
     <%= javascript_pack_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
-
-  <body>
+  <%- body_class = 'admin' if controller_name == 'sessions' %>
+  <body class=<%= body_class %>>
     <%= yield %>
     <div id="root" class="min-w-full">
   </body>

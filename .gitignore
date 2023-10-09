@@ -46,3 +46,10 @@ package-lock.json
 # Rubymine
 .idea
 .env
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+google-credentials.json
+
+# Ignore asdf version file
+.tool-versions

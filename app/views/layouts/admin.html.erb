@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists - Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="ahrefs-site-verification" content="278d483f145fb715ab32bcaee341408d07e8705b743354e9dac0e2ec8da33e29">
+    <link href="<%= canonical_url %>" hreflang="en-us" rel="alternate"/>
+    <link href="<%= canonical_url %>" rel="canonical"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_include_tag "admin", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "admin" %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+  </head>
+  <body class="admin d-flex flex-column min-vh-100 pt-5" data-controller="hello">
+    <%= render "layouts/admin/header" %>
+    <%= render "layouts/admin/flashes" %>
+    <main class="container-md flex-grow-1 pt-5">
+      <%= yield %>
+    </main>
+  </body>
+</html>

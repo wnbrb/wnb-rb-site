@@ -1,9 +1,5 @@
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
-
-<br/>
-
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<h1 class="visually-hidden">Future Dashboard</h1>
+<p class="text-center fs-1 fw-bold">Comming soon...</p>
+<div class="col-8 col-sm-5 mx-auto">
+  <%= image_tag asset_path("admin/dashboard/under_construction.svg"), class:"mw-100 w-auto", height: 300 %>
+</div>

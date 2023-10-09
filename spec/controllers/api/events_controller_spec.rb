@@ -13,32 +13,21 @@ RSpec.describe Api::EventsController, type: :controller do
 
   describe 'GET #past' do
     before do
-      july_meetup =
-        Meetup.create(
-          title: 'July Meetup',
-          location: 'virtual',
-          date: DateTime.new(2021, 7, 31, 16).utc,
-        )
-      Meetup.create(
-        title: 'August Meetup',
-        location: 'virtual',
-        date: DateTime.new(2021, 8, 31, 16).utc,
-      )
+      july_meetup = create(:event, title: 'July Meetup', date: DateTime.new(2021, 7, 31, 16).utc)
+      create(:event, title: 'August Meetup', date: DateTime.new(2021, 8, 31, 16).utc)
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now + 1.week)
 
       speaker =
-        Speaker.create(
+        create(
+          :speaker,
           name: 'Speaker Name',
-          tagline: 'Software Developer',
-          bio: 'Lorem Ipsum',
-          image_url: 'https://picsum.photos/200',
           links: {
             twitter: 'http://example.com/twitter-link',
             mastodon: 'http://example.com/mastodon-link',
-            personal_website: 'http://example.com/personal-website-link',
-          }
+            website: 'http://example.com/personal-website-link',
+          },
         )
-      EventSpeaker.create(
+      Talk.create(
         event: july_meetup,
         speaker: speaker,
         talk_title: 'Some talk title',
@@ -71,11 +60,13 @@ RSpec.describe Api::EventsController, type: :controller do
       july_meetup = body['data']['2021']['July'].first
 
       expect(july_meetup['speakers'].first['name']).to eq('Speaker Name')
-      expect(july_meetup['speakers'].first['links']).to eq({
-        'twitter' => 'http://example.com/twitter-link',
-        'mastodon' => 'http://example.com/mastodon-link',
-        'personal_website' => 'http://example.com/personal-website-link',
-      })
+      expect(july_meetup['speakers'].first['links']).to eq(
+        {
+          'twitter' => 'http://example.com/twitter-link',
+          'mastodon' => 'http://example.com/mastodon-link',
+          'website' => 'http://example.com/personal-website-link',
+        },
+      )
     end
 
     it 'includes talk titles' do
@@ -83,24 +74,24 @@ RSpec.describe Api::EventsController, type: :controller do
       body = JSON.parse(response.body)
 
       july_meetup = body['data']['2021']['July'].first
-      expect(july_meetup['event_speakers'].first['talk_title']).to eq('Some talk title')
+      expect(july_meetup['talks'].first['talk_title']).to eq('Some talk title')
     end
   end
 
-  describe 'GET #past_by_month' do
+  describe 'GET #past_by_month_day' do
     before do
       Meetup.create(title: 'August event', location: 'virtual', date: DateTime.new(2021, 8, 1))
     end
 
     it 'returns one event for a given month' do
-      get :past_by_month, params: { year: '2021', month: '8' }
+      get :past_by_month_day, params: { year: '2021', month: '8', day: 1 }
       expect(response).to have_http_status(200)
       body = JSON.parse(response.body)
       expect(body['data']['title']).to eq('August event')
     end
 
     it 'returns a 404 when no event exists for that month' do
-      get :past_by_month, params: { year: '2021', month: '11' }
+      get :past_by_month_day, params: { year: '2021', month: '11', day: 1 }
       expect(response).to have_http_status(404)
     end
   end
@@ -108,26 +99,12 @@ RSpec.describe Api::EventsController, type: :controller do
   describe 'GET #upcoming' do
     before do
       august_meetup =
-        Meetup.create(
-          title: 'August Meetup',
-          location: 'virtual',
-          date: DateTime.new(2022, 8, 31, 16).utc,
-        )
-      Meetup.create(
-        title: 'September Meetup',
-        location: 'virtual',
-        date: DateTime.new(2022, 9, 25, 16).utc,
-      )
+        create(:event, title: 'August Meetup', date: DateTime.new(2022, 8, 31, 16).utc)
+      create(:event, title: 'September Meetup', date: DateTime.new(2022, 9, 25, 16).utc)
       Panel.create(title: 'Future Panel', location: 'Denver, Colorado', date: DateTime.now - 1.week)
 
-      speaker =
-        Speaker.create(
-          name: 'Speaker Name',
-          tagline: 'Software Developer',
-          bio: 'Lorem Ipsum',
-          image_url: 'https://picsum.photos/200',
-        )
-      EventSpeaker.create(
+      speaker = create(:speaker, name: 'Speaker Name')
+      Talk.create(
         event: august_meetup,
         speaker: speaker,
         talk_title: 'Some talk title',

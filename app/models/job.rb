@@ -1,5 +1,20 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: jobs
+#
+#  id                :bigint           not null, primary key
+#  company           :string
+#  description       :text
+#  image_url         :string
+#  link              :string
+#  location          :string
+#  sponsorship_level :integer
+#  title             :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
 class Job < ApplicationRecord
   enum sponsorship_level: %i[opal sapphire emerald ruby], _suffix: true
 

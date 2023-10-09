@@ -6,9 +6,7 @@ import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
 import InfoCard from '../home/InfoCard';
-import SponsorsTile from 'components/SponsorsTile';
 
-import 'stylesheets/page';
 import 'stylesheets/home';
 
 import PodcastImageRubyonRails from 'images/podcast-ruby-on-rails.png';
@@ -59,21 +57,17 @@ const infoCardData = [
 const Home = () => (
     <>
         <Helmet>
-            <title>WNB.rb</title>
+            <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
         </Helmet>
 
         <SharedLayout>
             <section className="hero-container">
                 <div className="hero">
-                    <PageTitle text="WNB.rb">
+                    <PageTitle text="WNB.rb" altText="Women and Non-Binary Rubyists">
                         <p className="mt-3 max-w-[14rem]">
                             A virtual community for women and non-binary Rubyists.
                         </p>
-                        <a
-                            href="https://tinyurl.com/join-wnb-rb"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
+                        <a href="/join-us">
                             <Button type="secondary" className="mt-3">
                                 Join WNB.rb
                             </Button>
@@ -89,7 +83,7 @@ const Home = () => (
                 <PodcastTile podcasts={podcasts} />
             </section>
 
-            <section className="info-card-section">
+            <section className="info-card-section mb-12">
                 {infoCardData.map((card) => {
                     return (
                         <InfoCard
@@ -100,10 +94,6 @@ const Home = () => (
                         ></InfoCard>
                     );
                 })}
-            </section>
-
-            <section className="sponsors">
-                <SponsorsTile />
             </section>
         </SharedLayout>
     </>

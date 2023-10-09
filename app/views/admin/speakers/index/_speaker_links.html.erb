@@ -1,0 +1,25 @@
+<% if speaker.empty_links? %>
+  <span>-</span>
+<% else %>
+  <% if speaker.github.present? %>
+    <i class="bi bi-github" alt="github" title="github"></i>
+  <% end %>
+  <% if speaker.mastodon.present? %>
+    <i class="bi bi-mastodon" alt="mastodon" title="mastodon"></i>
+  <% end %>
+  <% if speaker.linkedin.present? %>
+    <i class="bi bi-linkedin" alt="linkedin" title="linkedin"></i>
+  <% end %>
+  <% if speaker.twitter.present? %>
+    <i class="bi bi-twitter" alt="twitter" title="twitter"></i>
+  <% end %>
+  <% if speaker.website.present? %>
+    <i class="bi bi-globe" alt="personal website" title="personal website"></i>
+  <% end %>
+  <% if speaker.other.present? %>
+    <i class="bi bi-link-45deg" alt="other social link" title="other social link"></i>
+  <% end %>
+<% end %>
+
+
+

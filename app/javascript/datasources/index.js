@@ -49,6 +49,29 @@ export const postJobsAuthenticate = async (password) => {
     return await result.json();
 };
 
+export const submitLeadForm = async (info) => {
+    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute('content');
+    return fetch(`${API_ROOT}/register-user`, {
+        method: 'post',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrf,
+        },
+        body: JSON.stringify(info),
+    })
+        .then(async (resp) => {
+            const responseStatus = resp.status;
+            const json = await resp.json();
+
+            return {
+                status: responseStatus,
+                json: json,
+            };
+        })
+        .catch((err) => err);
+};
+
 export const donationAmounts = (environment) => {
     return environment === 'development' ? testDonationAmounts : productionDonationAmounts;
 };
@@ -75,8 +98,8 @@ const productionDonationAmounts = [
     { value: 1000, link: 'https://buy.stripe.com/8wMeVAbl710mdEY009' },
 ];
 
-export const getPastMeetup = async (year, month) => {
-    const result = await fetch(`${API_ROOT}/events/${year}/${month}`);
+export const getPastMeetup = async (year, month, day) => {
+    const result = await fetch(`${API_ROOT}/events/${year}/${month}/${day}`);
     const json = await result.json();
     return json.data;
 };

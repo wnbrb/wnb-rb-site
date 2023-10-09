@@ -1,11 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-    mode: 'jit',
-    content: {
-        enabled: ['production', 'staging'].includes(process.env.NODE_ENV),
-        content: ['./app/views/**/*.html.erb', './app/javascript/**/*.jsx'],
-    },
+    content: ['./app/views/**/*.html.erb', './app/javascript/**/*.jsx'],
     presets: [],
     theme: {
         screens: {
@@ -30,7 +26,9 @@ module.exports = {
             pink: colors.pink,
             wnbrb: {
                 pink: {
+                    dark: '#F59E98',
                     default: '#DF7270',
+                    medium: '#FFE2E2',
                     light: '#FFF3F3',
                 },
                 orange: {
@@ -864,7 +862,6 @@ module.exports = {
     plugins: [
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
-        require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
     ],
 };

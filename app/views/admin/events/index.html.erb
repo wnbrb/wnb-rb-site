@@ -1,41 +1,47 @@
-<div class="mt-3 ml-3">
-  <!-- TODO: Issue 22 - Add Create Event Page -->
-  <%= link_to 'Create new Event', '#' %>
+<h1 class="mb-4">Event List</h1>
+<div class="row">
+  <div class="col">
+    <%= link_to new_admin_event_path, class: "btn btn-primary btn-md mb-4" do %>
+      Create new Event
+      <i class="bi bi-plus fw-semibold"></i>
+    <% end %>
+  </div>
 </div>
-
-<div class="m-3">
-  <% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
-    </div>
-  <% end %>
-  <table class="text-center">
-    <thead class="border-2">
-     <tr>
-        <th scope="col" class="p-3">Title</th>
-        <th scope="col" class="p-3">Type</th>
-        <th scope="col" class="p-3">Speakers</th>
-        <th scope="col" class="p-3">Date</th>
-        <th scope="col" class="p-3">Location</th>
-        <th scope="col" class="p-3">Description</th>
-        <th scope="col" class="p-3">Actions</th>
-     </tr>
-    </thead>
-    <tbody>
-      <% @events.each do |event| %>
-        <tr class="border-2">
-          <td class="p-3"><%= event.title %></td>
-          <td class="p-3"><%= event.type %></td>
-          <td class="p-3"><%= event.speakers.map(&:name).join(", ") %></td>
-          <td class="p-3"><%= event.date.strftime('%B %d, %Y %I:%M%p %:z') %></td>
-          <td class="p-3"><%= event.location %></td>
-          <td class="p-3"><%= event.description %></td>
-          <td class="p-3">
-            <%= link_to 'Edit', edit_admin_event_path(event) %>
-            <%= link_to 'Delete', admin_event_path(event), method: :delete %>
-          </td>
+<div class="row">
+  <div class="col">
+    <div class="table-responsive">
+      <table class="table table-sm text-center table-hover">
+        <thead class="border-2">
+        <tr class="table-primary">
+            <th scope="col" class="p-3">ID</th>
+            <th scope="col" class="p-3">Title</th>
+            <th scope="col" class="p-3">Type</th>
+            <th scope="col" class="p-3">Speakers</th>
+            <th scope="col" class="p-3">Date</th>
+            <th scope="col" class="p-3">Location</th>
+            <th scope="col" class="p-3">Description</th>
+            <th scope="col" class="p-3">Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+        </thead>
+        <tbody>
+          <% @events.each do |event| %>
+
+            <tr class="border-2">
+              <td class="p-3"><%= event.id %></td>
+              <td class="p-3"><%= event.title %></td>
+              <td class="p-3"><%= event.type %></td>
+              <td class="p-3"><%= event.speakers.map(&:name).join(", ") %></td>
+              <td class="p-3"><%= event.date.strftime('%B %d, %Y %I:%M%p %:z') %></td>
+              <td class="p-3"><%= event.location %></td>
+              <td class="p-3"><%= truncate_html(event.description) %></td>
+              <td class="p-3">
+                <%= link_to 'Edit', edit_admin_event_path(event) %>
+                <%= button_to "Delete", admin_event_url(event), form_class: "", class: "link-primary border-0 bg-transparent text-decoration-underline", method: :delete %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

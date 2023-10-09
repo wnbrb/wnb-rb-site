@@ -61,6 +61,9 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # Debug BootStrap
+  config.sass.inline_source_maps = true
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -69,4 +72,8 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Sets the returned relation to strict_loading mode.
+  # This will raise an error if the record tries to lazily load an association.
+  config.active_record.strict_loading_by_default = true
 end

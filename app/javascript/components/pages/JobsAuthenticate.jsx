@@ -7,7 +7,6 @@ import Button from 'components/Button';
 import Card from 'components/Card';
 import { postJobsAuthenticate } from '../../datasources';
 
-import 'stylesheets/page';
 import 'stylesheets/jobs_authenticate';
 import { UnauthorizedError } from '../../errors';
 
@@ -66,12 +65,7 @@ const JobsAuthenticate = () => {
                             <p className="text-sm mt-5">
                                 The WNB.rb job board is password protected. You can find the
                                 password in the WNB.rb Slack workspace. To join WNB.rb on Slack,{' '}
-                                <a
-                                    href="https://tinyurl.com/join-wnb-rb"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                    className="underline"
-                                >
+                                <a href="/join-us" className="underline">
                                     fill out this form.
                                 </a>
                             </p>
@@ -81,8 +75,12 @@ const JobsAuthenticate = () => {
                         <div className="flex flex-row flex-wrap items-center justify-center md:justify-between text-lg">
                             Want to post a job?
                             <Button type="white" className="mt-3 md:mt-0">
-                                <a href="/sponsor-us" target="_blank" rel="noopener noreferrer">
-                                    Sponsor Us
+                                <a
+                                    href="/partner-with-us"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Partner with Us
                                 </a>
                             </Button>
                         </div>

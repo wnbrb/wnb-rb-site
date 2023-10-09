@@ -2,6 +2,9 @@ name: Tests
 on: [pull_request]
 jobs:
   test:
+    strategy:
+      matrix:
+        ruby: ['3.2.1', head]
     runs-on: ubuntu-20.04
     services:
       postgres:
@@ -21,14 +24,16 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.3
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - name: Install Bundler
-        run: gem install bundler:2.1.4
-      - name: Install Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 19.2.0
+        run: gem install bundler:2.4.5
+      - name: Run yarn commands
+        run: |
+          yarn install
+          yarn build
+          yarn build:css
+          yarn build:purgecss
       - name: Setup the Rails application
         env:
           RAILS_ENV: test

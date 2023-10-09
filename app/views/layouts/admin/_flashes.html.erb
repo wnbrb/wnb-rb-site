@@ -1,0 +1,10 @@
+<% if flash.any? %>
+  <div class="container-md alert alert-info mt-5 position-fixed start-0 end-0 alert-dismissible fade show mx-1 mx-md-3 mx-lg-auto z-3" role="alert">
+    <ul class="list-unstyled mb-0">
+      <% flash.each do |type, msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
