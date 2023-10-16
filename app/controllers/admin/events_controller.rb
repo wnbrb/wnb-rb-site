@@ -66,10 +66,15 @@ module Admin
       @talk.id = params[:talk_id] if params[:talk_id] != 'create_talk'
 
       if @talk.valid?
-        render 'admin/events/form/_card_talk_new', locals: { talk: @talk, talk_id: talk_id }
+        render 'admin/events/form/_card_talk_new',
+               locals: {
+                 talk: @talk,
+                 talk_id: talk_id,
+               },
+               formats: [:turbo_stream]
       else
         @url = generate_talk_admin_events_path(talk_id: talk_id)
-        render :set_talk, status: :bad_request
+        render :set_talk, status: :bad_request, formats: [:turbo_stream]
       end
     end
 

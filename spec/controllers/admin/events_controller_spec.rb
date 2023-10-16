@@ -13,7 +13,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is not admin' do
-      let(:user) { FactoryBot.create(:user) }
+      let(:user) { create(:user) }
       before { sign_in user }
 
       it 'returns 401' do
@@ -23,7 +23,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
-      let(:user) { FactoryBot.create(:user, :admin) }
+      let(:user) { create(:user, :admin) }
       before { sign_in user }
 
       it 'returns 200' do
@@ -35,7 +35,7 @@ RSpec.describe Admin::EventsController, type: :controller do
 
   describe 'GET #edit' do
     context 'when user is not authenticated' do
-      let(:event) { FactoryBot.create(:event) }
+      let(:event) { create(:event) }
 
       it 'returns 302' do
         get :edit, params: { id: event.id }
@@ -45,9 +45,9 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is not admin' do
-      let(:user) { FactoryBot.create(:user) }
+      let(:user) { create(:user) }
       before { sign_in user }
-      let(:event) { FactoryBot.create(:event) }
+      let(:event) { create(:event) }
 
       it 'returns 401' do
         get :edit, params: { id: event.id }
@@ -56,9 +56,9 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
-      let(:user) { FactoryBot.create(:user, :admin) }
+      let(:user) { create(:user, :admin) }
       before { sign_in user }
-      let(:event) { FactoryBot.create(:event) }
+      let(:event) { create(:event) }
 
       it 'returns 200' do
         get :edit, params: { id: event.id }
@@ -69,7 +69,7 @@ RSpec.describe Admin::EventsController, type: :controller do
 
   describe 'PUT #update' do
     context 'when user is not authenticated' do
-      let(:event) { FactoryBot.create(:event) }
+      let(:event) { create(:event) }
 
       it 'returns 302' do
         put :update, params: { id: event.id }
@@ -79,9 +79,9 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is not admin' do
-      let(:user) { FactoryBot.create(:user) }
+      let(:user) { create(:user) }
       before { sign_in user }
-      let(:event) { FactoryBot.create(:event) }
+      let(:event) { create(:event) }
 
       it 'returns 401' do
         post :update, params: { id: event.id }
@@ -90,9 +90,9 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
-      let(:user) { FactoryBot.create(:user, role: User::ADMIN) }
+      let(:user) { create(:user, role: User::ADMIN) }
       before { sign_in user }
-      let(:event) { FactoryBot.create(:event) }
+      let(:event) { create(:event) }
 
       it 'returns 302' do
         post :update, params: { id: event.id, event: { description: 'Great event' } }
@@ -121,7 +121,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is not admin' do
-      let(:user) { FactoryBot.create(:user) }
+      let(:user) { create(:user) }
       before { sign_in user }
 
       it 'returns 401' do
@@ -132,7 +132,7 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
-      let(:user) { FactoryBot.create(:user, :admin) }
+      let(:user) { create(:user, :admin) }
       before { sign_in user }
 
       it 'returns 302' do
@@ -193,6 +193,131 @@ RSpec.describe Admin::EventsController, type: :controller do
 
         expect(response).to redirect_to(new_user_session_path)
         expect(Event.exists?(event.id)).to be(true)
+      end
+    end
+  end
+
+  describe 'GET #set_talk' do
+    context 'when user is not authenticated' do
+      it 'returns 302' do
+        get :set_talk, params: { talk_id: 'new_talk' }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
+
+    context 'when user is not admin' do
+      let(:user) { create(:user) }
+      before { sign_in user }
+
+      it 'returns 401' do
+        get :set_talk, params: { talk_id: 'new_talk' }
+        expect(response).to have_http_status(401)
+      end
+    end
+
+    context 'when user is admin' do
+      let(:user) { create(:user, :admin) }
+      before { sign_in user }
+
+      context 'when talk_id is new_talk' do
+        it 'assigns a new Talk object to @talk' do
+          get :set_talk, params: { talk_id: 'new_talk' }, format: :turbo_stream
+          expect(controller.instance_variable_get(:@talk)).to be_a_new(Talk)
+        end
+
+        it 'assigns the correct URL to @url' do
+          get :set_talk, params: { talk_id: 'new_talk' }, format: :turbo_stream
+          expect(controller.instance_variable_get(:@url)).to eq(
+            generate_talk_admin_events_path(talk_id: 'create_talk'),
+          )
+        end
+      end
+
+      context 'when talk_id is not new_talk' do
+        let!(:talk) { create(:talk, :with_event) }
+        before do
+          params =
+            ActionController::Parameters.new(
+              {
+                event: {
+                  talks_attributes: {
+                    talk.id.to_s => {
+                      _destroy: false,
+                      id: talk.id,
+                      speaker_id: talk.speaker.id,
+                      event_id: talk.event.id,
+                    },
+                  },
+                },
+                talk_id: talk.id.to_s,
+              },
+            )
+          allow(controller).to receive(:params).and_return(params)
+        end
+
+        it 'assigns an existing Talk object to @talk' do
+          get :set_talk, params: { talk_id: talk.id }, format: :turbo_stream
+          expect(controller.instance_variable_get(:@talk)).to eq(talk)
+        end
+
+        it 'assigns the correct URL to @url' do
+          get :set_talk, params: { talk_id: talk.id }, format: :turbo_stream
+          expect(controller.instance_variable_get(:@url)).to eq(
+            generate_talk_admin_events_path(talk_id: talk.id),
+          )
+        end
+      end
+    end
+  end
+
+  describe 'POST #generate_talk' do
+    let(:talk) { instance_double(Talk) }
+    let(:talk_params) { { foo: 'bar' } }
+    let(:user) { create(:user, :admin) }
+
+    before do
+      sign_in user
+      allow(Talk).to receive(:new).and_return(talk)
+      allow(talk).to receive(:object_id).and_return(123)
+      allow(controller).to receive(:generate_talk_admin_events_path).and_return(
+        '/admin/events/generate_talk',
+      )
+    end
+
+    context 'when talk is valid' do
+      before do
+        allow(controller).to receive(:talk_params).and_return(talk_params)
+        allow(talk).to receive(:valid?).and_return(true)
+        allow(talk).to receive(:id=)
+      end
+
+      it 'renders the _card_talk_new template' do
+        post :generate_talk, params: { talk_params: talk_params, talk_id: 'example_talk_id' }
+        expect(response).to render_template('admin/events/form/_card_talk_new')
+      end
+
+      it 'returns a ok status' do
+        post :generate_talk, params: { talk_params: talk_params, talk_id: 'example_talk_id' }
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    context 'when talk is not valid' do
+      before do
+        allow(controller).to receive(:talk_params).and_return(talk_params)
+        allow(talk).to receive(:valid?).and_return(false)
+        allow(talk).to receive(:id=)
+      end
+
+      it 'renders the set_talk template' do
+        post :generate_talk, params: { talk_params: talk_params, talk_id: 'example_talk_id' }
+        expect(response).to render_template('admin/events/set_talk')
+      end
+
+      it 'returns a bad_request status' do
+        post :generate_talk, params: { talk_params: talk_params, talk_id: 'example_talk_id' }
+        expect(response).to have_http_status(:bad_request)
       end
     end
   end

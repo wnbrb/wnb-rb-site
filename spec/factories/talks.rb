@@ -7,7 +7,15 @@ FactoryBot.define do
     talk_description { Faker::Lorem.paragraph }
 
     trait :with_event do
-      association :event
+      before(:create) do |talk|
+        event = create(:event)
+        event.talks << talk
+      end
+
+      before(:build) do |talk|
+        event = build(:event)
+        event.talks << talk
+      end
     end
   end
 end
