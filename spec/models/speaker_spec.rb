@@ -31,7 +31,7 @@ RSpec.describe Speaker, type: :model do
     it 'orders speakers by name' do
       speaker_b = create(:speaker, name: 'B Speaker')
       speaker_a = create(:speaker, name: 'A Speaker')
-      expect(Speaker.ordered_by_name).to eq([speaker_a, speaker_b])
+      expect(Speaker.all).to eq([speaker_a, speaker_b])
     end
   end
   context 'when links are not present' do

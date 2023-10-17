@@ -9,10 +9,15 @@ Rails.application.routes.draw do
                registration: 'register',
              }
 
-  namespace :admin, constraints: { format: 'html' } do
+  namespace :admin do
     get 'dashboard', to: 'dashboard#show'
     resources :speakers, only: %i[index new create edit update]
-    resources :events, only: %i[index new create edit update destroy]
+    resources :events, only: %i[index new create edit update destroy] do
+      collection do
+        get 'set_talk/:talk_id', action: :set_talk, as: :set_talk
+        post 'generate_talk/:talk_id', action: :generate_talk, as: :generate_talk
+      end
+    end
   end
 
   get '/sponsor-us', to: redirect('/partner-with-us')

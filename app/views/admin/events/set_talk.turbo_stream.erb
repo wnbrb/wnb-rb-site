@@ -1,0 +1,38 @@
+<%= turbo_stream.append "remote_modal" do %>
+  <%= turbo_frame_tag :remote_modal, target: :_top do %>
+    <div class="modal fade" data-bs-focus="false" aria-labelledby="talkModalLabel" aria-hidden="true" data-controller="bs-modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <%= form_with model: @talk, url: @url, method: :post, class: "modal-content" do |f| %>
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="talkModalLabel">Set Talk</h2>
+            <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= f.hidden_field :event_id, value: @talk.event_id %>
+            <%= render 'layouts/admin/form_errors', object: @talk %>
+            <div class="field form-floating mb-4">
+              <%= f.text_field :talk_title, class: "form-control" %>
+              <%= f.label :talk_title, "Title" %>
+            </div>
+            <div class="field form-floating mb-4">
+              <%= f.text_area :talk_description, class: "form-control", style: "height: 100px" %>
+              <%= f.label :talk_description, "Description" %>
+            </div>
+            <div class="field form-floating mb-4">
+              <%= f.text_field :talk_video_link, class: "form-control" %>
+              <%= f.label :talk_video_link, "Video link" %>
+            </div>
+            <div class="field form-floating mb-4">
+              <%= f.select :speaker_id, Speaker.pluck(:name, :id), { include_blank: "Select one speaker" }, { data: { controller: "slim-select" }, class: "form-select form-control #{'is-invalid' if f.object.errors[:speaker].any?}" } %>
+              <%= f.label :speaker_id, "Speaker" %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <%=f.submit "Save", class: "btn btn-primary", "data-bs-dismiss": "modal" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

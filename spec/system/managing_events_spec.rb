@@ -27,8 +27,8 @@ RSpec.describe 'Managing events', type: :system do
 
         click_on 'Save'
 
-        expect(page).to have_current_path(admin_events_path)
-        expect(page).to have_text('Event has been created successfully')
+        expect(page).to have_current_path(edit_admin_event_path(Event.last))
+        expect(page).to have_text('Event was successfully created')
         expect(Event.last.title).to eq(new_event.title)
       end
     end

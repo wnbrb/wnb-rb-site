@@ -6,7 +6,7 @@ module Admin
 
     # GET /admin/speakers
     def index
-      @speakers = Speaker.ordered_by_name
+      @speakers = Speaker.all
     end
 
     # GET /admin/speakers/1

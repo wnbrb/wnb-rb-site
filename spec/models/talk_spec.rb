@@ -27,6 +27,22 @@ require 'rails_helper'
 RSpec.describe Talk, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:speaker) }
-    it { is_expected.to belong_to(:event) }
+    it { is_expected.to belong_to(:event).optional }
+  end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:talk_title) }
+    it { is_expected.to validate_presence_of(:talk_description) }
+  end
+
+  describe 'scopes' do
+    describe 'default_scope' do
+      it 'orders talks by id in ascending order' do
+        talk1 = create(:talk, id: 2)
+        talk2 = create(:talk, id: 1)
+
+        expect(Talk.all).to eq([talk2, talk1])
+      end
+    end
   end
 end

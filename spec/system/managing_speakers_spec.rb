@@ -26,9 +26,10 @@ RSpec.describe 'Managing speakers', type: :system do
         fill_in 'Image link', with: new_speaker.image_url
 
         click_on 'Save'
-
         expect(page).to have_text('Speaker was successfully created.')
-        expect(page).to have_current_path(edit_admin_speaker_url(Speaker.last.id))
+        expect(page).to have_current_path(
+          edit_admin_speaker_url(Speaker.find_by(id: Speaker.maximum(:id)).id),
+        )
       end
     end
 

@@ -1,19 +1,19 @@
 <%= form_for [:admin, speaker] do |f| %>
   <%= render "layouts/admin/form_errors", object: f.object %>
   <div class="field form-floating mb-4">
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control shadow-sm" %>
     <%= f.label :name %>
   </div>
   <div class="field form-floating mb-4">
-    <%= f.text_area :bio, rows: 40, class: "form-control", style: "height: 200px" %>
+    <%= f.text_area :bio, rows: 40, class: "form-control shadow-sm", style: "height: 200px" %>
     <%= f.label :bio %>
   </div>
   <div class="field form-floating mb-4">
-    <%= f.text_field :tagline, class: "form-control" %>
+    <%= f.text_field :tagline, class: "form-control shadow-sm" %>
     <%= f.label :tagline %>
   </div>
   <div class="field form-floating mb-4">
-    <%= f.url_field :image_url, class: "form-control" %>
+    <%= f.url_field :image_url, class: "form-control shadow-sm" %>
     <%= f.label :image_url, "Image link" %>
   </div>
 
@@ -30,7 +30,7 @@
             <div class="mb-3">
               <div class="input-group">
                 <%= f.label link.to_sym, class: "input-group-text" %>
-                <%= f.text_field link.to_sym, class: "form-control", placeholder: "https://socialmedia.url", aria: { label: link.capitalize, describedby: link  } %>
+                <%= f.text_field link.to_sym, class: "form-control shadow-sm", placeholder: "https://socialmedia.url", aria: { label: link.capitalize, describedby: link  } %>
               </div>
             </div>
           <% end %>

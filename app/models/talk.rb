@@ -25,5 +25,9 @@
 #
 class Talk < ApplicationRecord
   belongs_to :speaker
-  belongs_to :event
+  belongs_to :event, optional: true
+
+  validates :talk_title, :talk_description, presence: true
+
+  default_scope { order(id: :asc) }
 end
