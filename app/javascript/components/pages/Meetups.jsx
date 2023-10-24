@@ -1,98 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types';
 import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
 import LoadingSpinner from 'components/LoadingSpinner';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
+import Meetup from '../meetups/MeetUp';
+import YearSection from '../meetups/YearSection';
+import MonthSection from '../meetups/MonthSection';
 
 import 'stylesheets/meetup';
-
-const YearSection = ({ children, year }) => (
-    <section key={year} className="p-10">
-        <h2 className="mb-8 text-4xl font-bold">{year}</h2>
-        <ul className="flex flex-col">{children}</ul>
-    </section>
-);
-
-YearSection.propTypes = {
-    year: PropTypes.string,
-    children: PropTypes.node,
-};
-
-const MonthSection = ({ children, month }) => (
-    <li key={month} className="meetups__month flex flex-col items-start md:flex-row">
-        <div className="meetups__month--name w-36">
-            <h3 className="py-1 px-2 mb-4 w-min border-2 border-red-400 rounded uppercase text-md text-red-400 md:ml-auto">
-                {month}
-            </h3>
-        </div>
-        <div className="meetups__card--border hidden w-px self-stretch mx-6 border-l border-gray-200 md:block" />
-        <ul className="p-4 flex flex-col gap-y-10 md:pt-2 md:p-12 md:gap-y-14 w-full">
-            {children}
-        </ul>
-    </li>
-);
-
-MonthSection.propTypes = {
-    month: PropTypes.string,
-    children: PropTypes.node,
-};
-
-const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
-    const eventWithSpeaker = talks.map((talk) => {
-        const speaker = speakers.find((speak) => speak.id === talk.speaker_id);
-        return { ...talk, speaker };
-    });
-    return (
-        <li className="w-full">
-            <div className="meetups__card flex flex-col pb-12 max-w-[40rem]">
-                <div className="w-full rounded shadow-lg border-t p-10 border-gray-100 overflow-hidden">
-                    <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl">{title}</h4>
-                    {eventWithSpeaker.length > 0 &&
-                        eventWithSpeaker.map(({ id, talk_title, speaker }) => (
-                            <div key={id}>
-                                <h5 className="mb-4 text-xl font-bold text-gray md:text-xl">
-                                    {talk_title}
-                                </h5>
-                                <div className="flex content-center mb-8 text-lg">
-                                    <img
-                                        className="object-cover w-14 h-14 mr-4 rounded-full"
-                                        src={speaker.image_url}
-                                        alt=""
-                                    />
-                                    <div>
-                                        <p className="font-bold text-gray md:text-lg">
-                                            {speaker.name}
-                                        </p>
-                                        <p className="text-sm text-gray md:text-lg">
-                                            {speaker.tagline}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                </div>
-                <div className="bg-gray-200 shadow-lg text-right">
-                    <a href={`/meetups/${year}/${month}/${day}`}>
-                        <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
-                            View
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </li>
-    );
-};
-
-Meetup.propTypes = {
-    speakers: PropTypes.array,
-    title: PropTypes.string,
-    talks: PropTypes.array,
-    year: PropTypes.string,
-    month: PropTypes.string,
-    day: PropTypes.string,
-};
 
 const Meetups = () => {
     const [loading, setLoading] = useState(true);
@@ -110,10 +26,52 @@ const Meetups = () => {
     return (
         <>
             <Helmet>
-                <title>Past Meetups | WNB.rb</title>
+                <title>Meetups | WNB.rb</title>
             </Helmet>
             <SharedLayout>
-                <PageTitleWithContainer text="Past Meetups" />
+                <PageTitleWithContainer text="Meetups"></PageTitleWithContainer>
+                <div className="max-w-[73rem] p-10 mx-auto bg-gray-100">
+                    <p className="mb-2">
+                        <b>Our meetups</b> are held virtually on the last Tuesday of every month at{' '}
+                        <a
+                            href="https://dateful.com/convert/eastern-time-et?t=12pm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            12 pm Eastern Time
+                        </a>{' '}
+                        <i className="bi bi-box-arrow-up-right"></i>. The content is typically
+                        focused on Ruby or career-related topics, with 1-2 talks presented in a
+                        lecture-style format. Anyone who identifies as a woman or non-binary
+                        individual is welcome to attend. Fill in{' '}
+                        <a
+                            href="/join-us"
+                            className="whitespace-nowrap font-medium hover:text-red-400"
+                        >
+                            the Subscription form
+                        </a>{' '}
+                        to receive an invitation to the Google Group, which will opt you into
+                        calendar invites for upcoming meetups.
+                    </p>
+                    <p>
+                        <b>Are you interested in being a speaker?</b>
+                        {` We're constantly on the
+                        lookout for presenters, whether you're an experienced speaker or if this is
+                        your first time. Speaking at a WNB.rb meetup is an excellent opportunity to
+                        enhance your public speaking abilities. If you're interested in giving a
+                        talk, please provide your talk details via `}
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSdmOJxLdSdy74mXYxsr6ZRRhTN95Yxnq2B6n5mhUoGkVmDUGA/viewform"
+                            className="whitespace-nowrap font-medium hover:text-red-400"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            the Talk Proposal form
+                        </a>{' '}
+                        <i className="bi bi-box-arrow-up-right"></i> or feel free to contact{' '}
+                        <i>Adrianna Chang</i> on the WNB.rb Slack for more information.
+                    </p>
+                </div>
                 {loading ? (
                     <LoadingSpinner />
                 ) : (

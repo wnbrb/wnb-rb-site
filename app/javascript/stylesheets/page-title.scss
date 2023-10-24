@@ -1,6 +1,5 @@
 .page-title {
-    @apply relative
-    min-h-[10rem];
+     @apply min-h-[10rem];
     /* overflow-auto; */
 }
 
@@ -9,7 +8,7 @@
 }
 
 .title-container {
-    @apply pt-10 pl-20;
+    @apply pt-10 pl-4 md:pl-20;
 }
 
 .title-text {

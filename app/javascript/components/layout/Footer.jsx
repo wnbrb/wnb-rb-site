@@ -46,7 +46,7 @@ const Footer = () => (
                         Job Board
                     </a>
                     <a className="footer-col-item" href="/meetups">
-                        Past Meetups
+                        Meetups
                     </a>
                 </div>
             </div>
