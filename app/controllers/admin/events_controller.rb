@@ -71,7 +71,7 @@ module Admin
                  talk: @talk,
                  talk_id: talk_id,
                },
-               formats: [:turbo_stream]
+               formats: %i[turbo_stream html]
       else
         @url = generate_talk_admin_events_path(talk_id: talk_id)
         render :set_talk, status: :bad_request, formats: [:turbo_stream]
