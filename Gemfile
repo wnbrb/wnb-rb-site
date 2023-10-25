@@ -10,7 +10,7 @@ gem 'devise', '~>4.9.2'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.4.5'
 gem 'puma', '~> 5.6'
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 7.0.8'
 
 # Use Sass to process CSS
 gem 'sassc-rails', '~> 2.1.2'
