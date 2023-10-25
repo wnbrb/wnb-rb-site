@@ -1849,15 +1849,20 @@
   dependencies:
     prettier ">=2.3.0"
 
-"@rails/actioncable@^7.0", "@rails/actioncable@^7.0.4-3":
+"@rails/actioncable@^7.0":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.7.tgz#03b5faa8642a80211708e8f1754cf424e9228718"
   integrity sha512-NqHf4XDkeVaNk/r+TBo2aAMkjPyRPEfZkSqCTijfWukW1zTZ2XLDfvFzbpRCuWZ6gxItgoa/FkILZm27HRh2yg==
 
-"@rails/activestorage@^7.0.4-3":
-  version "7.0.7"
-  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.0.7.tgz#a23e22bccd61756ba52aff3b8cb43b050ae1ecca"
-  integrity sha512-EoiGMWUmRzYQhOQ1ifTFHuYNdOHP3f0YOhrKsFlshrV8vzkRkip1Ks3BMzW98cYOw7v6PUPmEeBxgb4jY2U2+g==
+"@rails/actioncable@^7.0.8":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.1.1.tgz#e8c49769d41f35a4473133c259cc98adc04dddf8"
+  integrity sha512-ZRJ9rdwFQQjRbtgJnweY0/4UQyxN6ojEGRdib0JkjnuIciv+4ok/aAeZmBJqNreTMaBqS0eHyA9hCArwN58opg==
+
+"@rails/activestorage@^7.0.8":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.1.1.tgz#3f12e8ac784f460f6a9d205744354abd79a525f2"
+  integrity sha512-QGBj+y4fbZt/QMMpjqnpKlzCKpDGTYrvJ+qc0QLis34AfbBLVgRo7kPzmdmeOTtwvWqpcivB9CrjTcV/C/7ruA==
   dependencies:
     spark-md5 "^3.0.1"
 
