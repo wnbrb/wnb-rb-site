@@ -63,7 +63,7 @@ meetup =
 
 Talk.create(
   event: meetup,
-  speaker: jemma,
+  speaker_id: jemma,
   talk_title: 'Intro to Ruby Memoization',
   talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   talk_description:
@@ -113,7 +113,7 @@ meetup2 =
 
 Talk.create(
   event: meetup2,
-  speaker: jemma,
+  speaker_id: jemma.id,
   talk_title: 'Another Talk Title',
   talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   talk_description:
@@ -143,7 +143,7 @@ meetup3 =
 
 Talk.create(
   event: meetup3,
-  speaker: jemma,
+  speaker_id: jemma.id,
   talk_title: 'A talk given at the September meetup',
   talk_video_link: 'https://www.youtube.com/embed/n43O0u77d8o',
   talk_description:
@@ -236,7 +236,7 @@ panel =
     date: DateTime.new(2021, 7, 29, 16).utc,
   )
 
-panel.speakers = [kerstin, gabi, sylvia]
+panel.speakers << [kerstin, gabi, sylvia]
 panel.save
 
 p 'Create an admin'
