@@ -1,5 +1,5 @@
-<%= javascript_pack_tag 'past_meetup' %>
-<%= stylesheet_pack_tag "past_meetup" %>
+<%= append_javascript_pack_tag 'past_meetup' %>
+<%= append_stylesheet_pack_tag "past_meetup" %>
 <%= javascript_tag do %>
   var year = <%= raw(h(params[:year])) %>;
   var month = <%= raw(h(params[:month])) %>;

@@ -5,7 +5,7 @@ start:
 	foreman start
 
 start_client:
-	bin/webpack-dev-server
+	bin/shakapacker-dev-server
 
 start_server:
 	rails server
