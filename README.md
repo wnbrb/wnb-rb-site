@@ -67,7 +67,7 @@ Alternatively, you may run the frontend and backend servers separately with thes
 
 ```
 rails s
-bin/webpack-dev-server
+bin/shakapacker-dev-server
 ```
 
 This may be helpful for debugging, but generally should not be necessary.
