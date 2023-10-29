@@ -31,8 +31,19 @@ RSpec.describe Talk, type: :model do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:talk_title) }
-    it { is_expected.to validate_presence_of(:talk_description) }
+    context 'when the talk is not associated with a panel event' do
+      before { allow(subject).to receive(:panel_event?).and_return(false) }
+
+      it { is_expected.to validate_presence_of(:talk_title) }
+      it { is_expected.to validate_presence_of(:talk_description) }
+    end
+
+    context 'when the talk is associated with a panel event' do
+      before { allow(subject).to receive(:panel_event?).and_return(true) }
+
+      it { is_expected.not_to validate_presence_of(:talk_title) }
+      it { is_expected.not_to validate_presence_of(:talk_description) }
+    end
   end
 
   describe 'scopes' do

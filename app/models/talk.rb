@@ -27,7 +27,11 @@ class Talk < ApplicationRecord
   belongs_to :speaker
   belongs_to :event, optional: true
 
-  validates :talk_title, :talk_description, presence: true
+  validates :talk_title, :talk_description, presence: true, unless: :panel_event?
 
   default_scope { order(id: :asc) }
+
+  def panel_event?
+    event.is_a?(Panel)
+  end
 end
