@@ -15,8 +15,8 @@ gem 'rails', '~> 7.0.8'
 # Use Sass to process CSS
 gem 'sassc-rails', '~> 2.1.2'
 
+gem 'shakapacker', '= 7.1'
 gem 'slack-ruby-client', '~> 2.0.0'
-gem 'webpacker', '~> 6.0.0.rc.6'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jwt', '>= 2.6.0'

@@ -1,4 +1,4 @@
 web: bundle exec rails s
-webpacker: ./bin/webpack-dev-server
+webpacker: ./bin/shakapacker-dev-server
 js: yarn build --watch
 css: yarn build:css --watch

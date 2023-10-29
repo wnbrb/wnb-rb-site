@@ -1,7 +1,7 @@
 /*global grecaptcha*/
 /*eslint no-undef: "error"*/
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
