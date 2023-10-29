@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import propTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 import SharedLayout from 'components/layout/SharedLayout';

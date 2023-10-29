@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import SharedLayout from 'components/layout/SharedLayout';
 import SponsorCard from '../sponsor_us/SponsorCard';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';

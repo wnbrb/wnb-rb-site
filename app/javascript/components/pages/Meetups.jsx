@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { getPastMeetups } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
 import LoadingSpinner from 'components/LoadingSpinner';
