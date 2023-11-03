@@ -4,7 +4,7 @@ jobs:
   test:
     strategy:
       matrix:
-        ruby: ['3.2.1', head]
+        ruby: ['3.2.2', head]
     runs-on: ubuntu-20.04
     services:
       postgres:
