@@ -73,7 +73,6 @@ group :test do
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'selenium-webdriver', '~> 4.15'
   gem 'shoulda-matchers', '~>5.3.0'
-  gem 'webdrivers', '~>5.2.0'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
