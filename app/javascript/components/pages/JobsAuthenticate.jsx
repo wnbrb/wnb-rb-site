@@ -45,9 +45,10 @@ const JobsAuthenticate = () => {
                     <Logo className="h-28" />
                     <Card className="w-full max-w-[30rem] mt-5">
                         <form className="flex flex-col" onSubmit={(e) => handleLogin(e)}>
-                            Password
+                            <label htmlFor="password">Password</label>
                             <input
                                 type="password"
+                                name="password"
                                 className="rounded-lg mt-3"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
