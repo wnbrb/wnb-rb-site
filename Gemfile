@@ -81,3 +81,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # so we can run CI on Ruby head
 gem 'nokogiri', '~> 1.14', force_ruby_platform: true
 
+
+gem "pagy", "~> 6.2"
