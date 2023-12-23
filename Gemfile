@@ -39,6 +39,9 @@ gem 'truncate_html', '~> 0.9.3'
 # quickly call web links
 gem 'httpparty', '~> 0.2'
 
+# pagination
+gem 'pagy', "~> 6.2"
+
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
   gem 'annotate', '~> 3.2.0'
@@ -80,4 +83,3 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Explicitly depend on and compile nokogiri
 # so we can run CI on Ruby head
 gem 'nokogiri', '~> 1.14', force_ruby_platform: true
-

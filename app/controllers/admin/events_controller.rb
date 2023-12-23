@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 module Admin
   class EventsController < AdminController
+    include Pagy::Backend
+
     before_action :authorize_event
     before_action :set_event, only: %w[edit update destroy]
 
     def index
-      @events = Event.includes(:speakers).order(date: :desc)
+      @pagy, @events = pagy(Event.includes(:speakers).order(date: :desc))
     end
 
     def new
