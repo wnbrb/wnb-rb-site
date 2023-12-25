@@ -57,8 +57,8 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
 
   # Run tests
-  gem 'rspec-rails', '~> 6.0.1'
   gem 'rails-controller-testing', '~> 1.0.5'
+  gem 'rspec-rails', '~> 6.0.1'
 end
 
 group :development do
