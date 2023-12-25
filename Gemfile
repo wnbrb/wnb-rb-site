@@ -40,7 +40,7 @@ gem 'truncate_html', '~> 0.9.3'
 gem 'httpparty', '~> 0.2'
 
 # pagination
-gem 'pagy', "~> 6.2"
+gem 'pagy', '~> 6.2'
 
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
@@ -58,7 +58,6 @@ group :development, :test do
 
   # Run tests
   gem 'rspec-rails', '~> 6.0.1'
-
   gem 'rails-controller-testing', '~> 1.0.5'
 end
 
