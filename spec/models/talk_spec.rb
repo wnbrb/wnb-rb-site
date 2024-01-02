@@ -44,6 +44,17 @@ RSpec.describe Talk, type: :model do
       it { is_expected.not_to validate_presence_of(:talk_title) }
       it { is_expected.not_to validate_presence_of(:talk_description) }
     end
+
+    context 'when the talk video link is present' do
+      it 'validates the format of the talk video link' do
+        talk = build(:talk, talk_video_link: 'https://www.youtube.com/embed/VIDEO_CODE')
+        expect(talk).to be_valid
+
+        talk.talk_video_link = 'invalid_link'
+        expect(talk).to be_invalid
+        expect(talk.errors[:talk_video_link]).to include(', please provide a YouTube link in the following format: https://www.youtube.com/embed/VIDEO_ID')
+      end
+    end
   end
 
   describe 'scopes' do

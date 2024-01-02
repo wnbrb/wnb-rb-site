@@ -28,8 +28,14 @@ class Talk < ApplicationRecord
   belongs_to :event, optional: true
 
   validates :talk_title, :talk_description, presence: true, unless: :panel_event?
+  validate :validate_video_link, if: ->(t) { t.talk_video_link.present? }
 
   default_scope { order(id: :asc) }
+
+  def validate_video_link
+    return unless talk_video_link.present? && !talk_video_link.include?('/embed')
+    errors.add(:talk_video_link, ', please provide a YouTube link in the following format: https://www.youtube.com/embed/VIDEO_ID')
+  end
 
   def panel_event?
     event.is_a?(Panel)
