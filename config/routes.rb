@@ -49,4 +49,6 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
   resources :grid
+
+  match '*unmatched', to: 'application#render_not_found', via: :all
 end
