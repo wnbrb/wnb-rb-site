@@ -23,7 +23,8 @@
 .not-found-text-container {
     @apply absolute 
     top-1/2 
-    text-center;
+    text-center
+    w-11/12;
 
     transform: translateY(-50%);
 }
