@@ -52,4 +52,23 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
 
     expect(page).to have_text(meetup.title)
   end
+
+  context 'visit to unknown path' do
+    before do
+      method = Rails.application.method(:env_config)
+      allow(Rails.application).to receive(:env_config).with(no_args) do
+        method.call.merge(
+          'action_dispatch.show_exceptions' => true,
+          'action_dispatch.show_detailed_exceptions' => false,
+          'consider_all_requests_local' => false
+        )
+      end
+    end
+
+    it 'responds with not found page' do
+      visit '/nonexistentpath'
+
+      expect(page).to have_text('404')
+    end
+  end
 end
