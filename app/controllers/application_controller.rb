@@ -12,14 +12,14 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :render_unauthorized
 
+  def render_not_found
+    render('not_found', status: :not_found)
+  end
+
   private
 
   def render_unauthorized
     render status: 401, json: {}
-  end
-
-  def render_not_found
-    render(file: "#{Rails.root}/public/404.html", status: :not_found)
   end
 
   def validate_recaptcha(token_recaptcha)

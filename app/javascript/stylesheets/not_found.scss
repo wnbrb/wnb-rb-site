@@ -1,0 +1,30 @@
+.title-text-lg {
+    @apply text-wnbrb-pink-default
+    text-8xl
+    font-black
+    md:whitespace-nowrap;
+
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 0px 2px 6px rgb(0 0 0 / 15%);
+}
+
+.not-found-container {
+    @apply mt-20
+    mb-4 
+    mx-auto 
+    p-5 
+    flex
+    items-center 
+    justify-center 
+    relative;
+}
+
+.not-found-text-container {
+    @apply absolute 
+    top-1/2 
+    text-center
+    w-11/12;
+
+    transform: translateY(-50%);
+}
