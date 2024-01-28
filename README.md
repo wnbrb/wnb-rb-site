@@ -14,7 +14,9 @@ WNB.rb is a virtual community for women and non-binary Rubyists. This is the rep
 
 All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Slack.
 
-## 1. Getting Started 🏁
+<hr>
+
+### 1. Getting Started 🏁
 
 Before you try to set up this app, make sure you have the following installed on your machine:
 
@@ -25,7 +27,7 @@ Before you try to set up this app, make sure you have the following installed on
 
 You must also fork and clone this repository.
 
-For help getting set up, refer to the [Contributor Resources](#contributor-resources-) section of this document.
+For help getting set up, refer to the [Contributor Resources](#contributor-resources) section of this document.
 
 ### 2. Set up the repo
 
@@ -82,10 +84,17 @@ foreman run rake [NAMESPACE]:[TASK_NAME]
 
 ## Extras
 
+### Creating new migrations
+
+We are utilizing the [data-migrate gem](https://github.com/ilyakatz/data-migrate) to segregate data migrations from schema migrations in our main application.Data migrations can be found in the `db/data` directory, distinct from schema migrations which are located in the `db/migrate` directory. Use the following command to create a new data migration:
+
+```
+rails g data_migration add_this_to_that
+```
+
 ### Setting up Google Sheets Integration
 
 If you want to implement Google Sheets and interact with the form for joining new users, follow the instructions below to enable reCAPTCHA v3 and set up the Google Sheets API and Google Drive API.
-
 </br>
 
 #### <b>Enable Recaptcha v3</b>

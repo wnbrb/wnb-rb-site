@@ -103,6 +103,9 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.2.0)
       railties (>= 6.0.0)
+    data_migrate (9.2.0)
+      activerecord (>= 6.1)
+      railties (>= 6.1)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
@@ -408,6 +411,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.39.2)
   cssbundling-rails (~> 1.1)
+  data_migrate (~> 9.2.0)
   debug (~> 1.7.1)
   devise (~> 4.9.2)
   factory_bot_rails (~> 6.2.0)
