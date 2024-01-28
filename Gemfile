@@ -15,7 +15,7 @@ gem 'rails', '~> 7.0.8'
 # Use Sass to process CSS
 gem 'sassc-rails', '~> 2.1.2'
 
-gem 'shakapacker', '= 7.1'
+gem 'shakapacker', '= 7.2.1'
 gem 'slack-ruby-client', '~> 2.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -81,5 +81,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Explicitly depend on and compile nokogiri
 # so we can run CI on Ruby head
-gem 'mutex_m'
+gem 'mutex_m', '~> 0.2.0'
 gem 'nokogiri', '~> 1.14', force_ruby_platform: true
