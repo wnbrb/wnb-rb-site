@@ -9,13 +9,13 @@ gem 'devise', '~>4.9.2'
 
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.4.5'
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 6.4.2'
 gem 'rails', '~> 7.0.8'
 
 # Use Sass to process CSS
 gem 'sassc-rails', '~> 2.1.2'
 
-gem 'shakapacker', '= 7.1'
+gem 'shakapacker', '= 7.2.1'
 gem 'slack-ruby-client', '~> 2.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -58,7 +58,7 @@ group :development, :test do
 
   # Run tests
   gem 'rails-controller-testing', '~> 1.0.5'
-  gem 'rspec-rails', '~> 6.0.1'
+  gem 'rspec-rails', '~> 6.1.1'
 end
 
 group :development do
@@ -81,5 +81,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Explicitly depend on and compile nokogiri
 # so we can run CI on Ruby head
-gem 'mutex_m'
 gem 'nokogiri', '~> 1.14', force_ruby_platform: true
