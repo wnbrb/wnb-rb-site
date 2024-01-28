@@ -198,7 +198,6 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.3.0)
-    mutex_m (0.2.0)
     net-imap (0.4.2)
       date
       net-protocol
@@ -419,7 +418,6 @@ DEPENDENCIES
   jsbundling-rails (~> 1.1)
   jwt (>= 2.6.0)
   listen (~> 3.3)
-  mutex_m (~> 0.2.0)
   nokogiri (~> 1.14)
   pagy (~> 6.2)
   pg (~> 1.4.5)
