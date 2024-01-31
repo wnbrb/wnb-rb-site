@@ -45,6 +45,8 @@ Rails.application.routes.draw do
     end
 
     post 'register-user', to: 'registrations#register_user'
+
+    resources :donations, only: [:create]
   end
 
   mount ActionCable.server => '/cable'
