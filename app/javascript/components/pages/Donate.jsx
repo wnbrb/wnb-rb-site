@@ -64,6 +64,15 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
         })[0];
     }, [prices, selectedPrice]);
 
+    const [otherSelected, setOtherSelected] = useState(false);
+
+    const donateOtherHandler = () => {};
+
+    const selectSetPrice = (value) => {
+        setSelectedPrice(value);
+        setOtherSelected(false);
+    };
+
     return (
         <div className="flex justify-center">
             <div className="donation-amounts">
@@ -72,19 +81,41 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
                         <button
                             key={price.value}
                             className={`donation-amount ${
-                                selectedPrice === price.value ? 'selected' : null
+                                selectedPrice === price.value && !otherSelected ? 'selected' : null
                             }`}
-                            onClick={() => setSelectedPrice(price.value)}
+                            onClick={() => selectSetPrice(price.value)}
                         >
                             ${price.value.toLocaleString()}
                         </button>
                     );
                 })}
-                <Button type="secondary" className="donate-button">
-                    <a href={selectedPriceObject.link} target="_blank" rel="noopener noreferrer">
-                        Donate ${selectedPriceObject.value.toLocaleString()}
-                    </a>
-                </Button>
+                <form
+                    className={`donation-amount flex-col p-1 ${otherSelected ? 'selected' : null}`}
+                >
+                    <label htmlFor="other">Other</label>
+                    <input
+                        id="other"
+                        type="text"
+                        className="max-w-full m-0 p-1"
+                        onClick={() => setOtherSelected(true)}
+                    />
+                </form>
+                {!otherSelected && (
+                    <Button type="secondary" className="donate-button">
+                        <a
+                            href={selectedPriceObject.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Donate ${selectedPriceObject.value.toLocaleString()}
+                        </a>
+                    </Button>
+                )}
+                {otherSelected && (
+                    <button className="button secondary donate-button" onClick={donateOtherHandler}>
+                        Donate
+                    </button>
+                )}
             </div>
         </div>
     );
