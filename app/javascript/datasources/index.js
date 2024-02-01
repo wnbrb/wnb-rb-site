@@ -77,7 +77,6 @@ export const donationAmounts = (environment) => {
 };
 
 const testDonationAmounts = [
-    { value: 10, link: 'https://buy.stripe.com/test_fZe3cr0hWfIN0i4289' },
     { value: 25, link: 'https://buy.stripe.com/test_14k3crfcQaot7Kw6oq' },
     { value: 50, link: 'https://buy.stripe.com/test_6oEaET9Sw1RXfcY8wz' },
     { value: 75, link: 'https://buy.stripe.com/test_8wM28n4yc7chfcY007' },
@@ -88,7 +87,6 @@ const testDonationAmounts = [
 ];
 
 const productionDonationAmounts = [
-    { value: 10, link: 'https://buy.stripe.com/14k14KcpbcJ4bwQbIK' },
     { value: 25, link: 'https://buy.stripe.com/dR600G74RbF0fN6003' },
     { value: 50, link: 'https://buy.stripe.com/7sI00G60N9wSeJ2bIM' },
     { value: 75, link: 'https://buy.stripe.com/6oEeVA60NbF06cwcMR' },
