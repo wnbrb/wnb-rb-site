@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import propTypes from 'prop-types';
 import SharedLayout from 'components/layout/SharedLayout';
-import Banner from 'components/Banner';
 import Button from 'components/Button';
 import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import { donationAmounts } from 'datasources';
@@ -49,7 +48,6 @@ const Donate = () => {
                         </ul>
                     </div>
                 </div>
-                <OtherAmountBanner />
             </SharedLayout>
         </>
     );
@@ -64,13 +62,59 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
         })[0];
     }, [prices, selectedPrice]);
 
-    const [otherSelected, setOtherSelected] = useState(false);
+    const [customSelected, setCustomSelected] = useState(false);
+    const [customAmount, setCustomAmount] = useState('');
 
-    const donateOtherHandler = () => {};
+    const inputHandler = (e) => {
+        const input = e.target.value;
+        setCustomAmount(input);
+    };
+
+    const donateOtherHandler = () => {
+        if (!isValidNumber(customAmount)) return;
+
+        const newWindow = window.open('', '_blank');
+        const body = { price: customAmount };
+
+        const fetchCheckoutUrl = async () => {
+            const result = await fetch('/api/donations', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body),
+            });
+            if (result.status === 200) {
+                const json = await result.json();
+                setCustomSelected(false);
+                setCustomAmount('');
+                newWindow.location = json.url;
+            }
+        };
+
+        fetchCheckoutUrl();
+    };
 
     const selectSetPrice = (value) => {
         setSelectedPrice(value);
-        setOtherSelected(false);
+        setCustomSelected(false);
+    };
+
+    const isWholeNumber = (value) => {
+        return /^\d{1,}$/.test(value);
+    };
+
+    const isValidNumber = (value) => {
+        return isWholeNumber(value) && parseInt(customAmount, 10) > 0;
+    };
+
+    const customAmtButtonText = () => {
+        return isValidNumber(customAmount)
+            ? `Donate $${parseInt(customAmount, 10).toLocaleString()}`
+            : customAmount === '' || customAmount === '0'
+            ? 'Donate'
+            : 'Please enter a dollar amount';
     };
 
     return (
@@ -81,7 +125,7 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
                         <button
                             key={price.value}
                             className={`donation-amount ${
-                                selectedPrice === price.value && !otherSelected ? 'selected' : null
+                                selectedPrice === price.value && !customSelected ? 'selected' : null
                             }`}
                             onClick={() => selectSetPrice(price.value)}
                         >
@@ -90,17 +134,20 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
                     );
                 })}
                 <form
-                    className={`donation-amount flex-col p-1 ${otherSelected ? 'selected' : null}`}
+                    className={`donation-amount flex-col p-1 ${customSelected ? 'selected' : null}`}
                 >
                     <label htmlFor="other">Other</label>
                     <input
                         id="other"
                         type="text"
                         className="max-w-full m-0 p-1"
-                        onClick={() => setOtherSelected(true)}
+                        onClick={() => setCustomSelected(true)}
+                        onKeyDown={() => setCustomSelected(true)}
+                        value={customAmount}
+                        onChange={inputHandler}
                     />
                 </form>
-                {!otherSelected && (
+                {!customSelected && (
                     <Button type="secondary" className="donate-button">
                         <a
                             href={selectedPriceObject.link}
@@ -111,26 +158,13 @@ const DonationAmounts = ({ selectedPrice, setSelectedPrice }) => {
                         </a>
                     </Button>
                 )}
-                {otherSelected && (
+                {customSelected && (
                     <button className="button secondary donate-button" onClick={donateOtherHandler}>
-                        Donate
+                        {customAmtButtonText()}
                     </button>
                 )}
             </div>
         </div>
-    );
-};
-
-const OtherAmountBanner = () => {
-    return (
-        <Banner>
-            Interested in donating a different amount?
-            <Button type="white" className="ml-0 md:ml-5 mt-5 md:mt-0">
-                <a href={'mailto:organizers@wnb-rb.dev'} target="_blank" rel="noopener noreferrer">
-                    Contact Us
-                </a>
-            </Button>
-        </Banner>
     );
 };
 
