@@ -7,7 +7,6 @@ import 'stylesheets/header.scss';
 
 const Header = () => {
     const links = [
-        { id: 1, text: 'Job Board', href: '/jobs' },
         { id: 2, text: 'Meetups', href: '/meetups' },
         { id: 3, text: 'Partner with Us', href: '/partner-with-us' },
     ];

@@ -16,19 +16,6 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     visit sponsor_us_path
     expect(page).to have_text('Partner with Us')
   end
-  it 'visits jobs page' do
-    visit jobs_path
-
-    expect(page).to have_text('The WNB.rb job board is password protected')
-    expect(page).to have_current_path(jobs_authenticate_path)
-    expect(page).to have_button('View Job Board')
-
-    fill_in 'password', with: 'testing'
-
-    click_on 'View Job Board'
-
-    expect(page).to have_text('Jobs')
-  end
 
   it 'visits join_us page' do
     visit join_us_path

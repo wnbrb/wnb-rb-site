@@ -18,7 +18,7 @@ header {
             }
 
             nav.nav {
-                @apply hidden md:w-full md:flex md:justify-between;
+                @apply hidden md:w-full md:flex md:justify-between ml-5;
 
                 .menu {
                     @apply md:w-full md:self-center;
@@ -27,7 +27,7 @@ header {
                         @apply flex flex-row justify-around lg:justify-start;
 
                         li {
-                            @apply lg:px-10;
+                            @apply lg:px-5;
                             a {
                                 @apply text-gray-600 text-base font-normal leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline;
 

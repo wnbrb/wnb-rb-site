@@ -42,9 +42,6 @@ const Footer = () => (
                 </div>
                 <div className="footer-col">
                     <p className="footer-col-item footer-col-title">Resources</p>
-                    <a className="footer-col-item" href="/jobs">
-                        Job Board
-                    </a>
                     <a className="footer-col-item" href="/meetups">
                         Meetups
                     </a>
