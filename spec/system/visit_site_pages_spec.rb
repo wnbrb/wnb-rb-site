@@ -12,11 +12,6 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     expect(page).to have_text('A virtual community for women and non-binary Rubyists')
   end
 
-  it 'visits sponsor us page' do
-    visit sponsor_us_path
-    expect(page).to have_text('Partner with Us')
-  end
-
   it 'visits join_us page' do
     visit join_us_path
     expect(page).to have_text('Join WNB.rb!')

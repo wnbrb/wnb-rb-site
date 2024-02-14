@@ -20,9 +20,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/sponsor-us', to: redirect('/partner-with-us')
-
-  get '/partner-with-us', to: 'site#sponsor_us'
   get '/meetups', to: 'site#meetups'
   get '/join-us', to: 'site#join_us'
   get '/donate', to: 'site#donate'

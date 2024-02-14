@@ -5,7 +5,7 @@ import Twitter from 'components/icons/Twitter';
 
 import 'stylesheets/footer.scss';
 
-const Footer = () => (
+const Footer = () =>
     <footer>
         <div className="footer">
             <div className="footer-left">
@@ -14,8 +14,8 @@ const Footer = () => (
                     <a className="footer-col-item" href="/join-us">
                         Join WNB.rb
                     </a>
-                    <a className="footer-col-item" href="/partner-with-us">
-                        Partner with Us
+                    <a className="footer-col-item" href="mailto:organizers@wnb-rb.dev">
+                        Contact the Organizers
                     </a>
                     <a className="footer-col-item" href="/donate">
                         Donate
@@ -85,6 +85,6 @@ const Footer = () => (
             </div>
         </div>
     </footer>
-);
+;
 
 export default Footer;
