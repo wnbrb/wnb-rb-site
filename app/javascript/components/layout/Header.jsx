@@ -6,9 +6,7 @@ import Button from 'components/Button';
 import 'stylesheets/header.scss';
 
 const Header = () => {
-    const links = [
-        { id: 1, text: 'Meetups', href: '/meetups' },
-    ];
+    const links = [{ id: 1, text: 'Meetups', href: '/meetups' }];
 
     const [headerState, setHeaderState] = useState({
         className: '',
