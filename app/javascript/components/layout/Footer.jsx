@@ -5,7 +5,7 @@ import Twitter from 'components/icons/Twitter';
 
 import 'stylesheets/footer.scss';
 
-const Footer = () =>
+const Footer = () => (
     <footer>
         <div className="footer">
             <div className="footer-left">
@@ -85,6 +85,5 @@ const Footer = () =>
             </div>
         </div>
     </footer>
-;
-
+);
 export default Footer;
