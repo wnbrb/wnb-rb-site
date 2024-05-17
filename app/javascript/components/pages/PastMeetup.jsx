@@ -6,9 +6,16 @@ import SharedLayout from 'components/layout/SharedLayout';
 import PageTitleWithContainer from 'components/PageTitle';
 import SpeakersList from '../SpeakersList';
 import Microphone from '../icons/Microphone';
+import Github from 'components/icons/Github';
+import Twitter from 'components/icons/Twitter';
+import Linkedin from 'components/icons/LinkedIn';
+import Website from 'components/icons/Website';
+import Mastodon from 'components/icons/Mastodon';
+import Otherlink from 'components/icons/OtherLink';
 import LoadingSpinner from 'components/LoadingSpinner';
 
 import 'stylesheets/meetup';
+import 'stylesheets/footer.scss';
 
 const VideoBlock = ({ videoUrl, title }) => {
     if (!videoUrl) {
@@ -34,8 +41,97 @@ const SpeakerBiosBlock = ({ speakers }) => {
                 <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
             </div>
             <div className="flex flex-wrap items-center gap-5">
-                {speakers?.map(({ id, bio }) => (
-                    <div key={id}>{bio}</div>
+                {speakers?.map(({ id, bio, name, links }) => (
+                    <div key={id}>
+                        <div>{bio}</div>
+                        {Object.keys(links).length > 0 && (
+                            <div className="flex items-center">
+                                <p className="mr-3">More from {name}:</p>
+                                {links.twitter && (
+                                    <a
+                                        href={links.twitter}
+                                        aria-label="Twitter"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Twitter
+                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                                {links.twitter && (
+                                    <a
+                                        href={links.github}
+                                        aria-label="Github"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Github
+                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+
+                                {links.twitter && (
+                                    <a
+                                        href={links.linkedin}
+                                        aria-label="Linkedin"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Linkedin
+                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+
+                                {links.twitter && (
+                                    <a
+                                        href={links.mastodon}
+                                        aria-label="Mastodon"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Mastodon
+                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+
+                                {links.twitter && (
+                                    <a
+                                        href={links.website}
+                                        aria-label="Website"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Website
+                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+
+                                {links.twitter && (
+                                    <a
+                                        href={links.other}
+                                        aria-label="Other"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Otherlink
+                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>
