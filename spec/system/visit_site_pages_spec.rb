@@ -7,6 +7,7 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     stub_const('ENV', ENV.to_hash.merge('JOB_BOARD_PASSWORD' => 'testing'))
     stub_const('ENV', ENV.to_hash.merge('JWT_HMAC_SECRET' => 'testing1'))
   end
+
   it 'visits home page' do
     visit root_path
     expect(page).to have_text('A virtual community for women and non-binary Rubyists')
@@ -33,6 +34,24 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
 
     expect(page).to have_text(meetup.title)
+  end
+
+  it 'visits past meetup and displays speaker with valid links' do
+    meetup = create(:event, date: Date.new(2024, 2, 17), title: "Meetup February 2024")
+    speaker = create(:speaker, :with_valid_links)
+    speaker2 = create(:speaker, links: { github: "https://github.com/speaker2",
+                                        twitter: "https://twitter.com/speaker2",
+                                        mastodon: Faker::Internet.url,
+                                        other: Faker::Internet.url,
+                                        website: Faker::Internet.url,
+                                        linkedin: Faker::Internet.url  })
+    talk = create(:talk, speaker: speaker, event: meetup)
+    talk2 = create(:talk, speaker: speaker2, event: meetup)
+
+    visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
+
+    expect(page).to have_link(href: "#{speaker2.links["mastodon"]}", exact: true)
+    expect(meetup.speakers.count).to eq(2)
   end
 
   context 'visit to unknown path' do
