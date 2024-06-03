@@ -9,8 +9,6 @@ import Microphone from '../icons/Microphone';
 import Github from 'components/icons/Github';
 import Twitter from 'components/icons/Twitter';
 import Linkedin from 'components/icons/LinkedIn';
-import Website from 'components/icons/Website';
-import Mastodon from 'components/icons/Mastodon';
 import Otherlink from 'components/icons/OtherLink';
 import LoadingSpinner from 'components/LoadingSpinner';
 
@@ -60,7 +58,7 @@ const SpeakerBiosBlock = ({ speakers }) => {
                                         />
                                     </a>
                                 )}
-                                {links.twitter && (
+                                {links.github && (
                                     <a
                                         href={links.github}
                                         aria-label="Github"
@@ -73,8 +71,7 @@ const SpeakerBiosBlock = ({ speakers }) => {
                                         />
                                     </a>
                                 )}
-
-                                {links.twitter && (
+                                {links.linkedin && (
                                     <a
                                         href={links.linkedin}
                                         aria-label="Linkedin"
@@ -87,36 +84,33 @@ const SpeakerBiosBlock = ({ speakers }) => {
                                         />
                                     </a>
                                 )}
-
-                                {links.twitter && (
+                                {links.mastodon && (
                                     <a
                                         href={links.mastodon}
                                         aria-label="Mastodon"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <Mastodon
-                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                        <i
+                                            className="bi bi-mastodon social-icon h-4 w-4 fill-current"
                                             style={{ width: '15px' }}
-                                        />
+                                        ></i>
                                     </a>
                                 )}
-
-                                {links.twitter && (
+                                {links.website && (
                                     <a
                                         href={links.website}
                                         aria-label="Website"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <Website
-                                            className="social-icon h-4 w-4 fill-current mx-1"
+                                        <i
+                                            className="bi bi-globe social-icon h-4 w-4 fill-current"
                                             style={{ width: '15px' }}
                                         />
                                     </a>
                                 )}
-
-                                {links.twitter && (
+                                {links.other && (
                                     <a
                                         href={links.other}
                                         aria-label="Other"
