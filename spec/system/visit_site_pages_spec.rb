@@ -54,6 +54,17 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     expect(meetup.speakers.count).to eq(2)
   end
 
+  it 'visits past meetup and displays available valid links speaker only' do
+    meetup = create(:event, date: Date.new(2024, 2, 17), title: "Meetup February 2024")
+    speaker = create(:speaker, links: { mastodon: Faker::Internet.url })
+    talk = create(:talk, speaker: speaker, event: meetup)
+
+    visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
+
+    expect(page).not_to have_link(href: "#{speaker.links["twitter"]}", exact: true)
+    expect(meetup.speakers.count).to eq(1)
+  end
+
   context 'visit to unknown path' do
     before do
       method = Rails.application.method(:env_config)
