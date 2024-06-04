@@ -71,7 +71,7 @@ const Header = () => {
                         </div>
                         <div className="user">
                             <div className="donate">
-                                <a href="/donate">
+                                <a href="https://buy.stripe.com/6oE7t874ReRc7gA9AN">
                                     <Button type="white-and-orange">Donate</Button>
                                 </a>
                             </div>
