@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get '/meetups', to: 'site#meetups'
   get '/join-us', to: 'site#join_us'
+  get '/sponsor-us', to: 'site#sponsor_us'
   get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 
   root 'site#home'

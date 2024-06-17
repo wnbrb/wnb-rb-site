@@ -6,7 +6,10 @@ import Button from 'components/Button';
 import 'stylesheets/header.scss';
 
 const Header = () => {
-    const links = [{ id: 1, text: 'Meetups', href: '/meetups' }];
+    const links = [
+        { id: 1, text: 'Meetups', href: '/meetups' },
+        { id: 2, text: 'Donate', href: 'https://buy.stripe.com/6oE7t874ReRc7gA9AN' },
+    ];
 
     const [headerState, setHeaderState] = useState({
         className: '',
@@ -70,9 +73,9 @@ const Header = () => {
                             </ul>
                         </div>
                         <div className="user">
-                            <div className="donate">
-                                <a href="https://buy.stripe.com/6oE7t874ReRc7gA9AN">
-                                    <Button type="white-and-orange">Donate</Button>
+                            <div className="sponsor-us">
+                                <a href="/sponsor-us">
+                                    <Button type="white-and-orange">Sponsor Us</Button>
                                 </a>
                             </div>
                             <div className="join-us">
