@@ -14,10 +14,10 @@ const Footer = () => (
                     <a className="footer-col-item" href="/join-us">
                         Join WNB.rb
                     </a>
-                    <a className="footer-col-item" href="mailto:organizers@wnb-rb.dev">
-                        Contact the Organizers
+                    <a className="footer-col-item" href="/sponsor-us">
+                        Sponsor Us
                     </a>
-                    <a className="footer-col-item" href="/donate">
+                    <a className="footer-col-item" href="https://buy.stripe.com/6oE7t874ReRc7gA9AN">
                         Donate
                     </a>
                 </div>
