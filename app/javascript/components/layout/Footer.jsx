@@ -1,7 +1,4 @@
 import React from 'react';
-import Email from 'components/icons/Email';
-import Github from 'components/icons/Github';
-import Twitter from 'components/icons/Twitter';
 
 import 'stylesheets/footer.scss';
 
