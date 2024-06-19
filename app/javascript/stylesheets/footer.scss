@@ -36,11 +36,8 @@ footer {
 
         .social-links {
             @apply flex flex-row;
-
-            .social-icon {
-                @apply h-5 ml-3;
-                fill: #676767;
-                max-height: 19px;
+            a {
+                @apply mx-1.5 text-xl;
             }
         }
 
