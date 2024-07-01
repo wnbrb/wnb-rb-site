@@ -23,7 +23,7 @@ const SponsorUs = () => (
             </section>
 
             <section className="mt-12 lg:mt-28 bg-wnbrb-pink-light">
-                <div className="container mx-auto flex flex-col md:flex-row gap-8 xl:gap-16 py-20 px-10 lg:px-8 xl:px-12">
+                <div className="container max-w-6xl mx-auto flex flex-col md:flex-row gap-8 xl:gap-16 py-20 px-10 lg:px-8 xl:px-12">
                     <Card className="w-100 md:w-1/2 flex-1 flex flex-col">
                         <h2 className="text-2xl font-bold mb-2">Hire from WNB.rb</h2>
                         <p className="mb-8 grow">
