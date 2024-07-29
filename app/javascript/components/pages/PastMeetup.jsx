@@ -33,8 +33,93 @@ const SpeakerBiosBlock = ({ speakers }) => {
                 <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
             </div>
             <div className="flex flex-wrap items-center gap-5">
-                {speakers?.map(({ id, bio }) => (
-                    <div key={id}>{bio}</div>
+                {speakers?.map(({ id, bio, name, links }) => (
+                    <div key={id}>
+                        <div>{bio}</div>
+                        {Object.keys(links).length > 0 && (
+                            <div className="flex items-center">
+                                <p className="mr-3">More from {name}:</p>
+                                {links.twitter && (
+                                    <a
+                                        href={links.twitter}
+                                        aria-label="Twitter"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            className="bi bi-twitter-x social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                                {links.github && (
+                                    <a
+                                        href={links.github}
+                                        aria-label="Github"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            className="bi bi-github social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                                {links.linkedin && (
+                                    <a
+                                        href={links.linkedin}
+                                        aria-label="Linkedin"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            className="bi bi-linkedin social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                                {links.mastodon && (
+                                    <a
+                                        href={links.mastodon}
+                                        aria-label="Mastodon"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            className="bi bi-mastodon social-icon h-4 w-4 fill-current"
+                                            style={{ width: '15px' }}
+                                        ></i>
+                                    </a>
+                                )}
+                                {links.website && (
+                                    <a
+                                        href={links.website}
+                                        aria-label="Website"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            className="bi bi-globe social-icon h-4 w-4 fill-current"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                                {links.other && (
+                                    <a
+                                        href={links.other}
+                                        aria-label="Other"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            className="bi bi-link-45deg social-icon h-4 w-4 fill-current mx-1"
+                                            style={{ width: '15px' }}
+                                        />
+                                    </a>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>
