@@ -31,31 +31,26 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
   end
 
   it 'visits past meetup and displays speaker with valid links' do
-    meetup = create(:event, date: Date.new(2024, 2, 17), title: "Meetup February 2024")
+    meetup = create(:event, date: Date.new(2024, 2, 17), title: 'Meetup February 2024')
     speaker = create(:speaker, :with_valid_links)
-    speaker2 = create(:speaker, links: { github: "https://github.com/speaker2",
-                                        twitter: "https://twitter.com/speaker2",
-                                        mastodon: Faker::Internet.url,
-                                        other: Faker::Internet.url,
-                                        website: Faker::Internet.url,
-                                        linkedin: Faker::Internet.url  })
-    talk = create(:talk, speaker: speaker, event: meetup)
-    talk2 = create(:talk, speaker: speaker2, event: meetup)
+    speaker2 = create(:speaker, :with_valid_links, links: {mastodon: Faker::Internet.url})
+    create(:talk, speaker: speaker, event: meetup)
+    create(:talk, speaker: speaker2, event: meetup)
 
     visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
 
-    expect(page).to have_link(href: "#{speaker2.links["mastodon"]}", exact: true)
+    expect(page).to have_link(href: speaker2.links['mastodon'].to_s, exact: true)
     expect(meetup.speakers.count).to eq(2)
   end
 
   it 'visits past meetup and displays available valid links speaker only' do
-    meetup = create(:event, date: Date.new(2024, 2, 17), title: "Meetup February 2024")
+    meetup = create(:event, date: Date.new(2024, 2, 17), title: 'Meetup February 2024')
     speaker = create(:speaker, links: { mastodon: Faker::Internet.url })
-    talk = create(:talk, speaker: speaker, event: meetup)
+    create(:talk, speaker: speaker, event: meetup)
 
     visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
 
-    expect(page).not_to have_link(href: "#{speaker.links["twitter"]}", exact: true)
+    expect(page).not_to have_link(href: speaker.links['twitter'].to_s, exact: true)
     expect(meetup.speakers.count).to eq(1)
   end
 
