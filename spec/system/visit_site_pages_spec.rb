@@ -30,6 +30,30 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     expect(page).to have_text(meetup.title)
   end
 
+  it 'visits past meetup and displays speaker with valid links' do
+    meetup = create(:event, date: Date.new(2024, 2, 17), title: 'Meetup February 2024')
+    speaker = create(:speaker, :with_valid_links)
+    speaker2 = create(:speaker, :with_valid_links, links: {mastodon: Faker::Internet.url})
+    create(:talk, speaker: speaker, event: meetup)
+    create(:talk, speaker: speaker2, event: meetup)
+
+    visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
+
+    expect(page).to have_link(href: speaker2.links['mastodon'].to_s, exact: true)
+    expect(meetup.speakers.count).to eq(2)
+  end
+
+  it 'visits past meetup and displays available valid links speaker only' do
+    meetup = create(:event, date: Date.new(2024, 2, 17), title: 'Meetup February 2024')
+    speaker = create(:speaker, links: { mastodon: Faker::Internet.url })
+    create(:talk, speaker: speaker, event: meetup)
+
+    visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
+
+    expect(page).not_to have_link(href: speaker.links['twitter'].to_s, exact: true)
+    expect(meetup.speakers.count).to eq(1)
+  end
+
   context 'visit to unknown path' do
     before do
       method = Rails.application.method(:env_config)
