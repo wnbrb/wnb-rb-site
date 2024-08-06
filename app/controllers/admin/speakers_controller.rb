@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 module Admin
   class SpeakersController < AdminController
+    include Pagy::Backend
+
     before_action :authorize_event
     before_action :set_speaker, only: %w[show edit update destroy]
 
     # GET /admin/speakers
     def index
-      @speakers = Speaker.all
+      @pagy, @speakers = pagy(Speaker.all, items: 15)
     end
 
     # GET /admin/speakers/1
