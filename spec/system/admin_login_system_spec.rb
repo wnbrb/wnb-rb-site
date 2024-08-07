@@ -57,6 +57,8 @@ RSpec.describe 'Admin login system', type: :system do
     end
 
     context 'admin is logged in' do
+      before { create_list(:event, 20) }
+
       it 'enables me to logout from WNB.rb admin' do
         login_as user
 
@@ -64,6 +66,19 @@ RSpec.describe 'Admin login system', type: :system do
         click_on 'Sign out'
 
         expect(page).to have_current_path(root_path)
+      end
+
+      it 'shows events with pagy' do
+        login_as user
+
+        visit admin_dashboard_path
+        click_link 'Events'
+        expect(page).to have_selector('.pagy-bootstrap-nav')
+
+        #check by count events data by row in table
+        within('#events tbody') do
+          expect(page).to have_selector('tr', count: 15)
+        end
       end
     end
   end

@@ -7,7 +7,7 @@ module Admin
     before_action :set_event, only: %w[edit update destroy]
 
     def index
-      @pagy, @events = pagy(Event.includes(:speakers).order(date: :desc))
+      @pagy, @events = pagy(Event.includes(:speakers).order(date: :desc), items: 15)
     end
 
     def new
