@@ -23,12 +23,19 @@ RSpec.describe Admin::EventsController, type: :controller do
     end
 
     context 'when user is admin' do
+      before { create_list(:event, 20) }
       let(:user) { create(:user, :admin) }
       before { sign_in user }
 
       it 'returns 200' do
         get :index
         expect(response).to have_http_status(200)
+      end
+
+      it 'assigns @events and @pagy' do
+        get :index
+        expect(assigns(:pagy)).to be_a(Pagy)
+        expect(assigns(:events).size).to eq(15)
       end
     end
   end
