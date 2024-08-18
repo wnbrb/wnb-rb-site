@@ -1,14 +1,26 @@
-<h1 class="mb-4">Event List</h1>
-<div class="d-flex flex-column flex-sm-row justify-content-start justify-content-sm-between align-items-center">
-  <%= link_to new_admin_event_path, class: "btn btn-primary btn-md mb-4" do %>
-    Create new Event
-    <i class="bi bi-plus fw-semibold"></i>
-  <% end %>
-  <div class="mb-4">
-    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+<div class="row">
+  <div class="col justify-content-start">
+    <h1 class="mb-4">Event List</h1>
+  </div>
+  <div class="col">
+    <div class="d-flex justify-content-end">
+      <%= link_to new_admin_event_path, class: "btn btn-primary btn-md mb-4" do %>
+        Create new Event
+        <i class="bi bi-plus fw-semibold"></i>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="row">
+  <div class="col">
+    <div class="mb-4">
+      <div class="col-auto d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" id="events">
   <div class="col">
     <div class="table-responsive">
       <table class="table table-sm text-center table-hover">

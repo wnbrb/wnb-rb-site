@@ -19,11 +19,18 @@ RSpec.describe Admin::SpeakersController, type: :controller do
     end
 
     context 'when user is admin' do
+      before { create_list(:speaker, 20) }
       before { sign_in create(:user, :admin) }
 
       it 'returns a success response' do
         get :index
         expect(response).to be_successful
+      end
+
+      it 'assigns @speakers and @pagy' do
+        get :index
+        expect(assigns(:pagy)).to be_a(Pagy)
+        expect(assigns(:speakers).size).to eq(15)
       end
     end
   end
