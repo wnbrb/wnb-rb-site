@@ -301,7 +301,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     retriable (3.1.2)
-    rexml (3.3.4)
+    rexml (3.3.6)
       strscan
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
@@ -411,13 +411,6 @@ GEM
     zeitwerk (2.6.17)
 
 PLATFORMS
-  arm64-darwin-21
-  arm64-darwin-22
-  arm64-darwin-23
-  x86_64-darwin-19
-  x86_64-darwin-20
-  x86_64-darwin-21
-  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
