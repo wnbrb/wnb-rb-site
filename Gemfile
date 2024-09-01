@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.2'
+ruby '~> 3.3.4'
 
 gem 'devise', '~>4.9.2'
 
@@ -73,8 +73,9 @@ end
 group :test do
   gem 'capybara', '>=3.39.2'
   gem 'factory_bot_rails', '~> 6.2.0'
-  gem 'selenium-webdriver', '~> 4.15'
+  gem 'selenium-webdriver', '~> 4.24'
   gem 'shoulda-matchers', '~>5.3.0'
+  gem 'launchy', '~>3.0.1'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
