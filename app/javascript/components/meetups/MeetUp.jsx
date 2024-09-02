@@ -36,10 +36,11 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
                         ))}
                 </div>
                 <div className="bg-gray-200 shadow-lg text-right">
-                    <a href={`/meetups/${year}/${month}/${day}`}>
-                        <button className="my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl">
-                            View
-                        </button>
+                    <a
+                        className="inline-block my-4 mr-6 py-4 px-8 bg-gray-600 rounded text-white text-lg md:text-xl"
+                        href={`/meetups/${year}/${month}/${day}`}
+                    >
+                        View
                     </a>
                 </div>
             </div>
