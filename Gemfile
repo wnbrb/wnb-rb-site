@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.2'
+ruby '~> 3.3.4'
 
 gem 'devise', '~>4.9.2'
 
@@ -18,7 +18,7 @@ gem 'sassc-rails', '~> 2.1.2'
 gem 'shakapacker', '= 7.2.1'
 gem 'slack-ruby-client', '~> 2.0.0'
 
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '>= 1.18.4', require: false
 gem 'jwt', '>= 2.6.0'
 gem 'pundit', '>= 2.3.0'
 
@@ -42,13 +42,20 @@ gem 'httpparty', '~> 0.2'
 # pagination
 gem 'pagy', '~> 6.2'
 
+# timezones
+gem 'tzinfo-data', '~> 2.0',platforms: %i[mingw mswin x64_mingw jruby]
+
+# Explicitly depend on and compile nokogiri
+# so we can run CI on Ruby head
+gem 'nokogiri', '~> 1.16', force_ruby_platform: true
+
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
   gem 'annotate', '~> 3.2.0'
 
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', '~> 11.1.3', platforms: %i[mri mingw x64_mingw]
 
   # Generates fake data
   gem 'faker', '~> 2.18.0'
@@ -72,13 +79,12 @@ end
 
 group :test do
   gem 'capybara', '>=3.39.2'
-  gem 'factory_bot_rails', '~> 6.2.0'
-  gem 'selenium-webdriver', '~> 4.15'
+  gem 'factory_bot_rails', '~> 6.4.3'
+  gem 'launchy', '~>3.0.1'
+  gem 'selenium-webdriver', '~> 4.24'
   gem 'shoulda-matchers', '~>5.3.0'
 end
 
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# Explicitly depend on and compile nokogiri
-# so we can run CI on Ruby head
-gem 'nokogiri', '~> 1.16', force_ruby_platform: true
+# bug deprecate gems not longer in ruby standard warning
+gem 'drb', '~> 2.2.1'
+gem 'mutex_m', '~> 0.2.0'
