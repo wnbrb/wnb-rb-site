@@ -80,11 +80,11 @@ end
 group :test do
   gem 'capybara', '>=3.39.2'
   gem 'factory_bot_rails', '~> 6.4.3'
+  gem 'launchy', '~>3.0.1'
   gem 'selenium-webdriver', '~> 4.24'
   gem 'shoulda-matchers', '~>5.3.0'
-  gem 'launchy', '~>3.0.1'
 end
 
-# bug deprecate gems inalert
-gem 'mutex_m', '~> 0.2.0'
+# bug deprecate gems not longer in ruby standard warning
 gem 'drb', '~> 2.2.1'
+gem 'mutex_m', '~> 0.2.0'
