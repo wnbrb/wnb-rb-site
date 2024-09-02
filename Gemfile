@@ -42,13 +42,20 @@ gem 'httpparty', '~> 0.2'
 # pagination
 gem 'pagy', '~> 6.2'
 
+# timezones
+gem 'tzinfo-data', '~> 2.0',platforms: %i[mingw mswin x64_mingw jruby]
+
+# Explicitly depend on and compile nokogiri
+# so we can run CI on Ruby head
+gem 'nokogiri', '~> 1.16', force_ruby_platform: true
+
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
   gem 'annotate', '~> 3.2.0'
 
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', '~> 11.1.3', platforms: %i[mri mingw x64_mingw]
 
   # Generates fake data
   gem 'faker', '~> 2.18.0'
