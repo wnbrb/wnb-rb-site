@@ -18,7 +18,7 @@ gem 'sassc-rails', '~> 2.1.2'
 gem 'shakapacker', '= 7.2.1'
 gem 'slack-ruby-client', '~> 2.0.0'
 
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '>= 1.18.4', require: false
 gem 'jwt', '>= 2.6.0'
 gem 'pundit', '>= 2.3.0'
 
@@ -72,14 +72,12 @@ end
 
 group :test do
   gem 'capybara', '>=3.39.2'
-  gem 'factory_bot_rails', '~> 6.2.0'
+  gem 'factory_bot_rails', '~> 6.4.3'
   gem 'selenium-webdriver', '~> 4.24'
   gem 'shoulda-matchers', '~>5.3.0'
   gem 'launchy', '~>3.0.1'
 end
 
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# Explicitly depend on and compile nokogiri
-# so we can run CI on Ruby head
-gem 'nokogiri', '~> 1.16', force_ruby_platform: true
+# bug deprecate gems inalert
+gem 'mutex_m', '~> 0.2.0'
+gem 'drb', '~> 2.2.1'

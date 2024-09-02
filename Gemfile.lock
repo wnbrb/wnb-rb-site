@@ -120,11 +120,12 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
+    drb (2.2.1)
     erubi (1.13.0)
-    factory_bot (6.2.1)
+    factory_bot (6.4.6)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.2.0)
-      factory_bot (~> 6.2.0)
+    factory_bot_rails (6.4.3)
+      factory_bot (~> 6.4)
       railties (>= 5.0.0)
     faker (2.18.0)
       i18n (>= 1.6, < 2)
@@ -212,6 +213,7 @@ GEM
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     multipart-post (2.4.1)
+    mutex_m (0.2.0)
     net-http (0.4.1)
       uri
     net-imap (0.4.15)
@@ -421,13 +423,14 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 3.2.0)
-  bootsnap (>= 1.4.4)
+  bootsnap (>= 1.18.4)
   byebug
   capybara (>= 3.39.2)
   cssbundling-rails (~> 1.1)
   debug (~> 1.7.1)
   devise (~> 4.9.2)
-  factory_bot_rails (~> 6.2.0)
+  drb (~> 2.2.1)
+  factory_bot_rails (~> 6.4.3)
   faker (~> 2.18.0)
   google_drive!
   httpparty (~> 0.2)
@@ -436,6 +439,7 @@ DEPENDENCIES
   jwt (>= 2.6.0)
   launchy (~> 3.0.1)
   listen (~> 3.3)
+  mutex_m (~> 0.2.0)
   nokogiri (~> 1.16)
   pagy (~> 6.2)
   pg (~> 1.4.5)
