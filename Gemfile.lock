@@ -357,7 +357,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
-    shakapacker (7.2.1)
+    shakapacker (7.2.3)
       activesupport (>= 5.2)
       package_json
       rack-proxy (>= 0.6.1)
@@ -454,7 +454,7 @@ DEPENDENCIES
   rubocop (~> 1.22)
   sassc-rails (~> 2.1.2)
   selenium-webdriver (~> 4.24)
-  shakapacker (= 7.2.1)
+  shakapacker (= 7.2.3)
   shoulda-matchers (~> 5.3.0)
   slack-ruby-client (~> 2.0.0)
   stimulus-rails (~> 1.2.1)
