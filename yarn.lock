@@ -7201,14 +7201,14 @@ raw-body@2.5.2:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-cookie@^6.1.1:
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/react-cookie/-/react-cookie-6.1.3.tgz#f48242f784a44fe51e2c71859a5501daaa93cdfe"
-  integrity sha512-cOToXQPdxvLfK0MH4ZFrrL3cOpDwbboKupFS96MCvrHsHMABMk48vdd1fRWkNG6F5D1JZMvoI5Y74sj8vtHGpA==
+react-cookie@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/react-cookie/-/react-cookie-7.2.0.tgz#5770cd8d6b3c60c5d34ec4b7926f90281aee22ae"
+  integrity sha512-mqhPERUyfOljq5yJ4woDFI33bjEtigsl8JDJdPPeNhr0eSVZmBc/2Vdf8mFxOUktQxhxTR1T+uF0/FRTZyBEgw==
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.5"
     hoist-non-react-statics "^3.3.2"
-    universal-cookie "^6.0.0"
+    universal-cookie "^7.0.0"
 
 react-dom@^18.2.0:
   version "18.2.0"
@@ -8524,10 +8524,10 @@ unicode-property-aliases-ecmascript@^2.0.0:
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-2.1.0.tgz#43d41e3be698bd493ef911077c9b131f827e8ccd"
   integrity sha512-6t3foTQI9qne+OZoVQB/8x8rk2k1eVy1gRXhV3oFQ5T6R1dqQ1xtin3XqSlx3+ATBkliTaR/hHyJBm+LVPNM8w==
 
-universal-cookie@^6.0.0:
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-6.1.3.tgz#891386460f4407f8443d416d07f7334440c5516c"
-  integrity sha512-AETYRrhpRgl9T1YtnODmQE32G81U3A+f3HO3ZeK7efbXqe3x+RNOW4RTpV0iff7zJWhGYJA6EI0Mm+w50aFTAw==
+universal-cookie@^7.0.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-7.2.0.tgz#1f3fa9c575d863ac41b4e42272d240ae2d32c047"
+  integrity sha512-PvcyflJAYACJKr28HABxkGemML5vafHmiL4ICe3e+BEKXRMt0GaFLZhAwgv637kFFnnfiSJ8e6jknrKkMrU+PQ==
   dependencies:
     "@types/cookie" "^0.6.0"
     cookie "^0.6.0"
