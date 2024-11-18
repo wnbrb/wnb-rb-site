@@ -7,9 +7,13 @@ default: &default
 development:
   <<: *default
   database: wnb_rb_site_development
+  username: postgres
+  password: root
 test:
   <<: *default
   database: wnb_rb_site_test
+  username: postgres
+  password: root
 # TODO: edit this with production details
 production:
   <<: *default
