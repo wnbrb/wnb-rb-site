@@ -40,7 +40,7 @@ header {
                                     }
 
                                     &:hover::after {
-                                        background-color: #f56960;
+                                        background-color: #449c7c;
                                     }
                                 }
                             }
@@ -49,7 +49,7 @@ header {
                                 a {
                                     @apply text-gray-700;
                                     &::after {
-                                        background-color: #F56960;
+                                        background-color: #449c7c;
                                     }
                                 }
                             }
@@ -72,7 +72,7 @@ header {
                     .button.primary {
                         &:hover {
                             .add-user-icon {
-                                color: #F56960;
+                                color: #449c7c;
                             }
                         }
                     }

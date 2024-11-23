@@ -8,7 +8,9 @@
 }
 
 .title-container {
-    @apply pt-10 pl-4 md:pl-20;
+    padding-left: 12rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .title-text {

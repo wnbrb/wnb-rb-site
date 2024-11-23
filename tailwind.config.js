@@ -27,24 +27,24 @@ module.exports = {
             wnbrb: {
                 pink: {
                     dark: '#F59E98',
-                    default: '#DF7270',
+                    default: '#2e0880',
                     medium: '#FFE2E2',
                     light: '#FFF3F3',
                 },
                 orange: {
-                    default: '#F37D7B',
+                    default: '#2e0880',
                     medium: '#FBBFBE',
-                    light: '#FEF3F3',
+                    light: '#ffffff',
                 },
                 gray: {
-                    default: '#4A4A4A',
+                    default: '#449c7c',
                     medium: '#757575',
                     light: '#EFEFEF',
                 },
                 ruby: {
                     default: '#993232',
                     medium: '#EF8987',
-                    light: '#FAE6E6',
+                    light: '#d1ceea',
                 },
                 emerald: {
                     default: '#45823F',
@@ -276,6 +276,7 @@ module.exports = {
         },
         fontFamily: {
             sans: [
+                'Besley',
                 'Rubik',
                 'ui-sans-serif',
                 'system-ui',
