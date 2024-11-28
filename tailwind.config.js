@@ -25,6 +25,10 @@ module.exports = {
             purple: colors.violet,
             pink: colors.pink,
             wnbrb: {
+                blue: {
+                    navy: "#2e0880"
+                },
+
                 pink: {
                     dark: '#F59E98',
                     default: '#DF7270',
@@ -275,6 +279,33 @@ module.exports = {
             DEFAULT: '1',
         },
         fontFamily: {
+            besley: [
+                'Besley',
+                'Georgia',
+                'Cambria',
+                '"Times New Roman"',
+                'Times',
+                'serif',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+                '"Noto Color Emoji"',
+            ],
+            noto: [
+                'noto-sans',
+               
+            ],
+
             sans: [
                 'Rubik',
                 'ui-sans-serif',
