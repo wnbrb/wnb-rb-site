@@ -1,14 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Logo from 'components/icons/Logo';
-import AddUser from 'components/icons/AddUser';
-import Button from 'components/Button';
+
 
 import 'stylesheets/header.scss';
 
 const Header = () => {
     const links = [
-        { id: 1, text: 'Meetups', href: '/meetups' },
-        { id: 2, text: 'Donate', href: 'https://buy.stripe.com/6oE7t874ReRc7gA9AN' },
+        { id: 1, text: 'Events', href: '/meetups' },
+        { id: 2, text: 'About', href: '/meetups' },
+        { id: 3, text: 'Donate', href: 'https://buy.stripe.com/6oE7t874ReRc7gA9AN' },
+        { id: 1, text: 'Support us', href:'/sponsor-us' },
+        { id: 1, text: 'Join', href: '/join-us' },
     ];
 
     const [headerState, setHeaderState] = useState({
@@ -72,23 +74,7 @@ const Header = () => {
                                 ))}
                             </ul>
                         </div>
-                        <div className="user">
-                            <div className="sponsor-us">
-                                <a href="/sponsor-us">
-                                    <Button type="white-and-orange">Sponsor Us</Button>
-                                </a>
-                            </div>
-                            <div className="join-us">
-                                <a href="/join-us">
-                                    <Button type="primary">
-                                        <div className="join-wnb flex items-center">
-                                            <AddUser className="add-user-icon h-4 w-4 mr-3 fill-current" />
-                                            Join WNB.rb
-                                        </div>
-                                    </Button>
-                                </a>
-                            </div>
-                        </div>
+                       
                     </nav>
                 </div>
                 <button
