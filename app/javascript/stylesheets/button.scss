@@ -1,7 +1,8 @@
 .button {
-    @apply py-[0.5rem]
-        px-[0.75rem]
-        rounded-sm
+    @apply py-[1.25rem]
+        font-besley
+        px-[1.5rem]
+        rounded-md
         flex
         items-center
         justify-center
@@ -30,7 +31,7 @@
 }
 
 .button.secondary {
-    @apply bg-wnbrb-gray-default text-white;
+    @apply bg-wnbrb-blue-navy text-white;
 }
 
 .button.secondary:active,
