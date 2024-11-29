@@ -1,5 +1,5 @@
 header {
-    @apply w-full top-0 md:px-12 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
+    @apply w-full top-0 md:px-8 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
 
     .header {
         @apply bg-white container py-1 px-8 md:p-0  mx-auto max-w-6xl relative;
@@ -10,7 +10,11 @@ header {
             @apply flex flex-col md:flex-row md:items-center;
 
             .logo {
-                @apply py-3 w-[3.2rem];
+                width: 35%;
+                display: flex;
+                justify-content: center;
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
 
                 svg.wnb-logo {
                     @apply cursor-pointer transition-all h-10;
@@ -18,7 +22,7 @@ header {
             }
 
             nav.nav {
-                @apply hidden md:w-full md:flex md:justify-between ml-5;
+                @apply hidden md:w-[50%] md:flex md:justify-between ml-auto mr-auto;
 
                 .menu {
                     @apply md:w-full md:self-center;
@@ -27,9 +31,9 @@ header {
                         @apply flex flex-row justify-around lg:justify-start;
 
                         li {
-                            @apply lg:px-5;
+                            @apply lg:px-3;
                             a {
-                                @apply text-gray-600 text-base font-normal leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline;
+                                @apply text-wnbrb-blue-navy text-base font-normal leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline font-rubik;
 
 
 
@@ -40,7 +44,7 @@ header {
                                     }
 
                                     &:hover::after {
-                                        background-color: #f56960;
+                                        background-color: #2e0880;
                                     }
                                 }
                             }
