@@ -1,20 +1,22 @@
 .hero-container {
-    @apply mt-28 px-10 flex flex-row justify-center md:mt-40;
+    @apply  flex  ;
 }
 
 .hero {
     @apply flex
-      flex-row
+      flex-col-reverse
       flex-wrap
-      justify-center
-      items-center
       w-full
-      max-w-[70rem]
-      lg:justify-between;
+      md:flex-row lg:flex-row
+      
 }
 
 .splash-background {
-    @apply max-w-[37rem] mt-20 md:mt-0 md:w-[40rem];
+    margin-top: 0px;
+    width: 100%;
+    display: flex;
+    @apply md:w-[50%] lg:w-[50%] order-1;
+    
 }
 
 .podcast {
