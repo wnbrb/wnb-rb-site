@@ -76,6 +76,7 @@ module.exports = {
             2: '0.5rem',
             2.5: '0.625rem',
             3: '0.75rem',
+            '2rem': '2rem',
             3.5: '0.875rem',
             4: '1rem',
             5: '1.25rem',
@@ -100,6 +101,7 @@ module.exports = {
             56: '14rem',
             60: '15rem',
             64: '16rem',
+            '17rem': '17rem',
             72: '18rem',
             80: '20rem',
             96: '24rem',
@@ -302,10 +304,14 @@ module.exports = {
                 '"Noto Color Emoji"',
             ],
             noto: [
-                'noto-sans',
+                'Noto sans',
+                'sans-serif',
                
             ],
-
+            rubik:[
+                    'Rubik',
+                    'sans-serif',
+            ],
             sans: [
                 'Rubik',
                 'ui-sans-serif',
