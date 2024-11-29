@@ -19,6 +19,7 @@ import JoinCommunityIcon from 'components/icons/JoinCommunity';
 import ExceedGoalsIcon from 'components/icons/ExceedGoals';
 import GiveSupportIcon from 'components/icons/GiveSupport';
 
+
 const podcasts = [
     {
         id: 1,
@@ -61,21 +62,19 @@ const Home = () => (
         </Helmet>
 
         <SharedLayout>
-            <section className="hero-container">
+            <section className="hero-container mt-2rem">
                 <div className="hero">
-                    <PageTitle text="WNB.rb" altText="Women and Non-Binary Rubyists">
-                        <p className="mt-3 max-w-[14rem]">
-                            A virtual community for women and non-binary Rubyists.
-                        </p>
+                    <div className="splash-background">
+                        <SplashBackground className="w-full" />
+                    </div>
+                    <PageTitle >
+                      
                         <a href="/join-us">
                             <Button type="secondary" className="mt-3">
                                 Join WNB.rb
                             </Button>
                         </a>
                     </PageTitle>
-                    <div className="splash-background">
-                        <SplashBackground className="w-full" />
-                    </div>
                 </div>
             </section>
 
