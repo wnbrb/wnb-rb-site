@@ -43,7 +43,7 @@ class Speaker < ApplicationRecord
   end
 
   def url_exists?
-    links.each_value { |_, url| errors.add(:links, 'This url is not valid') unless url_valid?(url) }
+    links.each { |_, url| errors.add(:links, 'This url is not valid') unless url_valid?(url) }
   end
 
   def empty_links?
