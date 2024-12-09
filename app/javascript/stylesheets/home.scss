@@ -1,5 +1,6 @@
 .hero-container {
-    @apply  flex  ;
+    @apply flex;
+    flex-direction: column;
 }
 
 .hero {
@@ -7,8 +8,7 @@
       flex-col-reverse
       flex-wrap
       w-full
-      md:flex-row lg:flex-row
-      
+      md:flex-row lg:flex-row;
 }
 
 .splash-background {
@@ -16,7 +16,6 @@
     width: 100%;
     display: flex;
     @apply md:w-[50%] lg:w-[50%] order-1;
-    
 }
 
 .podcast {
@@ -40,29 +39,171 @@
     sm:left-1/4
     max-w-[50rem];
 }
-
+.info {
+    background-color: #c6e6da;
+    margin-top: -3rem;
+}
+.info-layout {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+}
 .info-card-section {
-    @apply mt-28
-    md:mt-40
-    mx-auto
-    md:max-w-3xl
+    @apply mx-auto
     flex-col;
 }
 
 .info-card {
-    @apply justify-between
-    mx-20
-    md:mx-0
-    mt-32
-    flex
-    flex-row
-    flex-wrap;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        justify-content: center;
+        height: 22rem;
+        width: 75%;
+        margin: auto;
+
+        @media (min-width: 768px) { 
+            width: 100%; 
+        }
+    
+        @media (min-width: 1024px) { 
+            width: 100%; 
+            height: 17rem;
+        }
+}
+.info-card-image{
+    @media (min-width: 1024px) { 
+          height: 17.5rem;
+    }
+}
+.bg-color-1 {
+    @apply bg-wnbrb-blue-navy;
+    color: white;
+}
+.bg-color-2 {
+    background-color: #b33c3c;
+    color: white;
+}
+.bg-color-3 {
+    background-color: #ffdd19;
+}
+.line {
+    margin-top: -2.5rem;
+}
+.layout {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
+    gap: 2rem;
+ 
+
+    @media (min-width: 768px) { 
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    @media (min-width: 1024px) { 
+        grid-template-columns: repeat(4, auto); 
+    }
+}
+.info-card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0rem 2rem 2rem;
+    border-radius: 1.8rem;
+
+    
+    @media (min-width: 768px) { 
+        grid-column: 1;
+        grid-row: 1 / 3;
+        border-radius: 0rem;
+        border-top-right-radius: 1.8rem;
+        border-bottom-right-radius: 1.8rem;
+    }
+
+    @media (min-width: 1024px) { 
+        grid-column: 1/3;
+         grid-row: 1;
+         border-radius: 0rem;
+         padding: 0 4rem 1rem;
+         border-top-right-radius: 1.8rem;
+         border-bottom-right-radius: 1.8rem;
+    }
 }
 
 .info-card:nth-child(2) {
-    @apply md:flex-row-reverse;
+    grid-column: 1;
+    grid-row: 5;
+    padding: 0rem 2rem 2rem;
+    border-radius: 1.8rem;
+    
+    @media (min-width: 768px) { 
+        grid-column: 2;
+        grid-row: 2;
+        border-radius: 0rem;
+        border-top-left-radius: 1.8rem;
+        border-bottom-left-radius: 1.8rem;
+    }
+
+    @media (min-width: 1024px) { 
+        grid-column: 3 / 5;
+         grid-row: 1;
+         padding: 0 4rem 1rem;
+         border-radius: 0rem;
+         border-top-left-radius: 1.8rem;
+         border-bottom-left-radius: 1.8rem;
+    }
+}
+.info-card:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 0rem 2rem 2rem;
+    border-radius: 1.8rem;
+    @media (min-width: 768px) { 
+        grid-column: 1;
+        grid-row: 2/7;
+        border-radius: 0rem;        
+        border-top-right-radius: 1.8rem;
+        border-bottom-right-radius: 1.8rem;
+    }
+
+    @media (min-width: 1024px) { 
+        grid-column: 2 / 4;
+         grid-row: 2;
+         padding: 0 4rem 1rem;
+         border-radius: 1.8rem;        
+   
+    }
 }
 
-.info-card-icon {
-    @apply mt-8 md:mt-0 h-[12rem];
+.info-card:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    border-top-right-radius: 1.8rem;
+    border-bottom-right-radius: 1.8rem;
+
+    @media (min-width: 768px) { 
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    @media (min-width: 1024px) { 
+        grid-column: 1;
+         grid-row: 2;
+    }
+}
+
+.info-card:nth-child(5) {
+    grid-column: 1;
+    grid-row: 4;
+    border-top-left-radius: 1.8rem;
+    border-bottom-left-radius: 1.8rem;
+
+    @media (min-width: 768px) { 
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    @media (min-width: 1024px) { 
+        grid-column: 4;
+         grid-row: 2;
+    }
 }
