@@ -3,27 +3,22 @@ import PropTypes from 'prop-types';
 
 import 'stylesheets/home';
 
-const InfoCard = ({ title, section, icon, children }) => {
-    const IconProp = icon;
-    const iconSection = <IconProp className="info-card-icon" />;
-
+const InfoCard = ({ title, section }) => {
+  
     return (
         <div className="info-card">
-            <div className="max-w-md">
-                {children}
-                <h2 className="text-2xl font-bold my-2">{title}</h2>
+            <div className="max-w-md w-72 h-48 bg-blue-500 rounded-md">
+               <h2 className="text-2xl font-bold my-2">{title}</h2>
                 {section}
             </div>
-            {iconSection}
+          
         </div>
     );
 };
 
 InfoCard.propTypes = {
     title: PropTypes.string,
-    icon: PropTypes.func,
     section: PropTypes.object,
-    children: PropTypes.object,
-};
+  };
 
 export default InfoCard;
