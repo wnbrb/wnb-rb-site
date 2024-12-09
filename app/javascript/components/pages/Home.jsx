@@ -6,56 +6,59 @@ import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 import PodcastTile from 'components/PodcastTile';
 import InfoCard from '../home/InfoCard';
+import img1 from '../../../assets/images/img1.png';
+import img2 from '../../../assets/images/img2.svg';
+import mobImg1 from '../../../assets/images/mobImg1.png';
+import mobImg2  from '../../../assets/images/mobImg2.png';
+import tabImg1  from '../../../assets/images/tabimg1.png';
+import tabImg2  from '../../../assets/images/tabimg2.png';
 
+import line2 from '../../../assets/images/line2.svg';
 import 'stylesheets/home';
-
-import PodcastImageRubyonRails from 'images/podcast-ruby-on-rails.png';
-import PodcastImageRemoteRuby from 'images/podcast-remote-ruby.png';
-
 import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunitySection';
 import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
 import GiveSupportSection from '../home/GiveSupportSection';
-import JoinCommunityIcon from 'components/icons/JoinCommunity';
-import ExceedGoalsIcon from 'components/icons/ExceedGoals';
-import GiveSupportIcon from 'components/icons/GiveSupport';
+import line from '../../../assets/images/line.svg';
+import { useMediaQuery } from 'react-responsive';
+import Meetspeak from '../MeetSpeak';
+import Hire from '../Hire';
 
 
-const podcasts = [
-    {
-        id: 1,
-        tile_image: PodcastImageRubyonRails,
-        tile_image_alt: 'Ruby on Rails Podcast',
-        title: 'Ruby on Rails Podcast',
-        url: 'https://www.therubyonrailspodcast.com/373',
-    },
-    {
-        id: 2,
-        tile_image: PodcastImageRemoteRuby,
-        tile_image_alt: 'Remote Ruby Podcast',
-        title: 'Remote Ruby',
-        url: 'https://remoteruby.com/162',
-    },
-];
 
-const infoCardData = [
-    {
-        title: 'Join our welcoming community',
-        section: <JoinOurWelcomingCommunitySection />,
-        icon: JoinCommunityIcon,
-    },
-    {
-        title: 'Exceed your professional goals',
-        section: <ExceedYourProfessionalGoalsSection />,
-        icon: ExceedGoalsIcon,
-    },
-    {
-        title: 'Give support, and get it in return',
-        section: <GiveSupportSection />,
-        icon: GiveSupportIcon,
-    },
-];
+const Home = () => {
+const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
+const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+ 
+    const infoCardData = [
+        {
+            title: 'Join our welcoming community',
+            section: <JoinOurWelcomingCommunitySection />,
+            backgroundColor: 'bg-color-1',
+          
+        },
+        {
+            title: 'Give support, and get it in return',
+            section: <GiveSupportSection />,
+            backgroundColor: 'bg-color-3',
+           
+        },
+        {
+            title: 'Exceed your professional goals',
+            section: <ExceedYourProfessionalGoalsSection />,
+            backgroundColor: 'bg-color-2',
+         
+        },
+     
+        {
+            image: isMobile ? mobImg1: isTablet ? tabImg1 : img1,
+             },
+        {
+            image: isMobile ? mobImg2: isTablet ? tabImg2 : img2,
 
-const Home = () => (
+            
+        }
+    ];
+    return(
     <>
         <Helmet>
             <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
@@ -65,7 +68,7 @@ const Home = () => (
             <section className="hero-container mt-2rem">
                 <div className="hero">
                     <div className="splash-background">
-                        <SplashBackground className="w-full" />
+                        <SplashBackground className="w-full" />                 
                     </div>
                     <PageTitle >
                       
@@ -75,27 +78,58 @@ const Home = () => (
                             </Button>
                         </a>
                     </PageTitle>
+                      
                 </div>
+                <img src={line} className="line" alt='horizontal line'/>
             </section>
 
-            <section className="podcast">
-                <PodcastTile podcasts={podcasts} />
-            </section>
+ 
+            <div className="info">
+                <section className="info-layout">
+                    <div className="info-card-section mb-12 layout ">
+                    {infoCardData.map((card, index) => {
+                        return (
+                            <div
+                            key={index}
+                            className={`info-card ${
+                                card.backgroundColor ? card.backgroundColor : ''
+                            }`}
+                        >
+                                {/* Render title and text */}
+                                {card.title && card.section && (
+                                    <>
+                                        <h2 className="text-xl font-bold">{card.title}</h2>
+                                        <div>{card.section}</div>
+                                    </>
+                                )}
 
-            <section className="info-card-section mb-12">
-                {infoCardData.map((card) => {
-                    return (
-                        <InfoCard
-                            key={card.title}
-                            section={card.section}
-                            title={card.title}
-                            icon={card.icon}
-                        ></InfoCard>
-                    );
-                })}
-            </section>
+                                {/* Render image only */}
+                                {card.image && (
+                                    <img
+                                        src={card.image}
+                                        alt={`Card ${index + 1}`}
+                                        className="info-card-image"
+                                    />
+                                )}
+                            </div>
+                        );
+                    })}
+                    </div>
+                </section>
+                <img src={line2} className="line" alt='horizontal line'/>
+            </div>
+                  
+           <section className='meetspeak'>
+                        <Meetspeak/>
+             </section>
+
+                    <section>
+                        <Hire />
+                    </section>
+         
         </SharedLayout>
     </>
 );
+}
 
 export default Home;
