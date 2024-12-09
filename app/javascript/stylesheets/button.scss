@@ -1,7 +1,7 @@
 .button {
     @apply py-[1.25rem]
         font-besley
-        px-[1.5rem]
+        px-[1rem]
         rounded-[1.8rem]
         flex
         items-center
@@ -17,17 +17,17 @@
     @apply text-white
         border
         border-transparent
-        bg-wnbrb-orange-default
-        hover:text-wnbrb-orange-default
-        hover:border-wnbrb-orange-default
-        hover:bg-wnbrb-orange-light
+        bg-wnbrb-blue-navy
+        hover:text-wnbrb-blue-navy
+        hover:border-wnbrb-blue-navy
+        hover:bg-wnbrb-gray-light
         font-semibold;
 
 }
 
 .button.primary:active,
 .button.primary:hover {
-    box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
+    box-shadow: 0 0 0 0.25rem #2e0880;
 }
 
 .button.secondary {
@@ -49,12 +49,12 @@
 }
 
 .button.white-and-orange {
-    @apply bg-white text-wnbrb-orange-default border border-wnbrb-orange-default font-semibold;
+    @apply bg-white text-wnbrb-blue-navy border border-wnbrb-blue-navy font-semibold;
 }
 
 .button.white-and-orange:active,
 .button.white-and-orange:hover {
-    box-shadow: 0 0 0 0.25rem rgba(243, 125, 123, 0.5);
+    box-shadow: 0 0 0 0.25rem #2e0880;
 }
 
 .button.ruby {
