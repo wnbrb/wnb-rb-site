@@ -19,7 +19,15 @@ const Hire = () => {
                             rel="noopener noreferrer"
                         >
                             <Button type="primary" className="max-w-[8rem] ">
-                                Post a job
+                            <a
+                        href="mailto:sarah@wnb-rb.dev"
+                        aria-label="Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                         Post a job
+                    </a>
+                              
                             </Button>
                         </a>
                     </div>
