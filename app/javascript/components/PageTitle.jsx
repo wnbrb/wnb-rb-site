@@ -7,16 +7,14 @@ const PageTitle = ({ children }) => {
     return (
         <div className="page-title">
             <RubyOutline className="ruby-outline" />
-                    
-                {children}
-          
+
+            {children}
         </div>
     );
 };
 
 PageTitle.propTypes = {
     children: PropTypes.node,
-   
 };
 
 export default PageTitle;

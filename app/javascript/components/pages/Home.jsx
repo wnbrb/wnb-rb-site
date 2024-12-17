@@ -5,7 +5,6 @@ import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 
-
 import fifth from '../../../assets/images/fifth.jpeg';
 import four from '../../../assets/images/four.jpg';
 import Berlin from '../../../assets/images/Berlin2023.jpeg';
@@ -25,126 +24,109 @@ import Meetspeak from '../MeetSpeak';
 import Hire from '../Hire';
 import Thankyou from '../Thankyou';
 
-
-
 const Home = () => {
-const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
-const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
- 
+    const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
     const infoCardData = [
         {
             title: 'Join our welcoming community',
             section: <JoinOurWelcomingCommunitySection />,
             backgroundColor: 'bg-color-1',
-          
         },
         {
             title: 'Give support, and get it in return',
             section: <GiveSupportSection />,
             backgroundColor: 'bg-color-3',
-           
         },
         {
             title: 'Exceed your professional goals',
             section: <ExceedYourProfessionalGoalsSection />,
             backgroundColor: 'bg-color-2',
-         
         },
-     
-        {
-            image: isMobile ? Fatuma : isTablet ? fifth :  London2023,
-             },
-        {
-            image: isMobile ? four: isTablet ? Berlin : kaigi,
 
-            
-        }
+        {
+            image: isMobile ? Fatuma : isTablet ? fifth : London2023,
+        },
+        {
+            image: isMobile ? four : isTablet ? Berlin : kaigi,
+        },
     ];
-    return(
-    <>
-        <Helmet>
-            <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
-        </Helmet>
-  
+    return (
+        <>
+            <Helmet>
+                <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
+            </Helmet>
 
-        <SharedLayout>
-       
-
-            <section className="hero-container mt-2rem">
-            <div className='work-in-progress'  >
-                    🚧 Website Work in Progress 🚧
-                </div>
-                <div className="hero">
-                    <div className="splash-background">
-                        <SplashBackground className="w-full" />                 
-                    </div>
-                    <PageTitle >
-                      
-                        <a href="/join-us">
-                            <Button type="secondary" className="mt-3">
-                                Join WNB.rb
-                            </Button>
-                        </a>
-                    </PageTitle>
-                      
-                </div>
-            </section>
-
- 
-            <div className="info">
-
-                <section className="info-layout">
-                <img src={line2} className="line2" alt='horizontal line'/>
-                    <div className="info-card-section mb-12 layout ">
-                    {infoCardData.map((card, index) => {
-                        return (
-                            <div
-                            key={index}
-                            className={`info-card ${
-                                card.backgroundColor ? card.backgroundColor : ''
-                            }`}
-                        >
-                                {/* Render title and text */}
-                                {card.title && card.section && (
-                                    <>
-                                        <h2 className="text-xl font-bold">{card.title}</h2>
-                                        <div>{card.section}</div>
-                                    </>
-                                )}
-
-                                {/* Render image only */}
-                                {card.image && (
-                                    <img
-                                        src={card.image}
-                                        alt={`Card ${index + 1}`}
-                                        className={`info-card-image ${index === 1 ? 'second-card-image' : ''}`}
-                                    />
-                                )}
-                                
-                            </div>
-                        );
-                    })}
+            <SharedLayout>
+                <section className="hero-container mt-2rem">
+                    <div className="work-in-progress">🚧 Website Work in Progress 🚧</div>
+                    <div className="hero">
+                        <div className="splash-background">
+                            <SplashBackground className="w-full" />
+                        </div>
+                        <PageTitle>
+                            <a href="/join-us">
+                                <Button type="secondary" className="mt-3">
+                                    Join WNB.rb
+                                </Button>
+                            </a>
+                        </PageTitle>
                     </div>
                 </section>
-                  <img src={line} className="line" alt='horizontal line'/>
-             </div>
 
-           
-               <section className='meetspeak'>
-                        <Meetspeak/>
-             </section>
+                <div className="info">
+                    <section className="info-layout">
+                        <img src={line2} className="line2" alt="horizontal line" />
+                        <div className="info-card-section mb-12 layout ">
+                            {infoCardData.map((card, index) => {
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`info-card ${
+                                            card.backgroundColor ? card.backgroundColor : ''
+                                        }`}
+                                    >
+                                        {/* Render title and text */}
+                                        {card.title && card.section && (
+                                            <>
+                                                <h2 className="text-xl font-bold">{card.title}</h2>
+                                                <div>{card.section}</div>
+                                            </>
+                                        )}
 
-                    <section>
-                        <Hire />
+                                        {/* Render image only */}
+                                        {card.image && (
+                                            <img
+                                                src={card.image}
+                                                alt={`Card ${index + 1}`}
+                                                className={`info-card-image ${
+                                                    index === 1 ? 'second-card-image' : ''
+                                                }`}
+                                            />
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </section>
+                    <img src={line} className="line" alt="horizontal line" />
+                </div>
 
-                    <section>
-                        <Thankyou/>
-                    </section>
-         
-        </SharedLayout>
-    </>
-);
-}
+                <section className="meetspeak">
+                    <Meetspeak />
+                </section>
+
+                <section>
+                    <Hire />
+                </section>
+
+                <section>
+                    <Thankyou />
+                </section>
+            </SharedLayout>
+        </>
+    );
+};
 
 export default Home;

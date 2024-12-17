@@ -11,16 +11,16 @@ import three from '../../../assets/images/three.jpg';
 const SplashBackground = ({ className }) => (
     <div className={`grid grid-cols-2 gap-0 ${className}`}>
         <div className="w-full bg-gray-200 flex items-center justify-center">
-            <img src={two} alt="Image 1" className="object-cover w-full h-full" />
+            <img src={two} alt="1" className="object-cover w-full h-full" />
         </div>
         <div className="w-full bg-gray-200 flex items-center justify-center">
-            <img src={pin} alt="Image 2" className="object-cover w-full h-full" />
+            <img src={pin} alt="2" className="object-cover w-full h-full" />
         </div>
         <div className="w-full bg-gray-200 flex items-center justify-center">
-            <img src={colors} alt="Image 3" className="object-cover w-full h-full" />
+            <img src={colors} alt="3" className="object-cover w-full h-full" />
         </div>
         <div className="w-full bg-gray-200 flex items-center justify-center">
-            <img src={three} alt="Image 4" className="object-cover w-full h-full" />
+            <img src={three} alt="4" className="object-cover w-full h-full" />
         </div>
     </div>
 );

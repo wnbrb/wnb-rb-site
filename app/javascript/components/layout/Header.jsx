@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Logo from 'components/icons/Logo';
 
-
 import 'stylesheets/header.scss';
 
 const Header = () => {
@@ -9,7 +8,7 @@ const Header = () => {
         { id: 1, text: 'Events', href: '/meetups' },
         { id: 2, text: 'About', href: '/meetups' },
         { id: 3, text: 'Donate', href: 'https://buy.stripe.com/6oE7t874ReRc7gA9AN' },
-        { id: 1, text: 'Support us', href:'/sponsor-us' },
+        { id: 1, text: 'Support us', href: '/sponsor-us' },
         { id: 1, text: 'Join', href: '/join-us' },
     ];
 
@@ -74,7 +73,6 @@ const Header = () => {
                                 ))}
                             </ul>
                         </div>
-                       
                     </nav>
                 </div>
                 <button
