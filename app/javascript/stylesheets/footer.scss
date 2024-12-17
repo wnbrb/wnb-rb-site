@@ -1,12 +1,30 @@
 footer {
-    @apply  bg-white w-full;
+    background-color: #ffffe5;
+    width: 100%;
 
     .footer {
-        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-12 xl:px-0 py-8 md:py-20 flex-col md:flex-row border-t border-gray-100 md:border-t-0;
-        color: #676767;
+        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-12 xl:px-0 py-8 md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0;
+        color:#2e0880;
+      
+                .first-div{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem; 
+                align-items: flex-start;
+                padding-bottom: 2rem;
 
+                @apply lg:flex-row lg:justify-between lg:mb-4 lg:items-center;
+        }
+        .btns{
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 1rem;
+                align-items: flex-start;
+                @apply md:flex-row md:items-center
+        }
+     
         a {
-            @apply no-underline mb-4 md:mb-0;
+            @apply no-underline mb-4 md:mb-0 font-rubik;
             color: inherit;
 
             &:hover {
@@ -14,12 +32,39 @@ footer {
             }
         }
 
+        .second-div{
+        @apply lg:flex-row lg:justify-between lg:flex;
+        }
         .footer-left {
-            @apply flex flex-col md:flex-row justify-between;
+            display: none;
+        }
+        
+        @media (min-width: 768px) { 
+            .footer-left {
+                display: flex;
+                flex-direction: row; 
+                justify-content: space-between;
+            }
+        }
+        
+        @media (min-width: 1024px) { 
+            .footer-left {
+                justify-content: normal;
+                display: flex; 
+            }
+        }
+        .button{
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
         }
 
         .footer-right {
-            @apply flex flex-col items-center md:items-end;
+              display: flex;
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                gap: 2rem;
+                margin-top: 2rem;
+                @apply lg:justify-end lg:mt-0
         }
 
         .footer-col {
