@@ -1,10 +1,16 @@
 .page-title {
-     @apply min-h-[10rem];
+    display: flex ;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+    align-items: center;
+    @apply md:w-[50%] lg:w-[50%] order-2 md:px-0;
     /* overflow-auto; */
 }
 
 .ruby-outline {
-    @apply absolute w-48 z-[-1] sm:w-40;
+    width: 20rem;
 }
 
 .title-container {

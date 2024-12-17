@@ -1,0 +1,72 @@
+.thankyou{
+    background-color: #fff6c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    text-align: center;
+}
+.thankyou h2{
+    @apply text-4xl text-black font-besley font-bold
+}
+
+.thankyou p{
+    @apply text-lg text-black font-rubik
+}
+.thankyou .sponsor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 80%;
+        margin-top: 20px;
+        padding: 20px;
+
+        @media (min-width: 768px) { 
+           flex-direction: row;
+           justify-content: center;
+    
+        }
+    
+        @media (min-width: 1024px) { 
+           flex-direction: row;
+           justify-content: center;
+        }
+}
+.thankyou .sponsor div{
+    display: flex;
+    gap: 20px;
+   flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 45%;
+    border-radius: 35px;
+
+    @media (min-width: 768px) { 
+       width: 60%;
+       padding: 2rem 7rem;
+ 
+     }
+ 
+     @media (min-width: 1024px) { 
+        width: 36%;
+        padding: 2rem 5rem;
+     }
+
+}
+.link{
+        text-decoration: none;
+        color: #2e0880;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.link:hover {
+    color: #3d2277;
+    text-decoration: underline;
+}
+.sponsor-image{
+    border-radius: 10rem;
+}
