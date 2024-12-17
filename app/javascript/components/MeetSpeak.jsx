@@ -8,7 +8,7 @@ const Meetspeak = () => {
         <>
           
             <div className='meetspeak-layout'>
-                
+     
                 <div className="meet-card">
                     <img src={meet} alt='location' />
                     <h3>Meetups</h3>
@@ -27,7 +27,7 @@ const Meetspeak = () => {
                         individual is welcome to attend. Fill in{' '}
                         <a
                             href="/join-us"
-                            className="whitespace-nowrap font-medium hover:text-red-400"
+                            className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
                         >
                             the Subscription form
                         </a>{' '}
@@ -45,7 +45,7 @@ const Meetspeak = () => {
                         talk, please provide your talk details via `}
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLSdmOJxLdSdy74mXYxsr6ZRRhTN95Yxnq2B6n5mhUoGkVmDUGA/viewform"
-                            className="whitespace-nowrap font-medium hover:text-red-400"
+                            className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
