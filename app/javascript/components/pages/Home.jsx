@@ -4,14 +4,15 @@ import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
-import PodcastTile from 'components/PodcastTile';
-import InfoCard from '../home/InfoCard';
-import img1 from '../../../assets/images/img1.png';
-import img2 from '../../../assets/images/img2.svg';
-import mobImg1 from '../../../assets/images/mobImg1.png';
-import mobImg2  from '../../../assets/images/mobImg2.png';
-import tabImg1  from '../../../assets/images/tabimg1.png';
-import tabImg2  from '../../../assets/images/tabimg2.png';
+
+
+import fifth from '../../../assets/images/fifth.jpeg';
+import four from '../../../assets/images/four.jpg';
+import Berlin from '../../../assets/images/Berlin2023.jpeg';
+
+import kaigi from '../../../assets/images/kaigi.jpeg';
+import London2023 from '../../../assets/images/London2023.jpeg';
+import Fatuma from '../../../assets/images/Fatuma1.jpg';
 
 import line2 from '../../../assets/images/line2.svg';
 import 'stylesheets/home';
@@ -22,6 +23,7 @@ import line from '../../../assets/images/line.svg';
 import { useMediaQuery } from 'react-responsive';
 import Meetspeak from '../MeetSpeak';
 import Hire from '../Hire';
+import Thankyou from '../Thankyou';
 
 
 
@@ -50,10 +52,10 @@ const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
         },
      
         {
-            image: isMobile ? mobImg1: isTablet ? tabImg1 : img1,
+            image: isMobile ? Fatuma : isTablet ? fifth :  London2023,
              },
         {
-            image: isMobile ? mobImg2: isTablet ? tabImg2 : img2,
+            image: isMobile ? four: isTablet ? Berlin : kaigi,
 
             
         }
@@ -63,9 +65,15 @@ const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
         <Helmet>
             <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
         </Helmet>
+  
 
         <SharedLayout>
+       
+
             <section className="hero-container mt-2rem">
+            <div className='work-in-progress'  >
+                    🚧 Website Work in Progress 🚧
+                </div>
                 <div className="hero">
                     <div className="splash-background">
                         <SplashBackground className="w-full" />                 
@@ -80,12 +88,13 @@ const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
                     </PageTitle>
                       
                 </div>
-                <img src={line} className="line" alt='horizontal line'/>
             </section>
 
  
             <div className="info">
+
                 <section className="info-layout">
+                <img src={line2} className="line2" alt='horizontal line'/>
                     <div className="info-card-section mb-12 layout ">
                     {infoCardData.map((card, index) => {
                         return (
@@ -108,23 +117,29 @@ const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
                                     <img
                                         src={card.image}
                                         alt={`Card ${index + 1}`}
-                                        className="info-card-image"
+                                        className={`info-card-image ${index === 1 ? 'second-card-image' : ''}`}
                                     />
                                 )}
+                                
                             </div>
                         );
                     })}
                     </div>
                 </section>
-                <img src={line2} className="line" alt='horizontal line'/>
-            </div>
-                  
-           <section className='meetspeak'>
+                  <img src={line} className="line" alt='horizontal line'/>
+             </div>
+
+           
+               <section className='meetspeak'>
                         <Meetspeak/>
              </section>
 
                     <section>
                         <Hire />
+                    </section>
+
+                    <section>
+                        <Thankyou/>
                     </section>
          
         </SharedLayout>
