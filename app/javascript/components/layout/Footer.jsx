@@ -1,10 +1,38 @@
 import React from 'react';
-
+import Button from 'components/Button';
 import 'stylesheets/footer.scss';
+import footerlogo from '../../../assets/images/footerlogo.svg';
+import envelope from '../../../assets/images/envelope.svg';
 
 const Footer = () => (
     <footer>
         <div className="footer">
+            <div className='first-div'>
+                <div className='footer-logo'>
+                    <img src={footerlogo} alt="footer-logo" />
+                </div>
+                <div className='btns'>
+                <Button type="primary">
+                <a
+                        href="mailto:organizers@wnb-rb.dev"
+                        aria-label="Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >                    
+                    Enter your email to get the latest news...
+                </a>
+                </Button>
+
+                <a href="/join-us">
+                <Button type="primary">
+                Join WNB.rb     
+                </Button>
+                </a>
+                </div>
+
+            </div>
+
+            <div className='second-div'>
             <div className="footer-left">
                 <div className="footer-col">
                     <p className="footer-col-item footer-col-title">Get Involved</p>
@@ -87,6 +115,7 @@ const Footer = () => (
                     </span>{' '}
                     by WNB.rb community members.
                 </p>
+            </div>
             </div>
         </div>
     </footer>
