@@ -11,8 +11,11 @@
     padding: 2rem;
     width: 80%;
     margin: auto;
-    @apply text-wnbrb-blue-navy text-base
+    @apply text-wnbrb-blue-navy text-base font-rubik
 }
 .hire h2{
-    @apply text-wnbrb-blue-navy text-4xl
+    @apply text-wnbrb-blue-navy text-4xl font-besley font-bold
 }
+.grow{
+    text-align: center;
+ }
