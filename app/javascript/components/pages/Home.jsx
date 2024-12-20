@@ -60,7 +60,10 @@ const Home = () => {
 
             <SharedLayout>
                 <section className="hero-container mt-2rem">
-                    <div className="work-in-progress">🚧 Website Work in Progress 🚧</div>
+                    <div className="work-in-progress">
+                        <h1>🚧 Website Redesign in Progress 🚧</h1>
+                        <p>You might spot old branding, broken links, or other inconsistencies. We're on it!</p>
+                        </div>
                     <div className="hero">
                         <div className="splash-background">
                             <SplashBackground className="w-full" />
