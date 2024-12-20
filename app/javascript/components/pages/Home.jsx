@@ -68,12 +68,17 @@ const Home = () => {
                         <div className="splash-background">
                             <SplashBackground className="w-full" />
                         </div>
-                        <PageTitle>
-                            <a href="/join-us">
-                                <Button type="secondary" className="mt-3">
-                                    Join WNB.rb
-                                </Button>
-                            </a>
+                        <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
+                       
+                            <p className="mt-3 font-besley text-base">
+                                A virtual community for women and non-binary Rubyists.
+                            </p>
+
+                                <a href="/join-us">
+                                    <Button type="secondary" className="mt-3">
+                                        Join WNB.rb
+                                    </Button>
+                                </a>
                         </PageTitle>
                     </div>
                 </section>
