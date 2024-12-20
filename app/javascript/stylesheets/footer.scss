@@ -19,12 +19,13 @@ footer {
                 display: flex;
                 flex-direction: column-reverse;
                 gap: 1rem;
+                font-size: 13px;
                 align-items: flex-start;
                 @apply md:flex-row md:items-center
         }
      
         a {
-            @apply no-underline mb-4 md:mb-0 font-rubik;
+            @apply no-underline mb-0 font-besley;
             color: inherit;
 
             &:hover {
