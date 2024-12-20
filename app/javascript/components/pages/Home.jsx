@@ -6,7 +6,7 @@ import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
 
 import fifth from '../../../assets/images/fifth.jpeg';
-import four from '../../../assets/images/four.jpg';
+import Euruko2022 from '../../../assets/images/Euruko2022.jpeg';
 import Berlin from '../../../assets/images/Berlin2023.jpeg';
 
 import kaigi from '../../../assets/images/kaigi.jpeg';
@@ -46,10 +46,10 @@ const Home = () => {
         },
 
         {
-            image: isMobile ? Fatuma : isTablet ? fifth : London2023,
+            image: isMobile ? Fatuma : isTablet ? fifth  : Euruko2022 ,
         },
         {
-            image: isMobile ? four : isTablet ? Berlin : kaigi,
+            image: isMobile ? London2023 : isTablet ? kaigi : Berlin,
         },
     ];
     return (
@@ -61,8 +61,8 @@ const Home = () => {
             <SharedLayout>
                 <section className="hero-container mt-2rem">
                     <div className="work-in-progress">
-                        <h1>🚧 Website Redesign in Progress 🚧</h1>
-                        <p>You might spot old branding, broken links, or other inconsistencies. We're on it!</p>
+                        <h1 className='font-besley text-lg'>🚧 Website Redesign in Progress 🚧</h1>
+                        <p className='font-besley text-base'>You might spot old branding, broken links, or other inconsistencies. We're on it!</p>
                         </div>
                     <div className="hero">
                         <div className="splash-background">
