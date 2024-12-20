@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RubyOutline from 'components/icons/RubyOutline';
+import NewLogo from 'components/icons/NewLogo';
 import 'stylesheets/page-title';
 
 const PageTitle = ({ text, altText, children }) => {
     return (
         <div className="page-title">
-            <RubyOutline className="ruby-outline" />
+            <NewLogo className="new-logo" />
             <div className="title-container">
                 <h1 className="title-text" alt={altText}>
                     {text}

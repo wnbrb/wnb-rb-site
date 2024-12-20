@@ -1,0 +1,28 @@
+.hire-layout{
+    background-color: #fbf4f4;
+}
+
+.hire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 2rem;
+    width: 80%;
+    margin: auto;
+    @apply text-wnbrb-blue-navy text-base font-rubik
+}
+.hire h2{
+    @apply text-wnbrb-blue-navy text-4xl font-besley font-bold
+}
+.grow{
+    text-align: center;
+ }
+ .hire-img{
+    border-radius: 30px;
+    height: 320px;
+    max-width: 100%;
+    margin-top: 2rem;
+    object-fit: cover;
+ }
