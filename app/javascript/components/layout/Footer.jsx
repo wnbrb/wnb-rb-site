@@ -18,7 +18,7 @@ const Footer = () => (
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Enter your email to get the latest news...
+                            Want to know more? Send us an email
                         </a>
                     </Button>
 
