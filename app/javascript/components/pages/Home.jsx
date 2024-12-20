@@ -46,7 +46,7 @@ const Home = () => {
         },
 
         {
-            image: isMobile ? Fatuma : isTablet ? fifth  : Euruko2022 ,
+            image: isMobile ? Fatuma : isTablet ? fifth : Euruko2022,
         },
         {
             image: isMobile ? London2023 : isTablet ? kaigi : Berlin,
@@ -61,24 +61,26 @@ const Home = () => {
             <SharedLayout>
                 <section className="hero-container mt-2rem">
                     <div className="work-in-progress">
-                        <h1 className='font-besley text-lg'>🚧 Website Redesign in Progress 🚧</h1>
-                        <p className='font-besley text-base'>You might spot old branding, broken links, or other inconsistencies. We're on it!</p>
-                        </div>
+                        <h1 className="font-besley text-lg">🚧 Website Redesign in Progress 🚧</h1>
+                        <p className="font-besley text-base">
+                            You might spot old branding, broken links, or other inconsistencies.
+                            We're on it!
+                        </p>
+                    </div>
                     <div className="hero">
                         <div className="splash-background">
                             <SplashBackground className="w-full" />
                         </div>
                         <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
-                       
                             <p className="mt-3 font-besley text-base">
                                 A virtual community for women and non-binary Rubyists.
                             </p>
 
-                                <a href="/join-us">
-                                    <Button type="secondary" className="mt-3">
-                                        Join WNB.rb
-                                    </Button>
-                                </a>
+                            <a href="/join-us">
+                                <Button type="secondary" className="mt-3">
+                                    Join WNB.rb
+                                </Button>
+                            </a>
                         </PageTitle>
                     </div>
                 </section>

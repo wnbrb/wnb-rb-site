@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NewLogo from 'components/icons/NewLogo';
 import 'stylesheets/page-title';
 
-const PageTitle = ({ text, altText, children  }) => {
+const PageTitle = ({ text, altText, children }) => {
     return (
         <div className="page-title">
             <NewLogo className="new-logo" />
@@ -13,7 +13,6 @@ const PageTitle = ({ text, altText, children  }) => {
                 </h1>
                 {children}
             </div>
-     
         </div>
     );
 };
