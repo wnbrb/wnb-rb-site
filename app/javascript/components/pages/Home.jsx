@@ -64,7 +64,7 @@ const Home = () => {
                         <h1 className="font-besley text-lg">🚧 Website Redesign in Progress 🚧</h1>
                         <p className="font-besley text-base">
                             You might spot old branding, broken links, or other inconsistencies.
-                            We're on it!
+                            We&apos;re on it!
                         </p>
                     </div>
                     <div className="hero">
