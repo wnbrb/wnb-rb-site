@@ -29,3 +29,41 @@
 .meetups__month:last-of-type > .meetups__card--border::before {
   top: 14px;
 }
+
+.meetspeak-layout{
+  display: flex;
+  background-color: #bfe444;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 6rem 0;
+
+  @media (min-width: 768px) { 
+    gap: 2rem;
+ 
+}
+
+@media (min-width: 1024px) { 
+    flex-direction: row;
+}
+}
+
+.meet-card, .speak-card {
+  background-color: #ffffe5;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  padding: 2rem;
+  margin: auto;
+  padding-top: 0;
+  border-radius: 2rem;
+
+@media (min-width: 1024px) { 
+   width: 35%;
+   margin: 2rem;
+}
+}
+h3{
+  @apply font-bold text-xl text-wnbrb-blue-navy
+}

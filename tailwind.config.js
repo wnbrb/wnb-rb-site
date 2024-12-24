@@ -25,6 +25,10 @@ module.exports = {
             purple: colors.violet,
             pink: colors.pink,
             wnbrb: {
+                blue: {
+                    navy: "#2e0880"
+                },
+
                 pink: {
                     dark: '#F59E98',
                     default: '#DF7270',
@@ -72,10 +76,12 @@ module.exports = {
             2: '0.5rem',
             2.5: '0.625rem',
             3: '0.75rem',
+            '2rem': '2rem',
             3.5: '0.875rem',
             4: '1rem',
             5: '1.25rem',
             6: '1.5rem',
+           '1.8rem': '1.8rem',
             7: '1.75rem',
             8: '2rem',
             9: '2.25rem',
@@ -96,6 +102,7 @@ module.exports = {
             56: '14rem',
             60: '15rem',
             64: '16rem',
+            '17rem': '17rem',
             72: '18rem',
             80: '20rem',
             96: '24rem',
@@ -275,6 +282,37 @@ module.exports = {
             DEFAULT: '1',
         },
         fontFamily: {
+            besley: [
+                'Besley',
+                'Georgia',
+                'Cambria',
+                '"Times New Roman"',
+                'Times',
+                'serif',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+                '"Noto Color Emoji"',
+            ],
+            noto: [
+                'Noto sans',
+                'sans-serif',
+               
+            ],
+            rubik:[
+                    'Rubik',
+                    'sans-serif',
+            ],
             sans: [
                 'Rubik',
                 'ui-sans-serif',

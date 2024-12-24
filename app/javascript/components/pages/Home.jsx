@@ -4,99 +4,139 @@ import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
 import PageTitle from 'components/PageTitle';
-import PodcastTile from 'components/PodcastTile';
-import InfoCard from '../home/InfoCard';
 
+import fifth from '../../../assets/images/fifth.jpeg';
+import Euruko2022 from '../../../assets/images/Euruko2022.jpeg';
+import Berlin from '../../../assets/images/Berlin2023.jpeg';
+
+import kaigi from '../../../assets/images/kaigi.jpeg';
+import London2023 from '../../../assets/images/London2023.jpeg';
+import Fatuma from '../../../assets/images/Fatuma1.jpg';
+
+import line2 from '../../../assets/images/line2.svg';
 import 'stylesheets/home';
-
-import PodcastImageRubyonRails from 'images/podcast-ruby-on-rails.png';
-import PodcastImageRemoteRuby from 'images/podcast-remote-ruby.png';
-
 import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunitySection';
 import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
 import GiveSupportSection from '../home/GiveSupportSection';
-import JoinCommunityIcon from 'components/icons/JoinCommunity';
-import ExceedGoalsIcon from 'components/icons/ExceedGoals';
-import GiveSupportIcon from 'components/icons/GiveSupport';
+import line from '../../../assets/images/line.svg';
+import { useMediaQuery } from 'react-responsive';
+import Meetspeak from '../MeetSpeak';
+import Hire from '../Hire';
+import Thankyou from '../Thankyou';
 
-const podcasts = [
-    {
-        id: 1,
-        tile_image: PodcastImageRubyonRails,
-        tile_image_alt: 'Ruby on Rails Podcast',
-        title: 'Ruby on Rails Podcast',
-        url: 'https://www.therubyonrailspodcast.com/373',
-    },
-    {
-        id: 2,
-        tile_image: PodcastImageRemoteRuby,
-        tile_image_alt: 'Remote Ruby Podcast',
-        title: 'Remote Ruby',
-        url: 'https://remoteruby.com/162',
-    },
-];
+const Home = () => {
+    const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
-const infoCardData = [
-    {
-        title: 'Join our welcoming community',
-        section: <JoinOurWelcomingCommunitySection />,
-        icon: JoinCommunityIcon,
-    },
-    {
-        title: 'Exceed your professional goals',
-        section: <ExceedYourProfessionalGoalsSection />,
-        icon: ExceedGoalsIcon,
-    },
-    {
-        title: 'Give support, and get it in return',
-        section: <GiveSupportSection />,
-        icon: GiveSupportIcon,
-    },
-];
+    const infoCardData = [
+        {
+            title: 'Join our welcoming community',
+            section: <JoinOurWelcomingCommunitySection />,
+            backgroundColor: 'bg-color-1',
+        },
+        {
+            title: 'Give support, and get it in return',
+            section: <GiveSupportSection />,
+            backgroundColor: 'bg-color-3',
+        },
+        {
+            title: 'Exceed your professional goals',
+            section: <ExceedYourProfessionalGoalsSection />,
+            backgroundColor: 'bg-color-2',
+        },
 
-const Home = () => (
-    <>
-        <Helmet>
-            <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
-        </Helmet>
+        {
+            image: isMobile ? Fatuma : isTablet ? fifth : Euruko2022,
+        },
+        {
+            image: isMobile ? London2023 : isTablet ? kaigi : Berlin,
+        },
+    ];
+    return (
+        <>
+            <Helmet>
+                <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
+            </Helmet>
 
-        <SharedLayout>
-            <section className="hero-container">
-                <div className="hero">
-                    <PageTitle text="WNB.rb" altText="Women and Non-Binary Rubyists">
-                        <p className="mt-3 max-w-[14rem]">
-                            A virtual community for women and non-binary Rubyists.
+            <SharedLayout>
+                <section className="hero-container mt-2rem">
+                    <div className="work-in-progress">
+                        <h1 className="font-besley text-lg">🚧 Website Redesign in Progress 🚧</h1>
+                        <p className="font-besley text-base">
+                            You might spot old branding, broken links, or other inconsistencies.
+                            We&apos;re on it!
                         </p>
-                        <a href="/join-us">
-                            <Button type="secondary" className="mt-3">
-                                Join WNB.rb
-                            </Button>
-                        </a>
-                    </PageTitle>
-                    <div className="splash-background">
-                        <SplashBackground className="w-full" />
                     </div>
+                    <div className="hero">
+                        <div className="splash-background">
+                            <SplashBackground className="w-full" />
+                        </div>
+                        <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
+                            <p className="mt-3 font-besley text-base">
+                                A virtual community for women and non-binary Rubyists.
+                            </p>
+
+                            <a href="/join-us">
+                                <Button type="secondary" className="mt-3">
+                                    Join WNB.rb
+                                </Button>
+                            </a>
+                        </PageTitle>
+                    </div>
+                </section>
+
+                <div className="info">
+                    <section className="info-layout">
+                        <img src={line2} className="line2" alt="horizontal line" />
+                        <div className="info-card-section mb-12 layout ">
+                            {infoCardData.map((card, index) => {
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`info-card ${
+                                            card.backgroundColor ? card.backgroundColor : ''
+                                        }`}
+                                    >
+                                        {/* Render title and text */}
+                                        {card.title && card.section && (
+                                            <>
+                                                <h2 className="text-xl font-bold">{card.title}</h2>
+                                                <div>{card.section}</div>
+                                            </>
+                                        )}
+
+                                        {/* Render image only */}
+                                        {card.image && (
+                                            <img
+                                                src={card.image}
+                                                alt={`Card ${index + 1}`}
+                                                className={`info-card-image ${
+                                                    index === 1 ? 'second-card-image' : ''
+                                                }`}
+                                            />
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </section>
+                    <img src={line} className="line" alt="horizontal line" />
                 </div>
-            </section>
 
-            <section className="podcast">
-                <PodcastTile podcasts={podcasts} />
-            </section>
+                <section className="meetspeak">
+                    <Meetspeak />
+                </section>
 
-            <section className="info-card-section mb-12">
-                {infoCardData.map((card) => {
-                    return (
-                        <InfoCard
-                            key={card.title}
-                            section={card.section}
-                            title={card.title}
-                            icon={card.icon}
-                        ></InfoCard>
-                    );
-                })}
-            </section>
-        </SharedLayout>
-    </>
-);
+                <section>
+                    <Hire />
+                </section>
+
+                <section>
+                    <Thankyou />
+                </section>
+            </SharedLayout>
+        </>
+    );
+};
 
 export default Home;

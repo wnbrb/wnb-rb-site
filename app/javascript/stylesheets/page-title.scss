@@ -1,24 +1,34 @@
 .page-title {
-     @apply min-h-[10rem];
+    display: flex ;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+    align-items: center;
+    @apply md:w-[50%] lg:w-[50%] order-2 md:px-0;
     /* overflow-auto; */
 }
 
-.ruby-outline {
-    @apply absolute w-48 z-[-1] sm:w-40;
+.new-logo{
+    width: auto;
 }
 
 .title-container {
-    @apply pt-10 pl-4 md:pl-20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -85px;
+    gap: 10px;
+    justify-content: center;
+    @apply text-wnbrb-blue-navy
+    font-besley
+    text-center
 }
 
 .title-text {
-    @apply text-wnbrb-pink-default
-    text-5xl
-    sm:text-6xl
-    font-black
+    font-weight: 700;
+    font-size: 56px;
+    @apply text-wnbrb-blue-navy
+    font-besley
     md:whitespace-nowrap;
-
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: white;
-    text-shadow: 0px 2px 6px rgb(0 0 0 / 15%);
-}
+   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SharedLayout from 'components/layout/SharedLayout';
-import RubyOutline from 'components/icons/RubyOutline';
+import NewLogo from 'components/icons/NewLogo';
 
 import 'stylesheets/not_found';
 
@@ -13,7 +13,7 @@ const NotFound = () => (
 
         <SharedLayout>
             <div className="not-found-container">
-                <RubyOutline className="h-60 w-60" />
+                <NewLogo className="h-60 w-60" />
                 <div className="not-found-text-container">
                     <h1 className="title-text-lg">404</h1>
                     <p>We couldn&apos;t find the page you were looking for.</p>
