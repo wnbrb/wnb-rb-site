@@ -11,18 +11,26 @@
     padding: 2rem;
     width: 80%;
     margin: auto;
-    @apply text-wnbrb-blue-navy text-base font-rubik
+    
+    @apply text-wnbrb-blue-navy text-base font-rubik xs:w-[100%];
+   @media (min-width: 416px) and (max-width: 640px){
+        width: 100%;
+    }
 }
 .hire h2{
-    @apply text-wnbrb-blue-navy text-4xl font-besley font-bold
+    @apply text-wnbrb-blue-navy text-4xl font-besley font-bold xs:text-2xl;
+    @media (min-width: 416px) and (max-width: 640px){
+        font-size: 1.8rem;
+    }
 }
 .grow{
     text-align: center;
  }
  .hire-img{
     border-radius: 30px;
-    height: 320px;
+    height: auto;
     max-width: 100%;
     margin-top: 2rem;
-    object-fit: cover;
+    object-fit: contain;
+    @apply   lg:h-[320px] ;
  }

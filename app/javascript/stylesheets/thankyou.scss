@@ -7,6 +7,7 @@
     padding: 2rem;
     gap: 2rem;
     text-align: center;
+    @apply xs:text-left xs:px-[1.3rem];
 }
 .thankyou h2{
     @apply text-4xl text-black font-besley font-bold

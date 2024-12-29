@@ -37,6 +37,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 6rem 0;
+  @apply xs:py-[4rem];
 
   @media (min-width: 768px) { 
     gap: 2rem;
@@ -52,12 +53,13 @@
   background-color: #ffffe5;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   align-items: center;
   padding: 2rem;
   margin: auto;
   padding-top: 0;
   border-radius: 2rem;
+  @apply xs:w-[85%];
 
 @media (min-width: 1024px) { 
    width: 35%;

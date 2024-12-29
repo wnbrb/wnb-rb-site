@@ -3,7 +3,10 @@ footer {
     width: 100%;
 
     .footer {
-        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-12 xl:px-0 py-8 md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0;
+        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-12 xl:px-0 py-8 md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0 xs:px-[1rem];
+        @media (min-width: 416px) and (max-width: 640px){
+            padding-left: 1rem;
+        }
         color:#2e0880;
       
                 .first-div{
@@ -57,6 +60,7 @@ footer {
         .button{
             padding-top: 0.2rem;
             padding-bottom: 0.2rem;
+            @apply xs:text-[13px];
         }
 
         .footer-right {
