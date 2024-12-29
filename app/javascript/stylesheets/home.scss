@@ -12,14 +12,11 @@
     padding: 0.5rem 1rem;
     flex-direction: column;
     font-weight: bold;
-    height: 10rem;
+    height: 5rem;
     color: #2e0880;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
 
-    @media (min-width: 768px) {
-      height: 5rem;
-    }
 }
 .hero {
     @apply flex
@@ -60,19 +57,29 @@
 }
 .info {
     background-color: #c6e6da;
-    padding-top: 18px;
-    @media (min-width: 768px) { 
-    
-        padding-top: 13px;
+    @media (min-width: 1025px) {
+        padding-top: 9px;
     }
-    @media (min-width: 1024px) { 
+    @media (min-width: 769px) and (max-width: 1024px){ 
     
-        padding-top: 5px;
+        padding-top: 18px;
+    }
+    @media (min-width: 641px) and (max-width: 768px) { 
+    
+        padding-top: 19px;
+    }
+    @media (min-width: 416px) and (max-width: 640px) { 
+    
+        padding-top: 25px;
+    }
+    @media (max-width: 416px) {
+        padding-top: 30px;
     }
 }
 .info-layout {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
+    @apply sm:pb-[3rem] md:pb-[0rem]  lg:pb-[5rem];
 }
 .info-card-section {
     @apply mx-auto
@@ -99,9 +106,8 @@
 }
 .info-card-image{
     border-radius: 20px;
-    height: 310px;
-    object-fit: cover;
-    max-width: 100%;
+    object-fit: contain;
+  
 
     @media (min-width: 768px) { 
     
@@ -111,6 +117,7 @@
     }
     @media (min-width: 1024px) { 
            height: 270px;
+           object-fit: cover;
            border-radius: 0;
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;        
@@ -130,11 +137,12 @@
     color: white;
 }
 .bg-color-2 {
-    background-color: #b33c3c;
-    color: white;
+    background-color:  #ffdd19;
+    
 }
 .bg-color-3 {
-    background-color: #ffdd19;
+    background-color: #b33c3c;
+    color: white;
 }
 .line {
     margin-top: -2.5rem;
@@ -148,7 +156,7 @@
     grid-template-rows: auto;
     padding-top: 4rem;
     gap: 2rem;
- 
+    @apply xs:pt-[3rem];
 
     @media (min-width: 768px) { 
         grid-template-columns: 1fr 1fr; 
@@ -263,14 +271,23 @@
 }
 .meetspeak{
     background-color: #bfe444;
-    margin-top: -20px;
-
-    @media (min-width: 768px) { 
-        margin-top: -26px;
+    @media (min-width: 1025px) {
+        margin-top: -33px;
+    }
+   @media (min-width:768px) and (max-width: 1024px){ 
+       margin-top: -27px;
+   }
+   
+    @media (min-width: 641px) and (max-width: 768px){ 
+        margin-top: -23px;
 
     }
-
-    @media (min-width: 1024px) { 
-        margin-top: -32px;
+    @media (min-width: 416px) and (max-width: 640px) { 
+    
+        margin-top: -16px;
     }
+    @media (max-width: 416px) {
+        margin-top: -12px;
+    }
+
 }

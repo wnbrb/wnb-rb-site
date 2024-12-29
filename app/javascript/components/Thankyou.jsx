@@ -5,7 +5,7 @@ import mike from '../../assets/images/mike.png';
 const Thankyou = () => {
     return (
         <div className="thankyou">
-            <h2>Thank you to our Sponsors</h2>
+            <h2>Thank you to our Sponsor</h2>
             <p>
                 We are immensely grateful to our sponsor for his generous support and commitment.
                 His invaluable contribution has been instrumental in helping us achieve our goals
