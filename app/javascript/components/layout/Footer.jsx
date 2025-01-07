@@ -107,6 +107,15 @@ const Footer = () => (
                             <i className="bi bi-linkedin"></i>
                         </a>
                     </div>
+                    <p>
+                        <span>Designed by </span>
+                        <a
+                            href="https://www.beflagrant.com/"
+                            style={{ textDecoration: 'underline' }}
+                        >
+                            Flagrant
+                        </a>
+                    </p>
                     <p className="made-with-love">
                         Made with{' '}
                         <span role="img" aria-label="heart">
