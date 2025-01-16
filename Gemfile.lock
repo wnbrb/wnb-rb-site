@@ -85,6 +85,13 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -121,6 +128,13 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
     drb (2.2.1)
+    erb_lint (0.8.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop (>= 1)
+      smart_properties
     erubi (1.13.0)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
@@ -377,6 +391,7 @@ GEM
       gli
       hashie
       websocket-driver
+    smart_properties (1.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -430,6 +445,7 @@ DEPENDENCIES
   debug (~> 1.7.1)
   devise (~> 4.9.2)
   drb (~> 2.2.1)
+  erb_lint
   factory_bot_rails (~> 6.4.3)
   faker (~> 2.18.0)
   google_drive!
