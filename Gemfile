@@ -90,3 +90,8 @@ end
 # bug deprecate gems not longer in ruby standard warning
 gem 'drb', '~> 2.2.1'
 gem 'mutex_m', '~> 0.2.0'
+
+# add erb-lint gem
+gem 'erb_lint', require: false
+
+
