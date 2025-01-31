@@ -14,9 +14,9 @@ const EventsCalendar = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPastMeetups();
-            const flattenedMeetups = Object.entries(data).flatMap(([year, meetupsByMonth]) =>
-                Object.values(meetupsByMonth).flat(),
-            );
+            const flattenedMeetups = Object.entries(data).flatMap(([, meetupsByMonth]) => {
+                return Object.values(meetupsByMonth).flat();
+            });
             setMeetups(flattenedMeetups);
             setLoading(false);
         };
@@ -39,8 +39,8 @@ const EventsCalendar = () => {
         const eventElement = document.getElementById(eventId);
         if (eventElement) {
             eventElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            eventElement.classList.add('highlight'); 
-            setTimeout(() => eventElement.classList.remove('highlight'), 2000); 
+            eventElement.classList.add('highlight');
+            setTimeout(() => eventElement.classList.remove('highlight'), 2000);
         }
     };
 
@@ -61,7 +61,7 @@ const EventsCalendar = () => {
     return (
         <div className="events-calendar-container">
             <div className="page-title-calendar">
-                <h1 className='font-besley text-2xl font-bold mb-2'>Upcoming Events</h1>
+                <h1 className="font-besley text-2xl font-bold mb-2">Upcoming Events</h1>
                 <p>
                     <a href="/join-us">Register </a>to stay updated with upcoming events
                 </p>
@@ -75,18 +75,20 @@ const EventsCalendar = () => {
                         initialView="dayGridMonth"
                         events={events}
                         eventClick={handleEventClick}
-                        editable={false} 
-                        selectable={true} 
+                        editable={false}
+                        selectable={true}
                         dayCellDidMount={(args) => {
-               
                             const eventForDay = events.find(
-                                (event) => new Date(event.start).toDateString() === args.date.toDateString()
+                                (event) =>
+                                    new Date(event.start).toDateString() ===
+                                    args.date.toDateString(),
                             );
-                                          
+
                             if (eventForDay) {
-                                const dayNumberElement = args.el.querySelector('.fc-daygrid-day-number');
+                                const dayNumberElement =
+                                    args.el.querySelector('.fc-daygrid-day-number');
                                 if (dayNumberElement) {
-                                    dayNumberElement.classList.add('clickable-day'); 
+                                    dayNumberElement.classList.add('clickable-day');
                                     dayNumberElement.addEventListener('click', () => {
                                         handleEventClick({ event: { id: eventForDay.id } });
                                     });
@@ -107,7 +109,14 @@ const EventsCalendar = () => {
                                 id={event.id}
                                 key={event.id}
                                 className={`event-card ${index % 2 === 0 ? 'yellow' : 'green'}`}
-                                onClick={() => goToEventDate(event.date)} 
+                                onClick={() => goToEventDate(event.date)}
+                                role="button"
+                                tabIndex="0"
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        goToEventDate(event.date);
+                                    }
+                                }}
                             >
                                 <p>{new Date(event.date).toLocaleDateString()}</p>
                                 <h3>{event.title}</h3>

@@ -20,10 +20,10 @@ const Meetups = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPastMeetups();
-            const flattenedMeetups = Object.entries(data).flatMap(([year, meetupsByMonth]) => {
+            const flattenedMeetups = Object.entries(data).flatMap(([, meetupsByMonth]) => {
                 return Object.values(meetupsByMonth).flat();
             });
-            
+
             setMeetups(flattenedMeetups);
             setLoading(false);
         };
@@ -52,48 +52,54 @@ const Meetups = () => {
                 {loading ? (
                     <LoadingSpinner />
                 ) : (
-                    <div className='meetup-section-container'>
-                    <div className="container flex justify-center flex-col mx-auto ">
-                        <div className="flex flex-col gap-2 justify-center items-center mx-auto ">
-                            <h5 className="font-rubik text-xl font-bold text-wnbrb-blue-navy ">Archive</h5>
-                            <h1 className="font-besley text-3xl font-bold text-wnbrb-blue-navy ">Past Meetups</h1>
-                        </div>
+                    <div className="meetup-section-container">
+                        <div className="container flex justify-center flex-col mx-auto ">
+                            <div className="flex flex-col gap-2 justify-center items-center mx-auto ">
+                                <h5 className="font-rubik text-xl font-bold text-wnbrb-blue-navy ">
+                                    Archive
+                                </h5>
+                                <h1 className="font-besley text-3xl font-bold text-wnbrb-blue-navy ">
+                                    Past Meetups
+                                </h1>
+                            </div>
 
-                        <div className="archive ">
-                            {visibleMeetups.length > 0 ? (
-                                <>
-                                    {visibleMeetups.map(({ id, speakers, title, date, talks }) => {
-                                        const dateString = date.split('T')[0];
-                                        const [year, month, day] = dateString.split('-');
+                            <div className="archive ">
+                                {visibleMeetups.length > 0 ? (
+                                    <>
+                                        {visibleMeetups.map(
+                                            ({ id, speakers, title, date, talks }) => {
+                                                const dateString = date.split('T')[0];
+                                                const [year, month, day] = dateString.split('-');
 
-                                        return (
-                                            <Meetup
-                                                key={id}
-                                                speakers={speakers}
-                                                title={title}
-                                                talks={talks}
-                                                year={year}
-                                                month={month.padStart(2, '0')}
-                                                day={day}
-                                            />
-                                        );
-                                    })}
-                                </>
-                            ) : (
-                                <p>No meetups available.</p>
-                            )}
+                                                return (
+                                                    <Meetup
+                                                        key={id}
+                                                        speakers={speakers}
+                                                        title={title}
+                                                        talks={talks}
+                                                        year={year}
+                                                        month={month.padStart(2, '0')}
+                                                        day={day}
+                                                    />
+                                                );
+                                            },
+                                        )}
+                                    </>
+                                ) : (
+                                    <p>No meetups available.</p>
+                                )}
+                            </div>
+                            <div className="flex justify-center items-center">
+                                {visibleCount < meetups.length && (
+                                    <button
+                                        className="see-more-btn mt-6 px-2 py-3 bg-wnbrb-blue-navy  font-bold"
+                                        onClick={handleSeeMore}
+                                    >
+                                        See More
+                                    </button>
+                                )}
+                            </div>
                         </div>
-                        <div className="flex justify-center items-center">
-                            {visibleCount < meetups.length && (
-                                <button
-                                    className="see-more-btn mt-6 px-2 py-3 bg-wnbrb-blue-navy  font-bold"
-                                    onClick={handleSeeMore}
-                                >
-                                    See More
-                                </button>
-                            )}
-                        </div>
-                    </div>
                     </div>
                 )}
             </SharedLayout>

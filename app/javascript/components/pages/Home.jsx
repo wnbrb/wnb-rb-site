@@ -97,7 +97,6 @@ const Home = () => {
                                             card.backgroundColor ? card.backgroundColor : ''
                                         }`}
                                     >
-                                       
                                         {card.title && card.section && (
                                             <>
                                                 <h2 className="text-xl font-bold">{card.title}</h2>
@@ -105,7 +104,6 @@ const Home = () => {
                                             </>
                                         )}
 
-                                  
                                         {card.image && (
                                             <img
                                                 src={card.image}
