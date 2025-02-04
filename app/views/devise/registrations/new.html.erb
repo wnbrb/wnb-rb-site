@@ -6,12 +6,12 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field mb-4">
-      <%= f.label :name, 'Your Name' %><br />
+      <%= f.label :name, 'Your Name' %><br>
       <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "mt-2 w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40" %>
     </div>
 
     <div class="field mb-4">
-      <%= f.label :email %><br />
+      <%= f.label :email %><br>
       <%= f.email_field :email, autocomplete: "email", class: "mt-2 w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40" %>
     </div>
 
@@ -19,12 +19,12 @@
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
+      <% end %><br>
       <%= f.password_field :password, autocomplete: "new-password", class: "mt-2 w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40" %>
     </div>
 
     <div class="field mb-4">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation %><br>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mt-2 w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40" %>
     </div>
 
