@@ -53,3 +53,6 @@ google-credentials.json
 
 # Ignore asdf version file
 .tool-versions
+bin/erb-lint
+bin/erb_lint
+bin/erblint
