@@ -123,15 +123,13 @@ h3 {
     position: relative;
 }
 .view-btn {
-    border-radius: 30px;
-    background-color: rgb(255, 221, 25);
-    border: 2px solid rgb(46, 8, 128);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+    background-color: #ffdd19 !important;
+    color: #2e0880 !important;
+    border: 2px solid;
+    font-size: 18px;
+    font-weight: 500;
+    width: 35%;
     margin: auto;
-    color: #2e0880;
     font-family: besley;
 }
 .view-btn:hover {
@@ -142,11 +140,9 @@ li {
     list-style: none;
 }
 .see-more-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 28px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    color: wheat;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px auto;
+    font-family: besley;
+    color: wheat !important;
 }
