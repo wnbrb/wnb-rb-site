@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import meetup from '../../../assets/images/meetup.jpg';
+import Button from '../../components/Button';
 
 const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
     const eventWithSpeaker = talks.map((talk) => {
@@ -42,14 +43,12 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
                             ))}
                     </div>
                 </div>
-                <div className="view-btn">
-                    <a
-                        className="inline-block my-4 py-4 px-8 rounded text-lg md:text-xl"
-                        href={`/meetups/${year}/${month}/${day}`}
-                    >
+
+                <a href={`/meetups/${year}/${month}/${day}`}>
+                    <Button type="secondary" className="view-btn">
                         View
-                    </a>
-                </div>
+                    </Button>
+                </a>
             </div>
         </li>
     );

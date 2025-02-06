@@ -9,6 +9,7 @@ import Meetup from '../meetups/MeetUp';
 import 'stylesheets/meetup';
 import EventsCalendar from '../meetups/EventsCalendar';
 import horizontal from '../../../assets/images/horizontal-line.svg';
+import Button from '../../components/Button';
 
 const Meetups = () => {
     const [loading, setLoading] = useState(true);
@@ -91,12 +92,13 @@ const Meetups = () => {
                             </div>
                             <div className="flex justify-center items-center">
                                 {visibleCount < meetups.length && (
-                                    <button
-                                        className="see-more-btn mt-6 px-2 py-3 bg-wnbrb-blue-navy  font-bold"
+                                    <Button
+                                        type="secondary"
+                                        className="see-more-btn"
                                         onClick={handleSeeMore}
                                     >
                                         See More
-                                    </button>
+                                    </Button>
                                 )}
                             </div>
                         </div>

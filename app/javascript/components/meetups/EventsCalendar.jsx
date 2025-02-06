@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { getPastMeetups } from '../../datasources';
 import 'stylesheets/events-calendar';
+import Button from '../../components/Button';
 import 'stylesheets/button';
 
 const EventsCalendar = () => {
@@ -163,12 +164,22 @@ const EventsCalendar = () => {
             </div>
 
             <div className="btn-navigation">
-                <button className="button primary" aria-label="Go to previous" onClick={handlePrev}>
+                <Button
+                    type="secondary"
+                    className="btn"
+                    aria-label="Go to previous"
+                    onClick={handlePrev}
+                >
                     {'< Previous'}
-                </button>
-                <button className="button primary" aria-label="Go to next" onClick={handleNext}>
+                </Button>
+                <Button
+                    type="secondary"
+                    className="btn"
+                    aria-label="Go to next"
+                    onClick={handleNext}
+                >
                     {'Next >'}
-                </button>
+                </Button>
             </div>
         </div>
     );
