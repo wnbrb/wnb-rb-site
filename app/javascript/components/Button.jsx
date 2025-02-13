@@ -11,9 +11,12 @@ const Button = ({ children, type = '', className = '', disabled = false, onClick
 
     return (
         <>
-            <div className={`button ${className} ${type} ${buttonDisabled && 'disabled'}`} onClick={onClick}>
+            <button
+                className={`button ${className} ${type} ${buttonDisabled && 'disabled'}`}
+                onClick={onClick}
+            >
                 {children}
-            </div>
+            </button>
         </>
     );
 };
