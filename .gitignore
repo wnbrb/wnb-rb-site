@@ -55,7 +55,7 @@ google-credentials.json
 .tool-versions
 
 # ERB Lint binaries
-echo "bin/erb-lint" >> .gitignore
-echo "bin/erb_lint" >> .gitignore
-echo "bin/erblint" >> .gitignore
+bin/erb-lint
+bin/erb_lint
+bin/erblint
 
