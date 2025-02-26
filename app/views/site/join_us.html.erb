@@ -2,6 +2,6 @@
 <%= append_stylesheet_pack_tag 'join_us' %>
 <%- if ENV.fetch('RECAPTCHA_ENABLED', nil) == 'true' %>
   <script>
-    var gtoken= '<%=raw(ENV.fetch('RECAPTCHA_SITE_KEY', nil))%>'
+    var gtoken= '<%= raw(ENV.fetch('RECAPTCHA_SITE_KEY', nil)) %>'
   </script>
 <% end -%>

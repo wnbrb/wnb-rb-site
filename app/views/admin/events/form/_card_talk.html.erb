@@ -16,7 +16,7 @@
         <div class="col-12">
           <div class="row g-2">
             <div class="col-auto">
-              <%=image_tag talk.speaker.image_url, class:"rounded-circle object-fit-cover border border-3 border-primary shadow", height: 53, width: 53, alt:"Profile photo for #{talk.speaker.name}" %>
+              <%= image_tag talk.speaker.image_url, class: "rounded-circle object-fit-cover border border-3 border-primary shadow", height: 53, width: 53, alt: "Profile photo for #{talk.speaker.name}" %>
             </div>
             <div class="col">
               <h2 class="card-title h6"><%= talk.talk_title %></h2>
@@ -35,7 +35,7 @@
               <small>
                 <% if talk.talk_video_link.present? %>
                   <span> Video: </span>
-                  <%= link_to "Youtube", talk.talk_video_link, class:"text-nowrap", target: "_blank", rel: "noopener noreferrer" %>
+                  <%= link_to "Youtube", talk.talk_video_link, class: "text-nowrap", target: "_blank", rel: "noopener noreferrer" %>
                 <% else %>
                   <span class="text-body-secondary fst-italic">(No video provided)</span>
                 <% end %>
@@ -45,7 +45,7 @@
               <%= button_tag type: :submit, formmethod: "get", formaction: set_talk_admin_events_path(talk_id: talk_id), class: "btn btn-info", data: { turbo_stream: "true" } do %>
                 <i class="bi bi-pencil-fill"></i>
               <% end %>
-              <%=button_tag type: "button", class: "btn btn-outline-secondary", data: { action: "event-form-remove-talk#removeRecord", talk_id: talk_id, persisted: talk.persisted? } do %>
+              <%= button_tag type: "button", class: "btn btn-outline-secondary", data: { action: "event-form-remove-talk#removeRecord", talk_id: talk_id, persisted: talk.persisted? } do %>
                 <i class="bi bi-trash3-fill"></i>
               <% end %>
             </div>
@@ -53,17 +53,17 @@
         </div>
       </div>
     </div>
-      <div class="card-footer bg-opacity-10 bg-primary">
-        <small class="<%=talk.updated_at ? 'text-body-secondary' : 'text-danger' %>">
-        <% if talk.updated_at%>
-          Last update <%=time_ago_in_words(talk.updated_at, include_seconds: true)%> ago
+    <div class="card-footer bg-opacity-10 bg-primary">
+      <small class="<%= talk.updated_at ? 'text-body-secondary' : 'text-danger' %>">
+        <% if talk.updated_at %>
+          Last update <%= time_ago_in_words(talk.updated_at, include_seconds: true) %> ago
         <% else %>
           Unsaved changes
         <% end %>
-        </small>
-      </div>
+      </small>
+    </div>
   </div>
 <% end %>
 <% if talk.persisted? %>
-  <input autocomplete="off" type="hidden" value="<%=talk_id%>" name="event[talks_attributes][<%=talk_id%>][id]" id="event_talks_attributes_<%=talk_id%>_id">
+  <input autocomplete="off" type="hidden" value="<%= talk_id %>" name="event[talks_attributes][<%= talk_id %>][id]" id="event_talks_attributes_<%= talk_id %>_id">
 <% end %>
