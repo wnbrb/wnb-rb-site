@@ -139,12 +139,11 @@
     justify-content: center;
 }
 .fc .fc-toolbar-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 1rem;
-    @apply md:text-[2.5rem];
+    @apply md:text-[2rem] lg:pb-[1rem];
 }
 
 .event-card {
