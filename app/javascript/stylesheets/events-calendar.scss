@@ -180,12 +180,12 @@
 
 .events-cards::-webkit-scrollbar-thumb {
     background-color: #e8e8cd;
-    height: 10rem !important;
+    height: 10rem;
     border-radius: 10px;
 }
 
 .events-cards::-webkit-scrollbar-track {
-    background-color: transparent !important;
+    background-color: transparent;
     border-radius: 10px;
 }
 .event-card.highlight {
