@@ -29,7 +29,7 @@ VideoBlock.propTypes = {
 
 const SpeakerBiosBlock = ({ speakers }) => {
     return (
-        <div className="container max-w-2xl my-8 mx-3 p-4 flex flex-col">
+        <div className="abt-speaker container max-w-[77rem] mb-8 mx-3 flex flex-col">
             <div className="inline-flex items-center gap-2 align-center mb-5">
                 <i className="bi bi-mic text-lg text-red-400"></i>
                 <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
