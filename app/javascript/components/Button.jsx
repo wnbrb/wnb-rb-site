@@ -3,18 +3,15 @@ import PropTypes from 'prop-types';
 
 import 'stylesheets/button';
 
-const Button = ({ children, type = '', className = '', disabled = false }) => {
-    const [buttonDisabled, setDisabled] = React.useState(false);
-    React.useEffect(() => {
-        setDisabled(disabled);
-    }, [disabled]);
-
+const Button = ({ children, type = '', className = '', disabled = false, onClick = () => {} }) => {
     return (
-        <>
-            <div className={`button ${className} ${type} ${buttonDisabled && 'disabled'}`}>
-                {children}
-            </div>
-        </>
+        <button
+            className={`button ${className} ${type} ${disabled ? 'disabled' : ''}`}
+            disabled={disabled}
+            onClick={onClick} 
+        >
+            {children}
+        </button>
     );
 };
 
@@ -23,6 +20,7 @@ Button.propTypes = {
     type: PropTypes.string,
     className: PropTypes.string,
     disabled: PropTypes.bool,
+    onClick: PropTypes.func, 
 };
 
 export default Button;
