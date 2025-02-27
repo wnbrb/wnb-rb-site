@@ -1,71 +1,148 @@
-.meetups__month:first-of-type > .meetups__card--border {
-  margin-top: 80px;
+.meetup-section-container {
+    background-color: #fff099;
+    margin-top: -14px;
+    padding-top: 4rem;
+    @apply md:-mt-[20px] lg:-mt-[26px]; 
 }
 
+@media (min-width: 575px) and (max-width: 767px) {
+    .meetup-section-container {
+        margin-top: -23px;
+    }
+}
+
+@media (min-width: 850px) and (max-width: 1024px) {
+    .meetup-section-container {
+        margin-top: -27px;
+    }
+}
+
+@media (min-width: 1094px) and (max-width: 1440px) {
+    .meetup-section-container {
+        margin-top: -38px;
+    }
+}
+
+.meetups__month:first-of-type > .meetups__card--border {
+    margin-top: 80px;
+}
+.meetup-section {
+    background-color: #fff099;
+}
+.archive {
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+.card-content {
+    padding: 1rem;
+}
+.stock-img {
+    border-radius: 20px;
+}
+@media (min-width: 768px) {
+    .archive {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .archive {
+        grid-template-columns: auto auto auto;
+    }
+}
 .meetups__month:last-of-type > .meetups__card--border {
-  align-self: flex-start;
-  padding-top: 50px;
-  line-height: 0;
+    align-self: flex-start;
+    padding-top: 50px;
+    line-height: 0;
 }
 
 .meetups__month:first-of-type > .meetups__month--name,
 .meetups__month:last-of-type > .meetups__month--name {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .meetups__card--border::before {
-  display: block;
-  position: relative;
-  left: -10px;
-  font-size: 50px;
-  color: #d1d5db;
-  content: '•';
+    display: block;
+    position: relative;
+    left: -10px;
+    font-size: 50px;
+    color: #d1d5db;
+    content: '•';
 }
 
 .meetups__month:first-of-type > .meetups__card--border::before {
-  top: -28px;
+    top: -28px;
 }
 
 .meetups__month:last-of-type > .meetups__card--border::before {
-  top: 14px;
+    top: 14px;
 }
 
-.meetspeak-layout{
-  display: flex;
-  background-color: #bfe444;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 6rem 0;
-  @apply xs:py-[4rem];
-
-  @media (min-width: 768px) { 
+.meetspeak-layout {
+    display: flex;
+    background-color: #bfe444;
+    justify-content: center;
+    flex-direction: column;
     gap: 2rem;
- 
+    padding: 6rem 0;
+
+    @media (min-width: 768px) {
+        gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
 }
 
-@media (min-width: 1024px) { 
-    flex-direction: row;
+.meet-card,
+.speak-card {
+    background-color: #ffffe5;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    padding: 2rem;
+    margin: auto;
+    padding-top: 0;
+    border-radius: 2rem;
+
+    @media (min-width: 1024px) {
+        width: 35%;
+        margin: 2rem;
+    }
 }
+h3 {
+    @apply font-bold text-xl text-wnbrb-blue-navy;
+}
+.line {
+    margin-top: -2rem;
+    position: relative;
+}
+.view-btn {
+    background-color: #ffdd19 !important;
+    color: #2e0880 !important;
+    border: 2px solid;
+    font-size: 18px;
+    font-weight: 500;
+    width: 35%;
+    margin: auto;
+    font-family: besley;
+}
+.view-btn:hover {
+    background-color: #ffffe5;
 }
 
-.meet-card, .speak-card {
-  background-color: #ffffe5;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  align-items: center;
-  padding: 2rem;
-  margin: auto;
-  padding-top: 0;
-  border-radius: 2rem;
-  @apply xs:w-[85%];
-
-@media (min-width: 1024px) { 
-   width: 35%;
-   margin: 2rem;
+li {
+    list-style: none;
 }
-}
-h3{
-  @apply font-bold text-xl text-wnbrb-blue-navy
+.see-more-btn {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px auto;
+    font-family: besley;
+    color: wheat !important;
 }

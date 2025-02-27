@@ -44,16 +44,16 @@ header {
                                     }
 
                                     &:hover::after {
-                                        background-color: #2e0880;
+                                        background-color: #6e31f2;
                                     }
                                 }
                             }
 
                             &.is-active {
                                 a {
-                                    @apply text-gray-700;
+                                    @apply text-[#6e31f2];
                                     &::after {
-                                        background-color: #F56960;
+                                        background-color: #6e31f2;
                                     }
                                 }
                             }
