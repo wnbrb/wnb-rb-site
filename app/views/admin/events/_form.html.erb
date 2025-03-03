@@ -29,7 +29,7 @@
     <div class="row g-3" id="event_talks" data-controller="event-form-remove-talk">
       <div class="mx-auto col-8 order-last">
         <div class="card h-100 border-0 shadow-sm">
-          <%=button_tag type: "button", class: "btn btn-outline-primary fw-semibold h-100 p-3", data: { controller: "turbo", href: set_talk_admin_events_path(talk_id: "new_talk") } do %>
+          <%= button_tag type: "button", class: "btn btn-outline-primary fw-semibold h-100 p-3", data: { controller: "turbo", href: set_talk_admin_events_path(talk_id: "new_talk") } do %>
             <span class="rounded-2 h1 border border-1 border-primary mx-auto pb-0">
               <i class="bi bi-plus-lg"></i>
             </span>
@@ -45,7 +45,7 @@
     </div>
   </fieldset>
   <div class="actions text-center mb-4">
-    <%=f.submit "Save", class: "btn btn-primary btn-lg shadow-sm" %>
-    <%=link_to "Cancel", admin_events_path, class: "btn btn-outline-primary btn-lg shadow-sm" %>
+    <%= f.submit "Save", class: "btn btn-primary btn-lg shadow-sm" %>
+    <%= link_to "Cancel", admin_events_path, class: "btn btn-outline-primary btn-lg shadow-sm" %>
   </div>
 <% end %>
