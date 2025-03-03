@@ -147,7 +147,7 @@ const SpeakerVideoBlock = ({ speaker, eventSpeaker }) => {
                     <img src={eventsline} className="wavy" alt="line" />
 
                     <div key={id} className="speaker-section flex flex-col gap-[20px] px-12 py-8 content-center text-lg">
-
+                    <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
                         <img
                             className="object-cover w-14 h-14 mr-4 rounded-full"
                             src={imageUrl}
