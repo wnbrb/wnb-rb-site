@@ -4,7 +4,9 @@ import meetup from '../../../assets/images/meetup.jpg';
 import Button from '../../components/Button';
 
 const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
-    const eventWithSpeaker = talks.map((talk) => {
+    const sortedTalks = [...talks].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const eventWithSpeaker = sortedTalks.map((talk) => {
         const speaker = speakers.find((speak) => speak.id === talk.speaker_id);
         return { ...talk, speaker };
     });
