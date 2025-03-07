@@ -147,8 +147,11 @@ const SpeakerVideoBlock = ({ speaker, eventSpeaker }) => {
                     <VideoBlock videoUrl={videoLink} title={title} />
                     <img src={eventsline} className="wavy" alt="line" />
 
-                    <div key={id} className="speaker-section flex flex-col gap-[20px] px-12 py-8 content-center text-lg">
-                    <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
+                    <div
+                        key={id}
+                        className="speaker-section flex flex-col gap-[20px] px-12 py-8 content-center text-lg"
+                    >
+                        <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
                         <img
                             className="object-cover w-14 h-14 mr-4 rounded-full"
                             src={imageUrl}
@@ -158,7 +161,7 @@ const SpeakerVideoBlock = ({ speaker, eventSpeaker }) => {
                             <p className="font-bold text-gray md:text-lg">{name}</p>
                             <p className="text-sm text-gray md:text-lg">{tagline}</p>
                         </div>
-                      <p className="pb-14">{description}</p>
+                        <p className="pb-14">{description}</p>
                     </div>
                 </>
             )}
@@ -200,17 +203,15 @@ const PastMeetup = () => {
             <Helmet>
                 <title>{title}</title>
             </Helmet>
-       
+
             <SharedLayout>
                 {loading ? (
                     <LoadingSpinner />
                 ) : panelVideoUrl ? (
                     <>
-                        
                         <VideoBlock videoUrl={panelVideoUrl} title={title} />
                         <img src={eventsline} className="wavy" alt="line" />
 
-                        
                         <div className="speaker-section w-full rounded  p-10  overflow-hidden">
                             <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
                             <SpeakersList speakers={speakers} />
