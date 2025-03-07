@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import { getPastMeetup } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
@@ -196,6 +197,10 @@ const PastMeetup = () => {
     } = meetup;
     return (
         <>
+            <Helmet>
+                <title>{title}</title>
+            </Helmet>
+       
             <SharedLayout>
                 {loading ? (
                     <LoadingSpinner />
