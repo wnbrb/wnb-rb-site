@@ -4,7 +4,7 @@ body {
 
 .join-us-form-container {
   
-  @apply w-full h-full px-10 md:px-20 py-24 flex flex-col justify-center items-center;
+  @apply w-full pt-[4rem] pb-[1rem] h-full px-0 md:px-20 py-24 flex flex-col justify-center items-center;
 
   h1 {
     font-family: Besley;
@@ -60,14 +60,40 @@ body {
   order:0;
   margin-top: 0;
 
+  @media (min-width: 768px) { 
+    width: 56%; 
+  }
+
 }
 .page-title .new-logo{
-  width: 31%;
+  width: 55%;
+
+  @media (min-width: 450px) { 
+    width: 47%; 
+  }
+  @media (min-width: 540px) { 
+    width: 40%; 
+  }
+  @media (min-width: 600px) { 
+    width: 32%; 
+  }
+  @media (min-width: 768px) { 
+    width: 68%; 
+  }
+  @media (min-width: 1024px) { 
+    width: 53%; 
+  }
+
+  @media (min-width: 1200px) { 
+    width: 40%; 
+  } 
 }
 .page-title .title-container{
-  margin-top: -3rem;
+  margin-top: -4rem;
   display: block;
   font-family: Besley;
+  padding: 0 20px;
+  @apply md:-mt-[5rem] lg:-mt-[5rem]
 }
 h1.title-text{
   font-size: 3rem;
@@ -83,4 +109,8 @@ padding-top: 0;
 .card .join{
   padding-bottom: 18px;
   margin-bottom: 0;
+}
+.submit{
+  padding: 1rem 2rem;
+
 }
