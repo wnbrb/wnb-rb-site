@@ -1,15 +1,18 @@
 body {
-  @apply bg-wnbrb-pink-medium;
+  background-color: #f5f1fe;
 }
 
 .join-us-form-container {
+  
   @apply w-full h-full px-10 md:px-20 py-24 flex flex-col justify-center items-center;
 
   h1 {
+    font-family: Besley;
     @apply text-2xl md:text-4xl  font-bold mb-8 text-center;
   }
 
   h2 {
+    font-family: rubik;
     @apply text-2xl font-semibold mb-8 text-center;
   }
 
@@ -36,12 +39,12 @@ body {
     }
 
     input[type="text"] {
-      @apply w-full md:ml-4 md:w-8/12 shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded py-2 px-3 text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-pink-default focus:ring-opacity-40;
+      @apply w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded py-2 px-3 text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-blue-navy focus:ring-opacity-40;
     }
 
     input[type="radio"],
     input[type="checkbox"] {
-      @apply appearance-none checked:bg-wnbrb-pink-default outline-none focus:ring-2 focus:ring-offset-1 focus:ring-wnbrb-pink-default focus:ring-opacity-40 indeterminate:shadow indeterminate:border-gray-400 scale-125;
+      @apply appearance-none checked:bg-wnbrb-blue-navy  outline-none focus:ring-2 focus:ring-offset-1 focus:ring-wnbrb-blue-navy focus:ring-opacity-40 indeterminate:shadow indeterminate:border-gray-400 scale-125;
     }
 
     p.input-description {
@@ -52,4 +55,32 @@ body {
       @apply text-red-500 text-sm italic mt-3;
     }
   }
+}
+.page-title{
+  order:0;
+  margin-top: 0;
+
+}
+.page-title .new-logo{
+  width: 31%;
+}
+.page-title .title-container{
+  margin-top: -3rem;
+  display: block;
+  font-family: Besley;
+}
+h1.title-text{
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.card{
+background-color: #f5f1fe;
+box-shadow: none;
+margin-top: 0;
+padding-top: 0;
+}
+.card .join{
+  padding-bottom: 18px;
+  margin-bottom: 0;
 }
