@@ -358,7 +358,7 @@ const JoinUs = () => {
                                
                                     <Button
                                         type="secondary"
-                                        className="w-full md:w-6/12 mt-4 mx-auto p-0"
+                                        className="submit mt-4 mx-auto"
                                         disabled={isSubmitting || !isValid}
                                     >
                                         <input
