@@ -132,7 +132,7 @@ const JoinUs = () => {
                         </p>
                     </PageTitle>
                     <Card className="w-full max-w-[50rem] mt-5">
-                        <h1 className='join'>Join</h1>
+                        <h1 className="join">Join</h1>
                         <p className="mb-4">
                             By filling out this form, you give the organizers of WNB.rb permission
                             to add you to our Slack workspace and/or Google Group.
@@ -162,7 +162,6 @@ const JoinUs = () => {
                             .
                         </p>
 
-                       
                         <Formik {...{ initialValues, validationSchema, onSubmit }}>
                             {({ isSubmitting, isValid }) => (
                                 <Form>
@@ -325,7 +324,7 @@ const JoinUs = () => {
                                             className="error-message"
                                         />
                                     </fieldset>
-                                    
+
                                     <h2>About Your Work</h2>
                                     <p className="mb-8">
                                         The following questions are about your work. Only the WNB.rb
@@ -355,7 +354,7 @@ const JoinUs = () => {
                                             id="lookingForJob"
                                         />
                                     </div>
-                               
+
                                     <Button
                                         type="secondary"
                                         className="submit mt-4 mx-auto"
