@@ -6,11 +6,11 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import SharedLayout from 'components/layout/SharedLayout';
-import Logo from 'components/icons/Logo';
 import Card from 'components/Card';
 import Button from 'components/Button';
 import AlertBanner from '../AlertBanner';
 import { submitLeadForm } from '../../datasources';
+import PageTitle from 'components/PageTitle';
 
 import 'stylesheets/join_us';
 
@@ -126,9 +126,13 @@ const JoinUs = () => {
                     />
                 )}
                 <div className="join-us-form-container">
-                    <Logo className="h-28" />
+                    <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
+                        <p className="mt-3 font-besley text-base">
+                            A virtual community for women and non-binary Rubyists.
+                        </p>
+                    </PageTitle>
                     <Card className="w-full max-w-[50rem] mt-5">
-                        <h1>Join WNB.rb!</h1>
+                        <h1 className='join'>Join</h1>
                         <p className="mb-4">
                             By filling out this form, you give the organizers of WNB.rb permission
                             to add you to our Slack workspace and/or Google Group.
@@ -139,7 +143,7 @@ const JoinUs = () => {
                             remain hidden from everyone except the WNB.rb organizers. See our{' '}
                             <a
                                 href="https://tinyurl.com/wnb-rb-coc"
-                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -151,14 +155,14 @@ const JoinUs = () => {
                             Learn more{' '}
                             <a
                                 href="/"
-                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                             >
                                 about us
                             </a>
                             .
                         </p>
 
-                        <hr className="my-8" />
+                       
                         <Formik {...{ initialValues, validationSchema, onSubmit }}>
                             {({ isSubmitting, isValid }) => (
                                 <Form>
@@ -299,7 +303,7 @@ const JoinUs = () => {
                                             welcome. For more information, see our{' '}
                                             <a
                                                 href="https://tinyurl.com/wnb-rb-coc"
-                                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                             >
@@ -321,7 +325,7 @@ const JoinUs = () => {
                                             className="error-message"
                                         />
                                     </fieldset>
-                                    <hr className="my-12" />
+                                    
                                     <h2>About Your Work</h2>
                                     <p className="mb-8">
                                         The following questions are about your work. Only the WNB.rb
@@ -351,7 +355,7 @@ const JoinUs = () => {
                                             id="lookingForJob"
                                         />
                                     </div>
-                                    <hr className="my-12" />
+                               
                                     <Button
                                         type="secondary"
                                         className="w-full md:w-6/12 mt-4 mx-auto p-0"
