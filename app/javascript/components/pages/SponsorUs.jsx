@@ -1,21 +1,26 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SharedLayout from 'components/layout/SharedLayout';
-import PageTitleWithContainer from 'components/PageTitleWithContainer';
 import Card from 'components/Card';
 import Button from 'components/Button';
+import 'stylesheets/support-us';
 
 const SponsorUs = () => (
     <>
         <Helmet>
-            <title>Sponsor Us | WNB.rb</title>
+            <title>Support Us | WNB.rb</title>
         </Helmet>
 
         <SharedLayout>
-            <PageTitleWithContainer text="Sponsor Us" />
+            <div className="title">
+                <h1>Support us</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis odit voluptate
+                    natus pariatur, esse veniam tempore. Magni fugiat eos, quis facilis provident
+                    accusantium, beatae repellat incidunt doloribus quidem molestiae quas?
+                </p>
+            </div>
             <section className="container flex flex-col mx-auto md:max-w-[50rem] lg:max-w-[60rem] sponsorship-options">
-                <h2 className="px-10 text-2xl font-bold my-2">Sponsorship tiers</h2>
-
                 <stripe-pricing-table
                     pricing-table-id="prctbl_1PSlcMBHbLqUjvnWol3sB6vA"
                     publishable-key="pk_live_51JmdS1BHbLqUjvnWRLnx9KBZtHWLWHe67N3OpsV0FERko2K4lAZ6oyEo4pIq84YIMQPUJ8K1FY1UevXjZZPsiloq00EYai7JBQ"
