@@ -6,11 +6,11 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import SharedLayout from 'components/layout/SharedLayout';
-import Logo from 'components/icons/Logo';
 import Card from 'components/Card';
 import Button from 'components/Button';
 import AlertBanner from '../AlertBanner';
 import { submitLeadForm } from '../../datasources';
+import PageTitle from 'components/PageTitle';
 
 import 'stylesheets/join_us';
 
@@ -20,7 +20,7 @@ const JoinUs = () => {
     const initialValues = {
         name: '',
         email: '',
-        joinSlack: '',
+        joindiscord: '',
         joinGoogleGroup: '',
         identifyAs: false,
         currentJob: '',
@@ -30,7 +30,7 @@ const JoinUs = () => {
     const validationSchema = Yup.object({
         name: Yup.string().required('Name is required'),
         email: Yup.string().email('Invalid email address').required('Email is required'),
-        joinSlack: Yup.string().required('This is a required question'),
+        joindiscord: Yup.string().required('This is a required question'),
         joinGoogleGroup: Yup.string().required('This is a required question'),
         identifyAs: Yup.boolean()
             .required('This is a required question')
@@ -126,12 +126,16 @@ const JoinUs = () => {
                     />
                 )}
                 <div className="join-us-form-container">
-                    <Logo className="h-28" />
+                    <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
+                        <p className="mt-3 font-besley text-base">
+                            A virtual community for women and non-binary Rubyists.
+                        </p>
+                    </PageTitle>
                     <Card className="w-full max-w-[50rem] mt-5">
-                        <h1>Join WNB.rb!</h1>
+                        <h1 className="join">Join</h1>
                         <p className="mb-4">
                             By filling out this form, you give the organizers of WNB.rb permission
-                            to add you to our Slack workspace and/or Google Group.
+                            to add you to our discord workspace and/or Google Group.
                         </p>
                         <p className="mb-4">
                             WNB.rb will not share your email with other community members or
@@ -139,7 +143,7 @@ const JoinUs = () => {
                             remain hidden from everyone except the WNB.rb organizers. See our{' '}
                             <a
                                 href="https://tinyurl.com/wnb-rb-coc"
-                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -151,14 +155,13 @@ const JoinUs = () => {
                             Learn more{' '}
                             <a
                                 href="/"
-                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                             >
                                 about us
                             </a>
                             .
                         </p>
 
-                        <hr className="my-8" />
                         <Formik {...{ initialValues, validationSchema, onSubmit }}>
                             {({ isSubmitting, isValid }) => (
                                 <Form>
@@ -184,49 +187,52 @@ const JoinUs = () => {
                                     </div>
                                     <fieldset role="group">
                                         <legend>
-                                            Would you like to be added to our Slack workspace?
+                                            Would you like to be added to our discord workspace?
                                         </legend>
                                         <p className="input-description">
-                                            Slack is WNB.rb‘s primary means of communication. It is
-                                            an awesome community of over 350 Rubyists and includes
-                                            channels for advice, technical help, interview prep, and
-                                            much more!
+                                            discord is WNB.rb‘s primary means of communication. It
+                                            is an awesome community of over 350 Rubyists and
+                                            includes channels for advice, technical help, interview
+                                            prep, and much more!
                                         </p>
                                         <label
-                                            htmlFor="joinSlack_yes"
+                                            htmlFor="joindiscord_yes"
                                             className="label-radiobutton"
                                         >
                                             <Field
                                                 type="radio"
-                                                id="joinSlack_yes"
-                                                name="joinSlack"
+                                                id="joindiscord_yes"
+                                                name="joindiscord"
                                                 value="Yes"
                                             />
                                             Yes
                                         </label>
-                                        <label htmlFor="joinSlack_no" className="label-radiobutton">
+                                        <label
+                                            htmlFor="joindiscord_no"
+                                            className="label-radiobutton"
+                                        >
                                             <Field
                                                 type="radio"
-                                                id="joinSlack_no"
-                                                name="joinSlack"
+                                                id="joindiscord_no"
+                                                name="joindiscord"
                                                 value="No"
                                             />
                                             No
                                         </label>
                                         <label
-                                            htmlFor="joinSlack_already_in"
+                                            htmlFor="joindiscord_already_in"
                                             className="label-radiobutton"
                                         >
                                             <Field
                                                 type="radio"
-                                                id="joinSlack_already_in"
-                                                name="joinSlack"
-                                                value="Already in WNB.rb Slack"
+                                                id="joindiscord_already_in"
+                                                name="joindiscord"
+                                                value="Already in WNB.rb discord"
                                             />
-                                            Already in WNB.rb Slack
+                                            Already in WNB.rb discord
                                         </label>
                                         <ErrorMessage
-                                            name="joinSlack"
+                                            name="joindiscord"
                                             component="p"
                                             className="error-message"
                                         />
@@ -275,7 +281,7 @@ const JoinUs = () => {
                                                 name="joinGoogleGroup"
                                                 value="Already in WNB.rb Google Group"
                                             />
-                                            Already in WNB.rb Slack
+                                            Already in WNB.rb discord
                                         </label>
                                         <ErrorMessage
                                             name="joinGoogleGroup"
@@ -299,7 +305,7 @@ const JoinUs = () => {
                                             welcome. For more information, see our{' '}
                                             <a
                                                 href="https://tinyurl.com/wnb-rb-coc"
-                                                className="whitespace-nowrap font-medium hover:text-red-400"
+                                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                                                 rel="noopener noreferrer"
                                                 target="_blank"
                                             >
@@ -321,7 +327,7 @@ const JoinUs = () => {
                                             className="error-message"
                                         />
                                     </fieldset>
-                                    <hr className="my-12" />
+
                                     <h2>About Your Work</h2>
                                     <p className="mb-8">
                                         The following questions are about your work. Only the WNB.rb
@@ -351,10 +357,10 @@ const JoinUs = () => {
                                             id="lookingForJob"
                                         />
                                     </div>
-                                    <hr className="my-12" />
+
                                     <Button
                                         type="secondary"
-                                        className="w-full md:w-6/12 mt-4 mx-auto p-0"
+                                        className="submit mt-4 mx-auto"
                                         disabled={isSubmitting || !isValid}
                                     >
                                         <input
