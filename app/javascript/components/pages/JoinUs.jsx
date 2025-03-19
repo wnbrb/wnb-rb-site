@@ -190,10 +190,10 @@ const JoinUs = () => {
                                             Would you like to be added to our discord workspace?
                                         </legend>
                                         <p className="input-description">
-                                            discord is WNB.rb‘s primary means of communication. It is
-                                            an awesome community of over 350 Rubyists and includes
-                                            channels for advice, technical help, interview prep, and
-                                            much more!
+                                            discord is WNB.rb‘s primary means of communication. It
+                                            is an awesome community of over 350 Rubyists and
+                                            includes channels for advice, technical help, interview
+                                            prep, and much more!
                                         </p>
                                         <label
                                             htmlFor="joindiscord_yes"
@@ -207,7 +207,10 @@ const JoinUs = () => {
                                             />
                                             Yes
                                         </label>
-                                        <label htmlFor="joindiscord_no" className="label-radiobutton">
+                                        <label
+                                            htmlFor="joindiscord_no"
+                                            className="label-radiobutton"
+                                        >
                                             <Field
                                                 type="radio"
                                                 id="joindiscord_no"
