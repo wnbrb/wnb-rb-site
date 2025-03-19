@@ -1,0 +1,20 @@
+.title {
+    display: flex;
+    margin: 6rem 0 2rem;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title h1 {
+    font-family: besley;
+    font-size: 38px;
+    font-weight: 600;
+    color: #2e0880;
+}
+
+.title p {
+    width: 60%;
+}
