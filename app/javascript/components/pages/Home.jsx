@@ -92,7 +92,7 @@ const Home = () => {
                             </p>
 
                             <a href="/join-us">
-                                <Button type="secondary" className="mt-3  font-bold">
+                                <Button type="primary" className="mt-3  font-bold">
                                     Join WNB.rb
                                 </Button>
                             </a>
@@ -103,7 +103,7 @@ const Home = () => {
                 <div className="info">
                     <section className="info-layout">
                         <img src={line} className="line" alt="horizontal line" />
-                        <div className="info-card-section mb-12 layout ">
+                        <div className="info-card-section layout ">
                             {infoCardData.map((card, index) => {
                                 return (
                                     <div

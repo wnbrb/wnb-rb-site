@@ -10,14 +10,15 @@ header {
             @apply flex flex-col md:flex-row md:items-center;
 
             .logo {
-                width: 35%;
+                width: 30%;
                 display: flex;
                 justify-content: center;
-                padding-top: 0.75rem;
-                padding-bottom: 0.75rem;
+                align-items: center;
+                padding: 18px 0;
 
-                svg.wnb-logo {
-                    @apply cursor-pointer transition-all h-10;
+                a img.wnb-logo {
+                    cursor: pointer;
+                    height: 42px;
                 }
             }
 
@@ -28,14 +29,12 @@ header {
                     @apply md:w-full md:self-center;
 
                     ul {
-                        @apply flex flex-row justify-around lg:justify-start;
+                        @apply flex flex-row justify-around lg:justify-around;
 
                         li {
                             @apply lg:px-3;
                             a {
-                                @apply text-wnbrb-blue-navy text-base font-semibold leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline font-rubik;
-
-
+                                @apply text-wnbrb-blue-navy text-lg font-bold leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline font-rubik;
 
                                 @screen md {
                                     &::after {
@@ -76,7 +75,7 @@ header {
                     .button.primary {
                         &:hover {
                             .add-user-icon {
-                                color: #F56960;
+                                color: #f56960;
                             }
                         }
                     }
