@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useState, useEffect } from 'react';
 import SharedLayout from 'components/layout/SharedLayout';
 import SplashBackground from 'components/icons/SplashBackground';
 import Button from 'components/Button';
@@ -19,15 +20,27 @@ import JoinOurWelcomingCommunitySection from '../home/JoinOurWelcomingCommunityS
 import ExceedYourProfessionalGoalsSection from '../home/ExceedYourProfessionalGoalsSection';
 import GiveSupportSection from '../home/GiveSupportSection';
 import line from '../../../assets/images/line.svg';
-import { useMediaQuery } from 'react-responsive';
 import Meetspeak from '../MeetSpeak';
 import Hire from '../Hire';
 import Thankyou from '../Thankyou';
 
 const Home = () => {
-    const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-
+    const [device, setDevice] = useState('desktop');
+    useEffect(() => {
+        const updateDevice = () => {
+            if (window.innerWidth <= 767) {
+                setDevice('mobile');
+            }
+             else if (window.innerWidth >767 && window.innerWidth <= 1023) {
+                setDevice('tablet');
+            } else {
+                setDevice('desktop');
+            }
+        };
+        window.addEventListener('resize', updateDevice);
+        updateDevice();
+        return () => window.removeEventListener('resize', updateDevice);
+    }, []);
     const infoCardData = [
         {
             title: 'Join our welcoming community',
@@ -46,10 +59,10 @@ const Home = () => {
         },
 
         {
-            image: isMobile ? Fatuma : isTablet ? fifth : Euruko2022,
+            image: device === 'mobile' ? Fatuma : device === 'tablet' ? fifth : Euruko2022,
         },
         {
-            image: isMobile ? London2023 : isTablet ? kaigi : Berlin,
+            image: device === 'mobile' ? London2023 : device === 'tablet' ? kaigi : Berlin,
         },
     ];
     return (
@@ -74,12 +87,12 @@ const Home = () => {
                             <SplashBackground className="w-full" />
                         </div>
                         <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
-                            <p className="mt-3 font-besley text-base">
+                            <p className="mt-8 font-rubik text-base font-normal">
                                 A virtual community for women and non-binary Rubyists.
                             </p>
 
                             <a href="/join-us">
-                                <Button type="secondary" className="mt-3">
+                                <Button type="secondary" className="mt-3  font-bold">
                                     Join WNB.rb
                                 </Button>
                             </a>
@@ -89,7 +102,7 @@ const Home = () => {
 
                 <div className="info">
                     <section className="info-layout">
-                        <img src={line2} className="line2" alt="horizontal line" />
+                        <img src={line} className="line" alt="horizontal line" />
                         <div className="info-card-section mb-12 layout ">
                             {infoCardData.map((card, index) => {
                                 return (
@@ -120,7 +133,7 @@ const Home = () => {
                             })}
                         </div>
                     </section>
-                    <img src={line} className="line" alt="horizontal line" />
+                    <img src={line2} className="line2" alt="horizontal line" />
                 </div>
 
                 <section className="meetspeak">
