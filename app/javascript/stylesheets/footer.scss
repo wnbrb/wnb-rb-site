@@ -25,6 +25,11 @@ footer {
                 font-size: 13px;
                 align-items: flex-start;
                 @apply md:flex-row md:items-center
+
+           
+        }
+        .btns a{
+            text-decoration: none;
         }
      
         a {
@@ -58,9 +63,7 @@ footer {
             }
         }
         .button{
-            padding-top: 0.2rem;
-            padding-bottom: 0.2rem;
-            @apply xs:text-[13px];
+             @apply xs:text-[13px];
         }
 
         .footer-right {

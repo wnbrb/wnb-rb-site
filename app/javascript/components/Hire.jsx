@@ -15,7 +15,7 @@ const Hire = () => {
                 </p>
                 <Button
                     type="primary"
-                    className="max-w-[8rem]"
+                    className="font-bold"
                     onClick={() => {
                         window.open('mailto:sarah@wnb-rb.dev', '_blank', 'noopener noreferrer');
                     }}
