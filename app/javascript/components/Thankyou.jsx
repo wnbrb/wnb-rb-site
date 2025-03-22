@@ -16,19 +16,28 @@ const Thankyou = () => {
 
             <div className="sponsor">
                 <div className="sponsor-1">
-                    <img src={mike} alt="mike" className="sponsor-image" />                  
+                    <img src={mike} alt="mike" className="sponsor-image" />
 
-                    <a href="https://mike.daless.io/" className="link" target="_blank" rel="noopener noreferrer">
-                    <h1 className="font-bold font-besley text-2xl text-wnbrb-blue-navy">
-                        Mike Dalessio
-                    </h1>
+                    <a
+                        href="https://mike.daless.io/"
+                        className="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h1 className="font-bold font-besley text-2xl text-wnbrb-blue-navy">
+                            Mike Dalessio
+                        </h1>
                     </a>
                 </div>
 
                 <div className="sponsor-2">
-
-                    <a href="https://gusto.com/" className="link" target="_blank" rel="noopener noreferrer">
-                    <img src={Gusto} alt="Gusto-logo" className="sponsor-image" />
+                    <a
+                        href="https://gusto.com/"
+                        className="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={Gusto} alt="Gusto-logo" className="sponsor-image" />
                     </a>
                 </div>
             </div>

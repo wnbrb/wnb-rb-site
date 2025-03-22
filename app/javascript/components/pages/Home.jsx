@@ -30,8 +30,7 @@ const Home = () => {
         const updateDevice = () => {
             if (window.innerWidth <= 767) {
                 setDevice('mobile');
-            }
-             else if (window.innerWidth >767 && window.innerWidth <= 1023) {
+            } else if (window.innerWidth > 767 && window.innerWidth <= 1023) {
                 setDevice('tablet');
             } else {
                 setDevice('desktop');
