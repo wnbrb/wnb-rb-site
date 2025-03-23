@@ -4,7 +4,7 @@ body {
 
 .join-us-form-container {
   
-  @apply w-full pt-[4rem] pb-[1rem] h-full px-0 md:px-20 py-24 flex flex-col justify-center items-center;
+  @apply w-full pt-[3rem]  h-full px-0  flex flex-col justify-center items-center;
 
   h1 {
     font-family: Besley;
@@ -57,6 +57,7 @@ body {
   }
 }
 .page-title{
+  padding: 2rem 2rem 0;
   order:0;
   margin-top: 0;
 
@@ -66,7 +67,7 @@ body {
 
 }
 .page-title .new-logo{
-  width: 55%;
+  width: 64%;
 
   @media (min-width: 450px) { 
     width: 47%; 
@@ -95,16 +96,18 @@ body {
   padding: 0 20px;
   @apply md:-mt-[5rem] lg:-mt-[5rem]
 }
+
 h1.title-text{
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 800;
-  margin-bottom: 0;
+  margin-top: 1rem;
 }
+
 .card{
 background-color: #f5f1fe;
 box-shadow: none;
 margin-top: 0;
-padding-top: 0;
+padding:3rem 2rem;
 }
 .card .join{
   padding-bottom: 18px;
