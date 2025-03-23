@@ -127,7 +127,7 @@ const JoinUs = () => {
                 )}
                 <div className="join-us-form-container">
                     <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
-                        <p className="mt-3 font-besley text-base">
+                        <p className="mt-8 font-rubik text-base font-normal">
                             A virtual community for women and non-binary Rubyists.
                         </p>
                     </PageTitle>
@@ -143,7 +143,7 @@ const JoinUs = () => {
                             remain hidden from everyone except the WNB.rb organizers. See our{' '}
                             <a
                                 href="https://tinyurl.com/wnb-rb-coc"
-                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
+                                className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
@@ -155,7 +155,7 @@ const JoinUs = () => {
                             Learn more{' '}
                             <a
                                 href="/"
-                                className="whitespace-nowrap font-medium hover:text-[#2e0880]"
+                                className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
                             >
                                 about us
                             </a>
@@ -281,7 +281,7 @@ const JoinUs = () => {
                                                 name="joinGoogleGroup"
                                                 value="Already in WNB.rb Google Group"
                                             />
-                                            Already in WNB.rb discord
+                                            Already in WNB.rb Google Group
                                         </label>
                                         <ErrorMessage
                                             name="joinGoogleGroup"
@@ -359,7 +359,7 @@ const JoinUs = () => {
                                     </div>
 
                                     <Button
-                                        type="secondary"
+                                        type="primary"
                                         className="submit mt-4 mx-auto"
                                         disabled={isSubmitting || !isValid}
                                     >
