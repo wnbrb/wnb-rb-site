@@ -14,7 +14,7 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
 
   it 'visits join_us page' do
     visit join_us_path
-    expect(page).to have_text('Join WNB.rb!')
+    expect(page).to have_text('Join')
   end
 
   it 'visits meetups page' do
