@@ -34,7 +34,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :role, inclusion: { in: ROLES }, allow_nil: true
   devise :database_authenticatable,
-         :registerable,
          :recoverable,
          :rememberable,
          :validatable,
