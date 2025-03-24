@@ -34,7 +34,7 @@ header {
                         li {
                             @apply lg:px-3;
                             a {
-                                @apply text-wnbrb-blue-navy text-lg font-bold leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline font-rubik;
+                                @apply text-wnbrb-blue-navy text-lg font-bold leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline font-syne;
 
                                 @screen md {
                                     &::after {
