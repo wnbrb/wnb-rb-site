@@ -166,7 +166,7 @@ const JoinUs = () => {
                             {({ isSubmitting, isValid }) => (
                                 <Form>
                                     <div className="form-group">
-                                    <h2 className='font-besley text-2xl mb-4'>About You </h2>
+                                        <h2 className="font-besley text-2xl mb-4">About You </h2>
 
                                         <label htmlFor="name" className="mb-3 font-besley">
                                             What is your name?
@@ -179,7 +179,9 @@ const JoinUs = () => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email" className='font-besley'>What is your email?</label>
+                                        <label htmlFor="email" className="font-besley">
+                                            What is your email?
+                                        </label>
                                         <Field name="email" type="text" id="email" />
                                         <ErrorMessage
                                             name="email"
@@ -188,7 +190,7 @@ const JoinUs = () => {
                                         />
                                     </div>
                                     <fieldset role="group">
-                                        <legend className='font-besley'>
+                                        <legend className="font-besley">
                                             Would you like to be added to our discord workspace?
                                         </legend>
                                         <p className="input-description">
@@ -241,7 +243,7 @@ const JoinUs = () => {
                                     </fieldset>
 
                                     <fieldset role="group">
-                                        <legend className='font-besley'>
+                                        <legend className="font-besley">
                                             Would you like to be added to our Google Group?
                                         </legend>
                                         <p className="input-description">
@@ -293,7 +295,7 @@ const JoinUs = () => {
                                     </fieldset>
 
                                     <fieldset role="group">
-                                        <legend className='font-besley '>
+                                        <legend className="font-besley ">
                                             Do you identify as a woman or non-binary person?
                                         </legend>
                                         <p className="input-description">
@@ -330,7 +332,7 @@ const JoinUs = () => {
                                         />
                                     </fieldset>
 
-                                    <h2 className='font-besley text-2xl mb-4'>About Your Work</h2>
+                                    <h2 className="font-besley text-2xl mb-4">About Your Work</h2>
                                     <p className="mb-8">
                                         The following questions are about your work. Only the WNB.rb
                                         organizers will use this information. We use it to better
@@ -339,7 +341,7 @@ const JoinUs = () => {
                                     </p>
 
                                     <div className="form-group">
-                                        <label htmlFor="currentJob" className='font-besley'>
+                                        <label htmlFor="currentJob" className="font-besley">
                                             Where do you currently work?
                                         </label>
                                         <p className="input-description">
@@ -349,7 +351,7 @@ const JoinUs = () => {
                                         <Field name="currentJob" type="text" id="currentJob" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="lookingForJob" className='font-besley'>
+                                        <label htmlFor="lookingForJob" className="font-besley">
                                             Are you currently looking for a job, or do you
                                             anticipate looking for a job in the next 6 months?
                                         </label>

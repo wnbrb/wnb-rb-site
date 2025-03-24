@@ -66,7 +66,8 @@ const EventsCalendar = () => {
                     Upcoming Events
                 </h1>
                 <p className="text-wnbrb-blue-navy">
-                    <a href="/join-us">Register </a>to stay updated with upcoming events and be sent meeting invitations.
+                    <a href="/join-us">Register </a>to stay updated with upcoming events and be sent
+                    meeting invitations.
                 </p>
             </div>
 
@@ -121,22 +122,26 @@ const EventsCalendar = () => {
                                     }
                                 }}
                             >
-                                <p className='text-black'>{new Date(event.date).toLocaleDateString()}</p>
+                                <p className="text-black">
+                                    {new Date(event.date).toLocaleDateString()}
+                                </p>
                                 <h3>{event.title}</h3>
                                 {event.talks && event.talks.length > 0 && (
                                     <div>
                                         {event.talks.map((talk, talkIndex) => (
                                             <div key={talkIndex}>
-                                                <p className='text-black'>{talk.talk_title}</p>
+                                                <p className="text-black">{talk.talk_title}</p>
                                             </div>
                                         ))}
                                     </div>
                                 )}
 
-                                {event.description ? <p className='text-black'>{event.description}</p> : null}
+                                {event.description ? (
+                                    <p className="text-black">{event.description}</p>
+                                ) : null}
 
                                 {event.speakers && event.speakers.length > 0 && (
-                                    <div className='mt-4'>
+                                    <div className="mt-4">
                                         {event.speakers.map((speaker, speakerIndex) => (
                                             <div
                                                 className="flex content-center mb-8 text-lg"
@@ -147,7 +152,7 @@ const EventsCalendar = () => {
                                                     src={speaker.image_url}
                                                     alt="speaker"
                                                 />
-                                                <div >
+                                                <div>
                                                     <p className="font-bold text-black md:text-lg">
                                                         {speaker.name}
                                                     </p>
