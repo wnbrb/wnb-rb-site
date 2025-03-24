@@ -7,7 +7,7 @@ body {
   @apply w-full pt-[3rem]  h-full px-0  flex flex-col justify-center items-center;
 
   h1 {
-    @apply text-2xl text-black md:text-4xl  font-bold mb-8 text-center;
+    @apply text-2xl md:text-4xl  font-bold mb-8 text-center;
   }
 
   h2 {

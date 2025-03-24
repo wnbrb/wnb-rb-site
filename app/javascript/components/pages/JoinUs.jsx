@@ -132,7 +132,7 @@ const JoinUs = () => {
                         </p>
                     </PageTitle>
                     <Card className="w-full max-w-[50rem] mt-5">
-                        <h1 className="join font-syne text-2xl">Join</h1>
+                        <h1 className="join text-black font-syne text-2xl">Join</h1>
                         <p className="mb-4">
                             By filling out this form, you give the organizers of WNB.rb permission
                             to add you to our discord workspace and/or Google Group.
