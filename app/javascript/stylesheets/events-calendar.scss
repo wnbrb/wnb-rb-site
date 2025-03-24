@@ -70,7 +70,7 @@
     border-radius: 20px;
 }
 .fc-col-header {
-    @apply md:w-[31rem] lg:w-[31rem];
+    @apply font-syne md:w-[31rem] lg:w-[31rem];
 }
 .fc-scrollgrid-sync-table {
     width: 16rem;
@@ -158,20 +158,16 @@
 }
 .event-card h3 {
     margin: 0 0 8px;
-    font-size: 1.25em;
+    font-size: 1.25rem;
+    font-family: syne;
 }
-.event-card p {
-    margin: 4px 0;
-    font-size: 0.9em;
-    color: #555;
-}
+
 .event-card.yellow {
-    background-color: #ffdd19;
-    color: black;
+    background-color: #ffdd19;    
 }
+
 .event-card.green {
-    background-color: #a3cd1a;
-    color: black;
+    background-color: #a3cd1a;    
 }
 
 .events-cards::-webkit-scrollbar {

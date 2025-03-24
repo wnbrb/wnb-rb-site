@@ -3,7 +3,7 @@ footer {
     width: 100%;
 
     .footer {
-        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-12 xl:px-0 py-8 md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0 xs:px-[1rem];
+        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-[2rem] xl:px-0 py-8 md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0 ;
         @media (min-width: 416px) and (max-width: 640px){
             padding-left: 1rem;
         }
@@ -25,14 +25,19 @@ footer {
                 font-size: 13px;
                 align-items: flex-start;
                 @apply md:flex-row md:items-center
+
+           
+        }
+        .btns a{
+            text-decoration: none;
         }
      
         a {
-            @apply no-underline mb-0 font-besley;
+            @apply no-underline mb-0 font-noto;
             color: inherit;
 
             &:hover {
-                @apply underline text-gray-700;
+                @apply  text-gray-700;
             }
         }
 
@@ -58,9 +63,7 @@ footer {
             }
         }
         .button{
-            padding-top: 0.2rem;
-            padding-bottom: 0.2rem;
-            @apply xs:text-[13px];
+             @apply xs:text-[13px];
         }
 
         .footer-right {
@@ -96,3 +99,4 @@ footer {
         }
     }
 }
+

@@ -4,25 +4,30 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
     gap: 2rem;
     text-align: center;
     @apply xs:text-left xs:px-[1.3rem];
 }
+
 .thankyou h2{
-    @apply text-4xl text-black font-besley font-bold
+    font-size: 30px;
+    text-align: center;
+    line-height: 2.5rem;
+    font-weight: 800;
+    font-family: besley;
+    color: black;
 }
 
 .thankyou p{
-    @apply text-lg text-black font-rubik
+    @apply text-lg text-black font-noto text-center
 }
+
 .thankyou .sponsor{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        width: 80%;
-        margin-top: 20px;
+        gap: 5rem;
         padding: 20px;
 
         @media (min-width: 768px) { 
@@ -36,6 +41,7 @@
            justify-content: center;
         }
 }
+
 .thankyou .sponsor div{
     display: flex;
     gap: 20px;
@@ -47,27 +53,34 @@
 
     @media (min-width: 768px) { 
        width: 60%;
-       padding: 2rem 7rem;
+       padding: 2rem 5rem;
  
      }
  
      @media (min-width: 1024px) { 
-        width: 36%;
+        width: 35%;
         padding: 2rem 5rem;
      }
 
 }
+
 .link{
-        text-decoration: none;
-        color: #2e0880;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    text-decoration: none;
+    color: #2e0880;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .link:hover {
     color: #3d2277;
     text-decoration: underline;
 }
+
 .sponsor-image{
     border-radius: 10rem;
+}
+
+.thankyou .sponsor .sponsor-2 .sponsor-image{
+    border-radius: 0;
 }

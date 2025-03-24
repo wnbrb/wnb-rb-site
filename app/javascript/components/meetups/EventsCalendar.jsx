@@ -62,9 +62,12 @@ const EventsCalendar = () => {
     return (
         <div className="events-calendar-container">
             <div className="page-title-calendar">
-                <h1 className="font-besley text-2xl font-bold mb-2">Upcoming Events</h1>
-                <p>
-                    <a href="/join-us">Register </a>to stay updated with upcoming events
+                <h1 className="font-syne text-3xl text-wnbrb-blue-navy font-bold mb-2">
+                    Upcoming Events
+                </h1>
+                <p className="text-wnbrb-blue-navy">
+                    <a href="/join-us">Register </a>to stay updated with upcoming events and be sent
+                    meeting invitations.
                 </p>
             </div>
 
@@ -119,22 +122,26 @@ const EventsCalendar = () => {
                                     }
                                 }}
                             >
-                                <p>{new Date(event.date).toLocaleDateString()}</p>
+                                <p className="text-black">
+                                    {new Date(event.date).toLocaleDateString()}
+                                </p>
                                 <h3>{event.title}</h3>
                                 {event.talks && event.talks.length > 0 && (
                                     <div>
                                         {event.talks.map((talk, talkIndex) => (
                                             <div key={talkIndex}>
-                                                <p>{talk.talk_title}</p>
+                                                <p className="text-black">{talk.talk_title}</p>
                                             </div>
                                         ))}
                                     </div>
                                 )}
 
-                                {event.description ? <p>{event.description}</p> : null}
+                                {event.description ? (
+                                    <p className="text-black">{event.description}</p>
+                                ) : null}
 
                                 {event.speakers && event.speakers.length > 0 && (
-                                    <div>
+                                    <div className="mt-4">
                                         {event.speakers.map((speaker, speakerIndex) => (
                                             <div
                                                 className="flex content-center mb-8 text-lg"
@@ -146,10 +153,10 @@ const EventsCalendar = () => {
                                                     alt="speaker"
                                                 />
                                                 <div>
-                                                    <p className="font-bold text-gray md:text-lg">
+                                                    <p className="font-bold text-black md:text-lg">
                                                         {speaker.name}
                                                     </p>
-                                                    <p className="text-sm text-gray md:text-lg">
+                                                    <p className="text-xxs text-gray italic">
                                                         {speaker.tagline}
                                                     </p>
                                                 </div>

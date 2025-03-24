@@ -9,7 +9,7 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
   end
   it 'visits home page' do
     visit root_path
-    expect(page).to have_text('A virtual community for women and non-binary Rubyists')
+    expect(page).to have_text('A virtual community for women & non-binary Rubyists')
   end
 
   it 'visits join_us page' do

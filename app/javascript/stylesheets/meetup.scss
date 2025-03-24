@@ -87,14 +87,18 @@
     justify-content: center;
     flex-direction: column;
     gap: 2rem;
-    padding: 6rem 0;
+    padding: 4rem 1rem 3rem;
 
     @media (min-width: 768px) {
-        gap: 2rem;
+        margin-left: auto;
+        gap: 4rem;
+        margin-right: auto;
+        width: 75%;
     }
 
     @media (min-width: 1024px) {
         flex-direction: row;
+        width: 100%;
     }
 }
 
@@ -103,11 +107,10 @@
     background-color: #ffffe5;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 90%;
     align-items: center;
     padding: 2rem;
     margin: auto;
-    padding-top: 0;
     border-radius: 2rem;
 
     @media (min-width: 1024px) {
@@ -119,7 +122,6 @@ h3 {
     @apply font-bold text-xl text-wnbrb-blue-navy;
 }
 .line {
-    margin-top: -2rem;
     position: relative;
 }
 .view-btn {
