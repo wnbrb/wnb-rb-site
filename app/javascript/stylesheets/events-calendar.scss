@@ -3,13 +3,9 @@
     margin-left: auto;
     margin-right: auto;
     background-color: #fbf4f4;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
 }
-.btn {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: besley;
-}
+
 .calendar-section {
     display: flex;
     flex-direction: column;
@@ -139,12 +135,11 @@
     justify-content: center;
 }
 .fc .fc-toolbar-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 1rem;
-    @apply md:text-[2.5rem];
+    @apply md:text-[2rem] lg:pb-[1rem];
 }
 
 .event-card {
@@ -181,12 +176,12 @@
 
 .events-cards::-webkit-scrollbar-thumb {
     background-color: #e8e8cd;
-    height: 10rem !important;
+    height: 10rem;
     border-radius: 10px;
 }
 
 .events-cards::-webkit-scrollbar-track {
-    background-color: transparent !important;
+    background-color: transparent;
     border-radius: 10px;
 }
 .event-card.highlight {
