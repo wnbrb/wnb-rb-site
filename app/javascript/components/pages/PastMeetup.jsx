@@ -30,7 +30,9 @@ const SpeakerBiosBlock = ({ speakers }) => {
         <div className="container max-w-2xl my-8 mx-3 p-4 flex flex-col">
             <div className="inline-flex items-center gap-2 align-center mb-5">
                 <i className="bi bi-mic text-lg text-red-400"></i>
-                <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
+                <h4 className="text-xl font-syne font-bold text-gray md:text-2xl">
+                    About the speakers
+                </h4>
             </div>
             <div className="flex flex-wrap items-center gap-5">
                 {speakers?.map(({ id, bio, name, links }) => (

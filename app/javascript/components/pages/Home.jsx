@@ -86,8 +86,8 @@ const Home = () => {
                             <SplashBackground className="w-full" />
                         </div>
                         <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
-                            <p className="mt-8 font-rubik text-base font-normal">
-                                A virtual community for women and non-binary Rubyists.
+                            <p className="mt-8 font-syne text-base font-semibold">
+                                A virtual community for women & non-binary Rubyists.
                             </p>
 
                             <a href="/join-us">
@@ -113,8 +113,12 @@ const Home = () => {
                                     >
                                         {card.title && card.section && (
                                             <>
-                                                <h2 className="text-xl font-bold">{card.title}</h2>
-                                                <div>{card.section}</div>
+                                                <h2 className="text-xl font-bold font-syne">
+                                                    {card.title}
+                                                </h2>
+                                                <div className="font-noto text-base">
+                                                    {card.section}
+                                                </div>
                                             </>
                                         )}
 

@@ -127,12 +127,12 @@ const JoinUs = () => {
                 )}
                 <div className="join-us-form-container">
                     <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
-                        <p className="mt-8 font-rubik text-base font-normal">
-                            A virtual community for women and non-binary Rubyists.
+                        <p className="mt-8 font-syne text-base font-semibold">
+                            A virtual community for women & non-binary Rubyists.
                         </p>
                     </PageTitle>
                     <Card className="w-full max-w-[50rem] mt-5">
-                        <h1 className="join">Join</h1>
+                        <h1 className="join font-syne text-2xl">Join</h1>
                         <p className="mb-4">
                             By filling out this form, you give the organizers of WNB.rb permission
                             to add you to our discord workspace and/or Google Group.
@@ -166,7 +166,9 @@ const JoinUs = () => {
                             {({ isSubmitting, isValid }) => (
                                 <Form>
                                     <div className="form-group">
-                                        <label htmlFor="name" className="mb-3">
+                                    <h2 className='font-besley text-2xl mb-4'>About You </h2>
+
+                                        <label htmlFor="name" className="mb-3 font-besley">
                                             What is your name?
                                         </label>
                                         <Field name="name" type="text" id="name" />
@@ -177,7 +179,7 @@ const JoinUs = () => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email">What is your email?</label>
+                                        <label htmlFor="email" className='font-besley'>What is your email?</label>
                                         <Field name="email" type="text" id="email" />
                                         <ErrorMessage
                                             name="email"
@@ -186,7 +188,7 @@ const JoinUs = () => {
                                         />
                                     </div>
                                     <fieldset role="group">
-                                        <legend>
+                                        <legend className='font-besley'>
                                             Would you like to be added to our discord workspace?
                                         </legend>
                                         <p className="input-description">
@@ -239,7 +241,7 @@ const JoinUs = () => {
                                     </fieldset>
 
                                     <fieldset role="group">
-                                        <legend>
+                                        <legend className='font-besley'>
                                             Would you like to be added to our Google Group?
                                         </legend>
                                         <p className="input-description">
@@ -291,7 +293,7 @@ const JoinUs = () => {
                                     </fieldset>
 
                                     <fieldset role="group">
-                                        <legend>
+                                        <legend className='font-besley '>
                                             Do you identify as a woman or non-binary person?
                                         </legend>
                                         <p className="input-description">
@@ -328,7 +330,7 @@ const JoinUs = () => {
                                         />
                                     </fieldset>
 
-                                    <h2>About Your Work</h2>
+                                    <h2 className='font-besley text-2xl mb-4'>About Your Work</h2>
                                     <p className="mb-8">
                                         The following questions are about your work. Only the WNB.rb
                                         organizers will use this information. We use it to better
@@ -337,7 +339,7 @@ const JoinUs = () => {
                                     </p>
 
                                     <div className="form-group">
-                                        <label htmlFor="currentJob">
+                                        <label htmlFor="currentJob" className='font-besley'>
                                             Where do you currently work?
                                         </label>
                                         <p className="input-description">
@@ -347,7 +349,7 @@ const JoinUs = () => {
                                         <Field name="currentJob" type="text" id="currentJob" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="lookingForJob">
+                                        <label htmlFor="lookingForJob" className='font-besley'>
                                             Are you currently looking for a job, or do you
                                             anticipate looking for a job in the next 6 months?
                                         </label>

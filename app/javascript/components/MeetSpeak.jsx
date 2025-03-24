@@ -9,7 +9,7 @@ const Meetspeak = () => {
             <div className="meetspeak-layout">
                 <div className="meet-card">
                     <img src={meet} alt="location" />
-                    <h3>Meetups</h3>
+                    <h3 className="font-besley text-2xl font-bold mb-4 text-center">Meetups</h3>
                     <p className="mb-2">
                         <b>Our meetups</b> are held virtually on the last Tuesday of every month at{' '}
                         <a
@@ -36,7 +36,9 @@ const Meetspeak = () => {
 
                 <div className="speak-card">
                     <img src={speak} alt="speak" />
-                    <h3>Interested in speaking?</h3>
+                    <h3 className="font-besley text-2xl font-bold mb-4 text-center">
+                        Interested in speaking?
+                    </h3>
                     {` We're constantly on the lookout for presenters, whether you're an experienced speaker or if this is
                         your first time. Speaking at a WNB.rb meetup is an excellent opportunity to
                         enhance your public speaking abilities. If you're interested in giving a

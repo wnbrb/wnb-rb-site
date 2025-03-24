@@ -15,13 +15,11 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
                 <div className="w-[19rem] rounded overflow-hidden">
                     <img src={meetup} className="stock-img" alt="meetup" />
                     <div className="card-content">
-                        <h4 className="mb-4 text-xl font-bold text-gray md:text-2xl text-wnbrb-blue-navy">
-                            {title}
-                        </h4>
+                        <h4 className="font-noto mb-4  text-wnbrb-blue-navy">{title}</h4>
                         {eventWithSpeaker.length > 0 &&
                             eventWithSpeaker.map(({ id, talk_title, speaker }) => (
                                 <div key={id}>
-                                    <h5 className="mb-4 text-xl font-bold text-gray md:text-xl text-wnbrb-blue-navy">
+                                    <h5 className="font-syne mb-4 font-bold text-xl text-wnbrb-blue-navy">
                                         {talk_title}
                                     </h5>
                                     <div className="flex content-center mb-8 text-lg">
@@ -31,10 +29,10 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
                                             alt=""
                                         />
                                         <div>
-                                            <p className="font-bold text-gray md:text-lg text-wnbrb-blue-navy">
+                                            <p className="font-besley text-xl font-bold text-gray text-wnbrb-blue-navy">
                                                 {speaker.name}
                                             </p>
-                                            <p className="text-sm text-gray md:text-lg">
+                                            <p className="text-sm text-gray italic">
                                                 {speaker.tagline}
                                             </p>
                                         </div>
