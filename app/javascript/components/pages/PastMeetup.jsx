@@ -3,10 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import { getPastMeetup } from '../../datasources';
 import SharedLayout from 'components/layout/SharedLayout';
-import PageTitleWithContainer from 'components/PageTitle';
 import SpeakersList from '../SpeakersList';
 import LoadingSpinner from 'components/LoadingSpinner';
-
+import eventsline from '../../../assets/images/events-line.svg';
 import 'stylesheets/meetup';
 
 const VideoBlock = ({ videoUrl, title }) => {
@@ -14,8 +13,12 @@ const VideoBlock = ({ videoUrl, title }) => {
         return null;
     }
     return (
-        <div className="card-container flex flex-wrap justify-center aspect-w-16 aspect-h-9">
-            <iframe src={videoUrl} title={title} style={{ border: 'none' }}></iframe>;
+        <div className="video-section">
+            <div className="video-container">
+                <div className="video-card-container flex flex-wrap justify-center aspect-w-16 aspect-h-9">
+                    <iframe src={videoUrl} title={title} style={{ border: 'none' }}></iframe>;
+                </div>
+            </div>
         </div>
     );
 };
@@ -27,7 +30,7 @@ VideoBlock.propTypes = {
 
 const SpeakerBiosBlock = ({ speakers }) => {
     return (
-        <div className="container max-w-2xl my-8 mx-3 p-4 flex flex-col">
+        <div className="abt-speaker container max-w-[77rem] flex flex-col">
             <div className="inline-flex items-center gap-2 align-center mb-5">
                 <i className="bi bi-mic text-lg text-red-400"></i>
                 <h4 className="text-xl font-bold text-gray md:text-2xl">About the speakers</h4>
@@ -142,7 +145,10 @@ const SpeakerVideoBlock = ({ speaker, eventSpeaker }) => {
             {videoLink && (
                 <>
                     <VideoBlock videoUrl={videoLink} title={title} />
-                    <div key={id} className="flex content-center mb-8 text-lg mt-8">
+                    <img src={eventsline} className="wavy" alt="line" />
+
+                    <div key={id} className="speaker-section flex flex-col gap-[20px] px-12 py-8 content-center text-lg">
+                    <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
                         <img
                             className="object-cover w-14 h-14 mr-4 rounded-full"
                             src={imageUrl}
@@ -152,8 +158,8 @@ const SpeakerVideoBlock = ({ speaker, eventSpeaker }) => {
                             <p className="font-bold text-gray md:text-lg">{name}</p>
                             <p className="text-sm text-gray md:text-lg">{tagline}</p>
                         </div>
+                      <p>{description}</p>
                     </div>
-                    <p className="pb-14">{description}</p>
                 </>
             )}
         </>
@@ -192,47 +198,43 @@ const PastMeetup = () => {
     return (
         <>
             <Helmet>
-                <title>{`${title} | WNB.rb`}</title>
+                <title>{title}</title>
             </Helmet>
+       
             <SharedLayout>
-                <div className="max-w-[73rem] px-10 md:px-0 mx-auto my-10 sm:my-20">
-                    <PageTitleWithContainer text={title} />
-                </div>
-                <div className="container flex mx-auto md:max-w-[50rem] lg:max-w-[73rem]">
-                    {loading ? (
-                        <LoadingSpinner />
-                    ) : (
-                        <div className="container mx-20">
-                            {panelVideoUrl ? (
-                                <>
-                                    <VideoBlock videoUrl={panelVideoUrl} title={title} />
-                                    <div className="w-full rounded border-t p-10 border-gray-100 overflow-hidden">
-                                        <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
-                                        <SpeakersList speakers={speakers} />
-                                        <p className="m-2 pt-4">{description}</p>
-                                    </div>
-                                </>
-                            ) : (
-                                <>
-                                    {speakers.map((speaker) => {
-                                        const eventSpeaker = eventSpeakers.filter(
-                                            (es) => es.speaker_id === speaker.id,
-                                        )[0];
-                                        return (
-                                            <SpeakerVideoBlock
-                                                key={speaker.id}
-                                                speaker={speaker}
-                                                eventSpeaker={eventSpeaker}
-                                            />
-                                        );
-                                    })}
-                                </>
-                            )}
-                            <div className="flex flex-col items-center bg-gray-100">
-                                <SpeakerBiosBlock speakers={speakers} />
-                            </div>
+                {loading ? (
+                    <LoadingSpinner />
+                ) : panelVideoUrl ? (
+                    <>
+                        
+                        <VideoBlock videoUrl={panelVideoUrl} title={title} />
+                        <img src={eventsline} className="wavy" alt="line" />
+
+                        
+                        <div className="speaker-section w-full rounded  p-10  overflow-hidden bg-wnbrb-pink-light">
+                            <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
+                            <SpeakersList speakers={speakers} />
+                            <p className="m-2 pt-4">{description}</p>
                         </div>
-                    )}
+                    </>
+                ) : (
+                    <>
+                        {speakers.map((speaker) => {
+                            const eventSpeaker = eventSpeakers.find(
+                                (es) => es.speaker_id === speaker.id,
+                            );
+                            return (
+                                <SpeakerVideoBlock
+                                    key={speaker.id}
+                                    speaker={speaker}
+                                    eventSpeaker={eventSpeaker}
+                                />
+                            );
+                        })}
+                    </>
+                )}
+                <div className="flex flex-col items-center">
+                    <SpeakerBiosBlock speakers={speakers} />
                 </div>
             </SharedLayout>
         </>
