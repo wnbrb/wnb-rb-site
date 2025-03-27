@@ -59,7 +59,7 @@ const Meetups = () => {
                                 <h5 className="font-rubik text-xl font-bold text-wnbrb-blue-navy ">
                                     Archive
                                 </h5>
-                                <h1 className="font-besley text-3xl font-bold text-wnbrb-blue-navy ">
+                                <h1 className="font-syne text-3xl font-bold text-wnbrb-blue-navy ">
                                     Past Meetups
                                 </h1>
                             </div>

@@ -31,7 +31,7 @@ const Footer = () => (
             <div className="second-div">
                 <div className="footer-left">
                     <div className="footer-col">
-                        <p className="footer-col-item footer-col-title">Get Involved</p>
+                        <p className="footer-col-item footer-col-title font-syne">Get Involved</p>
                         <a className="footer-col-item" href="/join-us">
                             Join WNB.rb
                         </a>
@@ -46,7 +46,9 @@ const Footer = () => (
                         </a>
                     </div>
                     <div className="footer-col">
-                        <p className="footer-col-item footer-col-title">Community Guidelines</p>
+                        <p className="footer-col-item footer-col-title font-syne">
+                            Community Guidelines
+                        </p>
                         <a
                             className="footer-col-item"
                             href="https://tinyurl.com/wnb-rb-coc"
@@ -65,7 +67,7 @@ const Footer = () => (
                         </a>
                     </div>
                     <div className="footer-col">
-                        <p className="footer-col-item footer-col-title">Resources</p>
+                        <p className="footer-col-item footer-col-title font-syne">Resources</p>
                         <a className="footer-col-item" href="/meetups">
                             Meetups
                         </a>

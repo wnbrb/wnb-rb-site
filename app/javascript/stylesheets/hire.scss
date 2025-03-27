@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 2rem;
+    padding: 3rem 2rem;
     width: 80%;
     margin: auto;
     
@@ -18,7 +18,7 @@
     }
 }
 .hire h2{
-    @apply text-wnbrb-blue-navy text-4xl font-besley font-bold xs:text-2xl;
+    @apply text-wnbrb-blue-navy text-4xl  font-bold xs:text-2xl;
     @media (min-width: 416px) and (max-width: 640px){
         font-size: 1.8rem;
     }
@@ -30,7 +30,6 @@
     border-radius: 30px;
     height: auto;
     max-width: 100%;
-    margin-top: 2rem;
     object-fit: contain;
     @apply   lg:h-[320px] ;
  }

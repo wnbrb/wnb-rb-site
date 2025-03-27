@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   devise_for :users,
              path: 'admin',
              path_names: {
-               sign_in: '/',
-               sign_up: 'new',
-               registration: 'register',
+               sign_in: '/'
              }
 
   namespace :admin do

@@ -6,19 +6,6 @@ RSpec.describe 'Admin login system', type: :system do
     driven_by(:rack_test)
   end
 
-  it 'enables me to register to WNB.rb as admin' do
-    visit new_user_registration_path
-
-    fill_in 'Your Name', with: 'Person'
-    fill_in 'Email', with: 'admin@wnb.rb'
-    fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
-    click_button 'Sign up'
-
-    expect(page).to have_current_path(admin_dashboard_path)
-    expect(page).to have_text('Welcome!')
-  end
-
   context 'admin registered' do
     let(:email) { 'admin@wnb.rb' }
     let(:password) { 'password' }
