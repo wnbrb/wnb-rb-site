@@ -171,18 +171,10 @@ const EventsCalendar = () => {
             </div>
 
             <div className="btn-navigation">
-                <Button
-                    type="primary"
-                    aria-label="Go to previous"
-                    onClick={handlePrev}
-                >
+                <Button type="primary" aria-label="Go to previous" onClick={handlePrev}>
                     {'< Previous'}
                 </Button>
-                <Button
-                    type="primary"
-                    aria-label="Go to next"
-                    onClick={handleNext}
-                >
+                <Button type="primary" aria-label="Go to next" onClick={handleNext}>
                     {'Next >'}
                 </Button>
             </div>

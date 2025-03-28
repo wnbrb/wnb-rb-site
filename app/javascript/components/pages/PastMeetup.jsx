@@ -40,7 +40,7 @@ const SpeakerBiosBlock = ({ speakers }) => {
             <div className="flex flex-wrap items-center gap-5">
                 {speakers?.map(({ id, bio, name, links }) => (
                     <div key={id}>
-                        <div>{bio}</div>
+                        <div className="font-noto text-sm">{bio}</div>
                         {Object.keys(links).length > 0 && (
                             <div className="flex items-center">
                                 <p className="mr-3">More from {name}:</p>
@@ -149,18 +149,23 @@ const SpeakerVideoBlock = ({ speaker, eventSpeaker }) => {
                     <VideoBlock videoUrl={videoLink} title={title} />
                     <img src={eventsline} className="wavy" alt="line" />
 
-                    <div key={id} className="speaker-section flex flex-col gap-[20px] px-12 py-8 content-center text-lg">
-                    <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
-                        <img
-                            className="object-cover w-14 h-14 mr-4 rounded-full"
-                            src={imageUrl}
-                            alt=""
-                        />
-                        <div>
-                            <p className="font-bold text-gray md:text-lg">{name}</p>
-                            <p className="text-sm text-gray md:text-lg">{tagline}</p>
+                    <div
+                        key={id}
+                        className="speaker-section flex flex-col gap-[20px] px-12 py-8 content-center text-lg"
+                    >
+                        <h3 className="text-2xl font-syne font-bold mx-2 my-2">{title}</h3>
+                        <div className="flex">
+                            <img
+                                className="object-cover w-14 h-14 mr-4 rounded-full"
+                                src={imageUrl}
+                                alt=""
+                            />
+                            <div>
+                                <p className="font-bold text-gray md:text-lg">{name}</p>
+                                <p className="text-sm text-gray italic">{tagline}</p>
+                            </div>
                         </div>
-                      <p>{description}</p>
+                        <p className="font-noto text-sm">{description}</p>
                     </div>
                 </>
             )}
@@ -202,21 +207,19 @@ const PastMeetup = () => {
             <Helmet>
                 <title>{title}</title>
             </Helmet>
-       
+
             <SharedLayout>
                 {loading ? (
                     <LoadingSpinner />
                 ) : panelVideoUrl ? (
                     <>
-                        
                         <VideoBlock videoUrl={panelVideoUrl} title={title} />
                         <img src={eventsline} className="wavy" alt="line" />
 
-                        
-                        <div className="speaker-section w-full rounded  p-10  overflow-hidden bg-wnbrb-pink-light">
-                            <h3 className="text-2xl font-bold mx-2 my-2">{title}</h3>
+                        <div className="speaker-section w-full rounded  p-10  overflow-hidden">
+                            <h3 className="text-2xl font-bold mx-2 my-2 font-syne">{title}</h3>
                             <SpeakersList speakers={speakers} />
-                            <p className="m-2 pt-4">{description}</p>
+                            <p className="font-noto text-sm m-2 pt-4">{description}</p>
                         </div>
                     </>
                 ) : (
@@ -235,7 +238,7 @@ const PastMeetup = () => {
                         })}
                     </>
                 )}
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center text-wnbrb-blue-navy">
                     <SpeakerBiosBlock speakers={speakers} />
                 </div>
             </SharedLayout>
