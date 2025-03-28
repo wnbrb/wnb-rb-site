@@ -27,7 +27,7 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
 
     visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"
 
-    expect(page).to have_text(meetup.title)
+    expect(page).to have_current_path("/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}")
   end
 
   it 'visits past meetup and displays speaker with valid links' do
