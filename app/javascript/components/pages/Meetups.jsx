@@ -93,7 +93,7 @@ const Meetups = () => {
                             <div className="flex justify-center items-center">
                                 {visibleCount < meetups.length && (
                                     <Button
-                                        type="secondary"
+                                        type="primary"
                                         className="see-more-btn"
                                         onClick={handleSeeMore}
                                     >
