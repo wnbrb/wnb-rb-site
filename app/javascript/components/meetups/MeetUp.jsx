@@ -43,7 +43,7 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
                 </div>
 
                 <a href={`/meetups/${year}/${month}/${day}`}>
-                    <Button type="secondary" className="view-btn">
+                    <Button type="primary" className="view-btn">
                         View
                     </Button>
                 </a>
