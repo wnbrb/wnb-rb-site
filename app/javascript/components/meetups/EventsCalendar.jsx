@@ -14,15 +14,15 @@ const EventsCalendar = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPastMeetups();
-    
+
             const flattenedMeetups = Object.entries(data)
                 .flatMap(([, meetupsByMonth]) => Object.values(meetupsByMonth).flat())
-                .sort((a, b) => new Date(b.date) - new Date(a.date)); 
-    
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
+
             setMeetups(flattenedMeetups);
             setLoading(false);
         };
-    
+
         fetchData();
     }, []);
 
