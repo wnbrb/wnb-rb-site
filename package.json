@@ -37,6 +37,7 @@
         "dayjs": "^1.10.7",
         "esbuild": "^0.25.0",
         "formik": "^2.2.9",
+        "lucide-react": "^0.488.0",
         "mini-css-extract-plugin": "^2.7.6",
         "postcss": "^8.4.31",
         "postcss-cli": "^10.1.0",
