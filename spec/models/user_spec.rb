@@ -26,12 +26,29 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 require 'rails_helper'
+require 'rake'
 
 RSpec.describe User, type: :model do
   context 'validations' do
     it 'ensures presence of name' do
       user = User.new(name: '').save
       expect(user).to eq(false)
+    end
+  end
+
+  context 'admin setup via rake' do
+    before(:all) do
+      Rake.application.rake_require('tasks/new_admin')
+      Rake::Task.define_task(:environment)
+    end
+
+    it 'runs the rake task to add a user' do
+
+      expect {
+        Rake::Task['user:add_user'].reenable
+        Rake::Task['user:add_user'].invoke('Admin', 'test@example.com', 'changeme', 'changeme', 'admin')
+      }.to change(User, :count).by(1)
+
     end
   end
 end
