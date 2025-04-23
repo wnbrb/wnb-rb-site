@@ -28,7 +28,6 @@ const SponsorUs = () => {
                 </div>
 
                 <section className="tiers container mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
-                   
                     <div className="opal border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
                         <h2 className="text-3xl font-semibold mb-4 font-besley">
                             Opal Sponsorship
@@ -40,9 +39,7 @@ const SponsorUs = () => {
                             <span className="text-3xl font-bold font-besley">$1,000</span>{' '}
                             <span className=" text-base">per year</span>
                         </div>
-                        <a
-                            href="https://checkout.stripe.com/c/pay/cs_live_a1aaMMmEFE7mVSIQBATdFLq3Yj73vcXgvCMuCUN5ivqCf9kGGAuOqytz7x#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl" 
-                        >
+                        <a href="https://checkout.stripe.com/c/pay/cs_live_a1aaMMmEFE7mVSIQBATdFLq3Yj73vcXgvCMuCUN5ivqCf9kGGAuOqytz7x#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl">
                             <button className="font-besley bg-wnbrb-blue-navy font-semibold text-white px-6 py-2 rounded-full">
                                 Subscribe
                             </button>
@@ -54,7 +51,7 @@ const SponsorUs = () => {
                             </li>
                         </ul>
                     </div>
-                  
+
                     <div className="sapphire border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
                         <h2 className="text-3xl font-semibold mb-4 font-besley">
                             Sapphire Sponsorship
@@ -83,7 +80,6 @@ const SponsorUs = () => {
                         </ul>
                     </div>
 
-                
                     <div className="emerald border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
                         <h2 className="text-3xl font-semibold mb-4 font-besley">
                             Emerald Sponsorship
