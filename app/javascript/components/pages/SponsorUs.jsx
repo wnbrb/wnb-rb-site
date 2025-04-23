@@ -29,7 +29,7 @@ const SponsorUs = () => {
 
                 <section className="tiers container mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
                     <div className="opal border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
-                        <h2 className="text-3xl font-semibold mb-4 font-besley">
+                        <h2 className="text-3xl md:text-2xl font-semibold mb-4 font-besley">
                             Opal Sponsorship
                         </h2>
                         <p className="mb-4 font-noto">
@@ -53,7 +53,7 @@ const SponsorUs = () => {
                     </div>
 
                     <div className="sapphire border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
-                        <h2 className="text-3xl font-semibold mb-4 font-besley">
+                        <h2 className="text-3xl md:text-2xl font-semibold mb-4 font-besley">
                             Sapphire Sponsorship
                         </h2>
                         <p className="mb-4 font-noto">
@@ -81,7 +81,7 @@ const SponsorUs = () => {
                     </div>
 
                     <div className="emerald border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
-                        <h2 className="text-3xl font-semibold mb-4 font-besley">
+                        <h2 className="text-3xl md:text-2xl sm:text-2xl font-semibold mb-4 font-besley">
                             Emerald Sponsorship
                         </h2>
                         <p className="mb-4 font-noto">
