@@ -29,21 +29,26 @@ const SponsorUs = () => {
 
                 <section className="tiers container mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
                     <div className="opal border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
-                        <h2 className="text-3xl md:text-2xl font-semibold mb-4 font-besley">
+                        <h2 className="text-3xl md:text-2xl font-bold mb-4 font-besley">
                             Opal Sponsorship
                         </h2>
                         <p className="mb-4 font-noto">
                             Help WNB.rb pay for web hosting and other administrative expenses.
                         </p>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col mb-4">
                             <span className="text-3xl font-bold font-besley">$1,000</span>{' '}
                             <span className=" text-base">per year</span>
                         </div>
-                        <a href="https://checkout.stripe.com/c/pay/cs_live_a1aaMMmEFE7mVSIQBATdFLq3Yj73vcXgvCMuCUN5ivqCf9kGGAuOqytz7x#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl">
-                            <button className="font-besley bg-wnbrb-blue-navy font-semibold text-white px-6 py-2 rounded-full">
-                                Subscribe
-                            </button>
-                        </a>
+                        <Button
+                            type="primary"
+                            className="font-bold mx-auto w-[8rem]"
+                            onClick={() => {
+                                window.location.href =
+                                    'https://checkout.stripe.com/c/pay/cs_live_a1p8Hf9JETyLoMzmAf1ru22zVVEelTamMDAsE2BOMQUMOod1uvTng2A9FU#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl';
+                            }}
+                        >
+                            Subscribe
+                        </Button>
                         <ul className="mt-6 text-sm flex pl-5 font-noto">
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
@@ -53,21 +58,30 @@ const SponsorUs = () => {
                     </div>
 
                     <div className="sapphire border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
-                        <h2 className="text-3xl md:text-2xl font-semibold mb-4 font-besley">
+                        <div className="most-popular-banner  text-black font-semibold mx-auto rounded">
+                            Most popular
+                        </div>
+                        <h2 className="text-3xl md:text-2xl font-bold mb-4 font-besley">
                             Sapphire Sponsorship
                         </h2>
                         <p className="mb-4 font-noto">
                             Support community organization like our meetup & book club.
                         </p>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col mb-4">
                             <span className="text-3xl font-bold font-besley">$2,500</span>
                             <span className="text-base">per year</span>
                         </div>
-                        <a href="https://checkout.stripe.com/c/pay/cs_live_a1TKQyHEW7lcOGAv8BYDN6lrzIWEXUxE7dQbYWKD4pigyy5j9DFG6bu3X8#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl">
-                            <button className="font-besley bg-wnbrb-blue-navy font-semibold text-white px-6 py-2 rounded-full">
-                                Subscribe
-                            </button>
-                        </a>
+                        <Button
+                            type="primary"
+                            className="font-bold mx-auto w-[8rem]"
+                            onClick={() => {
+                                window.location.href =
+                                    'https://checkout.stripe.com/c/pay/cs_live_a1Nu8jBYR28iRhVn0QXpNE7srUvcWwTYLlxFbKadLuOcELMqMJB2e50TCX#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl';
+                            }}
+                        >
+                            Subscribe
+                        </Button>
+
                         <ul className="mt-6 text-sm space-y-2 pl-5 font-noto">
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
@@ -81,21 +95,28 @@ const SponsorUs = () => {
                     </div>
 
                     <div className="emerald border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
-                        <h2 className="text-3xl md:text-2xl sm:text-2xl font-semibold mb-4 font-besley">
+                        <h2 className="text-3xl md:text-2xl sm:text-2xl font-bold mb-4 font-besley">
                             Emerald Sponsorship
                         </h2>
                         <p className="mb-4 font-noto">
                             Help send WNB.rb members to Ruby conferences globally.
                         </p>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col mb-4">
                             <span className="text-3xl font-bold font-besley">$5,000</span>
                             <span className="text-base">per year</span>
                         </div>
-                        <a href="https://checkout.stripe.com/c/pay/cs_live_a1YLqfuwCImSSkswMcdZpPmR9MooFNbizIXc1xzFmExm8jAqqMkmhYRAMd#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl">
-                            <button className="font-besley bg-wnbrb-blue-navy font-semibold text-white px-6 py-2 rounded-full">
-                                Subscribe
-                            </button>
-                        </a>
+
+                        <Button
+                            type="primary"
+                            className="font-bold mx-auto w-[8rem]"
+                            onClick={() => {
+                                window.location.href =
+                                    'https://checkout.stripe.com/c/pay/cs_live_a1GL1pE1nzMAztazV8Rjk5eocCa3H7ICuQPKPCWR8fCCZ0A2vx07bKKHjS#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl';
+                            }}
+                        >
+                            Subscribe
+                        </Button>
+
                         <ul className="mt-6 text-sm space-y-2 pl-5 font-noto">
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
