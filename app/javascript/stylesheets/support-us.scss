@@ -1,0 +1,74 @@
+.title {
+    display: flex;
+    margin: 6rem 0 0;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 38px;
+    font-weight: 600;
+    color: #2e0880;
+}
+
+.title p {
+    width: 60%;
+}
+
+.card {
+    background-color: transparent;
+    --tw-shadow: none;
+    padding: 4px;
+    gap: 12px;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    @apply lg:w-[100%] lg:m-[0];
+}
+
+.card-img {
+    border-radius: 10px;
+}
+
+.tiers {
+    color: #15043a;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 72%;
+    @apply md:w-full lg:w-full
+}
+
+.opal {
+    background-color: #a3d6c4;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sapphire {
+    background-color: #d3c1fb;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emerald {
+    background-color: #bfe444;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+ul li span{
+    text-align: left;
+}
+
+.most-popular-banner{
+    margin-top: -30px;
+    background-color: #ffdd19;
+    padding: 0 5px;
+}
