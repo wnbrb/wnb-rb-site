@@ -12,7 +12,7 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
     return (
         <li className="w-full">
             <div className="meetups__card flex flex-col pb-12 ">
-                <div className="w-[19rem] rounded overflow-hidden">
+                <div className="meetup-card mx-auto rounded overflow-hidden">
                     <img src={meetup} className="stock-img" alt="meetup" />
                     <div className="card-content">
                         <h4 className="font-noto mb-4  text-wnbrb-blue-navy">{title}</h4>
