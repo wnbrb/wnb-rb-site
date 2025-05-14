@@ -42,13 +42,14 @@
 .page-title-calendar {
     display: flex;
     flex-direction: column;
-    padding: 2rem 3rem;
+    padding: 2rem 1rem;
     justify-content: left;
     align-items: flex-start;
     margin-left: auto;
     margin-right: auto;
     font-size: 18px;
     width: 90%;
+    @apply md:px-[3rem]
 }
 .btn-navigation {
     display: flex;
