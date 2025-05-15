@@ -1,7 +1,7 @@
 .meetup-section-container {
     background-color: #fff099;
     margin-top: -10px;
-    padding: 3rem 2rem;
+    padding: 2rem;
     @apply md:-mt-[20px] lg:-mt-[26px];
 
     @media (min-width: 415px) {
@@ -201,4 +201,12 @@ iframe {
 }
 .abt-speaker {
     padding: 0 2rem 3rem;
+}
+
+.meetup-card {
+    width: 85%;
+
+      @media (min-width: 768px) {
+        max-width: 20rem;
+    }
 }

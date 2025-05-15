@@ -27,7 +27,7 @@ const SponsorUs = () => {
                     </p>
                 </div>
 
-                <section className="tiers container mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+                <section className="tiers container mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4l">
                     <div className="opal border p-6 rounded-2xl shadow hover:shadow-lg transition h-full">
                         <h2 className="text-3xl md:text-2xl font-bold mb-4 font-besley">
                             Opal Sponsorship
@@ -49,7 +49,7 @@ const SponsorUs = () => {
                         >
                             Subscribe
                         </Button>
-                        <ul className="mt-6 text-sm flex pl-5 font-noto">
+                        <ul className="mt-6 text-sm flex font-noto">
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
                                 <span>Feature your company&apos;s logo on the WNB.rb website</span>
@@ -82,7 +82,7 @@ const SponsorUs = () => {
                             Subscribe
                         </Button>
 
-                        <ul className="mt-6 text-sm space-y-2 pl-5 font-noto">
+                        <ul className="mt-6 text-sm space-y-2 font-noto">
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
                                 <span>Feature your company&apos;s logo on the WNB.rb website</span>
@@ -117,7 +117,7 @@ const SponsorUs = () => {
                             Subscribe
                         </Button>
 
-                        <ul className="mt-6 text-sm space-y-2 pl-5 font-noto">
+                        <ul className="mt-6 text-sm space-y-2 font-noto">
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
                                 <span>Feature your company&apos;s logo on the WNB.rb website</span>
@@ -135,7 +135,7 @@ const SponsorUs = () => {
                 </section>
 
                 <section className="bg-wnbrb-pink-light">
-                    <div className="container max-w-6xl mx-auto flex flex-col md:flex-col md:items-center lg:items-baseline lg:flex-row gap-[8px] xl:gap-16 py-[3rem] px-10 lg:px-8 xl:px-12">
+                    <div className="container  mx-auto flex flex-col md:flex-col md:items-center lg:items-baseline lg:flex-row gap-8  py-[4rem]  lg:px-8 xl:px-12">
                         <Card className="w-100 md:w-1/2 flex-1 flex flex-col h-full">
                             <img
                                 className="card-img"
@@ -145,7 +145,7 @@ const SponsorUs = () => {
                             <h2 className="text-3xl text-center font-syne font-bold text-wnbrb-blue-navy">
                                 Hire from WNB.rb
                             </h2>
-                            <p className="mb-2 text-wnbrb-blue-navy">
+                            <p className="mb-2 text-wnbrb-blue-navy text-center w-[83%]">
                                 Even if you aren&apos;t a sponsor, you can hire from our community
                                 by posting your open jobs on our job board.
                             </p>
@@ -165,7 +165,7 @@ const SponsorUs = () => {
                             <h2 className="text-3xl text-center font-syne font-bold mb-2 text-wnbrb-blue-navy">
                                 Make a donation
                             </h2>
-                            <p className="mb-2 grow text-wnbrb-blue-navy">
+                            <p className="mb-2 grow text-center w-[83%] text-wnbrb-blue-navy">
                                 Not ready to sponsor WNB.rb? That&apos;s okay! We&apos;d still
                                 greatly appreciate a donation of any amount. All the money we earn
                                 goes back into the community.
