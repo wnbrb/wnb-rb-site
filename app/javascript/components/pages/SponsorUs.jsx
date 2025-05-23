@@ -44,7 +44,7 @@ const SponsorUs = () => {
                             className="font-bold mx-auto w-[8rem]"
                             onClick={() => {
                                 window.location.href =
-                                    'https://checkout.stripe.com/c/pay/cs_live_a1p8Hf9JETyLoMzmAf1ru22zVVEelTamMDAsE2BOMQUMOod1uvTng2A9FU#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl';
+                                    ' https://buy.stripe.com/7sI7t874R38uasM7sL';
                             }}
                         >
                             Subscribe
@@ -76,7 +76,7 @@ const SponsorUs = () => {
                             className="font-bold mx-auto w-[8rem]"
                             onClick={() => {
                                 window.location.href =
-                                    'https://checkout.stripe.com/c/pay/cs_live_a1Nu8jBYR28iRhVn0QXpNE7srUvcWwTYLlxFbKadLuOcELMqMJB2e50TCX#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl';
+                                    'https://buy.stripe.com/14kbJo88VaAW44o7sK';
                             }}
                         >
                             Subscribe
@@ -111,7 +111,7 @@ const SponsorUs = () => {
                             className="font-bold mx-auto w-[8rem]"
                             onClick={() => {
                                 window.location.href =
-                                    'https://checkout.stripe.com/c/pay/cs_live_a1GL1pE1nzMAztazV8Rjk5eocCa3H7ICuQPKPCWR8fCCZ0A2vx07bKKHjS#fidkdWxOYHwnPyd1blppbHNgWjA0T2hhVjRHTWdJdFBvc2tSV0lrfTxOR19xTVJJUk1gMzJLNkp1dlM1Q0BXbmo3TjFpRF8zanxAajF1THQ9MVxMSFRVUE89TjRDXDRQYHNdb19fVXZsaWp0NTVAXGRsMk9HVCcpJ3ZwZ3Zmd2x1cWxqa1BrbHRwYGtgdnZAa2RnaWBhJz9jZGl2YHgl';
+                                    'https://buy.stripe.com/cN24gW1KxaAWbwQ4gu';
                             }}
                         >
                             Subscribe
