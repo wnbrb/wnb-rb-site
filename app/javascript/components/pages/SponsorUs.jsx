@@ -43,8 +43,7 @@ const SponsorUs = () => {
                             type="primary"
                             className="font-bold mx-auto w-[8rem]"
                             onClick={() => {
-                                window.location.href =
-                                    ' https://buy.stripe.com/7sI7t874R38uasM7sL';
+                                window.location.href = ' https://buy.stripe.com/7sI7t874R38uasM7sL';
                             }}
                         >
                             Subscribe
@@ -75,8 +74,7 @@ const SponsorUs = () => {
                             type="primary"
                             className="font-bold mx-auto w-[8rem]"
                             onClick={() => {
-                                window.location.href =
-                                    'https://buy.stripe.com/14kbJo88VaAW44o7sK';
+                                window.location.href = 'https://buy.stripe.com/14kbJo88VaAW44o7sK';
                             }}
                         >
                             Subscribe
@@ -110,8 +108,7 @@ const SponsorUs = () => {
                             type="primary"
                             className="font-bold mx-auto w-[8rem]"
                             onClick={() => {
-                                window.location.href =
-                                    'https://buy.stripe.com/cN24gW1KxaAWbwQ4gu';
+                                window.location.href = 'https://buy.stripe.com/cN24gW1KxaAWbwQ4gu';
                             }}
                         >
                             Subscribe
