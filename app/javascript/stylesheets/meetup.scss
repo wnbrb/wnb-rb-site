@@ -92,7 +92,8 @@
 
     @media (min-width: 1024px) {
         flex-direction: row;
-        width: 100%;
+        width: 90%;
+        gap: 0;        
     }
 }
 
@@ -108,7 +109,7 @@
     border-radius: 2rem;
 
     @media (min-width: 1024px) {
-        width: 35%;
+        width: 45%;
         margin: 2rem;
     }
 }
@@ -128,13 +129,13 @@ h3 {
         margin-top: -2rem;
     }
 }
-.button.view-btn.primary {
+.button.view-btn {
     background-color: #ffdd19;
     color: #2e0880;
     border: 2px solid;
     font-size: 18px;
     font-weight: 700;
-    width: 35%;
+    width: 179px;
     cursor: pointer;
     margin: auto;
     font-family: besley;
@@ -142,18 +143,13 @@ h3 {
 .button.view-btn.primary:hover {
     border: 1px solid #2e0880;
 }
+.button.see-more{
+    width: 179px;
+}
 li {
     list-style: none;
 }
-.button.see-more-btn.primary {
-    font-size: 16px;
-    font-weight: 700;
-    font-family: besley;
-    color: wheat;
-}
-.button.see-more-btn.primary:hover {
-    color: #2e0880;
-}
+
 .video-section {
     background-color: #fff099;
     margin-top: 2rem;

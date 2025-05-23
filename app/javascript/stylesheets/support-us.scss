@@ -6,10 +6,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 10px;
 }
 
 .title h1 {
-    font-size: 50px;
+    font-size: 47px;
     font-weight: 700;
     color: #2e0880;
 }
@@ -32,7 +33,7 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 80%;
+    width: 85%;
     @apply lg:w-[100%] lg:m-[0];
 }
 
@@ -53,7 +54,7 @@
 
 .opal {
     background-color: #a3d6c4;
-    gap: 15px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
 }

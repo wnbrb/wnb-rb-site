@@ -34,15 +34,15 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-height: 30rem;
+    max-height: 31rem;
     overflow-y: auto;
     padding: 8px 0;
-    @apply md:w-[76%] lg:w-[54%];
+    @apply md:w-[76%] lg:w-[54%] ;
 }
 .page-title-calendar {
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     justify-content: left;
     align-items: flex-start;
     margin-left: auto;
@@ -55,16 +55,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     gap: 2rem;
-}
+    width: 88%;
+    }
+    .btn-navigation .button {
+        width: 179px;
+    }
 .fc-direction-ltr {
     width: 100%;
-    height: 30rem;
+    height: 31rem;
     background-color: #2e0880;
     overflow: hidden;
     padding: 10px;
     border-radius: 20px;
+
+    
 }
 .fc-col-header {
     @apply font-syne md:w-[31rem] lg:w-[31rem];
@@ -124,7 +130,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 24px;
+   padding: 18px;
 }
 .fc-prev-button fc-button fc-button-primary {
     display: none;
@@ -136,11 +142,14 @@
     justify-content: center;
 }
 .fc .fc-toolbar-title {
-    font-size: 1.8rem;
+    font-family: Besley;
+    font-size: 48px;
+    font-weight: 700;
+    color: #FFFFE5;
     display: flex;
     justify-content: center;
     align-items: center;
-    @apply md:text-[2rem] lg:pb-[1rem];
+    @apply md:text-[2rem] lg:pb-[1rem] lg:text-[72px];
 }
 
 .event-card {

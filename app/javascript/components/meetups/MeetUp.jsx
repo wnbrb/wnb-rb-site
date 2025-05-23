@@ -29,7 +29,7 @@ const Meetup = ({ speakers, title = '', talks, year, month, day }) => {
                                             alt=""
                                         />
                                         <div>
-                                            <p className="font-besley text-xl font-bold text-gray text-wnbrb-blue-navy">
+                                            <p className="font-besley text-l font-bold text-gray text-wnbrb-blue-navy">
                                                 {speaker.name}
                                             </p>
                                             <p className="text-sm text-gray italic">

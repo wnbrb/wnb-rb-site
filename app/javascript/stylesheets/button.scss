@@ -1,11 +1,13 @@
 .button {
-    @apply p-[1rem]
+    color:#FFFFE5;
+    width: 179px;
+    @apply py-[24px] px-[25px]
         font-besley
-        rounded-[1.8rem]
+        rounded-[31px]
         flex
         items-center
         justify-center
-        text-base
+        text-[15px]
         transition-all
         hover:cursor-pointer
         hover:outline-none
@@ -13,7 +15,7 @@
 }
 
 .button.primary {
-    @apply text-white
+    @apply 
         border
         border-transparent
         bg-wnbrb-blue-navy

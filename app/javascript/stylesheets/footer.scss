@@ -3,76 +3,84 @@ footer {
     width: 100%;
 
     .footer {
-        @apply  container mx-auto max-w-6xl flex justify-between text-sm px-[2rem] xl:px-0 pt-[4rem] md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0 ;
-        @media (min-width: 416px) and (max-width: 640px){
+        @apply container mx-auto max-w-6xl flex justify-between text-sm px-[2rem] xl:px-0 pt-[3rem] pb-[3rem] md:py-20 flex-col md:flex-col border-t border-gray-100 md:border-t-0;
+        @media (min-width: 416px) and (max-width: 640px) {
             padding-left: 1rem;
         }
-        color:#2e0880;
-      
-                .first-div{
-                display: flex;
-                flex-direction: column;
-                gap: 2rem; 
-                align-items: flex-start;
-                padding-bottom: 2rem;
+        color: #2e0880;
 
-                @apply lg:flex-row lg:justify-between lg:mb-4 lg:items-center;
-        }
-        .btns{
-                display: flex;
-                flex-direction: column-reverse;
-                gap: 1rem;
-                font-size: 13px;
-                align-items: flex-start;
-                @apply md:flex-row md:items-center
+        .first-div {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: flex-start;
 
-           
+            @apply md:pb-[2rem] lg:flex-row lg:justify-between lg:mb-4 lg:items-center;
         }
-        .btns a{
+        .btns {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 1rem;
+            font-size: 14px;
+            align-items: flex-start;
+            @apply md:flex-row md:items-center;
+        }
+        .btns a {
             text-decoration: none;
         }
-     
+        .mail {
+            font-family: noto;
+            font-weight: 300;
+            border-radius: 15px;
+            padding: 12px 16px;
+            font-size: 18px;
+            width: 100%;
+            
+        }
+        
         a {
             @apply no-underline mb-0 font-noto;
             color: inherit;
 
             &:hover {
-                @apply  text-gray-700;
+                @apply text-gray-700;
             }
         }
 
-        .second-div{
-        @apply lg:flex-row lg:justify-between lg:flex;
+        .second-div {
+            @apply lg:flex-row lg:justify-between lg:flex;
         }
         .footer-left {
             display: none;
         }
-        
-        @media (min-width: 768px) { 
+
+        @media (min-width: 768px) {
             .footer-left {
                 display: flex;
-                flex-direction: row; 
-                justify-content: space-between;
+                flex-direction: row;
+                justify-content: normal;
+                width: 70%;
+
             }
         }
-        
-        @media (min-width: 1024px) { 
+
+        @media (min-width: 1024px) {
             .footer-left {
                 justify-content: normal;
-                display: flex; 
+                display: flex;
             }
         }
-        .button{
-             @apply xs:text-[13px];
+        .button {
+            @apply xs:text-[13px];
         }
 
         .footer-right {
-              display: flex;
-                flex-direction: column-reverse;
-                align-items: flex-start;
-                gap: 2rem;
-                margin-top: 2rem;
-                @apply lg:justify-end lg:mt-0
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 2rem;
+            @apply lg:justify-end lg:mt-0;
         }
 
         .footer-col {
@@ -95,8 +103,7 @@ footer {
         }
 
         p.made-with-love {
-            @apply m-0 mt-2 text-right;
+            @apply m-0 mt-2 text-left;
         }
     }
 }
-

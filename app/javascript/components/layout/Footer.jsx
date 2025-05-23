@@ -17,7 +17,7 @@ const Footer = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button type="primary">Want to know more? Send us an email</Button>
+                        <Button type="primary mail">Want to know more? Send us an email</Button>
                     </a>
 
                     <a href="/join-us">
