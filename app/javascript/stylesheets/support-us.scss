@@ -1,37 +1,45 @@
 .title {
     display: flex;
-    margin: 6rem 0 0;
+    margin: 4rem 2rem 2rem;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 10px;
 }
 
 .title h1 {
-    font-size: 38px;
-    font-weight: 600;
+    font-size: 47px;
+    font-weight: 700;
     color: #2e0880;
 }
 
 .title p {
-    width: 60%;
+    width: 90%;
+       @media (min-width: 768px) {
+       width: 70%;
+    }
+       @media (min-width: 1024px) {
+       width: 60%;
+    }
 }
 
 .card {
     background-color: transparent;
     --tw-shadow: none;
     padding: 4px;
-    gap: 12px;
-    justify-content: space-around;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
     margin: auto;
-    width: 80%;
+    width: 85%;
     @apply lg:w-[100%] lg:m-[0];
 }
 
 .card-img {
     border-radius: 10px;
+    @apply md:max-w-[75%] lg:max-w-[95%]
 }
 
 .tiers {
@@ -39,27 +47,28 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 72%;
-    @apply md:w-full lg:w-full
+    width: 85%;
+    margin-bottom: 1rem;
+    @apply md:w-[55rem] lg:w-[85%]
 }
 
 .opal {
     background-color: #a3d6c4;
-    gap: 8px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .sapphire {
     background-color: #d3c1fb;
-    gap: 8px;
+    gap: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .emerald {
     background-color: #bfe444;
-    gap: 8px;
+    gap: 15px;
     display: flex;
     flex-direction: column;
 }
