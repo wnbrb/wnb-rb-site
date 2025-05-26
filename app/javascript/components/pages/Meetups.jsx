@@ -56,9 +56,7 @@ const Meetups = () => {
                     <div className="meetup-section-container">
                         <div className="container flex justify-center flex-col mx-auto ">
                             <div className="flex flex-col gap-2 justify-center items-center mx-auto ">
-                                <h5 className="font-rubik text-xl font-bold text-wnbrb-blue-navy ">
-                                    Archive
-                                </h5>
+                                <h5 className="text-l font-bold text-wnbrb-blue-navy ">Archive</h5>
                                 <h1 className="font-syne text-3xl font-bold text-wnbrb-blue-navy ">
                                     Past Meetups
                                 </h1>
@@ -94,7 +92,7 @@ const Meetups = () => {
                                 {visibleCount < meetups.length && (
                                     <Button
                                         type="primary"
-                                        className="see-more-btn"
+                                        className="see-more"
                                         onClick={handleSeeMore}
                                     >
                                         See More

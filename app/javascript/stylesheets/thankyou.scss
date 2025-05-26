@@ -11,12 +11,13 @@
 }
 
 .thankyou h2{
-    font-size: 30px;
+    font-size: 24px;
+    line-height: 33px;
     text-align: center;
-    line-height: 2.5rem;
     font-weight: 800;
     font-family: besley;
     color: black;
+    @apply md:text-[48px]
 }
 
 .thankyou p{

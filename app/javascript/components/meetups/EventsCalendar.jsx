@@ -82,6 +82,12 @@ const EventsCalendar = () => {
                         eventClick={handleEventClick}
                         editable={false}
                         selectable={true}
+                        titleFormat={{ month: 'long' }}
+                        dayHeaderContent={(arg) => {
+                            const isMobile = window.innerWidth <= 768;
+                            const dayAbbreviations = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+                            return isMobile ? dayAbbreviations[arg.date.getDay()] : arg.text;
+                        }}
                         dayCellDidMount={(args) => {
                             const eventForDay = events.find(
                                 (event) =>
@@ -154,7 +160,7 @@ const EventsCalendar = () => {
                                                     alt="speaker"
                                                 />
                                                 <div>
-                                                    <p className="font-bold text-black md:text-lg">
+                                                    <p className="font-bold text-black md:text-lg font-besley">
                                                         {speaker.name}
                                                     </p>
                                                     <p className="text-xxs text-gray italic">

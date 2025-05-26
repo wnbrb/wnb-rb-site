@@ -93,7 +93,7 @@
         gap: 22px;
         justify-content: center;
         height: auto;
-        width: 84%;
+        width: 90%;
         margin: auto;
 
         @media (min-width: 768px) { 
@@ -139,6 +139,7 @@
 }
 .bg-color-2 {
     background-color:  #ffdd19;
+    color: #15043a;
     
 }
 .bg-color-3 {
@@ -172,7 +173,7 @@
 .info-card:nth-child(1) {
     grid-column: 1;
     grid-row: 1;
-    padding: 1rem 2rem 2rem;
+    padding: 2rem;
     border-radius: 1.8rem;
 
     
@@ -197,7 +198,7 @@
 .info-card:nth-child(2) {
     grid-column: 1;
     grid-row: 5;
-    padding: 1rem 2rem 2rem;
+    padding: 2rem;
     border-radius: 1.8rem;
     
     @media (min-width: 768px) { 
@@ -220,7 +221,7 @@
 .info-card:nth-child(3) {
     grid-column: 1;
     grid-row: 3;
-    padding: 1rem 2rem 2rem;
+    padding: 2rem;
     border-radius: 1.8rem;
     @media (min-width: 768px) { 
         grid-column: 1;

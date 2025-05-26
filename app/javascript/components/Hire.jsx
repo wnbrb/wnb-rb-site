@@ -8,8 +8,8 @@ const Hire = () => {
         <div className="hire-layout">
             <div className="hire w-100 md:w-1/2 flex-1 flex flex-col">
                 <img className="hire-img" src={four} alt="Hire-from-wnb-rb" />
-                <h2 className="font-syne text-2xl font-bold mb-2 pt-4">Hire from WNB.rb</h2>
-                <p className="font-noto text-base mb-8 grow">
+                <h2 className="font-syne mb-2 pt-4">Hire from WNB.rb</h2>
+                <p className="font-noto text-base mb-8 grow  w-[90%] md:w-[80%] lg:w-[50%]">
                     Even if you aren&apos;t a sponsor, you can hire from our community by posting
                     your open jobs on our job board.
                 </p>

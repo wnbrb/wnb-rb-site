@@ -6,7 +6,7 @@ import Gusto from '../../assets/images/Gusto-logo.png';
 const Thankyou = () => {
     return (
         <div className="thankyou">
-            <h2>Thank you to our Sponsors</h2>
+            <h2>Thank You to Our Sponsors</h2>
             <p>
                 We are immensely grateful to our sponsors for their generous support and commitment.
                 Their invaluable contributions have been instrumental in helping us achieve our

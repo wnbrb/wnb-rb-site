@@ -11,16 +11,14 @@ const Footer = () => (
                     <img src={footerlogo} alt="footer-logo" />
                 </div>
                 <div className="btns">
-                    <Button type="primary">
-                        <a
-                            href="mailto:organizers@wnb-rb.dev"
-                            aria-label="Email"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Want to know more? Send us an email
-                        </a>
-                    </Button>
+                    <a
+                        href="mailto:organizers@wnb-rb.dev"
+                        aria-label="Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button type="primary mail">Want to know more? Send us an email</Button>
+                    </a>
 
                     <a href="/join-us">
                         <Button type="primary">Join WNB.rb</Button>
