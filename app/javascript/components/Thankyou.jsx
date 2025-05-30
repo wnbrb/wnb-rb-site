@@ -2,7 +2,7 @@ import React from 'react';
 import 'stylesheets/thankyou';
 import mike from '../../assets/images/mike.png';
 import Gusto from '../../assets/images/Gusto-logo.png';
-import flagrant from '../../assets/images/Flagrant-logo.svg'
+import flagrant from '../../assets/images/Flagrant-logo.svg';
 
 const Thankyou = () => {
     return (
@@ -42,7 +42,7 @@ const Thankyou = () => {
                     </a>
                 </div>
 
-                 <div className="sponsor-3">
+                <div className="sponsor-3">
                     <a
                         href="https://gusto.com/"
                         className="link"
