@@ -2,6 +2,7 @@ import React from 'react';
 import 'stylesheets/thankyou';
 import mike from '../../assets/images/mike.png';
 import Gusto from '../../assets/images/Gusto-logo.png';
+import flagrant from '../../assets/images/Flagrant-logo.svg';
 
 const Thankyou = () => {
     return (
@@ -31,6 +32,17 @@ const Thankyou = () => {
                 </div>
 
                 <div className="sponsor-2">
+                    <a
+                        href="https://www.beflagrant.com/"
+                        className="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={flagrant} alt="Flagrant-logo" className="sponsor-image" />
+                    </a>
+                </div>
+
+                <div className="sponsor-3">
                     <a
                         href="https://gusto.com/"
                         className="link"
