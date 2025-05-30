@@ -17,7 +17,7 @@
     font-weight: 800;
     font-family: besley;
     color: black;
-    @apply md:text-[48px]
+    @apply md:text-[44px]
 }
 
 .thankyou p{
@@ -49,18 +49,15 @@
    flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 45%;
+    width: 60%;
     border-radius: 35px;
 
     @media (min-width: 768px) { 
-       width: 60%;
-       padding: 2rem 5rem;
- 
-     }
+       padding: 2rem 0;
+      }
  
      @media (min-width: 1024px) { 
-        width: 35%;
-        padding: 2rem 5rem;
+        padding: 2rem;
      }
 
 }
@@ -79,9 +76,11 @@
 }
 
 .sponsor-image{
-    border-radius: 10rem;
+    border-radius: 12rem;
 }
 
-.thankyou .sponsor .sponsor-2 .sponsor-image{
+.thankyou .sponsor .sponsor-2 .sponsor-image,
+.thankyou .sponsor .sponsor-3 .sponsor-image
+{
     border-radius: 0;
 }
