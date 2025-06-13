@@ -5,7 +5,8 @@ Rails.application.routes.draw do
              path: 'admin',
              path_names: {
                sign_in: '/'
-             }
+             },
+             controllers: { registrations: 'users/registrations' }
 
   namespace :admin do
     get 'dashboard', to: 'dashboard#show'

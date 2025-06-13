@@ -12,6 +12,7 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  name                   :string           not null
+#  password_changed       :boolean          default(FALSE)
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -36,7 +37,9 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable,
          :rememberable,
+         :registerable,
          :validatable,
+         :trackable,
          authentication_keys: [:email]
 
   def admin?

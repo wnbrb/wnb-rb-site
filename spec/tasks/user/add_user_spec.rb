@@ -17,7 +17,6 @@ context 'admin setup via rake' do
       Rake::Task['user:add_user'].invoke('Admin', 'test@example.com', 'changeme')
       end.to change(User, :count).by(1)
 
+    end
   end
-end
-
 end
