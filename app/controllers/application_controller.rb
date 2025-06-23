@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-Rails.logger.info('Loaded ApplicationController')
-
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
