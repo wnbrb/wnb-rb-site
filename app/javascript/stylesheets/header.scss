@@ -23,7 +23,7 @@ header {
             }
 
             nav.nav {
-                @apply hidden md:w-[80%] lg:w-[70%] md:flex md:justify-between ml-auto mr-auto;
+                @apply hidden md:w-[80%] lg:w-[60%] md:flex md:justify-between ml-auto mr-auto;
 
                 .menu {
                     @apply md:w-full md:self-center;
