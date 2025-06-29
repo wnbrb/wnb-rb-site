@@ -50,6 +50,13 @@ const JoinUs = () => {
                         });
 
                         window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (resolvedValue.status === 200) {
+                        resetForm();
+                        setShowBanner({
+                            type: 'success',
+                            message: `${values.name}, thank you for joining WNB.rb! You will receive an email inviting you to our Discord server shortly.`,
+                        });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 });
             } catch (error) {
