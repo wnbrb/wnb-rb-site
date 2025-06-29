@@ -44,7 +44,7 @@ const Thankyou = () => {
 
                 <div className="sponsor-3">
                     <a
-                        href="https://gusto.com/"
+                        href="https://gusto.com/about/careers/join-the-team"
                         className="link"
                         target="_blank"
                         rel="noopener noreferrer"
