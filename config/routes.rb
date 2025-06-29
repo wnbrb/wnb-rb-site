@@ -17,7 +17,8 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  
+  get '/community', to: 'site#community'
   get '/meetups', to: 'site#meetups'
   get '/join-us', to: 'site#join_us'
   get '/sponsor-us', to: 'site#sponsor_us'
