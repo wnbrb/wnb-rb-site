@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import SharedLayout from 'components/layout/SharedLayout';
@@ -14,26 +14,7 @@ import InPersonConferenceMeetupsSection from '../community/In-PersonConferenceMe
 import InterviewPrepSection from '../community/InterviewPrepSection';
 
 const Community = () => {
-    const [device, setDevice] = useState('desktop');
-
-    useEffect(() => {
-        const updateDevice = () => {
-            if (window.innerWidth <= 767) {
-                setDevice('mobile');
-            } else if (window.innerWidth <= 1023) {
-                setDevice('tablet');
-            } else {
-                setDevice('desktop');
-            }
-        };
-
-        window.addEventListener('resize', updateDevice);
-        updateDevice();
-        return () => window.removeEventListener('resize', updateDevice);
-    }, []);
-
     const section1Data = [
-      
         {
             title: 'Our Community',
             section: <OurCommunitySection />,
@@ -71,8 +52,8 @@ const Community = () => {
             title: 'Jobs & Interview Prep',
             section: <InterviewPrepSection />,
             backgroundColor: 'bg-color-2',
-        }
-     ];
+        },
+    ];
 
     return (
         <>
@@ -92,15 +73,12 @@ const Community = () => {
                                 >
                                     {card.title && card.section && (
                                         <>
-                                            <h2 className="font-bold font-syne">
-                                                {card.title}
-                                            </h2>
+                                            <h2 className="font-bold font-syne">{card.title}</h2>
                                             <div className="font-noto text-base">
                                                 {card.section}
                                             </div>
                                         </>
                                     )}
-                                 
                                 </div>
                             );
                         })}
@@ -108,7 +86,6 @@ const Community = () => {
                 </div>
                 <div className="info">
                     <section className="info-layout">
-
                         <div className="info-card-section layout">
                             {infoCardData.map((card, index) => (
                                 <div
@@ -125,13 +102,11 @@ const Community = () => {
                                             </div>
                                         </>
                                     )}
-                                  
                                 </div>
                             ))}
                         </div>
                     </section>
                 </div>
-               
             </SharedLayout>
         </>
     );
