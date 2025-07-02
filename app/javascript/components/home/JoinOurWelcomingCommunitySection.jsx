@@ -3,13 +3,12 @@ import React from 'react';
 const JoinOurWelcomingCommunitySection = () => {
     return (
         <p>
-            Attend our monthly meetup or start up a conversation in Slack to begin interacting with
-            our community of over 800 women and non-binary Rubyists. Here at WNB.rb, we value safety
-            above all else; that is why we have a{' '}
-            <a href="https://tinyurl.com/wnb-rb-coc" target="_blank" rel="noopener noreferrer">
-                code of conduct
-            </a>{' '}
-            to prevent gatekeeping and other unsavory behavior.
+            WNB.rb was founded in early 2021. It has grown to over 800 Rubyists, connecting at
+            virtual and in-person events around the globe. Find out more about{' '}
+            <a href="/community" className="whitespace-nowrap font-medium">
+                our community
+            </a>
+            .
         </p>
     );
 };
