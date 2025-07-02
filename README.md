@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/9601737/134082731-213dc876-abe9-4901-b314-9c1640abdf8d.png" alt="WNB.rb logo" height="200px" />
+  <img src="https://github.com/user-attachments/assets/7cb9de57-dff2-4287-bc77-6a9e89a450c6" alt="WNB.rb logo" height="200px" />
   <h1>WNB.rb</h1>
 </div>
 
