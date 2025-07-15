@@ -14,4 +14,6 @@ class SiteController < ApplicationController
   def past_meetup; end
 
   def sponsor_us; end
+
+  def community; end
 end
