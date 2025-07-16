@@ -40,48 +40,43 @@ const JoinUs = () => {
     const onSubmit = async function (values, { resetForm }) {
         if (typeof gtoken === 'undefined') {
             try {
-                const submitForm = submitLeadForm(values);
-
-                submitForm.then(function (resolvedValue) {
-                    if (resolvedValue.status === 501) {
-                        setShowBanner({
-                            type: 'error',
-                            message: `Something went wrong. Please try again: ${resolvedValue.json.error}`,
-                        });
-
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else if (resolvedValue.status === 200) {
-                        resetForm();
-                        setShowBanner({
-                            type: 'success',
-                            message: `${values.name}, thank you for joining WNB.rb! You will receive an email inviting you to our Discord server shortly.`,
-                        });
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                });
+                const resolvedValue = await submitLeadForm(values);
+                
+                if (resolvedValue.status === 501) {
+                    setShowBanner({
+                        type: 'error',
+                        message: `Something went wrong. Please try again: ${resolvedValue.json.error}`,
+                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else if (resolvedValue.status === 200) {
+                    resetForm();
+                    setShowBanner({
+                        type: 'success',
+                        message: `${values.name}, thank you for joining WNB.rb! You will receive an email inviting you to our Discord server shortly.`,
+                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             } catch (error) {
                 console.log(error);
             }
             return;
         }
 
-        grecaptcha.ready(function () {
-            grecaptcha
-                .execute(gtoken, {
-                    action: 'submit',
-                })
-                .then(function (token) {
-                    try {
-                        const submitForm = submitLeadForm({
-                            ...values,
-                            identifyAs: values.identifyAs == true ? 'Yes' : 'No',
-                            gtoken: token,
-                        });
+        return new Promise((resolve) => {
+            grecaptcha.ready(function () {
+                grecaptcha
+                    .execute(gtoken, {
+                        action: 'submit',
+                    })
+                    .then(async function (token) {
+                        try {
+                            const resolvedValue = await submitLeadForm({
+                                ...values,
+                                identifyAs: values.identifyAs == true ? 'Yes' : 'No',
+                                gtoken: token,
+                            });
 
-                        submitForm.then(function (resolvedValue) {
-                            const status = resolvedValue.status;
-
-                            if (status === 200) {
+                            if (resolvedValue.status === 200) {
                                 resetForm();
                                 setShowBanner({
                                     type: 'success',
@@ -89,11 +84,13 @@ const JoinUs = () => {
                                 });
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                             }
-                        });
-                    } catch (error) {
-                        console.log(error);
-                    }
-                });
+                            resolve();
+                        } catch (error) {
+                            console.log(error);
+                            resolve();
+                        }
+                    });
+            });
         });
     };
 
@@ -156,7 +153,7 @@ const JoinUs = () => {
                             </a>
                             .
                         </p>
-                        <Formik {...{ initialValues, validationSchema, onSubmit }}>
+                        <Formik {...{ initialValues, validationSchema, onSubmit }} validateOnMount={true}>
                             {({ isSubmitting, isValid }) => (
                                 <Form>
                                     <div className="form-group">
@@ -230,10 +227,13 @@ const JoinUs = () => {
                                     >
                                         <input
                                             type="submit"
-                                            value="Submit"
+                                            value={isSubmitting ? "Sending..." : "Submit"}
                                             className="bg-transparent w-full hover:cursor-pointer"
                                             disabled={isSubmitting || !isValid}
                                         />
+                                        {isSubmitting && (
+                                            <span className="ml-2 inline-block animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
+                                        )}
                                     </Button>
                                 </Form>
                             )}
