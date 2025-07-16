@@ -209,6 +209,7 @@ const JoinUs = () => {
                                                 type="checkbox"
                                                 id="identifyAs"
                                                 name="identifyAs"
+                                                tabIndex="0"
                                             />
                                             Yes
                                         </label>
