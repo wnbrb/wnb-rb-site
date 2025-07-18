@@ -84,6 +84,7 @@ group :test do
   gem 'launchy', '~>3.0.1'
   gem 'selenium-webdriver', '~> 4.24'
   gem 'shoulda-matchers', '~>5.3.0'
+  gem 'climate_control'
 end
 
 # bug deprecate gems not longer in ruby standard warning
