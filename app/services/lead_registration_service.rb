@@ -46,7 +46,9 @@ end
   end
 
   def notify_discord
-  message = "📢 New registration:\n👤 Name: #{@name}\n📧 Email: #{@email}\n💼 Job: #{@current_job}\n🔍 Looking: #{@looking_for_job}"
+  message = "📢 New registration:\n👤
+   Name: #{@name}\n📧 Email: #{@email}\n💼 
+   Job: #{@current_job}\n🔍 Looking: #{@looking_for_job}"
   DiscordClient.message(message)
 end
 
