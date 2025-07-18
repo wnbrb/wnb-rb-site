@@ -15,7 +15,7 @@ module Api
 
     private
     def registration_params
-      params.require(:registration).permit(:name, :email, :joinSlack, :joinGoogleGroup, :identifyAs, :currentJob, 
+      params.require(:registration).permit(:name, :email, :joinDiscord, :joinGoogleGroup, :identifyAs, :currentJob, 
 :lookingForJob)
     end
   end
