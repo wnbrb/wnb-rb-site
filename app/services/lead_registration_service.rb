@@ -6,7 +6,7 @@ class LeadRegistrationService
     @info = info
     @name = info[:name]
     @email = info[:email]
-    @join_slack = info[:joinSlack]
+    @join_discord = info[:joinDiscord]
     @join_google_group = info[:joinGoogleGroup]
     @identify_as = info[:identifyAs]
     @current_job = info[:currentJob]
@@ -14,18 +14,21 @@ class LeadRegistrationService
     @time_stamp = DateTime.current.strftime('%-m/%-d/%Y %H:%M:%S')
   end
 
-  def update_google_sheet
-    session = authenticate_session
-    spreadsheet = define_spreedsheet_by_title(session, 'Join WNB.rb! (Responses)')
-    # spreadsheet = define_spreedsheet_by_key(session, '1OcDwEc6Z4DkKvPbAwQlu9ABb5ZW4und0HTOwDIl44b4')
+ def update_google_sheet
+  session = authenticate_session
+  spreadsheet = define_spreedsheet_by_title(session, 'Join WNB.rb! (Responses)')
+  # spreadsheet = define_spreedsheet_by_key(session, '1OcDwEc6Z4DkKvPbAwQlu9ABb5ZW4und0HTOwDIl44b4')
 
-    # Get the first worksheet
-    worksheet = spreadsheet.worksheets.first
+  # Get the first worksheet
+  worksheet = spreadsheet.worksheets.first
 
-    worksheet.insert_rows(worksheet.num_rows + 1,
-    [[@time_stamp, @name, @email, @join_slack, @join_google_group, @identify_as, @current_job, @looking_for_job]])
-    worksheet.save
-  end
+  worksheet.insert_rows(worksheet.num_rows + 1,
+    [[@time_stamp, @name, @email, @join_discord, @join_google_group, @identify_as, @current_job, @looking_for_job]])
+  worksheet.save
+
+  notify_discord if @join_discord
+end
+
 
   def define_spreedsheet_by_title(session, title)
     session.spreadsheet_by_title(title)
@@ -41,4 +44,10 @@ class LeadRegistrationService
     path = Rails.root.join('google-credentials.json')
     GoogleDrive::Session.from_service_account_key(path)
   end
+
+  def notify_discord
+  message = "📢 New registration:\n👤 Name: #{@name}\n📧 Email: #{@email}\n💼 Job: #{@current_job}\n🔍 Looking: #{@looking_for_job}"
+  DiscordClient.message(message)
+end
+
 end
