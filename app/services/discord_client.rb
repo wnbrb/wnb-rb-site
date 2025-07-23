@@ -4,10 +4,9 @@ require 'json'
 require 'uri'
 
 class DiscordClient
-  WEBHOOK_URL = ENV.fetch('DISCORD_WEBHOOK_URL')
-
   def self.message(text)
-    uri = URI.parse(WEBHOOK_URL)
+    webhook_url = ENV.fetch('DISCORD_WEBHOOK_URL')
+    uri = URI.parse(webhook_url)
     payload = { content: text }
     headers = { 'Content-Type' => 'application/json' }
 

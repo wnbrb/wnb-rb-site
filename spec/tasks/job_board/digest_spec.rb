@@ -43,7 +43,7 @@ RSpec.describe 'job_board:digest' do
   end
 
   def stub_discord_client
-    client = class_double(DiscordClient, message: nil).as_stubbed_const
-    client
+    class_double(DiscordClient, message: nil).as_stubbed_const
+    
   end
 end
