@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class DiscordInvitationMailer < ApplicationMailer
   def invite(name, email, discord_link)
     @name = name

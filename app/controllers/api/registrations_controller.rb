@@ -18,7 +18,7 @@ module Api
     def send_email
       name = params[:name]
       email = params[:email]
-      discord_link = ENV['DISCORD_INVITE_URL']
+      discord_link = ENV.fetch('DISCORD_INVITE_URL', nil)
 
       DiscordInvitationMailer.invite(name, email, discord_link).deliver_now
 
