@@ -32,9 +32,6 @@ gem 'jsbundling-rails', '~> 1.1'
 
 gem 'turbo-rails', '~> 1.4.0'
 
-# read/write files/spreadsheets in Google Drive/Docs
-gem 'google_drive', git: 'https://github.com/wnbrb/google-drive-ruby.git', branch: 'master'
-
 # cuts off a string of HTML
 gem 'truncate_html', '~> 0.9.3'
 

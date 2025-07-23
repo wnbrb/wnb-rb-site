@@ -1,14 +1,3 @@
-GIT
-  remote: https://github.com/wnbrb/google-drive-ruby.git
-  revision: a8acb4157006161200e8c7c316f0c492af0b629a
-  branch: master
-  specs:
-    google_drive (3.0.7)
-      google-apis-drive_v3 (>= 0.5.0, < 1.0.0)
-      google-apis-sheets_v4 (>= 0.4.0, < 1.0.0)
-      googleauth (>= 0.5.0, < 1.5.2)
-      nokogiri (>= 1.5.3, < 2.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -119,7 +108,6 @@ GEM
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    declarative (0.0.20)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -159,31 +147,11 @@ GEM
     gli (2.21.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-apis-core (0.11.3)
-      addressable (~> 2.5, >= 2.5.1)
-      googleauth (>= 0.16.2, < 2.a)
-      httpclient (>= 2.8.1, < 3.a)
-      mini_mime (~> 1.0)
-      representable (~> 3.0)
-      retriable (>= 2.0, < 4.a)
-      rexml
-    google-apis-drive_v3 (0.46.0)
-      google-apis-core (>= 0.11.0, < 2.a)
-    google-apis-sheets_v4 (0.26.0)
-      google-apis-core (>= 0.11.0, < 2.a)
-    googleauth (1.5.1)
-      faraday (>= 0.17.3, < 3.a)
-      jwt (>= 1.4, < 3.0)
-      memoist (~> 0.16)
-      multi_json (~> 1.11)
-      os (>= 0.9, < 2.0)
-      signet (>= 0.16, < 2.a)
     hashie (5.0.0)
     httparty (0.22.0)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    httpclient (2.8.3)
     httpparty (0.2.0)
       httparty (> 0)
     i18n (1.14.6)
@@ -218,13 +186,11 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    memoist (0.16.2)
     method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.25.4)
     msgpack (1.7.2)
-    multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     multipart-post (2.4.1)
@@ -245,7 +211,6 @@ GEM
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    os (1.1.4)
     package_json (0.1.0)
     pagy (6.5.0)
     parallel (1.26.3)
@@ -316,14 +281,9 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
-    representable (3.2.0)
-      declarative (< 0.1.0)
-      trailblazer-option (>= 0.1.1, < 0.2.0)
-      uber (< 0.2.0)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    retriable (3.1.2)
     rexml (3.3.9)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
@@ -379,11 +339,6 @@ GEM
       semantic_range (>= 2.3.0)
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
-    signet (0.19.0)
-      addressable (~> 2.8)
-      faraday (>= 0.17.5, < 3.a)
-      jwt (>= 1.5, < 3.0)
-      multi_json (~> 1.10)
     slack-ruby-client (2.0.0)
       faraday (>= 2.0)
       faraday-mashify
@@ -405,7 +360,6 @@ GEM
     thor (1.4.0)
     tilt (2.4.0)
     timeout (0.4.3)
-    trailblazer-option (0.1.2)
     truncate_html (0.9.3)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -413,7 +367,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uber (0.1.0)
     unicode-display_width (2.5.0)
     uri (0.13.2)
     warden (1.2.9)
@@ -448,7 +401,6 @@ DEPENDENCIES
   erb_lint
   factory_bot_rails (~> 6.4.3)
   faker (~> 2.18.0)
-  google_drive!
   httpparty (~> 0.2)
   jbuilder (~> 2.7)
   jsbundling-rails (~> 1.1)
