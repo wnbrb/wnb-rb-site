@@ -2,7 +2,7 @@
 module Api
   class RegistrationsController < ApplicationController
     def register_user
-      send_email && return if Rails.env.development?
+      return send_email if Rails.env.development?
 
       if !params.key?(:gtoken)
         render json: { error: 'Recaptcha is disabled' }, status: :not_implemented
