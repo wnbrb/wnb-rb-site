@@ -19,6 +19,6 @@ namespace :job_board do
     HEREDOC
 
     uri = URI.parse(webhook_url)
-    Net::HTTP.post(uri, { content: text }.to_json, "Content-Type" => "application/json")
+    Net::HTTP.post(uri, { content: text }.to_json, 'Content-Type' => 'application/json')
   end
 end
