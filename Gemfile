@@ -18,7 +18,6 @@ gem 'sassc-rails', '~> 2.1.2'
 # Use package.json to manage dependencies
 gem 'package_json', '~> 0.1.0'
 gem 'shakapacker', '= 8.0.2'
-gem 'slack-ruby-client', '~> 2.0.0'
 
 gem 'bootsnap', '>= 1.18.4', require: false
 gem 'jwt', '>= 2.6.0'
@@ -78,10 +77,12 @@ end
 
 group :test do
   gem 'capybara', '>=3.39.2'
+  gem 'climate_control'
   gem 'factory_bot_rails', '~> 6.4.3'
   gem 'launchy', '~>3.0.1'
   gem 'selenium-webdriver', '~> 4.24'
   gem 'shoulda-matchers', '~>5.3.0'
+  gem 'webmock'
 end
 
 # bug deprecate gems not longer in ruby standard warning

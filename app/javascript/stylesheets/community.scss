@@ -7,8 +7,7 @@
     display: flex;
     justify-content: center;
     padding: 0;
-    @apply lg:p-[1rem] lg:w-[70%] lg:mx-auto
-    
+    @apply lg:p-[1rem] lg:w-[70%] lg:mx-auto;
 }
 
 .community .info-card {
@@ -43,10 +42,10 @@
 .info {
     background-color: transparent;
 }
-.info-card{
+.info-card {
     gap: 12px;
 }
-.info-card p{
+.info-card p {
     line-height: 21px;
     font-size: 14px;
 }
@@ -55,7 +54,7 @@
     padding: 1rem 2rem;
 
     @media (min-width: 768px) {
-         grid-row: 1;
+        grid-row: 1;
     }
 
     @media (min-width: 1024px) {
@@ -88,8 +87,8 @@
     }
 
     @media (min-width: 1024px) {
-         border-radius: 1.8rem;
-         grid-row: 2;
+        border-radius: 1.8rem;
+        grid-row: 2;
     }
 }
 .info-card:nth-child(4) {
@@ -108,9 +107,8 @@
         grid-column: 1 / 2;
         grid-row: 2;
         border-radius: 1.8rem;
-         border-top-left-radius: 0;
+        border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-
     }
 }
 .info-card:nth-child(5) {
@@ -129,9 +127,8 @@
         grid-column: 4 / 5;
         grid-row: 2;
         border-radius: 1.8rem;
-         border-bottom-right-radius: 0;
+        border-bottom-right-radius: 0;
         border-top-right-radius: 0;
-
     }
 }
 .info-card:nth-child(6) {

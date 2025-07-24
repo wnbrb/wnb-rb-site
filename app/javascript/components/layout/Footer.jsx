@@ -61,7 +61,7 @@ const Footer = () => (
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Slack Guidelines
+                            Discord Guidelines
                         </a>
                     </div>
                     <div className="footer-col">

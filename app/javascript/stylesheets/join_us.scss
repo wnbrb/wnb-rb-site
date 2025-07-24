@@ -1,131 +1,128 @@
 body {
-  background-color: #f5f1fe;
+    background-color: #f5f1fe;
 }
 
 .join-us-form-container {
-  
-  @apply w-full pt-[20px]  h-full px-0  flex flex-col justify-center items-center;
+    @apply w-full pt-[20px]  h-full px-0  flex flex-col justify-center items-center;
 
-  h1 {
-    @apply text-2xl md:text-4xl  font-bold mb-8 text-center;
-  }
+    h1 {
+        @apply text-2xl md:text-4xl  font-bold mb-8 text-center;
+    }
 
-  h2 {
-    @apply text-2xl font-bold text-black text-center;
-  }
+    h2 {
+        @apply text-2xl font-bold text-black text-center;
+    }
 
-  .form-group,
-  fieldset {
-    @apply mb-8;
+    .form-group,
+    fieldset {
+        @apply mb-8;
 
-    label,
-    legend {
-      @apply text-black text-base mb-3 block font-bold;
+        label,
+        legend {
+            @apply text-black text-base mb-3 block font-bold;
 
-      &.label-radiobutton,
-      &.label-checkbox {
-        @apply text-base font-normal;
+            &.label-radiobutton,
+            &.label-checkbox {
+                @apply text-base font-normal;
 
-        input {
-          @apply md:ml-4 mr-3;
+                input {
+                    @apply md:ml-4 mr-3;
+                }
+
+                &:last-of-type {
+                    @apply mb-0;
+                }
+            }
         }
 
-        &:last-of-type {
-          @apply mb-0;
+        input[type='text'] {
+            @apply w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded py-2 px-3 text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-blue-navy focus:ring-opacity-40;
         }
-      }
+
+        input[type='radio'],
+        input[type='checkbox'] {
+            @apply appearance-none w-4 h-4 border-2 border-gray-400 rounded bg-white checked:bg-wnbrb-blue-navy checked:border-wnbrb-blue-navy scale-125;
+
+            /* Remove outline-none and add proper focus styling */
+            &:focus {
+                outline: 2px solid #2e0880;
+                outline-offset: 2px;
+                box-shadow: 0 0 0 2px rgba(46, 8, 128, 0.4);
+            }
+
+            &:checked {
+                background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 9.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e");
+                background-size: 100% 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        p.input-description {
+            @apply mb-3 -mt-2;
+        }
+
+        .error-message {
+            @apply text-red-500 text-sm italic mt-3;
+        }
+    }
+}
+.page-title {
+    padding: 4rem 2rem 0;
+    order: 0;
+    margin-top: 0;
+
+    @media (min-width: 768px) {
+        width: 56%;
+    }
+}
+.page-title .new-logo {
+    width: 64%;
+
+    @media (min-width: 450px) {
+        width: 47%;
+    }
+    @media (min-width: 540px) {
+        width: 40%;
+    }
+    @media (min-width: 600px) {
+        width: 32%;
+    }
+    @media (min-width: 768px) {
+        width: 68%;
+    }
+    @media (min-width: 1024px) {
+        width: 53%;
     }
 
-    input[type="text"] {
-      @apply w-full shadow appearance-none border border-gray-400 border-opacity-60 outline-none rounded py-2 px-3 text-gray-700 leading-tight focus:border-transparent focus:ring-4 focus:ring-wnbrb-blue-navy focus:ring-opacity-40;
+    @media (min-width: 1200px) {
+        width: 40%;
     }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-      @apply appearance-none w-4 h-4 border-2 border-gray-400 rounded bg-white checked:bg-wnbrb-blue-navy checked:border-wnbrb-blue-navy scale-125;
-      
-      /* Remove outline-none and add proper focus styling */
-      &:focus {
-        outline: 2px solid #2E0880;
-        outline-offset: 2px;
-        box-shadow: 0 0 0 2px rgba(46, 8, 128, 0.4);
-      }
-      
-      &:checked {
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 9.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e");
-        background-size: 100% 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-
-    p.input-description {
-      @apply mb-3 -mt-2;
-    }
-
-    .error-message {
-      @apply text-red-500 text-sm italic mt-3;
-    }
-  }
 }
-.page-title{
-  padding: 4rem 2rem 0;
-  order:0;
-  margin-top: 0;
-
-  @media (min-width: 768px) { 
-    width: 56%; 
-  }
-
-}
-.page-title .new-logo{
-  width: 64%;
-
-  @media (min-width: 450px) { 
-    width: 47%; 
-  }
-  @media (min-width: 540px) { 
-    width: 40%; 
-  }
-  @media (min-width: 600px) { 
-    width: 32%; 
-  }
-  @media (min-width: 768px) { 
-    width: 68%; 
-  }
-  @media (min-width: 1024px) { 
-    width: 53%; 
-  }
-
-  @media (min-width: 1200px) { 
-    width: 40%; 
-  } 
-}
-.page-title .title-container{
-  margin-top: -4rem;
-  display: block;
-  font-family: Besley;
-  padding: 0 20px;
-  @apply md:-mt-[5rem] lg:-mt-[5rem]
+.page-title .title-container {
+    margin-top: -4rem;
+    display: block;
+    font-family: Besley;
+    padding: 0 20px;
+    @apply md:-mt-[5rem] lg:-mt-[5rem];
 }
 
-h1.title-text{
-  font-size: 4rem;
-  font-weight: 800;
-  margin-top: 1rem;
+h1.title-text {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 1rem;
 }
 
-.card{
-background-color: #f5f1fe;
-box-shadow: none;
-margin-top: 0;
-padding:3rem 2rem;
+.card {
+    background-color: #f5f1fe;
+    box-shadow: none;
+    margin-top: 0;
+    padding: 3rem 2rem;
 }
-.card .join{
-  padding-bottom: 18px;
-  margin-bottom: 0;
+.card .join {
+    padding-bottom: 18px;
+    margin-bottom: 0;
 }
-.submit{
-  padding: 1rem 2rem;
-
+.submit {
+    padding: 1rem 2rem;
 }

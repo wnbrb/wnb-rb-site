@@ -1,4 +1,4 @@
-.thankyou{
+.thankyou {
     background-color: #fff6c2;
     display: flex;
     flex-direction: column;
@@ -10,59 +10,57 @@
     @apply xs:text-left xs:px-[1.3rem];
 }
 
-.thankyou h2{
+.thankyou h2 {
     font-size: 24px;
     line-height: 33px;
     text-align: center;
     font-weight: 800;
     font-family: besley;
     color: black;
-    @apply md:text-[44px]
+    @apply md:text-[44px];
 }
 
-.thankyou p{
-    @apply text-lg text-black font-noto text-center
+.thankyou p {
+    @apply text-lg text-black font-noto text-center;
 }
 
-.thankyou .sponsor{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5rem;
-        padding: 20px;
+.thankyou .sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding: 20px;
 
-        @media (min-width: 768px) { 
-           flex-direction: row;
-           justify-content: center;
-    
-        }
-    
-        @media (min-width: 1024px) { 
-           flex-direction: row;
-           justify-content: center;
-        }
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
-.thankyou .sponsor div{
+.thankyou .sponsor div {
     display: flex;
     gap: 20px;
-   flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     width: 60%;
     border-radius: 35px;
 
-    @media (min-width: 768px) { 
-       padding: 2rem 0;
-      }
- 
-     @media (min-width: 1024px) { 
-        padding: 2rem;
-     }
+    @media (min-width: 768px) {
+        padding: 2rem 0;
+    }
 
+    @media (min-width: 1024px) {
+        padding: 2rem;
+    }
 }
 
-.link{
+.link {
     text-decoration: none;
     color: #2e0880;
     display: flex;
@@ -75,12 +73,11 @@
     text-decoration: underline;
 }
 
-.sponsor-image{
+.sponsor-image {
     border-radius: 12rem;
 }
 
 .thankyou .sponsor .sponsor-2 .sponsor-image,
-.thankyou .sponsor .sponsor-3 .sponsor-image
-{
+.thankyou .sponsor .sponsor-3 .sponsor-image {
     border-radius: 0;
 }
