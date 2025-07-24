@@ -47,6 +47,20 @@ Then, edit `.env` and set the following environment variables:
 
 - `JOB_BOARD_PASSWORD`: this determines the password for the job board
 - `JWT_HMAC_SECRET`: this sets the secret key used to encode the token for job board authentication
+- `DISCORD_INVITE_URL`: Discord server invite link sent to new users (e.g., `https://discord.gg/your-invite-code`)
+
+### Discord Invitation Setup
+
+The `/join-us` page allows users to request an invitation to the WNB.rb Discord server. When users submit the form, they receive an email with a Discord invite link.
+
+**Required Environment Variables:**
+- `DISCORD_INVITE_URL`: The Discord server invite link to send to new users
+
+**Email Configuration:**
+The Discord invitation feature uses Rails' Action Mailer to send emails. For development, emails are logged to the console. For production, configure your email settings in the Rails application:
+
+- `GMAIL_USERNAME`: Gmail address for sending emails
+- `GMAIL_APP_PASSWORD`: Gmail app password for authentication
 
 ### 4. Run the tests
 
