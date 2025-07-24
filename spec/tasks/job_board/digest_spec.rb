@@ -1,24 +1,39 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'net/http'
+require 'webmock/rspec'
+require 'climate_control'
 
 Rails.application.load_tasks
 
 RSpec.describe 'job_board:digest' do
   after(:each) { Rake::Task['job_board:digest'].reenable }
 
+  let(:webhook_url) { 'https://discord.com/api/webhooks/test-webhook' }
+
   context 'when it is Monday' do
     before { travel_to(Time.now.last_week(:monday)) }
     after { travel_back }
 
-    it 'posts job listings to Slack' do
-      client = stub_slack_client
+    it 'sends a POST request to the Discord webhook with job listings' do
       job = create(:job)
-      Rake::Task['job_board:digest'].invoke
 
-      expect(client).to have_received(:message_channel).with(
-        hash_including(text: /- #{job.title} at #{job.company}/),
-      )
+      request_body = nil
+      stub_request(:post, webhook_url).to_return do |request|
+        request_body = request.body # Capture the actual request body 
+        { status: 200 }
+      end
+
+      # Run the rake task
+      ClimateControl.modify DISCORD_JOBS_WEBHOOK_URL: webhook_url do
+        Rake::Task['job_board:digest'].invoke
+      end
+
+      expect(a_request(:post, webhook_url)).to have_been_made.once
+
+      parsed_body = JSON.parse(request_body) # Parse the captured request body
+      expect(parsed_body['content']).to include(job.title, job.company) # Assert content
     end
   end
 
@@ -26,17 +41,14 @@ RSpec.describe 'job_board:digest' do
     before { travel_to(Time.now.last_week(:tuesday)) }
     after { travel_back }
 
-    it 'does not post job listings to Slack' do
-      client = stub_slack_client
-      Rake::Task['job_board:digest'].invoke
+    it 'does not send a POST request to the Discord webhook' do
+      stub = stub_request(:post, webhook_url)
 
-      expect(client).not_to have_received(:message_channel)
+      ClimateControl.modify DISCORD_JOBS_WEBHOOK_URL: webhook_url do
+        Rake::Task['job_board:digest'].invoke
+      end
+
+      expect(stub).not_to have_been_requested
     end
-  end
-
-  def stub_slack_client
-    client = instance_double(SlackClient, message_channel: nil)
-    allow(SlackClient).to receive(:new).and_return(client)
-    client
   end
 end
