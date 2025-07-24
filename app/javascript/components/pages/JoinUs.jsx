@@ -41,7 +41,7 @@ const JoinUs = () => {
         if (typeof gtoken === 'undefined') {
             try {
                 const resolvedValue = await submitLeadForm(values);
-                
+
                 if (resolvedValue.status === 501) {
                     setShowBanner({
                         type: 'error',
@@ -132,9 +132,10 @@ const JoinUs = () => {
                     <Card className="w-full max-w-[50rem] mt-5">
                         <h1 className="join text-black font-syne text-2xl">Join</h1>
                         <p className="mb-4">
-                            By filling out this form, you are requesting an invite to the WNB.rb Discord server. {' '}
-                            WNB.rb will only use your email to send you an invite link; your information will never
-                            be shared without your consent. For more information see our{' '}
+                            By filling out this form, you are requesting an invite to the WNB.rb
+                            Discord server. WNB.rb will only use your email to send you an invite
+                            link; your information will never be shared without your consent. For
+                            more information see our{' '}
                             <a
                                 href="https://tinyurl.com/wnb-rb-coc"
                                 className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
@@ -142,9 +143,8 @@ const JoinUs = () => {
                                 target="_blank"
                             >
                                 code of conduct
-                            </a>
-                            {' '}or{' '}
-                            learn more{' '}
+                            </a>{' '}
+                            or learn more{' '}
                             <a
                                 href="/"
                                 className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
@@ -153,7 +153,10 @@ const JoinUs = () => {
                             </a>
                             .
                         </p>
-                        <Formik {...{ initialValues, validationSchema, onSubmit }} validateOnMount={true}>
+                        <Formik
+                            {...{ initialValues, validationSchema, onSubmit }}
+                            validateOnMount={true}
+                        >
                             {({ isSubmitting, isValid }) => (
                                 <Form>
                                     <div className="form-group">
@@ -228,7 +231,7 @@ const JoinUs = () => {
                                     >
                                         <input
                                             type="submit"
-                                            value={isSubmitting ? "Sending..." : "Submit"}
+                                            value={isSubmitting ? 'Sending...' : 'Submit'}
                                             className="bg-transparent w-full hover:cursor-pointer"
                                             disabled={isSubmitting || !isValid}
                                         />
