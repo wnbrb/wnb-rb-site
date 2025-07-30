@@ -1,5 +1,5 @@
 .page-title {
-    display: flex ;
+    display: flex;
     flex-direction: column;
     width: 100%;
     padding-bottom: 3rem;
@@ -9,7 +9,7 @@
     /* overflow-auto; */
 }
 
-.new-logo{
+.new-logo {
     width: auto;
 }
 
@@ -22,7 +22,7 @@
     justify-content: center;
     @apply text-wnbrb-blue-navy
     font-besley
-    text-center
+    text-center;
 }
 
 .title-text {
@@ -31,4 +31,4 @@
     @apply text-wnbrb-blue-navy
     font-besley
     md:whitespace-nowrap;
-   }
+}

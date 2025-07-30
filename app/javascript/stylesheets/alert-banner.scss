@@ -1,22 +1,22 @@
 .alert-banner {
-  @apply  w-full flex justify-center items-center pt-[48px] px-[20px] pb-[20px]  font-semibold text-lg;
+    @apply w-full flex justify-center items-center pt-[48px] px-[20px] pb-[20px]  font-semibold text-lg;
 }
 
 .success {
-  @apply bg-green-500 text-gray-50;
+    @apply bg-green-500 text-gray-50;
 }
 
 .warning {
-  @apply  bg-yellow-300 text-gray-50;
+    @apply bg-yellow-300 text-gray-50;
 }
 
 .error {
-  @apply bg-red-600 text-gray-50;
+    @apply bg-red-600 text-gray-50;
 }
 
 .message {
-  @apply m-0;
+    @apply m-0;
 }
 .close-button {
-  @apply ml-2 text-gray-50 w-8 h-8 fill-current cursor-pointer md:self-baseline;
+    @apply ml-2 text-gray-50 w-8 h-8 fill-current cursor-pointer md:self-baseline;
 }

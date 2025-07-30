@@ -93,7 +93,7 @@
     @media (min-width: 1024px) {
         flex-direction: row;
         width: 90%;
-        gap: 0;        
+        gap: 0;
     }
 }
 
@@ -144,7 +144,7 @@ h3 {
 .button.view-btn.primary:hover {
     border: 1px solid #2e0880;
 }
-.button.see-more{
+.button.see-more {
     width: 179px;
 }
 li {
@@ -203,7 +203,7 @@ iframe {
 .meetup-card {
     width: 85%;
 
-      @media (min-width: 768px) {
+    @media (min-width: 768px) {
         max-width: 20rem;
     }
 }

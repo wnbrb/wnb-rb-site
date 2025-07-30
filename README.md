@@ -12,7 +12,7 @@ WNB.rb is a virtual community for women and non-binary Rubyists. This is the rep
 
 ## Code of Conduct ❤️
 
-All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Slack.
+All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Discord.
 
 ## 1. Getting Started 🏁
 

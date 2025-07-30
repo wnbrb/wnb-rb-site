@@ -2,27 +2,26 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
 body {
-  @apply antialiased text-base;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: 'pnum';
-  font-variant-numeric: proportional-nums;
-  padding: 0;
-  margin: 2.8rem 0 0;
-  height: 100%;
-  font-family: Noto sans;
-  color: #4a4a4a;
-  font-size: 0.95rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    @apply antialiased text-base;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'pnum';
+    font-variant-numeric: proportional-nums;
+    padding: 0;
+    margin: 2.8rem 0 0;
+    height: 100%;
+    font-family: Noto sans;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
-  &.admin {
-      min-height: auto;
-  }
+    &.admin {
+        min-height: auto;
+    }
 }
 
 p a {
-  @apply underline;
+    @apply underline;
 }
