@@ -2,9 +2,7 @@
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'webmock/rspec'
 
-WebMock.disable_net_connect!(allow_localhost: true)
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
