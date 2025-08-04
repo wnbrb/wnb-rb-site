@@ -86,7 +86,7 @@ const Community = () => {
                 </div>
                 <div className="info">
                     <section className="info-layout">
-                        <div className="info-card-section layout">
+                        <div className="info-card-section layout section-cards">
                             {infoCardData.map((card, index) => (
                                 <div
                                     key={index}
