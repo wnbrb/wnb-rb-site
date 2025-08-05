@@ -339,7 +339,6 @@ GEM
       semantic_range (>= 2.3.0)
     shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
-    slack-ruby-client (2.0.0)
       faraday (>= 2.0)
       faraday-mashify
       faraday-multipart
@@ -425,7 +424,6 @@ DEPENDENCIES
   selenium-webdriver (~> 4.24)
   shakapacker (= 8.0.2)
   shoulda-matchers (~> 5.3.0)
-  slack-ruby-client (~> 2.0.0)
   stimulus-rails (~> 1.2.1)
   truncate_html (~> 0.9.3)
   turbo-rails (~> 1.4.0)

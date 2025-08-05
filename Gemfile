@@ -18,7 +18,6 @@ gem 'sassc-rails', '~> 2.1.2'
 # Use package.json to manage dependencies
 gem 'package_json', '~> 0.1.0'
 gem 'shakapacker', '= 8.0.2'
-gem 'slack-ruby-client', '~> 2.0.0'
 
 gem 'bootsnap', '>= 1.18.4', require: false
 gem 'jwt', '>= 2.6.0'
