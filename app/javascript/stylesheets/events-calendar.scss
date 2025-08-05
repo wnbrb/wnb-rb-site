@@ -37,7 +37,7 @@
     max-height: 31rem;
     overflow-y: auto;
     padding: 8px 0;
-    @apply md:w-[76%] lg:w-[54%] ;
+    @apply md:w-[76%] lg:w-[54%];
 }
 .page-title-calendar {
     display: flex;
@@ -49,7 +49,7 @@
     margin-right: auto;
     font-size: 18px;
     width: 90%;
-    @apply md:px-[3rem]
+    @apply md:px-[3rem];
 }
 .btn-navigation {
     display: flex;
@@ -58,10 +58,10 @@
     margin: 2rem auto 0;
     gap: 2rem;
     width: 88%;
-    }
-    .btn-navigation .button {
-        width: 179px;
-    }
+}
+.btn-navigation .button {
+    width: 179px;
+}
 .fc-direction-ltr {
     width: 100%;
     height: 31rem;
@@ -128,7 +128,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   padding: 18px;
+    padding: 18px;
 }
 .fc-prev-button fc-button fc-button-primary {
     display: none;
@@ -143,7 +143,7 @@
     font-family: Besley;
     font-size: 48px;
     font-weight: 700;
-    color: #FFFFE5;
+    color: #ffffe5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,11 +166,11 @@
 }
 
 .event-card.yellow {
-    background-color: #ffdd19;    
+    background-color: #ffdd19;
 }
 
 .event-card.green {
-    background-color: #a3cd1a;    
+    background-color: #a3cd1a;
 }
 
 .events-cards::-webkit-scrollbar {
@@ -189,7 +189,9 @@
     border-radius: 10px;
 }
 .event-card.highlight {
-    transition: box-shadow 0.3s ease, border 0.3s ease;
+    transition:
+        box-shadow 0.3s ease,
+        border 0.3s ease;
 }
 
 .fc .fc-daygrid-event {

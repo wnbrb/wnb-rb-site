@@ -52,7 +52,7 @@ const Meetspeak = () => {
                         the Talk Proposal form
                     </a>{' '}
                     <i className="bi bi-box-arrow-up-right"></i> or feel free to contact{' '}
-                    <i>Adrianna Chang</i> on the WNB.rb Slack for more information.
+                    <i>Adrianna Chang</i> on the WNB.rb Discord for more information.
                 </div>
             </div>
         </>

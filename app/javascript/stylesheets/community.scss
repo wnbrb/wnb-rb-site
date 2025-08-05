@@ -7,8 +7,7 @@
     display: flex;
     justify-content: center;
     padding: 0;
-    @apply lg:p-[1rem] lg:w-[70%] lg:mx-auto
-    
+    @apply lg:p-[1rem] lg:w-[70%] lg:mx-auto;
 }
 
 .community .info-card {
@@ -43,10 +42,10 @@
 .info {
     background-color: transparent;
 }
-.info-card{
+.info-card {
     gap: 12px;
 }
-.info-card p{
+.info-card p {
     line-height: 21px;
     font-size: 14px;
 }
@@ -55,7 +54,7 @@
     padding: 1rem 2rem;
 
     @media (min-width: 768px) {
-         grid-row: 1;
+        grid-row: 1;
     }
 
     @media (min-width: 1024px) {
@@ -97,7 +96,6 @@
          grid-row: 2;
          background-color: #ffdd19;
          padding: 19px;
-
     }
 }
 .info-card:nth-child(4) {
@@ -120,8 +118,6 @@
         @apply bg-wnbrb-blue-navy;
         color: white;
         padding: 22px;
-
-
     }
 }
 .info-card:nth-child(5) {

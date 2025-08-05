@@ -17,11 +17,11 @@
 
 .title p {
     width: 90%;
-       @media (min-width: 768px) {
-       width: 70%;
+    @media (min-width: 768px) {
+        width: 70%;
     }
-       @media (min-width: 1024px) {
-       width: 60%;
+    @media (min-width: 1024px) {
+        width: 60%;
     }
 }
 
@@ -39,7 +39,7 @@
 
 .card-img {
     border-radius: 10px;
-    @apply md:max-w-[75%] lg:max-w-[95%]
+    @apply md:max-w-[75%] lg:max-w-[95%];
 }
 
 .tiers {
@@ -49,7 +49,7 @@
     text-align: center;
     width: 85%;
     margin-bottom: 1rem;
-    @apply md:w-[55rem] lg:w-[85%]
+    @apply md:w-[55rem] lg:w-[85%];
 }
 
 .opal {
@@ -72,11 +72,11 @@
     display: flex;
     flex-direction: column;
 }
-ul li span{
+ul li span {
     text-align: left;
 }
 
-.most-popular-banner{
+.most-popular-banner {
     margin-top: -30px;
     background-color: #ffdd19;
     padding: 0 5px;

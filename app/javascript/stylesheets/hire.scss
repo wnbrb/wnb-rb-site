@@ -1,8 +1,8 @@
-.hire-layout{
+.hire-layout {
     background-color: #fbf4f4;
 }
 
-.hire{
+.hire {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,25 +11,25 @@
     padding: 3rem 2rem;
     width: 80%;
     margin: auto;
-    
+
     @apply text-wnbrb-blue-navy text-base font-rubik xs:w-[100%];
-   @media (min-width: 416px) and (max-width: 640px){
+    @media (min-width: 416px) and (max-width: 640px) {
         width: 100%;
     }
 }
-.hire h2{
+.hire h2 {
     @apply text-wnbrb-blue-navy text-5xl  font-bold xs:text-2xl;
-    @media (min-width: 416px) and (max-width: 640px){
+    @media (min-width: 416px) and (max-width: 640px) {
         font-size: 1.8rem;
     }
 }
-.grow{
+.grow {
     text-align: center;
- }
- .hire-img{
+}
+.hire-img {
     border-radius: 30px;
     height: auto;
     max-width: 100%;
     object-fit: contain;
-    @apply   lg:h-[320px] ;
- }
+    @apply lg:h-[320px];
+}

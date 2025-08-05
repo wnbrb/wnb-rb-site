@@ -65,7 +65,7 @@ const JobsAuthenticate = () => {
                             )}
                             <p className="text-sm mt-5">
                                 The WNB.rb job board is password protected. You can find the
-                                password in the WNB.rb Slack workspace. To join WNB.rb on Slack,{' '}
+                                password in the WNB.rb Discord workspace. To join WNB.rb on Discord,{' '}
                                 <a href="/join-us" className="underline">
                                     fill out this form.
                                 </a>
