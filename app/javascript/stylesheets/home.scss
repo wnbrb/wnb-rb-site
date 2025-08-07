@@ -2,25 +2,6 @@
     @apply flex;
     flex-direction: column;
 }
-.work-in-progress {
-    background-color: #fff6c2b5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem 1rem;
-    flex-direction: column;
-    font-weight: bold;
-    height: 8rem;
-    color: #2e0880;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-
-    @media (min-width: 768px) {
-        height: 6rem;
-    }
-}
 
 .hero {
     @apply flex
