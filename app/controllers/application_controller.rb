@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :render_unauthorized
 
   def render_not_found
-    render('not_found', status: :not_found)
+    respond_to do |format|
+    format.html { render('not_found', status: :not_found) }
+    format.json { render json: { error: 'Not Found' }, status: :not_found }
+    format.any  { head :not_found }
+   end
   end
 
   private
