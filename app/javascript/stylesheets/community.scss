@@ -59,6 +59,7 @@
 
     @media (min-width: 1024px) {
         grid-column: 1 / 2;
+        border-radius: 1.8rem;
     }
 }
 .info-card:nth-child(2) {
@@ -73,6 +74,10 @@
 
     @media (min-width: 1024px) {
         grid-column: 4 / 5;
+        background-color: #ffdd19;
+        border-radius: 1.8rem;
+        color: black;
+        padding: 25px;
     }
 }
 .info-card:nth-child(3) {
@@ -87,8 +92,10 @@
     }
 
     @media (min-width: 1024px) {
-        border-radius: 1.8rem;
-        grid-row: 2;
+         border-radius: 1.8rem;
+         grid-row: 2;
+         background-color: #ffdd19;
+         padding: 19px;
     }
 }
 .info-card:nth-child(4) {
@@ -101,34 +108,36 @@
         grid-row: 2;
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
+        background-color: #b33c3c;
     }
 
     @media (min-width: 1024px) {
         grid-column: 1 / 2;
         grid-row: 2;
         border-radius: 1.8rem;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        @apply bg-wnbrb-blue-navy;
+        color: white;
+        padding: 22px;
     }
 }
 .info-card:nth-child(5) {
     grid-column: 1;
     grid-row: 4;
     border-radius: 1.8rem;
-
     padding: 1rem 2rem;
     @media (min-width: 768px) {
-        grid-row: 3;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        grid-row: 3;
+         @apply bg-wnbrb-blue-navy;
     }
 
     @media (min-width: 1024px) {
         grid-column: 4 / 5;
         grid-row: 2;
+        background-color: #b33c3c;
         border-radius: 1.8rem;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
+        padding: 19px;
     }
 }
 .info-card:nth-child(6) {
@@ -145,22 +154,21 @@
         grid-column: 2 / 4;
         grid-row: 1;
         border-radius: 1.8rem;
+        @apply bg-wnbrb-blue-navy;
+        color: white;
+        padding: 25px;
     }
 }
-.line {
-    position: relative;
-    margin-top: -1rem;
-    @media (min-width: 640px) {
-        margin-top: -1.5rem;
-    }
-    @media (min-width: 980px) {
-        margin-top: -1.8rem;
-    }
-    @media (min-width: 1210px) {
-        margin-top: -2rem;
+
+.section-cards {
+    @media (min-width: 1024px){
+        column-gap: 20px;
+        row-gap: 5px;
+        padding: 2rem;
     }
 }
-.third-section .info-layout {
-    display: flex;
-    gap: 15px;
+
+.section-cards .info-card{
+    height: 91%;
+    width: 100%;
 }
