@@ -72,15 +72,6 @@ const Home = () => {
 
             <SharedLayout>
                 <section className="hero-container mt-2rem">
-                    <div className="work-in-progress">
-                        <h1 className="font-besley text-base md:text-lg lg:text-lg">
-                            🚧 Website Redesign in Progress 🚧
-                        </h1>
-                        <p className="font-besley text-base">
-                            You might spot old branding, broken links, or other inconsistencies.
-                            We&apos;re on it!
-                        </p>
-                    </div>
                     <div className="hero">
                         <div className="splash-background">
                             <SplashBackground className="w-full" />
