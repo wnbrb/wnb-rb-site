@@ -169,6 +169,9 @@
 }
 
 .section-cards .info-card{
+   @media (min-width: 768px){
     height: 91%;
     width: 100%;
+    padding: 25px;
+   }
 }
