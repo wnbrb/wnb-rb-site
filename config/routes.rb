@@ -6,8 +6,9 @@ Rails.application.routes.draw do
              path_names: {
                sign_in: '/'
              },
-             controllers: { registrations: 'users/registrations' }
-
+             controllers: { registrations: 'users/registrations',
+                            passwords:     'users/passwords',
+             }
   namespace :admin do
     get 'dashboard', to: 'dashboard#show'
     resources :speakers, only: %i[index new create edit update]

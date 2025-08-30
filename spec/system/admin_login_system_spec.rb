@@ -11,7 +11,7 @@ RSpec.describe 'Admin login system', type: :system do
     let(:password) { 'password' }
     let(:user) { create(:user, :admin, email: email, password: password) }
 
-    xit 'enables me to reset WNB.rb admin password' do
+    it 'enables me to reset WNB.rb admin password' do
       visit new_user_password_path
 
       fill_in 'Email', with: user.email
