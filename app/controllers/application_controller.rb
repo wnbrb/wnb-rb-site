@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
@@ -40,7 +39,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(user)
-    user.admin? ? admin_events_path : admin_dashboard_path
+    if user.password_changed?
+      admin_dashboard_path
+    else
+      edit_user_registration_path
+    end
   end
 
   def configure_permitted_parameters

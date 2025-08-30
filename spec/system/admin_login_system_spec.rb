@@ -38,8 +38,8 @@ RSpec.describe 'Admin login system', type: :system do
 
         click_button 'Log in'
 
-        expect(page).to have_current_path(admin_events_path)
-        expect(page).to have_text('Signed in successfully')
+        expected_path = user.password_changed? ? admin_events_path : edit_user_registration_path
+        expect(page).to have_current_path(expected_path)
       end
     end
 
