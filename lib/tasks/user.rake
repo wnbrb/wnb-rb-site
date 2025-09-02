@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-desc 'Add an admin user to the database'
+desc "Add an admin user to the database. Usage: rake 'user:add_user[Name, email, password(optional)]' (default password: adminpassword123%)"
 namespace :user do
   task :add_user, [:name, :email, :password] => :environment do |_, args|
 
