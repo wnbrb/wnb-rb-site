@@ -94,6 +94,11 @@ To execute rake tasks, run:
 foreman run rake [NAMESPACE]:[TASK_NAME]
 ```
 
+To add an admin to the database (with default password set), run:
+```
+rake 'user:add_user[Name, email@example.com]'
+```
+
 ## Extras
 
 ### Setting up Google Sheets Integration
