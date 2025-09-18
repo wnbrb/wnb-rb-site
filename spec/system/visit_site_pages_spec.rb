@@ -6,6 +6,9 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
   before do
     stub_const('ENV', ENV.to_hash.merge('JOB_BOARD_PASSWORD' => 'testing'))
     stub_const('ENV', ENV.to_hash.merge('JWT_HMAC_SECRET' => 'testing1'))
+
+    allow(HTTParty).to receive(:head).and_return(double(code: 200))
+    allow(HTTParty).to receive(:get).and_return(double(code: 200))
   end
   it 'visits home page' do
     visit root_path
@@ -32,8 +35,8 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
 
   it 'visits past meetup and displays speaker with valid links' do
     meetup = create(:event, date: Date.new(2024, 2, 17), title: 'Meetup February 2024')
-    speaker = create(:speaker, :with_valid_links)
-    speaker2 = create(:speaker, :with_valid_links, links: {mastodon: Faker::Internet.url})
+    speaker = create(:speaker, :with_valid_links, :stub_http_ok)
+    speaker2 = create(:speaker, :with_valid_links, :stub_http_ok, links: {mastodon: Faker::Internet.url})
     create(:talk, speaker: speaker, event: meetup)
     create(:talk, speaker: speaker2, event: meetup)
 
@@ -45,7 +48,7 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
 
   it 'visits past meetup and displays available valid links speaker only' do
     meetup = create(:event, date: Date.new(2024, 2, 17), title: 'Meetup February 2024')
-    speaker = create(:speaker, links: { mastodon: Faker::Internet.url })
+    speaker = create(:speaker, :stub_http_ok, links: { mastodon: Faker::Internet.url })
     create(:talk, speaker: speaker, event: meetup)
 
     visit "/meetups/#{meetup.date.year}/#{meetup.date.month}/#{meetup.date.day}"

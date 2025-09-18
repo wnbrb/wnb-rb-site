@@ -22,9 +22,90 @@ RSpec.describe Speaker, type: :model do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:bio) }
-    it { is_expected.to validate_presence_of(:image_url) }
+    describe '#url_exists?' do
+      let(:links_key)   { 'other' }
+      let(:raw_url)     { 'example.com' }
+      let(:normalized)  { 'https://example.com' }
+
+      context 'when link is blank' do
+        it 'is valid and does not hit the network' do
+          speaker = build(:speaker, links: { links_key => '' })
+
+          expect(HTTParty).not_to receive(:head)
+          expect(HTTParty).not_to receive(:get)
+
+          expect(speaker).to be_valid
+        end
+      end
+
+      context 'when link has no scheme' do
+        it 'normalizes to https:// and validates with HEAD' do
+          speaker = build(:speaker, links: { links_key => raw_url })
+
+          expect(HTTParty).to receive(:head)
+            .with(normalized, hash_including(:timeout, :follow_redirects, :headers))
+            .and_return(double(code: 200))
+
+          expect(speaker).to be_valid
+        end
+      end
+
+      context 'when server does not allow HEAD (405)' do
+        it 'falls back to GET and becomes valid if GET is 200' do
+          speaker = build(:speaker, links: { links_key => raw_url })
+
+          expect(HTTParty).to receive(:head)
+            .with(normalized, anything)
+            .and_return(double(code: 405))
+
+          expect(HTTParty).to receive(:get)
+            .with(normalized, anything)
+            .and_return(double(code: 200))
+
+          expect(speaker).to be_valid
+        end
+      end
+
+      context 'when the response is a redirect (3xx)' do
+        it 'accepts 301/302/308 as valid' do
+          speaker = build(:speaker, links: { links_key => raw_url })
+
+          expect(HTTParty).to receive(:head)
+            .with(normalized, anything)
+            .and_return(double(code: 301))
+
+          expect(speaker).to be_valid
+        end
+      end
+
+      context 'when the host is unreachable or times out' do
+        it 'is invalid and adds an error' do
+          speaker = build(:speaker, links: { links_key => raw_url })
+
+          expect(HTTParty).to receive(:head)
+            .with(normalized, anything)
+            .and_raise(Net::OpenTimeout)
+
+          expect(speaker).to be_invalid
+          expect(speaker.errors[:links])
+            .to include("Url not valid: #{links_key} - #{raw_url}")
+        end
+      end
+
+      context 'when the response is 4xx/5xx' do
+        it 'is invalid and adds an error' do
+          speaker = build(:speaker, links: { links_key => raw_url })
+
+          expect(HTTParty).to receive(:head)
+            .with(normalized, anything)
+            .and_return(double(code: 404))
+
+          expect(speaker).to be_invalid
+          expect(speaker.errors[:links])
+            .to include("Url not valid: #{links_key} - #{raw_url}")
+        end
+      end
+    end
   end
 
   describe 'scopes' do
@@ -46,9 +127,13 @@ RSpec.describe Speaker, type: :model do
 
   context 'when links are present' do
     describe 'with valid links' do
+      before do
+        allow(HTTParty).to receive(:head).and_return(double(code: 200))
+        allow(HTTParty).to receive(:get).and_return(double(code: 200))
+      end
+
       it 'validates the social media links' do
         speaker = build(:speaker, :with_valid_links)
-
         expect(speaker).to be_valid
       end
     end

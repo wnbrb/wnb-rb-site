@@ -43,7 +43,10 @@ class Speaker < ApplicationRecord
   end
 
   def url_exists?
-    links.each_value { |url| errors.add(:links, 'This url is not valid') unless url_valid?(url) }
+    links.each do |key, raw_url|
+    next if raw_url.blank?
+    errors.add(:links, "Url not valid: #{key} - #{raw_url}") unless url_valid?(raw_url)
+  end
   end
 
   def empty_links?
@@ -52,8 +55,39 @@ class Speaker < ApplicationRecord
 
   private
 
-  def url_valid?(url)
-    response = HTTParty.get(url)
-    response.code == 200
+  def url_valid?(raw_url)
+    return true if raw_url.blank?
+
+    url = normalize_url(raw_url)
+    uri = URI.parse(url)
+
+    return false unless uri.is_a?(URI::HTTP) && uri.host.present?
+
+    options = {
+      timeout: 4,
+      follow_redirects: true,
+      maintain_method_across_redirects: true,
+      headers: { 'User-Agent' => 'Rails-Link-Validator' }
+    }
+
+    begin
+      response = HTTParty.head(uri.to_s, **options)
+      response = HTTParty.get(uri.to_s, **options) if response.code == 405
+      response.code.between?(200, 399)
+    rescue HTTParty::Error,
+         SocketError,
+         Timeout::Error,
+         Errno::ECONNREFUSED,
+         Errno::EHOSTUNREACH,
+         OpenSSL::SSL::SSLError => e
+      Rails.logger.warn("URL check failed for #{uri}: #{e.class}: #{e.message}")
+      false
+    end
+  end
+
+  def normalize_url(raw_url)
+    url = raw_url.to_s.strip
+    return url if url.start_with?('http://', 'https://')
+    "https://#{url}"
   end
 end

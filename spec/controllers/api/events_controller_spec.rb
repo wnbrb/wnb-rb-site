@@ -22,12 +22,14 @@ RSpec.describe Api::EventsController, type: :controller do
       speaker =
         create(
           :speaker,
+          :stub_http_ok,
           name: 'Speaker Name',
           links: {
             twitter: 'http://example.com/twitter-link',
             mastodon: 'http://example.com/mastodon-link',
             website: 'http://example.com/personal-website-link',
           },
+
         )
       Talk.create(
         event: july_meetup,
