@@ -24,7 +24,7 @@ gem 'jwt', '>= 2.6.0'
 gem 'pundit', '>= 2.3.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails', '~> 1.2.1'
+gem 'stimulus-rails', '~> 1.3.4'
 
 gem 'cssbundling-rails', '~> 1.1'
 gem 'jsbundling-rails', '~> 1.1'
