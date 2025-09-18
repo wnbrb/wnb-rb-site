@@ -29,13 +29,13 @@ gem 'stimulus-rails', '~> 1.2.1'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'jsbundling-rails', '~> 1.1'
 
-gem 'turbo-rails', '~> 1.4.0'
+gem 'turbo-rails', '~> 1.5.0'
 
 # cuts off a string of HTML
 gem 'truncate_html', '~> 0.9.3'
 
 # quickly call web links
-gem 'httpparty', '~> 0.2'
+gem 'httparty', '~> 0.23.1'
 
 # pagination
 gem 'pagy', '~> 6.2'
@@ -89,3 +89,6 @@ gem 'mutex_m', '~> 0.2.0'
 
 # add erb-lint gem
 gem 'erb_lint', require: false
+
+# Use Redis for Action Cable
+gem 'redis', '~> 4.0'
