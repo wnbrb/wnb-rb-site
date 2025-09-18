@@ -7,10 +7,7 @@ FactoryBot.define do
     image_url { Faker::Internet.url }
   end
 
-  after(:build) { |_speaker| allow(HTTParty).to receive(:get).and_return(double(code: 200)) }
-
   trait :with_invalid_links do
-    after(:build) { |_speaker| allow(HTTParty).to receive(:get).and_return(double(code: 401)) }
     links { { notwitter: 'not-a-link', twitter: Faker::Internet.url } }
   end
 
@@ -20,5 +17,12 @@ FactoryBot.define do
 
   trait :with_empty_links do
     links { {} }
+  end
+
+  trait :stub_http_ok do
+    after(:build) do |_speaker|
+      allow(HTTParty).to receive(:head).and_return(double(code: 200))
+      allow(HTTParty).to receive(:get).and_return(double(code: 200))
+    end
   end
 end
