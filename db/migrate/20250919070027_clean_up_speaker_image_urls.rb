@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CleanUpSpeakerImageUrls < ActiveRecord::Migration[7.0]
    def up
     execute <<~SQL
