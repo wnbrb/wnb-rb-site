@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useCookies } from 'react-cookie';
+import SharedLayout from '../layout/SharedLayout';
+import Logo from '../icons/Logo';
+import Button from '../Button';
+import Card from '../Card';
+import { postJobsAuthenticate } from '../../datasources';
+
+import '../../stylesheets/jobs_authenticate';
+import { UnauthorizedError } from '../../errors';
+
+const JobsAuthenticate = () => {
+    const [password, setPassword] = useState('');
+    const [hasError, setHasError] = useState(false);
+    // eslint-disable-next-line no-unused-vars
+    const [_, setCookie] = useCookies();
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try {
+            const data = await postJobsAuthenticate(password);
+            setHasError(false);
+            setCookie('wnb_job_board_token', data.token);
+            window.location.href = '/jobs';
+        } catch (error) {
+            if (error instanceof UnauthorizedError) {
+                setHasError(true);
+                setPassword('');
+            } else {
+                // TODO: add error boundaries
+                console.log(error.message);
+            }
+        }
+    };
+
+    return (
+        <>
+            <Helmet>
+                <title>Job Board | WNB.rb</title>
+            </Helmet>
+            <SharedLayout>
+                <div className="jobs-authenticate-container">
+                    <Logo className="h-28" />
+                    <Card className="w-full max-w-[30rem] mt-5">
+                        <form className="flex flex-col" onSubmit={(e) => handleLogin(e)}>
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                className="rounded-lg mt-3"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            ></input>
+                            <Button type="secondary" className="w-40 mt-3">
+                                <input
+                                    type="submit"
+                                    value="View Job Board"
+                                    className="bg-transparent hover:cursor-pointer"
+                                />
+                            </Button>
+                            {hasError && (
+                                <div className="incorrect-password">Password is incorrect.</div>
+                            )}
+                            <p className="text-sm mt-5">
+                                The WNB.rb job board is password protected. You can find the
+                                password in the WNB.rb Discord workspace. To join WNB.rb on Discord,{' '}
+                                <a href="/join-us" className="underline">
+                                    fill out this form.
+                                </a>
+                            </p>
+                        </form>
+                    </Card>
+                    <Card className="w-full max-w-[30rem] mt-5">
+                        <div className="flex flex-row flex-wrap items-center justify-center md:justify-between text-lg">
+                            Want to post a job?
+                            <Button type="white" className="mt-3 md:mt-0">
+                                <a
+                                    href="/partner-with-us"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Partner with Us
+                                </a>
+                            </Button>
+                        </div>
+                    </Card>
+                </div>
+            </SharedLayout>
+        </>
+    );
+};
+
+export default JobsAuthenticate;
