@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.3.4'
 
-gem 'devise', '~>4.9.2'
+gem 'devise', '~>4.9.3'
 
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.5'
@@ -24,18 +24,18 @@ gem 'jwt', '>= 2.6.0'
 gem 'pundit', '>= 2.3.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails', '~> 1.2.1'
+gem 'stimulus-rails', '~> 1.3.4'
 
 gem 'cssbundling-rails', '~> 1.1'
 gem 'jsbundling-rails', '~> 1.1'
 
-gem 'turbo-rails', '~> 1.4.0'
+gem 'turbo-rails', '~> 1.5.0'
 
 # cuts off a string of HTML
 gem 'truncate_html', '~> 0.9.3'
 
 # quickly call web links
-gem 'httpparty', '~> 0.2'
+gem 'httparty', '~> 0.23.1'
 
 # pagination
 gem 'pagy', '~> 6.2'
@@ -89,3 +89,6 @@ gem 'mutex_m', '~> 0.2.0'
 
 # add erb-lint gem
 gem 'erb_lint', require: false
+
+# Use Redis for Action Cable
+gem 'redis', '~> 4.0'
