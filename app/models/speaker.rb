@@ -26,7 +26,7 @@ class Speaker < ApplicationRecord
 
   store :links, accessors: SOCIAL_MEDIA_LINKS, coder: JSON
 
-  before_validation :format_links
+  before_validation :format_links, :strip_image_url
 
   default_scope { order(name: :asc) }
 
@@ -54,6 +54,11 @@ class Speaker < ApplicationRecord
   end
 
   private
+
+  # Remove leading/trailing spaces from image_url to prevent crashes and ensure clean data
+  def strip_image_url
+  self.image_url = image_url.strip if image_url.present?
+  end
 
   def url_valid?(raw_url)
     return true if raw_url.blank?

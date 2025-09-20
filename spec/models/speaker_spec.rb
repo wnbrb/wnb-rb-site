@@ -159,5 +159,19 @@ RSpec.describe Speaker, type: :model do
         expect(speaker.links).to eq({ 'twitter' => 'link_twitter', 'linkedin' => 'link_linkedIn' })
       end
     end
-  end
+
+    describe 'strip_image_url' do
+      it 'removes leading and trailing whitespace' do
+        speaker = build(:speaker, image_url: '  http://example.com/image.png  ')
+        speaker.valid? # triggers before_validation
+        expect(speaker.image_url).to eq('http://example.com/image.png')
+      end
+
+      it 'leaves nil image_url untouched' do
+        speaker = build(:speaker, image_url: nil)
+        speaker.valid?
+        expect(speaker.image_url).to be_nil
+      end
+    end
+   end
 end
