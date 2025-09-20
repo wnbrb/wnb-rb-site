@@ -26,8 +26,7 @@ class Speaker < ApplicationRecord
 
   store :links, accessors: SOCIAL_MEDIA_LINKS, coder: JSON
 
-  before_validation :format_links
-  before_validation :strip_image_url # Ensure image_url is stripped of leading/trailing spaces before validation
+  before_validation :format_links, :strip_image_url
 
   default_scope { order(name: :asc) }
 
