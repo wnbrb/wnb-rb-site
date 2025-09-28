@@ -43,4 +43,40 @@ RSpec.describe 'Managing speakers', type: :system do
       end
     end
   end
+
+  it 'edits a speaker with valid data' do
+    click_link 'Edit', href: edit_admin_speaker_path(speaker)
+
+    fill_in 'Name', with: 'Updated Name'
+    click_on 'Save'
+
+    expect(page).to have_text('Speaker was successfully updated.')
+    expect(speaker.reload.name).to eq('Updated Name')
+  end
+
+  it 'shows errors when updating with invalid data' do
+    click_link 'Edit', href: edit_admin_speaker_path(speaker)
+
+    fill_in 'Name', with: ''
+    click_on 'Save'
+
+    expect(page).to have_text("Name can't be blank")
+  end
+
+  context 'pagination' do
+    before do
+      create_list(:speaker, 20)
+      visit admin_speakers_path
+    end
+
+    it 'shows pagination navigation' do
+      expect(page).to have_selector('.pagy-bootstrap-nav')
+    end
+
+    it 'limits rows to 15 per page' do
+      within('#speakers tbody') do
+        expect(page).to have_selector('tr', count: 15)
+      end
+    end
+  end
 end

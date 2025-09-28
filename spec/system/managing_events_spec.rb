@@ -51,4 +51,40 @@ RSpec.describe 'Managing events', type: :system do
     expect(page).to have_text('Event successfully deleted')
     expect(page).not_to have_text(event.title)
   end
+
+  it 'edits an event with valid data' do
+    click_link 'Edit', href: edit_admin_event_path(event)
+
+    fill_in 'Title', with: 'Updated Title'
+    click_on 'Save'
+
+    expect(page).to have_text('Event was successfully updated')
+    expect(event.reload.title).to eq('Updated Title')
+  end
+
+  it 'shows errors when updating with invalid data' do
+    click_link 'Edit', href: edit_admin_event_path(event)
+
+    fill_in 'Title', with: ''
+    click_on 'Save'
+
+    expect(page).to have_text("Title can't be blank")
+  end
+
+  context 'pagination' do
+    before do
+      create_list(:event, 20)
+      visit admin_events_path
+    end
+
+    it 'shows pagination navigation' do
+      expect(page).to have_selector('.pagy-bootstrap-nav')
+    end
+
+    it 'limits rows to 15 per page' do
+      within('#events tbody') do
+        expect(page).to have_selector('tr', count: 15)
+      end
+    end
+  end
 end

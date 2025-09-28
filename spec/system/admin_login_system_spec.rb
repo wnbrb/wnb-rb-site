@@ -30,16 +30,23 @@ RSpec.describe 'Admin login system', type: :system do
     end
 
     context 'admin not logged in' do
-      it 'enables me to login to WNB.rb admin' do
+      it 'redirects to the password change page if password has not been changed' do
         visit '/admin'
-
         fill_in 'Email', with: user.email
         fill_in 'Password', with: user.password
-
         click_button 'Log in'
 
-        expected_path = user.password_changed? ? admin_events_path : edit_user_registration_path
-        expect(page).to have_current_path(expected_path)
+        expect(page).to have_current_path(edit_user_registration_path)
+      end
+
+      it 'redirects to the admin dashboard if password has already been changed' do
+        user.update!(password_changed: true)
+        visit '/admin'
+        fill_in 'Email', with: user.email
+        fill_in 'Password', with: user.password
+        click_button 'Log in'
+
+        expect(page).to have_current_path(admin_dashboard_path)
       end
     end
 
