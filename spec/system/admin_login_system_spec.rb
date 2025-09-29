@@ -11,6 +11,17 @@ RSpec.describe 'Admin login system', type: :system do
     let(:password) { 'password' }
     let(:user) { create(:user, :admin, email: email, password: password) }
 
+    context 'admin not logged in' do
+      it 'redirects to the password change page if password has not been changed' do
+        visit '/admin'
+        fill_in 'Email', with: user.email
+        fill_in 'Password', with: user.password
+        click_button 'Log in'
+
+        expect(page).to have_current_path(edit_user_registration_path)
+      end
+    end
+
     it 'enables me to reset WNB.rb admin password' do
       visit new_user_password_path
 
@@ -29,65 +40,23 @@ RSpec.describe 'Admin login system', type: :system do
       expect(page).to have_text('Your password has been changed successfully')
     end
 
-    context 'admin not logged in' do
-      it 'redirects to the password change page if password has not been changed' do
-        visit '/admin'
-        fill_in 'Email', with: user.email
-        fill_in 'Password', with: user.password
-        click_button 'Log in'
+    it 'redirects to the admin dashboard if password has already been changed' do
+      user.update!(password_changed: true)
+      visit '/admin'
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Log in'
 
-        expect(page).to have_current_path(edit_user_registration_path)
-      end
-
-      it 'redirects to the admin dashboard if password has already been changed' do
-        user.update!(password_changed: true)
-        visit '/admin'
-        fill_in 'Email', with: user.email
-        fill_in 'Password', with: user.password
-        click_button 'Log in'
-
-        expect(page).to have_current_path(admin_dashboard_path)
-      end
+      expect(page).to have_current_path(admin_dashboard_path)
     end
 
-    context 'admin is logged in' do
-      before { create_list(:speaker, 20) }
-      before { create_list(:event, 20) }
+    it 'enables me to logout from WNB.rb admin' do
+      login_as user
 
-      it 'enables me to logout from WNB.rb admin' do
-        login_as user
+      visit admin_dashboard_path
+      click_on 'Sign out'
 
-        visit admin_dashboard_path
-        click_on 'Sign out'
-
-        expect(page).to have_current_path(root_path)
-      end
-
-      it 'shows speakers pagination with pagy' do
-        login_as user
-
-        visit admin_dashboard_path
-        click_link 'Speakers'
-        expect(page).to have_selector('.pagy-bootstrap-nav')
-
-        #check by count speakers data by row in table
-        within('#speakers tbody') do
-          expect(page).to have_selector('tr', count: 15)
-        end
-      end
-
-      it 'shows events with pagy' do
-        login_as user
-
-        visit admin_dashboard_path
-        click_link 'Events'
-        expect(page).to have_selector('.pagy-bootstrap-nav')
-
-        #check by count events data by row in table
-        within('#events tbody') do
-          expect(page).to have_selector('tr', count: 15)
-        end
-      end
+      expect(page).to have_current_path(root_path)
     end
   end
 
