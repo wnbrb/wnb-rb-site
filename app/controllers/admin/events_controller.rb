@@ -20,7 +20,7 @@ module Admin
       if @event.save
         redirect_to edit_admin_event_path(@event), notice: 'Event was successfully created'
       else
-        render :new, status: :unprocessable_entity
+        render :new, status: :unprocessable_content
       end
     end
 
@@ -34,7 +34,7 @@ module Admin
       if @event.update(event_params)
         redirect_to admin_events_path, notice: 'Event was successfully updated'
       else
-        render :edit, status: :unprocessable_entity, notice: 'Error updating event'
+        render :edit, status: :unprocessable_content, notice: 'Error updating event'
       end
     end
 

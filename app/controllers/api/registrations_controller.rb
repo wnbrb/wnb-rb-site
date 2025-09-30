@@ -9,7 +9,7 @@ module Api
       elsif validate_recaptcha(params[:gtoken])
         send_email
       else
-        render json: { error: 'Error validating Recaptcha, Please try again later' }, status: :unprocessable_entity
+        render json: { error: 'Error validating Recaptcha, Please try again later' }, status: :unprocessable_content
       end
     end
 

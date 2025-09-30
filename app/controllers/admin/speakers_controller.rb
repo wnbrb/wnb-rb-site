@@ -4,7 +4,7 @@ module Admin
     include Pagy::Backend
 
     before_action :authorize_event
-    before_action :set_speaker, only: %w[show edit update destroy]
+    before_action :set_speaker, only: %w[show edit update]
 
     # GET /admin/speakers
     def index
@@ -35,7 +35,7 @@ module Admin
                         notice: 'Speaker was successfully created.'
           end
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { render :new, status: :unprocessable_content }
         end
       end
     end
@@ -50,8 +50,8 @@ module Admin
           end
           format.json { render :show, status: :ok, location: @speaker }
         else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @speaker.errors, status: :unprocessable_entity }
+          format.html { render :edit, status: :unprocessable_content }
+          format.json { render json: @speaker.errors, status: :unprocessable_content }
         end
       end
     end

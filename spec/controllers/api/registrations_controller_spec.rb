@@ -69,7 +69,7 @@ RSpec.describe Api::RegistrationsController, type: :controller do
 
           post :register_user, params: valid_params.merge(gtoken: 'invalid-token'), format: :json
 
-          expect(response).to have_http_status(:unprocessable_entity)
+          expect(response).to have_http_status(:unprocessable_content)
           json_response = JSON.parse(response.body)
           expect(json_response['error']).to eq('Error validating Recaptcha, Please try again later')
         end
