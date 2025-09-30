@@ -2,7 +2,7 @@
 module Api
   class RegistrationsController < ApplicationController
     def register_user
-      return send_email if Rails.env.development?
+      return send_email if skip_recaptcha?
 
       if !params.key?(:gtoken)
         render json: { error: 'Recaptcha is disabled' }, status: :not_implemented
@@ -23,6 +23,10 @@ module Api
       DiscordInvitationMailer.invite(name, email, discord_link).deliver_now
 
       render json: { success: 'Captcha challenge is correctly solved' }, status: :ok
+    end
+
+    def skip_recaptcha?
+      ENV['SKIP_RECAPTCHA'] == 'true' || Rails.env.development?
     end
   end
 end
