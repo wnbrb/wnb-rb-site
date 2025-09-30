@@ -1,0 +1,30 @@
+name: Check Duplicate Dependencies
+permissions:
+  contents: read
+
+on:
+  push:
+    paths:
+      - "package.json"
+  pull_request:
+    paths:
+      - "package.json"
+  workflow_dispatch:
+
+jobs:
+  check-duplicates:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Check for duplicates
+        run: yarn list-duplicates

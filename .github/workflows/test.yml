@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     services:
       postgres:
-        image: postgres:10
+        image: postgres:14
         # The postgres container requires the postgres user to be setup with a password in order to start it due to security
         # reasons
         env:
