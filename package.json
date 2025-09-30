@@ -91,7 +91,8 @@
         "stylelint-config-prettier-scss": "^1.0.0",
         "stylelint-config-standard-scss": "^11.0.0",
         "typescript": "^5.0.4",
-        "webpack-dev-server": "^5.2.1"
+        "webpack-dev-server": "^5.2.1",
+        "yarn-deduplicate": "^6.0.2"
     },
     "husky": {
         "hooks": {
@@ -117,6 +118,8 @@
     "scripts": {
         "build": "esbuild app/javascript/admin/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
         "build:css": "sass ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
-        "build:purgecss": "purgecss --config ./purgecss.config.js"
+        "build:purgecss": "purgecss --config ./purgecss.config.js",
+        "deduplicate": "yarn-deduplicate",
+        "list-duplicates": "yarn-deduplicate --list --fail"
     }
 }
