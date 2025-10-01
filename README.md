@@ -19,7 +19,7 @@ All contributors to this repository must follow the [WNB.rb code of conduct](htt
 Before you try to set up this app, make sure you have the following installed on your machine:
 
 - Ruby (3.3.4)
-- Node (16.3.0) + Yarn
+- Node (20.6.1) + Yarn
 - Postgres (13.3)
 - [Foreman](https://github.com/ddollar/foreman) for managing multiple servers
 

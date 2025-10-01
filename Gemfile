@@ -7,10 +7,10 @@ ruby '~> 3.3.4'
 
 gem 'devise', '~>4.9.3'
 
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.11.5'
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 6.4.3'
-gem 'rails', '~> 7.0.8'
+gem 'rails', '~> 7.1.5.2'
 
 # Use Sass to process CSS
 gem 'sassc-rails', '~> 2.1.2'
@@ -56,7 +56,7 @@ group :development, :test do
   gem 'byebug', '~> 11.1.3', platforms: %i[mri windows]
 
   # Generates fake data
-  gem 'faker', '~> 2.18.0'
+  gem 'faker', '~> 2.23.0'
 
   # Runtime developer console
   gem 'pry-rails', '~> 0.3.9'
@@ -67,12 +67,12 @@ group :development, :test do
 end
 
 group :development do
-  gem 'debug', '~> 1.7.1'
+  gem 'debug', '~> 1.9.1'
   gem 'listen', '~> 3.3'
   gem 'prettier', '~> 2.0'
-  gem 'rack-mini-profiler', '~> 2.0'
-  gem 'rubocop', '~> 1.22'
-  gem 'web-console', '>= 4.1.0'
+  gem 'rack-mini-profiler', '~> 4.0'
+  gem 'rubocop', '~> 1.60.1'
+  gem 'web-console', '~> 4.2', '>= 4.2.1'
 end
 
 group :test do
@@ -88,7 +88,7 @@ gem 'drb', '~> 2.2.1'
 gem 'mutex_m', '~> 0.2.0'
 
 # add erb-lint gem
-gem 'erb_lint', require: false
+gem 'erb_lint', '~>0.8.0', require: false
 
 # Use Redis for Action Cable
-gem 'redis', '~> 4.0'
+gem 'redis', '~> 5.0'

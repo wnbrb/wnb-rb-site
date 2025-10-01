@@ -115,7 +115,7 @@ RSpec.describe Admin::SpeakersController, type: :controller do
 
       it 'does not create a new speaker with invalid params' do
         expect { post :create, params: { speaker: invalid_params } }.not_to change(Speaker, :count)
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end
@@ -160,7 +160,7 @@ RSpec.describe Admin::SpeakersController, type: :controller do
         original_name = speaker.name
         patch :update, params: { id: speaker.id, speaker: invalid_params }
         expect(speaker.reload.name).to eq(original_name)
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end
