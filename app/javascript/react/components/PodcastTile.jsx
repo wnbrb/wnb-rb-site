@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 import Button from './Button';
 
-import '../../stylesheets/podcast-tile';
+import '../../stylesheets/podcast-tile.scss';
 
 const PodcastTile = ({ podcasts }) => (
     <Card className="podcast-tile">

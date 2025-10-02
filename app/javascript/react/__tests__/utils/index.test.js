@@ -1,4 +1,4 @@
-import { postedAtString } from './index';
+import { postedAtString } from '../../utils/index';
 
 const setDaysAgo = (date, days) => {
     date.setDate(date.getDate() - days);

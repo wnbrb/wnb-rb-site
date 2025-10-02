@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle Component renders page title with all props and children 1`] = `
+<div
+  class="page-title"
+>
+  <div
+    class="mock-new-logo new-logo"
+  >
+    Logo
+  </div>
+  <div
+    class="title-container"
+  >
+    <h1
+      alt="Contact us page"
+      class="title-text"
+    >
+      Contact
+    </h1>
+    <div
+      class="contact-info"
+    >
+      <span>
+        Email: info@example.com
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PageTitle Component renders page title with children content 1`] = `
+<div
+  class="page-title"
+>
+  <div
+    class="mock-new-logo new-logo"
+  >
+    Logo
+  </div>
+  <div
+    class="title-container"
+  >
+    <h1
+      class="title-text"
+    >
+      About Us
+    </h1>
+    <p
+      class="subtitle"
+    >
+      Learn more about our community
+    </p>
+    <button>
+      Get Started
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PageTitle Component renders page title with default props 1`] = `
+<div
+  class="page-title"
+>
+  <div
+    class="mock-new-logo new-logo"
+  >
+    Logo
+  </div>
+  <div
+    class="title-container"
+  >
+    <h1
+      class="title-text"
+    />
+  </div>
+</div>
+`;
+
+exports[`PageTitle Component renders page title with text and altText props 1`] = `
+<div
+  class="page-title"
+>
+  <div
+    class="mock-new-logo new-logo"
+  >
+    Logo
+  </div>
+  <div
+    class="title-container"
+  >
+    <h1
+      alt="Events page title"
+      class="title-text"
+    >
+      Events
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`PageTitle Component renders page title with text prop 1`] = `
+<div
+  class="page-title"
+>
+  <div
+    class="mock-new-logo new-logo"
+  >
+    Logo
+  </div>
+  <div
+    class="title-container"
+  >
+    <h1
+      class="title-text"
+    >
+      Welcome to our site
+    </h1>
+  </div>
+</div>
+`;

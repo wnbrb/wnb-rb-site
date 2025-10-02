@@ -65,7 +65,17 @@ The Discord invitation feature uses Rails' Action Mailer to send emails. For dev
 ### 4. Run the tests
 
 - To run the backend tests: `rspec`
-- To run the frontend tests: `yarn jest app/javascript`
+- To run the frontend tests: `yarn test:frontend`
+
+#### Working with Snapshot Tests
+
+Frontend tests include snapshot testing for React components. Snapshots capture the rendered output of components to detect unintended changes.
+
+- **When snapshots fail:** Review the changes in the test output. If the changes are intentional (e.g., you updated a component), update the snapshots.
+- **To update snapshots:** `yarn test -u`
+- **To run a specific test:** `yarn test ComponentName.test.jsx`
+
+**Note:** Always review snapshot changes carefully before updating them. Snapshots should only be updated when component changes are intentional.
 
 ### 5. Start the server
 

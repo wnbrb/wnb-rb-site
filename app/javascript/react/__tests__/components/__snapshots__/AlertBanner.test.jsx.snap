@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertBanner Component should match snapshot with error type 1`] = `
+<div
+  class="alert-banner error"
+>
+  <p
+    class="message m-0"
+  >
+    <span
+      class="emoji-icon"
+    >
+      😨
+    </span>
+    <span
+      class="ml-1"
+    >
+      Something went wrong
+    </span>
+  </p>
+  <button
+    class="close-button"
+  >
+    X
+  </button>
+</div>
+`;
+
+exports[`AlertBanner Component should match snapshot with success type 1`] = `
+<div
+  class="alert-banner success"
+>
+  <p
+    class="message m-0"
+  >
+    <span
+      class="emoji-icon"
+    >
+      👍🏼
+    </span>
+    <span
+      class="ml-1"
+    >
+      Operation completed successfully
+    </span>
+  </p>
+  <button
+    class="close-button"
+  >
+    X
+  </button>
+</div>
+`;
+
+exports[`AlertBanner Component should match snapshot with warning type 1`] = `
+<div
+  class="alert-banner warning"
+>
+  <p
+    class="message m-0"
+  >
+    <span
+      class="emoji-icon"
+    >
+      ⚠️❗️
+    </span>
+    <span
+      class="ml-1"
+    >
+      Please check your input
+    </span>
+  </p>
+  <button
+    class="close-button"
+  >
+    X
+  </button>
+</div>
+`;

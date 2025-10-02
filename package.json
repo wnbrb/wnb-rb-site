@@ -7,6 +7,7 @@
         "@babel/preset-env": "^7.23.2",
         "@babel/preset-react": "^7.22.15",
         "@babel/runtime": "^7.26.10",
+        "@emotion/css": "^11.13.5",
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
         "@fullcalendar/core": "^6.1.15",
@@ -74,7 +75,12 @@
         "defaults"
     ],
     "devDependencies": {
+        "@emotion/jest": "^11.13.0",
         "@prettier/plugin-ruby": "^3.2.2",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^16.3.0",
+        "@testing-library/user-event": "^14.6.1",
         "@typescript-eslint/eslint-plugin": "^5.46.0",
         "@typescript-eslint/parser": "^5.46.0",
         "eslint": "^8.29.0",
@@ -84,9 +90,12 @@
         "eslint-plugin-react": "^7.25.2",
         "eslint-plugin-react-hooks": "^4.2.0",
         "husky": "8.0.3",
+        "identity-obj-proxy": "^3.0.0",
         "jest": "^29.3.1",
+        "jest-environment-jsdom": "^30.2.0",
         "lint-staged": "^15.2.10",
         "prettier": "^2.4.1",
+        "react-test-renderer": "^18.3.1",
         "stylelint": "^15.10.3",
         "stylelint-config-prettier-scss": "^1.0.0",
         "stylelint-config-standard-scss": "^11.0.0",
@@ -115,12 +124,22 @@
         ]
     },
     "packageManager": "yarn@1.22.22",
+    "jest": {
+        "testEnvironment": "jsdom",
+        "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+        "moduleNameMapper": {
+            "\\.(css|scss|sass)$": "identity-obj-proxy"
+        },
+        "snapshotSerializers": ["@emotion/jest/serializer"]
+    },
     "scripts": {
         "build": "esbuild app/javascript/admin/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
         "build:css": "sass --quiet-deps --no-source-map --load-path=node_modules --silence-deprecation=import ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css",
         "build:css:verbose": "sass --quiet-deps --no-source-map --load-path=node_modules ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css",
         "build:purgecss": "purgecss --config ./purgecss.config.js",
         "deduplicate": "yarn-deduplicate",
-        "list-duplicates": "yarn-deduplicate --list --fail"
+        "list-duplicates": "yarn-deduplicate --list --fail",
+        "test": "jest",
+        "test:frontend": "jest app/javascript --passWithNoTests"
     }
 }
