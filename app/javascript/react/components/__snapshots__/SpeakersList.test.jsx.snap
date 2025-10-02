@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpeakersList Component renders speakers list with multiple speakers 1`] = `
+<div
+  class="flex content-center mb-8 text-lg"
+>
+  <img
+    alt=""
+    class="object-cover w-14 h-14 mr-4 rounded-full"
+    src="https://example.com/jane.jpg"
+  />
+  <div>
+    <p
+      class="font-bold text-gray md:text-lg"
+    >
+      Jane Doe
+    </p>
+    <p
+      class="text-sm text-gray md:text-lg"
+    >
+      Frontend Developer
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SpeakersList Component renders speakers list with single speaker 1`] = `
+<div
+  class="flex content-center mb-8 text-lg"
+>
+  <img
+    alt=""
+    class="object-cover w-14 h-14 mr-4 rounded-full"
+    src="https://example.com/alice.jpg"
+  />
+  <div>
+    <p
+      class="font-bold text-gray md:text-lg"
+    >
+      Alice Johnson
+    </p>
+    <p
+      class="text-sm text-gray md:text-lg"
+    >
+      Full Stack Developer
+    </p>
+  </div>
+</div>
+`;
