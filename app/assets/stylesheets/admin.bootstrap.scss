@@ -1,34 +1,14 @@
-// Bootstrap 5.3+ configuration for Dart Sass
-// Note: Using @import for Bootstrap components as they're not fully @use compatible yet
-// The deprecation warnings are silenced in the build script
+@use 'slim-select/dist/slimselect.css';
 
-// 1. Bootstrap core imports
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
-@import 'bootstrap/scss/maps';
+@import 'admin/components/colors.scss';
+@import 'admin/components/buttons.scss';
 
-// Override Bootstrap variables if needed
-// $primary: #0d6efd !default;
-// $secondary: #6c757d !default;
-
-// 2. Bootstrap components
-@import 'bootstrap/scss/root';
-@import 'bootstrap/scss/reboot';
-@import 'bootstrap/scss/type';
-@import 'bootstrap/scss/containers';
-@import 'bootstrap/scss/grid';
-@import 'bootstrap/scss/forms';
-@import 'bootstrap/scss/buttons';
-@import 'bootstrap/scss/utilities';
-@import 'bootstrap/scss/utilities/api';
-
-// 3. Third-party styles
-@import 'slim-select/dist/slimselect';
+// import bootstrap
+@import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-// 4. Custom components
-@import 'admin/components/colors';
-@import 'admin/components/buttons';
-@import 'admin/header';
-@import 'admin/custom_slim_select';
+// Custom
+@import 'admin/header.scss';
+
+// Slim Select custom
+@import 'admin/custom_slim_select.scss';
