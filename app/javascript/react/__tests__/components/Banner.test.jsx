@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Banner from './Banner';
+import Banner from '../../components/Banner';
 
 // Mock the Card component to avoid external dependencies in snapshot
-jest.mock('./Card', () => {
+jest.mock('../../components/Card', () => {
     // eslint-disable-next-line react/prop-types
     function MockCard({ children, className }) {
         return <div className={`mock-card ${className || ''}`}>{children}</div>;

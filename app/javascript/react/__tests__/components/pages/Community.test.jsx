@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
-import Community from './Community';
+import Community from '../../../components/pages/Community';
 
 // Mock SharedLayout component
-jest.mock('../layout/SharedLayout', () => {
+jest.mock('../../../components/layout/SharedLayout', () => {
     // eslint-disable-next-line react/prop-types
     function MockSharedLayout({ children }) {
         return <div className="mock-shared-layout">{children}</div>;
@@ -13,42 +13,42 @@ jest.mock('../layout/SharedLayout', () => {
 });
 
 // Mock all community section components
-jest.mock('../community/OurCommunitySection', () => {
+jest.mock('../../../components/community/OurCommunitySection', () => {
     function MockOurCommunitySection() {
         return <div className="mock-our-community-section">Our Community Section</div>;
     }
     return MockOurCommunitySection;
 });
 
-jest.mock('../community/AdviceSection', () => {
+jest.mock('../../../components/community/AdviceSection', () => {
     function MockAdviceSection() {
         return <div className="mock-advice-section">Advice Section</div>;
     }
     return MockAdviceSection;
 });
 
-jest.mock('../community/CodeofConductSection', () => {
+jest.mock('../../../components/community/CodeofConductSection', () => {
     function MockCodeofConductSection() {
         return <div className="mock-code-of-conduct-section">Code of Conduct Section</div>;
     }
     return MockCodeofConductSection;
 });
 
-jest.mock('../community/CFPWorkingGroupSection', () => {
+jest.mock('../../../components/community/CFPWorkingGroupSection', () => {
     function MockCFPWorkingGroupSection() {
         return <div className="mock-cfp-working-group-section">CFP Working Group Section</div>;
     }
     return MockCFPWorkingGroupSection;
 });
 
-jest.mock('../community/BookClubSection', () => {
+jest.mock('../../../components/community/BookClubSection', () => {
     function MockBookClubSection() {
         return <div className="mock-book-club-section">Book Club Section</div>;
     }
     return MockBookClubSection;
 });
 
-jest.mock('../community/In-PersonConferenceMeetupsSection', () => {
+jest.mock('../../../components/community/In-PersonConferenceMeetupsSection', () => {
     function MockInPersonConferenceMeetupsSection() {
         return (
             <div className="mock-in-person-conference-meetups-section">
@@ -59,7 +59,7 @@ jest.mock('../community/In-PersonConferenceMeetupsSection', () => {
     return MockInPersonConferenceMeetupsSection;
 });
 
-jest.mock('../community/InterviewPrepSection', () => {
+jest.mock('../../../components/community/InterviewPrepSection', () => {
     function MockInterviewPrepSection() {
         return <div className="mock-interview-prep-section">Interview Prep Section</div>;
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import AlertBanner from './AlertBanner';
+import AlertBanner from '../../components/AlertBanner';
 
 describe('AlertBanner Component', () => {
     const mockOnClose = jest.fn();

@@ -1,12 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import PageTitle from './PageTitle';
-
-// Mock stylesheets
-jest.mock('../stylesheets/page-title', () => ({}), { virtual: true });
+import PageTitle from '../../components/PageTitle';
 
 // Mock the NewLogo component
-jest.mock('./icons/NewLogo', () => {
+jest.mock('../../components/icons/NewLogo', () => {
     // eslint-disable-next-line react/prop-types
     function MockNewLogo({ className }) {
         return <div className={`mock-new-logo ${className || ''}`}>Logo</div>;

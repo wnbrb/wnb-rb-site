@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
-import NotFound from './NotFound';
+import NotFound from '../../../components/pages/NotFound';
 
 // Mock SharedLayout component
-jest.mock('../layout/SharedLayout', () => {
+jest.mock('../../../components/layout/SharedLayout', () => {
     // eslint-disable-next-line react/prop-types
     function MockSharedLayout({ children }) {
         return <div className="mock-shared-layout">{children}</div>;
@@ -13,7 +13,7 @@ jest.mock('../layout/SharedLayout', () => {
 });
 
 // Mock NewLogo component
-jest.mock('../icons/NewLogo', () => {
+jest.mock('../../../components/icons/NewLogo', () => {
     // eslint-disable-next-line react/prop-types
     function MockNewLogo({ className }) {
         return <div className={`mock-new-logo ${className || ''}`}>Logo</div>;

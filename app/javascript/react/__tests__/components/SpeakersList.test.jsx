@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import SpeakersList from './SpeakersList';
+import SpeakersList from '../../components/SpeakersList';
 
 describe('SpeakersList Component', () => {
     const mockSpeakers = [

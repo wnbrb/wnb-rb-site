@@ -2,12 +2,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { render } from '@testing-library/react';
-import PodcastTile from './PodcastTile';
+import PodcastTile from '../../components/PodcastTile';
 
 // Mock the Card and Button components to focus on PodcastTile logic
-jest.mock('./Card', () => ({ children, className }) => <div className={className}>{children}</div>);
+jest.mock('../../components/Card', () => ({ children, className }) => (
+    <div className={className}>{children}</div>
+));
 
-jest.mock('./Button', () => ({ children, type, className }) => (
+jest.mock('../../components/Button', () => ({ children, type, className }) => (
     <button className={`${type} ${className}`}>{children}</button>
 ));
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import PageTitleWithContainer from './PageTitleWithContainer';
+import PageTitleWithContainer from '../../components/PageTitleWithContainer';
 
 // Mock the PageTitle component to avoid external dependencies in snapshot
-jest.mock('./PageTitle', () => {
+jest.mock('../../components/PageTitle', () => {
     // eslint-disable-next-line react/prop-types
     function MockPageTitle({ text }) {
         return <div className="mock-page-title">Mock PageTitle: {text}</div>;
