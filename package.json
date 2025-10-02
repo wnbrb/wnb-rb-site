@@ -117,7 +117,8 @@
     "packageManager": "yarn@1.22.22",
     "scripts": {
         "build": "esbuild app/javascript/admin/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-        "build:css": "sass --quiet-deps --no-source-map --load-path=node_modules --silence-deprecation=import,global-builtin ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css",
+        "build:css": "sass --quiet-deps --no-source-map --load-path=node_modules --silence-deprecation=import ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css",
+        "build:css:verbose": "sass --quiet-deps --no-source-map --load-path=node_modules ./app/assets/stylesheets/admin.bootstrap.scss:./app/assets/builds/admin.css",
         "build:purgecss": "purgecss --config ./purgecss.config.js",
         "deduplicate": "yarn-deduplicate",
         "list-duplicates": "yarn-deduplicate --list --fail"
