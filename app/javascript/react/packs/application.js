@@ -7,6 +7,7 @@
 import * as ActiveStorage from '@rails/activestorage';
 import 'channels';
 
+import '../stylesheets/tailwind.scss';
 import '../stylesheets/application.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
