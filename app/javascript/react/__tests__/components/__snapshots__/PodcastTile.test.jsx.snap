@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PodcastTile Component should match snapshot with empty podcasts array 1`] = `
+<div
+  class="podcast-tile"
+/>
+`;
+
+exports[`PodcastTile Component should match snapshot with multiple podcasts 1`] = `
+<div
+  class="podcast-tile"
+>
+  <div
+    class="podcast-listing"
+  >
+    <img
+      alt="Podcast 1 Cover"
+      src="/images/podcast1.jpg"
+    />
+    <a
+      class="podcast-title"
+      href="https://podcast1.com"
+    >
+      Amazing Tech Podcast
+    </a>
+    <button
+      class="white min-w-[10rem]"
+    >
+      <a
+        href="https://podcast1.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Listen
+      </a>
+    </button>
+  </div>
+  <div
+    class="podcast-listing"
+  >
+    <img
+      alt="Podcast 2 Cover"
+      src="/images/podcast2.jpg"
+    />
+    <a
+      class="podcast-title"
+      href="https://podcast2.com"
+    >
+      Ruby Development Stories
+    </a>
+    <button
+      class="white min-w-[10rem]"
+    >
+      <a
+        href="https://podcast2.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Listen
+      </a>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PodcastTile Component should match snapshot with single podcast 1`] = `
+<div
+  class="podcast-tile"
+>
+  <div
+    class="podcast-listing"
+  >
+    <img
+      alt="Podcast 1 Cover"
+      src="/images/podcast1.jpg"
+    />
+    <a
+      class="podcast-title"
+      href="https://podcast1.com"
+    >
+      Amazing Tech Podcast
+    </a>
+    <button
+      class="white min-w-[10rem]"
+    >
+      <a
+        href="https://podcast1.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Listen
+      </a>
+    </button>
+  </div>
+</div>
+`;

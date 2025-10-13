@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound Component renders not found page correctly 1`] = `
+<div
+  class="mock-shared-layout"
+>
+  <div
+    class="not-found-container"
+  >
+    <div
+      class="mock-new-logo h-60 w-60"
+    >
+      Logo
+    </div>
+    <div
+      class="not-found-text-container"
+    >
+      <h1
+        class="title-text-lg"
+      >
+        404
+      </h1>
+      <p>
+        We couldn't find the page you were looking for.
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitleWithContainer Component renders page title with container and longer text 1`] = `
+<div
+  class="max-w-[73rem] px-10 lg:px-8 xl:px-0 mx-auto my-10 sm:my-20"
+>
+  <div
+    class="mock-page-title"
+  >
+    Mock PageTitle: 
+    This is a longer page title
+  </div>
+</div>
+`;
+
+exports[`PageTitleWithContainer Component renders page title with container and text prop 1`] = `
+<div
+  class="max-w-[73rem] px-10 lg:px-8 xl:px-0 mx-auto my-10 sm:my-20"
+>
+  <div
+    class="mock-page-title"
+  >
+    Mock PageTitle: 
+    Welcome
+  </div>
+</div>
+`;
+
+exports[`PageTitleWithContainer Component renders page title with container with default props 1`] = `
+<div
+  class="max-w-[73rem] px-10 lg:px-8 xl:px-0 mx-auto my-10 sm:my-20"
+>
+  <div
+    class="mock-page-title"
+  >
+    Mock PageTitle: 
+  </div>
+</div>
+`;

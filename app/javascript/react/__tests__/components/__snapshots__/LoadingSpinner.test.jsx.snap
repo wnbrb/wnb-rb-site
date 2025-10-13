@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSpinner Component should match snapshot with custom className 1`] = `
+<div
+  class="loading-spinner large-spinner"
+>
+  <div
+    class="loading-dot"
+  />
+  <div
+    class="loading-dot"
+  />
+  <div
+    class="loading-dot"
+  />
+</div>
+`;
+
+exports[`LoadingSpinner Component should match snapshot with default props 1`] = `
+<div
+  class="loading-spinner"
+>
+  <div
+    class="loading-dot"
+  />
+  <div
+    class="loading-dot"
+  />
+  <div
+    class="loading-dot"
+  />
+</div>
+`;

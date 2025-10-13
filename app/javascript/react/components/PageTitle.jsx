@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NewLogo from './icons/NewLogo';
-import '../stylesheets/page-title';
+import '../stylesheets/page-title.scss';
 
 const PageTitle = ({ text, altText, children }) => {
     return (

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import SharedLayout from '../layout/SharedLayout';
 import NewLogo from '../icons/NewLogo';
 
-import '../../stylesheets/not_found';
+import '../../stylesheets/not_found.scss';
 
 const NotFound = () => (
     <>

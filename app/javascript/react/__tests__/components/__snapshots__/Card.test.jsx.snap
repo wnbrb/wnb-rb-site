@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component should match snapshot with complex content 1`] = `
+<div
+  class="card p-10 featured-card"
+>
+  <div>
+    <h3>
+      Complex Card
+    </h3>
+    <p>
+      With multiple elements
+    </p>
+    <button
+      type="button"
+    >
+      Action
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Card Component should match snapshot with custom className 1`] = `
+<div
+  class="card p-10 custom-card"
+>
+  <h2>
+    Card Title
+  </h2>
+  <p>
+    Card description
+  </p>
+</div>
+`;
+
+exports[`Card Component should match snapshot with default props 1`] = `
+<div
+  class="card p-10"
+>
+  <p>
+    Card content
+  </p>
+</div>
+`;

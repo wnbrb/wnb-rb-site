@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Component renders banner with children content 1`] = `
+<div
+  class="banner"
+>
+  <div
+    class="mock-card banner-card"
+  >
+    <h1>
+      Welcome to our site!
+    </h1>
+    <p>
+      This is a banner message.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner Component renders banner with complex nested content 1`] = `
+<div
+  class="banner"
+>
+  <div
+    class="mock-card banner-card"
+  >
+    <div
+      class="banner-content"
+    >
+      <h2>
+        Event Title
+      </h2>
+      <span
+        class="date"
+      >
+        March 15, 2024
+      </span>
+      <button>
+        Register Now
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Banner Component renders banner with default props 1`] = `
+<div
+  class="banner"
+>
+  <div
+    class="mock-card banner-card"
+  />
+</div>
+`;
+
+exports[`Banner Component renders banner with text content 1`] = `
+<div
+  class="banner"
+>
+  <div
+    class="mock-card banner-card"
+  >
+    Simple text content
+  </div>
+</div>
+`;
