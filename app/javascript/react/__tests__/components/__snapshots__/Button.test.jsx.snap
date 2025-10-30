@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should match snapshot with custom props 1`] = `
+<button
+  class="button custom-class primary disabled"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`Button Component should match snapshot with default props 1`] = `
+<button
+  class="button   false"
+>
+  Click me
+</button>
+`;
+
+exports[`Button Component should match snapshot with different button types 1`] = `
+<button
+  class="button btn-large secondary false"
+>
+  Secondary Button
+</button>
+`;

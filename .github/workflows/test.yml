@@ -49,8 +49,8 @@ jobs:
           yarn --frozen-lockfile
       - name: Run Ruby unit tests
         run: bundle exec rspec
-      - name: Run JavaScript unit tests
-        run: yarn jest app/javascript
+      - name: Run JavaScript unit and snapshot tests
+        run: yarn test:frontend
       - name: Run Rubocop
         run: bundle exec rubocop --force-exclusion --cache false
       - name: Run ESLint

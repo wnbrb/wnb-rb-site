@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../stylesheets/button';
+import '../stylesheets/button.scss';
 
 const Button = ({ children, type = '', className = '', disabled = false, onClick = () => {} }) => {
     const [buttonDisabled, setDisabled] = React.useState(false);

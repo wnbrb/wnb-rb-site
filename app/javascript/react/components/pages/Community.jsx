@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import SharedLayout from '../layout/SharedLayout';
-import '../../stylesheets/home';
-import '../../stylesheets/community';
+import '../../stylesheets/home.scss';
+import '../../stylesheets/community.scss';
 
 import OurCommunitySection from '../community/OurCommunitySection';
 import AdviceSection from '../community/AdviceSection';

@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Community Component renders community page correctly 1`] = `
+<div
+  class="mock-shared-layout"
+>
+  <div
+    class="community-section"
+  >
+    <div
+      class="community"
+    >
+      <div
+        class="info-card bg-color-community"
+      >
+        <h2
+          class="font-bold font-syne"
+        >
+          Our Community
+        </h2>
+        <div
+          class="font-noto text-base"
+        >
+          <div
+            class="mock-our-community-section"
+          >
+            Our Community Section
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="info"
+  >
+    <section
+      class="info-layout"
+    >
+      <div
+        class="info-card-section layout section-cards"
+      >
+        <div
+          class="info-card bg-color-3"
+        >
+          <h2
+            class="text-xl font-bold font-syne"
+          >
+            Advice
+          </h2>
+          <div
+            class="font-noto text-base"
+          >
+            <div
+              class="mock-advice-section"
+            >
+              Advice Section
+            </div>
+          </div>
+        </div>
+        <div
+          class="info-card bg-color-1"
+        >
+          <h2
+            class="text-xl font-bold font-syne"
+          >
+            Book Club
+          </h2>
+          <div
+            class="font-noto text-base"
+          >
+            <div
+              class="mock-book-club-section"
+            >
+              Book Club Section
+            </div>
+          </div>
+        </div>
+        <div
+          class="info-card bg-color-2"
+        >
+          <h2
+            class="text-xl font-bold font-syne"
+          >
+            CFP Working Group
+          </h2>
+          <div
+            class="font-noto text-base"
+          >
+            <div
+              class="mock-cfp-working-group-section"
+            >
+              CFP Working Group Section
+            </div>
+          </div>
+        </div>
+        <div
+          class="info-card bg-color-1"
+        >
+          <h2
+            class="text-xl font-bold font-syne"
+          >
+            In-Person Conference Meetups
+          </h2>
+          <div
+            class="font-noto text-base"
+          >
+            <div
+              class="mock-in-person-conference-meetups-section"
+            >
+              In-Person Conference Meetups Section
+            </div>
+          </div>
+        </div>
+        <div
+          class="info-card bg-color-3"
+        >
+          <h2
+            class="text-xl font-bold font-syne"
+          >
+            Code of Conduct
+          </h2>
+          <div
+            class="font-noto text-base"
+          >
+            <div
+              class="mock-code-of-conduct-section"
+            >
+              Code of Conduct Section
+            </div>
+          </div>
+        </div>
+        <div
+          class="info-card bg-color-2"
+        >
+          <h2
+            class="text-xl font-bold font-syne"
+          >
+            Jobs & Interview Prep
+          </h2>
+          <div
+            class="font-noto text-base"
+          >
+            <div
+              class="mock-interview-prep-section"
+            >
+              Interview Prep Section
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
