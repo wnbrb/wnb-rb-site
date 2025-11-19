@@ -73,6 +73,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 4.0'
   gem 'rubocop', '~> 1.60.1'
   gem 'web-console', '~> 4.2', '>= 4.2.1'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -92,3 +93,4 @@ gem 'erb_lint', '~>0.8.0', require: false
 
 # Use Redis for Action Cable
 gem 'redis', '~> 5.0'
+gem 'dropbox_api'
