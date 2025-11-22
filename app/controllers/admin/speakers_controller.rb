@@ -20,9 +20,7 @@ module Admin
     end
 
     # GET /admin/speakers/1/edit
-    def edit
-      render_not_found unless @speaker
-    end
+    def edit; end
 
     def create
     @speaker = Speaker.new(speaker_params.except(:image_file))
@@ -44,7 +42,7 @@ module Admin
     if @speaker.save
       redirect_to admin_speakers_path, notice: "Speaker created successfully."
     else
-      render :new
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -64,14 +62,16 @@ module Admin
     if @speaker.update(speaker_params.except(:image_file))
      redirect_to admin_speakers_path, notice: "Speaker updated successfully."
     else
-      render :edit
+      render :edit, status: :unprocessable_content
     end
   end
+
     private
 
     def authorize_speaker
       authorize Speaker
     end
+    
     def set_speaker
       @speaker = Speaker.find(params[:id])
     end
