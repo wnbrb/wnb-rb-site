@@ -40,7 +40,7 @@ module Admin
     end
 
     if @speaker.save
-      redirect_to admin_speakers_path, notice: "Speaker created successfully."
+      redirect_to admin_speakers_path, notice: 'Speaker created successfully.'
     else
       render :new, status: :unprocessable_content
     end
@@ -60,7 +60,7 @@ module Admin
     end
 
     if @speaker.update(speaker_params.except(:image_file))
-     redirect_to admin_speakers_path, notice: "Speaker updated successfully."
+     redirect_to admin_speakers_path, notice: 'Speaker updated successfully.'
     else
       render :edit, status: :unprocessable_content
     end
