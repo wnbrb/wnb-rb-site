@@ -107,19 +107,29 @@ RSpec.describe ApplicationController, type: :controller do
   end
 
   describe '#after_sign_in_path_for' do
-    context 'when user password has been changed' do
-      let(:user) { double('user', password_changed?: true) }
+     let(:default_password) { 'adminpassword123%' }
+
+     context 'when user still has default password' do
+        let(:user) { double('user') }
+
+        before do
+          allow(user).to receive(:valid_password?).with(default_password).and_return(true)
+        end
+
+        it 'redirects to edit registration path' do
+          expect(controller.send(:after_sign_in_path_for, user)).to eq(edit_user_registration_path)
+        end
+     end
+
+    context 'when user has a custom password' do
+      let(:user) { double('user') }
+
+      before do
+        allow(user).to receive(:valid_password?).with(default_password).and_return(false)
+      end
 
       it 'redirects to admin dashboard' do
         expect(controller.send(:after_sign_in_path_for, user)).to eq(admin_dashboard_path)
-      end
-    end
-
-    context 'when user password has not been changed' do
-      let(:user) { double('user', password_changed?: false) }
-
-      it 'redirects to edit registration path' do
-        expect(controller.send(:after_sign_in_path_for, user)).to eq(edit_user_registration_path)
       end
     end
   end
