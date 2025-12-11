@@ -13,6 +13,9 @@ RSpec.describe 'Admin login system', type: :system do
 
     context 'admin not logged in' do
       it 'redirects to the password change page if password has not been changed' do
+        default_password = 'adminpassword123%'
+        user.update!(password: default_password)
+
         visit '/admin'
         fill_in 'Email', with: user.email
         fill_in 'Password', with: user.password
