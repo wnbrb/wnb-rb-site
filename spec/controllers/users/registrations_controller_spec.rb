@@ -32,7 +32,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
       end
 
       it 'redirects to root path' do
-        expect(response).to redirect_to(edit_user_registration_path)
+        expect(response).to redirect_to(admin_dashboard_path)
       end
 
       it 'sets appropriate flash message' do
@@ -66,7 +66,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
 
       it 'redirects to root path' do
         post :create, params: { user: valid_attributes }
-        expect(response).to redirect_to(edit_user_registration_path)
+        expect(response).to redirect_to(admin_dashboard_path)
       end
     end
 
