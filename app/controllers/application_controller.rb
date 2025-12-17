@@ -39,10 +39,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(user)
-    if user.password_changed?
-      admin_dashboard_path
-    else
+     default_password = 'adminpassword123%' # same as rake task
+     if user.valid_password?(default_password)
       edit_user_registration_path
+    else
+      admin_dashboard_path
     end
   end
 
