@@ -4,7 +4,7 @@ module Admin
     include Pagy::Backend
 
     before_action :authorize_speaker
-    before_action :set_speaker, only: %w[show edit update]
+    before_action :set_speaker, only: %w[show edit update destroy]
 
     # GET /admin/speakers
     def index
@@ -37,6 +37,7 @@ module Admin
 
       #  Get public URL (with raw=1)
       @speaker.image_url = dropbox_service.public_url(dropbox_path)
+      @speaker.image_path = dropbox_path
     end
 
     if @speaker.save
@@ -48,29 +49,45 @@ module Admin
 
     # PATCH/PUT /admin/speakers/1
  def update
+  dropbox_service = DropboxService.new
+  old_image_path = @speaker.image_path
+
     if params[:speaker][:image_file].present?
+
       file = params[:speaker][:image_file]
-      filename = "#{Time.current.strftime('%Y%m%d%H%M%S')}_#{file.original_filename}"
+      safe_name = file.original_filename.parameterize(separator: '_')
+      filename  = "#{Time.current.strftime('%Y%m%d%H%M%S')}_#{safe_name}"
 
-      dropbox_service = DropboxService.new
       dropbox_path = "Speakers/#{filename}"
-
       dropbox_service.upload(file, dropbox_path)
+
       @speaker.image_url = dropbox_service.public_url(dropbox_path)
+      @speaker.image_path = dropbox_path
+
     end
 
     if @speaker.update(speaker_params.except(:image_file))
+       # delete old image only if replaced
+      if params[:speaker][:image_file].present? && old_image_path.present?
+        dropbox_service.delete(old_image_path)
+      end
      redirect_to admin_speakers_path, notice: 'Speaker updated successfully.'
     else
       render :edit, status: :unprocessable_content
     end
   end
 
+  def destroy
+  DropboxService.new.delete(@speaker.image_path)
+  @speaker.destroy
+  redirect_to admin_speakers_path, notice: 'Speaker deleted.'
+ end
+
     private
 
-    def authorize_speaker
-      authorize Speaker
-    end
+    # def authorize_speaker
+    #   authorize Speaker
+    # end
     
     def set_speaker
       @speaker = Speaker.find(params[:id])
