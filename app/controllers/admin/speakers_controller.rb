@@ -85,9 +85,9 @@ module Admin
 
     private
 
-    # def authorize_speaker
-    #   authorize Speaker
-    # end
+    def authorize_speaker
+      authorize Speaker
+    end
     
     def set_speaker
       @speaker = Speaker.find(params[:id])
