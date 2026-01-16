@@ -3,6 +3,7 @@ import '../stylesheets/thankyou';
 import mike from 'images/mike.png';
 import Gusto from 'images/Gusto-logo.png';
 import flagrant from 'images/Flagrant-logo.svg';
+import Avo from 'images/avo-logo.png';
 
 const Thankyou = () => {
     return (
@@ -50,6 +51,17 @@ const Thankyou = () => {
                         rel="noopener noreferrer"
                     >
                         <img src={Gusto} alt="Gusto-logo" className="sponsor-image" />
+                    </a>
+                </div>
+
+                <div className="sponsor-4">
+                    <a
+                        href="https://avohq.io/"
+                        className="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={Avo} alt="avo-logo" className="sponsor-image" />
                     </a>
                 </div>
             </div>
