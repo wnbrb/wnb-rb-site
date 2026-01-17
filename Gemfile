@@ -35,7 +35,7 @@ gem 'turbo-rails', '~> 1.5.0'
 gem 'truncate_html', '~> 0.9.3'
 
 # quickly call web links
-gem 'httparty', '~> 0.23.1'
+gem 'httparty', '~> 0.24.0'
 
 # pagination
 gem 'pagy', '~> 6.2'
