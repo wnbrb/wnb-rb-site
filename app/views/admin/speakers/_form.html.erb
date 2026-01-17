@@ -1,4 +1,4 @@
-<%= form_for [:admin, speaker] do |f| %>
+<%= form_for [:admin, speaker], html: { multipart: true } do |f| %>
   <%= render "layouts/admin/form_errors", object: f.object %>
   <div class="field form-floating mb-4">
     <%= f.text_field :name, class: "form-control shadow-sm" %>
@@ -13,8 +13,14 @@
     <%= f.label :tagline %>
   </div>
   <div class="field form-floating mb-4">
-    <%= f.url_field :image_url, class: "form-control shadow-sm" %>
-    <%= f.label :image_url, "Image link" %>
+    <%= f.file_field :image_file, class: "form-control shadow-sm ", accept: "image/*", id: "speaker_image_file" , style: "padding: 35px;"%>
+    <%= f.label :image_file, "Upload Image", style: "padding: 10px;" %>
+
+     <div id="image_preview" class="mt-2">
+        <% if speaker.image_url.present? %>
+          <%= image_tag speaker.image_url, width: 100, style: "border-radius: 50px;" %>
+        <% end %>
+     </div>
   </div>
 
   <div class="accordion mb-4">
@@ -44,3 +50,28 @@
     <%= link_to "Cancel", admin_speakers_path, class: "btn btn-outline-primary btn-lg" %>
   </div>
 <% end %>
+
+<script>
+  document.addEventListener("turbo:load", () => {
+    const fileInput = document.getElementById("speaker_image_file");
+    const preview = document.getElementById("image_preview");
+
+    if (!fileInput || !preview) return;
+
+    // Remove any previously attached listener to prevent double events
+    fileInput.addEventListener("change", (event) => {
+      const file = event.target.files[0];
+      if (!file) {
+        preview.innerHTML = ""; // Clear preview if no file selected
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.innerHTML = `<img src="${e.target.result}" width="100" style="border-radius: 50px;" />`;
+      };
+
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
