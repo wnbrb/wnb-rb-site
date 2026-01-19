@@ -33,12 +33,20 @@ def public_url(path)
   end
 
   # Convert Dropbox shared link to direct download link
-  link.url.gsub(/([?&])dl=0/, '\1raw=1')
-
-  
+  link.url.gsub(/([?&])dl=0/, '\1raw=1')  
 end
 
+def delete(path)
+  return if path.blank?
 
+  dropbox_path = path.start_with?('/') ? path : "/#{path}"
+
+  Rails.logger.info("Attempting Dropbox delete: #{dropbox_path}")
+  @client.delete(dropbox_path)
+  Rails.logger.info("Dropbox delete success: #{dropbox_path}")
+rescue DropboxApi::Errors::NotFoundError
+  Rails.logger.warn("Dropbox delete failed (not found): #{dropbox_path}")
+end
 
   private
 
