@@ -6,6 +6,7 @@
 #
 #  id         :bigint           not null, primary key
 #  bio        :text
+#  image_path :string
 #  image_url  :string
 #  links      :jsonb
 #  name       :string
