@@ -68,9 +68,7 @@ module Admin
 
     if @speaker.update(speaker_params.except(:image_file))
        # delete old image only if replaced
-      if params[:speaker][:image_file].present? && old_image_path.present?
-        dropbox_service.delete(old_image_path)
-      end
+      dropbox_service.delete(old_image_path) if params[:speaker][:image_file].present? && old_image_path.present?
      redirect_to admin_speakers_path, notice: 'Speaker updated successfully.'
     else
       render :edit, status: :unprocessable_content
