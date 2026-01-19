@@ -3,12 +3,12 @@ module Admin
   class SpeakersController < AdminController
     include Pagy::Backend
 
-    before_action :authorize_event
+    before_action :authorize_speaker
     before_action :set_speaker, only: %w[show edit update]
 
     # GET /admin/speakers
     def index
-      @pagy, @speakers = pagy(Speaker.all, items: 15)
+     @pagy, @speakers = pagy(Speaker.all, items: 15)
     end
 
     # GET /admin/speakers/1
@@ -24,56 +24,54 @@ module Admin
       render_not_found unless @speaker
     end
 
-    # POST /admin/speakers
     def create
-      @speaker = Speaker.new(speaker_params)
+    @speaker = Speaker.new(speaker_params.except(:image_file))
 
-      respond_to do |format|
-        if @speaker.save
-          format.html do
-            redirect_to edit_admin_speaker_url(@speaker),
-                        notice: 'Speaker was successfully created.'
-          end
-        else
-          format.html { render :new, status: :unprocessable_content }
-        end
-      end
+    if params[:speaker][:image_file].present?
+      file = params[:speaker][:image_file]
+      filename = "#{Time.current.strftime('%Y%m%d%H%M%S')}_#{file.original_filename}"
+
+      dropbox_service = DropboxService.new
+      dropbox_path = "Speakers/#{filename}"
+
+      # Upload file to Dropbox
+      dropbox_service.upload(file, dropbox_path)
+
+      #  Get public URL (with raw=1)
+      @speaker.image_url = dropbox_service.public_url(dropbox_path)
     end
+
+    if @speaker.save
+      redirect_to admin_speakers_path, notice: "Speaker created successfully."
+    else
+      render :new
+    end
+  end
 
     # PATCH/PUT /admin/speakers/1
-    def update
-      respond_to do |format|
-        if @speaker.update(speaker_params)
-          format.html do
-            redirect_to edit_admin_speaker_url(@speaker),
-                        notice: 'Speaker was successfully updated.'
-          end
-          format.json { render :show, status: :ok, location: @speaker }
-        else
-          format.html { render :edit, status: :unprocessable_content }
-          format.json { render json: @speaker.errors, status: :unprocessable_content }
-        end
-      end
+ def update
+    if params[:speaker][:image_file].present?
+      file = params[:speaker][:image_file]
+      filename = "#{Time.current.strftime('%Y%m%d%H%M%S')}_#{file.original_filename}"
+
+      dropbox_service = DropboxService.new
+      dropbox_path = "Speakers/#{filename}"
+
+      dropbox_service.upload(file, dropbox_path)
+      @speaker.image_url = dropbox_service.public_url(dropbox_path)
     end
 
-    # DELETE /admin/speakers/1
-    # def destroy
-    #   @speaker.destroy
-
-    #   respond_to do |format|
-    #     format.html do
-    #       redirect_to admin_speakers_url, notice: 'Speaker was successfully destroyed.'
-    #     end
-    #   end
-    # end
-
+    if @speaker.update(speaker_params.except(:image_file))
+     redirect_to admin_speakers_path, notice: "Speaker updated successfully."
+    else
+      render :edit
+    end
+  end
     private
 
-    def authorize_event
-      authorize Event
+    def authorize_speaker
+      authorize Speaker
     end
-
-    # Use callbacks to share common setup or constraints between actions.
     def set_speaker
       @speaker = Speaker.find(params[:id])
     end
@@ -84,10 +82,10 @@ module Admin
         :name,
         :bio,
         :tagline,
-        :image_url,
         :github,
         :linkedin,
         :mastodon,
+        :image_file,
         :website,
         :twitter,
         :other,
