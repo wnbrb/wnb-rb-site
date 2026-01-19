@@ -12,7 +12,7 @@ RSpec.describe 'Managing speakers', type: :system do
       instance_double(
         DropboxService,
         upload: true,
-        public_url: "https://example.com/fake-image.png"
+        public_url: 'https://example.com/fake-image.png'
       )
     )
 
