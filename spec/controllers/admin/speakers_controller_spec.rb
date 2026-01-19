@@ -146,7 +146,7 @@ RSpec.describe Admin::SpeakersController, type: :controller do
 
       it 'returns a success response' do
         put :update, params: { id: speaker.id, speaker: { name: 'new name' } }
-        expect(response).to redirect_to(edit_admin_speaker_path(speaker))
+        expect(response).to redirect_to(admin_speakers_path)
         expect(speaker.reload.name).to eq('new name')
       end
 
