@@ -70,8 +70,8 @@ end
     response = HTTParty.post(
       'https://api.dropbox.com/oauth2/token',
       body: {
-        grant_type: 'authorization_code',
-        code: ENV.fetch('DROPBOX_REFRESH_TOKEN', nil),
+        grant_type: 'refresh_token',
+        refresh_token: ENV.fetch('DROPBOX_REFRESH_TOKEN', nil),
         client_id: ENV.fetch('DROPBOX_APP_KEY', nil),
         client_secret: ENV.fetch('DROPBOX_APP_SECRET', nil)
       }
