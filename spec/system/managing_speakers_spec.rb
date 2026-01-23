@@ -5,12 +5,22 @@ RSpec.describe 'Managing speakers', type: :system do
   let(:admin) { create(:user, :admin) }
   let!(:speaker) { create(:speaker) }
 
+  
   before do
-    driven_by(:rack_test)
+    # Stub Dropbox
+    allow(DropboxService).to receive(:new).and_return(
+      instance_double(
+        DropboxService,
+        upload: true,
+        public_url: 'https://example.com/fake-image.png'
+      )
+    )
 
+    driven_by(:rack_test)
     login_as admin
     visit admin_speakers_path
   end
+
   context 'create a speaker' do
     before { click_on 'Create new Speaker' }
 
@@ -23,13 +33,13 @@ RSpec.describe 'Managing speakers', type: :system do
         fill_in 'Name', with: new_speaker.name
         fill_in 'Bio', with: new_speaker.bio
         fill_in 'Tagline', with: new_speaker.tagline
-        fill_in 'Image link', with: new_speaker.image_url
+        attach_file 'Upload Image', Rails.root.join('test/fixtures/files/test-image.png')
+
 
         click_on 'Save'
-        expect(page).to have_text('Speaker was successfully created.')
-        expect(page).to have_current_path(
-          edit_admin_speaker_url(Speaker.find_by(id: Speaker.maximum(:id)).id),
-        )
+       expect(page).to have_text('Speaker created successfully.')
+       expect(page).to have_current_path(admin_speakers_path)
+
       end
     end
 
@@ -50,7 +60,7 @@ RSpec.describe 'Managing speakers', type: :system do
     fill_in 'Name', with: 'Updated Name'
     click_on 'Save'
 
-    expect(page).to have_text('Speaker was successfully updated.')
+    expect(page).to have_text('Speaker updated successfully.')
     expect(speaker.reload.name).to eq('Updated Name')
   end
 

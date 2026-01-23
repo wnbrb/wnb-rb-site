@@ -44,11 +44,24 @@
             <td class="p-3 align-middle"><%= speaker.name %></td>
             <td class="p-3 align-middle text-start"><%= truncate_html(speaker.bio, length: 70) %></td>
             <td class="p-3 align-middle"><%= speaker.tagline %></td>
-            <td class="p-3 align-middle">
-              <div class="imagen-container">
-                <%= image_tag speaker.image_url, class: "rounded-circle object-fit-cover", height: 53, width: 53, alt: "Profile photo for #{speaker.name}" %>
-              </div>
-            </td>
+              <td class="p-3 align-middle">
+                <div class="imagen-container">
+                  <% if speaker.image_url.present? %>
+                    <%= image_tag speaker.image_url, 
+                                  class: "rounded-circle object-fit-cover", 
+                                  height: 53, 
+                                  width: 53, 
+                                  alt: "Profile photo for #{speaker.name}" %>
+                  <% else %>
+                    <%= image_tag "blank.png",
+                                  class: "rounded-circle object-fit-cover", 
+                                  height: 53, 
+                                  width: 53, 
+                                  alt: "No profile photo" %>
+                  <% end %>
+                </div>
+              </td>
+           
             <td class="p-3 align-middle">
               <%= render "admin/speakers/index/speaker_links", speaker: speaker %>
             </td>
