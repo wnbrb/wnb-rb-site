@@ -66,7 +66,7 @@ const Thankyou = () => {
                     </a>
                 </div>
 
-                 <div className="sponsor-5">
+                <div className="sponsor-5">
                     <a
                         href="https://www.fastruby.io/monthly-ruby-maintenance.html?utm_source=wnbdev&utm_campaign=wnb-rocks-2026"
                         className="link"
