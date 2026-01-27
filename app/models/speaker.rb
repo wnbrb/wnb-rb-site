@@ -6,6 +6,7 @@
 #
 #  id         :bigint           not null, primary key
 #  bio        :text
+#  image_path :string
 #  image_url  :string
 #  links      :jsonb
 #  name       :string
@@ -20,12 +21,12 @@ class Speaker < ApplicationRecord
   has_many :talks, dependent: :destroy
   has_many :events, through: :talks
 
-  validates :name, :bio, :image_url, presence: true
+  validates :name, :bio, presence: true
   validate :links, :validate_social_media_brand
   validate :url_exists?, if: ->(s) { s.links.compact_blank.present? }
 
   store :links, accessors: SOCIAL_MEDIA_LINKS, coder: JSON
-
+  attr_accessor :image_file
   before_validation :format_links, :strip_image_url
 
   default_scope { order(name: :asc) }

@@ -138,7 +138,14 @@ RSpec.describe Admin::SpeakersController, type: :controller do
     end
 
     context 'when user is admin' do
-      before { sign_in create(:user, :admin) }
+       before do
+        sign_in create(:user, :admin)
+
+        # Stub DropboxService so it doesn't hit real API
+        allow_any_instance_of(DropboxService)
+          .to receive(:fetch_or_refresh_access_token)
+          .and_return('fake-access-token')
+      end
 
       let(:speaker) { create(:speaker) }
       let(:valid_params) { { name: 'Updated Name' } }
@@ -146,7 +153,7 @@ RSpec.describe Admin::SpeakersController, type: :controller do
 
       it 'returns a success response' do
         put :update, params: { id: speaker.id, speaker: { name: 'new name' } }
-        expect(response).to redirect_to(edit_admin_speaker_path(speaker))
+        expect(response).to redirect_to(admin_speakers_path)
         expect(speaker.reload.name).to eq('new name')
       end
 

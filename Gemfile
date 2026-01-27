@@ -35,7 +35,7 @@ gem 'turbo-rails', '~> 1.5.0'
 gem 'truncate_html', '~> 0.9.3'
 
 # quickly call web links
-gem 'httparty', '~> 0.23.1'
+gem 'httparty', '~> 0.24.0'
 
 # pagination
 gem 'pagy', '~> 6.2'
@@ -68,6 +68,7 @@ end
 
 group :development do
   gem 'debug', '~> 1.9.1'
+  gem 'dotenv-rails'
   gem 'listen', '~> 3.3'
   gem 'prettier', '~> 2.0'
   gem 'rack-mini-profiler', '~> 4.0'
@@ -91,4 +92,5 @@ gem 'mutex_m', '~> 0.2.0'
 gem 'erb_lint', '~>0.8.0', require: false
 
 # Use Redis for Action Cable
+gem 'dropbox_api'
 gem 'redis', '~> 5.0'
