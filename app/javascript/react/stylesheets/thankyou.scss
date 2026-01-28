@@ -25,41 +25,58 @@
 }
 
 .thankyou .sponsor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    justify-items: center;
     padding: 20px;
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: center;
+      @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
     }
 
     @media (min-width: 1024px) {
-        flex-direction: row;
-        justify-content: center;
-        gap: 0;
+      grid-template-columns: repeat(5, 1fr);
     }
 }
 
 .thankyou .sponsor div {
     display: flex;
-    gap: 20px;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     text-align: center;
-    width: 60%;
     border-radius: 35px;
+    transition: transform 0.2s ease;
+    width: 100%;
 
     @media (min-width: 768px) {
-        padding: 2rem 0;
+        gap: 10px;
+        justify-content: center;
     }
 
     @media (min-width: 1024px) {
-        padding: 2rem;
-         width: 20%;
+        gap: 10px;
     }
+}
+
+.thankyou .sponsor div:hover {
+  transform: translateY(-4px);
+}
+
+.sponsor-image {
+  max-height: 150px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.thankyou .sponsor .sponsor-5 .sponsor-image {
+  max-width: 220px;
+  max-height: 200px;
+  width: 100%;
+  height: auto;
 }
 
 .link {
@@ -75,7 +92,10 @@
     text-decoration: underline;
 }
 
-.sponsor-image {
+.sponsor-1 {
+    font-size: 15px;
+}
+.sponsor-1 .sponsor-image {
     border-radius: 12rem;
 }
 
