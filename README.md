@@ -12,7 +12,7 @@ WNB.rb is a virtual community for women and non-binary Rubyists. This is the rep
 
 ## Code of Conduct ❤️
 
-All contributors to this repository must follow the [WNB.rb code of conduct](https://tinyurl.com/wnb-rb-coc). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Discord.
+All contributors to this repository must follow the [WNB.rb code of conduct](https://wnb-rb.dev/code-of-conduct). Those who violate the code of conduct will be reported to GitHub support and banned from all WNB.rb platforms, including GitHub and Discord.
 
 ## 1. Getting Started 🏁
 
@@ -54,6 +54,7 @@ Then, edit `.env` and set the following environment variables:
 The `/join-us` page allows users to request an invitation to the WNB.rb Discord server. When users submit the form, they receive an email with a Discord invite link.
 
 **Required Environment Variables:**
+
 - `DISCORD_INVITE_URL`: The Discord server invite link to send to new users
 
 **Email Configuration:**
@@ -95,6 +96,7 @@ foreman run rake [NAMESPACE]:[TASK_NAME]
 ```
 
 To add an admin to the database (with default password set), run:
+
 ```
 rake 'user:add_user[Name, email@example.com]'
 ```

@@ -6,7 +6,7 @@ const AdviceSection = () => {
             We faciliate a warm, welcoming community, and we take member concerns seriously. Swift
             action will be taken to enforce the{' '}
             <a
-                href="https://docs.google.com/document/d/1e_AuYVtvHi_Mvijga6T0YxrnpDSoJtuz0R20IMliG_I/edit?usp=sharing"
+                href="/code-of-conduct"
                 className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
                 target="_blank"
                 rel="noopener noreferrer"

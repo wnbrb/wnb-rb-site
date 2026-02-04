@@ -26,6 +26,11 @@ Rails.application.routes.draw do
   get '/sponsor-us', to: 'site#sponsor_us'
   get '/meetups/:year/:month/:day', to: 'site#past_meetup'
 
+  get '/code-of-conduct', 
+to: redirect('https://docs.google.com/document/d/1tlwM2qPIWy8cilmySQZcEz7hw46Y0iuJPU7Y_nUrjs0/'), as: :code_of_conduct
+  get '/discord-guidelines', 
+to: redirect('https://docs.google.com/document/d/1S7hTGsqjisoAIWEUYM7fc9vyINWy1C7iwwjzRHu_qxM/'), as: :discord_guidelines
+
   root 'site#home'
   namespace :api, constraints: { format: 'json' } do
     resources :events, only: [:none] do
