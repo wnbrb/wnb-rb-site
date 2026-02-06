@@ -3,7 +3,7 @@ import React from 'react';
 const AdviceSection = () => {
     return (
         <p>
-            We faciliate a warm, welcoming community, and we take member concerns seriously. Swift
+            We facilitate a warm, welcoming community and we take member concerns seriously. Swift
             action will be taken to enforce the{' '}
             <a
                 href="/code-of-conduct"
