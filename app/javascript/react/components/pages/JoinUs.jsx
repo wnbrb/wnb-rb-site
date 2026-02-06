@@ -137,7 +137,7 @@ const JoinUs = () => {
                             link; your information will never be shared without your consent. For
                             more information see our{' '}
                             <a
-                                href="https://tinyurl.com/wnb-rb-coc"
+                                href="/code-of-conduct"
                                 className="whitespace-nowrap font-medium hover:text-wnbrb-blue-navy"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -198,7 +198,7 @@ const JoinUs = () => {
                                             their name, appearance, or gender presentation, is
                                             welcome. For more information, see our{' '}
                                             <a
-                                                href="https://tinyurl.com/wnb-rb-coc"
+                                                href="/code-of-conduct"
                                                 className="whitespace-nowrap font-medium hover:text-[#2e0880]"
                                                 rel="noopener noreferrer"
                                                 target="_blank"
