@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   get '/code-of-conduct', 
 to: redirect('https://docs.google.com/document/d/1tlwM2qPIWy8cilmySQZcEz7hw46Y0iuJPU7Y_nUrjs0/'), as: :code_of_conduct
   get '/discord-guidelines', 
-to: redirect('https://docs.google.com/document/d/1S7hTGsqjisoAIWEUYM7fc9vyINWy1C7iwwjzRHu_qxM/'), as: :discord_guidelines
+to: redirect('https://docs.google.com/document/d/1S7hTGsqjisoAIWEUYM7fc9vyINWy1C7iwwjzRHu_qxM/'), 
+   as: :discord_guidelines
 
   root 'site#home'
   namespace :api, constraints: { format: 'json' } do
