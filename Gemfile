@@ -93,5 +93,5 @@ gem 'erb_lint', '~>0.8.0', require: false
 
 # Use Redis for Action Cable
 gem 'dropbox_api'
-gem 'redis', '~> 5.0'
 gem 'redcarpet'
+gem 'redis', '~> 5.0'
