@@ -10,6 +10,7 @@ import 'channels';
 import '../stylesheets/tailwind.scss';
 import '../stylesheets/application.scss';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../stylesheets/markdown.scss';
 
 // Rails.start();
 
