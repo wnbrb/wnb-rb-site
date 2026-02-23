@@ -4,6 +4,7 @@ import mike from 'images/mike.png';
 import Gusto from 'images/Gusto-logo.png';
 import flagrant from 'images/Flagrant-logo.svg';
 import Avo from 'images/avo-logo.png';
+import fastRubyIo from 'images/fast-ruby-io-ruby-maintenance-done-right.svg';
 
 const Thankyou = () => {
     return (
@@ -26,7 +27,7 @@ const Thankyou = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <h1 className="font-bold font-besley text-2xl text-wnbrb-blue-navy">
+                        <h1 className="font-bold font-besley  text-wnbrb-blue-navy">
                             Mike Dalessio
                         </h1>
                     </a>
@@ -62,6 +63,17 @@ const Thankyou = () => {
                         rel="noopener noreferrer"
                     >
                         <img src={Avo} alt="avo-logo" className="sponsor-image" />
+                    </a>
+                </div>
+
+                <div className="sponsor-5">
+                    <a
+                        href="https://www.fastruby.io/monthly-ruby-maintenance.html?utm_source=wnbdev&utm_campaign=wnb-rocks-2026"
+                        className="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={fastRubyIo} alt="fast-ruby-io-logo" className="sponsor-image" />
                     </a>
                 </div>
             </div>

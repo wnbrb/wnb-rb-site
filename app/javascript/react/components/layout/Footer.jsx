@@ -49,7 +49,7 @@ const Footer = () => (
                         </p>
                         <a
                             className="footer-col-item"
-                            href="https://tinyurl.com/wnb-rb-coc"
+                            href="/code-of-conduct"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -57,7 +57,7 @@ const Footer = () => (
                         </a>
                         <a
                             className="footer-col-item"
-                            href="https://tinyurl.com/wnb-rb-slack-guidelines"
+                            href="/discord-guidelines"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
