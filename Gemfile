@@ -45,7 +45,7 @@ gem 'tzinfo-data', '~> 2.0', platforms: %i[windows jruby]
 
 # Explicitly depend on and compile nokogiri
 # so we can run CI on Ruby head
-gem 'nokogiri', '~> 1.18', force_ruby_platform: true
+gem 'nokogiri', '~> 1.19', force_ruby_platform: true
 
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
@@ -93,4 +93,5 @@ gem 'erb_lint', '~>0.8.0', require: false
 
 # Use Redis for Action Cable
 gem 'dropbox_api'
+gem 'redcarpet'
 gem 'redis', '~> 5.0'
