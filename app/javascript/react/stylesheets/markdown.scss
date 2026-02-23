@@ -1,0 +1,47 @@
+.markdown-content {
+  margin-bottom: 2rem
+}
+
+.markdown-content h1 {
+  @apply text-wnbrb-blue-navy;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-family:Syne, sans-serif;
+}
+
+.markdown-content h2 {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-family:Syne, sans-serif;
+}
+
+.markdown-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-family:Noto Sans, sans-serif;
+}
+
+.markdown-content img {
+  margin-left: auto;
+}
+
+.markdown-content h3 {
+  font-weight: 600;
+  font-family:Syne, sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.markdown-content a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
