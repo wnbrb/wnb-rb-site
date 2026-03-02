@@ -1,5 +1,4 @@
-
-![WNB.rb Logo](/assets/favicon.png)
+![WNB.rb Logo](/favicon.png)
 
 # WNB.rb Code of Conduct
 
