@@ -1,4 +1,4 @@
-![WNB.rb Logo](/assets/favicon.png)
+![WNB.rb Logo](/favicon.png)
 
 First and foremost, our Discord workspace follows [our code of conduct](/code-of-conduct)
 
