@@ -1,5 +1,4 @@
-
-![WNB.rb Logo](/assets/favicon.png)
+![WNB.rb Logo](/favicon.png)
 
 # WNB.rb Code of Conduct
 
@@ -53,6 +52,21 @@ If you witness a violation of the WNB.rb code of conduct either during the meetu
 
 ## Accessibility
 The WNB.rb organizers are committed to meeting the accessibility needs of all community members. Our meetups will forever be virtual with captioning in the event recordings. If there is any way we can improve the accessibility of our events to meet your needs, please [open a ticket on Discord](https://discord.com/channels/1214717073843032074/1343887085924515861).
+
+## Virtual Events
+To ensure WNB.rb remains a space where members feel comfortable sharing their screens, their stories, and their code, we ask all participants to follow these guidelines during our virtual events.
+
+### Privacy and Recordings
+To protect the data and privacy of all attendees, **please refrain from using any personal recording devices or software during sessions, including AI notetakers.** Events should only be recorded by the organizing WNB.rb community member(s). 
+
+ - **Distribution:**Recordings of our monthly meetups will be shared within the community (or publicly online) only if the speaker(s) have explicitly agreed to it. Recordings of other events may be shared, at the discretion of the organizing WNB.rb community member, within the relevant Discord channel. Transcripts, when available, may also be shared within the community.
+
+### Camera Usage and Identity
+If you are comfortable doing so, we encourage you to join our events with your camera on to help us build a more personal and connected community.
+
+- **Verification:** If you are new to the community or attending an event for the first time, an organizer may ask you to briefly turn on your camera and introduce yourself. This is a standard safety measure to verify identity and ensure our space remains safe for women and non-binary people.
+- **Recording Privacy:** If an event is being recorded, please note that participants with their cameras on will only appear in the recording if they are speaking. If you would like to contribute to the conversation but prefer not to have your face recorded, simply turn off your camera before unmuting.
+
 
 ## In-Person Events
 While most WNB.rb events are virtual, we will sometimes host in-person events, often at Ruby conferences. In recent years, however, certain states within the US have passed anti-LGBTQ laws that make it unsafe for our transgender community members to attend conferences in those states.
