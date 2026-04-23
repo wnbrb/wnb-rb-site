@@ -30,6 +30,7 @@
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "bootstrap": "^5.3.2",
         "bootstrap-icons": "^1.11.1",
+        "caniuse-lite": "^1.0.30001790",
         "compression-webpack-plugin": "^10.0.0",
         "css-loader": "^6.8.1",
         "css-minimizer-webpack-plugin": "^5.0.1",
