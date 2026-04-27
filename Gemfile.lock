@@ -137,7 +137,7 @@ GEM
     dropbox_api (0.1.21)
       faraday (< 3.0)
       oauth2 (~> 1.1)
-    erb (6.0.2)
+    erb (6.0.4)
     erb_lint (0.8.0)
       activesupport
       better_html (>= 2.0.1)
