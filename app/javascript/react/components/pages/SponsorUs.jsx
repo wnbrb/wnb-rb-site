@@ -87,7 +87,7 @@ const SponsorUs = () => {
                             </li>
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
-                                <span>Post unlimited jobs on our internal job board</span>
+                                <span>Post unlimited jobs on our internal job channel</span>
                             </li>
                         </ul>
                     </div>
@@ -121,7 +121,7 @@ const SponsorUs = () => {
                             </li>
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
-                                <span>Post unlimited jobs on our internal job board</span>
+                                <span>Post unlimited jobs on our internal job channel</span>
                             </li>
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
