@@ -60,6 +60,16 @@
     }
 }
 
+.thankyou .sponsor .sponsor-6 {
+      @media (min-width: 1024px) {
+          grid-column: 1 / -1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+    }
+}
+
 .thankyou .sponsor div:hover {
   transform: translateY(-4px);
 }
@@ -78,6 +88,11 @@
   width: 100%;
   height: auto;
 }
+
+.thankyou .sponsor .sponsor-6 .sponsor-image {
+    width: 86px;
+    height: 86px;
+} 
 
 .link {
     text-decoration: none;
