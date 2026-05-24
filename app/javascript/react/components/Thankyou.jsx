@@ -5,6 +5,7 @@ import Gusto from 'images/Gusto-logo.png';
 import flagrant from 'images/Flagrant-logo.svg';
 import Avo from 'images/avo-logo.png';
 import fastRubyIo from 'images/fast-ruby-io-ruby-maintenance-done-right.svg';
+import springHealth from 'images/spring-health-logo.svg';
 
 const Thankyou = () => {
     return (
@@ -74,6 +75,17 @@ const Thankyou = () => {
                         rel="noopener noreferrer"
                     >
                         <img src={fastRubyIo} alt="fast-ruby-io-logo" className="sponsor-image" />
+                    </a>
+                </div>
+
+                <div className="sponsor-6">
+                    <a
+                        href="https://www.springhealth.com/"
+                        className="link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={springHealth} alt="spring-health-logo" className="sponsor-image" />
                     </a>
                 </div>
             </div>
