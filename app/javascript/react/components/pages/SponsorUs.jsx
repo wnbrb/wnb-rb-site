@@ -144,7 +144,7 @@ const SponsorUs = () => {
                             </h2>
                             <p className="mb-2 text-wnbrb-blue-navy text-center sm:w-[95%]">
                                 Even if you aren&apos;t a sponsor, you can hire from our community
-                                by posting your open jobs on our job board.
+                                by posting your open jobs on our job channel.
                             </p>
                             <a
                                 href="https://buy.stripe.com/28o4gW9cZ7oKbwQ7sJ"
