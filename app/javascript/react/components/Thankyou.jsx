@@ -85,7 +85,11 @@ const Thankyou = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img src={springHealth} alt="spring-health-logo" className="sponsor-image" />
+                        <img
+                            src={springHealth}
+                            alt="spring-health-logo"
+                            className="sponsor-image"
+                        />
                     </a>
                 </div>
             </div>
