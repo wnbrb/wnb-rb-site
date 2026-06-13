@@ -8,11 +8,15 @@ import fastRubyIo from 'images/fast-ruby-io-ruby-maintenance-done-right.svg';
 import springHealth from 'images/spring-health-logo.svg';
 
 const sponsors = [
-  { src: flagrant, alt: 'Flagrant-logo', href: 'https://www.beflagrant.com/' },
-  { src: Gusto, alt: 'Gusto-logo', href: 'https://gusto.com/about/careers/join-the-team' },
-  { src: Avo, alt: 'avo-logo', href: 'https://avohq.io/' },
-  { src: fastRubyIo, alt: 'fast-ruby-io-logo', href: 'https://www.fastruby.io/monthly-ruby-maintenance.html?utm_source=wnbdev&utm_campaign=wnb-rocks-2026' },
-  { src: springHealth, alt: 'spring-health-logo', href: 'https://www.springhealth.com/' },
+    { src: flagrant, alt: 'Flagrant-logo', href: 'https://www.beflagrant.com/' },
+    { src: Gusto, alt: 'Gusto-logo', href: 'https://gusto.com/about/careers/join-the-team' },
+    { src: Avo, alt: 'avo-logo', href: 'https://avohq.io/' },
+    {
+        src: fastRubyIo,
+        alt: 'fast-ruby-io-logo',
+        href: 'https://www.fastruby.io/monthly-ruby-maintenance.html?utm_source=wnbdev&utm_campaign=wnb-rocks-2026',
+    },
+    { src: springHealth, alt: 'spring-health-logo', href: 'https://www.springhealth.com/' },
 ];
 
 const Thankyou = () => {
@@ -29,11 +33,7 @@ const Thankyou = () => {
             <div className="sponsor-featured">
                 <div className="sponsor-featured-card">
                     <img src={mike} alt="mike" className="sponsor-featured-image" />
-                    <a
-                        href="https://mike.daless.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href="https://mike.daless.io/" target="_blank" rel="noopener noreferrer">
                         <h1 className="font-bold font-besley text-wnbrb-blue-navy">
                             Mike Dalessio
                         </h1>
