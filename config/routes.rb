@@ -18,6 +18,7 @@ Rails.application.routes.draw do
         post 'generate_talk/:talk_id', action: :generate_talk, as: :generate_talk
       end
     end
+    resources :resources, only: %i[index new create edit update destroy]
   end
   
   get '/community', to: 'site#community'
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
 
   get '/code-of-conduct', to: 'pages#show', defaults: { page: 'code_of_conduct' }, as: :code_of_conduct
   get '/discord-guidelines', to: 'pages#show', defaults: { page: 'discord_guidelines' }, as: :discord_guidelines
+  get '/resources', to: 'site#resources'
 
   root 'site#home'
   namespace :api, constraints: { format: 'json' } do
@@ -42,6 +44,8 @@ Rails.application.routes.draw do
     resources :jobs, only: [:index] do
       collection { post 'authenticate' }
     end
+
+    resources :resources, only: %i[index create]
 
     post 'register-user', to: 'registrations#register_user'
   end
