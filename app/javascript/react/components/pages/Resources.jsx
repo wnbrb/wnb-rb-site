@@ -88,7 +88,13 @@ const Resources = () => {
             const result = await submitResource(formValues);
             if (result.status === 201) {
                 setBanner({ type: 'success', message: 'Resource submitted successfully!' });
-                setFormValues({ title: '', url: '', description: '', category: 'article', submitted_by: '' });
+                setFormValues({
+                    title: '',
+                    url: '',
+                    description: '',
+                    category: 'article',
+                    submitted_by: '',
+                });
                 setShowForm(false);
                 // Refresh resources
                 const data = await getResources(activeCategory);
@@ -117,7 +123,11 @@ const Resources = () => {
             </Helmet>
             <SharedLayout>
                 {banner && (
-                    <AlertBanner message={banner.message} type={banner.type} onClose={handleBannerClose} />
+                    <AlertBanner
+                        message={banner.message}
+                        type={banner.type}
+                        onClose={handleBannerClose}
+                    />
                 )}
                 <div className="resources-page">
                     <section className="resources-header">
@@ -127,7 +137,11 @@ const Resources = () => {
                             </p>
                         </div>
                         <div>
-                            <Button type="primary" className="suggest-btn" onClick={() => setShowForm(true)}>
+                            <Button
+                                type="primary"
+                                className="suggest-btn"
+                                onClick={() => setShowForm(true)}
+                            >
                                 Suggest a Resource
                             </Button>
                         </div>
@@ -138,7 +152,9 @@ const Resources = () => {
                             <button
                                 key={cat.value}
                                 type="button"
-                                className={`category-btn font-syne ${activeCategory === cat.value ? 'active' : ''}`}
+                                className={`category-btn font-syne ${
+                                    activeCategory === cat.value ? 'active' : ''
+                                }`}
                                 onClick={() => handleCategoryChange(cat.value)}
                             >
                                 {cat.label}
@@ -161,12 +177,18 @@ const Resources = () => {
                                     <Card key={resource.id} className="resource-card">
                                         <div className="resource-category">{resource.category}</div>
                                         <h3 className="font-syne text-xl font-bold">
-                                            <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                                            <a
+                                                href={resource.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
                                                 {resource.title}
                                             </a>
                                         </h3>
                                         {resource.description && (
-                                            <p className="font-noto text-base mt-2">{resource.description}</p>
+                                            <p className="font-noto text-base mt-2">
+                                                {resource.description}
+                                            </p>
                                         )}
                                         {resource.submitted_by && (
                                             <p className="font-noto text-sm mt-2 text-gray-500">
@@ -183,7 +205,9 @@ const Resources = () => {
                         <h2 className="font-syne text-2xl font-bold mb-4">Suggest a Resource</h2>
                         <form>
                             <div className="form-group">
-                                <label htmlFor="title" className="font-besley">Title *</label>
+                                <label htmlFor="title" className="font-besley">
+                                    Title *
+                                </label>
                                 <input
                                     id="title"
                                     name="title"
@@ -191,10 +215,14 @@ const Resources = () => {
                                     value={formValues.title}
                                     onChange={handleFormChange}
                                 />
-                                {formErrors.title && <p className="error-message">{formErrors.title}</p>}
+                                {formErrors.title && (
+                                    <p className="error-message">{formErrors.title}</p>
+                                )}
                             </div>
                             <div className="form-group">
-                                <label htmlFor="url" className="font-besley">URL *</label>
+                                <label htmlFor="url" className="font-besley">
+                                    URL *
+                                </label>
                                 <input
                                     id="url"
                                     name="url"
@@ -203,10 +231,14 @@ const Resources = () => {
                                     onChange={handleFormChange}
                                     placeholder="https://..."
                                 />
-                                {formErrors.url && <p className="error-message">{formErrors.url}</p>}
+                                {formErrors.url && (
+                                    <p className="error-message">{formErrors.url}</p>
+                                )}
                             </div>
                             <div className="form-group">
-                                <label htmlFor="description" className="font-besley">Description</label>
+                                <label htmlFor="description" className="font-besley">
+                                    Description
+                                </label>
                                 <textarea
                                     id="description"
                                     name="description"
@@ -216,7 +248,9 @@ const Resources = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="category" className="font-besley">Category *</label>
+                                <label htmlFor="category" className="font-besley">
+                                    Category *
+                                </label>
                                 <select
                                     id="category"
                                     name="category"
@@ -224,13 +258,19 @@ const Resources = () => {
                                     onChange={handleFormChange}
                                 >
                                     {CATEGORIES.filter((c) => c.value).map((cat) => (
-                                        <option key={cat.value} value={cat.value}>{cat.label}</option>
+                                        <option key={cat.value} value={cat.value}>
+                                            {cat.label}
+                                        </option>
                                     ))}
                                 </select>
-                                {formErrors.category && <p className="error-message">{formErrors.category}</p>}
+                                {formErrors.category && (
+                                    <p className="error-message">{formErrors.category}</p>
+                                )}
                             </div>
                             <div className="form-group">
-                                <label htmlFor="submitted_by" className="font-besley">Your Name (optional)</label>
+                                <label htmlFor="submitted_by" className="font-besley">
+                                    Your Name (optional)
+                                </label>
                                 <input
                                     id="submitted_by"
                                     name="submitted_by"
