@@ -14,7 +14,7 @@ module Api
       resource = Resource.new(resource_params)
 
       if resource.save
-        render json: { message: "Resource submitted successfully!" }, status: :created
+        render json: { message: 'Resource submitted successfully!' }, status: :created
       else
         render json: { errors: resource.errors.full_messages }, status: :unprocessable_entity
       end

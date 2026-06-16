@@ -28,8 +28,8 @@ class Resource < ApplicationRecord
     return if url.blank?
 
     uri = URI.parse(url)
-    errors.add(:url, "is not a valid URL") unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
+    errors.add(:url, 'is not a valid URL') unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
   rescue URI::InvalidURIError
-    errors.add(:url, "is not a valid URL")
+    errors.add(:url, 'is not a valid URL')
   end
 end
