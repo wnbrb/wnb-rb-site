@@ -19,7 +19,7 @@ module Admin
       @resource = Resource.new(resource_params)
 
       if @resource.save
-        redirect_to admin_resources_path, notice: "Resource created successfully."
+        redirect_to admin_resources_path, notice: 'Resource created successfully.'
       else
         render :new, status: :unprocessable_content
       end
@@ -29,7 +29,7 @@ module Admin
 
     def update
       if @resource.update(resource_params)
-        redirect_to admin_resources_path, notice: "Resource updated successfully."
+        redirect_to admin_resources_path, notice: 'Resource updated successfully.'
       else
         render :edit, status: :unprocessable_content
       end
@@ -37,7 +37,7 @@ module Admin
 
     def destroy
       @resource.destroy
-      redirect_to admin_resources_path, notice: "Resource deleted."
+      redirect_to admin_resources_path, notice: 'Resource deleted.'
     end
 
     private
