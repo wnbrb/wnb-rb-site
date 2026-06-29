@@ -38,9 +38,7 @@ const Thankyou = () => {
                     rel="noopener noreferrer"
                 >
                     <img src={mike} alt="mike" className="sponsor-featured-image" />
-                    <h1 className="font-bold font-besley text-wnbrb-blue-navy">
-                        Mike Dalessio
-                    </h1>
+                    <h1 className="font-bold font-besley text-wnbrb-blue-navy">Mike Dalessio</h1>
                     <span className="sponsor-featured-label">Individual Sponsor</span>
                 </a>
             </div>
