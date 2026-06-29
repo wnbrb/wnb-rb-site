@@ -2,7 +2,7 @@
     "name": "wnb-rb-site",
     "private": true,
     "dependencies": {
-        "@babel/core": "^7.23.2",
+        "@babel/core": "^7.29.6",
         "@babel/plugin-transform-runtime": "^7.23.2",
         "@babel/preset-env": "^7.23.2",
         "@babel/preset-react": "^7.22.15",
