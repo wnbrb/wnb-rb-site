@@ -31,15 +31,18 @@ const Thankyou = () => {
             </p>
 
             <div className="sponsor-featured">
-                <div className="sponsor-featured-card">
+                <a
+                    href="https://mike.daless.io/"
+                    className="sponsor-featured-card"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <img src={mike} alt="mike" className="sponsor-featured-image" />
-                    <a href="https://mike.daless.io/" target="_blank" rel="noopener noreferrer">
-                        <h1 className="font-bold font-besley text-wnbrb-blue-navy">
-                            Mike Dalessio
-                        </h1>
-                    </a>
+                    <h1 className="font-bold font-besley text-wnbrb-blue-navy">
+                        Mike Dalessio
+                    </h1>
                     <span className="sponsor-featured-label">Individual Sponsor</span>
-                </div>
+                </a>
             </div>
 
             <div className="sponsor-grid">
