@@ -17,7 +17,7 @@ const Hire = () => {
                     type="primary"
                     className="font-bold"
                     onClick={() => {
-                        window.open('mailto:sarah@wnb-rb.dev', '_blank', 'noopener noreferrer');
+                        window.open('mailto:organizers@wnb-rb.dev', '_blank', 'noopener noreferrer');
                     }}
                 >
                     Post a job
