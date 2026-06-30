@@ -25,8 +25,15 @@ const Modal = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+            className="modal-overlay"
+            role="presentation"
+            onClick={(e) => {
+                if (e.target === e.currentTarget) onClose();
+            }}
+            onKeyDown={handleKeyDown}
+        >
+            <div className="modal-content" role="dialog" aria-modal="true">
                 <button className="modal-close" type="button" onClick={onClose} aria-label="Close">
                     &times;
                 </button>
