@@ -7,9 +7,10 @@ const Header = () => {
     const links = [
         { id: 1, text: 'Events', href: '/meetups' },
         { id: 2, text: 'Our Community', href: '/community' },
-        { id: 3, text: 'Donate', href: 'https://buy.stripe.com/6oE7t874ReRc7gA9AN' },
-        { id: 4, text: 'Support us', href: '/sponsor-us' },
-        { id: 5, text: 'Join', href: '/join-us' },
+        { id: 3, text: 'Resources', href: '/resources' },
+        { id: 4, text: 'Donate', href: 'https://buy.stripe.com/6oE7t874ReRc7gA9AN' },
+        { id: 5, text: 'Support us', href: '/sponsor-us' },
+        { id: 6, text: 'Join', href: '/join-us' },
     ];
 
     const [headerState, setHeaderState] = useState({
