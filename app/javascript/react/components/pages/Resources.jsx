@@ -269,7 +269,7 @@ const Resources = () => {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="submitted_by" className="font-besley">
-                                    Your Name (optional)
+                                    Your Name *
                                 </label>
                                 <input
                                     id="submitted_by"
@@ -277,6 +277,7 @@ const Resources = () => {
                                     type="text"
                                     value={formValues.submitted_by}
                                     onChange={handleFormChange}
+                                    required
                                 />
                             </div>
                             <div className="form-actions">
