@@ -70,7 +70,7 @@ const Home = () => {
                 <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
             </Helmet>
 
-            <SharedLayout>
+            <SharedLayout showFundraisingBanner>
                 <section className="hero-container mt-2rem">
                     <div className="hero">
                         <div className="splash-background">
