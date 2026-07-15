@@ -46,6 +46,7 @@ cp .env.template .env
 Then, edit `.env` and set the following environment variables:
 
 - `DISCORD_INVITE_URL`: Discord server invite link sent to new users (e.g., `https://discord.gg/your-invite-code`)
+- `GIVEBUTTER_API_KEY` and `GIVEBUTTER_CAMPAIGN_ID`: credentials for the Givebutter campaign behind the fundraising banner. Optional in development — without them the banner simply doesn't render.
 
 ### Discord Invitation Setup
 
