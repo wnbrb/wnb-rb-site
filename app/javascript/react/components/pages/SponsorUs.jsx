@@ -12,12 +12,12 @@ const SponsorUs = () => {
     return (
         <>
             <Helmet>
-                <title>Support Us | WNB.rb</title>
+                <title>Sponsor Us | WNB.rb</title>
             </Helmet>
 
             <SharedLayout>
                 <div className="title">
-                    <h1 className="font-syne">Support us</h1>
+                    <h1 className="font-syne">Sponsor us</h1>
                     <p>
                         By supporting WNB.rb, you&apos;re investing in a global community where
                         women and non-binary people thrive in the Ruby ecosystem. Your sponsorship
