@@ -1,0 +1,68 @@
+.fundraising-banner {
+    @apply w-full bg-purple-100 py-10 px-8 md:px-5;
+
+    // The header is position:fixed (header.scss), but body only offsets 2.8rem
+    // for it (application.scss) — less than the header's real height. Make up
+    // the difference so the banner isn't tucked underneath it.
+    margin-top: 42px;
+
+    @screen md {
+        margin-top: 34px;
+    }
+}
+
+// Pages set their own top margin to clear the fixed header (e.g. .hero-container
+// on the home page). The banner already provides that clearance when it renders,
+// so drop the duplicate gap — but only while the banner is on screen, since a
+// dismissed banner leaves the page relying on its own margin again.
+.fundraising-banner + main > *:first-child {
+    margin-top: 0;
+}
+
+.fundraising-banner-inner {
+    @apply max-w-2xl mx-auto flex flex-col items-start gap-4;
+}
+
+.fundraising-banner-copy {
+    @apply flex flex-col items-start text-left gap-1;
+}
+
+.fundraising-banner-headline {
+    @apply m-0 font-syne font-bold text-wnbrb-blue-navy text-2xl;
+}
+
+.fundraising-banner-detail {
+    @apply m-0 text-wnbrb-blue-navy text-base;
+}
+
+.fundraising-progress-group {
+    @apply flex flex-col w-full gap-1 mt-2;
+}
+
+.fundraising-progress-labels {
+    @apply flex flex-row justify-between text-wnbrb-blue-navy text-sm font-semibold;
+}
+
+.fundraising-progress {
+    @apply w-full h-5 rounded-full overflow-hidden bg-white;
+}
+
+.fundraising-progress-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-wnbrb-pink-default to-wnbrb-blue-navy;
+
+    transition: width 600ms ease-out;
+}
+
+.fundraising-banner-cta {
+    @apply mt-2 px-5 py-2 rounded-full bg-wnbrb-blue-navy text-white text-base font-semibold no-underline whitespace-nowrap;
+
+    &:hover {
+        @apply opacity-90;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fundraising-progress-fill {
+        transition: none;
+    }
+}
