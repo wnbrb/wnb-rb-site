@@ -44,6 +44,8 @@ Rails.application.routes.draw do
     end
 
     post 'register-user', to: 'registrations#register_user'
+
+    get 'fundraising', to: 'fundraising#show'
   end
 
   mount ActionCable.server => '/cable'
