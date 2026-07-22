@@ -76,7 +76,7 @@ const Home = () => {
                         <div className="splash-background">
                             <SplashBackground className="w-full" />
                         </div>
-                        <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
+                        <PageTitle text="WNB.rb" altText="Women and Non-Binary Rubyists">
                             <p className="mt-8 font-syne text-base font-semibold">
                                 A virtual community for women & non-binary Rubyists.
                             </p>
