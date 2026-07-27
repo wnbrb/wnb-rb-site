@@ -35,6 +35,11 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     expect(page).to have_text('Community')
   end
 
+  it 'visits resources page' do
+    visit resources_path
+    expect(page).to have_text('Resources')
+  end
+
   it 'visits past meetup today' do
     meetup = create(:event, date: Date.today - 30.days)
 

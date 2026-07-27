@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col justify-content-start">
+    <h1 class="mb-4">Resources</h1>
+  </div>
+  <div class="col">
+    <div class="d-flex justify-content-end">
+      <%= link_to new_admin_resource_path, class: "btn btn-primary btn-md mb-4" do %>
+        Create new Resource
+        <i class="bi bi-plus fw-semibold"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="mb-4">
+      <div class="col-auto d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="resources">
+  <div class="col">
+    <div class="table-responsive">
+      <table class="table table-sm text-center table-hover">
+        <thead class="border-2">
+        <tr class="table-info">
+          <th scope="col" class="p-3">Id</th>
+          <th scope="col" class="p-3">Title</th>
+          <th scope="col" class="p-3">URL</th>
+          <th scope="col" class="p-3">Category</th>
+          <th scope="col" class="p-3">Description</th>
+          <th scope="col" class="p-3">Submitted By</th>
+          <th scope="col" class="p-3">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% @resources.each do |resource| %>
+          <tr class="border-2">
+            <td class="p-3 align-middle"><%= resource.id %></td>
+            <td class="p-3 align-middle"><%= resource.title %></td>
+            <td class="p-3 align-middle"><%= link_to resource.url.truncate(40), resource.url, target: "_blank", rel: "noopener" %></td>
+            <td class="p-3 align-middle"><%= resource.category %></td>
+            <td class="p-3 align-middle text-start"><%= truncate(resource.description, length: 70) %></td>
+            <td class="p-3 align-middle"><%= resource.submitted_by %></td>
+            <td class="p-3 align-middle">
+              <%= link_to "Edit", edit_admin_resource_path(resource) %>
+              <%= button_to "Delete", admin_resource_url(resource), form_class: "", class: "link-primary border-0 bg-transparent text-decoration-underline", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

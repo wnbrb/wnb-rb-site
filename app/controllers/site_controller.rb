@@ -16,4 +16,6 @@ class SiteController < ApplicationController
   def sponsor_us; end
 
   def community; end
+
+  def resources; end
 end

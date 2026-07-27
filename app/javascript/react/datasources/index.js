@@ -103,3 +103,29 @@ export const getPastMeetup = async (year, month, day) => {
     const json = await result.json();
     return json.data;
 };
+
+export const getResources = async (category) => {
+    const params = category ? `?category=${category}` : '';
+    const result = await fetch(`${API_ROOT}/resources${params}`);
+    const json = await result.json();
+    return json.data;
+};
+
+export const submitResource = async (info) => {
+    const csrf = document.querySelector("meta[name='csrf-token']")?.getAttribute('content');
+    return fetch(`${API_ROOT}/resources`, {
+        method: 'post',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            ...(csrf ? { 'X-CSRF-Token': csrf } : {}),
+        },
+        body: JSON.stringify(info),
+    })
+        .then(async (resp) => {
+            const responseStatus = resp.status;
+            const json = await resp.json();
+            return { status: responseStatus, json };
+        })
+        .catch((err) => err);
+};

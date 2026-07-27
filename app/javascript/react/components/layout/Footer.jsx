@@ -69,6 +69,9 @@ const Footer = () => (
                         <a className="footer-col-item" href="/meetups">
                             Meetups
                         </a>
+                        <a className="footer-col-item" href="/resources">
+                            Community Resources
+                        </a>
                     </div>
                 </div>
 
