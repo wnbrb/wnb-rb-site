@@ -37,7 +37,7 @@ make setup
 
 ### 3. Set environment variables
 
-Running the job board locally requires two environment variables. To set up your environment variables, run the following command:
+This project uses environment variables for local configuration. To set up your environment variables, run the following command:
 
 ```
 cp .env.template .env
@@ -45,9 +45,8 @@ cp .env.template .env
 
 Then, edit `.env` and set the following environment variables:
 
-- `JOB_BOARD_PASSWORD`: this determines the password for the job board
-- `JWT_HMAC_SECRET`: this sets the secret key used to encode the token for job board authentication
 - `DISCORD_INVITE_URL`: Discord server invite link sent to new users (e.g., `https://discord.gg/your-invite-code`)
+- `GIVEBUTTER_API_KEY` and `GIVEBUTTER_CAMPAIGN_ID`: credentials for the Givebutter campaign behind the fundraising banner. Optional in development — without them the banner simply doesn't render.
 
 ### Discord Invitation Setup
 

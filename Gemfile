@@ -5,11 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 3.3.4'
 
-gem 'devise', '~>5.0.3'
+gem 'devise', '~>5.0.4'
 
 gem 'jbuilder', '~> 2.11.5'
 gem 'pg', '~> 1.5'
-gem 'puma', '~> 6.4.3'
+gem 'puma', '~> 7.2.1'
 gem 'rails', '~> 7.1.5.2'
 
 # Use Sass to process CSS
