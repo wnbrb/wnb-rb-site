@@ -12,7 +12,7 @@ const Footer = () => (
                 </div>
                 <div className="btns">
                     <a
-                        href="mailto:execs@wnb-rb.dev"
+                        href="mailto:exec@wnb-rb.dev"
                         aria-label="Email"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -75,7 +75,7 @@ const Footer = () => (
                 <div className="footer-right">
                     <div className="social-links">
                         <a
-                            href="mailto:execs@wnb-rb.dev"
+                            href="mailto:exec@wnb-rb.dev"
                             aria-label="Email"
                             target="_blank"
                             rel="noopener noreferrer"
