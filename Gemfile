@@ -43,9 +43,9 @@ gem 'pagy', '~> 6.2'
 # timezones
 gem 'tzinfo-data', '~> 2.0', platforms: %i[windows jruby]
 
-# Explicitly depend on and compile nokogiri
-# so we can run CI on Ruby head
-gem 'nokogiri', '~> 1.19', force_ruby_platform: true
+# Do not use force_ruby_platform, the nokogiri team don't recommend it.
+# See https://github.com/sparklemotion/nokogiri/issues/3634
+gem 'nokogiri', '~> 1.19'
 
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
