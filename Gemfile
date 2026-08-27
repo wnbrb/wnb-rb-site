@@ -95,3 +95,6 @@ gem 'erb_lint', '~>0.8.0', require: false
 gem 'dropbox_api'
 gem 'redcarpet'
 gem 'redis', '~> 5.0'
+
+# Transactional email delivery
+gem 'resend', '~> 1.13'
