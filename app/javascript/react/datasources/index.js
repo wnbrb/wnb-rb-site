@@ -50,8 +50,8 @@ export const postJobsAuthenticate = async (password) => {
 };
 
 export const submitLeadForm = async (info) => {
-    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute('content');
-    return fetch(`${API_ROOT}/register-user`, {
+    const csrf = document.querySelector("meta[name='csrf-token']")?.getAttribute('content');
+    const resp = await fetch(`${API_ROOT}/register-user`, {
         method: 'post',
         headers: {
             Accept: 'application/json',
@@ -59,17 +59,17 @@ export const submitLeadForm = async (info) => {
             'X-CSRF-Token': csrf,
         },
         body: JSON.stringify(info),
-    })
-        .then(async (resp) => {
-            const responseStatus = resp.status;
-            const json = await resp.json();
+    });
 
-            return {
-                status: responseStatus,
-                json: json,
-            };
-        })
-        .catch((err) => err);
+    // Error pages and proxy timeouts are not JSON.
+    let json = {};
+    try {
+        json = await resp.json();
+    } catch {
+        json = {};
+    }
+
+    return { status: resp.status, ok: resp.ok, json };
 };
 
 export const donationAmounts = (environment) => {
