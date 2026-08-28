@@ -10,12 +10,20 @@ const AlertBanner = ({ message, type, onClose }) => {
     };
 
     return (
-        <div className={`alert-banner ${type}`}>
+        <div
+            className={`alert-banner ${type}`}
+            role={type === 'error' ? 'alert' : 'status'}
+            aria-live={type === 'error' ? 'assertive' : 'polite'}
+        >
             <p className="message m-0">
                 <span className="emoji-icon">{emojis[type]}</span>
                 <span className="ml-1">{message}</span>
             </p>
-            <button className="close-button" onClick={handleAlertClose}>
+            <button
+                className="close-button"
+                onClick={handleAlertClose}
+                aria-label="Dismiss this message"
+            >
                 X
             </button>
         </div>

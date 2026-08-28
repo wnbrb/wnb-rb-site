@@ -47,6 +47,7 @@ Then, edit `.env` and set the following environment variables:
 
 - `DISCORD_INVITE_URL`: Discord server invite link sent to new users (e.g., `https://discord.gg/your-invite-code`)
 - `GIVEBUTTER_API_KEY` and `GIVEBUTTER_CAMPAIGN_ID`: credentials for the Givebutter campaign behind the fundraising banner. Optional in development — without them the banner simply doesn't render.
+- `RESEND_API_KEY`: API key for sending email through Resend. Optional in development — see [Discord Invitation Setup](#discord-invitation-setup).
 
 ### Discord Invitation Setup
 
@@ -57,10 +58,15 @@ The `/join-us` page allows users to request an invitation to the WNB.rb Discord 
 - `DISCORD_INVITE_URL`: The Discord server invite link to send to new users
 
 **Email Configuration:**
-The Discord invitation feature uses Rails' Action Mailer to send emails. For development, emails are logged to the console. For production, configure your email settings in the Rails application:
 
-- `GMAIL_USERNAME`: Gmail address for sending emails
-- `GMAIL_APP_PASSWORD`: Gmail app password for authentication
+The Discord invitation is sent with Action Mailer through [Resend](https://resend.com).
+
+- `RESEND_API_KEY`: a Resend API key. Required in production.
+- `MAILER_FROM_ADDRESS`: the sender address, e.g. `WNB.rb <exec@wnb-rb.dev>`. Optional — defaults to that value. The address must be on a domain verified in Resend, or Resend rejects the message.
+
+In development, you generally don't need a Resend account: if `RESEND_API_KEY` is unset, emails are written to `tmp/mails` instead of being sent, and you can open those files in a browser to see what would have gone out. You can also preview the email without submitting the form at http://localhost:3000/rails/mailers/discord_invitation_mailer/invite.
+
+If you do set `RESEND_API_KEY` locally, mail is sent for real through Resend.
 
 ### 4. Run the tests
 
