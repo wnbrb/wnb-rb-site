@@ -191,7 +191,7 @@ const Resources = () => {
                                             </p>
                                         )}
                                         {resource.submitted_by && (
-                                            <p className="font-noto text-sm mt-2 text-gray-500">
+                                            <p className="resource-submitted-by font-noto text-sm mt-2">
                                                 Suggested by {resource.submitted_by}
                                             </p>
                                         )}
