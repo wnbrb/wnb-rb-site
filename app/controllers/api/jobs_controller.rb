@@ -31,7 +31,7 @@ module Api
     end
 
     def hmac_secret
-      ENV.fetch('JWT_HMAC_SECRET', nil)
+      ENV.fetch('JWT_HMAC_SECRET')
     end
 
     def job_board_password
