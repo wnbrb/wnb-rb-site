@@ -15,6 +15,9 @@
             <li class="nav-item">
               <%= link_to "Speakers", admin_speakers_path, class: "nav-link text-end #{"active" if controller_name == "speakers"}" %>
             </li>
+            <li class="nav-item">
+              <%= link_to "Resources", admin_resources_path, class: "nav-link text-end #{"active" if controller_name == "resources"}" %>
+            </li>
           </ul>
         <%= button_to "Sign out", destroy_user_session_path, form_class: "text-end", class: "btn btn-sm btn-secondary mb-0", method: :delete %>
       </div>
