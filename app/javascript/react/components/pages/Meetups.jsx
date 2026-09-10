@@ -48,7 +48,7 @@ const Meetups = () => {
                 <title>Meetups | WNB.rb</title>
             </Helmet>
             <EventsCalendar events={meetups} />
-            <img src={horizontal} className="line" alt="horizontal line" />
+            <img src={horizontal} className="line-meetup" alt="horizontal line" />
             <SharedLayout>
                 {loading ? (
                     <LoadingSpinner />

@@ -121,6 +121,10 @@
 }
 .line {
     margin-top: -2.5rem;
+
+    @media (min-width: 1024px) {
+      margin-top: -2.7rem;
+    }
 }
 .line2 {
     margin-top: 0;
