@@ -3,6 +3,7 @@
 module Api
   class ResourcesController < ApplicationController
     protect_from_forgery with: :exception
+     wrap_parameters false
 
     def index
       resources = Resource.recent
