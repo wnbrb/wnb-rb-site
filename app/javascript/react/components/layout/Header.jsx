@@ -11,7 +11,6 @@ const Header = () => {
         { id: 4, text: 'Donate', href: 'https://givebutter.com/wnbrb-our-next-chapter' },
         { id: 5, text: 'Sponsor us', href: '/sponsor-us' },
         { id: 6, text: 'Join', href: '/join-us' },
-
     ];
 
     const [headerState, setHeaderState] = useState({
