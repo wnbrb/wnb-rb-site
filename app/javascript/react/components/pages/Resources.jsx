@@ -76,6 +76,7 @@ const Resources = () => {
             errors.url = 'Please enter a valid URL starting with http:// or https://';
         }
         if (!formValues.category) errors.category = 'Category is required';
+        if (!formValues.submitted_by.trim()) errors.submitted_by = 'Your name is required';
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
@@ -203,7 +204,7 @@ const Resources = () => {
 
                     <Modal isOpen={showForm} onClose={() => setShowForm(false)}>
                         <h2 className="font-syne text-2xl font-bold mb-4">Suggest a Resource</h2>
-                        <form>
+                        <form onSubmit={(e) => e.preventDefault()}>
                             <div className="form-group">
                                 <label htmlFor="title" className="font-besley">
                                     Title *
