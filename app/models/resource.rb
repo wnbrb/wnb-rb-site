@@ -3,7 +3,7 @@
 class Resource < ApplicationRecord
   CATEGORIES = %w[article book podcast video talk newsletter tool project].freeze
 
-  validates :title, :url, :category, presence: true
+  validates :title, :url, :category, :submitted_by, presence: true
   validates :category, inclusion: { in: CATEGORIES }
   validate :url_format
 
