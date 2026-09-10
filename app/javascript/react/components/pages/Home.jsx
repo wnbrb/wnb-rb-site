@@ -70,13 +70,13 @@ const Home = () => {
                 <title>WNB.rb: A Virtual Community for Women and Non-Binary Rubyists</title>
             </Helmet>
 
-            <SharedLayout>
+            <SharedLayout showFundraisingBanner>
                 <section className="hero-container mt-2rem">
                     <div className="hero">
                         <div className="splash-background">
                             <SplashBackground className="w-full" />
                         </div>
-                        <PageTitle text="Wnb.rb" altText="Women and Non-Binary Rubyists">
+                        <PageTitle text="WNB.rb" altText="Women and Non-Binary Rubyists">
                             <p className="mt-8 font-syne text-base font-semibold">
                                 A virtual community for women & non-binary Rubyists.
                             </p>

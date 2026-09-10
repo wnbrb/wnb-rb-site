@@ -9,7 +9,7 @@ gem 'devise', '~>5.0.4'
 
 gem 'jbuilder', '~> 2.11.5'
 gem 'pg', '~> 1.5'
-gem 'puma', '~> 6.4.3'
+gem 'puma', '~> 7.2.1'
 gem 'rails', '~> 7.1.5.2'
 
 # Use Sass to process CSS
@@ -43,9 +43,9 @@ gem 'pagy', '~> 6.2'
 # timezones
 gem 'tzinfo-data', '~> 2.0', platforms: %i[windows jruby]
 
-# Explicitly depend on and compile nokogiri
-# so we can run CI on Ruby head
-gem 'nokogiri', '~> 1.19', force_ruby_platform: true
+# Do not use force_ruby_platform, the nokogiri team don't recommend it.
+# See https://github.com/sparklemotion/nokogiri/issues/3634
+gem 'nokogiri', '~> 1.19'
 
 group :development, :test do
   # Annotate models, routes, fixtures, and others based on the database schema
@@ -95,3 +95,6 @@ gem 'erb_lint', '~>0.8.0', require: false
 gem 'dropbox_api'
 gem 'redcarpet'
 gem 'redis', '~> 5.0'
+
+# Transactional email delivery
+gem 'resend', '~> 1.13'

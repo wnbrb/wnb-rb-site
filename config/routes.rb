@@ -48,6 +48,8 @@ Rails.application.routes.draw do
     resources :resources, only: %i[index create]
 
     post 'register-user', to: 'registrations#register_user'
+
+    get 'fundraising', to: 'fundraising#show'
   end
 
   mount ActionCable.server => '/cable'

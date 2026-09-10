@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     gap: 2rem;
     text-align: center;
     @apply xs:text-left xs:px-[1.3rem];
@@ -22,99 +22,104 @@
 
 .thankyou p {
     @apply text-lg text-black font-noto text-center;
+    max-width: 900px;
 }
 
-.thankyou .sponsor {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-    justify-items: center;
-    padding: 20px;
-
-      @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      width: 100%;
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-.thankyou .sponsor div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 35px;
-    transition: transform 0.2s ease;
+/* ---- Featured individual sponsor ---- */
+.sponsor-featured {
     width: 100%;
-
-    @media (min-width: 768px) {
-        gap: 10px;
-        justify-content: center;
-    }
-
-    @media (min-width: 1024px) {
-        gap: 10px;
-    }
-}
-
-.thankyou .sponsor .sponsor-6 {
-      @media (min-width: 1024px) {
-          grid-column: 1 / -1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-    }
-}
-
-.thankyou .sponsor div:hover {
-  transform: translateY(-4px);
-}
-
-.sponsor-image {
-  max-height: 150px;
-  max-width: 160px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.thankyou .sponsor .sponsor-5 .sponsor-image {
-  max-width: 220px;
-  max-height: 200px;
-  width: 100%;
-  height: auto;
-}
-
-.thankyou .sponsor .sponsor-6 .sponsor-image {
-    width: 86px;
-    height: 86px;
-} 
-
-.link {
-    text-decoration: none;
-    color: #2e0880;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.link:hover {
-    color: #3d2277;
-    text-decoration: underline;
+.sponsor-featured-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 320px;
 }
 
-.sponsor-1 {
-    font-size: 15px;
-}
-.sponsor-1 .sponsor-image {
-    border-radius: 12rem;
+.sponsor-featured-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
-.thankyou .sponsor .sponsor-2 .sponsor-image,
-.thankyou .sponsor .sponsor-3 .sponsor-image {
-    border-radius: 0;
+.sponsor-featured-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff6c2;
+}
+
+.sponsor-featured-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.sponsor-featured-card a {
+    text-decoration: none;
+}
+
+/* ---- Company sponsor grid ---- */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 960px;
+
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.sponsor-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 120px;
+    overflow: hidden;
+
+    @media (min-width: 640px) {
+        padding: 1.75rem 1.25rem;
+        min-height: 140px;
+    }
+}
+
+.sponsor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-image {
+    max-height: 80px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-card:hover .sponsor-image {
+    transform: scale(1.05);
 }

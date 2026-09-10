@@ -37,61 +37,60 @@ const JoinUs = () => {
         setShowBanner(null);
     };
 
-    const onSubmit = async function (values, { resetForm }) {
-        if (typeof gtoken === 'undefined') {
-            try {
-                const resolvedValue = await submitLeadForm(values);
+    const announce = (type, message) => {
+        setShowBanner({ type, message });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
-                if (resolvedValue.status === 501) {
-                    setShowBanner({
-                        type: 'error',
-                        message: `Something went wrong. Please try again: ${resolvedValue.json.error}`,
-                    });
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else if (resolvedValue.status === 200) {
-                    resetForm();
-                    setShowBanner({
-                        type: 'success',
-                        message: `${values.name}, thank you for joining WNB.rb! You will receive an email inviting you to our Discord server shortly.`,
-                    });
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            } catch (error) {
-                console.log(error);
+    const requestRecaptchaToken = () =>
+        new Promise((resolve, reject) => {
+            if (typeof grecaptcha === 'undefined') {
+                reject(new Error('reCAPTCHA is unavailable'));
+                return;
             }
-            return;
-        }
 
-        return new Promise((resolve) => {
-            grecaptcha.ready(function () {
-                grecaptcha
-                    .execute(gtoken, {
-                        action: 'submit',
-                    })
-                    .then(async function (token) {
-                        try {
-                            const resolvedValue = await submitLeadForm({
-                                ...values,
-                                identifyAs: values.identifyAs == true ? 'Yes' : 'No',
-                                gtoken: token,
-                            });
-
-                            if (resolvedValue.status === 200) {
-                                resetForm();
-                                setShowBanner({
-                                    type: 'success',
-                                    message: `${values.name}, thank you for joining WNB.rb! You will receive an email inviting you to our Discord server shortly.`,
-                                });
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }
-                            resolve();
-                        } catch (error) {
-                            console.log(error);
-                            resolve();
-                        }
-                    });
+            grecaptcha.ready(() => {
+                grecaptcha.execute(gtoken, { action: 'submit' }).then(resolve, reject);
             });
         });
+
+    const onSubmit = async function (values, { resetForm }) {
+        setShowBanner(null);
+
+        try {
+            const payload = {
+                name: values.name,
+                email: values.email,
+                identifyAs: values.identifyAs ? 'Yes' : 'No',
+            };
+
+            if (typeof gtoken !== 'undefined') {
+                payload.gtoken = await requestRecaptchaToken();
+            }
+
+            const { ok, json } = await submitLeadForm(payload);
+
+            if (ok) {
+                resetForm();
+                announce(
+                    'success',
+                    json.success ||
+                        `${values.name}, thank you for joining WNB.rb! Check ${values.email} for your invitation to our Discord server.`,
+                );
+            } else {
+                announce(
+                    'error',
+                    json.error ||
+                        "Something went wrong and we couldn't send your invitation. Please try again in a few minutes.",
+                );
+            }
+        } catch (error) {
+            console.error(error);
+            announce(
+                'error',
+                "We couldn't reach the server, so your request wasn't sent. Please check your connection and try again, or email exec@wnb-rb.dev and we'll invite you by hand.",
+            );
+        }
     };
 
     React.useEffect(() => {
@@ -158,7 +157,7 @@ const JoinUs = () => {
                             validateOnMount={true}
                         >
                             {({ isSubmitting, isValid }) => (
-                                <Form>
+                                <Form aria-busy={isSubmitting}>
                                     <div className="form-group">
                                         <h2 className="font-besley text-2xl mb-4">About You </h2>
 
@@ -231,7 +230,7 @@ const JoinUs = () => {
                                     >
                                         <input
                                             type="submit"
-                                            value={isSubmitting ? 'Sending...' : 'Submit'}
+                                            value={isSubmitting ? 'Sending…' : 'Submit'}
                                             className="bg-transparent w-full hover:cursor-pointer"
                                             disabled={isSubmitting || !isValid}
                                         />

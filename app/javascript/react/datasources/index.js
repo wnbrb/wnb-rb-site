@@ -50,8 +50,8 @@ export const postJobsAuthenticate = async (password) => {
 };
 
 export const submitLeadForm = async (info) => {
-    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute('content');
-    return fetch(`${API_ROOT}/register-user`, {
+    const csrf = document.querySelector("meta[name='csrf-token']")?.getAttribute('content');
+    const resp = await fetch(`${API_ROOT}/register-user`, {
         method: 'post',
         headers: {
             Accept: 'application/json',
@@ -59,17 +59,17 @@ export const submitLeadForm = async (info) => {
             'X-CSRF-Token': csrf,
         },
         body: JSON.stringify(info),
-    })
-        .then(async (resp) => {
-            const responseStatus = resp.status;
-            const json = await resp.json();
+    });
 
-            return {
-                status: responseStatus,
-                json: json,
-            };
-        })
-        .catch((err) => err);
+    // Error pages and proxy timeouts are not JSON.
+    let json = {};
+    try {
+        json = await resp.json();
+    } catch {
+        json = {};
+    }
+
+    return { status: resp.status, ok: resp.ok, json };
 };
 
 export const donationAmounts = (environment) => {
@@ -97,6 +97,17 @@ const productionDonationAmounts = [
     { value: 500, link: 'https://buy.stripe.com/4gw3cSexj38u44o7sA' },
     { value: 1000, link: 'https://buy.stripe.com/8wMeVAbl710mdEY009' },
 ];
+
+export const getFundraisingProgress = async () => {
+    const result = await fetch(`${API_ROOT}/fundraising`);
+
+    if (result.status !== 200) {
+        throw new Error('There was an error fetching the fundraising progress.');
+    }
+
+    const json = await result.json();
+    return json.data;
+};
 
 export const getPastMeetup = async (year, month, day) => {
     const result = await fetch(`${API_ROOT}/events/${year}/${month}/${day}`);
