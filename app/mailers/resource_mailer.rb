@@ -8,7 +8,7 @@ class ResourceMailer < ApplicationMailer
     @category = category
     @submitted_by = submitted_by
     mail(
-      to: 'organizers@wnb-rb.dev',
+      to: 'exec@wnb-rb.dev',
       subject: @title
     )
   end
