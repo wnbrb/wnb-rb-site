@@ -48,7 +48,7 @@
             <td class="p-3 align-middle"><%= resource.submitted_by %></td>
             <td class="p-3 align-middle">
               <%= link_to "Edit", edit_admin_resource_path(resource) %>
-              <%= button_to "Delete", admin_resource_url(resource), form_class: "", class: "link-primary border-0 bg-transparent text-decoration-underline", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <%= button_to "Delete", admin_resource_url(resource), form_class: "", class: "link-primary border-0 bg-transparent text-decoration-underline", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this resource?" } %>
             </td>
           </tr>
         <% end %>

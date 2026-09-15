@@ -4,5 +4,6 @@ import './controllers';
 import * as bootstrap from 'bootstrap';
 import '@hotwired/turbo-rails';
 import './turbo_streams';
+import './confirm_dialog';
 
 window.bootstrap = bootstrap;
