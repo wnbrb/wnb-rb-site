@@ -18,7 +18,7 @@ const Hire = () => {
                     className="font-bold"
                     onClick={() => {
                         window.open(
-                            'mailto:organizers@wnb-rb.dev',
+                            'mailto:exec@wnb-rb.dev',
                             '_blank',
                             'noopener noreferrer',
                         );
