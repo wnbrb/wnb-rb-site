@@ -88,7 +88,11 @@ const Resources = () => {
         try {
             const result = await submitResource(formValues);
             if (result.status === 201) {
-                setBanner({ type: 'success', message: 'We\'ve sent an email with your suggested resource. Check back here in a few days to see it.' });
+                setBanner({
+                    type: 'success',
+                    message:
+                        "We've sent an email with your suggested resource. Check back here in a few days to see it.",
+                });
                 setFormValues({
                     title: '',
                     url: '',
