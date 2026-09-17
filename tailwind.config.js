@@ -27,9 +27,13 @@ module.exports = {
             pink: colors.pink,
             wnbrb: {
                 blue: {
-                    navy: "#2e0880"
+                    navy: "#2e0880",
+                    'navy-dark': '#15043a',
                 },
-
+                yellow: {
+                    default: '#ffdd19',
+                    dark: '#15043a',
+                },
                 pink: {
                     dark: '#F59E98',
                     default: '#DF7270',
@@ -50,6 +54,18 @@ module.exports = {
                     default: '#993232',
                     medium: '#EF8987',
                     light: '#FAE6E6',
+                },
+                'ruby-red': {
+                    default: '#b33c3c',
+                },
+                lavender: {
+                    default: '#b0a6f3',
+                },
+                lime: {
+                    default: '#bfe444',
+                },
+                teal: {
+                    default: '#449c7c',
                 },
                 emerald: {
                     default: '#45823F',

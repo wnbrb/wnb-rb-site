@@ -7,9 +7,10 @@ const Header = () => {
     const links = [
         { id: 1, text: 'Events', href: '/meetups' },
         { id: 2, text: 'Our Community', href: '/community' },
-        { id: 3, text: 'Donate', href: 'https://givebutter.com/wnbrb-our-next-chapter' },
-        { id: 4, text: 'Sponsor us', href: '/sponsor-us' },
-        { id: 5, text: 'Join', href: '/join-us' },
+        { id: 3, text: 'Resources', href: '/resources' },
+        { id: 4, text: 'Donate', href: 'https://givebutter.com/wnbrb-our-next-chapter' },
+        { id: 5, text: 'Sponsor us', href: '/sponsor-us' },
+        { id: 6, text: 'Join', href: '/join-us' },
     ];
 
     const [headerState, setHeaderState] = useState({

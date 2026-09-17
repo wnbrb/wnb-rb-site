@@ -1,0 +1,153 @@
+.resources-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.suggest-btn {
+    height: 32px;
+    padding: 0;
+}
+
+.resources-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        div:last-child {
+            align-self: flex-end;
+            order: -1;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.resources-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    padding: 0.5rem 1rem;
+    @apply border-2 border-gray-200 rounded-full bg-white text-sm font-semibold cursor-pointer transition-all;
+}
+
+.category-btn:hover {
+    @apply border-wnbrb-blue-navy text-wnbrb-blue-navy;
+}
+
+.category-btn.active {
+    @apply bg-wnbrb-blue-navy border-wnbrb-blue-navy text-white;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 1.5rem;
+}
+
+.resource-card {
+    border-radius: 1.8rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.resource-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.resource-card:nth-child(6n+1) {
+    @apply bg-wnbrb-lime-default text-wnbrb-blue-navy-dark;
+}
+
+.resource-card:nth-child(6n+2) {
+    @apply bg-wnbrb-yellow-default text-wnbrb-yellow-dark;
+}
+
+.resource-card:nth-child(6n+3) {
+    @apply bg-wnbrb-lavender-default text-wnbrb-blue-navy-dark;
+}
+
+.resource-card:nth-child(6n+4) {
+    @apply bg-wnbrb-ruby-red-default text-white;
+}
+
+.resource-card:nth-child(6n+5) {
+    @apply bg-wnbrb-blue-navy text-white;
+}
+
+.resource-card:nth-child(6n+6) {
+    @apply bg-wnbrb-teal-default text-white;
+}
+
+.resource-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.25);
+    color: inherit;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.resource-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.resource-card h3 a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.resource-submitted-by {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    @apply w-full p-3 border border-gray-300 rounded-lg font-noto text-base;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    @apply outline-none border-wnbrb-blue-navy;
+    box-shadow: 0 0 0 3px rgba(46, 8, 128, 0.1);
+}
+
+.error-message {
+    @apply text-red-600 text-sm mt-1;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
