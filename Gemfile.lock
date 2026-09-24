@@ -452,7 +452,6 @@ DEPENDENCIES
   httparty (~> 0.24.0)
   jbuilder (~> 2.11.5)
   jsbundling-rails (~> 1.1)
-  jwt (>= 2.6.0)
   launchy (~> 3.0.1)
   listen (~> 3.3)
   mutex_m (~> 0.2.0)

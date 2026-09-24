@@ -20,7 +20,6 @@ gem 'package_json', '~> 0.1.0'
 gem 'shakapacker', '= 9.5.0'
 
 gem 'bootsnap', '>= 1.18.4', require: false
-gem 'jwt', '>= 2.6.0'
 gem 'pundit', '>= 2.3.0'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]

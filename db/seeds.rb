@@ -4,7 +4,6 @@ unless Rails.env.prod?
   Speaker.destroy_all
   Talk.destroy_all
   Event.destroy_all
-  Job.destroy_all
   User.destroy_all
 end
 
@@ -246,59 +245,4 @@ User.create!(
   email: 'admin@wnb.rb',
   password: 'password',
   password_confirmation: 'password',
-)
-
-p 'Create 4 jobs on the job board'
-
-Job.create!(
-  company: 'WNB.rb',
-  title: 'Organizer',
-  location: 'Remote',
-  link: 'https://google.com',
-  description:
-    'Help organize WNB.rb, a community for women and non-binary Rubyists!
-    Responsibilities include organizing and supporting underrepresented developers.',
-  image_url: 'https://picsum.photos/200',
-  sponsorship_level: 0,
-)
-
-Job.create!(
-  company: 'The Empire',
-  title: 'Sith Lord',
-  location: 'A Planet Far, Far Away',
-  link: 'https://google.com',
-  description:
-    'Would your direct reports describe you as "terrifying"? Do you excel at telepathic
-    strangulation? If so, this is the oppportunity for you. You\'ll receive great benefits while
-    having a direct imapct on eradicating those pesky Jedi knights!',
-  image_url: 'https://picsum.photos/200',
-  created_at: Time.now - 2.weeks,
-  sponsorship_level: 3,
-)
-
-Job.create!(
-  company: 'The Prancing Pony',
-  title: 'Barmaid',
-  location: 'The Shire',
-  link: 'https://google.com',
-  description:
-    'Working at the Prancing Pony is never boring. We seek employees who are passionate about
-    pouring beer and don\'t mind the occasional wraith stopping by.',
-  image_url: 'https://picsum.photos/200',
-  created_at: Time.now - 1.month,
-  sponsorship_level: 2,
-)
-
-Job.create!(
-  company: 'Pokemon Gym',
-  title: 'Pokemon Trainer',
-  location: 'Vermillion City',
-  link: 'https://google.com',
-  description:
-    'You want to be the very best, like no one ever was. To catch them is your real test, to
-    train them is your cause. You will travel across the land, searching far and wide. For
-    Pokemon, to understand the power that\'s inside.',
-  image_url: 'https://picsum.photos/200',
-  created_at: Time.now - 3.months,
-  sponsorship_level: 1,
 )

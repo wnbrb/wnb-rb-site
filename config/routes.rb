@@ -39,10 +39,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :jobs, only: [:index] do
-      collection { post 'authenticate' }
-    end
-
     post 'register-user', to: 'registrations#register_user'
 
     get 'fundraising', to: 'fundraising#show'
