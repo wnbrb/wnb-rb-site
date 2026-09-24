@@ -4,9 +4,6 @@ require 'rails_helper'
 
 RSpec.describe 'User visit site pages', type: :system, js: true do
   before do
-    stub_const('ENV', ENV.to_hash.merge('JOB_BOARD_PASSWORD' => 'testing'))
-    stub_const('ENV', ENV.to_hash.merge('JWT_HMAC_SECRET' => 'testing1'))
-
     allow(HTTParty).to receive(:head).and_return(double(code: 200))
     allow(HTTParty).to receive(:get).and_return(double(code: 200))
   end
