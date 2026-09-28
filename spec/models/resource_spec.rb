@@ -1,18 +1,5 @@
 # frozen_string_literal: true
 
-# == Schema Information
-#
-# Table name: resources
-#
-#  id           :bigint           not null, primary key
-#  title        :string           not null
-#  url          :string           not null
-#  description  :text
-#  category     :string           not null
-#  submitted_by :string
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#
 require 'rails_helper'
 
 RSpec.describe Resource, type: :model do
