@@ -1,0 +1,12 @@
+
+<h1>New Resource Suggestion</h1>
+
+<p><strong>Title:</strong> <%= @title %></p>
+<p><strong>URL:</strong> <%= link_to @url, @url %></p>
+<p><strong>Category:</strong> <%= @category %></p>
+<% if @description.present? %>
+  <p><strong>Description:</strong> <%= @description %></p>
+<% end %>
+<% if @submitted_by.present? %>
+  <p><strong>Suggested by:</strong> <%= @submitted_by %></p>
+<% end %>
