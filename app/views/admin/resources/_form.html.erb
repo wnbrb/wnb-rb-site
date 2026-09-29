@@ -1,0 +1,33 @@
+<%= form_for [:admin, resource] do |f| %>
+  <%= render "layouts/admin/form_errors", object: f.object %>
+
+  <div class="field form-floating mb-4">
+    <%= f.text_field :title, class: "form-control shadow-sm" %>
+    <%= f.label :title %>
+  </div>
+
+  <div class="field form-floating mb-4">
+    <%= f.url_field :url, class: "form-control shadow-sm" %>
+    <%= f.label :url %>
+  </div>
+
+  <div class="field form-floating mb-4">
+    <%= f.text_area :description, rows: 40, class: "form-control shadow-sm", style: "height: 150px" %>
+    <%= f.label :description %>
+  </div>
+
+  <div class="field form-floating mb-4">
+    <%= f.select :category, Resource::CATEGORIES.map { |c| [c.humanize, c] }, {}, class: "form-select shadow-sm" %>
+    <%= f.label :category %>
+  </div>
+
+  <div class="field form-floating mb-4">
+    <%= f.text_field :submitted_by, class: "form-control shadow-sm" %>
+    <%= f.label :submitted_by %>
+  </div>
+
+  <div class="actions text-center mb-4">
+    <%= f.submit "Save", class: "btn btn-primary btn-lg" %>
+    <%= link_to "Cancel", admin_resources_path, class: "btn btn-outline-primary btn-lg" %>
+  </div>
+<% end %>
