@@ -1,5 +1,18 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: resources
+#
+#  id           :bigint           not null, primary key
+#  category     :string           not null
+#  description  :text
+#  submitted_by :string
+#  title        :string           not null
+#  url          :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
 class Resource < ApplicationRecord
   CATEGORIES = %w[article book podcast video talk newsletter tool project].freeze
 
