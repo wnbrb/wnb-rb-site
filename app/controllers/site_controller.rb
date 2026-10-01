@@ -7,10 +7,6 @@ class SiteController < ApplicationController
 
   def meetups; end
 
-  def jobs; end
-
-  def jobs_authenticate; end
-
   def past_meetup; end
 
   def sponsor_us; end

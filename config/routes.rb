@@ -41,10 +41,6 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :jobs, only: [:index] do
-      collection { post 'authenticate' }
-    end
-
     resources :resources, only: %i[index create]
 
     post 'register-user', to: 'registrations#register_user'
