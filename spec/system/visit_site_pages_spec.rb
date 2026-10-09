@@ -27,6 +27,11 @@ RSpec.describe 'User visit site pages', type: :system, js: true do
     expect(page).to have_text('Sponsor Us')
   end
 
+  it 'visits about page' do
+    visit about_path
+    expect(page).to have_text('About WNB.rb')
+  end
+
   it 'visits community page' do
     visit community_path
     expect(page).to have_text('Community')

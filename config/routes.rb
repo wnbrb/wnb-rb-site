@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :resources, only: %i[index new create edit update destroy]
   end
   
+  get '/about', to: 'site#about'
   get '/community', to: 'site#community'
   get '/meetups', to: 'site#meetups'
   get '/join-us', to: 'site#join_us'
