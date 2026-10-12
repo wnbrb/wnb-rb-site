@@ -5,12 +5,12 @@ const OurStorySection = () => {
         <>
             <p>
                 She was starting a meetup for women and non-binary Ruby developers and asked Emily
-                to speak. Emily offered to help organize it and together they put together our
-                first meetup.
+                to speak. Emily offered to help organize it and together they put together our first
+                meetup.
             </p>
             <p>
-                It was a big success. People wanted to keep the conversations going, so they created a
-                Slack community.
+                It was a big success. People wanted to keep the conversations going, so they created
+                a Slack community.
             </p>
             <p>And then something really cool happened: the community started building itself.</p>
             <p>
