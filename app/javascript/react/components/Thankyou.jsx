@@ -6,6 +6,7 @@ import flagrant from 'images/Flagrant-logo.svg';
 import Avo from 'images/avo-logo.png';
 import fastRubyIo from 'images/fast-ruby-io-ruby-maintenance-done-right.svg';
 import springHealth from 'images/spring-health-logo.svg';
+import splitwise from 'images/splitwise.svg';
 
 const sponsors = [
     { src: flagrant, alt: 'Flagrant-logo', href: 'https://www.beflagrant.com/' },
@@ -17,6 +18,7 @@ const sponsors = [
         href: 'https://www.fastruby.io/monthly-ruby-maintenance.html?utm_source=wnbdev&utm_campaign=wnb-rocks-2026',
     },
     { src: springHealth, alt: 'spring-health-logo', href: 'https://www.springhealth.com/' },
+    { src: splitwise, alt: 'splitwise-logo', href: 'https://www.splitwise.com' },
 ];
 
 const Thankyou = () => {
