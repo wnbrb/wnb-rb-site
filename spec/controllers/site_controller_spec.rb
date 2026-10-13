@@ -64,6 +64,18 @@ RSpec.describe SiteController, type: :controller do
     end
   end
 
+  describe 'GET #about' do
+    before { get :about }
+
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'renders the about template' do
+      expect(response).to render_template(:about)
+    end
+  end
+
   describe 'GET #community' do
     before { get :community }
 
