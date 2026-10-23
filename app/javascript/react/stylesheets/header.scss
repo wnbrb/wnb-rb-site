@@ -1,13 +1,13 @@
 header {
-    @apply w-full top-0 md:px-8 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
+    @apply w-full top-0 lg:px-8 xl:px-0 bg-white border-b border-gray-100 z-10 fixed;
 
     .header {
-        @apply bg-white container py-1 px-8 md:p-0  mx-auto max-w-6xl relative;
+        @apply bg-white container py-1 px-8 lg:p-0  mx-auto max-w-6xl relative;
         min-height: 3.5rem;
         transition: box-shadow 0.3s ease-in-out;
 
         .inner {
-            @apply flex flex-col md:flex-row md:items-center;
+            @apply flex flex-col lg:flex-row lg:items-center;
 
             .logo {
                 display: flex;
@@ -22,10 +22,10 @@ header {
             }
 
             nav.nav {
-                @apply hidden md:flex md:justify-between ml-auto mr-auto;
+                @apply hidden lg:flex lg:justify-between ml-auto mr-auto;
 
                 .menu {
-                    @apply md:w-full md:self-center;
+                    @apply lg:w-full lg:self-center;
 
                     ul {
                         @apply flex flex-row justify-around lg:justify-around;
@@ -33,9 +33,9 @@ header {
                         li {
                             @apply lg:px-3;
                             a {
-                                @apply text-wnbrb-blue-navy text-lg font-bold leading-5 transition-all cursor-pointer hover:underline md:hover:no-underline font-syne;
+                                @apply text-wnbrb-blue-navy text-lg font-bold leading-5 transition-all cursor-pointer hover:underline lg:hover:no-underline font-syne;
 
-                                @screen md {
+                                @screen lg {
                                     &::after {
                                         @apply bg-white h-0.5 rounded-sm block relative top-0.5 transition-all;
                                         content: '';
@@ -59,7 +59,7 @@ header {
                     }
                 }
                 .user {
-                    @apply flex flex-row md:flex-shrink-0 justify-center;
+                    @apply flex flex-row lg:flex-shrink-0 justify-center;
 
                     .join-us {
                         @apply ml-3 whitespace-nowrap;
@@ -81,26 +81,26 @@ header {
                 }
 
                 &.is-mobile-menu-open {
-                    @apply flex flex-col-reverse md:flex-row md:px-0 pt-3 md:pt-0;
+                    @apply flex flex-col-reverse lg:flex-row lg:px-0 pt-3 lg:pt-0;
 
                     .user {
                         .join-us {
-                            @apply w-full md:w-auto max-w-[18rem];
+                            @apply w-full lg:w-auto max-w-[18rem];
                         }
                     }
 
                     .menu {
                         ul {
-                            @apply flex-col md:flex-row text-center mt-3 md:mt-0;
+                            @apply flex-col lg:flex-row text-center mt-3 lg:mt-0;
 
                             li {
-                                @apply py-3 md:py-0;
+                                @apply py-3 lg:py-0;
 
                                 &.is-active a {
-                                    @apply underline md:no-underline;
+                                    @apply underline lg:no-underline;
                                     -webkit-text-stroke: 0.5px currentColor;
 
-                                    @screen md {
+                                    @screen lg {
                                         -webkit-text-stroke: none;
                                     }
                                 }
@@ -112,7 +112,7 @@ header {
         }
 
         button.hamburger {
-            @apply bg-none p-2 border-0 right-4 top-4 sm:right-6 md:right-0 rounded-md cursor-pointer inline-block md:hidden absolute w-10 transition duration-500 ease-in-out hover:bg-gray-100;
+            @apply bg-none p-2 border-0 right-4 top-4 sm:right-6 lg:right-0 rounded-md cursor-pointer inline-block lg:hidden absolute w-10 transition duration-500 ease-in-out hover:bg-gray-100;
             min-height: 2.5rem;
             span.bar {
                 @apply bg-gray-500 rounded-sm block transition-all;
@@ -141,7 +141,7 @@ header {
     }
 
     &.is-mobile-menu-open {
-        @apply md:px-12 xl:px-0 shadow-md md:shadow-none;
+        @apply lg:px-12 xl:px-0 shadow-md lg:shadow-none;
     }
 
     &.is-fixed {
