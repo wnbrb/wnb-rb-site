@@ -139,6 +139,11 @@ RSpec.describe Speaker, type: :model do
     end
 
     describe 'with invalid links' do
+      before do
+        allow(HTTParty).to receive(:head).and_return(double(code: 200))
+        allow(HTTParty).to receive(:get).and_return(double(code: 200))
+      end
+
       it 'validates the social media links' do
         speaker = build(:speaker, :with_invalid_links)
 
