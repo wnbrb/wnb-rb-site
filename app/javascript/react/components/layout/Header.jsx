@@ -146,8 +146,12 @@ const Header = () => {
                 href={DONATE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-hidden="true"
+                tabIndex={-1}
                 hidden
-            />
+            >
+                Donate
+            </a>
             {showExternalNotice && (
                 <AlertBanner
                     type="warning"
