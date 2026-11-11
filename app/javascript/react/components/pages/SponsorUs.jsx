@@ -87,7 +87,7 @@ const SponsorUs = () => {
                             </li>
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
-                                <span>Post unlimited jobs on our internal job channel</span>
+                                <span>Post unlimited jobs on our regional job channels</span>
                             </li>
                         </ul>
                     </div>
@@ -121,7 +121,7 @@ const SponsorUs = () => {
                             </li>
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
-                                <span>Post unlimited jobs on our internal job channel</span>
+                                <span>Post unlimited jobs on our regional job channels</span>
                             </li>
                             <li className="flex gap-2 items-start">
                                 <Check size={20} className="text-black mt-1" />
@@ -143,14 +143,11 @@ const SponsorUs = () => {
                                 Hire from WNB.rb
                             </h2>
                             <p className="mb-2 text-wnbrb-blue-navy text-center sm:w-[95%]">
-                                Even if you aren&apos;t a sponsor, you can hire from our community
-                                by posting your open jobs on our job channel.
+                                Even if you aren&apos;t a sponsor, you can hire from our community.
+                                Send us an email and we&apos;ll share your job on our regional job
+                                channels.
                             </p>
-                            <a
-                                href="https://buy.stripe.com/28o4gW9cZ7oKbwQ7sJ"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <a href="mailto:exec@wnb-rb.dev">
                                 <Button type="primary" className="max-w-[8rem] lg:mt-[32px] ">
                                     Post a job
                                 </Button>
