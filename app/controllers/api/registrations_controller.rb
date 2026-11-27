@@ -45,8 +45,9 @@ module Api
 
       DiscordInvitationMailer.invite(name, email, discord_link).deliver_now
 
-      render json: { success: "Thanks, #{name}! Check #{email} for your invitation to our Discord server." },
-             status: :ok
+      success = "Thanks, #{name}! Check #{email} for your invitation to our Discord server. " \
+                "If you don't see it, please check spam."
+      render json: { success: success }, status: :ok
     rescue StandardError => e
       logger.error("Failed to deliver Discord invitation to #{email}: #{e.class}: #{e.message}")
       render_error(GENERIC_DELIVERY_ERROR, :internal_server_error)
