@@ -75,7 +75,7 @@ const JoinUs = () => {
                 announce(
                     'success',
                     json.success ||
-                        `${values.name}, thank you for joining WNB.rb! Check ${values.email} for your invitation to our Discord server.`,
+                        `${values.name}, thank you for joining WNB.rb! Check ${values.email} for your invitation to our Discord server. If you don't see it, please check spam.`,
                 );
             } else {
                 announce(

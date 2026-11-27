@@ -9,6 +9,7 @@ RSpec.describe DiscordInvitationMailer, type: :mailer do
       expect(mail.subject).to eq('You\'re invited to join our Discord server!')
       expect(mail.to).to eq(['to@example.org'])
       expect(mail.from).to eq(['exec@wnb-rb.dev'])
+      expect(mail.cc).to eq(['exec@wnb-rb.dev'])
     end
 
     it 'sends from the address configured for Resend' do
@@ -19,5 +20,6 @@ RSpec.describe DiscordInvitationMailer, type: :mailer do
       expect(mail.body.encoded).to include('https://discord.gg/example')
       expect(mail.body.encoded).to include('RubyFriend')
     end
+
   end
 end

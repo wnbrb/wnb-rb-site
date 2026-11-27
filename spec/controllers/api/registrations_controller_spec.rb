@@ -32,7 +32,7 @@ RSpec.describe Api::RegistrationsController, type: :controller do
         post :register_user, params: valid_params, format: :json
 
         expect(response).to have_http_status(:ok)
-        expect(json_response['success']).to include('Test User', 'test@example.com')
+        expect(json_response['success']).to include('Test User', 'test@example.com', 'please check spam')
       end
 
       it 'strips surrounding whitespace from the name and email' do
